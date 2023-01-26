@@ -3,5 +3,5 @@
 .RData
 .Ruserdata
 _bookdown_files/_main_cache
-_main.log
+*.log
 *.bib
