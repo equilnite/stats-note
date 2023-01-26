@@ -1,0 +1,275 @@
+# Random Variables
+
+A **random variable** is a variable whose value is a numerical outcome
+of a random phenomenon.
+
+Random variables can be discrete or continuous. A **discrete random
+variable** $X$ has a countable, or smaller, number of possible outcomes,
+while a **continuous random variable** $X$ can take on an infinite
+number (theoretically) of different values.
+
+The **probability distribution** of a random variable $X$ gives us all
+possible values of $X$, and their corresponding probabilities.
+Probability distributions are typically given as tables, histograms
+(with probability on the y-axis, instead of frequency), or density
+curves (like the Normal curve).
+
+## Discrete Random Variables
+
+A discrete random variable describes a process that only has specific,
+predefined outcomes. For example, you can be finding the probability of
+people having blue, brown, and black eyes. Or you can be finding the
+probability of people earning salaries in the ranges of \<\$30,000,
+\$30,000 - \$50,000, \$50,000 - \$ 70,000, \$70,000 - \$ 100,000,
+\>\$100,000.
+
+When we have a discrete random variable $X$ whose probability
+distribution is
+
+$$
+\begin{aligned}
+    \textbf{Value:}& ~~~~ x_1 ~~~~ x_2 ~~~~ x_3 ~~~~ \cdots \\
+    \textbf{Probability:}& ~~~~ p_1 ~~~~ p_2 ~~~~ p_3 ~~~~\cdots
+\end{aligned}
+$$
+
+we know the following about the mean and standard deviation of $X$:
+
+$$\mu_X = E(X) = \sum x_i P(x_i)$$
+
+$$\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}$$
+
+<details>
+
+<summary>Keep in mind that the standard deviation formula here (and else
+where) is equivalent to the formula of population standard deviation
+when we divide by $n$ instead of multiplying by $P(x_i)$.</summary>
+
+$$
+\begin{aligned}
+\sigma_X &= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} \\
+&=\sqrt{E((X - \bar x)^2)} \\
+&=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\\
+\end{aligned}
+$$
+
+In other words, remember that we define standard deviation as the root
+mean square of the squared differences from the mean. Since we are
+taking the mean of the squared differences from the mean in both
+formulas (I use the definition for mean from step 1 to 2 and the
+definition of mean for discrete variables from step 2 to 3), the two
+formulas are equivalent.
+
+</details>
+
+The variance of a random variable $X$ is:
+
+$$
+Var(X) = \sigma_X^2
+$$
+
+### Binomial Random Variables
+
+Binomial random variables have parameters $n$ and $p$, and can be
+written $B(n, p)$. Remember, Normal random variables have parameters and
+and can be written $N(\mu,\sigma)$.
+
+The pdf of a Binomial Random Variable (i.e. the binomial formula) is: 
+
+$$
+\begin{aligned}
+    P(X=k) &= {n \choose k} p^k (1-p)^{n-k}\\
+    \text{where } k &= 0, 1, 2, 3, \cdots, n
+\end{aligned}
+$$
+
+To apply this formula in a graphing calculator:
+$\texttt{2nd -> vars (distr) -> binompdf}$
+
+Usage: $\texttt{binompdf(n, p[,x])}$
+
+The cdf of a Binomial Random Variable is: $$
+\begin{aligned}
+    P(X\leq k) &= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
+\end{aligned}
+$$
+
+In graphing calculator: $\texttt{2nd -> vars (distr) -> binomcdf}$
+
+Usage: $\texttt{binomcdf(n, p[,x])}$
+
+The mean and standard deviation of a binomial random variable is given
+by:
+
+$$
+\begin{aligned}
+    \mu_X &= n p \\
+    \sigma_X &= \sqrt{n p q} \\
+    &\text{, where } q = 1-p.
+\end{aligned}
+$$
+
+#### Binomial setting
+
+We can identify a binomial setting when we know:
+
+1.  **B**inary? The possible outcomes of each trial can be classified as
+    "success" or "failure" (in our case rolling a 7 or not).
+
+2.  **I**ndependent? Trials must be independent; that is, knowing the
+    result of one trial must not tells us anything about the result of
+    another trial.
+
+3.  **N**umber? The number of trials n of the chance process must be
+    fixed in advance. (this was 5, then 100).
+
+4.  **S**ame? There is the same probability p of success on each trial
+    (1/6).
+
+#### 10% Condition
+
+The second condition is often not perfectly met, as in the case of an
+SRS from some population. Imagine choosing 10 students from a class of
+15 females and 15 males---as we choose people, the remaining population
+changes, which changes the probability that the next person chosen will
+be male or female.
+
+When we lack complete independence, we can see the consequence of this
+is negligible as long as our sample is small relative to the population
+from which we are sampling. If we were choosing our 10 people from a
+school of 3,300 students, the change in probability from person to
+person would be small enough to ignore.
+
+The general rule is that the sample needs to be less than
+$\frac{1}{10}$, or 10%, of the population. We refer to this as the 10%
+condition.
+
+$$n \leq (.10) N$$
+
+#### Normal Approximation to the Binomial Distribution
+
+Remember that as $n$ gets large, a binomial random variable $X$ can take
+on more and more different values, and it can become tedious to continue
+to treat X as a discrete random variable. As $n$ get larger, we can
+treat $X$ as a continuous random variable, more specifically:
+
+As $n$ gets larger, the binomial distribution gets closer to a normal
+distribution. However, before we use a normal distribution to
+approximate a binomial distribution, we have to check the following
+condition:
+
+##### Large Counts condition
+
+If $np \geq 10$ and $n(1-p) \geq 10$, then we can use a Normal
+distribution to model a binomial distribution. In other words, if the
+expected number of successes and failures (respectively) is greater than
+or equal to 10.
+
+##### Doing a normal approximation
+
+First verify all the conditions for a Binomial setting and the Large
+Counts Condition. Since we know that we have a binomial setting, we then
+know the distribution that we want to use is $Normal(np, \sqrt{npq})$ proceed with the calculations according to this distribution.
+
+### Geometric Random Variables
+
+If $X \sim G(p)$, in other words, if $X$ has a geometric distribution
+with parameter $p$, the pdf of a geometric random variable is:
+
+$$
+\begin{aligned}
+    P(X=x) &= (1-p)^{x-1}p\\
+    \text{where } x &= 1, 2, 3, \cdots
+\end{aligned}
+$$
+
+In graphing calculator: $\texttt{2nd -> vars (distr) -> geometpdf}$
+
+Usage: $\texttt{geometpdf(p, x)}$
+
+The cdf of a Geometric Variable is:
+
+$$
+\begin{aligned}
+    P(X\leq x) &= \sum_{i=1}^x(1-p)^{i-1}p
+\end{aligned}
+$$
+
+In graphing calculator: $\texttt{2nd -> vars (distr) -> geometcdf}$
+
+Usage: $\texttt{geometcdf(p, x)}$
+
+The mean and standard deviation of a geometric random variable is given
+by:
+
+$$
+\begin{aligned}
+    \mu_X &= \frac{1}{p} \\
+    \sigma_X &= \frac{\sqrt{q}}{p} \\
+    &\text{, where } q = 1-p.
+\end{aligned}
+$$
+
+#### The Geometric Setting
+
+A geometric setting is very similar to a binomial setting, except that
+\textbf{n, the number of trials is not fixed}.
+
+A geometric setting is defined as a series of observations where these 4
+conditions are met:
+
+1.  **B**inary? The Possible outcomes of each trial can be classified as
+    "success" or "failure"
+
+2.  **I**ndependent? Trials must be independent, that is, knowing the
+    result of one trial must not have any effect on the result of any
+    other trial.
+
+3.  **T**rials? The goal is to count the number of trials until the
+    first success occurs.
+
+4.  **S**uccess? On each trial, the probability p of success must be the
+    same.
+
+## Operations with Random Variables
+
+### Constants
+
+When we add a constant $a$ and/or multiply by a constant $b$ to a random
+variable $X$, we perform a linear transformation of the form
+
+$$
+a + bX
+$$
+
+The mean of the transformed variable is:
+
+$$
+\mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
+$$
+
+The standard deviation of the transformed variable is:
+
+$$
+\sigma_{a+bX}=\sigma_{bX}=b\sigma_X
+$$
+
+### Random Variables
+
+In general, we can describe the mean and standard deviation of the sum
+or difference of independent random variables with these formulas:
+
+$$\mu_{X \pm Y} = \mu_X \pm \mu_Y$$
+
+**If the random variables $X$ and $Y$ are independent**, then
+
+$$ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 $$
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

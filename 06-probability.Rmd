@@ -1,0 +1,6 @@
+# Probability
+
+A process has a valid probability model if and only if:
+
+-   Each outcome has a positive probability.
+-   The sum of all outcomes' probabilities is equal to 1.

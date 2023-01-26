@@ -1,0 +1,174 @@
+
+
+
+
+# Categorical Data Visualizations
+
+## Bar plots {#bar-plots}
+
+Represent the number or proportion of each unique value. These numbers
+or proportions are represented with rectangular bars with heights
+proportional to the values that they represent. You can plot these
+vertically or horizontally (i.e. categories on the x-axis or categories
+on the y-axis)
+
+Following data from this table:
+
+```{r }
+set.seed(123)
+i <- sample(1:nrow(iris), 10, repl = FALSE)
+iris_cat_tab <- iris %>% slice(i) %>% select(Species)
+table_show(iris_cat_tab)
+```
+
+1.  Count up the number of values per category (make a frequency table).
+    Note: This table is missing the total
+
+```{r}
+table_show(as.data.frame(table(iris_cat_tab), col.names = c("Species", "Frequency")))
+```
+
+2.  Plot the frequencies with them as the height of the bars
+
+```{r}
+ggplot(iris_cat_tab, aes(x = Species)) +
+    geom_bar() +
+    labs(title = "Bar plot of Iris Species")
+```
+
+If needed (if you need proportions for the y-axis instead, calculate the
+relative frequency table for the frequency table first). Note: again,
+this one is missing the total
+
+```{r}
+table_show(as.data.frame(prop.table(table(iris_cat_tab)), col.names = c("Species", "Frequency")))
+```
+
+```{r}
+ggplot(iris_cat_tab, aes(x = Species, y = ..prop.., group = 1)) +
+    geom_bar() +
+    labs(title = "Bar plot of Iris Species", y = "Proportion")
+```
+
+## Stacked Bar Plots and Side-by-Side Bar Graphs
+
+Stacked bar plots show two categorical variables, one on the
+x-axis/y-axis, and the other as the legend (colours). We will call the
+variable on the x-axis as the "groups" and the variable on the legend as
+the "categories."
+
+When constructing these bar plots, we first want to determine which
+variable goes where (your choice or given choice to you). Then you
+calculate relative frequencies *per group*
+
+For example, here I have a two-way table detailing the hair and eye
+colour of some statistics students
+
+```{r}
+library(reshape)
+hair <- HairEyeColor[,,2] + HairEyeColor[,,1]
+hair_table <- untable(hair)
+table_show(as.data.frame(hair))
+```
+
+So if I want eye colour to be my groups, I would calculate the relative
+frequencies by column (use the total of the column and divide the whole
+column by it), so each group/column will add up to 1.
+
+```{r}
+table_show(as.data.frame(prop.table(hair, 2)))
+```
+
+These numbers will be my bar heights. So for the bar(s) representing
+brown eyes:
+
+-   black hair will be .3091
+
+-   brown hair will be .5409
+
+-   red hair will be 0.1182
+
+-   blond hair will be 0.0318
+
+```{r}
+barplot(prop.table(hair, 2), legend = TRUE, xlab = "Eye Color", ylab = "Proportion", main = "Segmented Barplot of Hair Color on Eye Color")
+```
+
+Here's the corresponding side-by-side bar plot. Note that the heights of
+the bars are the same as the segmented bar graph.
+
+```{r}
+barplot(prop.table(hair, 2), legend = TRUE, xlab = "Eye Color", ylab = "Proportion", main = "Side-by-side Barplot of Hair Color on Eye Color", beside = TRUE)
+```
+
+On the other hand, if I want my eye colour to be my groups, I would
+calculate the relative frequencies by row (use the total of the row and
+divide the whole row by it), so each group/row will add up to 1.
+
+```{r}
+table_show(as.data.frame(prop.table(hair, 1)))
+```
+
+These numbers will be my bar heights. So for the bar(s) representing
+black hair:
+
+-   brown eyes will be 0.6296296
+
+-   blue eyes will be 0.1851852
+
+-   hazel eyes will be 0.1388889
+
+-   green eyes will be 0.0462963
+
+```{r}
+barplot(t(prop.table(hair, 1)), legend = TRUE, xlab = "Hair Colour", ylab = "Proportion", main = "Segmented Bar plot of Eye Colour on Hair Colour")
+```
+
+```{r}
+barplot(t(prop.table(hair, 1)), legend = TRUE, xlab = "Hair Colour", ylab = "Proportion", main = "Side-by-side Bar plot of Eye Colour on Hair Colour", beside = TRUE)
+```
+
+## Mosaic Plots
+
+Mosaic plots are the almost the same as stacked bar plots. The only
+difference is that the widths of the bars change according to the
+proportion of points in each group. In a mosaic plot, the x-axis will
+also measure the proportion of observations/data points within the
+groupings (i.e. the x-axis reflects the marginal distribution of the
+variable on the x-axis).
+
+Following the [same
+steps](#stacked-bar-plots-and-side-by-side-bar-plots) as the
+side-by-side and stacked bar charts to find the heights, we now add an
+additional step before plotting.
+
+*Find the widths of the bars by finding the marginal distriubtion of the
+variable on the x-axis (the groups)*
+
+1.  For each group, find the probability of having that trait. So for
+    our previous example, we had this table:
+
+```{r}
+table_show(as.data.frame(hair))
+```
+
+Using our eye colours as the groups (vertical bars), we will find:
+
+-   $P(Brown) \approx .3716$
+
+-   $P(Blue) \approx .3632$
+
+-   $P(Hazel) \approx .1571$
+
+-   $P(Green) \approx .1081$
+
+When we plot our mosaic plot, we do the same thing, except now, we have
+our bars differ in widths according to the numbers that we just
+calculated.
+
+<!-- ![Mosaic Plot of Hair Colour on Eye Colour](moplotex.png) -->
+
+
+
+
+

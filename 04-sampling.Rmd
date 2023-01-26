@@ -1,0 +1,32 @@
+# Sampling
+
+When we have a question about a certain population (an entire group of
+individuals). Ideally we would ask them all (take a **census**). But
+contacting every member of a population often isn't very practical: it
+would take too much time and cost too much money. Instead, we put the
+question to a **sample**, or subset of individuals of the population
+from which we actually collect data, chosen to represent the entire
+population.
+
+When you want to identify the population, ask yourself, what does the
+question want to know about? What group of people does the
+question/problem address?
+
+When identifying the sample, ask yourself, what group does the work done
+actually address?
+
+## Bias
+
+When we collect data, there is the possibility of the data becoming
+systematically pushed towards a specific outcome. For example, if we
+want to learn about the GPA average in the school and take a sample of
+students only from a class, it's quite possible that the sample is not
+representative of the school. We will probably result in a GPA average
+that is higher or lower than the actual GPA average in the school. There
+are several ways that this can happen. The main way that we learn are:
+
+### Response Bias
+
+### Non-response Bias
+
+### Voluntary Bias
