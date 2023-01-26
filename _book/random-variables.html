@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Random Variables | AP Statistics Notes</title>
+  <meta name="description" content="This is book-style notes for AP Statistics" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Random Variables | AP Statistics Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is book-style notes for AP Statistics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Random Variables | AP Statistics Notes" />
+  
+  <meta name="twitter:description" content="This is book-style notes for AP Statistics" />
+  
+
+<meta name="author" content="Mr. Chang edwardchang@berkeley.net" />
+
+
+<meta name="date" content="2023-01-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="density-curves.html"/>
+<link rel="next" href="sampling-distributions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AP Statistics Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="basic-notation.html"><a href="basic-notation.html"><i class="fa fa-check"></i><b>2</b> Basic notation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basic-notation.html"><a href="basic-notation.html#lists"><i class="fa fa-check"></i><b>2.1</b> Lists</a></li>
+<li class="chapter" data-level="2.2" data-path="basic-notation.html"><a href="basic-notation.html#n"><i class="fa fa-check"></i><b>2.2</b> <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="2.3" data-path="basic-notation.html"><a href="basic-notation.html#summation-sigma"><i class="fa fa-check"></i><b>2.3</b> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
+<li class="chapter" data-level="2.4" data-path="basic-notation.html"><a href="basic-notation.html#other-notation"><i class="fa fa-check"></i><b>2.4</b> Other notation</a></li>
+<li class="chapter" data-level="2.5" data-path="basic-notation.html"><a href="basic-notation.html#other-commonly-used-symbols"><i class="fa fa-check"></i><b>2.5</b> Other commonly used symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html"><i class="fa fa-check"></i><b>3</b> Categorical Data Visualizations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#bar-plots"><i class="fa fa-check"></i><b>3.1</b> Bar plots</a></li>
+<li class="chapter" data-level="3.2" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#stacked-bar-plots-and-side-by-side-bar-graphs"><i class="fa fa-check"></i><b>3.2</b> Stacked Bar Plots and Side-by-Side Bar Graphs</a></li>
+<li class="chapter" data-level="3.3" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#mosaic-plots"><i class="fa fa-check"></i><b>3.3</b> Mosaic Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html"><i class="fa fa-check"></i><b>4</b> Quantative Data Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#dot-plots"><i class="fa fa-check"></i><b>4.1</b> Dot Plots</a></li>
+<li class="chapter" data-level="4.2" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#stemplots"><i class="fa fa-check"></i><b>4.2</b> Stemplots</a></li>
+<li class="chapter" data-level="4.3" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#boxplots"><i class="fa fa-check"></i><b>4.3</b> Boxplots</a></li>
+<li class="chapter" data-level="4.4" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#histograms"><i class="fa fa-check"></i><b>4.4</b> Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>5</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sampling.html"><a href="sampling.html#bias"><i class="fa fa-check"></i><b>5.1</b> Bias</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="sampling.html"><a href="sampling.html#response-bias"><i class="fa fa-check"></i><b>5.1.1</b> Response Bias</a></li>
+<li class="chapter" data-level="5.1.2" data-path="sampling.html"><a href="sampling.html#non-response-bias"><i class="fa fa-check"></i><b>5.1.2</b> Non-response Bias</a></li>
+<li class="chapter" data-level="5.1.3" data-path="sampling.html"><a href="sampling.html#voluntary-bias"><i class="fa fa-check"></i><b>5.1.3</b> Voluntary Bias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i><b>6</b> Experimental Design</a></li>
+<li class="chapter" data-level="7" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>7</b> Probability</a></li>
+<li class="chapter" data-level="8" data-path="density-curves.html"><a href="density-curves.html"><i class="fa fa-check"></i><b>8</b> Density Curves</a></li>
+<li class="chapter" data-level="9" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>9</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="random-variables.html"><a href="random-variables.html#discrete-random-variables"><i class="fa fa-check"></i><b>9.1</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="random-variables.html"><a href="random-variables.html#binomial-random-variables"><i class="fa fa-check"></i><b>9.1.1</b> Binomial Random Variables</a></li>
+<li class="chapter" data-level="9.1.2" data-path="random-variables.html"><a href="random-variables.html#geometric-random-variables"><i class="fa fa-check"></i><b>9.1.2</b> Geometric Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="random-variables.html"><a href="random-variables.html#operations-with-random-variables"><i class="fa fa-check"></i><b>9.2</b> Operations with Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="random-variables.html"><a href="random-variables.html#constants"><i class="fa fa-check"></i><b>9.2.1</b> Constants</a></li>
+<li class="chapter" data-level="9.2.2" data-path="random-variables.html"><a href="random-variables.html#random-variables-1"><i class="fa fa-check"></i><b>9.2.2</b> Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>10</b> Sampling distributions</a></li>
+<li class="chapter" data-level="11" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="12" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>12</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="13" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>13</b> Linear Regression</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AP Statistics Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="random-variables" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Random Variables<a href="random-variables.html#random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A <strong>random variable</strong> is a variable whose value is a numerical outcome
+of a random phenomenon.</p>
+<p>Random variables can be discrete or continuous. A <strong>discrete random
+variable</strong> <span class="math inline">\(X\)</span> has a countable, or smaller, number of possible outcomes,
+while a <strong>continuous random variable</strong> <span class="math inline">\(X\)</span> can take on an infinite
+number (theoretically) of different values.</p>
+<p>The <strong>probability distribution</strong> of a random variable <span class="math inline">\(X\)</span> gives us all
+possible values of <span class="math inline">\(X\)</span>, and their corresponding probabilities.
+Probability distributions are typically given as tables, histograms
+(with probability on the y-axis, instead of frequency), or density
+curves (like the Normal curve).</p>
+<div id="discrete-random-variables" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Discrete Random Variables<a href="random-variables.html#discrete-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A discrete random variable describes a process that only has specific,
+predefined outcomes. For example, you can be finding the probability of
+people having blue, brown, and black eyes. Or you can be finding the
+probability of people earning salaries in the ranges of &lt;$30,000,
+$30,000 - $50,000, $50,000 - $ 70,000, $70,000 - $ 100,000,
+&gt;$100,000.</p>
+<p>When we have a discrete random variable <span class="math inline">\(X\)</span> whose probability
+distribution is</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \textbf{Value:}&amp; ~~~~ x_1 ~~~~ x_2 ~~~~ x_3 ~~~~ \cdots \\
+    \textbf{Probability:}&amp; ~~~~ p_1 ~~~~ p_2 ~~~~ p_3 ~~~~\cdots
+\end{aligned}
+\]</span></p>
+<p>we know the following about the mean and standard deviation of <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[\mu_X = E(X) = \sum x_i P(x_i)\]</span></p>
+<p><span class="math display">\[\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\]</span></p>
+<details>
+<summary>
+Keep in mind that the standard deviation formula here (and else
+where) is equivalent to the formula of population standard deviation
+when we divide by <span class="math inline">\(n\)</span> instead of multiplying by <span class="math inline">\(P(x_i)\)</span>.
+</summary>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma_X &amp;= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} \\
+&amp;=\sqrt{E((X - \bar x)^2)} \\
+&amp;=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\\
+\end{aligned}
+\]</span></p>
+<p>In other words, remember that we define standard deviation as the root
+mean square of the squared differences from the mean. Since we are
+taking the mean of the squared differences from the mean in both
+formulas (I use the definition for mean from step 1 to 2 and the
+definition of mean for discrete variables from step 2 to 3), the two
+formulas are equivalent.</p>
+</details>
+<p>The variance of a random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[
+Var(X) = \sigma_X^2
+\]</span></p>
+<div id="binomial-random-variables" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Binomial Random Variables<a href="random-variables.html#binomial-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Binomial random variables have parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, and can be
+written <span class="math inline">\(B(n, p)\)</span>. Remember, Normal random variables have parameters and
+and can be written <span class="math inline">\(N(\mu,\sigma)\)</span>.</p>
+<p>The pdf of a Binomial Random Variable (i.e. the binomial formula) is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X=k) &amp;= {n \choose k} p^k (1-p)^{n-k}\\
+    \text{where } k &amp;= 0, 1, 2, 3, \cdots, n
+\end{aligned}
+\]</span></p>
+<p>To apply this formula in a graphing calculator:
+<span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binompdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{binompdf(n, p[,x])}\)</span></p>
+<p>The cdf of a Binomial Random Variable is: <span class="math display">\[
+\begin{aligned}
+    P(X\leq k) &amp;= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binomcdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{binomcdf(n, p[,x])}\)</span></p>
+<p>The mean and standard deviation of a binomial random variable is given
+by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \mu_X &amp;= n p \\
+    \sigma_X &amp;= \sqrt{n p q} \\
+    &amp;\text{, where } q = 1-p.
+\end{aligned}
+\]</span></p>
+<div id="binomial-setting" class="section level4 hasAnchor" number="9.1.1.1">
+<h4><span class="header-section-number">9.1.1.1</span> Binomial setting<a href="random-variables.html#binomial-setting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can identify a binomial setting when we know:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>B</strong>inary? The possible outcomes of each trial can be classified as
+“success” or “failure” (in our case rolling a 7 or not).</p></li>
+<li><p><strong>I</strong>ndependent? Trials must be independent; that is, knowing the
+result of one trial must not tells us anything about the result of
+another trial.</p></li>
+<li><p><strong>N</strong>umber? The number of trials n of the chance process must be
+fixed in advance. (this was 5, then 100).</p></li>
+<li><p><strong>S</strong>ame? There is the same probability p of success on each trial
+(1/6).</p></li>
+</ol>
+</div>
+<div id="condition" class="section level4 hasAnchor" number="9.1.1.2">
+<h4><span class="header-section-number">9.1.1.2</span> 10% Condition<a href="random-variables.html#condition" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The second condition is often not perfectly met, as in the case of an
+SRS from some population. Imagine choosing 10 students from a class of
+15 females and 15 males—as we choose people, the remaining population
+changes, which changes the probability that the next person chosen will
+be male or female.</p>
+<p>When we lack complete independence, we can see the consequence of this
+is negligible as long as our sample is small relative to the population
+from which we are sampling. If we were choosing our 10 people from a
+school of 3,300 students, the change in probability from person to
+person would be small enough to ignore.</p>
+<p>The general rule is that the sample needs to be less than
+<span class="math inline">\(\frac{1}{10}\)</span>, or 10%, of the population. We refer to this as the 10%
+condition.</p>
+<p><span class="math display">\[n \leq (.10) N\]</span></p>
+</div>
+<div id="normal-approximation-to-the-binomial-distribution" class="section level4 hasAnchor" number="9.1.1.3">
+<h4><span class="header-section-number">9.1.1.3</span> Normal Approximation to the Binomial Distribution<a href="random-variables.html#normal-approximation-to-the-binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Remember that as <span class="math inline">\(n\)</span> gets large, a binomial random variable <span class="math inline">\(X\)</span> can take
+on more and more different values, and it can become tedious to continue
+to treat X as a discrete random variable. As <span class="math inline">\(n\)</span> get larger, we can
+treat <span class="math inline">\(X\)</span> as a continuous random variable, more specifically:</p>
+<p>As <span class="math inline">\(n\)</span> gets larger, the binomial distribution gets closer to a normal
+distribution. However, before we use a normal distribution to
+approximate a binomial distribution, we have to check the following
+condition:</p>
+<div id="large-counts-condition" class="section level5 hasAnchor" number="9.1.1.3.1">
+<h5><span class="header-section-number">9.1.1.3.1</span> Large Counts condition<a href="random-variables.html#large-counts-condition" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>If <span class="math inline">\(np \geq 10\)</span> and <span class="math inline">\(n(1-p) \geq 10\)</span>, then we can use a Normal
+distribution to model a binomial distribution. In other words, if the
+expected number of successes and failures (respectively) is greater than
+or equal to 10.</p>
+</div>
+<div id="doing-a-normal-approximation" class="section level5 hasAnchor" number="9.1.1.3.2">
+<h5><span class="header-section-number">9.1.1.3.2</span> Doing a normal approximation<a href="random-variables.html#doing-a-normal-approximation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>First verify all the conditions for a Binomial setting and the Large
+Counts Condition. Since we know that we have a binomial setting, we then
+know the distribution that we want to use is <span class="math inline">\(Normal(np, \sqrt{npq})\)</span> proceed with the calculations according to this distribution.</p>
+</div>
+</div>
+</div>
+<div id="geometric-random-variables" class="section level3 hasAnchor" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Geometric Random Variables<a href="random-variables.html#geometric-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If <span class="math inline">\(X \sim G(p)\)</span>, in other words, if <span class="math inline">\(X\)</span> has a geometric distribution
+with parameter <span class="math inline">\(p\)</span>, the pdf of a geometric random variable is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X=x) &amp;= (1-p)^{x-1}p\\
+    \text{where } x &amp;= 1, 2, 3, \cdots
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometpdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{geometpdf(p, x)}\)</span></p>
+<p>The cdf of a Geometric Variable is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X\leq x) &amp;= \sum_{i=1}^x(1-p)^{i-1}p
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometcdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{geometcdf(p, x)}\)</span></p>
+<p>The mean and standard deviation of a geometric random variable is given
+by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \mu_X &amp;= \frac{1}{p} \\
+    \sigma_X &amp;= \frac{\sqrt{q}}{p} \\
+    &amp;\text{, where } q = 1-p.
+\end{aligned}
+\]</span></p>
+<div id="the-geometric-setting" class="section level4 hasAnchor" number="9.1.2.1">
+<h4><span class="header-section-number">9.1.2.1</span> The Geometric Setting<a href="random-variables.html#the-geometric-setting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A geometric setting is very similar to a binomial setting, except that
+.</p>
+<p>A geometric setting is defined as a series of observations where these 4
+conditions are met:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>B</strong>inary? The Possible outcomes of each trial can be classified as
+“success” or “failure”</p></li>
+<li><p><strong>I</strong>ndependent? Trials must be independent, that is, knowing the
+result of one trial must not have any effect on the result of any
+other trial.</p></li>
+<li><p><strong>T</strong>rials? The goal is to count the number of trials until the
+first success occurs.</p></li>
+<li><p><strong>S</strong>uccess? On each trial, the probability p of success must be the
+same.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="operations-with-random-variables" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Operations with Random Variables<a href="random-variables.html#operations-with-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="constants" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Constants<a href="random-variables.html#constants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we add a constant <span class="math inline">\(a\)</span> and/or multiply by a constant <span class="math inline">\(b\)</span> to a random
+variable <span class="math inline">\(X\)</span>, we perform a linear transformation of the form</p>
+<p><span class="math display">\[
+a + bX
+\]</span></p>
+<p>The mean of the transformed variable is:</p>
+<p><span class="math display">\[
+\mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
+\]</span></p>
+<p>The standard deviation of the transformed variable is:</p>
+<p><span class="math display">\[
+\sigma_{a+bX}=\sigma_{bX}=b\sigma_X
+\]</span></p>
+</div>
+<div id="random-variables-1" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Random Variables<a href="random-variables.html#random-variables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In general, we can describe the mean and standard deviation of the sum
+or difference of independent random variables with these formulas:</p>
+<p><span class="math display">\[\mu_{X \pm Y} = \mu_X \pm \mu_Y\]</span></p>
+<p><strong>If the random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent</strong>, then</p>
+<p><span class="math display">\[ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \]</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="density-curves.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sampling-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-random-variables.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

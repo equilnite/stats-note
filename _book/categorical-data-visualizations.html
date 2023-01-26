@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Categorical Data Visualizations | AP Statistics Notes</title>
+  <meta name="description" content="This is book-style notes for AP Statistics" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Categorical Data Visualizations | AP Statistics Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is book-style notes for AP Statistics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Categorical Data Visualizations | AP Statistics Notes" />
+  
+  <meta name="twitter:description" content="This is book-style notes for AP Statistics" />
+  
+
+<meta name="author" content="Mr. Chang edwardchang@berkeley.net" />
+
+
+<meta name="date" content="2023-01-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-notation.html"/>
+<link rel="next" href="quantative-data-visualizations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AP Statistics Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="basic-notation.html"><a href="basic-notation.html"><i class="fa fa-check"></i><b>2</b> Basic notation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basic-notation.html"><a href="basic-notation.html#lists"><i class="fa fa-check"></i><b>2.1</b> Lists</a></li>
+<li class="chapter" data-level="2.2" data-path="basic-notation.html"><a href="basic-notation.html#n"><i class="fa fa-check"></i><b>2.2</b> <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="2.3" data-path="basic-notation.html"><a href="basic-notation.html#summation-sigma"><i class="fa fa-check"></i><b>2.3</b> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
+<li class="chapter" data-level="2.4" data-path="basic-notation.html"><a href="basic-notation.html#other-notation"><i class="fa fa-check"></i><b>2.4</b> Other notation</a></li>
+<li class="chapter" data-level="2.5" data-path="basic-notation.html"><a href="basic-notation.html#other-commonly-used-symbols"><i class="fa fa-check"></i><b>2.5</b> Other commonly used symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html"><i class="fa fa-check"></i><b>3</b> Categorical Data Visualizations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#bar-plots"><i class="fa fa-check"></i><b>3.1</b> Bar plots</a></li>
+<li class="chapter" data-level="3.2" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#stacked-bar-plots-and-side-by-side-bar-graphs"><i class="fa fa-check"></i><b>3.2</b> Stacked Bar Plots and Side-by-Side Bar Graphs</a></li>
+<li class="chapter" data-level="3.3" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#mosaic-plots"><i class="fa fa-check"></i><b>3.3</b> Mosaic Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html"><i class="fa fa-check"></i><b>4</b> Quantative Data Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#dot-plots"><i class="fa fa-check"></i><b>4.1</b> Dot Plots</a></li>
+<li class="chapter" data-level="4.2" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#stemplots"><i class="fa fa-check"></i><b>4.2</b> Stemplots</a></li>
+<li class="chapter" data-level="4.3" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#boxplots"><i class="fa fa-check"></i><b>4.3</b> Boxplots</a></li>
+<li class="chapter" data-level="4.4" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#histograms"><i class="fa fa-check"></i><b>4.4</b> Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>5</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sampling.html"><a href="sampling.html#bias"><i class="fa fa-check"></i><b>5.1</b> Bias</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="sampling.html"><a href="sampling.html#response-bias"><i class="fa fa-check"></i><b>5.1.1</b> Response Bias</a></li>
+<li class="chapter" data-level="5.1.2" data-path="sampling.html"><a href="sampling.html#non-response-bias"><i class="fa fa-check"></i><b>5.1.2</b> Non-response Bias</a></li>
+<li class="chapter" data-level="5.1.3" data-path="sampling.html"><a href="sampling.html#voluntary-bias"><i class="fa fa-check"></i><b>5.1.3</b> Voluntary Bias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i><b>6</b> Experimental Design</a></li>
+<li class="chapter" data-level="7" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>7</b> Probability</a></li>
+<li class="chapter" data-level="8" data-path="density-curves.html"><a href="density-curves.html"><i class="fa fa-check"></i><b>8</b> Density Curves</a></li>
+<li class="chapter" data-level="9" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>9</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="random-variables.html"><a href="random-variables.html#discrete-random-variables"><i class="fa fa-check"></i><b>9.1</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="random-variables.html"><a href="random-variables.html#binomial-random-variables"><i class="fa fa-check"></i><b>9.1.1</b> Binomial Random Variables</a></li>
+<li class="chapter" data-level="9.1.2" data-path="random-variables.html"><a href="random-variables.html#geometric-random-variables"><i class="fa fa-check"></i><b>9.1.2</b> Geometric Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="random-variables.html"><a href="random-variables.html#operations-with-random-variables"><i class="fa fa-check"></i><b>9.2</b> Operations with Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="random-variables.html"><a href="random-variables.html#constants"><i class="fa fa-check"></i><b>9.2.1</b> Constants</a></li>
+<li class="chapter" data-level="9.2.2" data-path="random-variables.html"><a href="random-variables.html#random-variables-1"><i class="fa fa-check"></i><b>9.2.2</b> Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>10</b> Sampling distributions</a></li>
+<li class="chapter" data-level="11" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="12" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>12</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="13" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>13</b> Linear Regression</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AP Statistics Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="categorical-data-visualizations" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Categorical Data Visualizations<a href="categorical-data-visualizations.html#categorical-data-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bar-plots" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Bar plots<a href="categorical-data-visualizations.html#bar-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Represent the number or proportion of each unique value. These numbers
+or proportions are represented with rectangular bars with heights
+proportional to the values that they represent. You can plot these
+vertically or horizontally (i.e. categories on the x-axis or categories
+on the y-axis)</p>
+<p>Following data from this table:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]}],"data":[{"1":"setosa"},{"1":"setosa"},{"1":"virginica"},{"1":"setosa"},{"1":"virginica"},{"1":"virginica"},{"1":"versicolor"},{"1":"versicolor"},{"1":"virginica"},{"1":"versicolor"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<ol style="list-style-type: decimal">
+<li>Count up the number of values per category (make a frequency table).
+Note: This table is missing the total</li>
+</ol>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["iris_cat_tab"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"setosa","2":"3"},{"1":"versicolor","2":"3"},{"1":"virginica","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Plot the frequencies with them as the height of the bars</li>
+</ol>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>If needed (if you need proportions for the y-axis instead, calculate the
+relative frequency table for the frequency table first). Note: again,
+this one is missing the total</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["iris_cat_tab"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"setosa","2":"0.3"},{"1":"versicolor","2":"0.3"},{"1":"virginica","2":"0.4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="stacked-bar-plots-and-side-by-side-bar-graphs" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Stacked Bar Plots and Side-by-Side Bar Graphs<a href="categorical-data-visualizations.html#stacked-bar-plots-and-side-by-side-bar-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Stacked bar plots show two categorical variables, one on the
+x-axis/y-axis, and the other as the legend (colours). We will call the
+variable on the x-axis as the “groups” and the variable on the legend as
+the “categories.”</p>
+<p>When constructing these bar plots, we first want to determine which
+variable goes where (your choice or given choice to you). Then you
+calculate relative frequencies <em>per group</em></p>
+<p>For example, here I have a two-way table detailing the hair and eye
+colour of some statistics students</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"68"},{"1":"Brown","2":"Brown","3":"119"},{"1":"Red","2":"Brown","3":"26"},{"1":"Blond","2":"Brown","3":"7"},{"1":"Black","2":"Blue","3":"20"},{"1":"Brown","2":"Blue","3":"84"},{"1":"Red","2":"Blue","3":"17"},{"1":"Blond","2":"Blue","3":"94"},{"1":"Black","2":"Hazel","3":"15"},{"1":"Brown","2":"Hazel","3":"54"},{"1":"Red","2":"Hazel","3":"14"},{"1":"Blond","2":"Hazel","3":"10"},{"1":"Black","2":"Green","3":"5"},{"1":"Brown","2":"Green","3":"29"},{"1":"Red","2":"Green","3":"14"},{"1":"Blond","2":"Green","3":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>So if I want eye colour to be my groups, I would calculate the relative
+frequencies by column (use the total of the column and divide the whole
+column by it), so each group/column will add up to 1.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"0.30909091"},{"1":"Brown","2":"Brown","3":"0.54090909"},{"1":"Red","2":"Brown","3":"0.11818182"},{"1":"Blond","2":"Brown","3":"0.03181818"},{"1":"Black","2":"Blue","3":"0.09302326"},{"1":"Brown","2":"Blue","3":"0.39069767"},{"1":"Red","2":"Blue","3":"0.07906977"},{"1":"Blond","2":"Blue","3":"0.43720930"},{"1":"Black","2":"Hazel","3":"0.16129032"},{"1":"Brown","2":"Hazel","3":"0.58064516"},{"1":"Red","2":"Hazel","3":"0.15053763"},{"1":"Blond","2":"Hazel","3":"0.10752688"},{"1":"Black","2":"Green","3":"0.07812500"},{"1":"Brown","2":"Green","3":"0.45312500"},{"1":"Red","2":"Green","3":"0.21875000"},{"1":"Blond","2":"Green","3":"0.25000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>These numbers will be my bar heights. So for the bar(s) representing
+brown eyes:</p>
+<ul>
+<li><p>black hair will be .3091</p></li>
+<li><p>brown hair will be .5409</p></li>
+<li><p>red hair will be 0.1182</p></li>
+<li><p>blond hair will be 0.0318</p></li>
+</ul>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Here’s the corresponding side-by-side bar plot. Note that the heights of
+the bars are the same as the segmented bar graph.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>On the other hand, if I want my eye colour to be my groups, I would
+calculate the relative frequencies by row (use the total of the row and
+divide the whole row by it), so each group/row will add up to 1.</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"0.62962963"},{"1":"Brown","2":"Brown","3":"0.41608392"},{"1":"Red","2":"Brown","3":"0.36619718"},{"1":"Blond","2":"Brown","3":"0.05511811"},{"1":"Black","2":"Blue","3":"0.18518519"},{"1":"Brown","2":"Blue","3":"0.29370629"},{"1":"Red","2":"Blue","3":"0.23943662"},{"1":"Blond","2":"Blue","3":"0.74015748"},{"1":"Black","2":"Hazel","3":"0.13888889"},{"1":"Brown","2":"Hazel","3":"0.18881119"},{"1":"Red","2":"Hazel","3":"0.19718310"},{"1":"Blond","2":"Hazel","3":"0.07874016"},{"1":"Black","2":"Green","3":"0.04629630"},{"1":"Brown","2":"Green","3":"0.10139860"},{"1":"Red","2":"Green","3":"0.19718310"},{"1":"Blond","2":"Green","3":"0.12598425"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>These numbers will be my bar heights. So for the bar(s) representing
+black hair:</p>
+<ul>
+<li><p>brown eyes will be 0.6296296</p></li>
+<li><p>blue eyes will be 0.1851852</p></li>
+<li><p>hazel eyes will be 0.1388889</p></li>
+<li><p>green eyes will be 0.0462963</p></li>
+</ul>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="mosaic-plots" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Mosaic Plots<a href="categorical-data-visualizations.html#mosaic-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mosaic plots are the almost the same as stacked bar plots. The only
+difference is that the widths of the bars change according to the
+proportion of points in each group. In a mosaic plot, the x-axis will
+also measure the proportion of observations/data points within the
+groupings (i.e. the x-axis reflects the marginal distribution of the
+variable on the x-axis).</p>
+<p>Following the <a href="#stacked-bar-plots-and-side-by-side-bar-plots">same
+steps</a> as the
+side-by-side and stacked bar charts to find the heights, we now add an
+additional step before plotting.</p>
+<p><em>Find the widths of the bars by finding the marginal distriubtion of the
+variable on the x-axis (the groups)</em></p>
+<ol style="list-style-type: decimal">
+<li>For each group, find the probability of having that trait. So for
+our previous example, we had this table:</li>
+</ol>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"68"},{"1":"Brown","2":"Brown","3":"119"},{"1":"Red","2":"Brown","3":"26"},{"1":"Blond","2":"Brown","3":"7"},{"1":"Black","2":"Blue","3":"20"},{"1":"Brown","2":"Blue","3":"84"},{"1":"Red","2":"Blue","3":"17"},{"1":"Blond","2":"Blue","3":"94"},{"1":"Black","2":"Hazel","3":"15"},{"1":"Brown","2":"Hazel","3":"54"},{"1":"Red","2":"Hazel","3":"14"},{"1":"Blond","2":"Hazel","3":"10"},{"1":"Black","2":"Green","3":"5"},{"1":"Brown","2":"Green","3":"29"},{"1":"Red","2":"Green","3":"14"},{"1":"Blond","2":"Green","3":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Using our eye colours as the groups (vertical bars), we will find:</p>
+<ul>
+<li><p><span class="math inline">\(P(Brown) \approx .3716\)</span></p></li>
+<li><p><span class="math inline">\(P(Blue) \approx .3632\)</span></p></li>
+<li><p><span class="math inline">\(P(Hazel) \approx .1571\)</span></p></li>
+<li><p><span class="math inline">\(P(Green) \approx .1081\)</span></p></li>
+</ul>
+<p>When we plot our mosaic plot, we do the same thing, except now, we have
+our bars differ in widths according to the numbers that we just
+calculated.</p>
+<!-- ![Mosaic Plot of Hair Colour on Eye Colour](moplotex.png) -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-notation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quantative-data-visualizations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-cat-vis.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

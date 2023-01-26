@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Quantative Data Visualizations | AP Statistics Notes</title>
+  <meta name="description" content="This is book-style notes for AP Statistics" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Quantative Data Visualizations | AP Statistics Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is book-style notes for AP Statistics" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Quantative Data Visualizations | AP Statistics Notes" />
+  
+  <meta name="twitter:description" content="This is book-style notes for AP Statistics" />
+  
+
+<meta name="author" content="Mr. Chang edwardchang@berkeley.net" />
+
+
+<meta name="date" content="2023-01-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="categorical-data-visualizations.html"/>
+<link rel="next" href="sampling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AP Statistics Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="basic-notation.html"><a href="basic-notation.html"><i class="fa fa-check"></i><b>2</b> Basic notation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basic-notation.html"><a href="basic-notation.html#lists"><i class="fa fa-check"></i><b>2.1</b> Lists</a></li>
+<li class="chapter" data-level="2.2" data-path="basic-notation.html"><a href="basic-notation.html#n"><i class="fa fa-check"></i><b>2.2</b> <span class="math inline">\(n\)</span></a></li>
+<li class="chapter" data-level="2.3" data-path="basic-notation.html"><a href="basic-notation.html#summation-sigma"><i class="fa fa-check"></i><b>2.3</b> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
+<li class="chapter" data-level="2.4" data-path="basic-notation.html"><a href="basic-notation.html#other-notation"><i class="fa fa-check"></i><b>2.4</b> Other notation</a></li>
+<li class="chapter" data-level="2.5" data-path="basic-notation.html"><a href="basic-notation.html#other-commonly-used-symbols"><i class="fa fa-check"></i><b>2.5</b> Other commonly used symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html"><i class="fa fa-check"></i><b>3</b> Categorical Data Visualizations</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#bar-plots"><i class="fa fa-check"></i><b>3.1</b> Bar plots</a></li>
+<li class="chapter" data-level="3.2" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#stacked-bar-plots-and-side-by-side-bar-graphs"><i class="fa fa-check"></i><b>3.2</b> Stacked Bar Plots and Side-by-Side Bar Graphs</a></li>
+<li class="chapter" data-level="3.3" data-path="categorical-data-visualizations.html"><a href="categorical-data-visualizations.html#mosaic-plots"><i class="fa fa-check"></i><b>3.3</b> Mosaic Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html"><i class="fa fa-check"></i><b>4</b> Quantative Data Visualizations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#dot-plots"><i class="fa fa-check"></i><b>4.1</b> Dot Plots</a></li>
+<li class="chapter" data-level="4.2" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#stemplots"><i class="fa fa-check"></i><b>4.2</b> Stemplots</a></li>
+<li class="chapter" data-level="4.3" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#boxplots"><i class="fa fa-check"></i><b>4.3</b> Boxplots</a></li>
+<li class="chapter" data-level="4.4" data-path="quantative-data-visualizations.html"><a href="quantative-data-visualizations.html#histograms"><i class="fa fa-check"></i><b>4.4</b> Histograms</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>5</b> Sampling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sampling.html"><a href="sampling.html#bias"><i class="fa fa-check"></i><b>5.1</b> Bias</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="sampling.html"><a href="sampling.html#response-bias"><i class="fa fa-check"></i><b>5.1.1</b> Response Bias</a></li>
+<li class="chapter" data-level="5.1.2" data-path="sampling.html"><a href="sampling.html#non-response-bias"><i class="fa fa-check"></i><b>5.1.2</b> Non-response Bias</a></li>
+<li class="chapter" data-level="5.1.3" data-path="sampling.html"><a href="sampling.html#voluntary-bias"><i class="fa fa-check"></i><b>5.1.3</b> Voluntary Bias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i><b>6</b> Experimental Design</a></li>
+<li class="chapter" data-level="7" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>7</b> Probability</a></li>
+<li class="chapter" data-level="8" data-path="density-curves.html"><a href="density-curves.html"><i class="fa fa-check"></i><b>8</b> Density Curves</a></li>
+<li class="chapter" data-level="9" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>9</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="random-variables.html"><a href="random-variables.html#discrete-random-variables"><i class="fa fa-check"></i><b>9.1</b> Discrete Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="random-variables.html"><a href="random-variables.html#binomial-random-variables"><i class="fa fa-check"></i><b>9.1.1</b> Binomial Random Variables</a></li>
+<li class="chapter" data-level="9.1.2" data-path="random-variables.html"><a href="random-variables.html#geometric-random-variables"><i class="fa fa-check"></i><b>9.1.2</b> Geometric Random Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="random-variables.html"><a href="random-variables.html#operations-with-random-variables"><i class="fa fa-check"></i><b>9.2</b> Operations with Random Variables</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="random-variables.html"><a href="random-variables.html#constants"><i class="fa fa-check"></i><b>9.2.1</b> Constants</a></li>
+<li class="chapter" data-level="9.2.2" data-path="random-variables.html"><a href="random-variables.html#random-variables-1"><i class="fa fa-check"></i><b>9.2.2</b> Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>10</b> Sampling distributions</a></li>
+<li class="chapter" data-level="11" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="12" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>12</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="13" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>13</b> Linear Regression</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AP Statistics Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="quantative-data-visualizations" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Quantative Data Visualizations<a href="quantative-data-visualizations.html#quantative-data-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="dot-plots" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Dot Plots<a href="quantative-data-visualizations.html#dot-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dot plots are for discrete quantitative variables only, and they are
+only useful in situations when you have a small range of number so that
+you can actually see how the data distribution varies across values.</p>
+<p>Dot plots are simple, you draw a number line and then plot points above
+the number for each of the number that you see in the data.</p>
+<p>Take this data for example:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Number.of.Holligans.in.the.Hallway"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"4"},{"1":"5"},{"1":"8"},{"1":"5"},{"1":"5"},{"1":"8"},{"1":"6"},{"1":"2"},{"1":"4"},{"1":"4"},{"1":"7"},{"1":"6"},{"1":"6"},{"1":"5"},{"1":"4"},{"1":"9"},{"1":"6"},{"1":"1"},{"1":"6"},{"1":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Now count up each value to figure out how many dots you need at each
+value on the number line then plot your graph</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["X"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"1"},{"1":"2","2":"1"},{"1":"4","2":"5"},{"1":"5","2":"4"},{"1":"6","2":"5"},{"1":"7","2":"1"},{"1":"8","2":"2"},{"1":"9","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="stemplots" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Stemplots<a href="quantative-data-visualizations.html#stemplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using this data as an example, a stem plot looks like this:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"36"},{"1":"44"},{"1":"89"},{"1":"52"},{"1":"53"},{"1":"93"},{"1":"62"},{"1":"18"},{"1":"33"},{"1":"39"},{"1":"81"},{"1":"59"},{"1":"60"},{"1":"53"},{"1":"36"},{"1":"95"},{"1":"62"},{"1":"1"},{"1":"68"},{"1":"38"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>A stem plot looks like this:</p>
+<pre><code>## 1 | 2: represents 12
+##  leaf unit: 1
+##             n: 20
+##     0 | 1
+##     1 | 8
+##     2 | 
+##     3 | 36689
+##     4 | 4
+##     5 | 2339
+##     6 | 0228
+##     7 | 
+##     8 | 19
+##     9 | 35</code></pre>
+<p>In a stem plot, you need to determine a common “stem” of all the numbers
+that you’re plotting. So if you have integer numbers from 10 to 200,
+your stems will be everything from the tens and so on, so you’ll have
+stems from 1-20. Once you take the stems, you just write the “leaves”
+next to the stem that they belong.</p>
+<p>Note that you also have to add a key to show what a stem + leaf means.
+The stem and leaves give no information on the decimals in the data, so
+as you see above, you need to give an example like (as shown in the
+example stemplot):</p>
+<p>Key: 1|2 = 12</p>
+<p>Here’s another example (sorted for convenience)</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"3.9"},{"1":"4.8"},{"1":"4.0"},{"1":"4.3"},{"1":"4.4"},{"1":"3.3"},{"1":"5.8"},{"1":"5.2"},{"1":"3.9"},{"1":"6.3"},{"1":"5.4"},{"1":"4.7"},{"1":"5.9"},{"1":"5.9"},{"1":"5.8"},{"1":"5.7"},{"1":"5.6"},{"1":"4.9"},{"1":"4.7"},{"1":"4.6"},{"1":"4.3"},{"1":"4.8"},{"1":"3.7"},{"1":"7.2"},{"1":"6.2"},{"1":"3.9"},{"1":"4.6"},{"1":"4.5"},{"1":"5.8"},{"1":"4.9"},{"1":"5.3"},{"1":"5.0"},{"1":"5.0"},{"1":"6.4"},{"1":"4.8"},{"1":"6.5"},{"1":"3.5"},{"1":"5.6"},{"1":"5.1"},{"1":"5.2"},{"1":"5.4"},{"1":"4.5"},{"1":"4.7"},{"1":"4.0"},{"1":"3.9"},{"1":"5.3"},{"1":"5.4"},{"1":"5.1"},{"1":"5.9"},{"1":"7.1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre><code>## 1 | 2: represents 1.2
+##  leaf unit: 0.1
+##             n: 50
+##    3 | 3
+##    3 | 579999
+##    4 | 00334
+##    4 | 556677788899
+##    5 | 00112233444
+##    5 | 667888999
+##    6 | 234
+##    6 | 5
+##    7 | 12</code></pre>
+</div>
+<div id="boxplots" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Boxplots<a href="quantative-data-visualizations.html#boxplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Also known as a box-and-whisker plot</em></p>
+<p>Boxplots are primarily made of the <strong>five number summary</strong> of the data.
+The five number summary is made up of the:</p>
+<ul>
+<li><p>Minimum (min)</p></li>
+<li><p>First Quartile (<span class="math inline">\(Q_1\)</span>)</p></li>
+<li><p>Median</p></li>
+<li><p>Third Quartile (<span class="math inline">\(Q_3\)</span>)</p></li>
+<li><p>Maximum (max)</p></li>
+</ul>
+<p>To make a simple boxplot, you use the first quartile, median, and third
+quartile to make the “box” and then use the minimum and maximum to make
+the “whiskers.”</p>
+<p>For this simple list of numbers:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"1"},{"1":"2"},{"1":"3"},{"1":"4"},{"1":"5"},{"1":"6"},{"1":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Our five number summary is:</p>
+<pre><code>##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+##       1       2       4       6       7</code></pre>
+<p>As detailed above, our box plot then looks like:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>The last detail is that we can calculate outliers using the 1.5 IQR rule
+and show them on the boxplot. For either direction (left or right), if
+we see outliers in that direction, we only extend the whisker to the
+smallest and/or largest point that is not an outlier. Then we plot any
+outliers as individual points.</p>
+<p>Look at this example data:</p>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"12"},{"1":"6"},{"1":"5"},{"1":"5"},{"1":"3"},{"1":"3"},{"1":"2"},{"1":"2"},{"1":"1"},{"1":"1"},{"1":"0"},{"1":"0"},{"1":"-1"},{"1":"-1"},{"1":"-2"},{"1":"-2"},{"1":"-2"},{"1":"-2"},{"1":"-2"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-4"},{"1":"-4"},{"1":"-4"},{"1":"-4"},{"1":"-5"},{"1":"-5"},{"1":"-5"},{"1":"-5"},{"1":"-6"},{"1":"-6"},{"1":"-7"},{"1":"-7"},{"1":"-8"},{"1":"-11"},{"1":"-12"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Five number summary:</p>
+<pre><code>##    Min. 1st Qu.  Median 3rd Qu.    Max. 
+##     -12      -5      -3       0      12</code></pre>
+<p>Our numbers calculated by the 1.5 IQR rule are:</p>
+<pre><code>## [1] -12.5   7.5</code></pre>
+<p>So our 12 is an outlier. which means we draw our right whisker to 6 and
+plot the 12 individually on the number line. Like so:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+<div id="histograms" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Histograms<a href="quantative-data-visualizations.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A histogram is similar to a <a href="categorical-data-visualizations.html#bar-plots">bar plot</a>, except that
+histograms are made for quantitative data and <em>bars are continuous</em> in
+the sense that there is no gap between bars. To make a histogram, select
+an appropriate equal intervals that make it so that you don’t have too
+many bars and that you don’t have too few bars. Your goal with
+histograms, as with many other visualizations, is to be able to see the
+shape and characteristics of the distribution in question. If you have
+too many bars or too few bars, you won’t be able to see much important
+information (especially think of situations when you have many data
+points with very precise decimal measurements).</p>
+<ol style="list-style-type: decimal">
+<li><p>Decide on your intervals (e.g. by 5’s, by 10’s, by 100’s)</p></li>
+<li><p>Within your intervals, count up the number of observations that
+belong in that “bin”. When you do so, count up observations so that
+you count the left end inclusive and the right end inclusive. So if
+you did intervals of 5, you would do something like counting up
+points <span class="math inline">\(0 \leq x &lt; 5\)</span>, <span class="math inline">\(5 \leq x &lt; 10\)</span>, and so on.</p></li>
+<li><p>Plot your bars.</p></li>
+</ol>
+<p>Example:</p>
+<p>Consider this example data set:</p>
+<p>Our data has this set of summary statistics:</p>
+<pre><code>##        x        
+##  Min.   :1.522  
+##  1st Qu.:1.912  
+##  Median :2.022  
+##  Mean   :2.110  
+##  3rd Qu.:2.224  
+##  Max.   :2.704</code></pre>
+<p>With this knowledge, let’s make our 7 “bins”, so let’s do these by every
+0.2, starting at 1.5 to 2.9. This will be something that you build by
+intuition.</p>
+<p>Now, count up our values:</p>
+<pre><code>## [1.5,1.7) [1.7,1.9) [1.9,2.1) [2.1,2.3) [2.3,2.5) [2.5,2.7) [2.7,2.9] 
+##         1         4         6         5         1         2         1</code></pre>
+<p>Now, we just put it together. For each bin, we have a bar and the bars’
+heights correspond to the number of individuals in each bin.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Again, just like bar graphs, we can instead do the relative frequencies
+(this is what you’ll see most of the time!!!)</p>
+<pre><code>## [1.5,1.7) [1.7,1.9) [1.9,2.1) [2.1,2.3) [2.3,2.5) [2.5,2.7) [2.7,2.9] 
+##      0.05      0.20      0.30      0.25      0.05      0.10      0.05</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>When you have a histogram like this, keep in mind that the bars always
+add up to 1 (or 100%).</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="categorical-data-visualizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sampling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-quant-vis.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
