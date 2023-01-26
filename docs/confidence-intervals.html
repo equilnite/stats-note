@@ -122,9 +122,32 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="sampling-distributions.html"><a href="sampling-distributions.html"><i class="fa fa-check"></i><b>10</b> Sampling distributions</a></li>
-<li class="chapter" data-level="11" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a></li>
+<li class="chapter" data-level="11" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="confidence-intervals.html"><a href="confidence-intervals.html#interpreting-confidence-intervals"><i class="fa fa-check"></i><b>11.1</b> Interpreting Confidence Intervals</a></li>
+<li class="chapter" data-level="11.2" data-path="confidence-intervals.html"><a href="confidence-intervals.html#interpreting-confidence-level"><i class="fa fa-check"></i><b>11.2</b> Interpreting Confidence Level</a></li>
+<li class="chapter" data-level="11.3" data-path="confidence-intervals.html"><a href="confidence-intervals.html#changing-confidence-levels"><i class="fa fa-check"></i><b>11.3</b> Changing Confidence Levels</a></li>
+<li class="chapter" data-level="11.4" data-path="confidence-intervals.html"><a href="confidence-intervals.html#conditions-for-confidence-intervals"><i class="fa fa-check"></i><b>11.4</b> Conditions for Confidence Intervals</a></li>
+<li class="chapter" data-level="11.5" data-path="confidence-intervals.html"><a href="confidence-intervals.html#one-sample-z-intervals"><i class="fa fa-check"></i><b>11.5</b> One-Sample z-Intervals</a></li>
+<li class="chapter" data-level="11.6" data-path="confidence-intervals.html"><a href="confidence-intervals.html#one-sample-t-intervals"><i class="fa fa-check"></i><b>11.6</b> One-Sample t-Intervals</a></li>
+<li class="chapter" data-level="11.7" data-path="confidence-intervals.html"><a href="confidence-intervals.html#the-four-step-process"><i class="fa fa-check"></i><b>11.7</b> The Four-Step Process</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>12</b> Hypothesis Testing</a></li>
 <li class="chapter" data-level="13" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>13</b> Linear Regression</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html"><i class="fa fa-check"></i><b>A</b> AP Exam Formula Sheet</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#i.-descriptive-statistics"><i class="fa fa-check"></i><b>A.1</b> I. Descriptive Statistics</a></li>
+<li class="chapter" data-level="A.2" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#ii.-probability-and-distributions"><i class="fa fa-check"></i><b>A.2</b> II. Probability and Distributions</a></li>
+<li class="chapter" data-level="A.3" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#iii.-sampling-distributions-and-inferential-statistics"><i class="fa fa-check"></i><b>A.3</b> III. Sampling Distributions and Inferential Statistics</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#sampling-distributions-for-proportions"><i class="fa fa-check"></i><b>A.3.1</b> Sampling distributions for proportions:</a></li>
+<li class="chapter" data-level="A.3.2" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#sampling-distributions-for-means"><i class="fa fa-check"></i><b>A.3.2</b> Sampling distributions for means:</a></li>
+<li class="chapter" data-level="A.3.3" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#sampling-distributions-for-simple-linear-regression"><i class="fa fa-check"></i><b>A.3.3</b> Sampling distributions for simple linear regression:</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#table-a-standard-normal-probabilities"><i class="fa fa-check"></i><b>A.4</b> Table A Standard normal probabilities</a></li>
+<li class="chapter" data-level="A.5" data-path="ap-exam-formula-sheet.html"><a href="ap-exam-formula-sheet.html#table-b-t-distribution-critical-values"><i class="fa fa-check"></i><b>A.5</b> Table B <span class="math inline">\(t\)</span> distribution critical values</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -147,7 +170,91 @@
             <section class="normal" id="section-">
 <div id="confidence-intervals" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">11</span> Confidence Intervals<a href="confidence-intervals.html#confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter. The interval is calculated from the data and has the form</p>
+<p><span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
+<p>Margin of errors are calculated from the confidence level and the data and has the form</p>
+<p><span class="math display">\[ME = m = \text{critical value} \cdot \text{standard error of the statistic}\]</span></p>
+<p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in C% of samples.</p>
+<div id="interpreting-confidence-intervals" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Interpreting Confidence Intervals<a href="confidence-intervals.html#interpreting-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can say something of the form:</p>
+<p>I am [confidence level]% confident the interval from [lower bound] to [upper bound] captures the [true parameter in the context of the problem].</p>
+<p>You CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1</p>
+</div>
+<div id="interpreting-confidence-level" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Interpreting Confidence Level<a href="confidence-intervals.html#interpreting-confidence-level" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If we take many, many samples and create many, many intervals using the same method, about [confidence level]% of them will capture the [true parameter in the context of the problem].</p>
+<p>In other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”</p>
+</div>
+<div id="changing-confidence-levels" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Changing Confidence Levels<a href="confidence-intervals.html#changing-confidence-levels" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When we increase confidence level, we are saying that more intervals in this manner should capture the true parameter. This means that to increase confidence level means that the confidence intervals need to increase in width.</p>
+<p>When we increase the size of a sample, the precision of our statistic increases because of the reduction in sampling variability (standard deviation of the statistic decreases as n increases). This means that we can now guess/estimate a smaller range compared to if we had a smaller sample size. So, when we increase the size of our samples, our confidence intervals will have smaller widths compared to those with a smaller sample size.</p>
+</div>
+<div id="conditions-for-confidence-intervals" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Conditions for Confidence Intervals<a href="confidence-intervals.html#conditions-for-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-data-must-come-from-a-random-sample-or-random-assignment-in-an-experiment." class="section level3 unlisted unnumbered hasAnchor">
+<h3>1. The data must come from a random sample, or random assignment in an experiment.<a href="confidence-intervals.html#the-data-must-come-from-a-random-sample-or-random-assignment-in-an-experiment." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In order to infer about a larger population, we must have a random, unbiased sample from that population. If the sample is not random, we need to think about whether it’s at least unbiased and/or representative. If so, we may be able to treat it as a random sample, but we must state that we’re doing this. If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.</p>
+<p>In the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population. In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments). If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population. This depends on whether our subjects are a random sample from, or at least representative of, some larger population.</p>
+</div>
+<div id="the-sample-must-be-large-enough" class="section level3 unlisted unnumbered hasAnchor">
+<h3>2. The sample must be large enough<a href="confidence-intervals.html#the-sample-must-be-large-enough" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="proportions" class="section level4 unlisted unnumbered hasAnchor">
+<h4>Proportions<a href="confidence-intervals.html#proportions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the <em>Large Counts Condition</em>; that both of the following are true:</p>
+<p><span class="math inline">\(np ≥ 10\)</span> (expected # of successes is at least 10)</p>
+<p><span class="math inline">\(n(1-p) ≥ 10\)</span> (expected # of failures is at least 10)</p>
+<p>This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.</p>
+</div>
+<div id="sample-means" class="section level4 unlisted unnumbered hasAnchor">
+<h4>Sample means<a href="confidence-intervals.html#sample-means" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
+<p><em>Normal/Large Condition</em></p>
+<p>-The population from which we are sampling is approximately Normal.</p>
+<p>-Our sample size is sufficiently large (<span class="math inline">\(n &gt; 30\)</span>)</p>
+<p>When <span class="math inline">\(n&lt;30\)</span></p>
+<p>-Graph of the sample data does not show any strong skew or outliers.</p>
+</div>
+</div>
+<div id="observations-in-our-sample-must-be-independent" class="section level3 unlisted unnumbered hasAnchor">
+<h3>3. Observations in our sample must be independent<a href="confidence-intervals.html#observations-in-our-sample-must-be-independent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is at least 10 times as large as our sample (<em>i.e. the 10% Condition</em>) . This needs to be stated!</p>
+<p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; ”I’m going to have to assume I can treat these observations as independent”.</p>
+</div>
+</div>
+<div id="one-sample-z-intervals" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> One-Sample z-Intervals<a href="confidence-intervals.html#one-sample-z-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population proportion <span class="math inline">\(p\)</span> when all conditions are met is calculated with the following:</p>
+<p><span class="math display">\[\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
+<p>where <span class="math inline">\(z^*\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^*\)</span> and <span class="math inline">\(z^*\)</span> and the standard error of the sample proportion is <span class="math inline">\(SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}\)</span></p>
+</div>
+<div id="one-sample-t-intervals" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> One-Sample t-Intervals<a href="confidence-intervals.html#one-sample-t-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
+<p><span class="math display">\[\bar x \pm t^* \frac{s_x}{\sqrt{n}}\]</span></p>
+<p>where <span class="math inline">\(t^*\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span> and the standard error of the sample mean is <span class="math inline">\(SE_{\bar x}=\frac{s_x}{\sqrt{n}}\)</span>.</p>
+</div>
+<div id="the-four-step-process" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> The Four-Step Process<a href="confidence-intervals.html#the-four-step-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>STATE</strong> exactly what you’re doing</li>
+</ol>
+<p>Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest. If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here. For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95% confidence”</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>PLAN</strong> which method you will use and that the necessary conditions are met.</li>
+</ol>
+<p>If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>DO</strong> the calculations</li>
+</ol>
+<p>Perform the calculations necessary for the method you chose to use. Show all work!</p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>CONCLUDE</strong> in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).</li>
+</ol>
+<p>“I am 95% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42% and 51%. 95% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”</p>
 
+</div>
 </div>
             </section>
 

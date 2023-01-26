@@ -1,1 +1,107 @@
 # Confidence Intervals
+
+A **Confidence Interval** is an interval of plausible values for the population parameter and is used to estimate the parameter. The interval is calculated from the data and has the form 
+
+$$\text{point estimate} ± \text{margin of error}$$
+
+Margin of errors are calculated from the confidence level and the data and has the form
+
+$$ME = m = \text{critical value} \cdot \text{standard error of the statistic}$$
+
+The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in C% of samples. 
+
+## Interpreting Confidence Intervals
+
+You can say something of the form:
+
+I am [confidence level]% confident the interval from [lower bound] to [upper bound] captures the [true parameter in the context of the problem].
+
+You CANNOT say that "There is a 95% chance that this interval contains the population (proportion or mean)" because your single interval either did or did not capture the real value, and either has a probability of 0 or 1
+
+## Interpreting Confidence Level
+
+If we take many, many samples and create many, many intervals using the same method, about [confidence level]% of them will capture the [true parameter in the context of the problem].
+
+In other words, you can say that: "95% of intervals created in this manner will capture the true population (proportion or mean)"
+
+## Changing Confidence Levels
+
+When we increase confidence level, we are saying that more intervals in this manner should capture the true parameter. This means that to increase confidence level means that the confidence intervals need to increase in width.
+
+When we increase the size of a sample, the precision of our statistic increases because of the reduction in sampling variability (standard deviation of the statistic decreases as n increases). This means that we can now guess/estimate a smaller range compared to if we had a smaller sample size. So, when we increase the size of our samples, our confidence intervals will have smaller widths compared to those with a smaller sample size.
+
+## Conditions for Confidence Intervals
+
+### 1. The data must come from a random sample, or random assignment in an experiment. {.unlisted .unnumbered}
+
+In order to infer about a larger population, we must have a random, unbiased sample from that population.  If the sample is not random, we need to think about whether it’s at least unbiased and/or representative.  If so, we may be able to treat it as a random sample, but we must state that we’re doing this.  If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.
+ 
+In the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population.  In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments).  If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population.  This depends on whether our subjects are a random sample from, or at least representative of, some larger population.
+
+
+### 2. The sample must be large enough {.unlisted .unnumbered}
+
+#### Proportions {.unlisted .unnumbered}
+
+For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no).  In this case we check the *Large Counts Condition*; that both of the following are true:
+
+$np ≥ 10$   	(expected # of successes is at least 10)
+
+$n(1-p) ≥ 10$	(expected # of failures is at least 10)
+
+This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.  
+
+#### Sample means {.unlisted .unnumbered}
+
+In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met. 
+
+*Normal/Large Condition*
+
+-The population from which we are sampling is approximately Normal. 
+
+-Our sample size is sufficiently large ($n > 30$)
+
+When $n<30$
+
+-Graph of the sample data does not show any strong skew or outliers. 
+
+### 3.  Observations in our sample must be independent {.unlisted .unnumbered}
+
+In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is at least 10 times as large as our sample (*i.e. the 10% Condition*) .  This needs to be stated!
+
+In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation.  Often we don’t know this, so we need to state that we’re assuming it; ”I’m going to have to assume I can treat these observations as independent”.
+
+
+## One-Sample z-Intervals
+
+A $C$\% confidence interval for the unknown population proportion $p$ when all conditions are met is calculated with the following: 
+
+$$\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
+
+where $z^*$ is the critical value for the standard Normal curve with $C$\% of its area between $-z^*$ and $z^*$ and the standard error of the sample proportion is $SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}$
+
+## One-Sample t-Intervals
+
+A $C$\% confidence interval for the unknown population mean $\mu$ when all conditions are met is calculated with the following: 
+
+$$\bar x \pm t^* \frac{s_x}{\sqrt{n}}$$
+
+where $t^*$ is the critical value for the Student's $t$ distribution corresponding with degrees of freedom $df = n - 1$ with $C$\% of its area between $-t^*$ and $t^*$ and the standard error of the sample mean is $SE_{\bar x}=\frac{s_x}{\sqrt{n}}$.
+
+## The Four-Step Process
+
+1.  **STATE** exactly what you’re doing
+
+Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing.  You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.  If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here.  For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95\% confidence”
+
+2. **PLAN** which method you will use and that the necessary conditions are met. 
+
+If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.
+
+3. **DO** the calculations
+
+Perform the calculations necessary for the method you chose to use.  Show all work!
+
+4. **CONCLUDE** in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).
+
+“I am 95\% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42\% and 51\%.  95\% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”
