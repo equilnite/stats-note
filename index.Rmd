@@ -19,7 +19,7 @@ always_allow_html: true
 ---
 
 ```{r setup, echo = FALSE}
-knitr::opts_chunk$set(echo = FALSE, cache = TRUE, fig.height = 7)
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE, fig.height = 5, fig.path = "images/")
 ```
 
 ```{r, message = FALSE, warning = FALSE}
