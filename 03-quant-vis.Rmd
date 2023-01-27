@@ -13,7 +13,7 @@ Take this data for example:
 
 ```{r}
 set.seed(123)
-X <- data.frame(`Number of Holligans in the Hallway` = round(rnorm(20, 5, 2)))
+X <- data.frame(`Number of Students in the Hallway` = round(rnorm(20, 5, 2)))
 table_show(X)
 ```
 
@@ -22,7 +22,7 @@ value on the number line then plot your graph
 
 ```{r}
 table_show(as_tibble(table(X), colnames = c("Number of People", "Frequency")))
-ggplot(X, aes(x = Number.of.Holligans.in.the.Hallway, y = ..count..)) + geom_dotplot() +
+ggplot(X, aes(x = Number.of.Students.in.the.Hallway, y = ..count..)) + geom_dotplot() +
     scale_x_continuous(breaks = 1:9, labels = 1:9) +
     labs(y = "Frequency", title = "Dot Plot of the Number of People in the Hallway")
 ```

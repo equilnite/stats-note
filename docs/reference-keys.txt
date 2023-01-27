@@ -21,6 +21,10 @@ non-response-bias
 voluntary-bias
 experimental-design
 probability
+probability-rules
+complement-rule
+the-addition-rule
+the-multiplication-rule
 density-curves
 random-variables
 discrete-random-variables
