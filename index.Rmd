@@ -4,11 +4,9 @@ author: "Mr. Chang `edwardchang@berkeley.net`"
 institute: "Berkeley High School"
 date: "`r Sys.Date()`"
 output:
-    bookdown::gitbook:
+    bookdown::bs4_book:
         config:
             sharing: no
-            toc:
-              collapse: section
 site: bookdown::bookdown_site
 documentclass: book
 url: https://echa.ng/stats
