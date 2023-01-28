@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>10 Sampling distributions | AP Statistics Notes</title>
+<title>10 Sampling Distributions | AP Statistics Notes</title>
 <meta name="author" content="Mr. Chang edwardchang@berkeley.net">
-<meta name="description" content="This is book-style notes for AP Statistics">
+<meta name="description" content="Sampling Distribution A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in all possible samples of a given size \(n\) from the...">
 <meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="10 Sampling distributions | AP Statistics Notes">
+<meta property="og:title" content="10 Sampling Distributions | AP Statistics Notes">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://echa.ng/stats/sampling-distributions.html">
-<meta property="og:description" content="This is book-style notes for AP Statistics">
+<meta property="og:description" content="Sampling Distribution A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in all possible samples of a given size \(n\) from the...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="10 Sampling distributions | AP Statistics Notes">
-<meta name="twitter:description" content="This is book-style notes for AP Statistics">
+<meta name="twitter:title" content="10 Sampling Distributions | AP Statistics Notes">
+<meta name="twitter:description" content="Sampling Distribution A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in all possible samples of a given size \(n\) from the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -23,6 +23,7 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
+<link rel="stylesheet" href="style/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -53,7 +54,7 @@
 <li><a class="" href="probability.html"><span class="header-section-number">7</span> Probability</a></li>
 <li><a class="" href="density-curves.html"><span class="header-section-number">8</span> Density Curves</a></li>
 <li><a class="" href="random-variables.html"><span class="header-section-number">9</span> Random Variables</a></li>
-<li><a class="active" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling distributions</a></li>
+<li><a class="active" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
 <li><a class="" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="linear-regression.html"><span class="header-section-number">13</span> Linear Regression</a></li>
@@ -68,16 +69,122 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="sampling-distributions" class="section level1" number="10">
 <h1>
-<span class="header-section-number">10</span> Sampling distributions<a class="anchor" aria-label="anchor" href="#sampling-distributions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Sampling Distributions<a class="anchor" aria-label="anchor" href="#sampling-distributions"><i class="fas fa-link"></i></a>
 </h1>
-
+<dl>
+<dt>Sampling Distribution</dt>
+<dd>
+A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size <span class="math inline">\(n\)</span></em> from the same population.
+</dd>
+<dt>Unbiased Estimator</dt>
+<dd>
+A statistic used to estimate a parameter is an if the mean of its sampling distribution is equal to the true value of the parameter being estimated.
+</dd>
+<dd>
+Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.
+</dd>
+<dt>Variability of a Statistic</dt>
+<dd>
+The variability of a statistic is described by the spread of its sampling distribution.
+</dd>
+<dd>
+This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size
+of the population, as long as the population is at least 10 times larger than the sample (<a href="random-variables.html#ten-per-cond">10% Condition</a>).
+</dd>
+</dl>
+<div id="sampling-distribution-of-hat-p" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span><a class="anchor" aria-label="anchor" href="#sampling-distribution-of-hat-p"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
+<ul>
+<li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="random-variables.html#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+np \geq 10 \text{ and }n(1-p) \geq 10
+\end{equation}\]</span></p>
+</div>
+</div>
+<div id="sampling-distribution-of-bar-x" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span><a class="anchor" aria-label="anchor" href="#sampling-distribution-of-bar-x"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
+<ul>
+<li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+</ul>
+<p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
+</div>
+<div id="large-cond" class="section level3" number="10.2.1">
+<h3>
+<span class="header-section-number">10.2.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span><a class="anchor" aria-label="anchor" href="#large-cond"><i class="fas fa-link"></i></a>
+</h3>
+<div class="highlight">
+<p>If the population distribution is Normal, then so is the sampling distribution of <span class="math inline">\(\bar x\)</span>. This is true no matter what the sample size <span class="math inline">\(n\)</span> is.</p>
+<p>If the population distribution is not Normal, the sampling distribution of <span class="math inline">\(\bar x\)</span> will be approximately Normal in most cases if <span class="math inline">\(n \geq 30\)</span>. This fact is justified by the <a href="sampling-distributions.html#clt">Central Limit Theorem</a>.</p>
+</div>
+</div>
+<div id="clt" class="section level3" number="10.2.2">
+<h3>
+<span class="header-section-number">10.2.2</span> Central Limit Theorem (CLT)<a class="anchor" aria-label="anchor" href="#clt"><i class="fas fa-link"></i></a>
+</h3>
+<div class="highlight">
+<p>If you have a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.</p>
+<p>* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal</p>
+</div>
+</div>
+<div id="when-do-we-have-normality" class="section level3" number="10.2.3">
+<h3>
+<span class="header-section-number">10.2.3</span> When do we have normality?<a class="anchor" aria-label="anchor" href="#when-do-we-have-normality"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="30%">
+<col width="69%">
+</colgroup>
+<thead><tr class="header">
+<th>Shape of Population Distribution</th>
+<th>Minimum Sample Size (<span class="math inline">\(n\)</span>) needed to achieve an approximately normal <span class="math inline">\(\bar x\)</span>sampling distribution</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Approximately Normal</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Slightly non-normal</td>
+<td>Somewhere between 10-30, depending on how “slightly” non-normal</td>
+</tr>
+<tr class="odd">
+<td>Very non-normal, skewed</td>
+<td>About 30</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="random-variables.html"><span class="header-section-number">9</span> Random Variables</a></div>
 <div class="next"><a href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#sampling-distributions"><span class="header-section-number">10</span> Sampling distributions</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sampling-distributions"><span class="header-section-number">10</span> Sampling Distributions</a></li>
+<li><a class="nav-link" href="#sampling-distribution-of-hat-p"><span class="header-section-number">10.1</span> Sampling Distribution of \(\hat p\)</a></li>
+<li>
+<a class="nav-link" href="#sampling-distribution-of-bar-x"><span class="header-section-number">10.2</span> Sampling Distribution of \(\bar x\)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#large-cond"><span class="header-section-number">10.2.1</span> Normal/Large Condition for \(\bar x\)</a></li>
+<li><a class="nav-link" href="#clt"><span class="header-section-number">10.2.2</span> Central Limit Theorem (CLT)</a></li>
+<li><a class="nav-link" href="#when-do-we-have-normality"><span class="header-section-number">10.2.3</span> When do we have normality?</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

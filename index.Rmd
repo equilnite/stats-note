@@ -5,6 +5,12 @@ institute: "Berkeley High School"
 date: "`r Sys.Date()`"
 output:
     bookdown::bs4_book:
+        theme:
+            primary: "#6A5ACD"   # default .rmdnote = blue
+            danger:  "#dc3545"   # default .rmdcaution = red
+            success: "#198754"   # default .rmdimportant = green
+            info:    "#0dcaf0"   # default .rmdtip = cyan
+            warning: "#ffc107"   # default .rmdwarning = yellow
         config:
             sharing: no
 site: bookdown::bookdown_site
@@ -17,7 +23,7 @@ always_allow_html: true
 ---
 
 ```{r setup, echo = FALSE}
-knitr::opts_chunk$set(echo = FALSE, cache = TRUE, fig.height = 5, fig.path = "images/")
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE, fig.path = "images/")
 ```
 
 ```{r, message = FALSE, warning = FALSE}

@@ -26,47 +26,61 @@ An event is any collection of outcomes from some chance process. That is, an eve
 
 A valid probability model always has to satisfy the following rules:
 
-For any event A, $0 \leq P(A) \leq 1$
+::: {.highlight}
 
-If $\Omega$ is the sample space in the probability model, $P(\Omega)=1$
+- For any event A, $0 \leq P(A) \leq 1$
 
-In the case of equally likely outcomes, $P(A)=\frac{\text{number of outcomes corresponding to event A}}{\text{total number of outcomes in sample space}}$
+- If $\Omega$ is the sample space in the probability model, $P(\Omega)=1$
+
+- In the case of equally likely outcomes, $P(A)=\frac{\text{number of outcomes corresponding to event A}}{\text{total number of outcomes in sample space}}$
+
+:::
 
 We also have the following rules to calculate other things:
 
 $P(A|B)$ : the probability of event $A$ occurring, given that event $B$ has already occurred. (conditional probability)
 
+::: {.highlight}
 **Independent Events**: Two events $A$ and $B$ are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).  
 
 For independent events, 
 $$P(A)=P(A|B) \text{ and } P(B)=P(B|A)$$
+:::
 
-Mutually Exclusive (or Disjoint) Events: Events $A$ and $B$ are mutually exclusive if it’s impossible for both to occur.  In one flip of a coin, heads and tails are mutually exclusive events.  
+::: {.highlight}
+**Mutually Exclusive** (or Disjoint) Events: Events $A$ and $B$ are mutually exclusive if it’s impossible for both to occur.  In one flip of a coin, heads and tails are mutually exclusive events.  
 
 For mutually exclusive events, 
 
 $$P(A\cap B)=0$$ 
+:::
 
 ### Complement Rule
 
 The complement to event $A$ is the event that $A$ doesn’t happen.  This event is sometimes written $AC$.  In one flip of a coin, heads and tails are complementary events (assuming the coin won’t land on its side).  
 
+::: {.highlight}
 For complementary events, 
 
 $$P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)$$
+:::
 
 ### The Addition Rule
 
+::: {.highlight}
 $$P(A \cup B)=P(A) + P(B)-P(A \cap B)$$
 
 For mutually exclusive events, we know that $P(A\cap B)=0$, so we can also have the following simplified rule:
 
 $$P(A \cup B)=P(A) + P(B)$$
+:::
 
 ### The Multiplication Rule
 
+::: {.highlight}
 $$P(A\cap B)=P(A)\cdot P(B|A)$$
 
 For independent events $A$ and $B$, we know that $P(B|A) = P(B)$, so we can also have the simplified rule:
 
 $$P(A\cap B)=P(A)\cdot P(B)$$
+:::

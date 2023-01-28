@@ -23,6 +23,7 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
+<link rel="stylesheet" href="style/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -53,7 +54,7 @@
 <li><a class="" href="probability.html"><span class="header-section-number">7</span> Probability</a></li>
 <li><a class="" href="density-curves.html"><span class="header-section-number">8</span> Density Curves</a></li>
 <li><a class="" href="random-variables.html"><span class="header-section-number">9</span> Random Variables</a></li>
-<li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling distributions</a></li>
+<li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
 <li><a class="active" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="linear-regression.html"><span class="header-section-number">13</span> Linear Regression</a></li>
@@ -70,24 +71,33 @@
 <h1>
 <span class="header-section-number">11</span> Confidence Intervals<a class="anchor" aria-label="anchor" href="#confidence-intervals"><i class="fas fa-link"></i></a>
 </h1>
-<p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter. The interval is calculated from the data and has the form</p>
-<p><span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
-<p>Margin of errors are calculated from the confidence level and the data and has the form</p>
+<p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter.</p>
+<div class="highlight">
+<p>The interval is calculated from the data and has the form
+<span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
+</div>
+<div class="highlight">
+<p>Margin of errors are calculated from the confidence level (<span class="math inline">\(C\)</span>) and the data and has the form</p>
 <p><span class="math display">\[ME = m = \text{critical value} \cdot \text{standard error of the statistic}\]</span></p>
-<p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in C% of samples.</p>
+</div>
+<p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in <span class="math inline">\(C\)</span>% of samples.</p>
 <div id="interpreting-confidence-intervals" class="section level2" number="11.1">
 <h2>
 <span class="header-section-number">11.1</span> Interpreting Confidence Intervals<a class="anchor" aria-label="anchor" href="#interpreting-confidence-intervals"><i class="fas fa-link"></i></a>
 </h2>
 <p>You can say something of the form:</p>
-<p>I am [confidence level]% confident the interval from [lower bound] to [upper bound] captures the [true parameter in the context of the problem].</p>
+<div class="highlight">
+<p>I am [<span class="math inline">\(C\)</span>]% confident the interval from <em>[lower bound]</em> to <em>[upper bound]</em> captures the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
 <p>You CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1</p>
 </div>
 <div id="interpreting-confidence-level" class="section level2" number="11.2">
 <h2>
 <span class="header-section-number">11.2</span> Interpreting Confidence Level<a class="anchor" aria-label="anchor" href="#interpreting-confidence-level"><i class="fas fa-link"></i></a>
 </h2>
-<p>If we take many, many samples and create many, many intervals using the same method, about [confidence level]% of them will capture the [true parameter in the context of the problem].</p>
+<div class="highlight">
+<p>If we take many, many samples and create many, many intervals using the same method, about [<span class="math inline">\(C\)</span>]% of them will capture the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
 <p>In other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”</p>
 </div>
 <div id="changing-confidence-levels" class="section level2" number="11.3">
@@ -101,56 +111,92 @@
 <h2>
 <span class="header-section-number">11.4</span> Conditions for Confidence Intervals<a class="anchor" aria-label="anchor" href="#conditions-for-confidence-intervals"><i class="fas fa-link"></i></a>
 </h2>
-<div id="the-data-must-come-from-a-random-sample-or-random-assignment-in-an-experiment." class="section level3 unlisted unnumbered">
-<h3>1. The data must come from a random sample, or random assignment in an experiment.<a class="anchor" aria-label="anchor" href="#the-data-must-come-from-a-random-sample-or-random-assignment-in-an-experiment."><i class="fas fa-link"></i></a>
+<div id="random" class="section level3 unlisted unnumbered">
+<h3>1. Random<a class="anchor" aria-label="anchor" href="#random"><i class="fas fa-link"></i></a>
 </h3>
+<p>The data must come from a random sample, or random assignment in an experiment.</p>
 <p>In order to infer about a larger population, we must have a random, unbiased sample from that population. If the sample is not random, we need to think about whether it’s at least unbiased and/or representative. If so, we may be able to treat it as a random sample, but we must state that we’re doing this. If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.</p>
 <p>In the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population. In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments). If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population. This depends on whether our subjects are a random sample from, or at least representative of, some larger population.</p>
 </div>
-<div id="the-sample-must-be-large-enough" class="section level3 unlisted unnumbered">
-<h3>2. The sample must be large enough<a class="anchor" aria-label="anchor" href="#the-sample-must-be-large-enough"><i class="fas fa-link"></i></a>
+<div id="large" class="section level3 unlisted unnumbered">
+<h3>2. Large<a class="anchor" aria-label="anchor" href="#large"><i class="fas fa-link"></i></a>
 </h3>
+<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
 <div id="proportions" class="section level4 unlisted unnumbered">
 <h4>Proportions<a class="anchor" aria-label="anchor" href="#proportions"><i class="fas fa-link"></i></a>
 </h4>
-<p>For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the <em>Large Counts Condition</em>; that both of the following are true:</p>
-<p><span class="math inline">\(np ≥ 10\)</span> (expected # of successes is at least 10)</p>
-<p><span class="math inline">\(n(1-p) ≥ 10\)</span> (expected # of failures is at least 10)</p>
+<p>For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the <a href="random-variables.html#large-counts-cond"><strong><em>Large Counts Condition</em></strong></a>.</p>
 <p>This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.</p>
 </div>
 <div id="sample-means" class="section level4 unlisted unnumbered">
 <h4>Sample means<a class="anchor" aria-label="anchor" href="#sample-means"><i class="fas fa-link"></i></a>
 </h4>
 <p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
-<p><em>Normal/Large Condition</em></p>
-<p>-The population from which we are sampling is approximately Normal.</p>
-<p>-Our sample size is sufficiently large (<span class="math inline">\(n &gt; 30\)</span>)</p>
-<p>When <span class="math inline">\(n&lt;30\)</span></p>
-<p>-Graph of the sample data does not show any strong skew or outliers.</p>
+<ul>
+<li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
+<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
+</ul>
 </div>
 </div>
-<div id="observations-in-our-sample-must-be-independent" class="section level3 unlisted unnumbered">
-<h3>3. Observations in our sample must be independent<a class="anchor" aria-label="anchor" href="#observations-in-our-sample-must-be-independent"><i class="fas fa-link"></i></a>
+<div id="sampling-independence" class="section level3 unlisted unnumbered">
+<h3>3. Sampling Independence<a class="anchor" aria-label="anchor" href="#sampling-independence"><i class="fas fa-link"></i></a>
 </h3>
-<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is at least 10 times as large as our sample (<em>i.e. the 10% Condition</em>) . This needs to be stated!</p>
-<p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; ”I’m going to have to assume I can treat these observations as independent”.</p>
+<p>Observations in our sample must be independent of each other.</p>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
+<p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; “I’m going to have to assume I can treat these observations as independent.”</p>
 </div>
 </div>
 <div id="one-sample-z-intervals" class="section level2" number="11.5">
 <h2>
 <span class="header-section-number">11.5</span> One-Sample z-Intervals<a class="anchor" aria-label="anchor" href="#one-sample-z-intervals"><i class="fas fa-link"></i></a>
 </h2>
+<div class="highlight">
 <p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population proportion <span class="math inline">\(p\)</span> when all conditions are met is calculated with the following:</p>
 <p><span class="math display">\[\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
-<p>where <span class="math inline">\(z^*\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^*\)</span> and <span class="math inline">\(z^*\)</span> and the standard error of the sample proportion is <span class="math inline">\(SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}\)</span></p>
+</div>
+<p>where <span class="math inline">\(z^*\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^*\)</span> and <span class="math inline">\(z^*\)</span>.</p>
+<div class="highlight">
+<p>The standard error of the sample proportion is:
+<span class="math display">\[SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
+</div>
 </div>
 <div id="one-sample-t-intervals" class="section level2" number="11.6">
 <h2>
 <span class="header-section-number">11.6</span> One-Sample t-Intervals<a class="anchor" aria-label="anchor" href="#one-sample-t-intervals"><i class="fas fa-link"></i></a>
 </h2>
+<div class="highlight">
 <p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
 <p><span class="math display">\[\bar x \pm t^* \frac{s_x}{\sqrt{n}}\]</span></p>
-<p>where <span class="math inline">\(t^*\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span> and the standard error of the sample mean is <span class="math inline">\(SE_{\bar x}=\frac{s_x}{\sqrt{n}}\)</span>.</p>
+</div>
+<p>where <span class="math inline">\(t^*\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
+<div class="highlight">
+<p>The standard error of the sample mean is:
+<span class="math display">\[SE_{\bar x}=\frac{s_x}{\sqrt{n}}\]</span></p>
+</div>
+<div id="the-students-t-distribution" class="section level4" number="11.6.0.1">
+<h4>
+<span class="header-section-number">11.6.0.1</span> The Student’s <span class="math inline">\(t\)</span> distribution<a class="anchor" aria-label="anchor" href="#the-students-t-distribution"><i class="fas fa-link"></i></a>
+</h4>
+<div class="highlight">
+<p>Draw an SRS of size <span class="math inline">\(n\)</span> from a large population that has a Normal distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. The statistic
+<span class="math display">\[t=\frac{\bar x - \mu}{s_x / \sqrt{n}}\]</span>
+has a <span class="math inline">\(t\)</span>-distribution with degrees of freedom <span class="math inline">\(df = n – 1\)</span>, denoted as <span class="math inline">\(t_{n-1}\)</span>. When the population distribution isn’t Normal, this statistic will be approximately <span class="math inline">\(t_{n-1}\)</span> if the sample size is large enough.</p>
+<p>As the <span class="math inline">\(df\)</span> increases, the <span class="math inline">\(t\)</span>-distribution approaches <span class="math inline">\(N(0,1)\)</span> (standard normal) (See Figure <a href="confidence-intervals.html#fig:t-dist-to-norm">11.1</a>). This happens because <span class="math inline">\(s_x\)</span> estimates <span class="math inline">\(\sigma\)</span> more accurately as <span class="math inline">\(n\)</span> increases. So using <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(\sigma\)</span> causes little extra variation when the sample is large enough.</p>
+</div>
+</div>
+<div id="why-a-t-distribution" class="section level3" number="11.6.1">
+<h3>
+<span class="header-section-number">11.6.1</span> Why a <span class="math inline">\(t\)</span>-distribution?<a class="anchor" aria-label="anchor" href="#why-a-t-distribution"><i class="fas fa-link"></i></a>
+</h3>
+<p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
+<p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:t-dist-to-norm"></span>
+<img src="images/t-dist-to-norm-1.png" alt="The t-distribution as df increases, with the standard normal curve in red" width="672"><p class="caption">
+Figure 11.1: The t-distribution as df increases, with the standard normal curve in red
+</p>
+</div>
+</div>
 </div>
 <div id="the-four-step-process" class="section level2" number="11.7">
 <h2>
@@ -180,7 +226,7 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling distributions</a></div>
+<div class="prev"><a href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></div>
 <div class="next"><a href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
@@ -191,13 +237,15 @@
 <li><a class="nav-link" href="#changing-confidence-levels"><span class="header-section-number">11.3</span> Changing Confidence Levels</a></li>
 <li>
 <a class="nav-link" href="#conditions-for-confidence-intervals"><span class="header-section-number">11.4</span> Conditions for Confidence Intervals</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#the-data-must-come-from-a-random-sample-or-random-assignment-in-an-experiment.">1. The data must come from a random sample, or random assignment in an experiment.</a></li>
-<li><a class="nav-link" href="#the-sample-must-be-large-enough">2. The sample must be large enough</a></li>
-<li><a class="nav-link" href="#observations-in-our-sample-must-be-independent">3. Observations in our sample must be independent</a></li>
+<li><a class="nav-link" href="#random">1. Random</a></li>
+<li><a class="nav-link" href="#large">2. Large</a></li>
+<li><a class="nav-link" href="#sampling-independence">3. Sampling Independence</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#one-sample-z-intervals"><span class="header-section-number">11.5</span> One-Sample z-Intervals</a></li>
-<li><a class="nav-link" href="#one-sample-t-intervals"><span class="header-section-number">11.6</span> One-Sample t-Intervals</a></li>
+<li>
+<a class="nav-link" href="#one-sample-t-intervals"><span class="header-section-number">11.6</span> One-Sample t-Intervals</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#why-a-t-distribution"><span class="header-section-number">11.6.1</span> Why a \(t\)-distribution?</a></li></ul>
+</li>
 <li><a class="nav-link" href="#the-four-step-process"><span class="header-section-number">11.7</span> The Four-Step Process</a></li>
 </ul>
 

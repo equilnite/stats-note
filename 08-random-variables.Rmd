@@ -23,6 +23,7 @@ probability of people earning salaries in the ranges of \<\$30,000,
 \$30,000 - \$50,000, \$50,000 - \$ 70,000, \$70,000 - \$ 100,000,
 \>\$100,000.
 
+::: {.highlight}
 When we have a discrete random variable $X$ whose probability
 distribution is
 
@@ -38,6 +39,7 @@ we know the following about the mean and standard deviation of $X$:
 $$\mu_X = E(X) = \sum x_i P(x_i)$$
 
 $$\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}$$
+:::
 
 <details>
 
@@ -74,7 +76,8 @@ Binomial random variables have parameters $n$ and $p$, and can be
 written $B(n, p)$. Remember, Normal random variables have parameters and
 and can be written $N(\mu,\sigma)$.
 
-The pdf of a Binomial Random Variable (i.e. the binomial formula) is: 
+::: {.highlight}
+The **pdf** of a Binomial Random Variable (i.e. the binomial formula) is: 
 
 $$
 \begin{aligned}
@@ -87,8 +90,10 @@ To apply this formula in a graphing calculator:
 $\texttt{2nd -> vars (distr) -> binompdf}$
 
 Usage: $\texttt{binompdf(n, p[,x])}$
+:::
 
-The cdf of a Binomial Random Variable is: $$
+::: {.highlight}
+The **cdf** of a Binomial Random Variable is: $$
 \begin{aligned}
     P(X\leq k) &= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
 \end{aligned}
@@ -97,7 +102,9 @@ $$
 In graphing calculator: $\texttt{2nd -> vars (distr) -> binomcdf}$
 
 Usage: $\texttt{binomcdf(n, p[,x])}$
+:::
 
+::: {.highlight}
 The mean and standard deviation of a binomial random variable is given
 by:
 
@@ -108,6 +115,7 @@ $$
     &\text{, where } q = 1-p.
 \end{aligned}
 $$
+:::
 
 #### Binomial setting
 
@@ -126,7 +134,7 @@ We can identify a binomial setting when we know:
 4.  **S**ame? There is the same probability p of success on each trial
     (1/6).
 
-#### 10% Condition
+#### 10% Condition {#ten-per-cond}
 
 The second condition is often not perfectly met, as in the case of an
 SRS from some population. Imagine choosing 10 students from a class of
@@ -140,11 +148,13 @@ from which we are sampling. If we were choosing our 10 people from a
 school of 3,300 students, the change in probability from person to
 person would be small enough to ignore.
 
+::: {.highlight}
 The general rule is that the sample needs to be less than
 $\frac{1}{10}$, or 10%, of the population. We refer to this as the 10%
 condition.
 
 $$n \leq (.10) N$$
+:::
 
 #### Normal Approximation to the Binomial Distribution
 
@@ -158,12 +168,13 @@ distribution. However, before we use a normal distribution to
 approximate a binomial distribution, we have to check the following
 condition:
 
-##### Large Counts condition
+##### Large Counts condition {#large-counts-cond}
 
-If $np \geq 10$ and $n(1-p) \geq 10$, then we can use a Normal
-distribution to model a binomial distribution. In other words, if the
-expected number of successes and failures (respectively) is greater than
-or equal to 10.
+::: {.highlight}
+We can use a Normal distribution to model a binomial distribution. If we know:
+$$np \geq 10 \text{ and }n(1-p) \geq 10$$, 
+In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.
+:::
 
 ##### Doing a normal approximation
 
@@ -173,8 +184,11 @@ know the distribution that we want to use is $Normal(np, \sqrt{npq})$ proceed wi
 
 ### Geometric Random Variables
 
-If $X \sim G(p)$, in other words, if $X$ has a geometric distribution
-with parameter $p$, the pdf of a geometric random variable is:
+If $X \sim G(p)$, $X$ has a geometric distribution
+with parameter $p$
+
+::: {.highlight}
+The **pdf** of a geometric random variable is:
 
 $$
 \begin{aligned}
@@ -186,8 +200,10 @@ $$
 In graphing calculator: $\texttt{2nd -> vars (distr) -> geometpdf}$
 
 Usage: $\texttt{geometpdf(p, x)}$
+:::
 
-The cdf of a Geometric Variable is:
+::: {.highlight}
+The **cdf** of a Geometric Variable is:
 
 $$
 \begin{aligned}
@@ -198,7 +214,9 @@ $$
 In graphing calculator: $\texttt{2nd -> vars (distr) -> geometcdf}$
 
 Usage: $\texttt{geometcdf(p, x)}$
+:::
 
+::: {.highlight}
 The mean and standard deviation of a geometric random variable is given
 by:
 
@@ -209,6 +227,7 @@ $$
     &\text{, where } q = 1-p.
 \end{aligned}
 $$
+:::
 
 #### The Geometric Setting
 

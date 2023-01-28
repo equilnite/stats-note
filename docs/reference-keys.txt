@@ -1,3 +1,4 @@
+fig:t-dist-to-norm
 introduction
 basic-notation
 lists
@@ -30,9 +31,9 @@ random-variables
 discrete-random-variables
 binomial-random-variables
 binomial-setting
-condition
+ten-per-cond
 normal-approximation-to-the-binomial-distribution
-large-counts-condition
+large-counts-cond
 doing-a-normal-approximation
 geometric-random-variables
 the-geometric-setting
@@ -40,6 +41,11 @@ operations-with-random-variables
 constants
 random-variables-1
 sampling-distributions
+sampling-distribution-of-hat-p
+sampling-distribution-of-bar-x
+large-cond
+clt
+when-do-we-have-normality
 confidence-intervals
 interpreting-confidence-intervals
 interpreting-confidence-level
@@ -47,6 +53,8 @@ changing-confidence-levels
 conditions-for-confidence-intervals
 one-sample-z-intervals
 one-sample-t-intervals
+the-students-t-distribution
+why-a-t-distribution
 the-four-step-process
 hypothesis-testing
 linear-regression
