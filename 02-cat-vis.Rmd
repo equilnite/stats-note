@@ -14,7 +14,7 @@ on the y-axis)
 
 Following data from this table:
 
-```{r }
+```{r iris-subset}
 set.seed(123)
 i <- sample(1:nrow(iris), 10, repl = FALSE)
 iris_cat_tab <- iris %>% slice(i) %>% select(Species)
@@ -24,13 +24,13 @@ table_show(iris_cat_tab)
 1.  Count up the number of values per category (make a frequency table).
     Note: This table is missing the total
 
-```{r}
+```{r iris-freq}
 table_show(as.data.frame(table(iris_cat_tab), col.names = c("Species", "Frequency")))
 ```
 
 2.  Plot the frequencies with them as the height of the bars
 
-```{r}
+```{r iris-bar-plot}
 ggplot(iris_cat_tab, aes(x = Species)) +
     geom_bar() +
     labs(title = "Bar plot of Iris Species")
@@ -40,11 +40,11 @@ If needed (if you need proportions for the y-axis instead, calculate the
 relative frequency table for the frequency table first). Note: again,
 this one is missing the total
 
-```{r}
+```{r iris-rel-freq}
 table_show(as.data.frame(prop.table(table(iris_cat_tab)), col.names = c("Species", "Frequency")))
 ```
 
-```{r}
+```{r iris-prop-bar-plot}
 ggplot(iris_cat_tab, aes(x = Species, y = ..prop.., group = 1)) +
     geom_bar() +
     labs(title = "Bar plot of Iris Species", y = "Proportion")
@@ -64,7 +64,7 @@ calculate relative frequencies *per group*
 For example, here I have a two-way table detailing the hair and eye
 colour of some statistics students
 
-```{r}
+```{r hair-eye-table}
 library(reshape)
 hair <- HairEyeColor[,,2] + HairEyeColor[,,1]
 hair_table <- untable(hair)
@@ -75,7 +75,7 @@ So if I want eye colour to be my groups, I would calculate the relative
 frequencies by column (use the total of the column and divide the whole
 column by it), so each group/column will add up to 1.
 
-```{r}
+```{r hair-eye-rel-table}
 table_show(as.data.frame(prop.table(hair, 2)))
 ```
 
@@ -90,14 +90,14 @@ brown eyes:
 
 -   blond hair will be 0.0318
 
-```{r}
+```{r hair-eye-seg-bar}
 barplot(prop.table(hair, 2), legend = TRUE, xlab = "Eye Color", ylab = "Proportion", main = "Segmented Barplot of Hair Color on Eye Color")
 ```
 
 Here's the corresponding side-by-side bar plot. Note that the heights of
 the bars are the same as the segmented bar graph.
 
-```{r}
+```{r hair-eye-ss-bar}
 barplot(prop.table(hair, 2), legend = TRUE, xlab = "Eye Color", ylab = "Proportion", main = "Side-by-side Barplot of Hair Color on Eye Color", beside = TRUE)
 ```
 
@@ -105,7 +105,7 @@ On the other hand, if I want my eye colour to be my groups, I would
 calculate the relative frequencies by row (use the total of the row and
 divide the whole row by it), so each group/row will add up to 1.
 
-```{r}
+```{r hair-eye-prop-table}
 table_show(as.data.frame(prop.table(hair, 1)))
 ```
 
@@ -120,11 +120,11 @@ black hair:
 
 -   green eyes will be 0.0462963
 
-```{r}
+```{r hair-eye-prop-seg-bar}
 barplot(t(prop.table(hair, 1)), legend = TRUE, xlab = "Hair Colour", ylab = "Proportion", main = "Segmented Bar plot of Eye Colour on Hair Colour")
 ```
 
-```{r}
+```{r hair-eye-prop-ss-bar}
 barplot(t(prop.table(hair, 1)), legend = TRUE, xlab = "Hair Colour", ylab = "Proportion", main = "Side-by-side Bar plot of Eye Colour on Hair Colour", beside = TRUE)
 ```
 
@@ -148,7 +148,7 @@ variable on the x-axis (the groups)*
 1.  For each group, find the probability of having that trait. So for
     our previous example, we had this table:
 
-```{r}
+```{r hair-eye-table-2}
 table_show(as.data.frame(hair))
 ```
 

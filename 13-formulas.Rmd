@@ -2,7 +2,9 @@
 
 # AP Exam Formula Sheet
 
-## I. Descriptive Statistics
+[Here is the original AP Statistics Formula Sheet developed by Collegeboard.](https://apcentral.collegeboard.org/media/pdf/statistics-formula-sheet-and-tables-2020.pdf)
+
+## Descriptive Statistics
 
 $$
 \begin{aligned}
@@ -15,7 +17,7 @@ b &= r \frac{s_y}{s_x}
 \end{aligned}
 $$
 
-## II. Probability and Distributions
+## Probability and Distributions
 
 $$
 \begin{aligned}
@@ -30,7 +32,7 @@ $$
 | If $X$ has a **binomial distribution**  with parameters $n$ and $p$, then: <br>$P(X = x) = {n \choose x} p^x (1 - p)^{n - x}$  <br>where $x = 0, 1, 2, 3, ..., n$ | $\mu_X = np$                                      | $\sigma_X = \sqrt{np(1-p)}$                                                  |
 | If $X$ has a **geometric distribution** with parameter $p$, then: <br>$P(X = x) = (1 - p)^{x - 1} p$ <br>where $x = 1, 2, 3, ...$                               | $\mu_X = \frac{1}{p}$                             | $\sigma_X = \frac{\sqrt{1-p}}{p}$                                           |
 
-## III. Sampling Distributions and Inferential Statistics
+## Sampling Distributions and Inferential Statistics
 
 $$\text{Standardized test statistic:}~~~~ \frac{\text{statistic} - \text{parameter}} {\text{standard error of the statistic}}$$\
 
@@ -60,7 +62,7 @@ $$\text{Chi-square statistic:}~~~~ \chi^2 = \sum \frac{(\text{observed} - \text{
 
 *Standard deviation is a measurement of variability from the theoretical population. Standard error is the estimate of the standard deviation. If the standard deviation of the statistic is assumed to be known, then the standard deviation should be used instead of the standard error.
 
-## Table A Standard normal probabilities
+## Table A Standard normal probabilities {#table-a}
 
 ```{r echo = FALSE, results='asis'}
 # library(stargazer)
@@ -90,6 +92,7 @@ $$\text{Chi-square statistic:}~~~~ \chi^2 = \sum \frac{(\text{observed} - \text{
 ```{r, echo = FALSE}
 x <- seq(-4,4,0.01)
 x.1 <- seq(-4,-1,0.01)
+par(mar=c(3,1,1,1))
 plot.new()
 plot.window(c(-4, 4), c(0, .4))
 lines(x, dnorm(x), lwd = 1.5)
@@ -597,6 +600,7 @@ Table entry for $z$ is the probability lying below $z$.
 
 ```{r, echo = FALSE}
 x.2 <- seq(-4,1,0.01)
+par(mar=c(3,1,1,1))
 plot.new()
 plot.window(c(-4, 4), c(0, .4))
 lines(x, dnorm(x), lwd = 1.5)
@@ -612,8 +616,21 @@ box()
 
 Table entry for $z$ is the probability lying below $z$.
 
-<table class="tg" style="undefined;table-layout: fixed;">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:100%;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-5aeg{background-color:#C0C0C0;border-color:#000000;font-family:"Lucida Console", Monaco, monospace !important;
+  text-align:center;vertical-align:bottom}
+.tg .tg-fb3z{background-color:#343434;border-color:#000000;color:#FFF;font-family:"Lucida Console", Monaco, monospace !important;
+  font-weight:bold;text-align:center;vertical-align:bottom}
+.tg .tg-hxgm{border-color:#000000;font-family:"Lucida Console", Monaco, monospace !important;text-align:center;vertical-align:bottom
+  }
+</style>
 
+<table class="tg">
 <thead>
   <tr>
     <th class="tg-fb3z">$z$</th>
@@ -1090,10 +1107,11 @@ Table entry for $z$ is the probability lying below $z$.
 
 </details>
 
-## Table B $t$ distribution critical values
+## Table B $t$ distribution critical values {#table-b}
 
 ```{r, echo = FALSE}
 x.3 <- seq(1,4,0.01)
+par(mar=c(3,1,1,1))
 plot.new()
 plot.window(c(-4, 4), c(0, .4))
 lines(x, dnorm(x), lwd = 1.5)
@@ -1742,3 +1760,609 @@ Table entry for $p$ and $C$ is the point $t*$ with probability $p$ lying above i
 
 </details>
 
+
+## Table C $\chi^2$ critical values {#table-c}
+
+```{r, echo = FALSE}
+x.4 <- seq(7,11,0.01)
+par(mar=c(3,1,1,1))
+plot.new()
+plot.window(c(0, 11), c(0, .2))
+chidf <- function(x) dchisq(x, df = 4)
+curve(chidf, lwd = 1.5, add=TRUE)
+polygon(c(7, x.4, 11), c(0, chidf(x.4), 0), col = "gray")
+axis(side = 1, at = 7, labels = expression(chi^2))
+arrows(9, .075, 8, .015, lwd = 1.5)
+text(9, .09, "Probability p")
+box()
+```
+
+```{r echo = FALSE}
+# dfs <- c(1:30, 40, 50, 60, 80, 100)
+# ps <- c(.25, .2, .15, .1, .05, .025, .02, .01, .005, .0025, .001, .0005)
+# 
+# chi_sq_vals_df = data.frame(replicate(12, numeric(35)))
+# 
+# rownames(chi_sq_vals_df) <- dfs
+# colnames(chi_sq_vals_df) <- ps
+# 
+# for (p in ps) {
+#     chi_sq_vals_df[[paste(p)]] <- qchisq(p, dfs, lower.tail = FALSE)
+# }
+# 
+# write.csv(chi_sq_vals_df, "chi_sq_vals_df.csv")
+```
+
+<details>
+<summary> Click here for table of $\chi^2$ distribution critical values </summary>
+
+Table entry for $p$ is the point ($\chi^2$) with probability $p$ lying above it.
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-fpgh{background-color:#C0C0C0;font-family:"Lucida Console", Monaco, monospace !important;text-align:left;vertical-align:top}
+.tg .tg-4e5m{background-color:#343434;color:#FFF;font-family:"Lucida Console", Monaco, monospace !important;font-weight:bold;
+  text-align:center;vertical-align:top}
+.tg .tg-x5s5{font-family:"Lucida Console", Monaco, monospace !important;text-align:center;vertical-align:top}
+.tg .tg-o5ql{background-color:#FFF;font-family:"Lucida Console", Monaco, monospace !important;font-weight:bold;text-align:center;
+  vertical-align:bottom}
+.tg .tg-e6u5{background-color:#FFF;font-family:"Lucida Console", Monaco, monospace !important;font-weight:bold;text-align:center;
+  vertical-align:top}
+.tg .tg-n0cl{background-color:#343434;color:#FFF;font-family:"Lucida Console", Monaco, monospace !important;text-align:center;
+  vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-o5ql" rowspan="2">df</th>
+    <th class="tg-e6u5" colspan="12">Tail Probability $p$</th>
+  </tr>
+  <tr>
+    <th class="tg-4e5m">0.25</th>
+    <th class="tg-4e5m">0.20</th>
+    <th class="tg-4e5m">0.15</th>
+    <th class="tg-4e5m">0.10</th>
+    <th class="tg-4e5m">0.05</th>
+    <th class="tg-4e5m">0.025</th>
+    <th class="tg-4e5m">0.02</th>
+    <th class="tg-4e5m">0.01</th>
+    <th class="tg-4e5m">0.005</th>
+    <th class="tg-4e5m">0.0025</th>
+    <th class="tg-4e5m">0.001</th>
+    <th class="tg-4e5m">0.0005</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-n0cl">1</td>
+    <td class="tg-x5s5">1.32</td>
+    <td class="tg-x5s5">1.64</td>
+    <td class="tg-x5s5">2.07</td>
+    <td class="tg-x5s5">2.71</td>
+    <td class="tg-x5s5">3.84</td>
+    <td class="tg-x5s5">5.02</td>
+    <td class="tg-x5s5">5.41</td>
+    <td class="tg-x5s5">6.63</td>
+    <td class="tg-x5s5">7.88</td>
+    <td class="tg-x5s5">9.14</td>
+    <td class="tg-x5s5">10.83</td>
+    <td class="tg-x5s5">12.12</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">2</td>
+    <td class="tg-fpgh">2.77</td>
+    <td class="tg-fpgh">3.22</td>
+    <td class="tg-fpgh">3.79</td>
+    <td class="tg-fpgh">4.61</td>
+    <td class="tg-fpgh">5.99</td>
+    <td class="tg-fpgh">7.38</td>
+    <td class="tg-fpgh">7.82</td>
+    <td class="tg-fpgh">9.21</td>
+    <td class="tg-fpgh">10.60</td>
+    <td class="tg-fpgh">11.98</td>
+    <td class="tg-fpgh">13.82</td>
+    <td class="tg-fpgh">15.20</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">3</td>
+    <td class="tg-x5s5">4.11</td>
+    <td class="tg-x5s5">4.64</td>
+    <td class="tg-x5s5">5.32</td>
+    <td class="tg-x5s5">6.25</td>
+    <td class="tg-x5s5">7.81</td>
+    <td class="tg-x5s5">9.35</td>
+    <td class="tg-x5s5">9.84</td>
+    <td class="tg-x5s5">11.34</td>
+    <td class="tg-x5s5">12.84</td>
+    <td class="tg-x5s5">14.32</td>
+    <td class="tg-x5s5">16.27</td>
+    <td class="tg-x5s5">17.73</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">4</td>
+    <td class="tg-fpgh">5.39</td>
+    <td class="tg-fpgh">5.99</td>
+    <td class="tg-fpgh">6.74</td>
+    <td class="tg-fpgh">7.78</td>
+    <td class="tg-fpgh">9.49</td>
+    <td class="tg-fpgh">11.14</td>
+    <td class="tg-fpgh">11.67</td>
+    <td class="tg-fpgh">13.28</td>
+    <td class="tg-fpgh">14.86</td>
+    <td class="tg-fpgh">16.42</td>
+    <td class="tg-fpgh">18.47</td>
+    <td class="tg-fpgh">20.00</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">5</td>
+    <td class="tg-x5s5">6.63</td>
+    <td class="tg-x5s5">7.29</td>
+    <td class="tg-x5s5">8.12</td>
+    <td class="tg-x5s5">9.24</td>
+    <td class="tg-x5s5">11.07</td>
+    <td class="tg-x5s5">12.83</td>
+    <td class="tg-x5s5">13.39</td>
+    <td class="tg-x5s5">15.09</td>
+    <td class="tg-x5s5">16.75</td>
+    <td class="tg-x5s5">18.39</td>
+    <td class="tg-x5s5">20.52</td>
+    <td class="tg-x5s5">22.11</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">6</td>
+    <td class="tg-fpgh">7.84</td>
+    <td class="tg-fpgh">8.56</td>
+    <td class="tg-fpgh">9.45</td>
+    <td class="tg-fpgh">10.64</td>
+    <td class="tg-fpgh">12.59</td>
+    <td class="tg-fpgh">14.45</td>
+    <td class="tg-fpgh">15.03</td>
+    <td class="tg-fpgh">16.81</td>
+    <td class="tg-fpgh">18.55</td>
+    <td class="tg-fpgh">20.25</td>
+    <td class="tg-fpgh">22.46</td>
+    <td class="tg-fpgh">24.10</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">7</td>
+    <td class="tg-x5s5">9.04</td>
+    <td class="tg-x5s5">9.80</td>
+    <td class="tg-x5s5">10.75</td>
+    <td class="tg-x5s5">12.02</td>
+    <td class="tg-x5s5">14.07</td>
+    <td class="tg-x5s5">16.01</td>
+    <td class="tg-x5s5">16.62</td>
+    <td class="tg-x5s5">18.48</td>
+    <td class="tg-x5s5">20.28</td>
+    <td class="tg-x5s5">22.04</td>
+    <td class="tg-x5s5">24.32</td>
+    <td class="tg-x5s5">26.02</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">8</td>
+    <td class="tg-fpgh">10.22</td>
+    <td class="tg-fpgh">11.03</td>
+    <td class="tg-fpgh">12.03</td>
+    <td class="tg-fpgh">13.36</td>
+    <td class="tg-fpgh">15.51</td>
+    <td class="tg-fpgh">17.53</td>
+    <td class="tg-fpgh">18.17</td>
+    <td class="tg-fpgh">20.09</td>
+    <td class="tg-fpgh">21.95</td>
+    <td class="tg-fpgh">23.77</td>
+    <td class="tg-fpgh">26.12</td>
+    <td class="tg-fpgh">27.87</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">9</td>
+    <td class="tg-x5s5">11.39</td>
+    <td class="tg-x5s5">12.24</td>
+    <td class="tg-x5s5">13.29</td>
+    <td class="tg-x5s5">14.68</td>
+    <td class="tg-x5s5">16.92</td>
+    <td class="tg-x5s5">19.02</td>
+    <td class="tg-x5s5">19.68</td>
+    <td class="tg-x5s5">21.67</td>
+    <td class="tg-x5s5">23.59</td>
+    <td class="tg-x5s5">25.46</td>
+    <td class="tg-x5s5">27.88</td>
+    <td class="tg-x5s5">29.67</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">10</td>
+    <td class="tg-fpgh">12.55</td>
+    <td class="tg-fpgh">13.44</td>
+    <td class="tg-fpgh">14.53</td>
+    <td class="tg-fpgh">15.99</td>
+    <td class="tg-fpgh">18.31</td>
+    <td class="tg-fpgh">20.48</td>
+    <td class="tg-fpgh">21.16</td>
+    <td class="tg-fpgh">23.21</td>
+    <td class="tg-fpgh">25.19</td>
+    <td class="tg-fpgh">27.11</td>
+    <td class="tg-fpgh">29.59</td>
+    <td class="tg-fpgh">31.42</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">11</td>
+    <td class="tg-x5s5">13.70</td>
+    <td class="tg-x5s5">14.63</td>
+    <td class="tg-x5s5">15.77</td>
+    <td class="tg-x5s5">17.28</td>
+    <td class="tg-x5s5">19.68</td>
+    <td class="tg-x5s5">21.92</td>
+    <td class="tg-x5s5">22.62</td>
+    <td class="tg-x5s5">24.72</td>
+    <td class="tg-x5s5">26.76</td>
+    <td class="tg-x5s5">28.73</td>
+    <td class="tg-x5s5">31.26</td>
+    <td class="tg-x5s5">33.14</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">12</td>
+    <td class="tg-fpgh">14.85</td>
+    <td class="tg-fpgh">15.81</td>
+    <td class="tg-fpgh">16.99</td>
+    <td class="tg-fpgh">18.55</td>
+    <td class="tg-fpgh">21.03</td>
+    <td class="tg-fpgh">23.34</td>
+    <td class="tg-fpgh">24.05</td>
+    <td class="tg-fpgh">26.22</td>
+    <td class="tg-fpgh">28.30</td>
+    <td class="tg-fpgh">30.32</td>
+    <td class="tg-fpgh">32.91</td>
+    <td class="tg-fpgh">34.82</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">13</td>
+    <td class="tg-x5s5">15.98</td>
+    <td class="tg-x5s5">16.98</td>
+    <td class="tg-x5s5">18.20</td>
+    <td class="tg-x5s5">19.81</td>
+    <td class="tg-x5s5">22.36</td>
+    <td class="tg-x5s5">24.74</td>
+    <td class="tg-x5s5">25.47</td>
+    <td class="tg-x5s5">27.69</td>
+    <td class="tg-x5s5">29.82</td>
+    <td class="tg-x5s5">31.88</td>
+    <td class="tg-x5s5">34.53</td>
+    <td class="tg-x5s5">36.48</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">14</td>
+    <td class="tg-fpgh">17.12</td>
+    <td class="tg-fpgh">18.15</td>
+    <td class="tg-fpgh">19.41</td>
+    <td class="tg-fpgh">21.06</td>
+    <td class="tg-fpgh">23.68</td>
+    <td class="tg-fpgh">26.12</td>
+    <td class="tg-fpgh">26.87</td>
+    <td class="tg-fpgh">29.14</td>
+    <td class="tg-fpgh">31.32</td>
+    <td class="tg-fpgh">33.43</td>
+    <td class="tg-fpgh">36.12</td>
+    <td class="tg-fpgh">38.11</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">15</td>
+    <td class="tg-x5s5">18.25</td>
+    <td class="tg-x5s5">19.31</td>
+    <td class="tg-x5s5">20.60</td>
+    <td class="tg-x5s5">22.31</td>
+    <td class="tg-x5s5">25.00</td>
+    <td class="tg-x5s5">27.49</td>
+    <td class="tg-x5s5">28.26</td>
+    <td class="tg-x5s5">30.58</td>
+    <td class="tg-x5s5">32.80</td>
+    <td class="tg-x5s5">34.95</td>
+    <td class="tg-x5s5">37.70</td>
+    <td class="tg-x5s5">39.72</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">16</td>
+    <td class="tg-fpgh">19.37</td>
+    <td class="tg-fpgh">20.47</td>
+    <td class="tg-fpgh">21.79</td>
+    <td class="tg-fpgh">23.54</td>
+    <td class="tg-fpgh">26.30</td>
+    <td class="tg-fpgh">28.85</td>
+    <td class="tg-fpgh">29.63</td>
+    <td class="tg-fpgh">32.00</td>
+    <td class="tg-fpgh">34.27</td>
+    <td class="tg-fpgh">36.46</td>
+    <td class="tg-fpgh">39.25</td>
+    <td class="tg-fpgh">41.31</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">17</td>
+    <td class="tg-x5s5">20.49</td>
+    <td class="tg-x5s5">21.61</td>
+    <td class="tg-x5s5">22.98</td>
+    <td class="tg-x5s5">24.77</td>
+    <td class="tg-x5s5">27.59</td>
+    <td class="tg-x5s5">30.19</td>
+    <td class="tg-x5s5">31.00</td>
+    <td class="tg-x5s5">33.41</td>
+    <td class="tg-x5s5">35.72</td>
+    <td class="tg-x5s5">37.95</td>
+    <td class="tg-x5s5">40.79</td>
+    <td class="tg-x5s5">42.88</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">18</td>
+    <td class="tg-fpgh">21.60</td>
+    <td class="tg-fpgh">22.76</td>
+    <td class="tg-fpgh">24.16</td>
+    <td class="tg-fpgh">25.99</td>
+    <td class="tg-fpgh">28.87</td>
+    <td class="tg-fpgh">31.53</td>
+    <td class="tg-fpgh">32.35</td>
+    <td class="tg-fpgh">34.81</td>
+    <td class="tg-fpgh">37.16</td>
+    <td class="tg-fpgh">39.42</td>
+    <td class="tg-fpgh">42.31</td>
+    <td class="tg-fpgh">44.43</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">19</td>
+    <td class="tg-x5s5">22.72</td>
+    <td class="tg-x5s5">23.90</td>
+    <td class="tg-x5s5">25.33</td>
+    <td class="tg-x5s5">27.20</td>
+    <td class="tg-x5s5">30.14</td>
+    <td class="tg-x5s5">32.85</td>
+    <td class="tg-x5s5">33.69</td>
+    <td class="tg-x5s5">36.19</td>
+    <td class="tg-x5s5">38.58</td>
+    <td class="tg-x5s5">40.88</td>
+    <td class="tg-x5s5">43.82</td>
+    <td class="tg-x5s5">45.97</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">20</td>
+    <td class="tg-fpgh">23.83</td>
+    <td class="tg-fpgh">25.04</td>
+    <td class="tg-fpgh">26.50</td>
+    <td class="tg-fpgh">28.41</td>
+    <td class="tg-fpgh">31.41</td>
+    <td class="tg-fpgh">34.17</td>
+    <td class="tg-fpgh">35.02</td>
+    <td class="tg-fpgh">37.57</td>
+    <td class="tg-fpgh">40.00</td>
+    <td class="tg-fpgh">42.34</td>
+    <td class="tg-fpgh">45.31</td>
+    <td class="tg-fpgh">47.50</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">21</td>
+    <td class="tg-x5s5">24.93</td>
+    <td class="tg-x5s5">26.17</td>
+    <td class="tg-x5s5">27.66</td>
+    <td class="tg-x5s5">29.62</td>
+    <td class="tg-x5s5">32.67</td>
+    <td class="tg-x5s5">35.48</td>
+    <td class="tg-x5s5">36.34</td>
+    <td class="tg-x5s5">38.93</td>
+    <td class="tg-x5s5">41.40</td>
+    <td class="tg-x5s5">43.78</td>
+    <td class="tg-x5s5">46.80</td>
+    <td class="tg-x5s5">49.01</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">22</td>
+    <td class="tg-fpgh">26.04</td>
+    <td class="tg-fpgh">27.30</td>
+    <td class="tg-fpgh">28.82</td>
+    <td class="tg-fpgh">30.81</td>
+    <td class="tg-fpgh">33.92</td>
+    <td class="tg-fpgh">36.78</td>
+    <td class="tg-fpgh">37.66</td>
+    <td class="tg-fpgh">40.29</td>
+    <td class="tg-fpgh">42.80</td>
+    <td class="tg-fpgh">45.20</td>
+    <td class="tg-fpgh">48.27</td>
+    <td class="tg-fpgh">50.51</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">23</td>
+    <td class="tg-x5s5">27.14</td>
+    <td class="tg-x5s5">28.43</td>
+    <td class="tg-x5s5">29.98</td>
+    <td class="tg-x5s5">32.01</td>
+    <td class="tg-x5s5">35.17</td>
+    <td class="tg-x5s5">38.08</td>
+    <td class="tg-x5s5">38.97</td>
+    <td class="tg-x5s5">41.64</td>
+    <td class="tg-x5s5">44.18</td>
+    <td class="tg-x5s5">46.62</td>
+    <td class="tg-x5s5">49.73</td>
+    <td class="tg-x5s5">52.00</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">24</td>
+    <td class="tg-fpgh">28.24</td>
+    <td class="tg-fpgh">29.55</td>
+    <td class="tg-fpgh">31.13</td>
+    <td class="tg-fpgh">33.20</td>
+    <td class="tg-fpgh">36.42</td>
+    <td class="tg-fpgh">39.36</td>
+    <td class="tg-fpgh">40.27</td>
+    <td class="tg-fpgh">42.98</td>
+    <td class="tg-fpgh">45.56</td>
+    <td class="tg-fpgh">48.03</td>
+    <td class="tg-fpgh">51.18</td>
+    <td class="tg-fpgh">53.48</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">25</td>
+    <td class="tg-x5s5">29.34</td>
+    <td class="tg-x5s5">30.68</td>
+    <td class="tg-x5s5">32.28</td>
+    <td class="tg-x5s5">34.38</td>
+    <td class="tg-x5s5">37.65</td>
+    <td class="tg-x5s5">40.65</td>
+    <td class="tg-x5s5">41.57</td>
+    <td class="tg-x5s5">44.31</td>
+    <td class="tg-x5s5">46.93</td>
+    <td class="tg-x5s5">49.44</td>
+    <td class="tg-x5s5">52.62</td>
+    <td class="tg-x5s5">54.95</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">26</td>
+    <td class="tg-fpgh">30.43</td>
+    <td class="tg-fpgh">31.79</td>
+    <td class="tg-fpgh">33.43</td>
+    <td class="tg-fpgh">35.56</td>
+    <td class="tg-fpgh">38.89</td>
+    <td class="tg-fpgh">41.92</td>
+    <td class="tg-fpgh">42.86</td>
+    <td class="tg-fpgh">45.64</td>
+    <td class="tg-fpgh">48.29</td>
+    <td class="tg-fpgh">50.83</td>
+    <td class="tg-fpgh">54.05</td>
+    <td class="tg-fpgh">56.41</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">27</td>
+    <td class="tg-x5s5">31.53</td>
+    <td class="tg-x5s5">32.91</td>
+    <td class="tg-x5s5">34.57</td>
+    <td class="tg-x5s5">36.74</td>
+    <td class="tg-x5s5">40.11</td>
+    <td class="tg-x5s5">43.19</td>
+    <td class="tg-x5s5">44.14</td>
+    <td class="tg-x5s5">46.96</td>
+    <td class="tg-x5s5">49.64</td>
+    <td class="tg-x5s5">52.22</td>
+    <td class="tg-x5s5">55.48</td>
+    <td class="tg-x5s5">57.86</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">28</td>
+    <td class="tg-fpgh">32.62</td>
+    <td class="tg-fpgh">34.03</td>
+    <td class="tg-fpgh">35.71</td>
+    <td class="tg-fpgh">37.92</td>
+    <td class="tg-fpgh">41.34</td>
+    <td class="tg-fpgh">44.46</td>
+    <td class="tg-fpgh">45.42</td>
+    <td class="tg-fpgh">48.28</td>
+    <td class="tg-fpgh">50.99</td>
+    <td class="tg-fpgh">53.59</td>
+    <td class="tg-fpgh">56.89</td>
+    <td class="tg-fpgh">59.30</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">29</td>
+    <td class="tg-x5s5">33.71</td>
+    <td class="tg-x5s5">35.14</td>
+    <td class="tg-x5s5">36.85</td>
+    <td class="tg-x5s5">39.09</td>
+    <td class="tg-x5s5">42.56</td>
+    <td class="tg-x5s5">45.72</td>
+    <td class="tg-x5s5">46.69</td>
+    <td class="tg-x5s5">49.59</td>
+    <td class="tg-x5s5">52.34</td>
+    <td class="tg-x5s5">54.97</td>
+    <td class="tg-x5s5">58.30</td>
+    <td class="tg-x5s5">60.73</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">30</td>
+    <td class="tg-fpgh">34.80</td>
+    <td class="tg-fpgh">36.25</td>
+    <td class="tg-fpgh">37.99</td>
+    <td class="tg-fpgh">40.26</td>
+    <td class="tg-fpgh">43.77</td>
+    <td class="tg-fpgh">46.98</td>
+    <td class="tg-fpgh">47.96</td>
+    <td class="tg-fpgh">50.89</td>
+    <td class="tg-fpgh">53.67</td>
+    <td class="tg-fpgh">56.33</td>
+    <td class="tg-fpgh">59.70</td>
+    <td class="tg-fpgh">62.16</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">40</td>
+    <td class="tg-x5s5">45.62</td>
+    <td class="tg-x5s5">47.27</td>
+    <td class="tg-x5s5">49.24</td>
+    <td class="tg-x5s5">51.81</td>
+    <td class="tg-x5s5">55.76</td>
+    <td class="tg-x5s5">59.34</td>
+    <td class="tg-x5s5">60.44</td>
+    <td class="tg-x5s5">63.69</td>
+    <td class="tg-x5s5">66.77</td>
+    <td class="tg-x5s5">69.70</td>
+    <td class="tg-x5s5">73.40</td>
+    <td class="tg-x5s5">76.09</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">50</td>
+    <td class="tg-fpgh">56.33</td>
+    <td class="tg-fpgh">58.16</td>
+    <td class="tg-fpgh">60.35</td>
+    <td class="tg-fpgh">63.17</td>
+    <td class="tg-fpgh">67.50</td>
+    <td class="tg-fpgh">71.42</td>
+    <td class="tg-fpgh">72.61</td>
+    <td class="tg-fpgh">76.15</td>
+    <td class="tg-fpgh">79.49</td>
+    <td class="tg-fpgh">82.66</td>
+    <td class="tg-fpgh">86.66</td>
+    <td class="tg-fpgh">89.56</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">60</td>
+    <td class="tg-x5s5">66.98</td>
+    <td class="tg-x5s5">68.97</td>
+    <td class="tg-x5s5">71.34</td>
+    <td class="tg-x5s5">74.40</td>
+    <td class="tg-x5s5">79.08</td>
+    <td class="tg-x5s5">83.30</td>
+    <td class="tg-x5s5">84.58</td>
+    <td class="tg-x5s5">88.38</td>
+    <td class="tg-x5s5">91.95</td>
+    <td class="tg-x5s5">95.34</td>
+    <td class="tg-x5s5">99.61</td>
+    <td class="tg-x5s5">102.69</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">80</td>
+    <td class="tg-fpgh">88.13</td>
+    <td class="tg-fpgh">90.41</td>
+    <td class="tg-fpgh">93.11</td>
+    <td class="tg-fpgh">96.58</td>
+    <td class="tg-fpgh">101.9</td>
+    <td class="tg-fpgh">106.6</td>
+    <td class="tg-fpgh">108.1</td>
+    <td class="tg-fpgh">112.3</td>
+    <td class="tg-fpgh">116.3</td>
+    <td class="tg-fpgh">120.1</td>
+    <td class="tg-fpgh">124.8</td>
+    <td class="tg-fpgh">128.3</td>
+  </tr>
+  <tr>
+    <td class="tg-n0cl">100</td>
+    <td class="tg-x5s5">109.1</td>
+    <td class="tg-x5s5">111.7</td>
+    <td class="tg-x5s5">114.7</td>
+    <td class="tg-x5s5">118.5</td>
+    <td class="tg-x5s5">124.3</td>
+    <td class="tg-x5s5">129.6</td>
+    <td class="tg-x5s5">131.1</td>
+    <td class="tg-x5s5">135.8</td>
+    <td class="tg-x5s5">140.2</td>
+    <td class="tg-x5s5">144.3</td>
+    <td class="tg-x5s5">149.4</td>
+    <td class="tg-x5s5">153.2</td>
+  </tr>
+</tbody>
+</table>
+
+</details>

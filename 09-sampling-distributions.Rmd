@@ -58,7 +58,7 @@ If you have a population with mean $\mu$ and standard deviation $\sigma$ and tak
 
 ### When do we have normality?
 
-| Shape of Population Distribution | Minimum Sample Size ($n$) needed to achieve an approximately normal $\bar x$sampling distribution |
+| Shape of Population Distribution | Minimum Sample Size ($n$) needed to achieve an approximately normal $\bar x$ sampling distribution |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------|
 | Approximately Normal                      | 1                                                                                                  |
 | Slightly non-normal                       | Somewhere between 10-30, depending on how “slightly” non-normal                                    |

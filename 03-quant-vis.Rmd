@@ -11,7 +11,7 @@ the number for each of the number that you see in the data.
 
 Take this data for example:
 
-```{r}
+```{r student-table}
 set.seed(123)
 X <- data.frame(`Number of Students in the Hallway` = round(rnorm(20, 5, 2)))
 table_show(X)
@@ -20,7 +20,7 @@ table_show(X)
 Now count up each value to figure out how many dots you need at each
 value on the number line then plot your graph
 
-```{r}
+```{r student-dot-plot}
 table_show(as_tibble(table(X), colnames = c("Number of People", "Frequency")))
 ggplot(X, aes(x = Number.of.Students.in.the.Hallway, y = ..count..)) + geom_dotplot() +
     scale_x_continuous(breaks = 1:9, labels = 1:9) +
@@ -29,9 +29,9 @@ ggplot(X, aes(x = Number.of.Students.in.the.Hallway, y = ..count..)) + geom_dotp
 
 ## Stemplots
 
-Using this data as an example, a stem plot looks like this:
+Using this data as an example,
 
-```{r}
+```{r stemplot-data}
 set.seed(123)
 x <- round(rnorm(20, 50, 25))
 table_show(data.frame(x))
@@ -39,7 +39,7 @@ table_show(data.frame(x))
 
 A stem plot looks like this:
 
-```{r}
+```{r stemplot-pic}
 #install.packages("aplpack")
 library(aplpack)
 stem.leaf(x, style = "bare", depths = FALSE)
@@ -60,7 +60,7 @@ Key: 1\|2 = 12
 
 Here's another example (sorted for convenience)
 
-```{r}
+```{r stemplot-pic-2}
 x <- round(rnorm(50, 5, 1), digits = 1)
 table_show(data.frame(x))
 stem.leaf(x, style = "bare", depths = FALSE)
@@ -89,7 +89,7 @@ the "whiskers."
 
 For this simple list of numbers:
 
-```{r}
+```{r simple-x}
 x = c(1,2,3,4,5,6,7)
 table_show(data.frame(x))
 
@@ -97,13 +97,13 @@ table_show(data.frame(x))
 
 Our five number summary is:
 
-```{r}
+```{r simple-5ns}
 summary(x, quantile.type = 1)[-4]
 ```
 
 As detailed above, our box plot then looks like:
 
-```{r}
+```{r simple-boxplot}
 library(qboxplot)
 qboxplot(data.frame(x), qtype = 1, horizontal = TRUE)
 ```
@@ -116,7 +116,7 @@ outliers as individual points.
 
 Look at this example data:
 
-```{r}
+```{r adv-boxplot-data}
 set.seed(1234)
 x <- round(rnorm(40, 0, 5))
 table_show(arrange(data.frame(x), desc(x)))
@@ -124,20 +124,20 @@ table_show(arrange(data.frame(x), desc(x)))
 
 Five number summary:
 
-```{r}
+```{r adv-5ns}
 summary(x, quantile.type = 1)[-4]
 ```
 
 Our numbers calculated by the 1.5 IQR rule are:
 
-```{r}
+```{r adv-iqr}
 c(-5, 0) + 1.5 * c(-5, 5)
 ```
 
 So our 12 is an outlier. which means we draw our right whisker to 6 and
 plot the 12 individually on the number line. Like so:
 
-```{r}
+```{r Advanced Box Plot}
 qboxplot(data.frame(x), qtype = 1, horizontal = TRUE)
 ```
 
