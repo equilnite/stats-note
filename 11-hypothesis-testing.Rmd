@@ -2,9 +2,9 @@
 
 ## Significance Tests
 
-Confidence intervals are one of the two most common types of statistical inference. Use a confidence interval when your goal is to estimate a population parameter. The second common type of inference, called significance tests, $H_a$s a different goal: to assess the evidence provided by data about some claim concerning a population.
+Confidence intervals are one of the two most common types of statistical inference. Use a confidence interval when your goal is to estimate a population parameter. The second common type of inference, called significance tests, has a different goal: to assess the evidence provided by data about some claim concerning a population.
 
-A **significance test** is a formal procedure for comparing observed data with a claim (also called a hypothesis) whose truth we want to assess. The claim is a statement about a parameter, like the population proportion $p$ or the population mean $\mu$. We express the results of a significance test in terms of a probability t$H_a$t measures how well the data and the claim agree.
+A **significance test** is a formal procedure for comparing observed data with a claim (also called a hypothesis) whose truth we want to assess. The claim is a statement about a parameter, like the population proportion $p$ or the population mean $\mu$. We express the results of a significance test in terms of a probability that measures how well the data and the claim agree.
 
 ### Hypotheses
 
@@ -12,12 +12,12 @@ A significance test starts with a careful statement of the claims we want to com
 
 ::: {.highlight}
 - $H_0$: The claim we weigh evidence against in a statistical test is called the null hypothesis. Often the null hypothesis is a statement of “no difference.”
-    - In any significance test, the null hypothesis $H_a$s the form:
+    - In any significance test, the null hypothesis has the form:
 
 $$H_0 : \text{parameter} = \text{null value} $$
 
-- $H_a$: The claim about the population t$H_a$t we are trying to find evidence for is the alternative hypothesis.
-    -The alternative hypothesis $H_a$s one of the forms:
+- $H_a$: The claim about the population that we are trying to find evidence for is the alternative hypothesis.
+    -The alternative hypothesis has one of the forms:
 
 $$
 \begin{aligned}
@@ -31,21 +31,21 @@ $$
 *To determine the correct form of H_a, read the problem carefully.*
 
 ::: {.highlight}
-The alternative hypothesis is one-sided if it states t$H_a$t a parameter is *larger t$H_a$n* the null hypothesis value or if it states t$H_a$t the parameter is *smaller t$H_a$n* the null value.
+The alternative hypothesis is one-sided if it states that a parameter is *larger than* the null hypothesis value or if it states that the parameter is *smaller than* the null value.
 
-It is two-sided if it states t$H_a$t the parameter is *different from* the null hypothesis value (it could be either larger or smaller).
+It is two-sided if it states that the parameter is *different from* the null hypothesis value (it could be either larger or smaller).
 :::
 
-- The hypotheses should express the hopes or suspicions we $H_a$ve **before** we see the data. It is cheating to look at the data first and then frame hypotheses to fit w$H_a$t the data show (i.e. “*p*-$H_a$cking”).
+- The hypotheses should express the hopes or suspicions we have **before** we see the data. It is cheating to look at the data first and then frame hypotheses to fit what the data show (i.e. “*p*-hacking”).
 - Hypotheses always refer to a *population*, not to a sample. Be sure to state $H_0$ and $H_a$ in terms of *population parameters*. 
-- It is never correct to write a hypothesis about a sample statistic, such as $\$H_a$t p=0.64$ or  $\bar x=85$.
+- It is never correct to write a hypothesis about a sample statistic, such as $\hat p=0.64$ or  $\bar x=85$.
 
 ### Interpreting *P*-values
 
-The null hypothesis $H_0$ states the claim t$H_a$t we are seeking evidence against. The probability t$H_a$t measures the strength of the evidence against a null hypothesis is called a *P*-value.
-The probability, computed assuming $H_0$ is true, t$H_a$t the statistic would take a value as extreme or more extreme t$H_a$n the one actually observed is called the *P*-value of the test.
-Small *P*-values are evidence against $H_0$ because they say t$H_a$t the observed result is unlikely to occur when $H_0$ is true. 
-Large *P*-values fail to give convincing evidence against $H_0$ because they say t$H_a$t the observed result is likely to occur by c$H_a$nce when $H_0$ is true.
+The null hypothesis $H_0$ states the claim that we are seeking evidence against. The probability that measures the strength of the evidence against a null hypothesis is called a *P*-value.
+The probability, computed assuming $H_0$ is true, that the statistic would take a value as extreme or more extreme than the one actually observed is called the *P*-value of the test.
+Small *P*-values are evidence against $H_0$ because they say that the observed result is unlikely to occur when $H_0$ is true. 
+Large *P*-values fail to give convincing evidence against $H_0$ because they say that the observed result is likely to occur by chance when $H_0$ is true.
 
 ### Statistical Significance 
 
@@ -53,12 +53,12 @@ The final step in performing a significance test is to draw a conclusion about t
 
 reject $H_0$ or fail to reject $H_0$.
 
-*Note:  A fail-to-reject $H_0$ decision in a significance test doesn’t mean t$H_a$t $H_0$ is true. For t$H_a$t reason, you should never “accept $H_0$” or use language implying t$H_a$t you believe $H_0$ is true.*
+*Note:  A fail-to-reject $H_0$ decision in a significance test doesn’t mean that $H_0$ is true. For that reason, you should never “accept $H_0$” or use language implying that you believe $H_0$ is true.*
 
-There is no rule for how small a *P*-value we should require in order to reject $H_0$. But we can compare the *P*-value with a fixed value t$H_a$t we regard as decisive, called the significance level. We write it as $\alpha$, the Greek letter alp$H_a$. 
+There is no rule for how small a *P*-value we should require in order to reject $H_0$. But we can compare the *P*-value with a fixed value that we regard as decisive, called the significance level. We write it as $\alpha$, the Greek letter alpha. 
 
 ::: {.highlight}
-If the *P*-value is smaller t$H_a$n alp$H_a$, we say t$H_a$t the data are statistically significant at the level . In t$H_a$t case, we reject the null hypothesis $H_0$ and conclude t$H_a$t there is convincing evidence in favor of the alternative hypothesis $H_a$.
+If the *P*-value is smaller than alpha, we say that the data are statistically significant at the level . In that case, we reject the null hypothesis $H_0$ and conclude that there is convincing evidence in favor of the alternative hypothesis $H_a$.
 
 In a nutshell, our conclusion in a significance test comes down to
 

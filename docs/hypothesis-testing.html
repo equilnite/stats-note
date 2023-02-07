@@ -77,8 +77,8 @@
 <h2>
 <span class="header-section-number">12.1</span> Significance Tests<a class="anchor" aria-label="anchor" href="#significance-tests"><i class="fas fa-link"></i></a>
 </h2>
-<p>Confidence intervals are one of the two most common types of statistical inference. Use a confidence interval when your goal is to estimate a population parameter. The second common type of inference, called significance tests, <span class="math inline">\(H_a\)</span>s a different goal: to assess the evidence provided by data about some claim concerning a population.</p>
-<p>A <strong>significance test</strong> is a formal procedure for comparing observed data with a claim (also called a hypothesis) whose truth we want to assess. The claim is a statement about a parameter, like the population proportion <span class="math inline">\(p\)</span> or the population mean <span class="math inline">\(\mu\)</span>. We express the results of a significance test in terms of a probability t<span class="math inline">\(H_a\)</span>t measures how well the data and the claim agree.</p>
+<p>Confidence intervals are one of the two most common types of statistical inference. Use a confidence interval when your goal is to estimate a population parameter. The second common type of inference, called significance tests, has a different goal: to assess the evidence provided by data about some claim concerning a population.</p>
+<p>A <strong>significance test</strong> is a formal procedure for comparing observed data with a claim (also called a hypothesis) whose truth we want to assess. The claim is a statement about a parameter, like the population proportion <span class="math inline">\(p\)</span> or the population mean <span class="math inline">\(\mu\)</span>. We express the results of a significance test in terms of a probability that measures how well the data and the claim agree.</p>
 <div id="hypotheses" class="section level3" number="12.1.1">
 <h3>
 <span class="header-section-number">12.1.1</span> Hypotheses<a class="anchor" aria-label="anchor" href="#hypotheses"><i class="fas fa-link"></i></a>
@@ -89,15 +89,15 @@
 <li>
 <span class="math inline">\(H_0\)</span>: The claim we weigh evidence against in a statistical test is called the null hypothesis. Often the null hypothesis is a statement of “no difference.”
 <ul>
-<li>In any significance test, the null hypothesis <span class="math inline">\(H_a\)</span>s the form:</li>
+<li>In any significance test, the null hypothesis has the form:</li>
 </ul>
 </li>
 </ul>
 <p><span class="math display">\[H_0 : \text{parameter} = \text{null value} \]</span></p>
 <ul>
 <li>
-<span class="math inline">\(H_a\)</span>: The claim about the population t<span class="math inline">\(H_a\)</span>t we are trying to find evidence for is the alternative hypothesis.
--The alternative hypothesis <span class="math inline">\(H_a\)</span>s one of the forms:</li>
+<span class="math inline">\(H_a\)</span>: The claim about the population that we are trying to find evidence for is the alternative hypothesis.
+-The alternative hypothesis has one of the forms:</li>
 </ul>
 <p><span class="math display">\[
 \begin{aligned}
@@ -109,23 +109,23 @@ H_0 &amp;: \text{parameter} \not = \text{null value}
 </div>
 <p><em>To determine the correct form of H_a, read the problem carefully.</em></p>
 <div class="highlight">
-<p>The alternative hypothesis is one-sided if it states t<span class="math inline">\(H_a\)</span>t a parameter is <em>larger t<span class="math inline">\(H_a\)</span>n</em> the null hypothesis value or if it states t<span class="math inline">\(H_a\)</span>t the parameter is <em>smaller t<span class="math inline">\(H_a\)</span>n</em> the null value.</p>
-<p>It is two-sided if it states t<span class="math inline">\(H_a\)</span>t the parameter is <em>different from</em> the null hypothesis value (it could be either larger or smaller).</p>
+<p>The alternative hypothesis is one-sided if it states that a parameter is <em>larger than</em> the null hypothesis value or if it states that the parameter is <em>smaller than</em> the null value.</p>
+<p>It is two-sided if it states that the parameter is <em>different from</em> the null hypothesis value (it could be either larger or smaller).</p>
 </div>
 <ul>
-<li>The hypotheses should express the hopes or suspicions we <span class="math inline">\(H_a\)</span>ve <strong>before</strong> we see the data. It is cheating to look at the data first and then frame hypotheses to fit w<span class="math inline">\(H_a\)</span>t the data show (i.e. “<em>p</em>-<span class="math inline">\(H_a\)</span>cking”).</li>
+<li>The hypotheses should express the hopes or suspicions we have <strong>before</strong> we see the data. It is cheating to look at the data first and then frame hypotheses to fit what the data show (i.e. “<em>p</em>-hacking”).</li>
 <li>Hypotheses always refer to a <em>population</em>, not to a sample. Be sure to state <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span> in terms of <em>population parameters</em>.</li>
-<li>It is never correct to write a hypothesis about a sample statistic, such as <span class="math inline">\(\$H_a\)</span>t p=0.64$ or <span class="math inline">\(\bar x=85\)</span>.</li>
+<li>It is never correct to write a hypothesis about a sample statistic, such as <span class="math inline">\(\hat p=0.64\)</span> or <span class="math inline">\(\bar x=85\)</span>.</li>
 </ul>
 </div>
 <div id="interpreting-p-values" class="section level3" number="12.1.2">
 <h3>
 <span class="header-section-number">12.1.2</span> Interpreting <em>P</em>-values<a class="anchor" aria-label="anchor" href="#interpreting-p-values"><i class="fas fa-link"></i></a>
 </h3>
-<p>The null hypothesis <span class="math inline">\(H_0\)</span> states the claim t<span class="math inline">\(H_a\)</span>t we are seeking evidence against. The probability t<span class="math inline">\(H_a\)</span>t measures the strength of the evidence against a null hypothesis is called a <em>P</em>-value.
-The probability, computed assuming <span class="math inline">\(H_0\)</span> is true, t<span class="math inline">\(H_a\)</span>t the statistic would take a value as extreme or more extreme t<span class="math inline">\(H_a\)</span>n the one actually observed is called the <em>P</em>-value of the test.
-Small <em>P</em>-values are evidence against <span class="math inline">\(H_0\)</span> because they say t<span class="math inline">\(H_a\)</span>t the observed result is unlikely to occur when <span class="math inline">\(H_0\)</span> is true.
-Large <em>P</em>-values fail to give convincing evidence against <span class="math inline">\(H_0\)</span> because they say t<span class="math inline">\(H_a\)</span>t the observed result is likely to occur by c<span class="math inline">\(H_a\)</span>nce when <span class="math inline">\(H_0\)</span> is true.</p>
+<p>The null hypothesis <span class="math inline">\(H_0\)</span> states the claim that we are seeking evidence against. The probability that measures the strength of the evidence against a null hypothesis is called a <em>P</em>-value.
+The probability, computed assuming <span class="math inline">\(H_0\)</span> is true, that the statistic would take a value as extreme or more extreme than the one actually observed is called the <em>P</em>-value of the test.
+Small <em>P</em>-values are evidence against <span class="math inline">\(H_0\)</span> because they say that the observed result is unlikely to occur when <span class="math inline">\(H_0\)</span> is true.
+Large <em>P</em>-values fail to give convincing evidence against <span class="math inline">\(H_0\)</span> because they say that the observed result is likely to occur by chance when <span class="math inline">\(H_0\)</span> is true.</p>
 </div>
 <div id="statistical-significance" class="section level3" number="12.1.3">
 <h3>
@@ -133,10 +133,10 @@ Large <em>P</em>-values fail to give convincing evidence against <span class="ma
 </h3>
 <p>The final step in performing a significance test is to draw a conclusion about the competing claims you were testing. We make one of two decisions based on the strength of the evidence against the null hypothesis (and in favor of the alternative hypothesis):</p>
 <p>reject <span class="math inline">\(H_0\)</span> or fail to reject <span class="math inline">\(H_0\)</span>.</p>
-<p><em>Note: A fail-to-reject <span class="math inline">\(H_0\)</span> decision in a significance test doesn’t mean t<span class="math inline">\(H_a\)</span>t <span class="math inline">\(H_0\)</span> is true. For t<span class="math inline">\(H_a\)</span>t reason, you should never “accept <span class="math inline">\(H_0\)</span>” or use language implying t<span class="math inline">\(H_a\)</span>t you believe <span class="math inline">\(H_0\)</span> is true.</em></p>
-<p>There is no rule for how small a <em>P</em>-value we should require in order to reject <span class="math inline">\(H_0\)</span>. But we can compare the <em>P</em>-value with a fixed value t<span class="math inline">\(H_a\)</span>t we regard as decisive, called the significance level. We write it as <span class="math inline">\(\alpha\)</span>, the Greek letter alp<span class="math inline">\(H_a\)</span>.</p>
+<p><em>Note: A fail-to-reject <span class="math inline">\(H_0\)</span> decision in a significance test doesn’t mean that <span class="math inline">\(H_0\)</span> is true. For that reason, you should never “accept <span class="math inline">\(H_0\)</span>” or use language implying that you believe <span class="math inline">\(H_0\)</span> is true.</em></p>
+<p>There is no rule for how small a <em>P</em>-value we should require in order to reject <span class="math inline">\(H_0\)</span>. But we can compare the <em>P</em>-value with a fixed value that we regard as decisive, called the significance level. We write it as <span class="math inline">\(\alpha\)</span>, the Greek letter alpha.</p>
 <div class="highlight">
-<p>If the <em>P</em>-value is smaller t<span class="math inline">\(H_a\)</span>n alp<span class="math inline">\(H_a\)</span>, we say t<span class="math inline">\(H_a\)</span>t the data are statistically significant at the level . In t<span class="math inline">\(H_a\)</span>t case, we reject the null hypothesis <span class="math inline">\(H_0\)</span> and conclude t<span class="math inline">\(H_a\)</span>t there is convincing evidence in favor of the alternative hypothesis <span class="math inline">\(H_a\)</span>.</p>
+<p>If the <em>P</em>-value is smaller than alpha, we say that the data are statistically significant at the level . In that case, we reject the null hypothesis <span class="math inline">\(H_0\)</span> and conclude that there is convincing evidence in favor of the alternative hypothesis <span class="math inline">\(H_a\)</span>.</p>
 <p>In a nutshell, our conclusion in a significance test comes down to</p>
 <p><span class="math display">\[
 \begin{aligned}
