@@ -78,3 +78,4 @@ sampling-distributions-for-simple-linear-regression
 table-a
 table-b
 table-c
+calculator-thing
