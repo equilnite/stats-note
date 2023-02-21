@@ -17,7 +17,7 @@ A significance test starts with a careful statement of the claims we want to com
 $$H_0 : \text{parameter} = \text{null value} $$
 
 - $H_a$: The claim about the population that we are trying to find evidence for is the alternative hypothesis.
-    -The alternative hypothesis has one of the forms:
+    - The alternative hypothesis has one of the forms:
 
 $$
 \begin{aligned}
@@ -28,7 +28,7 @@ H_0 &: \text{parameter} \not = \text{null value}
 $$
 :::
 
-*To determine the correct form of H_a, read the problem carefully.*
+*To determine the correct form of $H_a$, read the problem carefully.*
 
 ::: {.highlight}
 The alternative hypothesis is one-sided if it states that a parameter is *larger than* the null hypothesis value or if it states that the parameter is *smaller than* the null value.
@@ -51,7 +51,7 @@ Large *P*-values fail to give convincing evidence against $H_0$ because they say
 
 The final step in performing a significance test is to draw a conclusion about the competing claims you were testing. We make one of two decisions based on the strength of the evidence against the null hypothesis (and in favor of the alternative hypothesis):
 
-reject $H_0$ or fail to reject $H_0$.
+$$\text{reject } H_0 \text{ or fail to reject } H_0$$
 
 *Note:  A fail-to-reject $H_0$ decision in a significance test doesn’t mean that $H_0$ is true. For that reason, you should never “accept $H_0$” or use language implying that you believe $H_0$ is true.*
 
@@ -85,10 +85,61 @@ $H_0: p > 0.85$ (The evidence that we got is $\frac{135}{150}$, which is greater
 
 2. The school psychologist performed the significance test and obtained a *P*-value of 0.0225. Interpret the P-value.
 
-Assuming that that $H_0$ is true (i.e. p = 0.84), there is a 0.0225 probability of getting a sample proportion of $\frac{135}{150}$ or greater purely by chance.
+Assuming that that $H_0$ is true (i.e. $p = 0.84$), there is a 0.0225 probability of getting a sample proportion of $\frac{135}{150}$ or greater purely by chance.
 
 * You can also include the context as we have before, but the context in this answer already infers knowledge that we are interpreting in the context of long-term frequency. This is really all you need for this interpretation.
 
 3. What conclusion would you make at the $\alpha = 0.05$ level?
 
-Since $p-value = 0.0225<0.05=\alpha$, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.
+Since $\text{p-value } = 0.0225<0.05=\alpha$, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.
+
+## Type I and II Error
+
+When we draw a conclusion from a significance test, we hope our conclusion will be correct. But sometimes it will be wrong. There are two types of mistakes we can make. 
+
+::: {.highlight}
+- If we reject $H_0$ when $H_a$ is true, we have committed a Type I error.
+
+- If we fail to reject $H_0$ when $H_a$ is true, we have committed a Type II error.
+:::
+
+We can sum this up with this up with this table:
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;display: block;margin-left: auto;margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7od5{background-color:#9aff99;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-90e1{background-color:#ffccc9;border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-73oq" colspan="2" rowspan="2"></th>
+    <th class="tg-73oq" colspan="2">Truth about the population</th>
+  </tr>
+  <tr>
+    <th class="tg-73oq">$H_0$ is true</th>
+    <th class="tg-73oq">$H_0$ is false</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-73oq" rowspan="2">Conclusion based<br>on the sample</td>
+    <td class="tg-73oq">Reject $H_0$</td>
+    <td class="tg-90e1">Type I Error</td>
+    <td class="tg-7od5"></td>
+  </tr>
+  <tr>
+    <td class="tg-73oq">Fail to reject $H_0$</td>
+    <td class="tg-7od5"></td>
+    <td class="tg-90e1">Type II Error</td>
+  </tr>
+</tbody>
+</table>
+
+\newline
+When considering the consequences of the results of an inference task, we want to consider Type I and II errors. In some cases, we'd prefer to have Type I errors over Type II. In other instances, it's the opposite.

@@ -1,0 +1,61 @@
+# Inference for Proportions
+
+## Conditions for Inference
+
+### 1. Random {.unlisted .unnumbered}
+
+The data must come from a random sample, or random assignment in an experiment.
+
+### 2. Large {.unlisted .unnumbered}
+
+You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.
+
+For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no).  In this case we check the [***Large Counts Condition***](#large-counts-cond).
+
+This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.  
+
+### 3. Sampling Independence {.unlisted .unnumbered}
+
+Observations in our sample must be independent of each other.
+
+In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
+
+## One-Sample z-interval
+
+::: {.highlight}
+A $C$\% confidence interval for the unknown population proportion $p$ when all conditions are met is calculated with the following: 
+
+$$\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
+:::
+
+where $z^*$ is the critical value for the standard Normal curve with $C$\% of its area between $-z^*$ and $z^*$.
+
+::: {.highlight}
+The standard error of the sample proportion is:
+$$SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
+:::
+
+## One-Sample z-test
+
+::: {.highlight}
+
+Given the null hypothesis $H_0: p=p_0$, and an observed sample proportion $\hat p$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\hat p$, calculated assuming $H_0$ is true, has the following:
+
+$$\mu_{\hat p} = p_0$$
+$$\sigma_{\hat p} = \frac{\sigma_{p_0}}{\sqrt n} = \sqrt{\frac{p_0(1- p_0)}{n}}$$
+
+The **z-statistic** is the standardized score of $\hat p$ under the mean and standard deviation of the null distribution:
+
+$$z=\frac{\hat p - p_0}{\sqrt{\frac{p_0(1- p_0)}{n}}}$$
+
+The p-value, calculated using the z-statistic, is based off the direction of the alternative hypothesis, $H_a$. $Z$ represents the standard normal distribution.
+
+$$
+\text{p-value}= \begin{cases}
+P(Z<z) & \text{ if } H_a:p<p_0 \\ 
+P(Z>z) & \text{ if } H_a:p>p_0 \\ 
+2\cdot P(Z<-|z|) & \text{ if } H_a:p\not =p_0 
+\end{cases}
+$$
+:::
+

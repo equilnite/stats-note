@@ -58,10 +58,12 @@
 <li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
 <li><a class="" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">13</span> Linear Regression</a></li>
+<li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
+<li><a class="" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
-<li><a class="" href="calculator-thing.html"><span class="header-section-number">B</span> Calculator thing</a></li>
+<li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
 </ul>
 
         <div class="book-extra">
@@ -100,16 +102,60 @@ are several ways that this can happen. The main way that we learn are:</p>
 <h3>
 <span class="header-section-number">5.1.1</span> Response Bias<a class="anchor" aria-label="anchor" href="#response-bias"><i class="fas fa-link"></i></a>
 </h3>
+<p>Response bias is created when something causes people’s responses to be systematically pushed in one direction.</p>
 </div>
 <div id="non-response-bias" class="section level3" number="5.1.2">
 <h3>
 <span class="header-section-number">5.1.2</span> Non-response Bias<a class="anchor" aria-label="anchor" href="#non-response-bias"><i class="fas fa-link"></i></a>
 </h3>
+<p>Nonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate</p>
 </div>
-<div id="voluntary-bias" class="section level3" number="5.1.3">
+<div id="undercoverage" class="section level3" number="5.1.3">
 <h3>
-<span class="header-section-number">5.1.3</span> Voluntary Bias<a class="anchor" aria-label="anchor" href="#voluntary-bias"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3</span> Undercoverage<a class="anchor" aria-label="anchor" href="#undercoverage"><i class="fas fa-link"></i></a>
 </h3>
+<p>Undercoverage occurs when some members of the population cannot be chosen in the sample.</p>
+</div>
+<div id="voluntary-response-sample" class="section level3" number="5.1.4">
+<h3>
+<span class="header-section-number">5.1.4</span> Voluntary Response Sample<a class="anchor" aria-label="anchor" href="#voluntary-response-sample"><i class="fas fa-link"></i></a>
+</h3>
+<p>Voluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population</p>
+</div>
+<div id="convenience-sample" class="section level3" number="5.1.5">
+<h3>
+<span class="header-section-number">5.1.5</span> Convenience Sample<a class="anchor" aria-label="anchor" href="#convenience-sample"><i class="fas fa-link"></i></a>
+</h3>
+<p>Choosing individuals from a population who are easy to reach results in a convenience sample.</p>
+</div>
+</div>
+<div id="sampling-methods" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Sampling Methods<a class="anchor" aria-label="anchor" href="#sampling-methods"><i class="fas fa-link"></i></a>
+</h2>
+<div id="simple-random-sample-srs" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Simple Random Sample (SRS)<a class="anchor" aria-label="anchor" href="#simple-random-sample-srs"><i class="fas fa-link"></i></a>
+</h3>
+<p>In a SRS, each individual (the words) and each subgroup of individuals has the same chance of being chosen from the population of all words in the song.</p>
+</div>
+<div id="stratified-random-sample" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Stratified Random Sample<a class="anchor" aria-label="anchor" href="#stratified-random-sample"><i class="fas fa-link"></i></a>
+</h3>
+<p>In a stratified random sample, we first determine <strong>strata</strong> within our population. You can think of strata as subgroups of people that we divide based on the type/status of the things that we are sampling. The goal of the random sample is then to take an SRS from each strata (normally, you want the same amount of people from each stratum).</p>
+</div>
+<div id="random-cluster-sample" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> Random Cluster Sample<a class="anchor" aria-label="anchor" href="#random-cluster-sample"><i class="fas fa-link"></i></a>
+</h3>
+<p>In a random cluster sample, we first determine <strong>clusters</strong> within our population. You can think of clusters as subgroups of people that we divide based on the location of the things that we are sampling (there should be no way to distinguish between the clusters besides where they are). The goal of the random sample is then to take select random clusters and then sample all people in the chosen clusters.</p>
+</div>
+<div id="systematic-random-sample" class="section level3" number="5.2.4">
+<h3>
+<span class="header-section-number">5.2.4</span> Systematic Random Sample<a class="anchor" aria-label="anchor" href="#systematic-random-sample"><i class="fas fa-link"></i></a>
+</h3>
+<p>In a systematic random sample, we randomly choose an interval (n) and/or a starting point at which to select individuals and then we select every nth individual.</p>
 
 </div>
 </div>
@@ -125,7 +171,17 @@ are several ways that this can happen. The main way that we learn are:</p>
 <a class="nav-link" href="#bias"><span class="header-section-number">5.1</span> Bias</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#response-bias"><span class="header-section-number">5.1.1</span> Response Bias</a></li>
 <li><a class="nav-link" href="#non-response-bias"><span class="header-section-number">5.1.2</span> Non-response Bias</a></li>
-<li><a class="nav-link" href="#voluntary-bias"><span class="header-section-number">5.1.3</span> Voluntary Bias</a></li>
+<li><a class="nav-link" href="#undercoverage"><span class="header-section-number">5.1.3</span> Undercoverage</a></li>
+<li><a class="nav-link" href="#voluntary-response-sample"><span class="header-section-number">5.1.4</span> Voluntary Response Sample</a></li>
+<li><a class="nav-link" href="#convenience-sample"><span class="header-section-number">5.1.5</span> Convenience Sample</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#sampling-methods"><span class="header-section-number">5.2</span> Sampling Methods</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#simple-random-sample-srs"><span class="header-section-number">5.2.1</span> Simple Random Sample (SRS)</a></li>
+<li><a class="nav-link" href="#stratified-random-sample"><span class="header-section-number">5.2.2</span> Stratified Random Sample</a></li>
+<li><a class="nav-link" href="#random-cluster-sample"><span class="header-section-number">5.2.3</span> Random Cluster Sample</a></li>
+<li><a class="nav-link" href="#systematic-random-sample"><span class="header-section-number">5.2.4</span> Systematic Random Sample</a></li>
 </ul>
 </li>
 </ul>
@@ -144,7 +200,7 @@ are several ways that this can happen. The main way that we learn are:</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-07.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-20.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

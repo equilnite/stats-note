@@ -1,0 +1,102 @@
+# Inference for Means
+
+## Conditions for Inference
+
+### 1. Random {.unlisted .unnumbered}
+
+The data must come from a random sample, or random assignment in an experiment.
+
+### 2. Large {.unlisted .unnumbered}
+
+You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.
+
+In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met. 
+
+- [*Normal/Large Condition*](#large-cond)
+
+- When $n<30$, check if the graph of the sample data does not show any strong skew or outliers. Otherwise, 
+
+### 3. Sampling Independence {.unlisted .unnumbered}
+
+Observations in our sample must be independent of each other.
+
+In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
+
+## One-Sample t-interval
+
+::: {.highlight}
+A $C$\% confidence interval for the unknown population mean $\mu$ when all conditions are met is calculated with the following: 
+
+$$\bar x \pm t^* \frac{s_x}{\sqrt{n}}$$
+:::
+
+where $t^*$ is the critical value for the Student's $t$ distribution corresponding with degrees of freedom $df = n - 1$ with $C$\% of its area between $-t^*$ and $t^*$.
+
+::: {.highlight}
+The standard error of the sample mean is:
+$$SE_{\bar x}=\frac{s_x}{\sqrt{n}}$$
+:::
+
+## One-Sample t-test
+
+::: {.highlight}
+
+Given the null hypothesis $H_0: \mu=\mu_0$, and an observed sample mean $\bar x$ and sample standard deviation $s_x$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $bar x$, calculated assuming $H_0$ is true, has the following:
+
+$$\mu_{\bar x} = \mu_0$$
+$$\sigma_{\bar x} = \frac{\sigma_x}{\sqrt n} \approx \frac{s_x}{\sqrt n}$$
+
+Where we use $s_x$ in place of $sigma_x$ because the population standard deviation is usually unknown and we can use the sample standard deviation because it is an unbiased estimator of the population standard deviation.
+
+The **t-statistic** is the standardized score of $\bar x$ under the mean and standard deviation of the null distribution:
+
+$$t=\frac{\bar x - \mu_0}{\frac{s_x}{\sqrt n}}$$
+
+The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, $H_a$. $t_{n-1}$ represents the $t$ distribution with $df = n-1$ degrees of freedom.
+
+$$
+\text{p-value}= \begin{cases}
+P(t_{n-1}<t) & \text{ if } H_a:\mu<\mu_0 \\ 
+P(t_{n-1}>t) & \text{ if } H_a:\mu>\mu_0 \\ 
+2\cdot P(t_{n-1}<-|t|) & \text{ if } H_a: \mu\not =\mu_0 
+\end{cases}
+$$
+:::
+
+
+## The Student's $t$ distribution
+
+::: {.highlight}
+Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic 
+$$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$
+has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough. 
+
+As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough.
+:::
+
+### Why a $t$-distribution?
+
+When we’re conducting inference for a population proportion, there’s only one parameter ($p$) that we don’t know.  The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use $z$-procedures.  However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean $\mu$ and the population standard deviation $\sigma$.  Since we now have, we get a different sampling distribution that is not quite normal, especially at small $n$.  
+
+As a result, we use what’s called the Student's $t$ distribution (a Guinness Beer brewer developed this), which is a slightly more **conservative** version of a normal distribution.  The $t$ distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic $t$ has the same interpretation as any standardized $z$ statistic: it says many standard deviations $\sigma$ that $x$ is from the distribution's mean $\mu$. 
+
+```{r t-dist-to-norm, echo=FALSE, fig.cap="The t-distribution as df increases, with the standard normal curve in red"}
+t.dists <- list(
+function(x) dt(x, df = 1),
+function(x) dt(x, df = 2),
+function(x) dt(x, df = 3),
+function(x) dt(x, df = 5),
+function(x) dt(x, df = 10)
+)
+
+{
+    par(mar = c(.1, .1, 4, .1))    
+    plot.new()
+    plot.window(xlim = c(-4,4), ylim = c(0,0.4))
+    title("t-distribution and df")
+curve(dnorm, -4, 4, add = TRUE, col="red", lwd = 2)
+for (t.dist in t.dists) {
+    curve(t.dist, 4, -4, add = TRUE, lwd = 2)
+}
+}
+```

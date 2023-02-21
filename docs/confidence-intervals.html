@@ -58,10 +58,12 @@
 <li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
 <li><a class="active" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">13</span> Linear Regression</a></li>
+<li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
+<li><a class="" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
-<li><a class="" href="calculator-thing.html"><span class="header-section-number">B</span> Calculator thing</a></li>
+<li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
 </ul>
 
         <div class="book-extra">
@@ -148,61 +150,9 @@
 <p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; “I’m going to have to assume I can treat these observations as independent.”</p>
 </div>
 </div>
-<div id="one-sample-z-intervals" class="section level2" number="11.5">
+<div id="the-four-step-process" class="section level2" number="11.5">
 <h2>
-<span class="header-section-number">11.5</span> One-Sample z-Intervals<a class="anchor" aria-label="anchor" href="#one-sample-z-intervals"><i class="fas fa-link"></i></a>
-</h2>
-<div class="highlight">
-<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population proportion <span class="math inline">\(p\)</span> when all conditions are met is calculated with the following:</p>
-<p><span class="math display">\[\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
-</div>
-<p>where <span class="math inline">\(z^*\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^*\)</span> and <span class="math inline">\(z^*\)</span>.</p>
-<div class="highlight">
-<p>The standard error of the sample proportion is:
-<span class="math display">\[SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
-</div>
-</div>
-<div id="one-sample-t-intervals" class="section level2" number="11.6">
-<h2>
-<span class="header-section-number">11.6</span> One-Sample t-Intervals<a class="anchor" aria-label="anchor" href="#one-sample-t-intervals"><i class="fas fa-link"></i></a>
-</h2>
-<div class="highlight">
-<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
-<p><span class="math display">\[\bar x \pm t^* \frac{s_x}{\sqrt{n}}\]</span></p>
-</div>
-<p>where <span class="math inline">\(t^*\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
-<div class="highlight">
-<p>The standard error of the sample mean is:
-<span class="math display">\[SE_{\bar x}=\frac{s_x}{\sqrt{n}}\]</span></p>
-</div>
-<div id="the-students-t-distribution" class="section level4" number="11.6.0.1">
-<h4>
-<span class="header-section-number">11.6.0.1</span> The Student’s <span class="math inline">\(t\)</span> distribution<a class="anchor" aria-label="anchor" href="#the-students-t-distribution"><i class="fas fa-link"></i></a>
-</h4>
-<div class="highlight">
-<p>Draw an SRS of size <span class="math inline">\(n\)</span> from a large population that has a Normal distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. The statistic
-<span class="math display">\[t=\frac{\bar x - \mu}{s_x / \sqrt{n}}\]</span>
-has a <span class="math inline">\(t\)</span>-distribution with degrees of freedom <span class="math inline">\(df = n – 1\)</span>, denoted as <span class="math inline">\(t_{n-1}\)</span>. When the population distribution isn’t Normal, this statistic will be approximately <span class="math inline">\(t_{n-1}\)</span> if the sample size is large enough.</p>
-<p>As the <span class="math inline">\(df\)</span> increases, the <span class="math inline">\(t\)</span>-distribution approaches <span class="math inline">\(N(0,1)\)</span> (standard normal) (See Figure <a href="confidence-intervals.html#fig:t-dist-to-norm">11.1</a>). This happens because <span class="math inline">\(s_x\)</span> estimates <span class="math inline">\(\sigma\)</span> more accurately as <span class="math inline">\(n\)</span> increases. So using <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(\sigma\)</span> causes little extra variation when the sample is large enough.</p>
-</div>
-</div>
-<div id="why-a-t-distribution" class="section level3" number="11.6.1">
-<h3>
-<span class="header-section-number">11.6.1</span> Why a <span class="math inline">\(t\)</span>-distribution?<a class="anchor" aria-label="anchor" href="#why-a-t-distribution"><i class="fas fa-link"></i></a>
-</h3>
-<p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
-<p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
-<div class="figure">
-<span style="display:block;" id="fig:t-dist-to-norm"></span>
-<img src="images/t-dist-to-norm-1.png" alt="The t-distribution as df increases, with the standard normal curve in red" width="672"><p class="caption">
-Figure 11.1: The t-distribution as df increases, with the standard normal curve in red
-</p>
-</div>
-</div>
-</div>
-<div id="the-four-step-process" class="section level2" number="11.7">
-<h2>
-<span class="header-section-number">11.7</span> The Four-Step Process<a class="anchor" aria-label="anchor" href="#the-four-step-process"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5</span> The Four-Step Process<a class="anchor" aria-label="anchor" href="#the-four-step-process"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li>
@@ -244,11 +194,7 @@ Figure 11.1: The t-distribution as df increases, with the standard normal curve 
 <li><a class="nav-link" href="#sampling-independence">3. Sampling Independence</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#one-sample-z-intervals"><span class="header-section-number">11.5</span> One-Sample z-Intervals</a></li>
-<li>
-<a class="nav-link" href="#one-sample-t-intervals"><span class="header-section-number">11.6</span> One-Sample t-Intervals</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#why-a-t-distribution"><span class="header-section-number">11.6.1</span> Why a \(t\)-distribution?</a></li></ul>
-</li>
-<li><a class="nav-link" href="#the-four-step-process"><span class="header-section-number">11.7</span> The Four-Step Process</a></li>
+<li><a class="nav-link" href="#the-four-step-process"><span class="header-section-number">11.5</span> The Four-Step Process</a></li>
 </ul>
 
       <div class="book-extra">
@@ -265,7 +211,7 @@ Figure 11.1: The t-distribution as df increases, with the standard normal curve 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-07.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-20.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

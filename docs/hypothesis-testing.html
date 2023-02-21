@@ -58,10 +58,12 @@
 <li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
 <li><a class="" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
 <li><a class="active" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">13</span> Linear Regression</a></li>
+<li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
+<li><a class="" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
-<li><a class="" href="calculator-thing.html"><span class="header-section-number">B</span> Calculator thing</a></li>
+<li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
 </ul>
 
         <div class="book-extra">
@@ -97,7 +99,10 @@
 <ul>
 <li>
 <span class="math inline">\(H_a\)</span>: The claim about the population that we are trying to find evidence for is the alternative hypothesis.
--The alternative hypothesis has one of the forms:</li>
+<ul>
+<li>The alternative hypothesis has one of the forms:</li>
+</ul>
+</li>
 </ul>
 <p><span class="math display">\[
 \begin{aligned}
@@ -107,7 +112,7 @@ H_0 &amp;: \text{parameter} \not = \text{null value}
 \end{aligned}
 \]</span></p>
 </div>
-<p><em>To determine the correct form of H_a, read the problem carefully.</em></p>
+<p><em>To determine the correct form of <span class="math inline">\(H_a\)</span>, read the problem carefully.</em></p>
 <div class="highlight">
 <p>The alternative hypothesis is one-sided if it states that a parameter is <em>larger than</em> the null hypothesis value or if it states that the parameter is <em>smaller than</em> the null value.</p>
 <p>It is two-sided if it states that the parameter is <em>different from</em> the null hypothesis value (it could be either larger or smaller).</p>
@@ -132,7 +137,7 @@ Large <em>P</em>-values fail to give convincing evidence against <span class="ma
 <span class="header-section-number">12.1.3</span> Statistical Significance<a class="anchor" aria-label="anchor" href="#statistical-significance"><i class="fas fa-link"></i></a>
 </h3>
 <p>The final step in performing a significance test is to draw a conclusion about the competing claims you were testing. We make one of two decisions based on the strength of the evidence against the null hypothesis (and in favor of the alternative hypothesis):</p>
-<p>reject <span class="math inline">\(H_0\)</span> or fail to reject <span class="math inline">\(H_0\)</span>.</p>
+<p><span class="math display">\[\text{reject } H_0 \text{ or fail to reject } H_0\]</span></p>
 <p><em>Note: A fail-to-reject <span class="math inline">\(H_0\)</span> decision in a significance test doesn’t mean that <span class="math inline">\(H_0\)</span> is true. For that reason, you should never “accept <span class="math inline">\(H_0\)</span>” or use language implying that you believe <span class="math inline">\(H_0\)</span> is true.</em></p>
 <p>There is no rule for how small a <em>P</em>-value we should require in order to reject <span class="math inline">\(H_0\)</span>. But we can compare the <em>P</em>-value with a fixed value that we regard as decisive, called the significance level. We write it as <span class="math inline">\(\alpha\)</span>, the Greek letter alpha.</p>
 <div class="highlight">
@@ -161,21 +166,89 @@ Factinate.com claims that 84% of teenagers think highly of their mother. To inve
 <ol start="2" style="list-style-type: decimal">
 <li>The school psychologist performed the significance test and obtained a <em>P</em>-value of 0.0225. Interpret the P-value.</li>
 </ol>
-<p>Assuming that that <span class="math inline">\(H_0\)</span> is true (i.e. p = 0.84), there is a 0.0225 probability of getting a sample proportion of <span class="math inline">\(\frac{135}{150}\)</span> or greater purely by chance.</p>
+<p>Assuming that that <span class="math inline">\(H_0\)</span> is true (i.e. <span class="math inline">\(p = 0.84\)</span>), there is a 0.0225 probability of getting a sample proportion of <span class="math inline">\(\frac{135}{150}\)</span> or greater purely by chance.</p>
 <ul>
 <li>You can also include the context as we have before, but the context in this answer already infers knowledge that we are interpreting in the context of long-term frequency. This is really all you need for this interpretation.</li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
 <li>What conclusion would you make at the <span class="math inline">\(\alpha = 0.05\)</span> level?</li>
 </ol>
-<p>Since <span class="math inline">\(p-value = 0.0225&lt;0.05=\alpha\)</span>, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.</p>
-
+<p>Since <span class="math inline">\(\text{p-value } = 0.0225&lt;0.05=\alpha\)</span>, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.</p>
 </div>
+</div>
+<div id="type-i-and-ii-error" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> Type I and II Error<a class="anchor" aria-label="anchor" href="#type-i-and-ii-error"><i class="fas fa-link"></i></a>
+</h2>
+<p>When we draw a conclusion from a significance test, we hope our conclusion will be correct. But sometimes it will be wrong. There are two types of mistakes we can make.</p>
+<div class="highlight">
+<ul>
+<li><p>If we reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_a\)</span> is true, we have committed a Type I error.</p></li>
+<li><p>If we fail to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_a\)</span> is true, we have committed a Type II error.</p></li>
+</ul>
+</div>
+<p>We can sum this up with this up with this table:</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;display: block;margin-left: auto;margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7od5{background-color:#9aff99;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-90e1{background-color:#ffccc9;border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<div class="inline-table"><table class="tg">
+<thead>
+<tr>
+<th class="tg-73oq" colspan="2" rowspan="2">
+</th>
+<th class="tg-73oq" colspan="2">
+Truth about the population
+</th>
+</tr>
+<tr>
+<th class="tg-73oq">
+<span class="math inline">\(H_0\)</span> is true
+</th>
+<th class="tg-73oq">
+<span class="math inline">\(H_0\)</span> is false
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tg-73oq" rowspan="2">
+Conclusion based<br>on the sample
+</td>
+<td class="tg-73oq">
+Reject <span class="math inline">\(H_0\)</span>
+</td>
+<td class="tg-90e1">
+Type I Error
+</td>
+<td class="tg-7od5">
+</td>
+</tr>
+<tr>
+<td class="tg-73oq">
+Fail to reject <span class="math inline">\(H_0\)</span>
+</td>
+<td class="tg-7od5">
+</td>
+<td class="tg-90e1">
+Type II Error
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>When considering the consequences of the results of an inference task, we want to consider Type I and II errors. In some cases, we’d prefer to have Type I errors over Type II. In other instances, it’s the opposite.</p>
+
 </div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></div>
-<div class="next"><a href="linear-regression.html"><span class="header-section-number">13</span> Linear Regression</a></div>
+<div class="next"><a href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -188,6 +261,7 @@ Factinate.com claims that 84% of teenagers think highly of their mother. To inve
 <li><a class="nav-link" href="#example-1"><span class="header-section-number">12.1.4</span> Example</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#type-i-and-ii-error"><span class="header-section-number">12.2</span> Type I and II Error</a></li>
 </ul>
 
       <div class="book-extra">
@@ -204,7 +278,7 @@ Factinate.com claims that 84% of teenagers think highly of their mother. To inve
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-07.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-20.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

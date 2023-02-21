@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>14 Inference for Means | AP Statistics Notes</title>
+<meta name="author" content="Mr. Chang edwardchang@berkeley.net">
+<meta name="description" content="14.1 Conditions for Inference  1. Random The data must come from a random sample, or random assignment in an experiment.  2. Large You must check the following to know if the sample is large...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="14 Inference for Means | AP Statistics Notes">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://echa.ng/stats/inference-for-means.html">
+<meta property="og:description" content="14.1 Conditions for Inference  1. Random The data must come from a random sample, or random assignment in an experiment.  2. Large You must check the following to know if the sample is large...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="14 Inference for Means | AP Statistics Notes">
+<meta name="twitter:description" content="14.1 Conditions for Inference  1. Random The data must come from a random sample, or random assignment in an experiment.  2. Large You must check the following to know if the sample is large...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/console.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">AP Statistics Notes</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="basic-notation.html"><span class="header-section-number">2</span> Basic notation</a></li>
+<li><a class="" href="categorical-data-visualizations.html"><span class="header-section-number">3</span> Categorical Data Visualizations</a></li>
+<li><a class="" href="quantative-data-visualizations.html"><span class="header-section-number">4</span> Quantative Data Visualizations</a></li>
+<li><a class="" href="sampling.html"><span class="header-section-number">5</span> Sampling</a></li>
+<li><a class="" href="experimental-design.html"><span class="header-section-number">6</span> Experimental Design</a></li>
+<li><a class="" href="probability.html"><span class="header-section-number">7</span> Probability</a></li>
+<li><a class="" href="density-curves.html"><span class="header-section-number">8</span> Density Curves</a></li>
+<li><a class="" href="random-variables.html"><span class="header-section-number">9</span> Random Variables</a></li>
+<li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
+<li><a class="" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
+<li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
+<li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
+<li><a class="active" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
+<li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="inference-for-means" class="section level1" number="14">
+<h1>
+<span class="header-section-number">14</span> Inference for Means<a class="anchor" aria-label="anchor" href="#inference-for-means"><i class="fas fa-link"></i></a>
+</h1>
+<div id="conditions-for-inference-1" class="section level2" number="14.1">
+<h2>
+<span class="header-section-number">14.1</span> Conditions for Inference<a class="anchor" aria-label="anchor" href="#conditions-for-inference-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="random-2" class="section level3 unlisted unnumbered">
+<h3>1. Random<a class="anchor" aria-label="anchor" href="#random-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>The data must come from a random sample, or random assignment in an experiment.</p>
+</div>
+<div id="large-2" class="section level3 unlisted unnumbered">
+<h3>2. Large<a class="anchor" aria-label="anchor" href="#large-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
+<p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
+<ul>
+<li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
+<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
+</ul>
+</div>
+<div id="sampling-independence-2" class="section level3 unlisted unnumbered">
+<h3>3. Sampling Independence<a class="anchor" aria-label="anchor" href="#sampling-independence-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>Observations in our sample must be independent of each other.</p>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
+</div>
+</div>
+<div id="one-sample-t-interval" class="section level2" number="14.2">
+<h2>
+<span class="header-section-number">14.2</span> One-Sample t-interval<a class="anchor" aria-label="anchor" href="#one-sample-t-interval"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
+<p><span class="math display">\[\bar x \pm t^* \frac{s_x}{\sqrt{n}}\]</span></p>
+</div>
+<p>where <span class="math inline">\(t^*\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
+<div class="highlight">
+<p>The standard error of the sample mean is:
+<span class="math display">\[SE_{\bar x}=\frac{s_x}{\sqrt{n}}\]</span></p>
+</div>
+</div>
+<div id="one-sample-t-test" class="section level2" number="14.3">
+<h2>
+<span class="header-section-number">14.3</span> One-Sample t-test<a class="anchor" aria-label="anchor" href="#one-sample-t-test"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>Given the null hypothesis <span class="math inline">\(H_0: \mu=\mu_0\)</span>, and an observed sample mean <span class="math inline">\(\bar x\)</span> and sample standard deviation <span class="math inline">\(s_x\)</span> from a sample of size <span class="math inline">\(n\)</span> when all conditions are met. The null sampling distribution of <span class="math inline">\(bar x\)</span>, calculated assuming <span class="math inline">\(H_0\)</span> is true, has the following:</p>
+<p><span class="math display">\[\mu_{\bar x} = \mu_0\]</span>
+<span class="math display">\[\sigma_{\bar x} = \frac{\sigma_x}{\sqrt n} \approx \frac{s_x}{\sqrt n}\]</span></p>
+<p>Where we use <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(sigma_x\)</span> because the population standard deviation is usually unknown and we can use the sample standard deviation because it is an unbiased estimator of the population standard deviation.</p>
+<p>The <strong>t-statistic</strong> is the standardized score of <span class="math inline">\(\bar x\)</span> under the mean and standard deviation of the null distribution:</p>
+<p><span class="math display">\[t=\frac{\bar x - \mu_0}{\frac{s_x}{\sqrt n}}\]</span></p>
+<p>The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, <span class="math inline">\(H_a\)</span>. <span class="math inline">\(t_{n-1}\)</span> represents the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(df = n-1\)</span> degrees of freedom.</p>
+<p><span class="math display">\[
+\text{p-value}= \begin{cases}
+P(t_{n-1}&lt;t) &amp; \text{ if } H_a:\mu&lt;\mu_0 \\
+P(t_{n-1}&gt;t) &amp; \text{ if } H_a:\mu&gt;\mu_0 \\
+2\cdot P(t_{n-1}&lt;-|t|) &amp; \text{ if } H_a: \mu\not =\mu_0
+\end{cases}
+\]</span></p>
+</div>
+</div>
+<div id="the-students-t-distribution" class="section level2" number="14.4">
+<h2>
+<span class="header-section-number">14.4</span> The Student’s <span class="math inline">\(t\)</span> distribution<a class="anchor" aria-label="anchor" href="#the-students-t-distribution"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>Draw an SRS of size <span class="math inline">\(n\)</span> from a large population that has a Normal distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. The statistic
+<span class="math display">\[t=\frac{\bar x - \mu}{s_x / \sqrt{n}}\]</span>
+has a <span class="math inline">\(t\)</span>-distribution with degrees of freedom <span class="math inline">\(df = n – 1\)</span>, denoted as <span class="math inline">\(t_{n-1}\)</span>. When the population distribution isn’t Normal, this statistic will be approximately <span class="math inline">\(t_{n-1}\)</span> if the sample size is large enough.</p>
+<p>As the <span class="math inline">\(df\)</span> increases, the <span class="math inline">\(t\)</span>-distribution approaches <span class="math inline">\(N(0,1)\)</span> (standard normal) (See Figure <a href="inference-for-means.html#fig:t-dist-to-norm">14.1</a>). This happens because <span class="math inline">\(s_x\)</span> estimates <span class="math inline">\(\sigma\)</span> more accurately as <span class="math inline">\(n\)</span> increases. So using <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(\sigma\)</span> causes little extra variation when the sample is large enough.</p>
+</div>
+<div id="why-a-t-distribution" class="section level3" number="14.4.1">
+<h3>
+<span class="header-section-number">14.4.1</span> Why a <span class="math inline">\(t\)</span>-distribution?<a class="anchor" aria-label="anchor" href="#why-a-t-distribution"><i class="fas fa-link"></i></a>
+</h3>
+<p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
+<p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:t-dist-to-norm"></span>
+<img src="images/t-dist-to-norm-1.png" alt="The t-distribution as df increases, with the standard normal curve in red" width="672"><p class="caption">
+Figure 14.1: The t-distribution as df increases, with the standard normal curve in red
+</p>
+</div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></div>
+<div class="next"><a href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#inference-for-means"><span class="header-section-number">14</span> Inference for Means</a></li>
+<li>
+<a class="nav-link" href="#conditions-for-inference-1"><span class="header-section-number">14.1</span> Conditions for Inference</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#random-2">1. Random</a></li>
+<li><a class="nav-link" href="#large-2">2. Large</a></li>
+<li><a class="nav-link" href="#sampling-independence-2">3. Sampling Independence</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#one-sample-t-interval"><span class="header-section-number">14.2</span> One-Sample t-interval</a></li>
+<li><a class="nav-link" href="#one-sample-t-test"><span class="header-section-number">14.3</span> One-Sample t-test</a></li>
+<li>
+<a class="nav-link" href="#the-students-t-distribution"><span class="header-section-number">14.4</span> The Student’s \(t\) distribution</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#why-a-t-distribution"><span class="header-section-number">14.4.1</span> Why a \(t\)-distribution?</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-20.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

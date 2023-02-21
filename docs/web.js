@@ -22,7 +22,6 @@ repl.addEventListener('keypress', function (e) {
 });
 
 command.addEventListener('keydown', function (e) {
-    console.log(e);
     if (e.key === 'ArrowUp') {
        e.preventDefault();
         if (historyI > 0) {
@@ -40,6 +39,20 @@ command.addEventListener('keydown', function (e) {
 
 repl.addEventListener('onfocus',
                      function(e) {
-                       console.log("focused!");
-                       cursor.focus();
+                       command.focus();
+                     })
+
+repl.addEventListener('onfocusin',
+                     function(e) {
+                       command.focus();
+                     })
+
+repl.addEventListener('focus',
+                     function(e) {
+                       command.focus();
+                     })
+
+repl.addEventListener('onclick',
+                     function(e) {
+                       command.focus();
                      })
