@@ -135,6 +135,51 @@ P(t_{n-1}&gt;t) &amp; \text{ if } H_a:\mu&gt;\mu_0 \\
 \end{cases}
 \]</span></p>
 </div>
+<div id="paired-t-test" class="section level3" number="14.3.1">
+<h3>
+<span class="header-section-number">14.3.1</span> Paired t-test<a class="anchor" aria-label="anchor" href="#paired-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<p>A paired t-test is used when the data being compared are related or matched in some way, whereas a 2-sample t-test is used when the data being compared are independent. Here are some scenarios where a paired t-test would be more appropriate than a 2-sample t-test:</p>
+<p>Matched pair design:</p>
+<ul>
+<li><p>Before-and-after studies: When the same group of individuals is measured twice, such as before and after receiving a treatment or intervention, a paired t-test is used to determine whether there is a significant difference in the measurements.</p></li>
+<li><p>Matched case-control studies: When cases and controls are matched based on certain criteria (such as age, sex, or race), a paired t-test can be used to compare the measurements of the two groups.</p></li>
+</ul>
+<p>Repeated measures: When a group of individuals is measured at multiple time points, a paired t-test can be used to compare the measurements within each individual.</p>
+<p>In these scenarios, a paired t-test can be more powerful than a 2-sample t-test because it takes into account the relationship or correlation between the data being compared. By contrast, a 2-sample t-test assumes that the data being compared are independent, which may not be the case in these situations.</p>
+<div class="highlight">
+<p>Given the null hypothesis <span class="math inline">\(H_0: \mu_d=\mu_0\)</span> (where <span class="math inline">\(\mu_d\)</span> represents the true mean difference) and an observed sample mean <span class="math inline">\(\bar x\)</span> (of the differences) and sample standard deviation <span class="math inline">\(s_x\)</span> (of the differences) from a sample of size <span class="math inline">\(n\)</span> when all conditions are met. The null sampling distribution of <span class="math inline">\(\bar x\)</span>, calculated assuming <span class="math inline">\(H_0\)</span> is true, has the same null distribution and t-statistic as a <a href="inference-for-means.html#one-sample-t-test">one-sample t-test</a>.</p>
+</div>
+<div id="conditions" class="section level4" number="14.3.1.1">
+<h4>
+<span class="header-section-number">14.3.1.1</span> Conditions<a class="anchor" aria-label="anchor" href="#conditions"><i class="fas fa-link"></i></a>
+</h4>
+<div class="highlight">
+<div id="random-3" class="section level5 unlisted unnumbered">
+<h5>1. Random<a class="anchor" aria-label="anchor" href="#random-3"><i class="fas fa-link"></i></a>
+</h5>
+<p>The data must come from a random sample, or <strong>random assignment in an experiment</strong>. The latter of which will likely apply to a paired test.</p>
+</div>
+<div id="large-3" class="section level5 unlisted unnumbered">
+<h5>2. Large<a class="anchor" aria-label="anchor" href="#large-3"><i class="fas fa-link"></i></a>
+</h5>
+<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
+<p>In the case of paired data, you’ll be only <strong>checking the sampling distribution of the differences</strong>. The sampling distribution is approximately normal if at least one of the following conditions are met.</p>
+<ul>
+<li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
+<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
+</ul>
+</div>
+<div id="sampling-independence-3" class="section level5 unlisted unnumbered">
+<h5>3. Sampling Independence<a class="anchor" aria-label="anchor" href="#sampling-independence-3"><i class="fas fa-link"></i></a>
+</h5>
+<p>Observations in our sample must be independent of each other.</p>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
+<p>However, <strong>since we’ll be likely working with experiments, independence will not apply,</strong> so you will not have to state it. You can say something like <em>“since we have an experiment, we do not have to check independence”</em>.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="the-students-t-distribution" class="section level2" number="14.4">
 <h2>
@@ -177,7 +222,9 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 </ul>
 </li>
 <li><a class="nav-link" href="#one-sample-t-interval"><span class="header-section-number">14.2</span> One-Sample t-interval</a></li>
-<li><a class="nav-link" href="#one-sample-t-test"><span class="header-section-number">14.3</span> One-Sample t-test</a></li>
+<li>
+<a class="nav-link" href="#one-sample-t-test"><span class="header-section-number">14.3</span> One-Sample t-test</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#paired-t-test"><span class="header-section-number">14.3.1</span> Paired t-test</a></li></ul>
+</li>
 <li>
 <a class="nav-link" href="#the-students-t-distribution"><span class="header-section-number">14.4</span> The Student’s \(t\) distribution</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#why-a-t-distribution"><span class="header-section-number">14.4.1</span> Why a \(t\)-distribution?</a></li></ul>
 </li>
@@ -197,7 +244,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-20.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

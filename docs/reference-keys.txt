@@ -33,6 +33,8 @@ experiment-designs
 completely-randomized-design
 randomized-block-design
 matched-pairs-design
+statistical-significance
+scope-of-inference
 probability
 probability-rules
 complement-rule
@@ -78,9 +80,11 @@ hypothesis-testing
 significance-tests
 hypotheses
 interpreting-p-values
-statistical-significance
+drawing-a-conclusion
 example-1
 type-i-and-ii-error
+type-i-error
+type-ii-errors-and-power
 inference-for-proportions
 conditions-for-inference
 one-sample-z-interval
@@ -89,6 +93,8 @@ inference-for-means
 conditions-for-inference-1
 one-sample-t-interval
 one-sample-t-test
+paired-t-test
+conditions
 the-students-t-distribution
 why-a-t-distribution
 linear-regression

@@ -47,7 +47,7 @@ The probability, computed assuming $H_0$ is true, that the statistic would take 
 Small *P*-values are evidence against $H_0$ because they say that the observed result is unlikely to occur when $H_0$ is true. 
 Large *P*-values fail to give convincing evidence against $H_0$ because they say that the observed result is likely to occur by chance when $H_0$ is true.
 
-### Statistical Significance 
+### Drawing a Conclusion
 
 The final step in performing a significance test is to draw a conclusion about the competing claims you were testing. We make one of two decisions based on the strength of the evidence against the null hypothesis (and in favor of the alternative hypothesis):
 
@@ -58,7 +58,7 @@ $$\text{reject } H_0 \text{ or fail to reject } H_0$$
 There is no rule for how small a *P*-value we should require in order to reject $H_0$. But we can compare the *P*-value with a fixed value that we regard as decisive, called the significance level. We write it as $\alpha$, the Greek letter alpha. 
 
 ::: {.highlight}
-If the *P*-value is smaller than alpha, we say that the data are statistically significant at the level . In that case, we reject the null hypothesis $H_0$ and conclude that there is convincing evidence in favor of the alternative hypothesis $H_a$.
+If the *P*-value is smaller than alpha, we say that the data are [statistically significant][Statistical Significance] at the level . In that case, we reject the null hypothesis $H_0$ and conclude that there is convincing evidence in favor of the alternative hypothesis $H_a$.
 
 In a nutshell, our conclusion in a significance test comes down to
 
@@ -143,3 +143,34 @@ We can sum this up with this up with this table:
 
 \newline
 When considering the consequences of the results of an inference task, we want to consider Type I and II errors. In some cases, we'd prefer to have Type I errors over Type II. In other instances, it's the opposite.
+
+### Type I Error
+
+::: {.highlight}
+The probability of a Type I Error is $\alpha$
+$$P(\text{Type I Error})=\alpha$$
+:::
+
+### Type II Errors and Power
+
+A significance test makes a Type II error when it fails to reject a null hypothesis $H_0$ that really is false. There are many values of the parameter that make the alternative hypothesis $H_a$ true, so we concentrate on one value. The probability of making a Type II error depends on several factors, including the actual value of the parameter. A high probability of Type II error for a specific alternative parameter value means that the test is not sensitive enough to usually detect that alternative.
+
+The power of a test against a specific alternative is the probability that the test will reject $H_0$ at a chosen significance level  when the specified alternative value of the parameter is true.
+
+The significance level of a test is the probability of reaching the wrong conclusion when the null hypothesis is true. 
+
+The power of a test to detect a specific alternative is the probability of reaching the right conclusion when that alternative is true. 
+
+::: {.highlight}
+The power of a test against any alternative is 1 minus the probability of a Type II error for that alternative; that is, $power = 1-\beta$, where is the probability of making a Type II error.
+
+$$
+\begin{aligned}
+P(\text{Type II Error}) &= \beta \\
+P(\text{Type II Error}) &= 1 - \text{power} \\
+\text{power} &= 1 - \beta
+\end{aligned}
+$$
+:::
+
+\* *Keep in mind that you are not expected to know how to calculate power or $\beta$ without one of the other. i.e. you will always be given the power or $\beta$ in a problem.*

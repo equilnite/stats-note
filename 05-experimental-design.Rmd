@@ -45,3 +45,46 @@ Afterwards, you compare and analyze results from each block and finally combine 
 ### Matched Pairs Design
 
 A matched pairs design is a special case of a [randomized block design][Randomized Block Design] that uses blocks of size 2. In this kind of design, you have to have "matched pairs." In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).
+
+## Statistical Significance
+
+An observed effect so large that it would rarely occur by chance is said to be **statistically significant**.
+
+## Scope of Inference
+
+The **scope of inference** refers to the type of inferences (conclusions) that can be drawn from a study.  The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.  
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky" colspan="2" rowspan="2"></th>
+    <th class="tg-c3ow" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly assigned to groups?</span></th>
+  </tr>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span></th>
+    <th class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly </span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">selected from a population?</span></td>
+    <td class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">  (</span><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">Rare in the real world)</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">  (Some observational studies)</span></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot </span><span style="font-weight:normal">make</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make Inferences about cause and effect: </span><br><span style="font-style:italic;color:#000;background-color:transparent">&nbsp;&nbsp;(Most experiments)</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make Inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">  (Some observational studies)</span></td>
+  </tr>
+</tbody>
+</table>

@@ -63,6 +63,49 @@ P(t_{n-1}>t) & \text{ if } H_a:\mu>\mu_0 \\
 $$
 :::
 
+### Paired t-test
+
+A paired t-test is used when the data being compared are related or matched in some way, whereas a 2-sample t-test is used when the data being compared are independent. Here are some scenarios where a paired t-test would be more appropriate than a 2-sample t-test:
+
+Matched pair design:
+
+- Before-and-after studies: When the same group of individuals is measured twice, such as before and after receiving a treatment or intervention, a paired t-test is used to determine whether there is a significant difference in the measurements.
+
+- Matched case-control studies: When cases and controls are matched based on certain criteria (such as age, sex, or race), a paired t-test can be used to compare the measurements of the two groups.
+
+Repeated measures: When a group of individuals is measured at multiple time points, a paired t-test can be used to compare the measurements within each individual.
+
+In these scenarios, a paired t-test can be more powerful than a 2-sample t-test because it takes into account the relationship or correlation between the data being compared. By contrast, a 2-sample t-test assumes that the data being compared are independent, which may not be the case in these situations.
+
+::: {.highlight}
+Given the null hypothesis $H_0: \mu_d=\mu_0$ (where $\mu_d$ represents the true mean difference) and an observed sample mean $\bar x$ (of the differences) and sample standard deviation $s_x$ (of the differences) from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the same null distribution and t-statistic as a [one-sample t-test][One-Sample t-test].
+:::
+
+#### Conditions
+
+::: {.highlight}
+##### 1. Random {.unlisted .unnumbered}
+
+The data must come from a random sample, or **random assignment in an experiment**. The latter of which will likely apply to a paired test.
+
+##### 2. Large {.unlisted .unnumbered}
+
+You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.
+
+In the case of paired data, you'll be only **checking the sampling distribution of the differences**. The sampling distribution is approximately normal if at least one of the following conditions are met. 
+
+- [*Normal/Large Condition*](#large-cond)
+
+- When $n<30$, check if the graph of the sample data does not show any strong skew or outliers. Otherwise, 
+
+##### 3. Sampling Independence {.unlisted .unnumbered}
+
+Observations in our sample must be independent of each other.
+
+In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
+
+However, **since we'll be likely working with experiments, independence will not apply,** so you will not have to state it. You can say something like *"since we have an experiment, we do not have to check independence"*.
+:::
 
 ## The Student's $t$ distribution
 
