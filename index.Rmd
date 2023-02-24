@@ -15,9 +15,9 @@ output:
             sharing: no
 site: bookdown::bookdown_site
 documentclass: book
-url: https://echa.ng/stats
+url: https://stats.echa.ng
 description: |
-  This is book-style notes for AP Statistics
+  These are notes for AP Statistics.
 link-citations: yes
 always_allow_html: true
 ---

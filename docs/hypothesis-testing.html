@@ -10,7 +10,7 @@
 <meta name="generator" content="bookdown 0.32 with bs4_book()">
 <meta property="og:title" content="12 Hypothesis Testing | AP Statistics Notes">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://echa.ng/stats/hypothesis-testing.html">
+<meta property="og:url" content="https://stats.echa.ng/hypothesis-testing.html">
 <meta property="og:description" content="12.1 Significance Tests Confidence intervals are one of the two most common types of statistical inference. Use a confidence interval when your goal is to estimate a population parameter. The...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="12 Hypothesis Testing | AP Statistics Notes">
@@ -271,7 +271,16 @@ P(\text{Type II Error}) &amp;= 1 - \text{power} \\
 \]</span></p>
 </div>
 <p>* <em>Keep in mind that you are not expected to know how to calculate power or <span class="math inline">\(\beta\)</span> without one of the other. i.e. you will always be given the power or <span class="math inline">\(\beta\)</span> in a problem.</em></p>
+<div id="how-power-looks-like" class="section level4" number="12.2.2.1">
+<h4>
+<span class="header-section-number">12.2.2.1</span> How power looks like<a class="anchor" aria-label="anchor" href="#how-power-looks-like"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="images/power%20demonstration-1.png" width="672"></div>
+<p>This diagram illustrates how we can visualize power in a one-sided test checking to see if a parameter is larger than the null parameter. The null parameter here is 0 and the alternative parameter is 3. Each of their respective distributions are centered at 0 and 3. To think about power, first we look at the <span class="math inline">\(\alpha\)</span> value, which gives us the rejection region (shaded in black) in which any statistic that we get there will reject the null hypothesis.</p>
+<p>Power is the probability that we reject the null hypothesis given that the alternative parameter is actually true. So, power is represented in the yellow area, which starts at the same x (our “cut-off” value for rejection based off alpha) that the rejection region starts.</p>
+<p><span class="math inline">\(\beta\)</span> is the probability of Type II error, where we do not reject the null hypothesis when it is actually wrong. So it is represented in the green area.</p>
 
+</div>
 </div>
 </div>
 </div>
@@ -312,7 +321,7 @@ P(\text{Type II Error}) &amp;= 1 - \text{power} \\
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-22.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

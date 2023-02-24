@@ -23,6 +23,11 @@ footer {
   display: none;
 }
 
-.container-fluid {
-  padding-bottom: 3rem !important;
+body {
+  /* margin-bottom: 3rem !important; */
+  /* border-bottom: 3em !important; */
+}
+
+body {
+    /* padding-bottom: 3em !important; */
 }

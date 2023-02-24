@@ -34,7 +34,8 @@ Cumulative Relative Frequency graphs represent the cumulative relative frequency
 library(ggplot2)
 ggplot(iris, aes(Sepal.Length)) + 
     stat_ecdf(color = "red", lwd = 1.5, alpha = .3) +
-    stat_ecdf(geom = "density", color = "blue", lwd = 1.5, alpha = .3)
+    stat_ecdf(geom = "density", color = "blue", lwd = 1.5, alpha = .3)+
+    theme_minimal()
 
 ```
 
@@ -52,7 +53,8 @@ ggplot(x = -4:4) +
     annotate("point", x = c(-1,1), y = dnorm(c(-1,1)), color = "red", size = 3) +
     annotate("segment", x = -3, y = .3, xend = c(-1,1), yend = dnorm(c(-1,1))) +
     annotate("text", x = -3, y = .33, label = "Inflection Points") +
-    labs(title = "Standard Normal Distribution")
+    labs(title = "Standard Normal Distribution")+
+    theme_minimal()
 ```
 
 Notice that the inflection points (where the curve changes its concavity, like in a cubic function) are at exactly one standard deviation from the mean, and by the time the graph gets to 3 standard deviationss in each direction, the height of the curve is basically zero.
@@ -92,7 +94,8 @@ ggplot(x = -4:4) +
     stat_function(fun = dnorm, xlim = c(-4,4), lwd = 1.5) +
     annotate("segment", x = -1:-3, y = dnorm(-1:-3), xend = 1:3, yend = dnorm(1:3)) +
     annotate("text", x = 0, y = dnorm(-1:-3) + .02, label = c("68%", "95%", "99.7%")) +
-    labs(title = "Demonstration of the Empirical Rule", x = "Standard Deviations from the Mean")
+    labs(title = "Demonstration of the Empirical Rule", x = "Standard Deviations from the Mean") +
+    theme_minimal()
 ```
 
 ### Assessing for Normality

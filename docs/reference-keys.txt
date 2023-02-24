@@ -85,6 +85,7 @@ example-1
 type-i-and-ii-error
 type-i-error
 type-ii-errors-and-power
+how-power-looks-like
 inference-for-proportions
 conditions-for-inference
 one-sample-z-interval
