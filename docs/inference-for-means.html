@@ -60,7 +60,8 @@
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
 <li><a class="active" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></li>
+<li><a class="" href="chi2-tests.html"><span class="header-section-number">15</span> \(\chi^2\) Tests$</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
 <li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
@@ -101,10 +102,14 @@
 <p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
 </div>
 </div>
-<div id="one-sample-t-interval" class="section level2" number="14.2">
+<div id="one-sample-t-procedures" class="section level2" number="14.2">
 <h2>
-<span class="header-section-number">14.2</span> One-Sample t-interval<a class="anchor" aria-label="anchor" href="#one-sample-t-interval"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2</span> One-Sample t-procedures<a class="anchor" aria-label="anchor" href="#one-sample-t-procedures"><i class="fas fa-link"></i></a>
 </h2>
+<div id="one-sample-t-interval" class="section level3" number="14.2.1">
+<h3>
+<span class="header-section-number">14.2.1</span> One-Sample t-interval<a class="anchor" aria-label="anchor" href="#one-sample-t-interval"><i class="fas fa-link"></i></a>
+</h3>
 <div class="highlight">
 <p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
 <p><span class="math display">\[\bar x \pm t^* \frac{s_x}{\sqrt{n}}\]</span></p>
@@ -115,10 +120,10 @@
 <span class="math display">\[SE_{\bar x}=\frac{s_x}{\sqrt{n}}\]</span></p>
 </div>
 </div>
-<div id="one-sample-t-test" class="section level2" number="14.3">
-<h2>
-<span class="header-section-number">14.3</span> One-Sample t-test<a class="anchor" aria-label="anchor" href="#one-sample-t-test"><i class="fas fa-link"></i></a>
-</h2>
+<div id="one-sample-t-test" class="section level3" number="14.2.2">
+<h3>
+<span class="header-section-number">14.2.2</span> One-Sample t-test<a class="anchor" aria-label="anchor" href="#one-sample-t-test"><i class="fas fa-link"></i></a>
+</h3>
 <div class="highlight">
 <p>Given the null hypothesis <span class="math inline">\(H_0: \mu=\mu_0\)</span>, and an observed sample mean <span class="math inline">\(\bar x\)</span> and sample standard deviation <span class="math inline">\(s_x\)</span> from a sample of size <span class="math inline">\(n\)</span> when all conditions are met. The null sampling distribution of <span class="math inline">\(bar x\)</span>, calculated assuming <span class="math inline">\(H_0\)</span> is true, has the following:</p>
 <p><span class="math display">\[\mu_{\bar x} = \mu_0\]</span>
@@ -135,10 +140,10 @@ P(t_{n-1}&gt;t) &amp; \text{ if } H_a:\mu&gt;\mu_0 \\
 \end{cases}
 \]</span></p>
 </div>
-<div id="paired-t-test" class="section level3" number="14.3.1">
-<h3>
-<span class="header-section-number">14.3.1</span> Paired t-test<a class="anchor" aria-label="anchor" href="#paired-t-test"><i class="fas fa-link"></i></a>
-</h3>
+<div id="paired-t-test" class="section level4" number="14.2.2.1">
+<h4>
+<span class="header-section-number">14.2.2.1</span> Paired t-test<a class="anchor" aria-label="anchor" href="#paired-t-test"><i class="fas fa-link"></i></a>
+</h4>
 <p>A paired t-test is used when the data being compared are related or matched in some way, whereas a 2-sample t-test is used when the data being compared are independent. Here are some scenarios where a paired t-test would be more appropriate than a 2-sample t-test:</p>
 <p>Matched pair design:</p>
 <ul>
@@ -150,35 +155,64 @@ P(t_{n-1}&gt;t) &amp; \text{ if } H_a:\mu&gt;\mu_0 \\
 <div class="highlight">
 <p>Given the null hypothesis <span class="math inline">\(H_0: \mu_d=\mu_0\)</span> (where <span class="math inline">\(\mu_d\)</span> represents the true mean difference) and an observed sample mean <span class="math inline">\(\bar x\)</span> (of the differences) and sample standard deviation <span class="math inline">\(s_x\)</span> (of the differences) from a sample of size <span class="math inline">\(n\)</span> when all conditions are met. The null sampling distribution of <span class="math inline">\(\bar x\)</span>, calculated assuming <span class="math inline">\(H_0\)</span> is true, has the same null distribution and t-statistic as a <a href="inference-for-means.html#one-sample-t-test">one-sample t-test</a>.</p>
 </div>
-<div id="conditions" class="section level4" number="14.3.1.1">
-<h4>
-<span class="header-section-number">14.3.1.1</span> Conditions<a class="anchor" aria-label="anchor" href="#conditions"><i class="fas fa-link"></i></a>
-</h4>
+<div id="conditions" class="section level5" number="14.2.2.1.1">
+<h5>
+<span class="header-section-number">14.2.2.1.1</span> Conditions<a class="anchor" aria-label="anchor" href="#conditions"><i class="fas fa-link"></i></a>
+</h5>
 <div class="highlight">
-<div id="random-3" class="section level5 unlisted unnumbered">
-<h5>1. Random<a class="anchor" aria-label="anchor" href="#random-3"><i class="fas fa-link"></i></a>
-</h5>
+<p><strong>1. Random</strong></p>
 <p>The data must come from a random sample, or <strong>random assignment in an experiment</strong>. The latter of which will likely apply to a paired test.</p>
-</div>
-<div id="large-3" class="section level5 unlisted unnumbered">
-<h5>2. Large<a class="anchor" aria-label="anchor" href="#large-3"><i class="fas fa-link"></i></a>
-</h5>
+<p><strong>2. Large</strong></p>
 <p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
 <p>In the case of paired data, you’ll be only <strong>checking the sampling distribution of the differences</strong>. The sampling distribution is approximately normal if at least one of the following conditions are met.</p>
 <ul>
 <li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
 <li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
 </ul>
-</div>
-<div id="sampling-independence-3" class="section level5 unlisted unnumbered">
-<h5>3. Sampling Independence<a class="anchor" aria-label="anchor" href="#sampling-independence-3"><i class="fas fa-link"></i></a>
-</h5>
+<p><strong>3. Sampling Independence</strong></p>
 <p>Observations in our sample must be independent of each other.</p>
 <p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
 <p>However, <strong>since we’ll be likely working with experiments, independence will not apply,</strong> so you will not have to state it. You can say something like <em>“since we have an experiment, we do not have to check independence”</em>.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+<div id="two-sample-t-procedures" class="section level2" number="14.3">
+<h2>
+<span class="header-section-number">14.3</span> Two-Sample t-procedures<a class="anchor" aria-label="anchor" href="#two-sample-t-procedures"><i class="fas fa-link"></i></a>
+</h2>
+<p>Two-Sample t-procedures are justified by knowledge about the <a href="sampling-distributions.html#mean-diff-samp-dist">sampling distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></a>.</p>
+<p>The conditions for two-sample t-procedures are the same for the two that we learn:</p>
+<div class="highlight">
+<ul>
+<li><p>Random: The data come from two independent random samples or from two groups in a randomized experiment.</p></li>
+<li><p>Normal/Large Sample: Both population distributions (or the true distributions of responses to the two treatments) are Normal or both sample sizes are large (<span class="math inline">\(n_1 \geq 30\)</span> and <span class="math inline">\(n_2 \geq 30\)</span>). If either population (treatment) distribution has unknown shape and the corresponding sample size is less than 30, use a graph of the sample data to assess the Normality of the population (treatment) distribution. Do not use two-sample t procedures if the graph shows strong skewness or outliers.</p></li>
+<li><p>10%: When sampling without replacement, check that <span class="math inline">\(n_1 \leq (.10)N_1\)</span> and <span class="math inline">\(n_2 \leq (.10)N_2\)</span>.</p></li>
+</ul>
+</div>
+<div id="calculating-degrees-of-freedom" class="section level3" number="14.3.1">
+<h3>
+<span class="header-section-number">14.3.1</span> Calculating degrees of freedom<a class="anchor" aria-label="anchor" href="#calculating-degrees-of-freedom"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are two options for calculating degrees of freedom:</p>
+<div class="highlight">
+<p>Option 1 (Technology): Use the <span class="math inline">\(t\)</span> distribution with degrees of freedom calculated from the data by the formula below. Note that the <span class="math inline">\(df\)</span> given by this formula is not usually a whole number.
+<span class="math display">\[df = \frac{\left( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}\left( \frac{s_1^2}{n_1}\right)^2 + \frac{1}{n_2-1}\left( \frac{s_2^2}{n_2}\right)^2}\]</span></p>
+</div>
+<div class="highlight">
+<p>Option 2 (Conservative): Use the <span class="math inline">\(t\)</span> distribution with degrees of freedom equal to the <em>smaller</em> of <span class="math inline">\(n_1 – 1\)</span> and <span class="math inline">\(n_2 – 1\)</span>. With this option, the resulting confidence interval has a margin of error <em>as large or larger</em> than is needed for the desired confidence level. The significance test using this option gives a P-value <em>equal to or greater</em> than the true P-value. As the sample sizes increase, the confidence levels and P-values from Option 2 become more accurate.</p>
+</div>
+</div>
+<div id="two-sample-t-interval" class="section level3" number="14.3.2">
+<h3>
+<span class="header-section-number">14.3.2</span> Two-Sample t-interval<a class="anchor" aria-label="anchor" href="#two-sample-t-interval"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="two-sample-t-test" class="section level3" number="14.3.3">
+<h3>
+<span class="header-section-number">14.3.3</span> Two-Sample t-test<a class="anchor" aria-label="anchor" href="#two-sample-t-test"><i class="fas fa-link"></i></a>
+</h3>
 </div>
 </div>
 <div id="the-students-t-distribution" class="section level2" number="14.4">
@@ -209,7 +243,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></div>
-<div class="next"><a href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></div>
+<div class="next"><a href="chi2-tests.html"><span class="header-section-number">15</span> \(\chi^2\) Tests$</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -221,9 +255,18 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 <li><a class="nav-link" href="#sampling-independence-2">3. Sampling Independence</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#one-sample-t-interval"><span class="header-section-number">14.2</span> One-Sample t-interval</a></li>
 <li>
-<a class="nav-link" href="#one-sample-t-test"><span class="header-section-number">14.3</span> One-Sample t-test</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#paired-t-test"><span class="header-section-number">14.3.1</span> Paired t-test</a></li></ul>
+<a class="nav-link" href="#one-sample-t-procedures"><span class="header-section-number">14.2</span> One-Sample t-procedures</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#one-sample-t-interval"><span class="header-section-number">14.2.1</span> One-Sample t-interval</a></li>
+<li><a class="nav-link" href="#one-sample-t-test"><span class="header-section-number">14.2.2</span> One-Sample t-test</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#two-sample-t-procedures"><span class="header-section-number">14.3</span> Two-Sample t-procedures</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#calculating-degrees-of-freedom"><span class="header-section-number">14.3.1</span> Calculating degrees of freedom</a></li>
+<li><a class="nav-link" href="#two-sample-t-interval"><span class="header-section-number">14.3.2</span> Two-Sample t-interval</a></li>
+<li><a class="nav-link" href="#two-sample-t-test"><span class="header-section-number">14.3.3</span> Two-Sample t-test</a></li>
+</ul>
 </li>
 <li>
 <a class="nav-link" href="#the-students-t-distribution"><span class="header-section-number">14.4</span> The Student’s \(t\) distribution</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#why-a-t-distribution"><span class="header-section-number">14.4.1</span> Why a \(t\)-distribution?</a></li></ul>
@@ -244,7 +287,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-24.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

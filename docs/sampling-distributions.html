@@ -60,7 +60,8 @@
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
 <li><a class="" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
-<li><a class="" href="linear-regression.html"><span class="header-section-number">15</span> Linear Regression</a></li>
+<li><a class="" href="chi2-tests.html"><span class="header-section-number">15</span> \(\chi^2\) Tests$</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
 <li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
@@ -172,6 +173,37 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 </table></div>
 </div>
 </div>
+<div id="prop-diff-samp-dist" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span><a class="anchor" aria-label="anchor" href="#prop-diff-samp-dist"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with proportion of successes <span class="math inline">\(p_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with proportion of successes <span class="math inline">\(p_2\)</span>.</p>
+<p><strong>Shape:</strong></p>
+<p>When <span class="math inline">\(n_1p_1\)</span>, <span class="math inline">\(n_1(1-p_1)\)</span>, <span class="math inline">\(n_2p_2\)</span>, and <span class="math inline">\(n_2(1-p_2\)</span>) are all at least 10, the sampling distribution of <span class="math inline">\(p_1-p_2\)</span> is approximately Normal.</p>
+<p><strong>Center:</strong></p>
+<p>The mean of the sampling distribution is <span class="math display">\[\mu_{\hat p_1-\hat p_2} =p_1-p_2\]</span>.</p>
+<p><strong>Spread:</strong></p>
+<p>The standard deviation of <span class="math inline">\(\hat p_1-\hat p_2\)</span> is <span class="math display">\[s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\]</span> as long as each sample is no more than 10% of its population (10% condition)</p>
+</div>
+</div>
+<div id="mean-diff-samp-dist" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span><a class="anchor" aria-label="anchor" href="#mean-diff-samp-dist"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with mean <span class="math inline">\(\mu_1\)</span> and standard deviation <span class="math inline">\(\sigma_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with mean <span class="math inline">\(\mu_2\)</span> and standard deviation <span class="math inline">\(\sigma_2\)</span>.</p>
+<p><strong>Shape:</strong></p>
+<p>When the population distributions are Normal, the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough (<span class="math inline">\(n_1 \geq 30\)</span> and <span class="math inline">\(n_2 \geq 30\)</span>)</p>
+<p><strong>Center:</strong></p>
+<p>The mean of the sampling distribution is
+<span class="math display">\[\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2\]</span>.</p>
+<p><strong>Spread:</strong></p>
+<p>As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is
+<span class="math display">\[\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span></p>
+</div>
+
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="random-variables.html"><span class="header-section-number">9</span> Random Variables</a></div>
@@ -188,6 +220,8 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 <li><a class="nav-link" href="#when-do-we-have-normality"><span class="header-section-number">10.2.3</span> When do we have normality?</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#prop-diff-samp-dist"><span class="header-section-number">10.3</span> Sampling Distribution of \(\hat p_1 - \hat p_2\)</a></li>
+<li><a class="nav-link" href="#mean-diff-samp-dist"><span class="header-section-number">10.4</span> Sampling Distribution of \(\bar x_1 - \bar x_2\)</a></li>
 </ul>
 
       <div class="book-extra">
@@ -204,7 +238,7 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-02-24.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

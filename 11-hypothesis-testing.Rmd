@@ -184,24 +184,24 @@ colors <- c("Null distribution" = "#56B4E9", "Alternative distribution" = "#E69F
 fills <- c("Alpha" = "#000000", "Beta" = "#009E73", "Power" = "#F0E442")
 
 ggplot() +
-    stat_function(aes(color = "Null distribution"), 
-                  fun = dnorm, xlim = c(-3,6), 
-                  linetype = "dashed", size = 1.5) + 
-    stat_function(aes(colour = "Alternative distribution"), 
-                  fun = function(x) dnorm(x, mean = 3), 
-                  xlim = c(-3,6), size = 1.5) +
     geom_polygon(mapping = aes(x = c(-3, seq(-3, 1.6448, .001), 1.6448), 
-                           y = c(0, dnorm(seq(-3, 1.6448, .001), mean = 3)- .0008, 0),
+                           y = c(0, dnorm(seq(-3, 1.6448, .001), mean = 3), 0),
                            fill = "Beta"),
              alpha = 0.5) +
     geom_polygon(mapping = aes(x = c(1.6448, seq(1.6448, 6, .001), 6), 
-                           y = c(0, dnorm(seq(1.6448, 6, .001), mean = 3)- .0008, 0),
+                           y = c(0, dnorm(seq(1.6448, 6, .001), mean = 3), 0),
                            fill = "Power"),
              alpha = 0.5) +
     geom_polygon(mapping = aes(x = c(1.6448, seq(1.6448, 6, .001), 6), 
-                           y = c(0, dnorm(seq(1.6448, 6, .001)) - .0008, 0),
+                           y = c(0, dnorm(seq(1.6448, 6, .001)), 0),
                            fill = "Alpha"),
              alpha = 0.5) +
+    stat_function(aes(color = "Null distribution"), 
+              fun = dnorm, xlim = c(-3,6), 
+              linetype = "dashed", size = 1.5) + 
+    stat_function(aes(colour = "Alternative distribution"), 
+                  fun = function(x) dnorm(x, mean = 3), 
+                  xlim = c(-3,6), size = 1.5) +
     labs(x = "Values",
          y = "Density",
          color = "Line Legend",
@@ -216,3 +216,5 @@ This diagram illustrates how we can visualize power in a one-sided test checking
 Power is the probability that we reject the null hypothesis given that the alternative parameter is actually true. So, power is represented in the yellow area, which starts at the same x (our "cut-off" value for rejection based off alpha) that the rejection region starts. 
 
 $\beta$ is the probability of Type II error, where we do not reject the null hypothesis when it is actually wrong. So it is represented in the green area.
+
+[See an interactive version of this here.](https://rpsychologist.com/d3/nhst/)

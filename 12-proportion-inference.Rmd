@@ -20,7 +20,9 @@ Observations in our sample must be independent of each other.
 
 In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
 
-## One-Sample z-interval
+## One-Sample z-procedures
+
+### One-Sample z-interval
 
 ::: {.highlight}
 A $C$\% confidence interval for the unknown population proportion $p$ when all conditions are met is calculated with the following: 
@@ -35,7 +37,7 @@ The standard error of the sample proportion is:
 $$SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
 :::
 
-## One-Sample z-test
+### One-Sample z-test
 
 ::: {.highlight}
 
@@ -59,3 +61,46 @@ P(Z>z) & \text{ if } H_a:p>p_0 \\
 $$
 :::
 
+## Two-Sample z-procedures
+
+Two-Sample z-procedures are justified by knowledge about the [sampling distribution of $\hat p_1 - \hat p_2$](#prop-diff-samp-dist).
+
+The conditions for two-sample z-procedures are the same for the two that we learn:
+
+::: {.highlight}
+- Random: The data come from two independent random samples or from two groups in a randomized experiment.
+
+- Large Counts: The counts of “successes” and “failures” in each sample or group $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, and $n_2(1-\hat p_2)$ are all at least 10.
+
+- 10%: When sampling without replacement, check that $n_1\leq(.10)N_1$ and $n2\leq(.10)N_2$.
+:::
+
+### Two-Sample z-interval
+
+::: {.highlight}
+When the conditions are met, an approximate $C$% confidence interval for $p_1-p_2$ is: 
+
+$$(\hat p_1-\hat p_2)\pm z^*\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$
+
+Where $z^*$ is the critical value for the standard Normal curve with $C$% of its area between $-z^*$ and $z^*$
+:::
+
+### Two-Sample z-test
+
+::: {.highlight}
+The null hypothesis has the general form  
+$$ H_0:p_1-p_2=p_0 $$
+where $p_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $p_0 =0$. Then the null hypothesis says that there is no difference between the two parameters: 
+$$H_0:p_1-p_2=0~~\text{or}~~H_0:p_1=p_2$$
+The alternative hypothesis says what kind of difference we expect:
+$$H_a:p_1-p_2>0~~\text{or}~~Ha:p_1-p_2<0~~\text{or}~~Ha:p_1-p_2\not =0  $$
+:::
+
+::: {.highlight}
+Suppose the conditions are met. To test the hypotheses $H_0: p_1 - p_2 = 0$, first find the pooled proportion $\hat p_c$ of successes in both samples combined. 
+
+$$\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}$$
+
+Then compute the z statistic:
+$$ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}$$
+:::
