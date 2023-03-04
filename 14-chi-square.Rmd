@@ -1,2 +1,50 @@
-# $\chi^2$ Tests$
+# Chi-Squared Tests
 
+$\chi^2$ (pronounced "kai" squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.
+
+## Sampling distribution of $\chi^2$
+
+The sampling distribution of $\chi^2$ is not a Normal distribution. It is a right-skewed distribution that allows only positive values because $\chi^2$ can never be negative.
+When the expected counts are all at least 5, the sampling distribution of the $\chi^2$ statistic is close to a $\chi^2$ distribution with a degrees of freedom based off the test that we do.
+The $\chi^2$ distributions are a family of distributions that take only positive values and are skewed to the right. A particular chi-square distribution is specified by giving its degrees of freedom.
+
+```{r}
+library(ggplot2)
+
+ggplot() +
+    xlim(0, 17) + ylim(0,.25) +
+    stat_function(aes(color = "df = 1"), fun = dchisq, 
+                  args = list("df" = 1), size = 1.2, n = 1000) + 
+    stat_function(aes(color = "df = 4"), fun = dchisq, 
+                  args = list("df" = 4), size = 1.2, n = 1000) + 
+    stat_function(aes(color = "df = 8"), fun = dchisq, 
+                  args = list("df" = 8), size = 1.2, n = 1000) + 
+    theme_minimal() + theme(legend.position = c(0.8, 0.8)) +
+    labs(color = expression(paste(chi^2, " distribution with")), 
+         x = expression(chi^2),
+         y = "Density")
+```
+
+## Conditions {#ChiSqCond}
+
+::: {.highlight}
+- Random: The data comes from a well-designed random sample or from a randomized experiment.
+
+- 10%: When sampling without replacement, check that $n\leq(.10)N$
+
+- Large Counts: All expected counts are greater than 5
+:::
+
+<details>
+<summary> Be careful and remember that: </summary>
+
+- The chi-square test statistic compares observed and expected counts. Don’t try to perform calculations with the observed and expected proportions in each category.
+
+- When checking the Large Sample Size condition, be sure to examine the expected counts, not the observed counts.
+</details>
+
+## Chi-Squared Goodness-of-Fit {#ChiSqGOF}
+
+## Chi-Squared Test of Homogeneity {#ChiSqHomogen}
+
+## Chi-Squared Test of Independence {#ChiSqInd}

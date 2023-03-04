@@ -60,7 +60,7 @@
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
 <li><a class="active" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
-<li><a class="" href="chi2-tests.html"><span class="header-section-number">15</span> \(\chi^2\) Tests$</a></li>
+<li><a class="" href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-squared Tests</a></li>
 <li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
@@ -208,11 +208,35 @@ P(t_{n-1}&gt;t) &amp; \text{ if } H_a:\mu&gt;\mu_0 \\
 <h3>
 <span class="header-section-number">14.3.2</span> Two-Sample t-interval<a class="anchor" aria-label="anchor" href="#two-sample-t-interval"><i class="fas fa-link"></i></a>
 </h3>
+<div class="highlight">
+<p>When the conditions are met, an approximate <span class="math inline">\(C\)</span>% confidence interval for <span class="math inline">\(\bar x_1 - \bar x_2\)</span> is:</p>
+<p><span class="math display">\[(\bar x_1 - \bar x_2)\pm t^*\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}\]</span></p>
+<p>Where <span class="math inline">\(t^*\)</span> is the critical value for the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n-1\)</span> degrees of freedom with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span></p>
+</div>
 </div>
 <div id="two-sample-t-test" class="section level3" number="14.3.3">
 <h3>
 <span class="header-section-number">14.3.3</span> Two-Sample t-test<a class="anchor" aria-label="anchor" href="#two-sample-t-test"><i class="fas fa-link"></i></a>
 </h3>
+<div class="highlight">
+<p>The null hypothesis has the general form<br><span class="math display">\[ H_0:\mu_1-\mu_2=\mu_0 \]</span>
+where <span class="math inline">\(\mu_0\)</span> is our hypothesized difference. We’ll restrict ourselves to situations in which <span class="math inline">\(\mu = 0\)</span>. Then the null hypothesis says that there is no difference between the two parameters:
+<span class="math display">\[H_0:\mu_1-\mu_2=0~~\text{or}~~H_0:\mu_1=\mu_2\]</span>
+The alternative hypothesis says what kind of difference we expect:
+<span class="math display">\[H_a:\mu_1-\mu_2&gt;0~~\text{or}~~Ha:\mu_1-\mu_2&lt;0~~\text{or}~~Ha:\mu_1-\mu_2\not =0  \]</span></p>
+</div>
+<div class="highlight">
+<p>Compute the <span class="math inline">\(t\)</span> statistic as:</p>
+<p><span class="math display">\[
+t = \frac{(\bar x_1 - \bar x_2) - (\mu_1-\mu_2)_0}{\sqrt{\frac{s_{x_1}}{n_1} + \frac{s_{x_2}}{n_2}}}
+\]</span></p>
+</div>
+<details><summary>
+The standard error of the <span class="math inline">\(t\)</span> statistic, unlike the a <a href="inference-for-proportions.html#two-sample-z-test">two-sample z-test</a>, is not pooled.
+</summary><div class="highlight">
+<p>The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we’re saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there’s no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests.</p>
+</div>
+</details>
 </div>
 </div>
 <div id="the-students-t-distribution" class="section level2" number="14.4">
@@ -243,7 +267,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></div>
-<div class="next"><a href="chi2-tests.html"><span class="header-section-number">15</span> \(\chi^2\) Tests$</a></div>
+<div class="next"><a href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-squared Tests</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -287,7 +311,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-01.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -138,9 +138,40 @@ Option 2 (Conservative): Use the $t$ distribution with degrees of freedom equal 
 
 ### Two-Sample t-interval
 
+::: {.highlight}
+When the conditions are met, an approximate $C$% confidence interval for $\bar x_1 - \bar x_2$ is: 
 
+$$(\bar x_1 - \bar x_2)\pm t^*\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$
+
+Where $t^*$ is the critical value for the $t$ distribution with $n-1$ degrees of freedom with $C$% of its area between $-t^*$ and $t^*$
+:::
 
 ### Two-Sample t-test
+
+::: {.highlight}
+The null hypothesis has the general form  
+$$ H_0:\mu_1-\mu_2=\mu_0 $$
+where $\mu_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $\mu = 0$. Then the null hypothesis says that there is no difference between the two parameters: 
+$$H_0:\mu_1-\mu_2=0~~\text{or}~~H_0:\mu_1=\mu_2$$
+The alternative hypothesis says what kind of difference we expect:
+$$H_a:\mu_1-\mu_2>0~~\text{or}~~Ha:\mu_1-\mu_2<0~~\text{or}~~Ha:\mu_1-\mu_2\not =0  $$
+:::
+
+::: {.highlight}
+Compute the $t$ statistic as:
+
+$$
+t = \frac{(\bar x_1 - \bar x_2) - (\mu_1-\mu_2)_0}{\sqrt{\frac{s_{x_1}}{n_1} + \frac{s_{x_2}}{n_2}}}
+$$
+:::
+
+<details>
+<summary> The standard error of the $t$ statistic, unlike the a [two-sample z-test][Two-Sample z-test], is not pooled.</summary>
+
+::: {.highlight}
+The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we're saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there's no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests.
+:::
+</details>
 
 ## The Student's $t$ distribution
 

@@ -109,7 +109,7 @@ two-sample-t-interval
 two-sample-t-test
 the-students-t-distribution
 why-a-t-distribution
-chi2-tests
+chi-squared-tests
 linear-regression
 ap-exam-formula-sheet
 descriptive-statistics
