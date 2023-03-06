@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>15 Chi-squared Tests | AP Statistics Notes</title>
+<title>15 Chi-Squared Tests | AP Statistics Notes</title>
 <meta name="author" content="Mr. Chang edwardchang@berkeley.net">
-<meta name="description" content="These are notes for AP Statistics.">
+<meta name="description" content="\(\chi^2\) (pronounced “kai” squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could...">
 <meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="15 Chi-squared Tests | AP Statistics Notes">
+<meta property="og:title" content="15 Chi-Squared Tests | AP Statistics Notes">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://stats.echa.ng/chi-squared-tests.html">
-<meta property="og:description" content="These are notes for AP Statistics.">
+<meta property="og:description" content="\(\chi^2\) (pronounced “kai” squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="15 Chi-squared Tests | AP Statistics Notes">
-<meta name="twitter:description" content="These are notes for AP Statistics.">
+<meta name="twitter:title" content="15 Chi-Squared Tests | AP Statistics Notes">
+<meta name="twitter:description" content="\(\chi^2\) (pronounced “kai” squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -60,11 +60,13 @@
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
 <li><a class="" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
-<li><a class="active" href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-squared Tests</a></li>
+<li><a class="active" href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-Squared Tests</a></li>
 <li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
 <li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
+<li><a class="" href="from-value-to-probability.html"><span class="header-section-number">C</span> From Value to Probability</a></li>
+<li><a class="" href="critical-values.html"><span class="header-section-number">D</span> Critical Values</a></li>
 </ul>
 
         <div class="book-extra">
@@ -74,16 +76,101 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="chi-squared-tests" class="section level1" number="15">
 <h1>
-<span class="header-section-number">15</span> Chi-squared Tests<a class="anchor" aria-label="anchor" href="#chi-squared-tests"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15</span> Chi-Squared Tests<a class="anchor" aria-label="anchor" href="#chi-squared-tests"><i class="fas fa-link"></i></a>
 </h1>
+<p><span class="math inline">\(\chi^2\)</span> (pronounced “kai” squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.</p>
+<div id="sampling-distribution-of-chi2" class="section level2" number="15.1">
+<h2>
+<span class="header-section-number">15.1</span> Sampling distribution of <span class="math inline">\(\chi^2\)</span><a class="anchor" aria-label="anchor" href="#sampling-distribution-of-chi2"><i class="fas fa-link"></i></a>
+</h2>
+<p>The sampling distribution of <span class="math inline">\(\chi^2\)</span> is not a Normal distribution. It is a right-skewed distribution that allows only positive values because <span class="math inline">\(\chi^2\)</span> can never be negative.
+When the expected counts are all at least 5, the sampling distribution of the <span class="math inline">\(\chi^2\)</span> statistic is close to a <span class="math inline">\(\chi^2\)</span> distribution with a degrees of freedom based off the test that we do.
+The <span class="math inline">\(\chi^2\)</span> distributions are a family of distributions that take only positive values and are skewed to the right. A particular chi-square distribution is specified by giving its degrees of freedom.</p>
+<div class="inline-figure"><img src="images/ChiSq%20df%20plot-1.png" width="672"></div>
+</div>
+<div id="ChiSqCond" class="section level2" number="15.2">
+<h2>
+<span class="header-section-number">15.2</span> Conditions<a class="anchor" aria-label="anchor" href="#ChiSqCond"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<ul>
+<li><p><strong>Random:</strong> The data comes from a well-designed random sample or from a randomized experiment.</p></li>
+<li><p><strong>10%:</strong> When sampling without replacement, check that <span class="math inline">\(n\leq(.10)N\)</span></p></li>
+<li><p><strong>Large Counts:</strong> All expected counts are greater than 5</p></li>
+</ul>
+</div>
+<details><summary>
+Be careful and remember that:
+</summary><ul>
+<li><p>The chi-square test statistic compares observed and expected counts. Don’t try to perform calculations with the observed and expected proportions in each category.</p></li>
+<li><p>When checking the Large Sample Size condition, be sure to examine the expected counts, not the observed counts.</p></li>
+</ul></details>
+</div>
+<div id="ChiSqGOF" class="section level2" number="15.3">
+<h2>
+<span class="header-section-number">15.3</span> Chi-Squared Goodness-of-Fit<a class="anchor" aria-label="anchor" href="#ChiSqGOF"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>We do this test when we wonder, “Does this data fit with what they are saying?” So how “good” does the distribution of data that we see “fit” with the distribution that they claim?</p>
+</div>
+<p><strong>Hypotheses:</strong></p>
+<p><span class="math inline">\(H_0\)</span>: The stated distribution of the categorical variable in the population of interest is correct.
+<span class="math display">\[H_0:p_1=p_{0_1},p_2=p_{0_2}, \cdots ,p_c=p_{0_c} \]</span>
+where there are <span class="math inline">\(c\)</span> categories in the categorical variable</p>
+<p><span class="math inline">\(H_a\)</span>: The stated distribution of the categorical variable in the population of interest is not correct
+<span class="math display">\[H_a:p_1 \not = p_{0_1},p_2 \not = p_{0_2}, \cdots ,p_c \not = p_{0_c}\]</span></p>
+<p><strong>Expected Counts:</strong></p>
+<p>The expected count for each category (<span class="math inline">\(E_i\)</span>) is the sample size (<span class="math inline">\(n\)</span>) times the stated probability of the category <span class="math inline">\(p_{0_i}\)</span>.
+<span class="math display">\[E_i=np_{0_i}\]</span></p>
+<p><strong>Degrees of freedom:</strong></p>
+<p>We calculate the degrees of freedom by taking the # of categories - 1
+<span class="math display">\[df=c-1\]</span></p>
+<p><strong>Chi-Square Test Statistic:</strong>
+<span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}\]</span></p>
+</div>
+<div id="ChiSqHomogen" class="section level2" number="15.4">
+<h2>
+<span class="header-section-number">15.4</span> Chi-Squared Test of Homogeneity<a class="anchor" aria-label="anchor" href="#ChiSqHomogen"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>We do this test when we wonder, “Is the distribution of this group’s data the same as this other group’s distribution of data?” So how similar (“homogenous”) is one group/treatment compared to another?</p>
+</div>
+<!-- Hypotheses:  -->
+<!-- $H_0$: The distribution of the variable is the same across all groups/treatments. -->
+<!-- $H_a$: There is at least some difference between the distribution of the variable across the groups/treatments -->
+<!-- Expected Counts: -->
+<!-- The expected count for each category ($E_i$) is the sample size ($n$) times the stated probability of the category $p_{0i}$. -->
+<!-- $$E_i=np_{0i}$$ -->
+<!-- Degrees of freedom:  -->
+<!-- We calculate the degrees of freedom by taking the # of categories - 1 -->
+<!-- $$df=c-1$$ -->
+<!-- Chi-Square Test Statistic:  -->
+<!-- $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$ -->
+</div>
+<div id="ChiSqInd" class="section level2" number="15.5">
+<h2>
+<span class="header-section-number">15.5</span> Chi-Squared Test of Independence<a class="anchor" aria-label="anchor" href="#ChiSqInd"><i class="fas fa-link"></i></a>
+</h2>
+<div class="highlight">
+<p>We do this test when we wonder, “Are these two variables in this set of data independent or not?” In other words, this is a more deterministic way of doing what we did in <a href="probability.html#probability">Chapter 6</a>
+when we compared just the probability of a single event and a conditional probability</p>
+</div>
 
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></div>
 <div class="next"><a href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#chi-squared-tests"><span class="header-section-number">15</span> Chi-squared Tests</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#chi-squared-tests"><span class="header-section-number">15</span> Chi-Squared Tests</a></li>
+<li><a class="nav-link" href="#sampling-distribution-of-chi2"><span class="header-section-number">15.1</span> Sampling distribution of \(\chi^2\)</a></li>
+<li><a class="nav-link" href="#ChiSqCond"><span class="header-section-number">15.2</span> Conditions</a></li>
+<li><a class="nav-link" href="#ChiSqGOF"><span class="header-section-number">15.3</span> Chi-Squared Goodness-of-Fit</a></li>
+<li><a class="nav-link" href="#ChiSqHomogen"><span class="header-section-number">15.4</span> Chi-Squared Test of Homogeneity</a></li>
+<li><a class="nav-link" href="#ChiSqInd"><span class="header-section-number">15.5</span> Chi-Squared Test of Independence</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -99,7 +186,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-03.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

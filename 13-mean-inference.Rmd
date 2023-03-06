@@ -183,7 +183,7 @@ has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n
 As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough.
 :::
 
-### Why a $t$-distribution?
+### Why a $t$-distribution? {#t-justification}
 
 When we’re conducting inference for a population proportion, there’s only one parameter ($p$) that we don’t know.  The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use $z$-procedures.  However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean $\mu$ and the population standard deviation $\sigma$.  Since we now have, we get a different sampling distribution that is not quite normal, especially at small $n$.  
 
@@ -221,7 +221,7 @@ ggplot() +
     theme_void() +
     scale_color_manual(values = colors) +
     labs(title = "t-distribution and df", color = "df") +
-    theme(plot.title = element_text(hjust = 0.5))
+    theme(plot.title = element_text(hjust = 0.5), legend.position = c(0.8, 0.7))
 
 
     

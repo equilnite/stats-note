@@ -60,11 +60,13 @@
 <li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
 <li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
 <li><a class="active" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
-<li><a class="" href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-squared Tests</a></li>
+<li><a class="" href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-Squared Tests</a></li>
 <li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
 <li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
+<li><a class="" href="from-value-to-probability.html"><span class="header-section-number">C</span> From Value to Probability</a></li>
+<li><a class="" href="critical-values.html"><span class="header-section-number">D</span> Critical Values</a></li>
 </ul>
 
         <div class="book-extra">
@@ -249,9 +251,9 @@ The standard error of the <span class="math inline">\(t\)</span> statistic, unli
 has a <span class="math inline">\(t\)</span>-distribution with degrees of freedom <span class="math inline">\(df = n – 1\)</span>, denoted as <span class="math inline">\(t_{n-1}\)</span>. When the population distribution isn’t Normal, this statistic will be approximately <span class="math inline">\(t_{n-1}\)</span> if the sample size is large enough.</p>
 <p>As the <span class="math inline">\(df\)</span> increases, the <span class="math inline">\(t\)</span>-distribution approaches <span class="math inline">\(N(0,1)\)</span> (standard normal) (See Figure <a href="inference-for-means.html#fig:t-dist-to-norm">14.1</a>). This happens because <span class="math inline">\(s_x\)</span> estimates <span class="math inline">\(\sigma\)</span> more accurately as <span class="math inline">\(n\)</span> increases. So using <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(\sigma\)</span> causes little extra variation when the sample is large enough.</p>
 </div>
-<div id="why-a-t-distribution" class="section level3" number="14.4.1">
+<div id="t-justification" class="section level3" number="14.4.1">
 <h3>
-<span class="header-section-number">14.4.1</span> Why a <span class="math inline">\(t\)</span>-distribution?<a class="anchor" aria-label="anchor" href="#why-a-t-distribution"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.4.1</span> Why a <span class="math inline">\(t\)</span>-distribution?<a class="anchor" aria-label="anchor" href="#t-justification"><i class="fas fa-link"></i></a>
 </h3>
 <p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
 <p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
@@ -267,7 +269,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></div>
-<div class="next"><a href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-squared Tests</a></div>
+<div class="next"><a href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-Squared Tests</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -293,7 +295,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#the-students-t-distribution"><span class="header-section-number">14.4</span> The Student’s \(t\) distribution</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#why-a-t-distribution"><span class="header-section-number">14.4.1</span> Why a \(t\)-distribution?</a></li></ul>
+<a class="nav-link" href="#the-students-t-distribution"><span class="header-section-number">14.4</span> The Student’s \(t\) distribution</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#t-justification"><span class="header-section-number">14.4.1</span> Why a \(t\)-distribution?</a></li></ul>
 </li>
 </ul>
 
@@ -311,7 +313,7 @@ Figure 14.1: The t-distribution as df increases, with the standard normal curve 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-03.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-06.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

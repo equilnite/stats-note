@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>2 Basic notation | AP Statistics Notes</title>
+<title>D Critical Values | AP Statistics Notes</title>
 <meta name="author" content="Mr. Chang edwardchang@berkeley.net">
-<meta name="description" content="2.1 Lists Most of the time, you will see \(x\) denote a list of values (i.e. a variable in a data table). For example, if \(x\) was the list of numerical values \(a\) to \(g\), we can write it as:...">
+<meta name="description" content="D.1 From Confidence Level to \(z^*\) When constructing confidence intervals, we need the value \(z^*\) such that \(C\)% of the estimated sampling distribution is between \(-|z^*|\) and \(|z^*|\)....">
 <meta name="generator" content="bookdown 0.32 with bs4_book()">
-<meta property="og:title" content="2 Basic notation | AP Statistics Notes">
+<meta property="og:title" content="D Critical Values | AP Statistics Notes">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://stats.echa.ng/basic-notation.html">
-<meta property="og:description" content="2.1 Lists Most of the time, you will see \(x\) denote a list of values (i.e. a variable in a data table). For example, if \(x\) was the list of numerical values \(a\) to \(g\), we can write it as:...">
+<meta property="og:url" content="https://stats.echa.ng/critical-values.html">
+<meta property="og:description" content="D.1 From Confidence Level to \(z^*\) When constructing confidence intervals, we need the value \(z^*\) such that \(C\)% of the estimated sampling distribution is between \(-|z^*|\) and \(|z^*|\)....">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2 Basic notation | AP Statistics Notes">
-<meta name="twitter:description" content="2.1 Lists Most of the time, you will see \(x\) denote a list of values (i.e. a variable in a data table). For example, if \(x\) was the list of numerical values \(a\) to \(g\), we can write it as:...">
+<meta name="twitter:title" content="D Critical Values | AP Statistics Notes">
+<meta name="twitter:description" content="D.1 From Confidence Level to \(z^*\) When constructing confidence intervals, we need the value \(z^*\) such that \(C\)% of the estimated sampling distribution is between \(-|z^*|\) and \(|z^*|\)....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -47,7 +47,7 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="active" href="basic-notation.html"><span class="header-section-number">2</span> Basic notation</a></li>
+<li><a class="" href="basic-notation.html"><span class="header-section-number">2</span> Basic notation</a></li>
 <li><a class="" href="categorical-data-visualizations.html"><span class="header-section-number">3</span> Categorical Data Visualizations</a></li>
 <li><a class="" href="quantative-data-visualizations.html"><span class="header-section-number">4</span> Quantative Data Visualizations</a></li>
 <li><a class="" href="sampling.html"><span class="header-section-number">5</span> Sampling</a></li>
@@ -66,7 +66,7 @@
 <li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
 <li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
 <li><a class="" href="from-value-to-probability.html"><span class="header-section-number">C</span> From Value to Probability</a></li>
-<li><a class="" href="critical-values.html"><span class="header-section-number">D</span> Critical Values</a></li>
+<li><a class="active" href="critical-values.html"><span class="header-section-number">D</span> Critical Values</a></li>
 </ul>
 
         <div class="book-extra">
@@ -74,105 +74,94 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="basic-notation" class="section level1" number="2">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="critical-values" class="section level1" number="20">
 <h1>
-<span class="header-section-number">2</span> Basic notation<a class="anchor" aria-label="anchor" href="#basic-notation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">D</span> Critical Values<a class="anchor" aria-label="anchor" href="#critical-values"><i class="fas fa-link"></i></a>
 </h1>
-<div id="lists" class="section level2" number="2.1">
+<div id="from-confidence-level-to-z" class="section level2" number="20.1">
 <h2>
-<span class="header-section-number">2.1</span> Lists<a class="anchor" aria-label="anchor" href="#lists"><i class="fas fa-link"></i></a>
+<span class="header-section-number">D.1</span> From Confidence Level to <span class="math inline">\(z^*\)</span><a class="anchor" aria-label="anchor" href="#from-confidence-level-to-z"><i class="fas fa-link"></i></a>
 </h2>
-<p>Most of the time, you will see <span class="math inline">\(x\)</span> denote a list of values (i.e. a
-variable in a data table).</p>
-<p>For example, if <span class="math inline">\(x\)</span> was the list of numerical values <span class="math inline">\(a\)</span> to <span class="math inline">\(g\)</span>, we can
-write it as:</p>
-<p><span class="math inline">\(x = [a, b, c, d, e, f, g]\)</span></p>
-<p>Then, <span class="math inline">\(x_i\)</span> means the <span class="math inline">\(i^{th}\)</span> value in the list of <span class="math inline">\(x\)</span>, so</p>
-<p><span class="math inline">\(x_1 = a\)</span> and <span class="math inline">\(x_2 = b\)</span> and <span class="math inline">\(x_7 = g\)</span>.</p>
-</div>
-<div id="n" class="section level2" number="2.2">
-<h2>
-<span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span><a class="anchor" aria-label="anchor" href="#n"><i class="fas fa-link"></i></a>
-</h2>
-<p>In regards to a data table or list of values, <span class="math inline">\(n\)</span> stands for the number
-of rows or data points that are in the data table or list (we will learn
-this as the <em>sample size</em> later on)</p>
-<p>So, for list <span class="math inline">\(x\)</span>, <span class="math inline">\(n = 7\)</span>.</p>
-<p>Adding on, <span class="math inline">\(x_n\)</span> would mean the last value in the list <span class="math inline">\(x\)</span> (since there
-are only <span class="math inline">\(n\)</span> values in <span class="math inline">\(x\)</span>)</p>
-</div>
-<div id="summation-sigma" class="section level2" number="2.3">
-<h2>
-<span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)<a class="anchor" aria-label="anchor" href="#summation-sigma"><i class="fas fa-link"></i></a>
-</h2>
-<p>You will also see the greek letter <span class="math inline">\(\Sigma\)</span> in formulas. Usage of this
-sign means that we are using <em>summation notation</em>.</p>
-<p>If we want the sum of all numbers from 1 to 7, we would write it as,</p>
-<p><span class="math display">\[\sum_{i=1}^7 i\]</span></p>
-<p>We interpret this as,</p>
-<ol style="list-style-type: decimal">
-<li><p>Start from <span class="math inline">\(i = 1\)</span>, evaluate the expression, which is <span class="math inline">\(i\)</span>.</p></li>
-<li><p>Keep our evaluated expression to the side and get ready to add the
-other values to it, so</p></li>
-</ol>
-<p><span class="math display">\[1 + \cdots\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Now go the next numbers until we get to <span class="math inline">\(7\)</span> (the number on the top
-of the <span class="math inline">\(\Sigma\)</span>) So moving onto <span class="math inline">\(i = 2\)</span>, we end up with
-<span class="math display">\[1 + 2 + \cdots\]</span> And with <span class="math inline">\(i = 3\)</span>, we end up with
-<span class="math display">\[1 + 2 + 3 + \cdots\]</span> </p></li>
-<li><p>When we get to the end of it (when we reach <span class="math inline">\(i = 7\)</span>), we have the
-<em>expanded form</em> of the summation. <span class="math display">\[1 + 2 + 3+ 4 + 5 + 6 + 7\]</span></p></li>
-</ol>
-</div>
-<div id="other-notation" class="section level2" number="2.4">
-<h2>
-<span class="header-section-number">2.4</span> Other notation<a class="anchor" aria-label="anchor" href="#other-notation"><i class="fas fa-link"></i></a>
-</h2>
+<p>When constructing confidence intervals, we need the value <span class="math inline">\(z^*\)</span> such that <span class="math inline">\(C\)</span>% of the estimated sampling distribution is between <span class="math inline">\(-|z^*|\)</span> and <span class="math inline">\(|z^*|\)</span>. In other words, imagine:</p>
+<div class="inline-figure"><img src="images/Conf%20level%20on%20normal%20dist-1.png" width="672"></div>
+<p>So if we want to <span class="math inline">\(z\)</span> that corresponds to the confidence level, we have to determine the area of the left/right tail that corresponds to the confidence level. We know that if there’s <span class="math inline">\(C\)</span>% in the middle, then there’s <span class="math inline">\(100\% - C\)</span> left in the two tails. For one tail, that’ll be <span class="math inline">\(\frac{100\% - C}{2}\)</span>.</p>
+<p>Look up that proportion in <a href="ap-exam-formula-sheet.html#table-a">Table A</a> in the middle of the table, take the larger value if it’s not on there specifically, and back track to the margins to get your desired value of <span class="math inline">\(z^*\)</span>.</p>
+<p>The sign of any critical value does not matter, so just take the absolute value as your critical value.</p>
+<div id="examples-1" class="section level3" number="20.1.1">
+<h3>
+<span class="header-section-number">D.1.1</span> Examples<a class="anchor" aria-label="anchor" href="#examples-1"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
+<li>90% confidence
+<ul>
+<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 90%}{2} = 5\% = 0.05\)</span>
+</li>
+<li>Try to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.</li>
+<li>Take the larger value, 0.0505 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -1.64.</li>
+<li>Just take the positive value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
 <li>
-<span class="math inline">\(\bar x\)</span>: The “line” on top of <span class="math inline">\(x\)</span> means the <em>mean of</em> <span class="math inline">\(x\)</span>. If we
-had <span class="math inline">\(\bar a\)</span>, I would be asking for the mean of <span class="math inline">\(a\)</span>.
-<ul>
-<li>Pronounced “x bar”</li>
+<strong>Alternatively,</strong> do the calculator command <code>invNorm(0.05)</code> to get a value of around -1.64. Take the positive value as your critical value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
 </ul>
 </li>
-<li>
-<span class="math inline">\(\hat p\)</span>: The “hat” on top of <span class="math inline">\(p\)</span> means the <em>estimate of</em> <span class="math inline">\(p\)</span>. If we
-had <span class="math inline">\(\hat x\)</span>, I would be asking for the estimate of <span class="math inline">\(x\)</span>.
+<li>99% confidence
 <ul>
-<li>Pronounced “p hat”</li>
+<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 99%}{2} = 0.5\% = 0.005\)</span>
+</li>
+<li>Try to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.</li>
+<li>Take the larger value, 0.0051 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -2.57.</li>
+<li>Just take the positive value, <span class="math inline">\(z^* = 2.57\)</span>.</li>
+<li>
+<strong>Alternatively,</strong> do the calculator command <code>invNorm(0.005)</code> to get a value of around -2.5758. Take the positive value as your critical value, <span class="math inline">\(z^* = 2.58\)</span>.</li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="other-commonly-used-symbols" class="section level2" number="2.5">
+</div>
+<div id="from-confidence-level-and-df-to-t" class="section level2" number="20.2">
 <h2>
-<span class="header-section-number">2.5</span> Other commonly used symbols<a class="anchor" aria-label="anchor" href="#other-commonly-used-symbols"><i class="fas fa-link"></i></a>
+<span class="header-section-number">D.2</span> From Confidence Level and df to <span class="math inline">\(t^*\)</span><a class="anchor" aria-label="anchor" href="#from-confidence-level-and-df-to-t"><i class="fas fa-link"></i></a>
 </h2>
+<p>The same principles for <span class="math inline">\(z^*\)</span> applies to <span class="math inline">\(t^*\)</span>, except we have to use degrees of freedom too.</p>
+<p><a href="ap-exam-formula-sheet.html#table-b">Table B</a> conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that’s given in the top margin of the table.</p>
+<p>The left margin is where you should look for the degrees of freedom, calculated by <span class="math inline">\(df = n-1\)</span>.</p>
+<p>Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down (as mentioned in the <a href="from-value-to-probability.html#t-statisticsscore">previous section</a>). The critical value is the number that you pinpoint in the middle of the table.</p>
+<div id="examples-2" class="section level3" number="20.2.1">
+<h3>
+<span class="header-section-number">D.2.1</span> Examples<a class="anchor" aria-label="anchor" href="#examples-2"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li><p><span class="math inline">\(p\)</span>: proportion, probability, or p-value</p></li>
-<li><p><span class="math inline">\(\bar x\)</span>: sample mean</p></li>
-<li><p><span class="math inline">\(s_x\)</span>: sample standard deviation (of x), so <span class="math inline">\(s_y\)</span> is the sample
-standard deviation of <span class="math inline">\(y\)</span></p></li>
-<li><p><span class="math inline">\(\mu\)</span>: population mean (true mean)</p></li>
-<li><p><span class="math inline">\(\sigma\)</span>: population standard deviation (true standard deviation)</p></li>
-<li><p><span class="math inline">\(N\)</span>: population size</p></li>
+<li>90% confidence and 24 degrees of freedom
+<ul>
+<li>Look at the <span class="math inline">\(df = 24\)</span> row and the confidence level 90% column.</li>
+<li>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^* = 1.711\)</span>
+</li>
 </ul>
+</li>
+<li>99% confidence and 96 degrees of freedom
+<ul>
+<li>Round your df down to the next available value. <span class="math inline">\(df = 96 \sim 80\)</span>.</li>
+<li>Look at the <span class="math inline">\(df = 80\)</span> row and the confidence level 99% column.</li>
+<li>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^* = 2.639\)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Introduction</a></div>
-<div class="next"><a href="categorical-data-visualizations.html"><span class="header-section-number">3</span> Categorical Data Visualizations</a></div>
+<div class="prev"><a href="from-value-to-probability.html"><span class="header-section-number">C</span> From Value to Probability</a></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#basic-notation"><span class="header-section-number">2</span> Basic notation</a></li>
-<li><a class="nav-link" href="#lists"><span class="header-section-number">2.1</span> Lists</a></li>
-<li><a class="nav-link" href="#n"><span class="header-section-number">2.2</span> \(n\)</a></li>
-<li><a class="nav-link" href="#summation-sigma"><span class="header-section-number">2.3</span> Summation (\(\Sigma\))</a></li>
-<li><a class="nav-link" href="#other-notation"><span class="header-section-number">2.4</span> Other notation</a></li>
-<li><a class="nav-link" href="#other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</a></li>
+<li><a class="nav-link" href="#critical-values"><span class="header-section-number">D</span> Critical Values</a></li>
+<li>
+<a class="nav-link" href="#from-confidence-level-to-z"><span class="header-section-number">D.1</span> From Confidence Level to \(z^*\)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#examples-1"><span class="header-section-number">D.1.1</span> Examples</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#from-confidence-level-and-df-to-t"><span class="header-section-number">D.2</span> From Confidence Level and df to \(t^*\)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#examples-2"><span class="header-section-number">D.2.1</span> Examples</a></li></ul>
+</li>
 </ul>
 
       <div class="book-extra">

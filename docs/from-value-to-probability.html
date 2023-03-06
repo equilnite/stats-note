@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>C From Value to Probability | AP Statistics Notes</title>
+<meta name="author" content="Mr. Chang edwardchang@berkeley.net">
+<meta name="description" content="C.1 z statistics/score If you are given a z-score of \(z\) and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="C From Value to Probability | AP Statistics Notes">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://stats.echa.ng/from-value-to-probability.html">
+<meta property="og:description" content="C.1 z statistics/score If you are given a z-score of \(z\) and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C From Value to Probability | AP Statistics Notes">
+<meta name="twitter:description" content="C.1 z statistics/score If you are given a z-score of \(z\) and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/console.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">AP Statistics Notes</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="basic-notation.html"><span class="header-section-number">2</span> Basic notation</a></li>
+<li><a class="" href="categorical-data-visualizations.html"><span class="header-section-number">3</span> Categorical Data Visualizations</a></li>
+<li><a class="" href="quantative-data-visualizations.html"><span class="header-section-number">4</span> Quantative Data Visualizations</a></li>
+<li><a class="" href="sampling.html"><span class="header-section-number">5</span> Sampling</a></li>
+<li><a class="" href="experimental-design.html"><span class="header-section-number">6</span> Experimental Design</a></li>
+<li><a class="" href="probability.html"><span class="header-section-number">7</span> Probability</a></li>
+<li><a class="" href="density-curves.html"><span class="header-section-number">8</span> Density Curves</a></li>
+<li><a class="" href="random-variables.html"><span class="header-section-number">9</span> Random Variables</a></li>
+<li><a class="" href="sampling-distributions.html"><span class="header-section-number">10</span> Sampling Distributions</a></li>
+<li><a class="" href="confidence-intervals.html"><span class="header-section-number">11</span> Confidence Intervals</a></li>
+<li><a class="" href="hypothesis-testing.html"><span class="header-section-number">12</span> Hypothesis Testing</a></li>
+<li><a class="" href="inference-for-proportions.html"><span class="header-section-number">13</span> Inference for Proportions</a></li>
+<li><a class="" href="inference-for-means.html"><span class="header-section-number">14</span> Inference for Means</a></li>
+<li><a class="" href="chi-squared-tests.html"><span class="header-section-number">15</span> Chi-Squared Tests</a></li>
+<li><a class="" href="linear-regression.html"><span class="header-section-number">16</span> Linear Regression</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ap-exam-formula-sheet.html"><span class="header-section-number">A</span> AP Exam Formula Sheet</a></li>
+<li><a class="" href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></li>
+<li><a class="active" href="from-value-to-probability.html"><span class="header-section-number">C</span> From Value to Probability</a></li>
+<li><a class="" href="critical-values.html"><span class="header-section-number">D</span> Critical Values</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="from-value-to-probability" class="section level1" number="19">
+<h1>
+<span class="header-section-number">C</span> From Value to Probability<a class="anchor" aria-label="anchor" href="#from-value-to-probability"><i class="fas fa-link"></i></a>
+</h1>
+<div id="z-statisticsscore" class="section level2" number="19.1">
+<h2>
+<span class="header-section-number">C.1</span> z statistics/score<a class="anchor" aria-label="anchor" href="#z-statisticsscore"><i class="fas fa-link"></i></a>
+</h2>
+<p>If you are given a z-score of <span class="math inline">\(z\)</span> and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you want the area to the left of <span class="math inline">\(z\)</span> (i.e. <span class="math inline">\(P(Z &lt; z)\)</span>) and the area to the right of <span class="math inline">\(z\)</span> (i.e. <span class="math inline">\(P(Z &gt; z)\)</span>).</p>
+<div id="pz-z" class="section level3" number="19.1.1">
+<h3>
+<span class="header-section-number">C.1.1</span> <span class="math inline">\(P(Z &lt; z)\)</span><a class="anchor" aria-label="anchor" href="#pz-z"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you want the area to the left of <span class="math inline">\(z\)</span>, you look up the z-score in <a href="ap-exam-formula-sheet.html#table-a">Table A</a> by finding the corresponding whole number and tenths place on the left margin and the corresponding hundreths place on the top margin of the table then right down the number that you find.</p>
+<p>For example, <span class="math inline">\(P(Z &lt; -1.01) = 0.1562\)</span></p>
+<p>You can also use the calculator and do <code>normalcdf(-1000, -1.01)</code>, where <code>-1000</code> represents <span class="math inline">\(- \infty\)</span> since you want the area from <span class="math inline">\(- \infty\)</span> to -1.01. The calculator needs the lower bound and upper bound of the area that you want to find.</p>
+</div>
+<div id="pz-z-1" class="section level3" number="19.1.2">
+<h3>
+<span class="header-section-number">C.1.2</span> <span class="math inline">\(P(Z &gt; z)\)</span><a class="anchor" aria-label="anchor" href="#pz-z-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you want the area to the right of <span class="math inline">\(z\)</span>, you <strong>first</strong> look up the z-score in <a href="ap-exam-formula-sheet.html#table-a">Table A</a> by finding the corresponding whole number and tenths place on the left margin and the corresponding hundreths place on the top margin of the table. Take note of the probability that you found, then take the complement of that probability by subtracting from 1.</p>
+<p>For example, <span class="math inline">\(P(Z &gt; 1.01) = 1 - P(Z &lt; 1.01) = 1 - 0.8438 = 0.1562\)</span></p>
+<p>This is an application of the <a href="probability.html#complement-rule">complement rule</a>, where <span class="math inline">\(P(Z &gt; z)^C = P(Z &lt; z)\)</span> and thus <span class="math inline">\(P(Z &gt; z) = 1 - P(Z &lt; z)\)</span>.</p>
+<p>You can also use the calculator and do <code>normalcdf(1.01, 1000)</code>, where <code>1000</code> represents <span class="math inline">\(\infty\)</span> since you want the area from 1.01 to <span class="math inline">\(\infty\)</span>.</p>
+</div>
+<div id="pz_1-z-z_2" class="section level3" number="19.1.3">
+<h3>
+<span class="header-section-number">C.1.3</span> <span class="math inline">\(P(z_1 &lt; Z &lt; z_2)\)</span><a class="anchor" aria-label="anchor" href="#pz_1-z-z_2"><i class="fas fa-link"></i></a>
+</h3>
+<p>Say you want the area between two z-scores/statistics, <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span>, then you do the same thing by looking up the z-scores on the tables as described above and subtract the probability that you find for <span class="math inline">\(z_2\)</span> from the one that you find for <span class="math inline">\(z_1\)</span>.</p>
+<p>For example, <span class="math display">\[P(-1.01 &lt; Z &lt; 1.01) = P(Z &lt; 1.01) - P(Z &lt; -1.01) = 0.8438 - 0.1562 = 0.6876\]</span></p>
+<p>On the calculator, you can do <code>normalcdf(-1.01, 1.01)</code></p>
+</div>
+</div>
+<div id="t-statisticsscore" class="section level2" number="19.2">
+<h2>
+<span class="header-section-number">C.2</span> t statistics/score<a class="anchor" aria-label="anchor" href="#t-statisticsscore"><i class="fas fa-link"></i></a>
+</h2>
+<p>If you are given a t-statistic of <span class="math inline">\(t\)</span> and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you want the area to the left of <span class="math inline">\(t\)</span> (<span class="math inline">\(P(t_{n-1} &lt; t)\)</span>) and the area to the right of <span class="math inline">\(t\)</span> (<span class="math inline">\(P(t_{n-1} &gt; t)\)</span>). Where <span class="math inline">\(t_{n-1}\)</span> represents the t-distribution with degrees of freedom <span class="math inline">\(df = n-1\)</span>. For all of these, calculate the degrees of freedom first.</p>
+<p>To do this, take a look at <a href="ap-exam-formula-sheet.html#table-b">Table B</a>.</p>
+<p>Table B only provides the right tail of corresponding to <span class="math inline">\(|t|\)</span>.</p>
+<p>Table B’s left margin describes the degrees of freedom that you have. Since we know that the <a href="inference-for-means.html#t-justification">t-distribution is conservative</a>, <strong>if your degrees of freedom is not on the margin, round your degrees of freedom down to the nearest one</strong>.</p>
+<p>The top margin describes the probability that corresponds to the right of <span class="math inline">\(|t|\)</span>.</p>
+<p>The table itself contains the various exact <span class="math inline">\(t\)</span> statistics for the corresponding probability and degrees of freedom.</p>
+<p>With this context, since we know that the t-distribution is symmetrical, all we need to do is look up our value of <span class="math inline">\(|t|\)</span> in the middle of Table B and write down the corresponding probability</p>
+<div id="examples" class="section level3" number="19.2.1">
+<h3>
+<span class="header-section-number">C.2.1</span> Examples<a class="anchor" aria-label="anchor" href="#examples"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<span class="math inline">\(P(t_{29} &lt; -1.2)\)</span>
+<ul>
+<li>Look up the <span class="math inline">\(|t| = |-1.2| = 1.2\)</span> since <span class="math inline">\(P(t_{29} &lt; -1.2) = P(t_{29} &gt; 1.2)\)</span>
+</li>
+<li>At the row with <span class="math inline">\(df = 29\)</span>, notice that <span class="math inline">\(1.055 &lt; 1.2 &lt; 1.311\)</span>
+</li>
+<li>These values correspond to probability of <span class="math inline">\(0.15\)</span> and <span class="math inline">\(0.10\)</span> respectively.</li>
+<li>This means that <span class="math inline">\(0.10 &lt; P(t_{29} &lt; -1.2) &lt; 0.15\)</span>
+</li>
+<li>This is the only answer that we know from the table, the probability is between 0.10 and 0.15.</li>
+<li>
+<strong>Alternatively</strong>, use the calculator command <code>tcdf(-1000, -1.2, 29)</code>, where we put the lower bound, upper bound, and the degrees of freedom respectively.</li>
+</ul>
+</li>
+<li>
+<span class="math inline">\(P(t_{57} &gt; 1.2)\)</span>
+<ul>
+<li>Round your degrees of freedom down to 50, since it’s the next lowest one. <span class="math inline">\(df = 57 \sim 50\)</span>.</li>
+<li>At the row with <span class="math inline">\(df = 50\)</span>, notice that <span class="math inline">\(1.047 &lt; 1.2 &lt; 1.299\)</span>
+</li>
+<li>These values correspond to probability of <span class="math inline">\(0.15\)</span> and <span class="math inline">\(0.10\)</span> respectively.</li>
+<li>This means that <span class="math inline">\(0.10 &lt; P(t_{57} &gt; 1.2) &lt; 0.15\)</span>
+</li>
+<li>This is the only answer that we know from the table, the probability is between 0.10 and 0.15.</li>
+<li>
+<strong>Alternatively</strong>, use the calculator command <code>tcdf(1.2, 1000, 57)</code>, where we put the lower bound, upper bound, and the degrees of freedom respectively.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="calculator-applet.html"><span class="header-section-number">B</span> Calculator applet</a></div>
+<div class="next"><a href="critical-values.html"><span class="header-section-number">D</span> Critical Values</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#from-value-to-probability"><span class="header-section-number">C</span> From Value to Probability</a></li>
+<li>
+<a class="nav-link" href="#z-statisticsscore"><span class="header-section-number">C.1</span> z statistics/score</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pz-z"><span class="header-section-number">C.1.1</span> \(P(Z &lt; z)\)</a></li>
+<li><a class="nav-link" href="#pz-z-1"><span class="header-section-number">C.1.2</span> \(P(Z &gt; z)\)</a></li>
+<li><a class="nav-link" href="#pz_1-z-z_2"><span class="header-section-number">C.1.3</span> \(P(z_1 &lt; Z &lt; z_2)\)</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#t-statisticsscore"><span class="header-section-number">C.2</span> t statistics/score</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#examples"><span class="header-section-number">C.2.1</span> Examples</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-06.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

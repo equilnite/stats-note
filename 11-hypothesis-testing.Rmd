@@ -208,7 +208,8 @@ ggplot() +
          fill = "Shade Legend") +
     scale_color_manual(values = colors) +
     scale_fill_manual(values = fills) +
-    theme_minimal()
+    theme_minimal() +
+    theme(legend.position = c(0.895, 0.75))
 ```
 
 This diagram illustrates how we can visualize power in a one-sided test checking to see if a parameter is larger than the null parameter. The null parameter here is 0 and the alternative parameter is 3. Each of their respective distributions are centered at 0 and 3. To think about power, first we look at the $\alpha$ value, which gives us the rejection region (shaded in black) in which any statistic that we get there will reject the null hypothesis. 
