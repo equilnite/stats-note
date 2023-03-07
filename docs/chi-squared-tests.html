@@ -127,6 +127,89 @@ where there are <span class="math inline">\(c\)</span> categories in the categor
 <span class="math display">\[df=c-1\]</span></p>
 <p><strong>Chi-Square Test Statistic:</strong>
 <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}\]</span></p>
+<div id="GOF-calculator" class="section level3" number="15.3.1">
+<h3>
+<span class="header-section-number">15.3.1</span> Doing it on a calculator<a class="anchor" aria-label="anchor" href="#GOF-calculator"><i class="fas fa-link"></i></a>
+</h3>
+<p>For context, if you have two vectors <span class="math inline">\(\vec x\)</span> and <span class="math inline">\(\vec y\)</span>, you can find the difference between them by doing <span class="math inline">\(\vec x - \vec y\)</span>, which will take the element-wise difference between the two vectors (subtract the first from the first of the other, the second from the second of the other, …). For example,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\text {Let }
+\vec x = \begin{bmatrix}
+1 \\
+2 \\
+3
+\end{bmatrix} \text{ and }
+\vec y = \begin{bmatrix}
+7 \\
+6 \\
+5
+\end{bmatrix}\\
+&amp; \text{Then }\vec x - \vec y = \begin{bmatrix}
+1 \\
+2 \\
+3
+\end{bmatrix} -
+\begin{bmatrix}
+7 \\
+6 \\
+5
+\end{bmatrix} = \begin{bmatrix}
+-6 \\
+-4 \\
+-2
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>When we do things on the calculator with the following method, everything works doing everything element-wise, whatever we do to the list happens to each thing in the list.</p>
+<ol style="list-style-type: decimal">
+<li>Get ready to edit your lists by going to <code>stat &gt; EDIT &gt; edit</code>
+</li>
+<li>You’ll see all your available lists, <code>L1</code> ,<code>L2</code>, …
+<ul>
+<li>To clear a given list, go up the header of the list (e.g. <code>L1</code> should be highlighted if you want to clear it), then hit <code>clear</code> and <code>enter</code>
+</li>
+</ul>
+</li>
+<li>Enter the list of your observed values for the problem.
+<ul>
+<li>Let’s say this is <code>L1</code>
+</li>
+</ul>
+</li>
+<li>Enter your theoretical probabilities from the null hypothesis. Make sure they correspond to observed elements one-by-one; they should be in the same order as when you entered the observed values.
+<ul>
+<li>Let’s say this is <code>L2</code>
+</li>
+</ul>
+</li>
+<li>Define your next list of the expected lists (go up the header of the list that you want to fill in and make sure it’s highlighted) and do your sample size times the theoretical probabilities.
+<ul>
+<li>Let’s say this is <code>L3</code>, so make sure that <code>L3</code> is highlighted and then enter <code>your sample size * L2</code>
+</li>
+</ul>
+</li>
+<li>Now that you have your observed values and expected values, we can calculate the components of the <span class="math inline">\(\chi^2\)</span> test statistic. In other words, calculate <span class="math display">\[\frac{(Observed-Expected)^2}{Expected}\]</span> for each observed and expected pair.
+<ul>
+<li>Let’s say you want this in <code>L4</code>, so make sure that <code>L4</code> is highlighted and then enter <code>(L1 - L3)^2/L3</code>
+</li>
+</ul>
+</li>
+<li>We now have all the components and the final task is to sum up the values.
+<ul>
+<li>Two options:
+<ul>
+<li>
+<code>stat &gt; CALC &gt; 1-Var Stats</code> and then you should see <code>1-Var Stats</code> on the command screen. Enter your desired list that you want to sum up (which in the example would look like <code>1-Var Stats L4</code>).</li>
+<li>
+<code>2nd &gt; stat (list) &gt; MATH &gt; sum(</code> and than just input your desired list to suum (which in the example would be <code>sum(L4)</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Here’s a <a href="https://youtu.be/ZZtsomC2-Fg">video tutorial</a> using the example from Page 3 in your packets</p>
+</div>
 </div>
 <div id="ChiSqHomogen" class="section level2" number="15.4">
 <h2>
@@ -167,7 +250,9 @@ when we compared just the probability of a single event and a conditional probab
 <li><a class="nav-link" href="#chi-squared-tests"><span class="header-section-number">15</span> Chi-Squared Tests</a></li>
 <li><a class="nav-link" href="#sampling-distribution-of-chi2"><span class="header-section-number">15.1</span> Sampling distribution of \(\chi^2\)</a></li>
 <li><a class="nav-link" href="#ChiSqCond"><span class="header-section-number">15.2</span> Conditions</a></li>
-<li><a class="nav-link" href="#ChiSqGOF"><span class="header-section-number">15.3</span> Chi-Squared Goodness-of-Fit</a></li>
+<li>
+<a class="nav-link" href="#ChiSqGOF"><span class="header-section-number">15.3</span> Chi-Squared Goodness-of-Fit</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#GOF-calculator"><span class="header-section-number">15.3.1</span> Doing it on a calculator</a></li></ul>
+</li>
 <li><a class="nav-link" href="#ChiSqHomogen"><span class="header-section-number">15.4</span> Chi-Squared Test of Homogeneity</a></li>
 <li><a class="nav-link" href="#ChiSqInd"><span class="header-section-number">15.5</span> Chi-Squared Test of Independence</a></li>
 </ul>
@@ -186,7 +271,7 @@ when we compared just the probability of a single event and a conditional probab
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-06.</p>
+    <p>"<strong>AP Statistics Notes</strong>" was written by Mr. Chang <code>edwardchang@berkeley.net</code>. It was last built on 2023-03-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

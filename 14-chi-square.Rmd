@@ -71,6 +71,60 @@ $$df=c-1$$
 **Chi-Square Test Statistic:**
 $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$
 
+### Doing it on a calculator {#GOF-calculator}
+
+For context, if you have two vectors $\vec x$ and $\vec y$, you can find the difference between them by doing $\vec x - \vec y$, which will take the element-wise difference between the two vectors (subtract the first from the first of the other, the second from the second of the other, ...). For example,
+
+$$
+\begin{aligned} 
+&\text {Let }
+\vec x = \begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} \text{ and }
+\vec y = \begin{bmatrix}
+7 \\
+6 \\
+5 
+\end{bmatrix}\\
+& \text{Then }\vec x - \vec y = \begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} -
+ \begin{bmatrix}
+7 \\
+6 \\
+5 
+\end{bmatrix} = \begin{bmatrix}
+-6 \\
+-4 \\
+-2 
+\end{bmatrix}
+\end{aligned}
+$$
+
+When we do things on the calculator with the following method, everything works doing everything element-wise, whatever we do to the list happens to each thing in the list.
+
+1. Get ready to edit your lists by going to `stat > EDIT > edit`
+2. You'll see all your available lists, `L1` ,`L2`, ...
+    - To clear a given list, go up the header of the list (e.g. `L1` should be highlighted if you want to clear it), then hit `clear` and `enter`
+3. Enter the list of your observed values for the problem.
+    - Let's say this is `L1`
+4. Enter your theoretical probabilities from the null hypothesis. Make sure they correspond to observed elements one-by-one; they should be in the same order as when you entered the observed values.
+    - Let's say this is `L2`
+5. Define your next list of the expected lists (go up the header of the list that you want to fill in and make sure it's highlighted) and do your sample size times the theoretical probabilities.
+    - Let's say this is `L3`, so make sure that `L3` is highlighted and then enter `your sample size * L2`
+6. Now that you have your observed values and expected values, we can calculate the components of the $\chi^2$ test statistic. In other words, calculate $$\frac{(Observed-Expected)^2}{Expected}$$ for each observed and expected pair.
+    - Let's say you want this in `L4`, so make sure that `L4` is highlighted and then enter `(L1 - L3)^2/L3`
+7. We now have all the components and the final task is to sum up the values.
+    - Two options:
+        - `stat > CALC > 1-Var Stats` and then you should see `1-Var Stats` on the command screen. Enter your desired list that you want to sum up (which in the example would look like `1-Var Stats L4`).
+        - `2nd > stat (list) > MATH > sum(` and than just input your desired list to suum (which in the example would be `sum(L4)`).
+
+Here's a [video tutorial](https://youtu.be/ZZtsomC2-Fg) using the example from Page 3 in your packets
+
 ## Chi-Squared Test of Homogeneity {#ChiSqHomogen}
 
 ::: {.highlight}

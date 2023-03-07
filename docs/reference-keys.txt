@@ -113,6 +113,7 @@ chi-squared-tests
 sampling-distribution-of-chi2
 ChiSqCond
 ChiSqGOF
+GOF-calculator
 ChiSqHomogen
 ChiSqInd
 linear-regression
