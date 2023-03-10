@@ -1,0 +1,56 @@
+project:
+  type: book
+  output-dir: docs
+  preview:
+    port: 4200
+    browser: false
+
+book:
+  title: "AP Statistics Notes"
+  author: "Mr. Chang `edwardchang@berkeley.net`"
+  favicon: "favicon.png"
+  url: https://stats.echa.ng
+  description: |
+     These are notes for AP Statistics.
+  chapters:
+    - index.qmd
+    - 01-basic-notation.qmd
+    - 02-cat-vis.qmd
+    - 03-quant-vis.qmd
+    - 04-sampling.qmd
+    - 05-experimental-design.qmd
+    - 06-probability.qmd
+    - 07-density-curves.qmd
+    - 08-random-variables.qmd
+    - 09-sampling-distributions.qmd
+    - 10-confidence-intervals.qmd
+    - 11-hypothesis-testing.qmd
+    - 12-proportion-inference.qmd
+    - 13-mean-inference.qmd
+    - 14-chi-square.qmd
+    - 15-linear-regression.qmd
+  appendices:
+    - 16-formulas.qmd
+    - 17-applets.qmd
+    - 18-statistic-to-pval.qmd
+    - 19-critical-vals.qmd
+    - 20-test.qmd
+
+format:
+  html:
+    include-in-header:
+      - header.html
+    theme: cosmo
+    df-print: paged
+    css: ["style/console.css", "style/style.css"]
+    page-layout: full
+  pdf:
+    documentclass: scrreprt
+
+execute:
+  echo: false
+  warning: false
+  cache: true
+
+
+

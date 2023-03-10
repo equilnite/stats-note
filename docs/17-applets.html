@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mr.&nbsp;Chang edwardchang@berkeley.net">
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes</title>
+<title>AP Statistics Notes - Appendix B — Calculator applet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-basic-notation.html" rel="next">
+<link href="./18-statistic-to-pval.html" rel="next">
+<link href="./16-formulas.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,9 +68,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -82,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">AP Statistics Notes</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix B — Calculator applet</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -200,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17-applets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Calculator applet</span></a>
+  <a href="./17-applets.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Calculator applet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -224,38 +221,21 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">AP Statistics Notes</h1>
+<h1 class="title d-none d-lg-block">Appendix B — Calculator applet</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>These are notes for AP Statistics.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mr.&nbsp;Chang <code>edwardchang@berkeley.net</code> </p>
-          </div>
-  </div>
     
   
     
@@ -264,21 +244,27 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell" data-hash="index_cache/html/setup_d3c6b0101767d308a0f0fbcc7c3f49dc">
+<p>This is meant to be something similar to how your calculator works. The behavior is not working that well yet, but it’s here if you want to use it for now. Things that this can do are calculator commands like:</p>
+<ul>
+<li><p><code>normalcdf</code></p></li>
+<li><p><code>invNorm</code></p></li>
+<li><p><code>geometcdf</code></p></li>
+<li><p><code>geometpdf</code></p></li>
+<li><p><code>invT</code></p></li>
+<li><p><code>tcdf</code></p></li>
+<li><p>and basic arithmetic (though instead of <code>^</code> for exponents, you have to use <code>**</code>)</p></li>
+</ul>
+<div id="repl" autofocus="">
+<div id="repl-history">
 
 </div>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_732dd43556164d094e60f29d9fd12cbf">
-
+<p><span id="prompt" class="prompt">»&nbsp;</span> <span id="command" contenteditable="true"></span></p>
 </div>
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>These are my notes based off what we learned in class.</p>
-<p>There are various functions on this website that make your notes accessible in the case that you need more support in reading the material. Take a look at the tool bar on the top and try right clicking on math equations to see options to enlargen math equations. Ask Mr.&nbsp;Chang if you want to explore more.</p>
-<p>These notes are incomplete, but I’ll be trying to update them completely before the AP test. Give me any feedback that you might want to see on these notes.</p>
-<p>Look at the rest of these notes through the navigation bar on the left hand side (might have to click on the hamburger icon), or go through these sequentially by clicking the arrows on the left and right hand side.</p>
+<script src="./web.js"></script>
+<script src="./jstat.min.js"></script>
+<script src="./dist.js"></script>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -414,12 +400,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
+      <a href="./16-formulas.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-basic-notation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./18-statistic-to-pval.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

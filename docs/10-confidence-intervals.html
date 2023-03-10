@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mr.&nbsp;Chang edwardchang@berkeley.net">
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes</title>
+<title>AP Statistics Notes - 11&nbsp; Confidence Intervals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-basic-notation.html" rel="next">
+<link href="./11-hypothesis-testing.html" rel="next">
+<link href="./09-sampling-distributions.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,9 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -82,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">AP Statistics Notes</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -157,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-confidence-intervals.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></a>
+  <a href="./10-confidence-intervals.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -229,7 +227,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#interpreting-confidence-intervals" id="toc-interpreting-confidence-intervals" class="nav-link active" data-scroll-target="#interpreting-confidence-intervals"><span class="toc-section-number">11.1</span>  Interpreting Confidence Intervals</a></li>
+  <li><a href="#interpreting-confidence-level" id="toc-interpreting-confidence-level" class="nav-link" data-scroll-target="#interpreting-confidence-level"><span class="toc-section-number">11.2</span>  Interpreting Confidence Level</a></li>
+  <li><a href="#changing-confidence-levels" id="toc-changing-confidence-levels" class="nav-link" data-scroll-target="#changing-confidence-levels"><span class="toc-section-number">11.3</span>  Changing Confidence Levels</a></li>
+  <li><a href="#conditions-for-confidence-intervals" id="toc-conditions-for-confidence-intervals" class="nav-link" data-scroll-target="#conditions-for-confidence-intervals"><span class="toc-section-number">11.4</span>  Conditions for Confidence Intervals</a></li>
+  <li><a href="#the-four-step-process" id="toc-the-four-step-process" class="nav-link" data-scroll-target="#the-four-step-process"><span class="toc-section-number">11.5</span>  The Four-Step Process</a></li>
   </ul>
 </nav>
     </div>
@@ -238,24 +240,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">AP Statistics Notes</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>These are notes for AP Statistics.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mr.&nbsp;Chang <code>edwardchang@berkeley.net</code> </p>
-          </div>
-  </div>
     
   
     
@@ -264,18 +255,85 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell" data-hash="index_cache/html/setup_d3c6b0101767d308a0f0fbcc7c3f49dc">
-
+<p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter.</p>
+<div class="highlight">
+<p>The interval is calculated from the data and has the form <span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
 </div>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_732dd43556164d094e60f29d9fd12cbf">
-
+<div class="highlight">
+<p>Margin of errors are calculated from the confidence level (<span class="math inline">\(C\)</span>) and the data and has the form</p>
+<p><span class="math display">\[ME = m = \text{critical value} \cdot \text{standard error of the statistic}\]</span></p>
 </div>
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>These are my notes based off what we learned in class.</p>
-<p>There are various functions on this website that make your notes accessible in the case that you need more support in reading the material. Take a look at the tool bar on the top and try right clicking on math equations to see options to enlargen math equations. Ask Mr.&nbsp;Chang if you want to explore more.</p>
-<p>These notes are incomplete, but I’ll be trying to update them completely before the AP test. Give me any feedback that you might want to see on these notes.</p>
-<p>Look at the rest of these notes through the navigation bar on the left hand side (might have to click on the hamburger icon), or go through these sequentially by clicking the arrows on the left and right hand side.</p>
+<p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in <span class="math inline">\(C\)</span>% of samples.</p>
+<section id="interpreting-confidence-intervals" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="interpreting-confidence-intervals"><span class="header-section-number">11.1</span> Interpreting Confidence Intervals</h2>
+<p>You can say something of the form:</p>
+<div class="highlight">
+<p>I am [<span class="math inline">\(C\)</span>]% confident the interval from <em>[lower bound]</em> to <em>[upper bound]</em> captures the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
+<p>You CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1</p>
+</section>
+<section id="interpreting-confidence-level" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="interpreting-confidence-level"><span class="header-section-number">11.2</span> Interpreting Confidence Level</h2>
+<div class="highlight">
+<p>If we take many, many samples and create many, many intervals using the same method, about [<span class="math inline">\(C\)</span>]% of them will capture the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
+<p>In other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”</p>
+</section>
+<section id="changing-confidence-levels" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="changing-confidence-levels"><span class="header-section-number">11.3</span> Changing Confidence Levels</h2>
+<p>When we increase confidence level, we are saying that more intervals in this manner should capture the true parameter. This means that to increase confidence level means that the confidence intervals need to increase in width.</p>
+<p>When we increase the size of a sample, the precision of our statistic increases because of the reduction in sampling variability (standard deviation of the statistic decreases as n increases). This means that we can now guess/estimate a smaller range compared to if we had a smaller sample size. So, when we increase the size of our samples, our confidence intervals will have smaller widths compared to those with a smaller sample size.</p>
+</section>
+<section id="conditions-for-confidence-intervals" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="conditions-for-confidence-intervals"><span class="header-section-number">11.4</span> Conditions for Confidence Intervals</h2>
+<section id="random" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="random">1. Random</h3>
+<p>The data must come from a random sample, or random assignment in an experiment.</p>
+<p>In order to infer about a larger population, we must have a random, unbiased sample from that population. If the sample is not random, we need to think about whether it’s at least unbiased and/or representative. If so, we may be able to treat it as a random sample, but we must state that we’re doing this. If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.</p>
+<p>In the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population. In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments). If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population. This depends on whether our subjects are a random sample from, or at least representative of, some larger population.</p>
+</section>
+<section id="large" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="large">2. Large</h3>
+<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
+<section id="proportions" class="level4 unlisted unnumbered">
+<h4 class="unlisted unnumbered anchored" data-anchor-id="proportions">Proportions</h4>
+<p>For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the <a href="08-random-variables.html#large-counts-cond"><strong><em>Large Counts Condition</em></strong></a>.</p>
+<p>This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.</p>
+</section>
+<section id="sample-means" class="level4 unlisted unnumbered">
+<h4 class="unlisted unnumbered anchored" data-anchor-id="sample-means">Sample means</h4>
+<p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
+<ul>
+<li><p><a href="09-sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
+<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
+</ul>
+</section>
+</section>
+<section id="sampling-independence" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="sampling-independence">3. Sampling Independence</h3>
+<p>Observations in our sample must be independent of each other.</p>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="08-random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
+<p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; “I’m going to have to assume I can treat these observations as independent.”</p>
+</section>
+</section>
+<section id="the-four-step-process" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="the-four-step-process"><span class="header-section-number">11.5</span> The Four-Step Process</h2>
+<ol type="1">
+<li><strong>STATE</strong> exactly what you’re doing</li>
+</ol>
+<p>Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest. If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here. For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95% confidence”</p>
+<ol start="2" type="1">
+<li><strong>PLAN</strong> which method you will use and that the necessary conditions are met.</li>
+</ol>
+<p>If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.</p>
+<ol start="3" type="1">
+<li><strong>DO</strong> the calculations</li>
+</ol>
+<p>Perform the calculations necessary for the method you chose to use. Show all work!</p>
+<ol start="4" type="1">
+<li><strong>CONCLUDE</strong> in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).</li>
+</ol>
+<p>“I am 95% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42% and 51%. 95% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”</p>
 
 
 </section>
@@ -416,10 +474,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./09-sampling-distributions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-basic-notation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-hypothesis-testing.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

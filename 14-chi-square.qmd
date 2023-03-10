@@ -1,0 +1,175 @@
+# Chi-Squared Tests
+
+```{r}
+library(tidyverse)
+```
+
+$\chi^2$ (pronounced "kai" squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.
+
+## Sampling distribution of $\chi^2$
+
+The sampling distribution of $\chi^2$ is not a Normal distribution. It is a right-skewed distribution that allows only positive values because $\chi^2$ can never be negative.
+When the expected counts are all at least 5, the sampling distribution of the $\chi^2$ statistic is close to a $\chi^2$ distribution with a degrees of freedom based off the test that we do.
+The $\chi^2$ distributions are a family of distributions that take only positive values and are skewed to the right. A particular chi-square distribution is specified by giving its degrees of freedom.
+
+```{ojs Chisquare DF Demo}
+Plot.plot({
+  marks: [
+    Plot.line(d3.range(0, 10, 0.01),
+      {
+        x: (x) => x,
+        y: (x) => jStat.chisquare.pdf(x, df1),
+        strokeWidth: 3,
+        stroke: "steelblue"
+      }
+    ),
+    Plot.ruleX([0]),
+    Plot.ruleY([0]),
+  ],
+  x: {
+    domain: [0, 10],
+    label: "Chi-squared Statistic"
+  },
+  y: { 
+    domain: [0, .3], 
+    label: "Density"
+  },
+    caption: "The Chi-squared Sampling Distribution"
+})
+
+viewof df1 = Inputs.range(
+[1, 10],
+{value: 3, step: 1, label: "Degrees of Freedom (df):"}
+)
+```
+
+## Conditions {#ChiSqCond}
+
+::: {.highlight}
+- **Random:** The data comes from a well-designed random sample or from a randomized experiment.
+
+- **10%:** When sampling without replacement, check that $n\leq(.10)N$
+
+- **Large Counts:** All expected counts are greater than 5
+:::
+
+<details>
+<summary> Be careful and remember that: </summary>
+
+- The chi-square test statistic compares observed and expected counts. Don’t try to perform calculations with the observed and expected proportions in each category.
+
+- When checking the Large Sample Size condition, be sure to examine the expected counts, not the observed counts.
+</details>
+
+## Chi-Squared Goodness-of-Fit {#ChiSqGOF}
+
+::: {.highlight}
+We do this test when we wonder, "Does this data fit with what they are saying?" So how "good" does the distribution of data that we see "fit" with the distribution that they claim?
+:::
+
+**Hypotheses:**
+
+$H_0$: The stated distribution of the categorical variable in the population of interest is correct.
+$$H_0:p_1=p_{0_1},p_2=p_{0_2}, \cdots ,p_c=p_{0_c} $$
+where there are $c$ categories in the categorical variable
+
+$H_a$: The stated distribution of the categorical variable in the population of interest is not correct
+$$H_a:p_1 \not = p_{0_1},p_2 \not = p_{0_2}, \cdots ,p_c \not = p_{0_c}$$
+
+**Expected Counts:**
+
+The expected count for each category ($E_i$) is the sample size ($n$) times the stated probability of the category $p_{0_i}$.
+$$E_i=np_{0_i}$$
+
+**Degrees of freedom:**
+
+We calculate the degrees of freedom by taking the # of categories - 1
+$$df=c-1$$
+
+**Chi-Square Test Statistic:**
+$$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$
+
+### Doing it on a calculator {#GOF-calculator}
+
+For context, if you have two vectors $\vec x$ and $\vec y$, you can find the difference between them by doing $\vec x - \vec y$, which will take the element-wise difference between the two vectors (subtract the first from the first of the other, the second from the second of the other, ...). For example,
+
+$$
+\begin{aligned} 
+&\text {Let }
+\vec x = \begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} \text{ and }
+\vec y = \begin{bmatrix}
+7 \\
+6 \\
+5 
+\end{bmatrix}\\
+& \text{Then }\vec x - \vec y = \begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} -
+ \begin{bmatrix}
+7 \\
+6 \\
+5 
+\end{bmatrix} = \begin{bmatrix}
+-6 \\
+-4 \\
+-2 
+\end{bmatrix}
+\end{aligned}
+$$
+
+When we do things on the calculator with the following method, everything works doing everything element-wise, whatever we do to the list happens to each thing in the list.
+
+1. Get ready to edit your lists by going to `stat > EDIT > edit`
+2. You'll see all your available lists, `L1` ,`L2`, ...
+    - To clear a given list, go up the header of the list (e.g. `L1` should be highlighted if you want to clear it), then hit `clear` and `enter`
+3. Enter the list of your observed values for the problem.
+    - Let's say this is `L1`
+4. Enter your theoretical probabilities from the null hypothesis. Make sure they correspond to observed elements one-by-one; they should be in the same order as when you entered the observed values.
+    - Let's say this is `L2`
+5. Define your next list of the expected lists (go up the header of the list that you want to fill in and make sure it's highlighted) and do your sample size times the theoretical probabilities.
+    - Let's say this is `L3`, so make sure that `L3` is highlighted and then enter `your sample size * L2`
+6. Now that you have your observed values and expected values, we can calculate the components of the $\chi^2$ test statistic. In other words, calculate $$\frac{(Observed-Expected)^2}{Expected}$$ for each observed and expected pair.
+    - Let's say you want this in `L4`, so make sure that `L4` is highlighted and then enter `(L1 - L3)^2/L3`
+7. We now have all the components and the final task is to sum up the values.
+    - Two options:
+        - `stat > CALC > 1-Var Stats` and then you should see `1-Var Stats` on the command screen. Enter your desired list that you want to sum up (which in the example would look like `1-Var Stats L4`).
+        - `2nd > stat (list) > MATH > sum(` and than just input your desired list to sum (which in the example would be `sum(L4)`).
+
+Here's a a video tutorial using the example from Page 3 in your packets.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZZtsomC2-Fg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Chi-Squared Test of Homogeneity {#ChiSqHomogen}
+
+::: {.highlight}
+We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another?
+:::
+
+<!-- Hypotheses:  -->
+<!-- $H_0$: The distribution of the variable is the same across all groups/treatments. -->
+
+<!-- $H_a$: There is at least some difference between the distribution of the variable across the groups/treatments -->
+
+<!-- Expected Counts: -->
+<!-- The expected count for each category ($E_i$) is the sample size ($n$) times the stated probability of the category $p_{0i}$. -->
+<!-- $$E_i=np_{0i}$$ -->
+
+<!-- Degrees of freedom:  -->
+<!-- We calculate the degrees of freedom by taking the # of categories - 1 -->
+<!-- $$df=c-1$$ -->
+
+<!-- Chi-Square Test Statistic:  -->
+<!-- $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$ -->
+
+## Chi-Squared Test of Independence {#ChiSqInd}
+
+::: {.highlight}
+We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability)
+when we compared just the probability of a single event and a conditional probability
+:::

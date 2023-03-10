@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="These are notes for AP Statistics.">
+
+<title>AP Statistics Notes - 9&nbsp; Random Variables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-sampling-distributions.html" rel="next">
+<link href="./07-density-curves.html" rel="prev">
+<link href="./favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+<script src="https://unpkg.com/browse/mathjs@11.6.0/dist/math.min.js"></script>
+<script src="./jstat.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="style/console.css">
+<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AP Statistics Notes</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-basic-notation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-cat-vis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-quant-vis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-sampling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-experimental-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-probability.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-density-curves.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-random-variables.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-sampling-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-confidence-intervals.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-hypothesis-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-proportion-inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-mean-inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-chi-square.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-linear-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-formulas.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-applets.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Calculator applet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-statistic-to-pval.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">From Value to Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-critical-vals.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Critical Values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-test.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link active" data-scroll-target="#discrete-random-variables"><span class="toc-section-number">9.1</span>  Discrete Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#binomial-random-variables" id="toc-binomial-random-variables" class="nav-link" data-scroll-target="#binomial-random-variables"><span class="toc-section-number">9.1.1</span>  Binomial Random Variables</a></li>
+  <li><a href="#geometric-random-variables" id="toc-geometric-random-variables" class="nav-link" data-scroll-target="#geometric-random-variables"><span class="toc-section-number">9.1.2</span>  Geometric Random Variables</a></li>
+  </ul></li>
+  <li><a href="#operations-with-random-variables" id="toc-operations-with-random-variables" class="nav-link" data-scroll-target="#operations-with-random-variables"><span class="toc-section-number">9.2</span>  Operations with Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#constants" id="toc-constants" class="nav-link" data-scroll-target="#constants"><span class="toc-section-number">9.2.1</span>  Constants</a></li>
+  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables"><span class="toc-section-number">9.2.2</span>  Random Variables</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>A <strong>random variable</strong> is a variable whose value is a numerical outcome of a random phenomenon.</p>
+<p>Random variables can be discrete or continuous. A <strong>discrete random variable</strong> <span class="math inline">\(X\)</span> has a countable, or smaller, number of possible outcomes, while a <strong>continuous random variable</strong> <span class="math inline">\(X\)</span> can take on an infinite number (theoretically) of different values.</p>
+<p>The <strong>probability distribution</strong> of a random variable <span class="math inline">\(X\)</span> gives us all possible values of <span class="math inline">\(X\)</span>, and their corresponding probabilities. Probability distributions are typically given as tables, histograms (with probability on the y-axis, instead of frequency), or density curves (like the Normal curve).</p>
+<section id="discrete-random-variables" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="discrete-random-variables"><span class="header-section-number">9.1</span> Discrete Random Variables</h2>
+<p>A discrete random variable describes a process that only has specific, predefined outcomes. For example, you can be finding the probability of people having blue, brown, and black eyes. Or you can be finding the probability of people earning salaries in the ranges of &lt;$30,000, $30,000 - $50,000, $50,000 - $ 70,000, $70,000 - $ 100,000, &gt;$100,000.</p>
+<div class="highlight">
+<p>When we have a discrete random variable <span class="math inline">\(X\)</span> whose probability distribution is</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \textbf{Value:}&amp; ~~~~ x_1 ~~~~ x_2 ~~~~ x_3 ~~~~ \cdots \\
+    \textbf{Probability:}&amp; ~~~~ p_1 ~~~~ p_2 ~~~~ p_3 ~~~~\cdots
+\end{aligned}
+\]</span></p>
+<p>we know the following about the mean and standard deviation of <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[\mu_X = E(X) = \sum x_i P(x_i)\]</span></p>
+<p><span class="math display">\[\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\]</span></p>
+</div>
+<details>
+<summary>
+Keep in mind that the standard deviation formula here (and else where) is equivalent to the formula of population standard deviation when we divide by <span class="math inline">\(n\)</span> instead of multiplying by <span class="math inline">\(P(x_i)\)</span>.
+</summary>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma_X &amp;= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} \\
+&amp;=\sqrt{E((X - \bar x)^2)} \\
+&amp;=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\\
+\end{aligned}
+\]</span></p>
+<p>In other words, remember that we define standard deviation as the root mean square of the squared differences from the mean. Since we are taking the mean of the squared differences from the mean in both formulas (I use the definition for mean from step 1 to 2 and the definition of mean for discrete variables from step 2 to 3), the two formulas are equivalent.</p>
+</details>
+<p>The variance of a random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[
+Var(X) = \sigma_X^2
+\]</span></p>
+<section id="binomial-random-variables" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="binomial-random-variables"><span class="header-section-number">9.1.1</span> Binomial Random Variables</h3>
+<p>Binomial random variables have parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, and can be written <span class="math inline">\(B(n, p)\)</span>. Remember, Normal random variables have parameters and and can be written <span class="math inline">\(N(\mu,\sigma)\)</span>.</p>
+<div class="highlight">
+<p>The <strong>pdf</strong> of a Binomial Random Variable (i.e.&nbsp;the binomial formula) is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X=k) &amp;= {n \choose k} p^k (1-p)^{n-k}\\
+    \text{where } k &amp;= 0, 1, 2, 3, \cdots, n
+\end{aligned}
+\]</span></p>
+<p>To apply this formula in a graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binompdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{binompdf(n, p[,x])}\)</span></p>
+</div>
+<div class="highlight">
+<p>The <strong>cdf</strong> of a Binomial Random Variable is: <span class="math display">\[
+\begin{aligned}
+    P(X\leq k) &amp;= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binomcdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{binomcdf(n, p[,x])}\)</span></p>
+</div>
+<div class="highlight">
+<p>The mean and standard deviation of a binomial random variable is given by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \mu_X &amp;= n p \\
+    \sigma_X &amp;= \sqrt{n p q} \\
+    &amp;\text{, where } q = 1-p.
+\end{aligned}
+\]</span></p>
+</div>
+<section id="binomial-setting" class="level4" data-number="9.1.1.1">
+<h4 data-number="9.1.1.1" class="anchored" data-anchor-id="binomial-setting"><span class="header-section-number">9.1.1.1</span> Binomial setting</h4>
+<p>We can identify a binomial setting when we know:</p>
+<ol type="1">
+<li><p><strong>B</strong>inary? The possible outcomes of each trial can be classified as “success” or “failure” (in our case rolling a 7 or not).</p></li>
+<li><p><strong>I</strong>ndependent? Trials must be independent; that is, knowing the result of one trial must not tells us anything about the result of another trial.</p></li>
+<li><p><strong>N</strong>umber? The number of trials n of the chance process must be fixed in advance. (this was 5, then 100).</p></li>
+<li><p><strong>S</strong>ame? There is the same probability p of success on each trial (1/6).</p></li>
+</ol>
+</section>
+<section id="ten-per-cond" class="level4" data-number="9.1.1.2">
+<h4 data-number="9.1.1.2" class="anchored" data-anchor-id="ten-per-cond"><span class="header-section-number">9.1.1.2</span> 10% Condition</h4>
+<p>The second condition is often not perfectly met, as in the case of an SRS from some population. Imagine choosing 10 students from a class of 15 females and 15 males—as we choose people, the remaining population changes, which changes the probability that the next person chosen will be male or female.</p>
+<p>When we lack complete independence, we can see the consequence of this is negligible as long as our sample is small relative to the population from which we are sampling. If we were choosing our 10 people from a school of 3,300 students, the change in probability from person to person would be small enough to ignore.</p>
+<div class="highlight">
+<p>The general rule is that the sample needs to be less than <span class="math inline">\(\frac{1}{10}\)</span>, or 10%, of the population. We refer to this as the 10% condition.</p>
+<p><span class="math display">\[n \leq (.10) N\]</span></p>
+</div>
+</section>
+<section id="normal-approximation-to-the-binomial-distribution" class="level4" data-number="9.1.1.3">
+<h4 data-number="9.1.1.3" class="anchored" data-anchor-id="normal-approximation-to-the-binomial-distribution"><span class="header-section-number">9.1.1.3</span> Normal Approximation to the Binomial Distribution</h4>
+<p>Remember that as <span class="math inline">\(n\)</span> gets large, a binomial random variable <span class="math inline">\(X\)</span> can take on more and more different values, and it can become tedious to continue to treat X as a discrete random variable. As <span class="math inline">\(n\)</span> get larger, we can treat <span class="math inline">\(X\)</span> as a continuous random variable, more specifically:</p>
+<p>As <span class="math inline">\(n\)</span> gets larger, the binomial distribution gets closer to a normal distribution. However, before we use a normal distribution to approximate a binomial distribution, we have to check the following condition:</p>
+<section id="large-counts-cond" class="level5" data-number="9.1.1.3.1">
+<h5 data-number="9.1.1.3.1" class="anchored" data-anchor-id="large-counts-cond"><span class="header-section-number">9.1.1.3.1</span> Large Counts condition</h5>
+<div class="highlight">
+<p>We can use a Normal distribution to model a binomial distribution. If we know: <span class="math display">\[np \geq 10 \text{ and }n(1-p) \geq 10\]</span>, In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.</p>
+</div>
+</section>
+<section id="doing-a-normal-approximation" class="level5" data-number="9.1.1.3.2">
+<h5 data-number="9.1.1.3.2" class="anchored" data-anchor-id="doing-a-normal-approximation"><span class="header-section-number">9.1.1.3.2</span> Doing a normal approximation</h5>
+<p>First verify all the conditions for a Binomial setting and the Large Counts Condition. Since we know that we have a binomial setting, we then know the distribution that we want to use is <span class="math inline">\(Normal(np, \sqrt{npq})\)</span> proceed with the calculations according to this distribution.</p>
+</section>
+</section>
+</section>
+<section id="geometric-random-variables" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="geometric-random-variables"><span class="header-section-number">9.1.2</span> Geometric Random Variables</h3>
+<p>If <span class="math inline">\(X \sim G(p)\)</span>, <span class="math inline">\(X\)</span> has a geometric distribution with parameter <span class="math inline">\(p\)</span></p>
+<div class="highlight">
+<p>The <strong>pdf</strong> of a geometric random variable is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X=x) &amp;= (1-p)^{x-1}p\\
+    \text{where } x &amp;= 1, 2, 3, \cdots
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometpdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{geometpdf(p, x)}\)</span></p>
+</div>
+<div class="highlight">
+<p>The <strong>cdf</strong> of a Geometric Variable is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X\leq x) &amp;= \sum_{i=1}^x(1-p)^{i-1}p
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometcdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{geometcdf(p, x)}\)</span></p>
+</div>
+<div class="highlight">
+<p>The mean and standard deviation of a geometric random variable is given by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \mu_X &amp;= \frac{1}{p} \\
+    \sigma_X &amp;= \frac{\sqrt{q}}{p} \\
+    &amp;\text{, where } q = 1-p.
+\end{aligned}
+\]</span></p>
+</div>
+<section id="the-geometric-setting" class="level4" data-number="9.1.2.1">
+<h4 data-number="9.1.2.1" class="anchored" data-anchor-id="the-geometric-setting"><span class="header-section-number">9.1.2.1</span> The Geometric Setting</h4>
+<p>A geometric setting is very similar to a binomial setting, except that .</p>
+<p>A geometric setting is defined as a series of observations where these 4 conditions are met:</p>
+<ol type="1">
+<li><p><strong>B</strong>inary? The Possible outcomes of each trial can be classified as “success” or “failure”</p></li>
+<li><p><strong>I</strong>ndependent? Trials must be independent, that is, knowing the result of one trial must not have any effect on the result of any other trial.</p></li>
+<li><p><strong>T</strong>rials? The goal is to count the number of trials until the first success occurs.</p></li>
+<li><p><strong>S</strong>uccess? On each trial, the probability p of success must be the same.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="operations-with-random-variables" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="operations-with-random-variables"><span class="header-section-number">9.2</span> Operations with Random Variables</h2>
+<section id="constants" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="constants"><span class="header-section-number">9.2.1</span> Constants</h3>
+<p>When we add a constant <span class="math inline">\(a\)</span> and/or multiply by a constant <span class="math inline">\(b\)</span> to a random variable <span class="math inline">\(X\)</span>, we perform a linear transformation of the form</p>
+<p><span class="math display">\[
+a + bX
+\]</span></p>
+<p>The mean of the transformed variable is:</p>
+<p><span class="math display">\[
+\mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
+\]</span></p>
+<p>The standard deviation of the transformed variable is:</p>
+<p><span class="math display">\[
+\sigma_{a+bX}=\sigma_{bX}=b\sigma_X
+\]</span></p>
+</section>
+<section id="random-variables" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="random-variables"><span class="header-section-number">9.2.2</span> Random Variables</h3>
+<p>In general, we can describe the mean and standard deviation of the sum or difference of independent random variables with these formulas:</p>
+<p><span class="math display">\[\mu_{X \pm Y} = \mu_X \pm \mu_Y\]</span></p>
+<p><strong>If the random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent</strong>, then</p>
+<p><span class="math display">\[ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \]</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-density-curves.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09-sampling-distributions.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

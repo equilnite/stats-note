@@ -1,0 +1,90 @@
+# Experimental Design
+
+A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of **observational study**, which observes individuals and measures variables of interest but does not attempt to influence the responses. Unfortunately, this means that many variables are not controlled for so we cannot establish causation between the explanatory and response variables. A **response variable** measures an *outcome* of a study. An **explanatory variable** may help *explain* or predict changes in a response variable. Because of the lack of control, we cannot be certain that variables other than the explanatory variable are influencing the the response instead. These are referred to as **confounding variables**. 
+
+An *experiment* deliberately ***imposes some treatment*** (the specific condition applied) on individuals (**experimental units** or subjects if the experimental units are human) to measure their responses. When our goal is to understand cause and effect, experiments are the only source of fully convincing data. For this reason, the distinction between observational study and experiment is one of the most important in statistics. 
+
+## Experiment Principles
+
+In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things:  comparison, randomization, control, and replication.  Stronger internal validity gives us a better cause-effect link in our experiment.  Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!
+
+Comparison
+: Use a design that compares two or more treatments. 
+
+Randomization
+: Use chance to assign experimental units to treatments. Doing so helps create roughly equivalent groups of experimental units by balancing the effects of other variables among treatment groups.
+
+Control
+: Keep other variables that might affect the response the same for all groups. 
+
+Replication
+: Use enough experimental units in each group so that difference in the effects of the treatments can be distinguished from chance differences between the groups. 
+
+The logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically. 
+
+The response to a dummy treatment is called the **placebo effect**. Subjects are given a placebo treatment to control for the placebo effect. 
+
+Whenever possible, experiments with human subjects should be **double-blind**, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received. 
+
+
+## Experiment Designs
+
+### Completely Randomized Design
+
+In a completely randomized design, the experimental units are assigned to the treatments completely by chance.  This is similar to (but NOT the same as) a simple random sample (SRS), because in both cases we ignore other variables.  \newline
+Here’s the difference:  In an SRS, we’re picking some people (our sample) to study, and ignoring the rest.  In a completely randomized experiment, however, we already have our sample (the people in our experiment), and we’re randomly deciding how we’re going to study each person (or, which treatment they’re going to get).  So in complete randomization, the randomization is in the **assignment**, *not in the selection*, of people in our study.
+
+### Randomized Block Design {#randomized-block-design}
+
+In a randomized block design, the experimental units are first assigned to blocks according to the different types/status of the experimental units in the experiment. This is similar to [stratified random sampling](#stratified-random-sample), however, we are **not** taking a sample. Any reference to stratified random sampling is wrong when describing an experiment design.
+
+After each experimental unit is assigned to their block, the experiment is carried out in each block, where a completely randomized design is carried out within the block. 
+
+Afterwards, you compare and analyze results from each block and finally combine all results and analyze the differences between blocks.
+
+### Matched Pairs Design
+
+A matched pairs design is a special case of a [randomized block design](#randomized-block-design) that uses blocks of size 2. In this kind of design, you have to have "matched pairs." In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).
+
+## Statistical Significance
+
+An observed effect so large that it would rarely occur by chance is said to be **statistically significant**.
+
+## Scope of Inference
+
+The **scope of inference** refers to the type of inferences (conclusions) that can be drawn from a study.  The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.  
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky" colspan="2" rowspan="2"></th>
+    <th class="tg-c3ow" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly assigned to groups?</span></th>
+  </tr>
+  <tr>
+    <th class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span></th>
+    <th class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly </span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">selected from a population?</span></td>
+    <td class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">  (</span><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">Rare in the real world)</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">  (Some observational studies)</span></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot </span><span style="font-weight:normal">make</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make Inferences about cause and effect: </span><br><span style="font-style:italic;color:#000;background-color:transparent">&nbsp;&nbsp;(Most experiments)</span></td>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make Inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">  (Some observational studies)</span></td>
+  </tr>
+</tbody>
+</table>

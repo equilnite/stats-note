@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mr.&nbsp;Chang edwardchang@berkeley.net">
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes</title>
+<title>AP Statistics Notes - 7&nbsp; Probability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-basic-notation.html" rel="next">
+<link href="./07-density-curves.html" rel="next">
+<link href="./05-experimental-design.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,9 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -82,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">AP Statistics Notes</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -137,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-probability.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a>
+  <a href="./06-probability.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -229,7 +227,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link active" data-scroll-target="#probability-rules"><span class="toc-section-number">7.1</span>  Probability Rules</a>
+  <ul class="collapse">
+  <li><a href="#complement-rule" id="toc-complement-rule" class="nav-link" data-scroll-target="#complement-rule"><span class="toc-section-number">7.1.1</span>  Complement Rule</a></li>
+  <li><a href="#the-addition-rule" id="toc-the-addition-rule" class="nav-link" data-scroll-target="#the-addition-rule"><span class="toc-section-number">7.1.2</span>  The Addition Rule</a></li>
+  <li><a href="#the-multiplication-rule" id="toc-the-multiplication-rule" class="nav-link" data-scroll-target="#the-multiplication-rule"><span class="toc-section-number">7.1.3</span>  The Multiplication Rule</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,24 +241,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">AP Statistics Notes</h1>
+<h1 class="title"><span id="probability" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>These are notes for AP Statistics.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mr.&nbsp;Chang <code>edwardchang@berkeley.net</code> </p>
-          </div>
-  </div>
     
   
     
@@ -264,20 +256,66 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell" data-hash="index_cache/html/setup_d3c6b0101767d308a0f0fbcc7c3f49dc">
-
+<p>You typically know probability as chance. But what does that chance represent?</p>
+<p><strong>Probability</strong> is a number between 0 and 1 that describes the proportion of times the outcome would occur in a very long series of repetitions. We observe this definition of probability through the <strong>law of large numbers</strong> says that if we observe more and more repetitions of any chance process, the proportion of times that a specific outcome occurs approaches a single value.</p>
+<p>Because of random processes, we know that that randomness is predictable in the long run. Our intuition tries to tell us random phenomena should also be predictable in the short run. However, probability does not allow us to make short-run predictions. Even with how we can tell things in the long run, probability does not tell us certainties about future outcomes. That is, past outcomes do not influence the likelihood of individual outcomes occurring in the future.</p>
+<p>If we know how a certain process is supposed to act out through our understanding of probability, we can simulate it. A simulation is an imitation of chance behavior, based on a model that accurately reflects the situation. This means that we will not be doing what is being described, but rather choose a way to represent the situation using a box of tickets, a coin flip, a random number generator, etc.</p>
+<p>When we describe a simulation, we want to describe the following:</p>
+<ol type="1">
+<li><p>Describe how you would do one simulation of the situation, using a physical medium and/or random number generator. e.g.&nbsp;flip a coin, choose <span class="math inline">\(n\)</span> unique random numbers from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, choose slips of paper out a box.</p></li>
+<li><p>Do your described procedure many many times.</p></li>
+<li><p>Estimate the probability in question.</p></li>
+</ol>
+<section id="probability-rules" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="probability-rules"><span class="header-section-number">7.1</span> Probability Rules</h2>
+<p>The sample space <span class="math inline">\(\Omega\)</span> of a chance process is the set of all possible outcomes.</p>
+<p>A probability model is a description of some chance process that consists of two parts: a sample space <span class="math inline">\(\Omega\)</span> and a probability for each outcome.</p>
+<p>An event is any collection of outcomes from some chance process. That is, an event is a subset of the sample space. Events are usually designated by capital letters, like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, and so on.</p>
+<p>A valid probability model always has to satisfy the following rules:</p>
+<div class="highlight">
+<ul>
+<li><p>For any event A, <span class="math inline">\(0 \leq P(A) \leq 1\)</span></p></li>
+<li><p>If <span class="math inline">\(\Omega\)</span> is the sample space in the probability model, <span class="math inline">\(P(\Omega)=1\)</span></p></li>
+<li><p>In the case of equally likely outcomes, <span class="math inline">\(P(A)=\frac{\text{number of outcomes corresponding to event A}}{\text{total number of outcomes in sample space}}\)</span></p></li>
+</ul>
 </div>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_732dd43556164d094e60f29d9fd12cbf">
-
+<p>We also have the following rules to calculate other things:</p>
+<p><span class="math inline">\(P(A|B)\)</span> : the probability of event <span class="math inline">\(A\)</span> occurring, given that event <span class="math inline">\(B\)</span> has already occurred. (conditional probability)</p>
+<div class="highlight">
+<p><strong>Independent Events</strong>: Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).</p>
+<p>For independent events, <span class="math display">\[P(A)=P(A|B) \text{ and } P(B)=P(B|A)\]</span></p>
 </div>
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>These are my notes based off what we learned in class.</p>
-<p>There are various functions on this website that make your notes accessible in the case that you need more support in reading the material. Take a look at the tool bar on the top and try right clicking on math equations to see options to enlargen math equations. Ask Mr.&nbsp;Chang if you want to explore more.</p>
-<p>These notes are incomplete, but I’ll be trying to update them completely before the AP test. Give me any feedback that you might want to see on these notes.</p>
-<p>Look at the rest of these notes through the navigation bar on the left hand side (might have to click on the hamburger icon), or go through these sequentially by clicking the arrows on the left and right hand side.</p>
+<div class="highlight">
+<p><strong>Mutually Exclusive</strong> (or Disjoint) Events: Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive if it’s impossible for both to occur. In one flip of a coin, heads and tails are mutually exclusive events.</p>
+<p>For mutually exclusive events,</p>
+<p><span class="math display">\[P(A\cap B)=0\]</span></p>
+</div>
+<section id="complement-rule" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</h3>
+<p>The complement to event <span class="math inline">\(A\)</span> is the event that <span class="math inline">\(A\)</span> doesn’t happen. This event is sometimes written <span class="math inline">\(AC\)</span>. In one flip of a coin, heads and tails are complementary events (assuming the coin won’t land on its side).</p>
+<div class="highlight">
+<p>For complementary events,</p>
+<p><span class="math display">\[P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)\]</span></p>
+</div>
+</section>
+<section id="the-addition-rule" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</h3>
+<div class="highlight">
+<p><span class="math display">\[P(A \cup B)=P(A) + P(B)-P(A \cap B)\]</span></p>
+<p>For mutually exclusive events, we know that <span class="math inline">\(P(A\cap B)=0\)</span>, so we can also have the following simplified rule:</p>
+<p><span class="math display">\[P(A \cup B)=P(A) + P(B)\]</span></p>
+</div>
+</section>
+<section id="the-multiplication-rule" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</h3>
+<div class="highlight">
+<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B|A)\]</span></p>
+<p>For independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we know that <span class="math inline">\(P(B|A) = P(B)\)</span>, so we can also have the simplified rule:</p>
+<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B)\]</span></p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -416,10 +454,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./05-experimental-design.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-basic-notation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-density-curves.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

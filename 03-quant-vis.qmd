@@ -1,0 +1,213 @@
+# Quantative Data Visualizations
+
+```{r}
+library(tidyverse)
+```
+
+## Dot Plots
+
+Dot plots are for discrete quantitative variables only, and they are
+only useful in situations when you have a small range of number so that
+you can actually see how the data distribution varies across values.
+
+Dot plots are simple, you draw a number line and then plot points above
+the number for each of the number that you see in the data.
+
+Take this data for example:
+
+```{r student-table}
+set.seed(123)
+(X <- data.frame(`Number of Students in the Hallway` = round(rnorm(20, 5, 2))))
+```
+
+Now count up each value to figure out how many dots you need at each
+value on the number line then plot your graph
+
+```{r student-dot-plot}
+as_tibble(table(X), colnames = c("Number of People", "Frequency"))
+ggplot(X, aes(x = Number.of.Students.in.the.Hallway, y = ..count..)) + geom_dotplot() +
+    scale_x_continuous(breaks = 1:9, labels = 1:9) +
+    labs(y = "Frequency", title = "Dot Plot of the Number of People in the Hallway")
+```
+
+## Stemplots
+
+Using this data as an example,
+
+```{r stemplot-data}
+set.seed(123)
+x <- round(rnorm(20, 50, 25))
+data.frame(x)
+```
+
+A stem plot looks like this:
+
+```{r stemplot-pic}
+#install.packages("aplpack")
+library(aplpack)
+stem.leaf(x, style = "bare", depths = FALSE)
+```
+
+In a stem plot, you need to determine a common "stem" of all the numbers
+that you're plotting. So if you have integer numbers from 10 to 200,
+your stems will be everything from the tens and so on, so you'll have
+stems from 1-20. Once you take the stems, you just write the "leaves"
+next to the stem that they belong.
+
+Note that you also have to add a key to show what a stem + leaf means.
+The stem and leaves give no information on the decimals in the data, so
+as you see above, you need to give an example like (as shown in the
+example stemplot):
+
+Key: 1\|2 = 12
+
+Here's another example (sorted for convenience)
+
+```{r stemplot-pic-2}
+x <- round(rnorm(50, 5, 1), digits = 1)
+data.frame(x)
+stem.leaf(x, style = "bare", depths = FALSE)
+```
+
+## Boxplots
+
+*Also known as a box-and-whisker plot*
+
+Boxplots are primarily made of the **five number summary** of the data.
+The five number summary is made up of the:
+
+-   Minimum (min)
+
+-   First Quartile ($Q_1$)
+
+-   Median
+
+-   Third Quartile ($Q_3$)
+
+-   Maximum (max)
+
+To make a simple boxplot, you use the first quartile, median, and third
+quartile to make the "box" and then use the minimum and maximum to make
+the "whiskers."
+
+For this simple list of numbers:
+
+```{r simple-x}
+x = c(1,2,3,4,5,6,7)
+data.frame(x)
+
+```
+
+Our five number summary is:
+
+```{r simple-5ns}
+summary(x, quantile.type = 1)[-4]
+```
+
+As detailed above, our box plot then looks like:
+
+```{r simple-boxplot}
+library(qboxplot)
+qboxplot(data.frame(x), qtype = 1, horizontal = TRUE)
+```
+
+The last detail is that we can calculate outliers using the 1.5 IQR rule
+and show them on the boxplot. For either direction (left or right), if
+we see outliers in that direction, we only extend the whisker to the
+smallest and/or largest point that is not an outlier. Then we plot any
+outliers as individual points.
+
+Look at this example data:
+
+```{r adv-boxplot-data}
+set.seed(1234)
+x <- round(rnorm(40, 0, 5))
+arrange(data.frame(x), desc(x))
+```
+
+Five number summary:
+
+```{r adv-5ns}
+summary(x, quantile.type = 1)[-4]
+```
+
+Our numbers calculated by the 1.5 IQR rule are:
+
+```{r adv-iqr}
+c(-5, 0) + 1.5 * c(-5, 5)
+```
+
+So our 12 is an outlier. which means we draw our right whisker to 6 and
+plot the 12 individually on the number line. Like so:
+
+```{r Advanced Box Plot}
+qboxplot(data.frame(x), qtype = 1, horizontal = TRUE)
+```
+
+## Histograms
+
+A histogram is similar to a [bar plot](#bar-plots), except that
+histograms are made for quantitative data and *bars are continuous* in
+the sense that there is no gap between bars. To make a histogram, select
+an appropriate equal intervals that make it so that you don't have too
+many bars and that you don't have too few bars. Your goal with
+histograms, as with many other visualizations, is to be able to see the
+shape and characteristics of the distribution in question. If you have
+too many bars or too few bars, you won't be able to see much important
+information (especially think of situations when you have many data
+points with very precise decimal measurements).
+
+1.  Decide on your intervals (e.g. by 5's, by 10's, by 100's)
+
+2.  Within your intervals, count up the number of observations that
+    belong in that "bin". When you do so, count up observations so that
+    you count the left end inclusive and the right end inclusive. So if
+    you did intervals of 5, you would do something like counting up
+    points $0 \leq x < 5$, $5 \leq x < 10$, and so on.
+
+3.  Plot your bars.
+
+Example:
+
+Consider this example data set:
+
+```{r}
+ex_data <- data.frame(x = log(rnorm(20, 10, 3)))
+```
+
+Our data has this set of summary statistics:
+
+```{r}
+summary(ex_data)
+```
+
+With this knowledge, let's make our 7 "bins", so let's do these by every
+0.2, starting at 1.5 to 2.9. This will be something that you build by
+intuition.
+
+Now, count up our values:
+
+```{r}
+summary(cut(ex_data$x, breaks = seq(1.5, 2.9, 0.2), include.lowest = TRUE, right = FALSE))
+```
+
+Now, we just put it together. For each bin, we have a bar and the bars'
+heights correspond to the number of individuals in each bin.
+
+```{r}
+ggplot(ex_data, aes(x = x)) + geom_histogram(breaks = seq(1.5, 2.9, 0.2), color = "blue", alpha = 0.5) + scale_x_continuous(breaks = seq(1.5, 2.9, 0.2))
+```
+
+Again, just like bar graphs, we can instead do the relative frequencies
+(this is what you'll see most of the time!!!)
+
+```{r}
+prop.table(summary(cut(ex_data$x, breaks = seq(1.5, 2.9, 0.2), include.lowest = TRUE, right = FALSE)))
+```
+
+```{r}
+ggplot(ex_data, aes(x = x, y = ..density..)) + geom_histogram(breaks = seq(1.5, 2.9, 0.2), color = "blue", alpha = 0.5) + scale_x_continuous(breaks = seq(1.5, 2.9, 0.2))
+```
+
+When you have a histogram like this, keep in mind that the bars always
+add up to 1 (or 100%).

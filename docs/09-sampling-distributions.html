@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mr.&nbsp;Chang edwardchang@berkeley.net">
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes</title>
+<title>AP Statistics Notes - 10&nbsp; Sampling Distributions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-basic-notation.html" rel="next">
+<link href="./10-confidence-intervals.html" rel="next">
+<link href="./08-random-variables.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,9 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -82,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">AP Statistics Notes</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -152,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-sampling-distributions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a>
+  <a href="./09-sampling-distributions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -229,7 +227,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#sampling-distribution-of-hat-p" id="toc-sampling-distribution-of-hat-p" class="nav-link active" data-scroll-target="#sampling-distribution-of-hat-p"><span class="toc-section-number">10.1</span>  Sampling Distribution of <span class="math inline">\(\hat p\)</span></a></li>
+  <li><a href="#sampling-distribution-of-bar-x" id="toc-sampling-distribution-of-bar-x" class="nav-link" data-scroll-target="#sampling-distribution-of-bar-x"><span class="toc-section-number">10.2</span>  Sampling Distribution of <span class="math inline">\(\bar x\)</span></a>
+  <ul class="collapse">
+  <li><a href="#large-cond" id="toc-large-cond" class="nav-link" data-scroll-target="#large-cond"><span class="toc-section-number">10.2.1</span>  Normal/Large Condition for <span class="math inline">\(\bar x\)</span></a></li>
+  <li><a href="#clt" id="toc-clt" class="nav-link" data-scroll-target="#clt"><span class="toc-section-number">10.2.2</span>  Central Limit Theorem (CLT)</a></li>
+  <li><a href="#when-do-we-have-normality" id="toc-when-do-we-have-normality" class="nav-link" data-scroll-target="#when-do-we-have-normality"><span class="toc-section-number">10.2.3</span>  When do we have normality?</a></li>
+  </ul></li>
+  <li><a href="#prop-diff-samp-dist" id="toc-prop-diff-samp-dist" class="nav-link" data-scroll-target="#prop-diff-samp-dist"><span class="toc-section-number">10.3</span>  Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></a></li>
+  <li><a href="#mean-diff-samp-dist" id="toc-mean-diff-samp-dist" class="nav-link" data-scroll-target="#mean-diff-samp-dist"><span class="toc-section-number">10.4</span>  Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -238,24 +244,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">AP Statistics Notes</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>These are notes for AP Statistics.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mr.&nbsp;Chang <code>edwardchang@berkeley.net</code> </p>
-          </div>
-  </div>
     
   
     
@@ -264,18 +259,117 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell" data-hash="index_cache/html/setup_d3c6b0101767d308a0f0fbcc7c3f49dc">
-
+<dl>
+<dt>Sampling Distribution</dt>
+<dd>
+A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size <span class="math inline">\(n\)</span></em> from the same population.
+</dd>
+<dt>Unbiased Estimator</dt>
+<dd>
+A statistic used to estimate a parameter is an if the mean of its sampling distribution is equal to the true value of the parameter being estimated.
+</dd>
+<dd>
+Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.
+</dd>
+<dt>Variability of a Statistic</dt>
+<dd>
+The variability of a statistic is described by the spread of its sampling distribution.
+</dd>
+<dd>
+This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="08-random-variables.html#ten-per-cond">10% Condition</a>).
+</dd>
+</dl>
+<section id="sampling-distribution-of-hat-p" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="sampling-distribution-of-hat-p"><span class="header-section-number">10.1</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
+<ul>
+<li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="08-random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="08-random-variables.html#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+np \geq 10 \text{ and }n(1-p) \geq 10
+\end{equation}\]</span></p>
 </div>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_732dd43556164d094e60f29d9fd12cbf">
-
+</section>
+<section id="sampling-distribution-of-bar-x" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="sampling-distribution-of-bar-x"><span class="header-section-number">10.2</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></h2>
+<div class="highlight">
+<p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
+<ul>
+<li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="08-random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+</ul>
+<p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
 </div>
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>These are my notes based off what we learned in class.</p>
-<p>There are various functions on this website that make your notes accessible in the case that you need more support in reading the material. Take a look at the tool bar on the top and try right clicking on math equations to see options to enlargen math equations. Ask Mr.&nbsp;Chang if you want to explore more.</p>
-<p>These notes are incomplete, but I’ll be trying to update them completely before the AP test. Give me any feedback that you might want to see on these notes.</p>
-<p>Look at the rest of these notes through the navigation bar on the left hand side (might have to click on the hamburger icon), or go through these sequentially by clicking the arrows on the left and right hand side.</p>
+<section id="large-cond" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="large-cond"><span class="header-section-number">10.2.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></h3>
+<div class="highlight">
+<p>If the population distribution is Normal, then so is the sampling distribution of <span class="math inline">\(\bar x\)</span>. This is true no matter what the sample size <span class="math inline">\(n\)</span> is.</p>
+<p>If the population distribution is not Normal, the sampling distribution of <span class="math inline">\(\bar x\)</span> will be approximately Normal in most cases if <span class="math inline">\(n \geq 30\)</span>. This fact is justified by the <a href="#clt">Central Limit Theorem</a>.</p>
+</div>
+</section>
+<section id="clt" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="clt"><span class="header-section-number">10.2.2</span> Central Limit Theorem (CLT)</h3>
+<div class="highlight">
+<p>If you have a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.</p>
+<p>* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal</p>
+</div>
+</section>
+<section id="when-do-we-have-normality" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="when-do-we-have-normality"><span class="header-section-number">10.2.3</span> When do we have normality?</h3>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shape of Population Distribution</th>
+<th>Minimum Sample Size (<span class="math inline">\(n\)</span>) needed to achieve an approximately normal <span class="math inline">\(\bar x\)</span> sampling distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Approximately Normal</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Slightly non-normal</td>
+<td>Somewhere between 10-30, depending on how “slightly” non-normal</td>
+</tr>
+<tr class="odd">
+<td>Very non-normal, skewed</td>
+<td>About 30</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="prop-diff-samp-dist" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="prop-diff-samp-dist"><span class="header-section-number">10.3</span> Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with proportion of successes <span class="math inline">\(p_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with proportion of successes <span class="math inline">\(p_2\)</span>.</p>
+<p><strong>Shape:</strong></p>
+<p>When <span class="math inline">\(n_1p_1\)</span>, <span class="math inline">\(n_1(1-p_1)\)</span>, <span class="math inline">\(n_2p_2\)</span>, and <span class="math inline">\(n_2(1-p_2\)</span>) are all at least 10, the sampling distribution of <span class="math inline">\(p_1-p_2\)</span> is approximately Normal.</p>
+<p><strong>Center:</strong></p>
+<p>The mean of the sampling distribution is <span class="math display">\[\mu_{\hat p_1-\hat p_2} =p_1-p_2\]</span>.</p>
+<p><strong>Spread:</strong></p>
+<p>The standard deviation of <span class="math inline">\(\hat p_1-\hat p_2\)</span> is <span class="math display">\[s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\]</span> as long as each sample is no more than 10% of its population (10% condition)</p>
+</div>
+</section>
+<section id="mean-diff-samp-dist" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="mean-diff-samp-dist"><span class="header-section-number">10.4</span> Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with mean <span class="math inline">\(\mu_1\)</span> and standard deviation <span class="math inline">\(\sigma_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with mean <span class="math inline">\(\mu_2\)</span> and standard deviation <span class="math inline">\(\sigma_2\)</span>.</p>
+<p><strong>Shape:</strong></p>
+<p>When the population distributions are Normal, the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough (<span class="math inline">\(n_1 \geq 30\)</span> and <span class="math inline">\(n_2 \geq 30\)</span>)</p>
+<p><strong>Center:</strong></p>
+<p>The mean of the sampling distribution is <span class="math display">\[\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2\]</span>.</p>
+<p><strong>Spread:</strong></p>
+<p>As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is <span class="math display">\[\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span></p>
+</div>
 
 
 </section>
@@ -416,10 +510,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./08-random-variables.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-basic-notation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-confidence-intervals.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mr.&nbsp;Chang edwardchang@berkeley.net">
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes</title>
+<title>AP Statistics Notes - Appendix D — Critical Values</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-basic-notation.html" rel="next">
+<link href="./20-test.html" rel="next">
+<link href="./18-statistic-to-pval.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">AP Statistics Notes</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix D — Critical Values</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -210,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./19-critical-vals.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Critical Values</span></a>
+  <a href="./19-critical-vals.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Critical Values</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -229,7 +230,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#from-confidence-level-to-z" id="toc-from-confidence-level-to-z" class="nav-link active" data-scroll-target="#from-confidence-level-to-z"><span class="toc-section-number">D.1</span>  From Confidence Level to <span class="math inline">\(z^*\)</span></a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="toc-section-number">D.1.1</span>  Examples</a></li>
+  </ul></li>
+  <li><a href="#from-confidence-level-and-df-to-t" id="toc-from-confidence-level-and-df-to-t" class="nav-link" data-scroll-target="#from-confidence-level-and-df-to-t"><span class="toc-section-number">D.2</span>  From Confidence Level and df to <span class="math inline">\(t^*\)</span></a>
+  <ul class="collapse">
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="toc-section-number">D.2.1</span>  Examples</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,24 +246,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">AP Statistics Notes</h1>
+<h1 class="title d-none d-lg-block">Appendix D — Critical Values</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>These are notes for AP Statistics.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mr.&nbsp;Chang <code>edwardchang@berkeley.net</code> </p>
-          </div>
-  </div>
     
   
     
@@ -264,20 +261,66 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell" data-hash="index_cache/html/setup_d3c6b0101767d308a0f0fbcc7c3f49dc">
+<div class="cell" data-hash="19-critical-vals_cache/html/unnamed-chunk-1_282d972308ce1d914095eb1121d26349">
 
 </div>
-<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_732dd43556164d094e60f29d9fd12cbf">
-
+<section id="from-confidence-level-to-z" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="from-confidence-level-to-z"><span class="header-section-number">D.1</span> From Confidence Level to <span class="math inline">\(z^*\)</span></h2>
+<p>When constructing confidence intervals, we need the value <span class="math inline">\(z^*\)</span> such that <span class="math inline">\(C\)</span>% of the estimated sampling distribution is between <span class="math inline">\(-|z^*|\)</span> and <span class="math inline">\(|z^*|\)</span>. In other words, imagine:</p>
+<div class="cell" data-hash="19-critical-vals_cache/html/Conf level on normal dist_50644d7119690fd955885591f0b8a780">
+<div class="cell-output-display">
+<p><img src="19-critical-vals_files/figure-html/Conf level on normal dist-1.png" class="img-fluid" width="672"></p>
 </div>
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>These are my notes based off what we learned in class.</p>
-<p>There are various functions on this website that make your notes accessible in the case that you need more support in reading the material. Take a look at the tool bar on the top and try right clicking on math equations to see options to enlargen math equations. Ask Mr.&nbsp;Chang if you want to explore more.</p>
-<p>These notes are incomplete, but I’ll be trying to update them completely before the AP test. Give me any feedback that you might want to see on these notes.</p>
-<p>Look at the rest of these notes through the navigation bar on the left hand side (might have to click on the hamburger icon), or go through these sequentially by clicking the arrows on the left and right hand side.</p>
+</div>
+<p>So if we want to <span class="math inline">\(z\)</span> that corresponds to the confidence level, we have to determine the area of the left/right tail that corresponds to the confidence level. We know that if there’s <span class="math inline">\(C\)</span>% in the middle, then there’s <span class="math inline">\(100\% - C\)</span> left in the two tails. For one tail, that’ll be <span class="math inline">\(\frac{100\% - C}{2}\)</span>.</p>
+<p>Look up that proportion in <a href="16-formulas.html#table-a">Table A</a> in the middle of the table, take the larger value if it’s not on there specifically, and back track to the margins to get your desired value of <span class="math inline">\(z^*\)</span>.</p>
+<p>The sign of any critical value does not matter, so just take the absolute value as your critical value.</p>
+<section id="examples" class="level3" data-number="D.1.1">
+<h3 data-number="D.1.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">D.1.1</span> Examples</h3>
+<ul>
+<li>90% confidence
+<ul>
+<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 90%}{2} = 5\% = 0.05\)</span></li>
+<li>Try to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.</li>
+<li>Take the larger value, 0.0505 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -1.64.</li>
+<li>Just take the positive value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
+<li><strong>Alternatively,</strong> do the calculator command <code>invNorm(0.05)</code> to get a value of around -1.64. Take the positive value as your critical value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
+</ul></li>
+<li>99% confidence
+<ul>
+<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 99%}{2} = 0.5\% = 0.005\)</span></li>
+<li>Try to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.</li>
+<li>Take the larger value, 0.0051 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -2.57.</li>
+<li>Just take the positive value, <span class="math inline">\(z^* = 2.57\)</span>.</li>
+<li><strong>Alternatively,</strong> do the calculator command <code>invNorm(0.005)</code> to get a value of around -2.5758. Take the positive value as your critical value, <span class="math inline">\(z^* = 2.58\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="from-confidence-level-and-df-to-t" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="from-confidence-level-and-df-to-t"><span class="header-section-number">D.2</span> From Confidence Level and df to <span class="math inline">\(t^*\)</span></h2>
+<p>The same principles for <span class="math inline">\(z^*\)</span> applies to <span class="math inline">\(t^*\)</span>, except we have to use degrees of freedom too.</p>
+<p><a href="16-formulas.html#table-b">Table B</a> conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that’s given in the top margin of the table.</p>
+<p>The left margin is where you should look for the degrees of freedom, calculated by <span class="math inline">\(df = n-1\)</span>.</p>
+<p>Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down (as mentioned in the [previous section][t statistics/score]). The critical value is the number that you pinpoint in the middle of the table.</p>
+<section id="examples-1" class="level3" data-number="D.2.1">
+<h3 data-number="D.2.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">D.2.1</span> Examples</h3>
+<ul>
+<li>90% confidence and 24 degrees of freedom
+<ul>
+<li>Look at the <span class="math inline">\(df = 24\)</span> row and the confidence level 90% column.</li>
+<li>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^* = 1.711\)</span></li>
+</ul></li>
+<li>99% confidence and 96 degrees of freedom
+<ul>
+<li>Round your df down to the next available value. <span class="math inline">\(df = 96 \sim 80\)</span>.</li>
+<li>Look at the <span class="math inline">\(df = 80\)</span> row and the confidence level 99% column.</li>
+<li>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^* = 2.639\)</span></li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -416,10 +459,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="./18-statistic-to-pval.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-basic-notation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./20-test.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Test</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
