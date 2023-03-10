@@ -299,10 +299,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#ChiSqCond" id="toc-ChiSqCond" class="nav-link" data-scroll-target="#ChiSqCond"><span class="toc-section-number">15.2</span>  Conditions</a></li>
   <li><a href="#ChiSqGOF" id="toc-ChiSqGOF" class="nav-link" data-scroll-target="#ChiSqGOF"><span class="toc-section-number">15.3</span>  Chi-Squared Goodness-of-Fit</a>
   <ul class="collapse">
-  <li><a href="#GOF-calculator" id="toc-GOF-calculator" class="nav-link" data-scroll-target="#GOF-calculator"><span class="toc-section-number">15.3.1</span>  Doing it on a calculator</a></li>
+  <li><a href="#GOF-example" id="toc-GOF-example" class="nav-link" data-scroll-target="#GOF-example"><span class="toc-section-number">15.3.1</span>  Example</a></li>
+  <li><a href="#GOF-calculator" id="toc-GOF-calculator" class="nav-link" data-scroll-target="#GOF-calculator"><span class="toc-section-number">15.3.2</span>  Doing it on a calculator</a></li>
   </ul></li>
   <li><a href="#ChiSqHomogen" id="toc-ChiSqHomogen" class="nav-link" data-scroll-target="#ChiSqHomogen"><span class="toc-section-number">15.4</span>  Chi-Squared Test of Homogeneity</a></li>
   <li><a href="#ChiSqInd" id="toc-ChiSqInd" class="nav-link" data-scroll-target="#ChiSqInd"><span class="toc-section-number">15.5</span>  Chi-Squared Test of Independence</a></li>
+  <li><a href="#component-analysis" id="toc-component-analysis" class="nav-link" data-scroll-target="#component-analysis"><span class="toc-section-number">15.6</span>  Component Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -329,7 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-hash="14-chi-square_cache/html/unnamed-chunk-1_7742f83e8d10c39fe7aa1fc0330721e8">
 
 </div>
-<p><span class="math inline">\(\chi^2\)</span> (pronounced “kai” squared) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.</p>
+<p><span class="math inline">\(\chi^2\)</span> <a href="https://upload.wikimedia.org/wikipedia/commons/6/6d/En-us-chi.ogg">(pronounced “kai” (/ˈkaɪ, ˈxiː/) squared)</a> tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.</p>
 <section id="sampling-distribution-of-chi2" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="sampling-distribution-of-chi2"><span class="header-section-number">15.1</span> Sampling distribution of <span class="math inline">\(\chi^2\)</span></h2>
 <p>The sampling distribution of <span class="math inline">\(\chi^2\)</span> is not a Normal distribution. It is a right-skewed distribution that allows only positive values because <span class="math inline">\(\chi^2\)</span> can never be negative. When the expected counts are all at least 5, the sampling distribution of the <span class="math inline">\(\chi^2\)</span> statistic is close to a <span class="math inline">\(\chi^2\)</span> distribution with a degrees of freedom based off the test that we do. The <span class="math inline">\(\chi^2\)</span> distributions are a family of distributions that take only positive values and are skewed to the right. A particular chi-square distribution is specified by giving its degrees of freedom.</p>
@@ -409,8 +411,169 @@ Be careful and remember that:
 <p><strong>Degrees of freedom:</strong></p>
 <p>We calculate the degrees of freedom by taking the # of categories - 1 <span class="math display">\[df=c-1\]</span></p>
 <p><strong>Chi-Square Test Statistic:</strong> <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}\]</span></p>
-<section id="GOF-calculator" class="level3" data-number="15.3.1">
-<h3 data-number="15.3.1" class="anchored" data-anchor-id="GOF-calculator"><span class="header-section-number">15.3.1</span> Doing it on a calculator</h3>
+<section id="GOF-example" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="GOF-example"><span class="header-section-number">15.3.1</span> Example</h3>
+<p>Carrie made a 6-sided die in her ceramics class and rolled it 90 times to test if each side was equally likely to show up. The table summarizes the outcomes of her 90 rolls.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Outcome of roll</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frequency</td>
+<td>12</td>
+<td>28</td>
+<td>12</td>
+<td>13</td>
+<td>10</td>
+<td>15</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<section id="state" class="level4" data-number="15.3.1.1">
+<h4 data-number="15.3.1.1" class="anchored" data-anchor-id="state"><span class="header-section-number">15.3.1.1</span> State</h4>
+<p><span class="math inline">\(H_0:\)</span> The ceramic die’s sides are equally like to occur</p>
+<p><span class="math inline">\(H_a:\)</span> The ceramic die’s dies are not equally likely to occur</p>
+<p>Alternatively, <span class="math display">\[H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}\]</span> <span class="math display">\[H_a: p_1 \not = \frac{1}{6}, p_2 \not = \frac{1}{6}, \cdots, p_6 \not = \frac{1}{6}\]</span></p>
+</section>
+<section id="plan" class="level4" data-number="15.3.1.2">
+<h4 data-number="15.3.1.2" class="anchored" data-anchor-id="plan"><span class="header-section-number">15.3.1.2</span> Plan</h4>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Outcome of roll</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Theoretical<br>Probability</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+</tr>
+<tr class="even">
+<td>Expected</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Random:</strong> This is a completely random process.</p>
+<p><strong>Large:</strong> With <span class="math inline">\(n = 90\)</span>, we should expect to see each of the six sides to occur 15 times if the dice was fair.</p>
+<p><strong>Independent:</strong> We can assume that each dice roll is independent of each other.</p>
+</section>
+<section id="do" class="level4" data-number="15.3.1.3">
+<h4 data-number="15.3.1.3" class="anchored" data-anchor-id="do"><span class="header-section-number">15.3.1.3</span> Do</h4>
+<table class="table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Outcome of roll</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observed</td>
+<td>12</td>
+<td>28</td>
+<td>12</td>
+<td>13</td>
+<td>10</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Theoretical<br>Probability</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+<td>1/6</td>
+</tr>
+<tr class="odd">
+<td>Expected</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>0.6000</td>
+<td>11.2667</td>
+<td>0.6000</td>
+<td>0.2667</td>
+<td>1.6667</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+\begin{aligned}
+\chi^2&amp;=\sum\frac{(x_i - E_i)^2}{E_i} \\
+&amp;= 0.6000 + 11.2667 + 0.6000 + 0.2667 + 1.6667 + 0.0000 \\
+&amp;= 14.4
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[df = c - 1 = 6 - 1 = 5\]</span></p>
+<p>Looking up the test statistic and degrees of freedom on <a href="16-formulas.html#table-c">Table C</a>, notice that 14.4 is between 13.39 and 15.09, therefore, <span class="math inline">\(0.01 &lt; \text{p-value} &lt; 0.02\)</span>.</p>
+<p>Alternatively, do <span class="math inline">\(\chi^2\mathtt{cdf}(14.4, 1000, 5) = 0.0132586\)</span>.</p>
+</section>
+<section id="conclude" class="level4" data-number="15.3.1.4">
+<h4 data-number="15.3.1.4" class="anchored" data-anchor-id="conclude"><span class="header-section-number">15.3.1.4</span> Conclude</h4>
+<p>Since our <span class="math inline">\(\text{p-value} = 0.01326 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis that the ceramic die’s sides are equally likely to show up. Therefore, there is convincing evidence that the ceramic die is not fair.</p>
+</section>
+</section>
+<section id="GOF-calculator" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="GOF-calculator"><span class="header-section-number">15.3.2</span> Doing it on a calculator</h3>
 <p>For context, if you have two vectors <span class="math inline">\(\vec x\)</span> and <span class="math inline">\(\vec y\)</span>, you can find the difference between them by doing <span class="math inline">\(\vec x - \vec y\)</span>, which will take the element-wise difference between the two vectors (subtract the first from the first of the other, the second from the second of the other, …). For example,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -500,6 +663,12 @@ Be careful and remember that:
 <div class="highlight">
 <p>We do this test when we wonder, “Are these two variables in this set of data independent or not?” In other words, this is a more deterministic way of doing what we did in <a href="06-probability.html">Chapter 6</a> when we compared just the probability of a single event and a conditional probability</p>
 </div>
+</section>
+<section id="component-analysis" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="component-analysis"><span class="header-section-number">15.6</span> Component Analysis</h2>
+<p>Given our <span class="math inline">\(\chi^2\)</span> statistic, <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}\]</span></p>
+<p>Each individual term <span class="math inline">\(\frac{(x_i-E_i)^2}{E_i}\)</span> that is calculated to be added up is called a component of the <span class="math inline">\(\chi^2\)</span> statistic. The magnitude of these components provide a measurement as to how far off a certain observed value <span class="math inline">\(x_i\)</span> is from its expected value <span class="math inline">\(E_i\)</span>.</p>
+<p>When doing a follow-up analysis of the <span class="math inline">\(\chi^2\)</span> test, look at the components of the calculated <span class="math inline">\(chi^2\)</span> statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic.</p>
 
 
 </section>

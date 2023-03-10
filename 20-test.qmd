@@ -81,9 +81,9 @@ viewof mu = Inputs.number([-Infinity, Infinity], {label: tex`\text{Mean }\mu`, v
 
 viewof sigma = Inputs.number([-Infinity, Infinity], {label: tex`\text{SD }\sigma`, value: 1})
 
-viewof x1 = Inputs.number([-Infinity, Infinity], {label: tex`\text{Value }x_1`, value: 0})
+viewof x1 = Inputs.number([-Infinity, Infinity], {label: tex`\text{Value }x_1`, value: 0, step: 0.1})
 
-viewof x2 = Inputs.number([-Infinity, Infinity], {label: tex`\text{Value }x_2`, value: 0, disabled: area != "P(x1<X<x2)"})
+viewof x2 = Inputs.number([-Infinity, Infinity], {label: tex`\text{Value }x_2`, value: 0, disabled: area != "P(x1<X<x2)", step: 0.1})
 
 viewof area = Inputs.radio(["P(X<x1)","P(X>x1)","P(x1<X<x2)"], {label: "Area", value: "P(X<x1)"})
 
@@ -106,7 +106,7 @@ Plot.plot({
         strokeWidth: 3,
         stroke: "steelblue"
       }),
-    Plot.areaY(d3.range(x1, x2 + 0.001, 0.01),
+    Plot.areaY(d3.range(((area != "P(X<x1)") ? x1 : mu - 4 * sigma), ((area == "P(X<x1)") ? x1 : ((area == "P(X>x1)") ? mu + 4 * sigma : x2)) + 0.001, 0.01),
       {
         x: (x) => x,
         y: (x) => jStat.normal.pdf(x, mu, sigma)
@@ -114,7 +114,17 @@ Plot.plot({
     Plot.ruleY([0]),
     Plot.ruleX([ mu  - 4 * sigma])
   ]},{
+    x: {domain: [mu - 4 * sigma, mu + 4 * sigma]},
     caption: tex`\text{Distribution of } N(\mu, \sigma)`
 })
 
+
+
+
+
+md`
+${((area == "P(X<x1)") ? `${tex`P(X<${x1}) = P(Z < z) = \frac{x_1 - \mu}{\sigma} = \frac{${x1} - ${mu}}{${sigma}} = ${(x1 - mu) / sigma}`}`: `${tex`P(X<${x1}) = P(Z < z) = \frac{x_1 - \mu}{\sigma} = \frac{${x1} - ${mu}}{${sigma}} = ${(x1 - mu) / sigma}`}`)}
+`
 ```
+
+The probability of $P(X<x)$ = `obj ((x1 - mu)/sigma`
