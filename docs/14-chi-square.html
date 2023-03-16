@@ -336,29 +336,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="15.1" class="anchored" data-anchor-id="sampling-distribution-of-chi2"><span class="header-section-number">15.1</span> Sampling distribution of <span class="math inline">\(\chi^2\)</span></h2>
 <p>The sampling distribution of <span class="math inline">\(\chi^2\)</span> is not a Normal distribution. It is a right-skewed distribution that allows only positive values because <span class="math inline">\(\chi^2\)</span> can never be negative. When the expected counts are all at least 5, the sampling distribution of the <span class="math inline">\(\chi^2\)</span> statistic is close to a <span class="math inline">\(\chi^2\)</span> distribution with a degrees of freedom based off the test that we do. The <span class="math inline">\(\chi^2\)</span> distributions are a family of distributions that take only positive values and are skewed to the right. A particular chi-square distribution is specified by giving its degrees of freedom.</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="16" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 15;"><span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">,</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> (x) <span class="kw">=&gt;</span> x<span class="op">,</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> (x) <span class="kw">=&gt;</span> jStat<span class="op">.</span><span class="at">chisquare</span><span class="op">.</span><span class="fu">pdf</span>(x<span class="op">,</span> df1)<span class="op">,</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"steelblue"</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Chi-squared Statistic"</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">3</span>]<span class="op">,</span> </span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"The Chi-squared Sampling Distribution"</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="14" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">,</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> (x) <span class="kw">=&gt;</span> x<span class="op">,</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> (x) <span class="kw">=&gt;</span> jStat<span class="op">.</span><span class="at">chisquare</span><span class="op">.</span><span class="fu">pdf</span>(x<span class="op">,</span> df1)<span class="op">,</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"steelblue"</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Chi-squared Statistic"</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">3</span>]<span class="op">,</span> </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"The Chi-squared Sampling Distribution"</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="expression">
@@ -366,10 +366,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="40" data-source-offset="-431"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>viewof df1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="38" data-source-offset="-431"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>viewof df1 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-2" data-nodetype="declaration">
@@ -449,15 +449,6 @@ Be careful and remember that:
 <section id="plan" class="level4" data-number="15.3.1.2">
 <h4 data-number="15.3.1.2" class="anchored" data-anchor-id="plan"><span class="header-section-number">15.3.1.2</span> Plan</h4>
 <table class="table">
-<colgroup>
-<col style="width: 27%">
-<col style="width: 11%">
-<col style="width: 13%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Outcome of roll</th>
@@ -498,13 +489,13 @@ Be careful and remember that:
 <h4 data-number="15.3.1.3" class="anchored" data-anchor-id="do"><span class="header-section-number">15.3.1.3</span> Do</h4>
 <table class="table">
 <colgroup>
-<col style="width: 27%">
-<col style="width: 11%">
+<col style="width: 16%">
 <col style="width: 13%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -546,7 +537,7 @@ Be careful and remember that:
 <td>15</td>
 </tr>
 <tr class="even">
-<td></td>
+<td><span class="math inline">\(\frac{(Observed - Expected) ^ 2}{Expected}\)</span></td>
 <td>0.6000</td>
 <td>11.2667</td>
 <td>0.6000</td>
@@ -646,23 +637,47 @@ Be careful and remember that:
 <div class="highlight">
 <p>We do this test when we wonder, “Is the distribution of this group’s data the same as this other group’s distribution of data?” So how similar (“homogenous”) is one group/treatment compared to another?</p>
 </div>
-<!-- Hypotheses:  -->
-<!-- $H_0$: The distribution of the variable is the same across all groups/treatments. -->
-<!-- $H_a$: There is at least some difference between the distribution of the variable across the groups/treatments -->
-<!-- Expected Counts: -->
-<!-- The expected count for each category ($E_i$) is the sample size ($n$) times the stated probability of the category $p_{0i}$. -->
-<!-- $$E_i=np_{0i}$$ -->
-<!-- Degrees of freedom:  -->
-<!-- We calculate the degrees of freedom by taking the # of categories - 1 -->
-<!-- $$df=c-1$$ -->
-<!-- Chi-Square Test Statistic:  -->
-<!-- $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$ -->
+<p><strong>Hypotheses</strong>: <span class="math inline">\(H_0\)</span>: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments.</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&amp;p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&amp;\cdots,\\
+&amp;p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+\]</span></p>
+<p>where each there are <span class="math inline">\(r\)</span> rows (categories in the variable) and <span class="math inline">\(c\)</span> columns (populations/samples/groups/treatments) in the two-way table. Each <span class="math inline">\(p_{i, j}\)</span> correlates to the <span class="math inline">\(i^{th}\)</span> row and the <span class="math inline">\(j^{th}\)</span> column.</p>
+<p><span class="math inline">\(H_a\)</span>: There is an association between the group and the variable, or the distribution of the variable is not the same across all groups/treatments.</p>
+<p>(The symbolic notation would be too messy, so it’s not included)</p>
+<p><strong>Expected Counts</strong>: The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
+<p><span class="math display">\[Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}\]</span></p>
+<p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
+<p><strong>Degrees of freedom</strong>: We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
+<p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
 </section>
 <section id="ChiSqInd" class="level2" data-number="15.5">
 <h2 data-number="15.5" class="anchored" data-anchor-id="ChiSqInd"><span class="header-section-number">15.5</span> Chi-Squared Test of Independence</h2>
 <div class="highlight">
 <p>We do this test when we wonder, “Are these two variables in this set of data independent or not?” In other words, this is a more deterministic way of doing what we did in <a href="06-probability.html">Chapter 6</a> when we compared just the probability of a single event and a conditional probability</p>
 </div>
+<p><strong>Hypotheses</strong>:</p>
+<p><span class="math inline">\(H_0\)</span>: There is no association between the two variables or that the two events are independent.</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&amp;p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&amp;\cdots,\\
+&amp;p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+\]</span></p>
+<p>where each there are <span class="math inline">\(r\)</span> rows (categories in the first variable) and <span class="math inline">\(c\)</span> columns (categories in the second variable) in the two-way table. Each <span class="math inline">\(p_{i, j}\)</span> correlates to the <span class="math inline">\(i^{th}\)</span> row and the <span class="math inline">\(j^{th}\)</span> column.</p>
+<p><span class="math inline">\(H_a\)</span>: There is an association between the two variables or that the two events are not independent.</p>
+<p>(The symbolic notation would be too messy, so it’s not included)</p>
+<p><strong>Expected Counts</strong>: The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
+<p><span class="math display">\[Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}\]</span></p>
+<p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
+<p><strong>Degrees of freedom</strong>: We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
+<p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
 </section>
 <section id="component-analysis" class="level2" data-number="15.6">
 <h2 data-number="15.6" class="anchored" data-anchor-id="component-analysis"><span class="header-section-number">15.6</span> Component Analysis</h2>
