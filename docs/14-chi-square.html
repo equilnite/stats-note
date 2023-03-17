@@ -297,14 +297,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#sampling-distribution-of-chi2" id="toc-sampling-distribution-of-chi2" class="nav-link active" data-scroll-target="#sampling-distribution-of-chi2"><span class="toc-section-number">15.1</span>  Sampling distribution of <span class="math inline">\(\chi^2\)</span></a></li>
   <li><a href="#ChiSqCond" id="toc-ChiSqCond" class="nav-link" data-scroll-target="#ChiSqCond"><span class="toc-section-number">15.2</span>  Conditions</a></li>
-  <li><a href="#ChiSqGOF" id="toc-ChiSqGOF" class="nav-link" data-scroll-target="#ChiSqGOF"><span class="toc-section-number">15.3</span>  Chi-Squared Goodness-of-Fit</a>
+  <li><a href="#ChiSqGOF" id="toc-ChiSqGOF" class="nav-link" data-scroll-target="#ChiSqGOF"><span class="toc-section-number">15.3</span>  <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit</a>
   <ul class="collapse">
   <li><a href="#GOF-example" id="toc-GOF-example" class="nav-link" data-scroll-target="#GOF-example"><span class="toc-section-number">15.3.1</span>  Example</a></li>
   <li><a href="#GOF-calculator" id="toc-GOF-calculator" class="nav-link" data-scroll-target="#GOF-calculator"><span class="toc-section-number">15.3.2</span>  Doing it on a calculator</a></li>
   </ul></li>
-  <li><a href="#ChiSqHomogen" id="toc-ChiSqHomogen" class="nav-link" data-scroll-target="#ChiSqHomogen"><span class="toc-section-number">15.4</span>  Chi-Squared Test of Homogeneity</a></li>
-  <li><a href="#ChiSqInd" id="toc-ChiSqInd" class="nav-link" data-scroll-target="#ChiSqInd"><span class="toc-section-number">15.5</span>  Chi-Squared Test of Independence</a></li>
-  <li><a href="#component-analysis" id="toc-component-analysis" class="nav-link" data-scroll-target="#component-analysis"><span class="toc-section-number">15.6</span>  Component Analysis</a></li>
+  <li><a href="#ChiSqHomogen" id="toc-ChiSqHomogen" class="nav-link" data-scroll-target="#ChiSqHomogen"><span class="toc-section-number">15.4</span>  <span class="math inline">\(\chi^2\)</span> Test of Homogeneity</a>
+  <ul class="collapse">
+  <li><a href="#chi-homogen-ex" id="toc-chi-homogen-ex" class="nav-link" data-scroll-target="#chi-homogen-ex"><span class="toc-section-number">15.4.1</span>  Example</a></li>
+  </ul></li>
+  <li><a href="#ChiSqInd" id="toc-ChiSqInd" class="nav-link" data-scroll-target="#ChiSqInd"><span class="toc-section-number">15.5</span>  <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+  <ul class="collapse">
+  <li><a href="#chi-indepen-ex" id="toc-chi-indepen-ex" class="nav-link" data-scroll-target="#chi-indepen-ex"><span class="toc-section-number">15.5.1</span>  Example</a></li>
+  </ul></li>
+  <li><a href="#follow-up-component-analysis" id="toc-follow-up-component-analysis" class="nav-link" data-scroll-target="#follow-up-component-analysis"><span class="toc-section-number">15.6</span>  Follow-up (Component) Analysis</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="toc-section-number">15.6.1</span>  Example</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -313,7 +322,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></h1>
+<h1 class="title"><span id="chi-squared-tests" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></span></h1>
 </div>
 
 
@@ -399,7 +408,7 @@ Be careful and remember that:
 </details>
 </section>
 <section id="ChiSqGOF" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="ChiSqGOF"><span class="header-section-number">15.3</span> Chi-Squared Goodness-of-Fit</h2>
+<h2 data-number="15.3" class="anchored" data-anchor-id="ChiSqGOF"><span class="header-section-number">15.3</span> <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit</h2>
 <div class="highlight">
 <p>We do this test when we wonder, “Does this data fit with what they are saying?” So how “good” does the distribution of data that we see “fit” with the distribution that they claim?</p>
 </div>
@@ -448,6 +457,7 @@ Be careful and remember that:
 </section>
 <section id="plan" class="level4" data-number="15.3.1.2">
 <h4 data-number="15.3.1.2" class="anchored" data-anchor-id="plan"><span class="header-section-number">15.3.1.2</span> Plan</h4>
+<p><span class="math inline">\(\chi^2\)</span> Goodness of Fit</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -489,13 +499,13 @@ Be careful and remember that:
 <h4 data-number="15.3.1.3" class="anchored" data-anchor-id="do"><span class="header-section-number">15.3.1.3</span> Do</h4>
 <table class="table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -633,7 +643,7 @@ Be careful and remember that:
 </section>
 </section>
 <section id="ChiSqHomogen" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="ChiSqHomogen"><span class="header-section-number">15.4</span> Chi-Squared Test of Homogeneity</h2>
+<h2 data-number="15.4" class="anchored" data-anchor-id="ChiSqHomogen"><span class="header-section-number">15.4</span> <span class="math inline">\(\chi^2\)</span> Test of Homogeneity</h2>
 <div class="highlight">
 <p>We do this test when we wonder, “Is the distribution of this group’s data the same as this other group’s distribution of data?” So how similar (“homogenous”) is one group/treatment compared to another?</p>
 </div>
@@ -654,9 +664,115 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 <p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
 <p><strong>Degrees of freedom</strong>: We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
 <p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
+<section id="chi-homogen-ex" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="chi-homogen-ex"><span class="header-section-number">15.4.1</span> Example</h3>
+<p><em>(Modified question, compare to the <a href="#chi-indepen-ex">Test of Independence</a>)</em></p>
+<p>Is there a relationship between gender and relative finger length? We looked at a random sample of 212 female U.S. high school students and a random sample of 240 male U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger).</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><strong>Female</strong></th>
+<th style="text-align: center;"><strong>Male</strong></th>
+<th style="text-align: center;"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Index finger</strong></td>
+<td style="text-align: center;">78</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="even">
+<td><strong>Ring finger</strong></td>
+<td style="text-align: center;">82</td>
+<td style="text-align: center;">152</td>
+<td style="text-align: center;">234</td>
+</tr>
+<tr class="odd">
+<td><strong>Same length</strong></td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">95</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: center;">212</td>
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">452</td>
+</tr>
+</tbody>
+</table>
+<p>Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?</p>
+<section id="state-1" class="level4" data-number="15.4.1.1">
+<h4 data-number="15.4.1.1" class="anchored" data-anchor-id="state-1"><span class="header-section-number">15.4.1.1</span> State</h4>
+<p><span class="math inline">\(H_0\)</span>: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+<p><span class="math inline">\(H_a\)</span>: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+<p><span class="math inline">\(\alpha =0.05\)</span></p>
+</section>
+<section id="plan-1" class="level4" data-number="15.4.1.2">
+<h4 data-number="15.4.1.2" class="anchored" data-anchor-id="plan-1"><span class="header-section-number">15.4.1.2</span> Plan</h4>
+<p><span class="math inline">\(\chi^2\)</span> Test of Homogeneity</p>
+<p>Expected counts:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><strong>Female</strong></th>
+<th style="text-align: center;"><strong>Male</strong></th>
+<th style="text-align: center;"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Index finger</strong></td>
+<td style="text-align: center;">57.69</td>
+<td style="text-align: center;">65.31</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="even">
+<td><strong>Ring finger</strong></td>
+<td style="text-align: center;">109.752</td>
+<td style="text-align: center;">124.248</td>
+<td style="text-align: center;">234</td>
+</tr>
+<tr class="odd">
+<td><strong>Same length</strong></td>
+<td style="text-align: center;">44.558</td>
+<td style="text-align: center;">50.442</td>
+<td style="text-align: center;">95</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: center;">212</td>
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">452</td>
+</tr>
+</tbody>
+</table>
+<p>Random: The male and female students are both random samples</p>
+<p>Large: all of the expected counts are greater than 5</p>
+<p>Independence: There are more than 2120 Female US high school students and more than 2400 Male US high school students.</p>
+</section>
+<section id="do-1" class="level4" data-number="15.4.1.3">
+<h4 data-number="15.4.1.3" class="anchored" data-anchor-id="do-1"><span class="header-section-number">15.4.1.3</span> Do</h4>
+<span class="math display">\[\begin{aligned}
+\chi^2 = &amp;\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
+&amp;\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
+
+df =&amp;  (3-1)(2-1) = 2\\\\
+\text{p-value } =&amp; \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
+\end{aligned}\]</span>
+</section>
+<section id="conclude-1" class="level4" data-number="15.4.1.4">
+<h4 data-number="15.4.1.4" class="anchored" data-anchor-id="conclude-1"><span class="header-section-number">15.4.1.4</span> Conclude</h4>
+<p>Since our <span class="math inline">\(p-value \approx 0 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+</section>
+</section>
 </section>
 <section id="ChiSqInd" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="ChiSqInd"><span class="header-section-number">15.5</span> Chi-Squared Test of Independence</h2>
+<h2 data-number="15.5" class="anchored" data-anchor-id="ChiSqInd"><span class="header-section-number">15.5</span> <span class="math inline">\(\chi^2\)</span> Test of Independence</h2>
 <div class="highlight">
 <p>We do this test when we wonder, “Are these two variables in this set of data independent or not?” In other words, this is a more deterministic way of doing what we did in <a href="06-probability.html">Chapter 6</a> when we compared just the probability of a single event and a conditional probability</p>
 </div>
@@ -678,14 +794,178 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 <p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
 <p><strong>Degrees of freedom</strong>: We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
 <p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
+<section id="chi-indepen-ex" class="level3" data-number="15.5.1">
+<h3 data-number="15.5.1" class="anchored" data-anchor-id="chi-indepen-ex"><span class="header-section-number">15.5.1</span> Example</h3>
+<p><em>(Original question, compare to the <a href="#chi-homogen-ex">Test of Homogeneity</a></em></p>
+<p>Is there a relationship between gender and relative finger length? We looked at a random sample of 452 U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger).</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><strong>Female</strong></th>
+<th style="text-align: center;"><strong>Male</strong></th>
+<th style="text-align: center;"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Index finger</strong></td>
+<td style="text-align: center;">78</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="even">
+<td><strong>Ring finger</strong></td>
+<td style="text-align: center;">82</td>
+<td style="text-align: center;">152</td>
+<td style="text-align: center;">234</td>
+</tr>
+<tr class="odd">
+<td><strong>Same length</strong></td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">95</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: center;">212</td>
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">452</td>
+</tr>
+</tbody>
+</table>
+<p>Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?</p>
+<section id="state-2" class="level4" data-number="15.5.1.1">
+<h4 data-number="15.5.1.1" class="anchored" data-anchor-id="state-2"><span class="header-section-number">15.5.1.1</span> State</h4>
+<p><span class="math inline">\(H_0\)</span>: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+<p><span class="math inline">\(H_a\)</span>: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+<p><span class="math inline">\(\alpha =0.05\)</span></p>
 </section>
-<section id="component-analysis" class="level2" data-number="15.6">
-<h2 data-number="15.6" class="anchored" data-anchor-id="component-analysis"><span class="header-section-number">15.6</span> Component Analysis</h2>
-<p>Given our <span class="math inline">\(\chi^2\)</span> statistic, <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}\]</span></p>
-<p>Each individual term <span class="math inline">\(\frac{(x_i-E_i)^2}{E_i}\)</span> that is calculated to be added up is called a component of the <span class="math inline">\(\chi^2\)</span> statistic. The magnitude of these components provide a measurement as to how far off a certain observed value <span class="math inline">\(x_i\)</span> is from its expected value <span class="math inline">\(E_i\)</span>.</p>
-<p>When doing a follow-up analysis of the <span class="math inline">\(\chi^2\)</span> test, look at the components of the calculated <span class="math inline">\(chi^2\)</span> statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic.</p>
+<section id="plan-2" class="level4" data-number="15.5.1.2">
+<h4 data-number="15.5.1.2" class="anchored" data-anchor-id="plan-2"><span class="header-section-number">15.5.1.2</span> Plan</h4>
+<p><span class="math inline">\(\chi^2\)</span> Test of Independence</p>
+<p>Expected counts:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><strong>Female</strong></th>
+<th style="text-align: center;"><strong>Male</strong></th>
+<th style="text-align: center;"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Index finger</strong></td>
+<td style="text-align: center;">57.69</td>
+<td style="text-align: center;">65.31</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="even">
+<td><strong>Ring finger</strong></td>
+<td style="text-align: center;">109.752</td>
+<td style="text-align: center;">124.248</td>
+<td style="text-align: center;">234</td>
+</tr>
+<tr class="odd">
+<td><strong>Same length</strong></td>
+<td style="text-align: center;">44.558</td>
+<td style="text-align: center;">50.442</td>
+<td style="text-align: center;">95</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: center;">212</td>
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">452</td>
+</tr>
+</tbody>
+</table>
+<p>Random: The high school students are a random sample.</p>
+<p>Large: all of the expected counts are greater than 5</p>
+<p>Independence: There are more than 4520 high school students</p>
+</section>
+<section id="do-2" class="level4" data-number="15.5.1.3">
+<h4 data-number="15.5.1.3" class="anchored" data-anchor-id="do-2"><span class="header-section-number">15.5.1.3</span> Do</h4>
+<span class="math display">\[\begin{aligned}
+\chi^2 = &amp;\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
+&amp;\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
+
+df =&amp;  (3-1)(2-1) = 2\\\\
+\text{p-value} =&amp; \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
+\end{aligned}\]</span>
+</section>
+<section id="conclude-2" class="level4" data-number="15.5.1.4">
+<h4 data-number="15.5.1.4" class="anchored" data-anchor-id="conclude-2"><span class="header-section-number">15.5.1.4</span> Conclude</h4>
+<p>Since our <span class="math inline">\(p-value \approx 0 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+</section>
+</section>
+</section>
+<section id="follow-up-component-analysis" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="follow-up-component-analysis"><span class="header-section-number">15.6</span> Follow-up (Component) Analysis</h2>
+<p>Given our <span class="math inline">\(\chi^2\)</span> statistic, <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}\]</span></p>
+<p>Each individual term <span class="math inline">\(\frac{(Observed-Expected)^2}{Expected}\)</span> that is calculated to be added up is called a component of the <span class="math inline">\(\chi^2\)</span> statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value.</p>
+<p>When doing a follow-up analysis of the <span class="math inline">\(\chi^2\)</span> test, look at the components of the calculated <span class="math inline">\(chi^2\)</span> statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor.</p>
+<section id="example" class="level3" data-number="15.6.1">
+<h3 data-number="15.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">15.6.1</span> Example</h3>
+<p>(From the <a href="#GOF-example"><span class="math inline">\(\chi^2\)</span> GOF Example</a>)</p>
+<p>If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis.</p>
+<p>A reminder of our results:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Outcome of roll</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observed</td>
+<td>12</td>
+<td>28</td>
+<td>12</td>
+<td>13</td>
+<td>10</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Expected</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\frac{(Observed - Expected) ^ 2}{Expected}\)</span></td>
+<td>0.6000</td>
+<td>11.2667</td>
+<td>0.6000</td>
+<td>0.2667</td>
+<td>1.6667</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

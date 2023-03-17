@@ -1,4 +1,4 @@
-# Chi-Squared Tests
+# Chi-Squared Tests {#chi-squared-tests}
 
 ```{r}
 library(tidyverse)
@@ -61,7 +61,7 @@ viewof df1 = Inputs.range(
 
 </details>
 
-## Chi-Squared Goodness-of-Fit {#ChiSqGOF}
+## $\chi^2$ Goodness-of-Fit {#ChiSqGOF}
 
 ::: highlight
 We do this test when we wonder, "Does this data fit with what they are saying?" So how "good" does the distribution of data that we see "fit" with the distribution that they claim?
@@ -101,6 +101,8 @@ Alternatively, $$H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}$$ $$H_a: p_1 \not =
 
 #### Plan
 
+$\chi^2$ Goodness of Fit
+
 | Outcome of roll            | 1   | 2   | 3   | 4   | 5   | 6   |
 |----------------------------|-----|-----|-----|-----|-----|-----|
 | Theoretical<br>Probability | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 |
@@ -115,7 +117,7 @@ Alternatively, $$H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}$$ $$H_a: p_1 \not =
 #### Do
 
 | Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
-|------------|----------|----------|----------|----------|----------|----------|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
 | Theoretical<br>Probability                   | 1/6    | 1/6     | 1/6    | 1/6    | 1/6    | 1/6    |
 | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
@@ -197,7 +199,7 @@ Here's a a video tutorial using the example from Page 3 in your packets.
 
 </iframe>
 
-## Chi-Squared Test of Homogeneity {#ChiSqHomogen}
+## $\chi^2$ Test of Homogeneity {#ChiSqHomogen}
 
 ::: highlight
 We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another?
@@ -230,13 +232,69 @@ $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum
 
 **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
 
-## Chi-Squared Test of Independence {#ChiSqInd}
+### Example {#chi-homogen-ex}
+
+*(Modified question, compare to the [Test of Independence](#chi-indepen-ex))*
+
+Is there a relationship between gender and relative finger length? We looked at a random sample of 212 female U.S. high school students and a random sample of 240 male U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger).
+
+|                  | **Female** | **Male** | **Total** |
+|------------------|:----------:|:--------:|:---------:|
+| **Index finger** |     78     |    45    |    123    |
+| **Ring finger**  |     82     |   152    |    234    |
+| **Same length**  |     52     |    43    |    95     |
+| **Total**        |    212     |   240    |    452    |
+
+Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?
+
+#### State
+
+$H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+$H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+$\alpha =0.05$
+
+#### Plan
+
+$\chi^2$ Test of Homogeneity
+
+Expected counts:
+
+|                  | **Female** | **Male** | **Total** |
+|------------------|:----------:|:--------:|:---------:|
+| **Index finger** |   57.69    |  65.31   |    123    |
+| **Ring finger**  |  109.752   | 124.248  |    234    |
+| **Same length**  |   44.558   |  50.442  |    95     |
+| **Total**        |    212     |   240    |    452    |
+
+Random: The male and female students are both random samples
+
+Large: all of the expected counts are greater than 5
+
+Independence: There are more than 2120 Female US high school students and more than 2400 Male US high school students.
+
+#### Do
+
+\begin{aligned}
+\chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
+&\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
+
+df =&  (3-1)(2-1) = 2\\\\
+\text{p-value } =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
+\end{aligned}
+
+#### Conclude
+
+Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+## $\chi^2$ Test of Independence {#ChiSqInd}
 
 ::: highlight
 We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability) when we compared just the probability of a single event and a conditional probability
 :::
 
-**Hypotheses**: 
+**Hypotheses**:
 
 $H_0$: There is no association between the two variables or that the two events are independent.
 
@@ -265,10 +323,82 @@ $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum
 
 **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
 
-## Component Analysis
+### Example {#chi-indepen-ex}
 
-Given our $\chi^2$ statistic, $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$
+*(Original question, compare to the [Test of Homogeneity](#chi-homogen-ex)*
 
-Each individual term $\frac{(x_i-E_i)^2}{E_i}$ that is calculated to be added up is called a component of the $\chi^2$ statistic. The magnitude of these components provide a measurement as to how far off a certain observed value $x_i$ is from its expected value $E_i$.
+Is there a relationship between gender and relative finger length? We looked at a random sample of 452 U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger).
 
-When doing a follow-up analysis of the $\chi^2$ test, look at the components of the calculated $chi^2$ statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic.
+|                  | **Female** | **Male** | **Total** |
+|------------------|:----------:|:--------:|:---------:|
+| **Index finger** |     78     |    45    |    123    |
+| **Ring finger**  |     82     |   152    |    234    |
+| **Same length**  |     52     |    43    |    95     |
+| **Total**        |    212     |   240    |    452    |
+
+Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?
+
+#### State
+
+$H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+$H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+$\alpha =0.05$
+
+#### Plan
+
+$\chi^2$ Test of Independence
+
+Expected counts:
+
+|                  | **Female** | **Male** | **Total** |
+|------------------|:----------:|:--------:|:---------:|
+| **Index finger** |   57.69    |  65.31   |    123    |
+| **Ring finger**  |  109.752   | 124.248  |    234    |
+| **Same length**  |   44.558   |  50.442  |    95     |
+| **Total**        |    212     |   240    |    452    |
+
+Random: The high school students are a random sample.
+
+Large: all of the expected counts are greater than 5
+
+Independence: There are more than 4520 high school students
+
+#### Do
+
+\begin{aligned}
+\chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
+&\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
+
+df =&  (3-1)(2-1) = 2\\\\
+\text{p-value} =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
+\end{aligned}
+
+#### Conclude
+
+Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+## Follow-up (Component) Analysis
+
+Given our $\chi^2$ statistic, $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}$$
+
+Each individual term $\frac{(Observed-Expected)^2}{Expected}$ that is calculated to be added up is called a component of the $\chi^2$ statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value.
+
+When doing a follow-up analysis of the $\chi^2$ test, look at the components of the calculated $chi^2$ statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor.
+
+### Example
+
+(From the [$\chi^2$ GOF Example](#GOF-example))
+
+If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis.
+
+A reminder of our results:
+
+| Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
+| Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
+| $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
+
+Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.
