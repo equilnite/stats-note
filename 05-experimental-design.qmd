@@ -1,4 +1,4 @@
-# Experimental Design
+# Experimental Design {#experimental-design}
 
 A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of **observational study**, which observes individuals and measures variables of interest but does not attempt to influence the responses. Unfortunately, this means that many variables are not controlled for so we cannot establish causation between the explanatory and response variables. A **response variable** measures an *outcome* of a study. An **explanatory variable** may help *explain* or predict changes in a response variable. Because of the lack of control, we cannot be certain that variables other than the explanatory variable are influencing the the response instead. These are referred to as **confounding variables**. 
 
