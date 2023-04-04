@@ -61,9 +61,13 @@ Suppose that we have a response variable $y$, and an explanatory variable $x$. I
 $$y = \alpha + \beta x + \epsilon$$
 
 Where 
--$y$ is the value of the response variable for a given value of the explanatory variable $x$ and some underlying "noise" $\epsilon$.
+
+- $y$ is the value of the response variable for a given value of the explanatory variable $x$ and some underlying "noise" $\epsilon$.
+
 - $\alpha$ is the y-intercept, the value of $y$ when $x=0$
+
 - $\beta$ is the slope, and 
+
 - $\epsilon$ is the underlying "noise"/error that we can expect out of the relationship.
 
 ::: {.highlight}
@@ -73,8 +77,11 @@ An estimate of this model would then have the following form:
 $$\hat y = a + bx$$
 
 Where
+
 - $\hat y$ is the predicted value of the response variable $y$ for a given value of the explanatory variable $x$
+
 - $a$ is a statistic that estimates $\alpha$, the y-intercept, and provides the value of $\hat y$ when $x=0$.
+
 - $b$ is a statistic that estimates $\beta$, the slope.
 
 :::

@@ -315,11 +315,22 @@ Make sure to remember these small details when describing your scatterplots.
 <h2 data-number="16.2" class="anchored" data-anchor-id="LSRL-model"><span class="header-section-number">16.2</span> Least Squares Regression Model</h2>
 <p>Suppose that we have a response variable <span class="math inline">\(y\)</span>, and an explanatory variable <span class="math inline">\(x\)</span>. If the relationship between the two variables is linear, then the relationship can be modeled by the following model:</p>
 <p><span class="math display">\[y = \alpha + \beta x + \epsilon\]</span></p>
-<p>Where -<span class="math inline">\(y\)</span> is the value of the response variable for a given value of the explanatory variable <span class="math inline">\(x\)</span> and some underlying “noise” <span class="math inline">\(\epsilon\)</span>. - <span class="math inline">\(\alpha\)</span> is the y-intercept, the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span> - <span class="math inline">\(\beta\)</span> is the slope, and - <span class="math inline">\(\epsilon\)</span> is the underlying “noise”/error that we can expect out of the relationship.</p>
+<p>Where</p>
+<ul>
+<li><p><span class="math inline">\(y\)</span> is the value of the response variable for a given value of the explanatory variable <span class="math inline">\(x\)</span> and some underlying “noise” <span class="math inline">\(\epsilon\)</span>.</p></li>
+<li><p><span class="math inline">\(\alpha\)</span> is the y-intercept, the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span></p></li>
+<li><p><span class="math inline">\(\beta\)</span> is the slope, and</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> is the underlying “noise”/error that we can expect out of the relationship.</p></li>
+</ul>
 <div class="highlight">
 <p>An estimate of this model would then have the following form:</p>
 <p><span class="math display">\[\hat y = a + bx\]</span></p>
-<p>Where - <span class="math inline">\(\hat y\)</span> is the predicted value of the response variable <span class="math inline">\(y\)</span> for a given value of the explanatory variable <span class="math inline">\(x\)</span> - <span class="math inline">\(a\)</span> is a statistic that estimates <span class="math inline">\(\alpha\)</span>, the y-intercept, and provides the value of <span class="math inline">\(\hat y\)</span> when <span class="math inline">\(x=0\)</span>. - <span class="math inline">\(b\)</span> is a statistic that estimates <span class="math inline">\(\beta\)</span>, the slope.</p>
+<p>Where</p>
+<ul>
+<li><p><span class="math inline">\(\hat y\)</span> is the predicted value of the response variable <span class="math inline">\(y\)</span> for a given value of the explanatory variable <span class="math inline">\(x\)</span></p></li>
+<li><p><span class="math inline">\(a\)</span> is a statistic that estimates <span class="math inline">\(\alpha\)</span>, the y-intercept, and provides the value of <span class="math inline">\(\hat y\)</span> when <span class="math inline">\(x=0\)</span>.</p></li>
+<li><p><span class="math inline">\(b\)</span> is a statistic that estimates <span class="math inline">\(\beta\)</span>, the slope.</p></li>
+</ul>
 </div>
 <div class="highlight">
 <p>We interpret <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> as:</p>
