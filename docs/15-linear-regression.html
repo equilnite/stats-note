@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./16-formulas.html" rel="next">
+<link href="./15.5-slope-inference.html" rel="next">
 <link href="./14-chi-square.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -186,6 +186,11 @@ ul.task-list li input[type="checkbox"] {
   <a href="./15-linear-regression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.5-slope-inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
@@ -242,6 +247,10 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#doing-it-in-your-calculator" id="toc-doing-it-in-your-calculator" class="nav-link" data-scroll-target="#doing-it-in-your-calculator"><span class="toc-section-number">16.3</span>  Doing it in your calculator:</a></li>
   <li><a href="#miscellaneous-things-to-remember" id="toc-miscellaneous-things-to-remember" class="nav-link" data-scroll-target="#miscellaneous-things-to-remember"><span class="toc-section-number">16.4</span>  Miscellaneous Things to Remember</a></li>
+  <li><a href="#basic-linreg-output" id="toc-basic-linreg-output" class="nav-link" data-scroll-target="#basic-linreg-output"><span class="toc-section-number">16.5</span>  Interpreting Computer Output</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="toc-section-number">16.5.1</span>  Example</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -401,8 +410,8 @@ In other words, is there a pattern in our plot? If the residuals are getting lar
 </dl>
 </div>
 </section>
-<section id="standard-deviation-of-residuals" class="level4" data-number="16.2.2.2">
-<h4 data-number="16.2.2.2" class="anchored" data-anchor-id="standard-deviation-of-residuals"><span class="header-section-number">16.2.2.2</span> Standard Deviation of Residuals</h4>
+<section id="residual-sd" class="level4" data-number="16.2.2.2">
+<h4 data-number="16.2.2.2" class="anchored" data-anchor-id="residual-sd"><span class="header-section-number">16.2.2.2</span> Standard Deviation of Residuals</h4>
 <p>To assess how well the line fits all the data, we need to consider the residuals for each observation, not just one. Using these residuals, we can estimate the “typical” prediction error when using the least-squares regression line.</p>
 <div class="highlight">
 <p>If we use a least-squares regression line to predict the values of a response variable <span class="math inline">\(y\)</span> from an explanatory variable <span class="math inline">\(x\)</span>, the standard deviation of the residuals (<span class="math inline">\(s\)</span>) is given by</p>
@@ -506,8 +515,54 @@ Consider the study that found people with two cars live longer than people who o
 No.&nbsp;This does not even make sense to happen. What does make sense is looking between the lines and determining that there are other factors at play. A common variable here that would confound this relationship (confounding variable) would be the wealth of individuals. By having more wealth, you have more cars and are likely to live longer. Since this factor is in play, it’s likely the real reason why we see this positive relationship between number of cars and length of life.
 </details>
 <p><a href="https://tylervigen.com/">See this website for more examples on weird correlations.</a></p>
+</section>
+<section id="basic-linreg-output" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="basic-linreg-output"><span class="header-section-number">16.5</span> Interpreting Computer Output</h2>
+<p>You are expected to know how to interpret computer out in MINITAB format (just what you normally see).</p>
+<p><a href="15.5-slope-inference.html#more-linreg-output">See the next section for the rest of the interpretation</a></p>
+<section id="example" class="level3" data-number="16.5.1">
+<h3 data-number="16.5.1" class="anchored" data-anchor-id="example"><span class="header-section-number">16.5.1</span> Example</h3>
+<p>Below is the computer output from a basic regression analysis for the Ford-F-150 data relating the mileage and value of Ford F-150s.</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        38257       2446        15.64  0.000
+Miles Driven    -0.16292    0.03096     -5.26  0.000
+
+S = 5740.13   R-Sq = 66.4%   R-Sq(adj) = 64.0%</code></pre>
+<p>Let’s first identify a few basic facts, when we have a LSRL, the line is of form <span class="math display">\[\hat y = a + b x\]</span></p>
+<p>From our basic knowledge of algebra, <span class="math inline">\(b\)</span> is the coefficient of <span class="math inline">\(x\)</span> in the equation and the only things that we really need values (estimates) for are <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. So the two rows of interest for now are looking at the <code>Predictor</code> and the <code>Coef</code> of the <code>Predictor</code>.</p>
+<details>
+<summary>
+What is a predictor?
+</summary>
+What variable are we using to “predict”? Obviously, we are trying to predict <span class="math inline">\(y\)</span> based off <span class="math inline">\(x\)</span>, so <span class="math inline">\(x\)</span> is our “predictor” and the constant term <span class="math inline">\(a\)</span> in the equation is actually included here too, since it’s involved in our prediction.
+</details>
+<p>We can identify that our explanatory variable is mileage (<code>Miles Driven</code>) and our response variable is the value of the Ford F-150.</p>
+<p>So what we can figure out from these math facts here are that each value correspond to the following:</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        a           2446        15.64  0.000
+Miles Driven    b           0.03096     -5.26  0.000
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
+<div class="highlight">
+<p>To reiterate, we can figure out that for a LSRL with this data and knowing our explanatory variable is mileage (<code>Miles Driven</code>) and our response variable is the value of the Ford F-150,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;a = 38257\\
+&amp;b = -0.16292\\
+&amp;s = 5740.13\\
+&amp;r^2 = .664
+\end{aligned}
+\]</span></p>
+</div>
+<p>Thus our LSRL is <span class="math display">\[\hat{\text{value of F-150}} = 38257 - 0.16292 (\text{miles driven})\]</span></p>
+<p>With <span class="math inline">\(s = 5740.13\)</span> and <span class="math inline">\(r^2 = .664\)</span>.</p>
+<div class="highlight">
+<p>We can also infer from this output that since <span class="math inline">\(b\)</span> is negative (negative slope, so negative relationship), that <span class="math display">\[r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 \]</span></p>
+</div>
+<p>Other parts are irrelevant to this chapter.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -651,8 +706,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./16-formulas.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15.5-slope-inference.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

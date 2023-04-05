@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 7&nbsp; Probability</title>
+<title>AP Statistics Notes - 17&nbsp; Inference for Linear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./07-density-curves.html" rel="next">
-<link href="./05-experimental-design.html" rel="prev">
+<link href="./16-formulas.html" rel="next">
+<link href="./15-linear-regression.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-probability.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a>
+  <a href="./06-probability.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -185,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15.5-slope-inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></a>
+  <a href="./15.5-slope-inference.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -232,11 +232,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link active" data-scroll-target="#probability-rules"><span class="toc-section-number">7.1</span>  Probability Rules</a>
+  <li><a href="#samp-dist-b" id="toc-samp-dist-b" class="nav-link active" data-scroll-target="#samp-dist-b"><span class="toc-section-number">17.1</span>  Sampling Distribution of <span class="math inline">\(b\)</span></a></li>
+  <li><a href="#slope-conds" id="toc-slope-conds" class="nav-link" data-scroll-target="#slope-conds"><span class="toc-section-number">17.2</span>  Conditions for Regression Inference</a></li>
+  <li><a href="#standard-error-of-b" id="toc-standard-error-of-b" class="nav-link" data-scroll-target="#standard-error-of-b"><span class="toc-section-number">17.3</span>  Standard Error of <span class="math inline">\(b\)</span></a></li>
+  <li><a href="#t-interval-for-beta" id="toc-t-interval-for-beta" class="nav-link" data-scroll-target="#t-interval-for-beta"><span class="toc-section-number">17.4</span>  <span class="math inline">\(t\)</span> interval for <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#significance-test-for-beta" id="toc-significance-test-for-beta" class="nav-link" data-scroll-target="#significance-test-for-beta"><span class="toc-section-number">17.5</span>  Significance Test for <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#more-linreg-output" id="toc-more-linreg-output" class="nav-link" data-scroll-target="#more-linreg-output"><span class="toc-section-number">17.6</span>  Interpreting Computer Output</a>
   <ul class="collapse">
-  <li><a href="#complement-rule" id="toc-complement-rule" class="nav-link" data-scroll-target="#complement-rule"><span class="toc-section-number">7.1.1</span>  Complement Rule</a></li>
-  <li><a href="#the-addition-rule" id="toc-the-addition-rule" class="nav-link" data-scroll-target="#the-addition-rule"><span class="toc-section-number">7.1.2</span>  The Addition Rule</a></li>
-  <li><a href="#the-multiplication-rule" id="toc-the-multiplication-rule" class="nav-link" data-scroll-target="#the-multiplication-rule"><span class="toc-section-number">7.1.3</span>  The Multiplication Rule</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="toc-section-number">17.6.1</span>  Example</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -246,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="probability" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></h1>
 </div>
 
 
@@ -261,63 +264,119 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>You typically know probability as chance. But what does that chance represent?</p>
-<p><strong>Probability</strong> is a number between 0 and 1 that describes the proportion of times the outcome would occur in a very long series of repetitions. We observe this definition of probability through the <strong>law of large numbers</strong> says that if we observe more and more repetitions of any chance process, the proportion of times that a specific outcome occurs approaches a single value.</p>
-<p>Because of random processes, we know that that randomness is predictable in the long run. Our intuition tries to tell us random phenomena should also be predictable in the short run. However, probability does not allow us to make short-run predictions. Even with how we can tell things in the long run, probability does not tell us certainties about future outcomes. That is, past outcomes do not influence the likelihood of individual outcomes occurring in the future.</p>
-<p>If we know how a certain process is supposed to act out through our understanding of probability, we can simulate it. A simulation is an imitation of chance behavior, based on a model that accurately reflects the situation. This means that we will not be doing what is being described, but rather choose a way to represent the situation using a box of tickets, a coin flip, a random number generator, etc.</p>
-<p>When we describe a simulation, we want to describe the following:</p>
-<ol type="1">
-<li><p>Describe how you would do one simulation of the situation, using a physical medium and/or random number generator. e.g.&nbsp;flip a coin, choose <span class="math inline">\(n\)</span> unique random numbers from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, choose slips of paper out a box.</p></li>
-<li><p>Do your described procedure many many times.</p></li>
-<li><p>Estimate the probability in question.</p></li>
-</ol>
-<section id="probability-rules" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="probability-rules"><span class="header-section-number">7.1</span> Probability Rules</h2>
-<p>The sample space <span class="math inline">\(\Omega\)</span> of a chance process is the set of all possible outcomes.</p>
-<p>A probability model is a description of some chance process that consists of two parts: a sample space <span class="math inline">\(\Omega\)</span> and a probability for each outcome.</p>
-<p>An event is any collection of outcomes from some chance process. That is, an event is a subset of the sample space. Events are usually designated by capital letters, like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, and so on.</p>
-<p>A valid probability model always has to satisfy the following rules:</p>
+<p>As mentioned in our <a href="15-linear-regression.html#LSRL-model">least squares regression model</a>, the goal of the model is to estimate <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. So after we’ve estimated them with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, what can we infer about the population parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>? For the most part, we’ll be only concerned about <span class="math inline">\(\beta\)</span>.</p>
+<section id="samp-dist-b" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="samp-dist-b"><span class="header-section-number">17.1</span> Sampling Distribution of <span class="math inline">\(b\)</span></h2>
 <div class="highlight">
+<p>Choose an SRS of <span class="math inline">\(n\)</span> observations <span class="math inline">\((x, y)\)</span> from a population of size <span class="math inline">\(N\)</span> with least-squares regression line <span class="math inline">\(\hat y=a+bx\)</span> with a population (true) relationship of <span class="math inline">\(y = \alpha + \beta x + \epsilon\)</span></p>
+<p>Let <span class="math inline">\(b\)</span> be the slope of the sample regression line. Then:</p>
 <ul>
-<li><p>For any event A, <span class="math inline">\(0 \leq P(A) \leq 1\)</span></p></li>
-<li><p>If <span class="math inline">\(\Omega\)</span> is the sample space in the probability model, <span class="math inline">\(P(\Omega)=1\)</span></p></li>
-<li><p>In the case of equally likely outcomes, <span class="math inline">\(P(A)=\frac{\text{number of outcomes corresponding to event A}}{\text{total number of outcomes in sample space}}\)</span></p></li>
+<li><p>The <strong>mean</strong> of the sampling distribution of <span class="math inline">\(b\)</span> is <span class="math display">\[\mu_b = \beta\]</span></p></li>
+<li><p>The <strong>standard deviation</strong> of the sampling distribution of <span class="math inline">\(b\)</span> is <span class="math display">\[\sigma_b = \frac{\sigma}{\sigma_x\sqrt n}\]</span> as long as the 10% Condition is satisfied.</p></li>
+<li><p>The sampling distribution of b will be <strong>approximately normal</strong> if the values of the response variable <span class="math inline">\(y\)</span> follow a Normal distribution for each value of the explanatory variable x (the <em>Normal condition</em>).</p></li>
 </ul>
 </div>
-<p>We also have the following rules to calculate other things:</p>
-<p><span class="math inline">\(P(A|B)\)</span> : the probability of event <span class="math inline">\(A\)</span> occurring, given that event <span class="math inline">\(B\)</span> has already occurred. (conditional probability)</p>
+<p>In this case, <span class="math inline">\(\sigma\)</span> represents the population standard deviation of plausible observations’ residuals from the population line.</p>
+</section>
+<section id="slope-conds" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="slope-conds"><span class="header-section-number">17.2</span> Conditions for Regression Inference</h2>
+<p>The regression model requires that for each possible value of the explanatory variable <span class="math inline">\(x\)</span>:</p>
+<ol type="1">
+<li><p>The mean value of the response variable <span class="math inline">\(\mu_y\)</span> falls on the population line. <span class="math display">\[\mu_y = \alpha + \beta x\]</span></p></li>
+<li><p>The values of the response variable <span class="math inline">\(y\)</span> follow a Normal distribution with common standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
+</ol>
+<p>Taking in account of the above information and the <a href="#samp-dist-b">sampling distribution of <span class="math inline">\(b\)</span></a>, we need to make sure that the following are met:</p>
 <div class="highlight">
-<p><strong>Independent Events</strong>: Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).</p>
-<p>For independent events, <span class="math display">\[P(A)=P(A|B) \text{ and } P(B)=P(B|A)\]</span></p>
-</div>
-<div class="highlight">
-<p><strong>Mutually Exclusive</strong> (or Disjoint) Events: Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive if it’s impossible for both to occur. In one flip of a coin, heads and tails are mutually exclusive events.</p>
-<p>For mutually exclusive events,</p>
-<p><span class="math display">\[P(A\cap B)=0\]</span></p>
-</div>
-<section id="complement-rule" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</h3>
-<p>The complement to event <span class="math inline">\(A\)</span> is the event that <span class="math inline">\(A\)</span> doesn’t happen. This event is sometimes written <span class="math inline">\(AC\)</span>. In one flip of a coin, heads and tails are complementary events (assuming the coin won’t land on its side).</p>
-<div class="highlight">
-<p>For complementary events,</p>
-<p><span class="math display">\[P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)\]</span></p>
+<dl>
+<dt>Linear</dt>
+<dd>
+The actual relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is linear.
+</dd>
+<dd>
+In other words, <em>For any fixed value of <span class="math inline">\(x\)</span>, the mean response <span class="math inline">\(\mu_y\)</span> falls on the population (true) regression line <span class="math inline">\(\mu_y= \alpha + \beta x\)</span></em>.
+</dd>
+<dt>Independent</dt>
+<dd>
+Individual observations are independent of each other. When sampling without replacement, check the 10% condition.
+</dd>
+<dt>Normal</dt>
+<dd>
+For any fixed value of <span class="math inline">\(x\)</span>, the response <span class="math inline">\(y\)</span> varies according to a Normal distribution.
+</dd>
+<dt>Equal SD</dt>
+<dd>
+The standard deviation of <span class="math inline">\(y\)</span> from the population regression line (call it <span class="math inline">\(\sigma\)</span>) is the same for all values of <span class="math inline">\(x\)</span>.
+</dd>
+<dt>Random</dt>
+<dd>
+The data come from a well-designed random sample or randomized experiment.
+</dd>
+</dl>
 </div>
 </section>
-<section id="the-addition-rule" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</h3>
+<section id="standard-error-of-b" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="standard-error-of-b"><span class="header-section-number">17.3</span> Standard Error of <span class="math inline">\(b\)</span></h2>
+<p>Remember that we defined the <a href="#samp-dist-b">standard deviation of the sampling distribution of <span class="math inline">\(b\)</span></a>.</p>
 <div class="highlight">
-<p><span class="math display">\[P(A \cup B)=P(A) + P(B)-P(A \cap B)\]</span></p>
-<p>For mutually exclusive events, we know that <span class="math inline">\(P(A\cap B)=0\)</span>, so we can also have the following simplified rule:</p>
-<p><span class="math display">\[P(A \cup B)=P(A) + P(B)\]</span></p>
+<p>An estimate of <span class="math inline">\(\sigma_b\)</span>, is the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span> which is defined as <span class="math display">\[SE_b = \frac{s}{s_x \sqrt{n-1}}\]</span> where <a href="15-linear-regression.html#residual-sd"><span class="math inline">\(s\)</span> is the sample standard deviation of the residuals</a>,</p>
 </div>
 </section>
-<section id="the-multiplication-rule" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</h3>
+<section id="t-interval-for-beta" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="t-interval-for-beta"><span class="header-section-number">17.4</span> <span class="math inline">\(t\)</span> interval for <span class="math inline">\(\beta\)</span></h2>
 <div class="highlight">
-<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B|A)\]</span></p>
-<p>For independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we know that <span class="math inline">\(P(B|A) = P(B)\)</span>, so we can also have the simplified rule:</p>
-<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B)\]</span></p>
+<p>When <a href="#slope-conds">the conditions</a> are met, a level <span class="math inline">\(C\)</span> confidence interval for the slope <span class="math inline">\(\beta\)</span> is <span class="math display">\[b \pm t^* \cdot SE_b\]</span> and <span class="math inline">\(t^*\)</span> is the critical value for the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(df = n - 2\)</span> having area <span class="math inline">\(C\)</span> between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
 </div>
+</section>
+<section id="significance-test-for-beta" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="significance-test-for-beta"><span class="header-section-number">17.5</span> Significance Test for <span class="math inline">\(\beta\)</span></h2>
+<p>When <a href="#slope-conds">the conditions</a> are met, we can use the slope <span class="math inline">\(b\)</span> of the sample regression line to conduct a significance test about the slope parameter <span class="math inline">\(\beta\)</span>.</p>
+<div class="highlight">
+<p>The null hypothesis has the general form <span class="math inline">\(H_0: \beta = \beta_0\)</span> (hypothesized slope)</p>
+<p>We’ll mainly restrict ourselves to situations in which the hypothesized slope is 0. (i.e.&nbsp;there is no relationship between the two variables).</p>
+<p>The alternative hypothesis says what direction we expect: <span class="math display">\[H_a:\beta&gt;\beta_0~~\text{or}~~Ha:\beta&lt;\beta_0~~\text{or}~~Ha:\beta\not =\beta_0\]</span></p>
+<p>The test statistic <span class="math inline">\(t\)</span> is calculated as:</p>
+<p><span class="math display">\[t = \frac{b - \beta_0 }{SE_b}\]</span></p>
+<p>The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, <span class="math inline">\(H_a\)</span>. <span class="math inline">\(t_{n-2}\)</span> represents the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(df = n-2\)</span> degrees of freedom.</p>
+<p><span class="math display">\[
+\text{p-value}= \begin{cases}
+P(t_{n-2}&lt;t) &amp; \text{ if } H_a:\beta&lt;\beta_0 \\
+P(t_{n-2}&gt;t) &amp; \text{ if } H_a:\beta&gt;\beta_0 \\
+2\cdot P(t_{n-2}&lt;-|t|) &amp; \text{ if } H_a: \beta\not =\beta_0
+\end{cases}
+\]</span></p>
+</div>
+</section>
+<section id="more-linreg-output" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="more-linreg-output"><span class="header-section-number">17.6</span> Interpreting Computer Output</h2>
+<p><a href="15-linear-regression.html#basic-linreg-output">As we mentioned in the previous section, this builds off the previous example.</a></p>
+<section id="example" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">17.6.1</span> Example</h3>
+<p>We left off on the fact that we could identify the following:</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        a           2446        15.64  0.000
+Miles Driven    b           0.03096     -5.26  0.000
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
+<p>Now apply what you know what we now know we should look for. We should be looking for the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span>; the <span class="math inline">\(t\)</span>-statistic; and the corresponding <span class="math inline">\(p\)</span>-value. So in other words, we want to look for everything related to the estimated slope <span class="math inline">\(b\)</span> for the <code>Miles Driven</code> predicted (our explanatory variable). Applying this, you should be able to identify that each of these are:</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        a           2446        15.64  0.000
+Miles Driven    b           SE_b        t      p-value
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
+<div class="highlight">
+<p>To reiterate, we can figure out that for a significance test for <span class="math inline">\(\beta\)</span> with this data,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;SE_b = 0.03096\\
+&amp;t = -5.25\\
+&amp;p\text{-value} \approx 0
+\end{aligned}
+\]</span></p>
+</div>
+<div class="highlight">
+<p>One thing to keep in mind is that the <span class="math inline">\(p\)</span>-value given is always for a two-sided test where <span class="math inline">\(H_a: \beta \not = \beta_0\)</span>. So if you want the <span class="math inline">\(p\)</span>-value for a one-sided test (where <span class="math inline">\(H_a: \beta &gt; \beta_0\)</span> or <span class="math inline">\(H_a: \beta &lt; \beta_0\)</span>), you have to take half of the <span class="math inline">\(p\)</span>-value that you see in the computer output.</p>
+</div>
+<p>Other parts are irrelevant to this course.</p>
 
 
 </section>
@@ -459,13 +518,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./05-experimental-design.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span>
+      <a href="./15-linear-regression.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07-density-curves.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./16-formulas.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

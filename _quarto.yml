@@ -29,6 +29,7 @@ book:
     - 13-mean-inference.qmd
     - 14-chi-square.qmd
     - 15-linear-regression.qmd
+    - 15.5-slope-inference.qmd
   appendices:
     - 16-formulas.qmd
     - 17-applets.qmd

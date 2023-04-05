@@ -180,7 +180,7 @@ Heteroskedasticity
 : In other words, is there a pattern in our plot? If the residuals are getting larger at one or both ends of the data, that means our model is not predicting as well in those areas (remember that a big residual = a big error in prediction) and shouldn’t be used to make predictions for those values of our explanatory (x) variable.  
 :::
 
-#### Standard Deviation of Residuals
+#### Standard Deviation of Residuals {#residual-sd}
 
 To assess how well the line fits all the data, we need to consider the residuals for each observation, not just one. Using these residuals, we can estimate the “typical” prediction error when using the least-squares regression line.
 
@@ -306,3 +306,66 @@ No. This does not even make sense to happen. What does make sense is looking bet
 </details>
 
 [See this website for more examples on weird correlations.](https://tylervigen.com/)
+
+## Interpreting Computer Output {#basic-linreg-output}
+
+You are expected to know how to interpret computer out in MINITAB format (just what you normally see).
+
+[See the next section for the rest of the interpretation](#more-linreg-output)
+
+### Example 
+
+Below is the computer output from a basic regression analysis for the Ford-F-150 data relating the mileage and value of Ford F-150s. 
+
+```
+Predictor     	Coef  	    SECoef      T      P
+Constant  		38257		2446  	    15.64  0.000
+Miles Driven    -0.16292    0.03096   	-5.26  0.000
+
+S = 5740.13   R-Sq = 66.4%   R-Sq(adj) = 64.0%
+```
+
+Let's first identify a few basic facts, when we have a LSRL, the line is of form $$\hat y = a + b x$$
+
+From our basic knowledge of algebra, $b$ is the coefficient of $x$ in the equation and the only things that we really need values (estimates) for are $a$ and $b$. So the two rows of interest for now are looking at the `Predictor` and the `Coef` of the `Predictor`. 
+
+<details>
+<summary> What is a predictor? </summary>
+What variable are we using to "predict"? Obviously, we are trying to predict $y$ based off $x$, so $x$ is our "predictor" and the constant term $a$ in the equation is actually included here too, since it's involved in our prediction.
+</details>
+
+We can identify that our explanatory variable is mileage (`Miles Driven`) and our response variable is the value of the Ford F-150.
+
+So what we can figure out from these math facts here are that each value correspond to the following:
+
+```
+Predictor     	Coef  	    SECoef      T      P
+Constant  		a		    2446  	    15.64  0.000
+Miles Driven    b           0.03096   	-5.26  0.000
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%
+```
+
+::: {.highlight}
+To reiterate, we can figure out that for a LSRL with this data and knowing our explanatory variable is mileage (`Miles Driven`) and our response variable is the value of the Ford F-150,
+
+$$
+\begin{aligned}
+&a = 38257\\
+&b = -0.16292\\
+&s = 5740.13\\
+&r^2 = .664
+\end{aligned}
+$$
+:::
+
+Thus our LSRL is $$\hat{\text{value of F-150}} = 38257 - 0.16292 (\text{miles driven})$$
+
+With $s = 5740.13$ and $r^2 = .664$. 
+
+
+::: {.highlight}
+We can also infer from this output that since $b$ is negative (negative slope, so negative relationship), that $$r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 $$
+:::
+
+Other parts are irrelevant to this chapter.
