@@ -93,53 +93,44 @@ Carrie made a 6-sided die in her ceramics class and rolled it 90 times to test i
 
 #### State
 
-$H_0:$ The ceramic die's sides are equally like to occur
-
-$H_a:$ The ceramic die's dies are not equally likely to occur
-
-Alternatively, $$H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}$$ $$H_a: p_1 \not = \frac{1}{6}, p_2 \not = \frac{1}{6}, \cdots, p_6 \not = \frac{1}{6}$$
+> $H_0:$ The ceramic die's sides are equally like to occur  \
+> $H_a:$ The ceramic die's dies are not equally likely to occur  \
+> Alternatively, $$H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}$$ $$H_a: p_1 \not = \frac{1}{6}, p_2 \not = \frac{1}{6}, \cdots, p_6 \not = \frac{1}{6}$$
 
 #### Plan
 
-$\chi^2$ Goodness of Fit
-
-| Outcome of roll            | 1   | 2   | 3   | 4   | 5   | 6   |
-|----------------------------|-----|-----|-----|-----|-----|-----|
-| Theoretical<br>Probability | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 |
-| Expected                   | 15  | 15  | 15  | 15  | 15  | 15  |
-
-**Random:** This is a completely random process.
-
-**Large:** With $n = 90$, we should expect to see each of the six sides to occur 15 times if the dice was fair.
-
-**Independent:** We can assume that each dice roll is independent of each other.
+> $\chi^2$ Goodness of Fit
+>
+> | Outcome of Roll         | 1   | 2   | 3   | 4   | 5   | 6   |
+> |-------------------------|-----|-----|-----|-----|-----|-----|
+> | Theoretical Probability | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 |
+> | Expected Count          | 15  | 15  | 15  | 15  | 15  | 15  |
+>
+> **Random:** This is a completely random process.  \
+> **Large:** With $n = 90$, we should expect to see each of the six sides to occur 15 times if the dice was fair.  \
+> **Independent:** We can assume that each dice roll is independent of each other.  \
 
 #### Do
 
-| Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
-| Theoretical<br>Probability                   | 1/6    | 1/6     | 1/6    | 1/6    | 1/6    | 1/6    |
-| Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
-| $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
-
-$$
-\begin{aligned}
-\chi^2&=\sum\frac{(x_i - E_i)^2}{E_i} \\
-&= 0.6000 + 11.2667 + 0.6000 + 0.2667 + 1.6667 + 0.0000 \\
-&= 14.4
-\end{aligned}
-$$
-
-$$df = c - 1 = 6 - 1 = 5$$
-
-Looking up the test statistic and degrees of freedom on [Table C](#table-c), notice that 14.4 is between 13.39 and 15.09, therefore, $0.01 < \text{p-value} < 0.02$.
-
-Alternatively, do $\chi^2\mathtt{cdf}(14.4, 1000, 5) = 0.0132586$.
+> | Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
+> |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+> | Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
+> | Theoretical<br>Probability                   | 1/6    | 1/6     | 1/6    | 1/6    | 1/6    | 1/6    |
+> | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
+> | $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
+>
+> $$
+> \begin{aligned}
+> \chi^2&=\sum\frac{(x_i - E_i)^2}{E_i} \\
+> &= 0.6000 + 11.2667 + 0.6000 + 0.2667 + 1.6667 + 0.0000 \\
+> &= 14.4
+> \end{aligned}
+> $$ $$df = c - 1 = 6 - 1 = 5$$ Looking up the test statistic and degrees of freedom on [Table C](#table-c), notice that 14.4 is between 13.39 and 15.09, therefore, $0.01 < \text{p-value} < 0.02$.  \
+> Alternatively, do $\chi^2\mathtt{cdf}(14.4, 1000, 5) = 0.0132586$.
 
 #### Conclude
 
-Since our $\text{p-value} = 0.01326 < 0.05 = \alpha$, we reject the null hypothesis that the ceramic die's sides are equally likely to show up. Therefore, there is convincing evidence that the ceramic die is not fair.
+> Since our $\text{p-value} = 0.01326 < 0.05 = \alpha$, we reject the null hypothesis that the ceramic die's sides are equally likely to show up. Therefore, there is convincing evidence that the ceramic die is not fair.
 
 ### Doing it on a calculator {#GOF-calculator}
 
@@ -195,9 +186,7 @@ When we do things on the calculator with the following method, everything works 
 
 Here's a a video tutorial using the example from Page 3 in your packets.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZZtsomC2-Fg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-
-</iframe>
+{{< video https://www.youtube.com/embed/ZZtsomC2-Fg >}}
 
 ## $\chi^2$ Test of Homogeneity {#ChiSqHomogen}
 
@@ -205,7 +194,9 @@ Here's a a video tutorial using the example from Page 3 in your packets.
 We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another?
 :::
 
-**Hypotheses**: $H_0$: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments.
+**Hypotheses**:
+
+$H_0$: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments.
 
 $$
 \begin{aligned}
@@ -222,13 +213,17 @@ $H_a$: There is an association between the group and the variable, or the distri
 
 (The symbolic notation would be too messy, so it's not included)
 
-**Expected Counts**: The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
+**Expected Counts**:
+
+The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
 
 $$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$
 
 $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$
 
-**Degrees of freedom**: We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
+**Degrees of freedom**:
+
+We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
 
 **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
 
@@ -249,44 +244,46 @@ Does the data provide convincing evidence of an association between gender and r
 
 #### State
 
-$H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
-
-$H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
-
-$\alpha =0.05$
+> $H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $\alpha =0.05$
 
 #### Plan
 
-$\chi^2$ Test of Homogeneity
-
-Expected counts:
-
-|                  | **Female** | **Male** | **Total** |
-|------------------|:----------:|:--------:|:---------:|
-| **Index finger** |   57.69    |  65.31   |    123    |
-| **Ring finger**  |  109.752   | 124.248  |    234    |
-| **Same length**  |   44.558   |  50.442  |    95     |
-| **Total**        |    212     |   240    |    452    |
-
-Random: The male and female students are both random samples
-
-Large: all of the expected counts are greater than 5
-
-Independence: There are more than 2120 Female US high school students and more than 2400 Male US high school students.
+> $\chi^2$ Test of Homogeneity
+>
+> Expected counts:
+>
+> |                  | **Female** | **Male** | **Total** |
+> |------------------|:----------:|:--------:|:---------:|
+> | **Index finger** |   57.69    |  65.31   |    123    |
+> | **Ring finger**  |  109.752   | 124.248  |    234    |
+> | **Same length**  |   44.558   |  50.442  |    95     |
+> | **Total**        |    212     |   240    |    452    |
+>
+> **Random:** The male and female students are both random samples
+>
+> **Large:** all of the expected counts are greater than 5
+>
+> **Independence:** There are more than 2120 Female US high school students and more than 2400 Male US high school students.
 
 #### Do
 
-\begin{aligned}
-\chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
-&\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
-
-df =&  (3-1)(2-1) = 2\\\\
-\text{p-value } =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
-\end{aligned}
+> ```{=tex}
+> \begin{aligned}
+> \chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
+> &\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
+>
+> df =&  (3-1)(2-1) = 2\\\\
+> \text{p-value } =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
+> \end{aligned}
+> ```
 
 #### Conclude
 
-Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+> Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
 
 ## $\chi^2$ Test of Independence {#ChiSqInd}
 
@@ -313,13 +310,17 @@ $H_a$: There is an association between the two variables or that the two events 
 
 (The symbolic notation would be too messy, so it's not included)
 
-**Expected Counts**: The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
+**Expected Counts**:
+
+The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
 
 $$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$
 
 $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$
 
-**Degrees of freedom**: We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
+**Degrees of freedom**:
+
+We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
 
 **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
 
@@ -340,44 +341,40 @@ Does the data provide convincing evidence of an association between gender and r
 
 #### State
 
-$H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
-
-$H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
-
-$\alpha =0.05$
+> $H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $\alpha =0.05$
 
 #### Plan
 
-$\chi^2$ Test of Independence
-
-Expected counts:
-
-|                  | **Female** | **Male** | **Total** |
-|------------------|:----------:|:--------:|:---------:|
-| **Index finger** |   57.69    |  65.31   |    123    |
-| **Ring finger**  |  109.752   | 124.248  |    234    |
-| **Same length**  |   44.558   |  50.442  |    95     |
-| **Total**        |    212     |   240    |    452    |
-
-Random: The high school students are a random sample.
-
-Large: all of the expected counts are greater than 5
-
-Independence: There are more than 4520 high school students
+> $\chi^2$ Test of Independence
+>
+> Expected counts:
+>
+> |                  | **Female** | **Male** | **Total** |
+> |------------------|:----------:|:--------:|:---------:|
+> | **Index finger** |   57.69    |  65.31   |    123    |
+> | **Ring finger**  |  109.752   | 124.248  |    234    |
+> | **Same length**  |   44.558   |  50.442  |    95     |
+> | **Total**        |    212     |   240    |    452    |
+>
+> **Random:** The high school students are a random sample.
+>
+> **Large:** all of the expected counts are greater than 5
+>
+> **Independence:** There are more than 4520 high school students
 
 #### Do
 
-\begin{aligned}
-\chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
-&\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
-
-df =&  (3-1)(2-1) = 2\\\\
-\text{p-value} =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
-\end{aligned}
+> $$
+> \begin{aligned} \chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\ &\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\df =& (3-1)(2-1) = 2\\\\ \text{p-value} =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0 \end{aligned}
+> $$
 
 #### Conclude
 
-Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+> Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
 
 ## Follow-up (Component) Analysis
 
@@ -401,4 +398,4 @@ A reminder of our results:
 | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
 | $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
 
-Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.
+> Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.

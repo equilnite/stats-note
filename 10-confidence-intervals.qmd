@@ -80,16 +80,16 @@ In experiments, or other situations where we’re not sampling from a population
 
 1.  **STATE** exactly what you’re doing
 
-Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing.  You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.  If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here.  For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95\% confidence”
+> Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing.  You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.  If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here.  For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95\% confidence”
 
 2. **PLAN** which method you will use and that the necessary conditions are met. 
 
-If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.
+> If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.
 
 3. **DO** the calculations
 
-Perform the calculations necessary for the method you chose to use.  Show all work!
+> Perform the calculations necessary for the method you chose to use.  Show all work!
 
 4. **CONCLUDE** in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).
 
-“I am 95\% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42\% and 51\%.  95\% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”
+> “I am 95\% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42\% and 51\%.  95\% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”

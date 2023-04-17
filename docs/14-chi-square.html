@@ -456,17 +456,20 @@ Be careful and remember that:
 </table>
 <section id="state" class="level4" data-number="15.3.1.1">
 <h4 data-number="15.3.1.1" class="anchored" data-anchor-id="state"><span class="header-section-number">15.3.1.1</span> State</h4>
-<p><span class="math inline">\(H_0:\)</span> The ceramic die’s sides are equally like to occur</p>
-<p><span class="math inline">\(H_a:\)</span> The ceramic die’s dies are not equally likely to occur</p>
-<p>Alternatively, <span class="math display">\[H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}\]</span> <span class="math display">\[H_a: p_1 \not = \frac{1}{6}, p_2 \not = \frac{1}{6}, \cdots, p_6 \not = \frac{1}{6}\]</span></p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_0:\)</span> The ceramic die’s sides are equally like to occur &nbsp;<br>
+<span class="math inline">\(H_a:\)</span> The ceramic die’s dies are not equally likely to occur &nbsp;<br>
+Alternatively, <span class="math display">\[H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}\]</span> <span class="math display">\[H_a: p_1 \not = \frac{1}{6}, p_2 \not = \frac{1}{6}, \cdots, p_6 \not = \frac{1}{6}\]</span></p>
+</blockquote>
 </section>
 <section id="plan" class="level4" data-number="15.3.1.2">
 <h4 data-number="15.3.1.2" class="anchored" data-anchor-id="plan"><span class="header-section-number">15.3.1.2</span> Plan</h4>
+<blockquote class="blockquote">
 <p><span class="math inline">\(\chi^2\)</span> Goodness of Fit</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Outcome of roll</th>
+<th>Outcome of Roll</th>
 <th>1</th>
 <th>2</th>
 <th>3</th>
@@ -477,7 +480,7 @@ Be careful and remember that:
 </thead>
 <tbody>
 <tr class="odd">
-<td>Theoretical<br>Probability</td>
+<td>Theoretical Probability</td>
 <td>1/6</td>
 <td>1/6</td>
 <td>1/6</td>
@@ -486,7 +489,7 @@ Be careful and remember that:
 <td>1/6</td>
 </tr>
 <tr class="even">
-<td>Expected</td>
+<td>Expected Count</td>
 <td>15</td>
 <td>15</td>
 <td>15</td>
@@ -496,12 +499,15 @@ Be careful and remember that:
 </tr>
 </tbody>
 </table>
-<p><strong>Random:</strong> This is a completely random process.</p>
-<p><strong>Large:</strong> With <span class="math inline">\(n = 90\)</span>, we should expect to see each of the six sides to occur 15 times if the dice was fair.</p>
-<p><strong>Independent:</strong> We can assume that each dice roll is independent of each other.</p>
+<p><strong>Random:</strong> This is a completely random process. &nbsp;<br>
+<strong>Large:</strong> With <span class="math inline">\(n = 90\)</span>, we should expect to see each of the six sides to occur 15 times if the dice was fair. &nbsp;<br>
+<strong>Independent:</strong> We can assume that each dice roll is independent of each other. &nbsp;<br>
+</p>
+</blockquote>
 </section>
 <section id="do" class="level4" data-number="15.3.1.3">
 <h4 data-number="15.3.1.3" class="anchored" data-anchor-id="do"><span class="header-section-number">15.3.1.3</span> Do</h4>
+<blockquote class="blockquote">
 <table class="table">
 <colgroup>
 <col style="width: 14%">
@@ -568,14 +574,15 @@ Be careful and remember that:
 &amp;= 0.6000 + 11.2667 + 0.6000 + 0.2667 + 1.6667 + 0.0000 \\
 &amp;= 14.4
 \end{aligned}
-\]</span></p>
-<p><span class="math display">\[df = c - 1 = 6 - 1 = 5\]</span></p>
-<p>Looking up the test statistic and degrees of freedom on <a href="16-formulas.html#table-c">Table C</a>, notice that 14.4 is between 13.39 and 15.09, therefore, <span class="math inline">\(0.01 &lt; \text{p-value} &lt; 0.02\)</span>.</p>
-<p>Alternatively, do <span class="math inline">\(\chi^2\mathtt{cdf}(14.4, 1000, 5) = 0.0132586\)</span>.</p>
+\]</span> <span class="math display">\[df = c - 1 = 6 - 1 = 5\]</span> Looking up the test statistic and degrees of freedom on <a href="16-formulas.html#table-c">Table C</a>, notice that 14.4 is between 13.39 and 15.09, therefore, <span class="math inline">\(0.01 &lt; \text{p-value} &lt; 0.02\)</span>. &nbsp;<br>
+Alternatively, do <span class="math inline">\(\chi^2\mathtt{cdf}(14.4, 1000, 5) = 0.0132586\)</span>.</p>
+</blockquote>
 </section>
 <section id="conclude" class="level4" data-number="15.3.1.4">
 <h4 data-number="15.3.1.4" class="anchored" data-anchor-id="conclude"><span class="header-section-number">15.3.1.4</span> Conclude</h4>
+<blockquote class="blockquote">
 <p>Since our <span class="math inline">\(\text{p-value} = 0.01326 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis that the ceramic die’s sides are equally likely to show up. Therefore, there is convincing evidence that the ceramic die is not fair.</p>
+</blockquote>
 </section>
 </section>
 <section id="GOF-calculator" class="level3" data-number="15.3.2">
@@ -643,8 +650,7 @@ Be careful and remember that:
 </ul></li>
 </ol>
 <p>Here’s a a video tutorial using the example from Page 3 in your packets.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZZtsomC2-Fg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/ZZtsomC2-Fg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
 <section id="ChiSqHomogen" class="level2" data-number="15.4">
@@ -652,7 +658,8 @@ Be careful and remember that:
 <div class="highlight">
 <p>We do this test when we wonder, “Is the distribution of this group’s data the same as this other group’s distribution of data?” So how similar (“homogenous”) is one group/treatment compared to another?</p>
 </div>
-<p><strong>Hypotheses</strong>: <span class="math inline">\(H_0\)</span>: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments.</p>
+<p><strong>Hypotheses</strong>:</p>
+<p><span class="math inline">\(H_0\)</span>: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments.</p>
 <p><span class="math display">\[
 \begin{aligned}
 H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
@@ -664,10 +671,12 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 <p>where each there are <span class="math inline">\(r\)</span> rows (categories in the variable) and <span class="math inline">\(c\)</span> columns (populations/samples/groups/treatments) in the two-way table. Each <span class="math inline">\(p_{i, j}\)</span> correlates to the <span class="math inline">\(i^{th}\)</span> row and the <span class="math inline">\(j^{th}\)</span> column.</p>
 <p><span class="math inline">\(H_a\)</span>: There is an association between the group and the variable, or the distribution of the variable is not the same across all groups/treatments.</p>
 <p>(The symbolic notation would be too messy, so it’s not included)</p>
-<p><strong>Expected Counts</strong>: The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
+<p><strong>Expected Counts</strong>:</p>
+<p>The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
 <p><span class="math display">\[Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}\]</span></p>
 <p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
-<p><strong>Degrees of freedom</strong>: We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
+<p><strong>Degrees of freedom</strong>:</p>
+<p>We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
 <p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
 <section id="chi-homogen-ex" class="level3" data-number="15.4.1">
 <h3 data-number="15.4.1" class="anchored" data-anchor-id="chi-homogen-ex"><span class="header-section-number">15.4.1</span> Example</h3>
@@ -712,12 +721,15 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 <p>Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?</p>
 <section id="state-1" class="level4" data-number="15.4.1.1">
 <h4 data-number="15.4.1.1" class="anchored" data-anchor-id="state-1"><span class="header-section-number">15.4.1.1</span> State</h4>
+<blockquote class="blockquote">
 <p><span class="math inline">\(H_0\)</span>: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
 <p><span class="math inline">\(H_a\)</span>: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
 <p><span class="math inline">\(\alpha =0.05\)</span></p>
+</blockquote>
 </section>
 <section id="plan-1" class="level4" data-number="15.4.1.2">
 <h4 data-number="15.4.1.2" class="anchored" data-anchor-id="plan-1"><span class="header-section-number">15.4.1.2</span> Plan</h4>
+<blockquote class="blockquote">
 <p><span class="math inline">\(\chi^2\)</span> Test of Homogeneity</p>
 <p>Expected counts:</p>
 <table class="table">
@@ -756,12 +768,14 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 </tr>
 </tbody>
 </table>
-<p>Random: The male and female students are both random samples</p>
-<p>Large: all of the expected counts are greater than 5</p>
-<p>Independence: There are more than 2120 Female US high school students and more than 2400 Male US high school students.</p>
+<p><strong>Random:</strong> The male and female students are both random samples</p>
+<p><strong>Large:</strong> all of the expected counts are greater than 5</p>
+<p><strong>Independence:</strong> There are more than 2120 Female US high school students and more than 2400 Male US high school students.</p>
+</blockquote>
 </section>
 <section id="do-1" class="level4" data-number="15.4.1.3">
 <h4 data-number="15.4.1.3" class="anchored" data-anchor-id="do-1"><span class="header-section-number">15.4.1.3</span> Do</h4>
+<blockquote class="blockquote">
 <span class="math display">\[\begin{aligned}
 \chi^2 = &amp;\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
 &amp;\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
@@ -769,10 +783,13 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 df =&amp;  (3-1)(2-1) = 2\\\\
 \text{p-value } =&amp; \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
 \end{aligned}\]</span>
+</blockquote>
 </section>
 <section id="conclude-1" class="level4" data-number="15.4.1.4">
 <h4 data-number="15.4.1.4" class="anchored" data-anchor-id="conclude-1"><span class="header-section-number">15.4.1.4</span> Conclude</h4>
+<blockquote class="blockquote">
 <p>Since our <span class="math inline">\(p-value \approx 0 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+</blockquote>
 </section>
 </section>
 </section>
@@ -794,10 +811,12 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 <p>where each there are <span class="math inline">\(r\)</span> rows (categories in the first variable) and <span class="math inline">\(c\)</span> columns (categories in the second variable) in the two-way table. Each <span class="math inline">\(p_{i, j}\)</span> correlates to the <span class="math inline">\(i^{th}\)</span> row and the <span class="math inline">\(j^{th}\)</span> column.</p>
 <p><span class="math inline">\(H_a\)</span>: There is an association between the two variables or that the two events are not independent.</p>
 <p>(The symbolic notation would be too messy, so it’s not included)</p>
-<p><strong>Expected Counts</strong>: The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
+<p><strong>Expected Counts</strong>:</p>
+<p>The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
 <p><span class="math display">\[Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}\]</span></p>
 <p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
-<p><strong>Degrees of freedom</strong>: We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
+<p><strong>Degrees of freedom</strong>:</p>
+<p>We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
 <p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
 <section id="chi-indepen-ex" class="level3" data-number="15.5.1">
 <h3 data-number="15.5.1" class="anchored" data-anchor-id="chi-indepen-ex"><span class="header-section-number">15.5.1</span> Example</h3>
@@ -842,12 +861,15 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 <p>Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?</p>
 <section id="state-2" class="level4" data-number="15.5.1.1">
 <h4 data-number="15.5.1.1" class="anchored" data-anchor-id="state-2"><span class="header-section-number">15.5.1.1</span> State</h4>
+<blockquote class="blockquote">
 <p><span class="math inline">\(H_0\)</span>: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
 <p><span class="math inline">\(H_a\)</span>: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
 <p><span class="math inline">\(\alpha =0.05\)</span></p>
+</blockquote>
 </section>
 <section id="plan-2" class="level4" data-number="15.5.1.2">
 <h4 data-number="15.5.1.2" class="anchored" data-anchor-id="plan-2"><span class="header-section-number">15.5.1.2</span> Plan</h4>
+<blockquote class="blockquote">
 <p><span class="math inline">\(\chi^2\)</span> Test of Independence</p>
 <p>Expected counts:</p>
 <table class="table">
@@ -886,23 +908,24 @@ H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
 </tr>
 </tbody>
 </table>
-<p>Random: The high school students are a random sample.</p>
-<p>Large: all of the expected counts are greater than 5</p>
-<p>Independence: There are more than 4520 high school students</p>
+<p><strong>Random:</strong> The high school students are a random sample.</p>
+<p><strong>Large:</strong> all of the expected counts are greater than 5</p>
+<p><strong>Independence:</strong> There are more than 4520 high school students</p>
+</blockquote>
 </section>
 <section id="do-2" class="level4" data-number="15.5.1.3">
 <h4 data-number="15.5.1.3" class="anchored" data-anchor-id="do-2"><span class="header-section-number">15.5.1.3</span> Do</h4>
-<span class="math display">\[\begin{aligned}
-\chi^2 = &amp;\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
-&amp;\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
-
-df =&amp;  (3-1)(2-1) = 2\\\\
-\text{p-value} =&amp; \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
-\end{aligned}\]</span>
+<blockquote class="blockquote">
+<p><span class="math display">\[
+\begin{aligned} \chi^2 = &amp;\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\ &amp;\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\df =&amp; (3-1)(2-1) = 2\\\\ \text{p-value} =&amp; \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0 \end{aligned}
+\]</span></p>
+</blockquote>
 </section>
 <section id="conclude-2" class="level4" data-number="15.5.1.4">
 <h4 data-number="15.5.1.4" class="anchored" data-anchor-id="conclude-2"><span class="header-section-number">15.5.1.4</span> Conclude</h4>
+<blockquote class="blockquote">
 <p>Since our <span class="math inline">\(p-value \approx 0 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.</p>
+</blockquote>
 </section>
 </section>
 </section>
@@ -967,7 +990,9 @@ df =&amp;  (3-1)(2-1) = 2\\\\
 </tr>
 </tbody>
 </table>
+<blockquote class="blockquote">
 <p>Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.</p>
+</blockquote>
 
 
 </section>

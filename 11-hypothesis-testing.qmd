@@ -77,21 +77,18 @@ Factinate.com claims that 84% of teenagers think highly of their mother. To inve
 
 1. State appropriate hypotheses for performing a significance test. Be sure to define the parameter of interest.
 
-Let $p =$ the proportion of teenagers who think highly of their mother.
-
-$H_0: p = 0.85$ (This is because we are assuming there is "no difference" from Factinate.com's claim)
-
+> Let $p =$ the proportion of teenagers who think highly of their mother. \ \
+$H_0: p = 0.85$ (This is because we are assuming there is "no difference" from Factinate.com's claim) \ \
 $H_0: p > 0.85$ (The evidence that we got is $\frac{135}{150}$, which is greater than 0.85; also the problem asks, "Do these data provide convincing evidence that the true proportion of teens who think highly of their mother is **greater than 0.84**?")
 
 2. The school psychologist performed the significance test and obtained a *P*-value of 0.0225. Interpret the P-value.
 
-Assuming that that $H_0$ is true (i.e. $p = 0.84$), there is a 0.0225 probability of getting a sample proportion of $\frac{135}{150}$ or greater purely by chance.
-
+> Assuming that that $H_0$ is true (i.e. $p = 0.84$), there is a 0.0225 probability of getting a sample proportion of $\frac{135}{150}$ or greater purely by chance. \ \
 * You can also include the context as we have before, but the context in this answer already infers knowledge that we are interpreting in the context of long-term frequency. This is really all you need for this interpretation.
 
 3. What conclusion would you make at the $\alpha = 0.05$ level?
 
-Since $\text{p-value } = 0.0225<0.05=\alpha$, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.
+> Since $\text{p-value } = 0.0225<0.05=\alpha$, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.
 
 ## Type I and II Error
 

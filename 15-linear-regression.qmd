@@ -251,8 +251,7 @@ Plot the residual plot:
 
 Repeat the previous steps, except you don't need to plot your regression equation, you can can un-highlight it (just go the `=` and hit `enter`). Change the `Ylist` to `RESID` in your `stat plot` plot so that you are plotting the residuals against the x-values.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u1t8dtca7UU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+{{< video https://www.youtube.com/embed/u1t8dtca7UU >}}
 
 ## Miscellaneous Things to Remember
 
