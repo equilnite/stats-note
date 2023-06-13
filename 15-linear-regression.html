@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="These are notes for AP Statistics.">
+
+<title>AP Statistics Notes - 16&nbsp; Linear Regression</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./15.5-slope-inference.html" rel="next">
+<link href="./14-chi-square.html" rel="prev">
+<link href="./favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+<script src="https://unpkg.com/browse/mathjs@11.6.0/dist/math.min.js"></script>
+<script src="./scripts/jstat.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="style/console.css">
+<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-linear-regression.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AP Statistics Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-basic-notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-cat-vis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-quant-vis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-experimental-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-density-curves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-random-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-sampling-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-confidence-intervals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-proportion-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-mean-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-chi-square.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-linear-regression.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.5-slope-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-formulas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-applets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Calculator applet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-statistic-to-pval.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-critical-vals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Critical Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#scatter-plots" id="toc-scatter-plots" class="nav-link active" data-scroll-target="#scatter-plots"><span class="header-section-number">16.1</span> Scatter plots</a>
+  <ul class="collapse">
+  <li><a href="#an-example-of-a-scatter-plot" id="toc-an-example-of-a-scatter-plot" class="nav-link" data-scroll-target="#an-example-of-a-scatter-plot"><span class="header-section-number">16.1.1</span> An example of a scatter plot</a></li>
+  </ul></li>
+  <li><a href="#LSRL-model" id="toc-LSRL-model" class="nav-link" data-scroll-target="#LSRL-model"><span class="header-section-number">16.2</span> Least Squares Regression Model</a>
+  <ul class="collapse">
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">16.2.1</span> Correlation</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">16.2.2</span> Residuals</a></li>
+  <li><a href="#other-definitions" id="toc-other-definitions" class="nav-link" data-scroll-target="#other-definitions"><span class="header-section-number">16.2.3</span> Other definitions</a></li>
+  </ul></li>
+  <li><a href="#doing-it-in-your-calculator" id="toc-doing-it-in-your-calculator" class="nav-link" data-scroll-target="#doing-it-in-your-calculator"><span class="header-section-number">16.3</span> Doing it in your calculator:</a></li>
+  <li><a href="#miscellaneous-things-to-remember" id="toc-miscellaneous-things-to-remember" class="nav-link" data-scroll-target="#miscellaneous-things-to-remember"><span class="header-section-number">16.4</span> Miscellaneous Things to Remember</a></li>
+  <li><a href="#basic-linreg-output" id="toc-basic-linreg-output" class="nav-link" data-scroll-target="#basic-linreg-output"><span class="header-section-number">16.5</span> Interpreting Computer Output</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">16.5.1</span> Example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="scatter-plots" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="scatter-plots"><span class="header-section-number">16.1</span> Scatter plots</h2>
+<p>A <strong>scatter plot</strong> is a graph that shows the relationship between two quantitative variables measured on the same individuals. The values of one variable appear on the horizontal axis, and the values of the other variable appear on the vertical axis. Each individual in the data is represented as a point on the graph. We want to know if there is any relationship between the two quantitative variables. In other words, as the x-value increases, does the y-value tend to increase, decrease, or stay the same? Or do the two variables appear to be related at all? Are there any outliers? A scatter plot allows us to answer these questions visually. In a scatter plot, the y-axis is always the response variable (which measures an outcome of a study) the x-axis is always the e<strong>X</strong>planatory variable (which may help explain or influence changes in the response variable).</p>
+<div class="highlight">
+<p>We can describe the relationships between two quantitative variables through their scatter plot’s:</p>
+<ol type="a">
+<li><p>Strength: The degree to which the points follow a pattern</p></li>
+<li><p>Form: Linear or non-linear</p></li>
+<li><p>Direction: Positive or negative association</p></li>
+<li><p>Outliers: Individual observations that fall outside the overall pattern</p></li>
+</ol>
+</div>
+<details>
+<summary>
+Make sure to remember these small details when describing your scatterplots.
+</summary>
+<ul>
+<li>You should remember to describe your strength and direction of the relationships through the form of the relationship.
+<ul>
+<li>Likewise, describe your outliers through the form of the relationship.</li>
+</ul></li>
+<li>Make sure to include the context of the problem when you are describing the relationship.</li>
+</ul>
+</details>
+<section id="an-example-of-a-scatter-plot" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="an-example-of-a-scatter-plot"><span class="header-section-number">16.1.1</span> An example of a scatter plot</h3>
+<p>Here’s an example of a scatter plot, with the iris data set of just the <em>setosa</em> species:</p>
+<div class="cell" data-hash="15-linear-regression_cache/html/unnamed-chunk-1_9822491f2a219e5e4ec965dae5095a85">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Sepal.Length"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[5],"type":["fct"],"align":["left"]}],"data":[{"1":"5.1","2":"3.5","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.0","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.7","2":"3.2","3":"1.3","4":"0.2","5":"setosa"},{"1":"4.6","2":"3.1","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.6","3":"1.4","4":"0.2","5":"setosa"},{"1":"5.4","2":"3.9","3":"1.7","4":"0.4","5":"setosa"},{"1":"4.6","2":"3.4","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.0","2":"3.4","3":"1.5","4":"0.2","5":"setosa"},{"1":"4.4","2":"2.9","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.1","5":"setosa"},{"1":"5.4","2":"3.7","3":"1.5","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.4","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.1","5":"setosa"},{"1":"4.3","2":"3.0","3":"1.1","4":"0.1","5":"setosa"},{"1":"5.8","2":"4.0","3":"1.2","4":"0.2","5":"setosa"},{"1":"5.7","2":"4.4","3":"1.5","4":"0.4","5":"setosa"},{"1":"5.4","2":"3.9","3":"1.3","4":"0.4","5":"setosa"},{"1":"5.1","2":"3.5","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.7","2":"3.8","3":"1.7","4":"0.3","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.5","4":"0.3","5":"setosa"},{"1":"5.4","2":"3.4","3":"1.7","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.7","3":"1.5","4":"0.4","5":"setosa"},{"1":"4.6","2":"3.6","3":"1.0","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.3","3":"1.7","4":"0.5","5":"setosa"},{"1":"4.8","2":"3.4","3":"1.9","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.0","3":"1.6","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.4","3":"1.6","4":"0.4","5":"setosa"},{"1":"5.2","2":"3.5","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.2","2":"3.4","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.7","2":"3.2","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.1","3":"1.6","4":"0.2","5":"setosa"},{"1":"5.4","2":"3.4","3":"1.5","4":"0.4","5":"setosa"},{"1":"5.2","2":"4.1","3":"1.5","4":"0.1","5":"setosa"},{"1":"5.5","2":"4.2","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.2","3":"1.2","4":"0.2","5":"setosa"},{"1":"5.5","2":"3.5","3":"1.3","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.6","3":"1.4","4":"0.1","5":"setosa"},{"1":"4.4","2":"3.0","3":"1.3","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.4","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.5","3":"1.3","4":"0.3","5":"setosa"},{"1":"4.5","2":"2.3","3":"1.3","4":"0.3","5":"setosa"},{"1":"4.4","2":"3.2","3":"1.3","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.5","3":"1.6","4":"0.6","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.9","4":"0.4","5":"setosa"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.6","2":"3.2","3":"1.4","4":"0.2","5":"setosa"},{"1":"5.3","2":"3.7","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.3","3":"1.4","4":"0.2","5":"setosa"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Let’s say that we are trying to see if sepal length and sepal width have a relationship, specifically, if sepal length can explain the differences in sepal width between irises. This makes our explanatory variable the sepal length and the response variable the sepal width.</p>
+<div class="cell" data-hash="15-linear-regression_cache/html/iris scatter plot_6d9df8ad5b35a715aa688a3c17d33526">
+<div class="cell-output-display">
+<p><img src="15-linear-regression_files/figure-html/iris scatter plot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Based off this plot, I would say that there is a moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.</p>
+</section>
+</section>
+<section id="LSRL-model" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="LSRL-model"><span class="header-section-number">16.2</span> Least Squares Regression Model</h2>
+<p>Suppose that we have a response variable <span class="math inline">\(y\)</span>, and an explanatory variable <span class="math inline">\(x\)</span>. If the relationship between the two variables is linear, then the relationship can be modeled by the following model:</p>
+<p><span class="math display">\[y = \alpha + \beta x + \epsilon\]</span></p>
+<p>Where</p>
+<ul>
+<li><p><span class="math inline">\(y\)</span> is the value of the response variable for a given value of the explanatory variable <span class="math inline">\(x\)</span> and some underlying “noise” <span class="math inline">\(\epsilon\)</span>.</p></li>
+<li><p><span class="math inline">\(\alpha\)</span> is the y-intercept, the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span></p></li>
+<li><p><span class="math inline">\(\beta\)</span> is the slope, and</p></li>
+<li><p><span class="math inline">\(\epsilon\)</span> is the underlying “noise”/error that we can expect out of the relationship.</p></li>
+</ul>
+<div class="highlight">
+<p>An estimate of this model would then have the following form:</p>
+<p><span class="math display">\[\hat y = a + bx\]</span></p>
+<p>Where</p>
+<ul>
+<li><p><span class="math inline">\(\hat y\)</span> is the predicted value of the response variable <span class="math inline">\(y\)</span> for a given value of the explanatory variable <span class="math inline">\(x\)</span></p></li>
+<li><p><span class="math inline">\(a\)</span> is a statistic that estimates <span class="math inline">\(\alpha\)</span>, the y-intercept, and provides the value of <span class="math inline">\(\hat y\)</span> when <span class="math inline">\(x=0\)</span>.</p></li>
+<li><p><span class="math inline">\(b\)</span> is a statistic that estimates <span class="math inline">\(\beta\)</span>, the slope.</p></li>
+</ul>
+</div>
+<div class="highlight">
+<p>We interpret <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> as:</p>
+<dl>
+<dt>Sample sentence frame for a <strong>Y-INTERCEPT</strong></dt>
+<dd>
+When the [<em>explanatory variable</em>] is zero, our model predicts the [<em>response variable</em>] would be [<em>y-intercept</em>].
+</dd>
+<dt>Sample sentence frame for a <strong>SLOPE</strong>:</dt>
+<dd>
+For every 1 [<em>unit</em>] increase in [<em>explanatory variable</em>], our model predicts an average change of [slope] in [<em>response variable</em>]
+</dd>
+</dl>
+</div>
+<section id="correlation" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">16.2.1</span> Correlation</h3>
+<p>A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is. The correlation <span class="math inline">\(r\)</span> measures the direction and strength of the linear relationship between two quantitative variables.</p>
+<p><span class="math display">\[r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)\]</span></p>
+<div class="highlight">
+<ul>
+<li><p><span class="math inline">\(r\)</span> is always a number between -1 and 1</p></li>
+<li><p><span class="math inline">\(r &gt; 0\)</span> indicates a positive association.</p></li>
+<li><p><span class="math inline">\(r &lt; 0\)</span> indicates a negative association.</p></li>
+<li><p>Values of <span class="math inline">\(r\)</span> near 0 indicate a very weak linear relationship.</p></li>
+<li><p>The strength of the linear relationship increases as <span class="math inline">\(r\)</span> moves away from 0 towards -1 or 1.</p></li>
+<li><p>The extreme values <span class="math inline">\(r = -1\)</span> and <span class="math inline">\(r = 1\)</span> occur only in the case of a perfect linear relationship.</p></li>
+<li><p>Correlation makes no distinction between explanatory and response variables.</p></li>
+<li><p><span class="math inline">\(r\)</span> does not change when we change the units of measurement of <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> or both.</p></li>
+<li><p>The correlation <span class="math inline">\(r\)</span> itself has no unit of measurement.</p></li>
+<li><p>CORRELATION DOES NOT IMPLY CAUSATION!!!</p></li>
+<li><p>Correlation requires that both variables be quantitative.</p></li>
+<li><p>Correlation does not describe curved relationships between variables.</p></li>
+<li><p>A value of <span class="math inline">\(r\)</span> close to -1 or 1 does not guarantee a linear relationship between them.</p></li>
+<li><p>Correlation is not resistant: <span class="math inline">\(r\)</span> is strongly affected by a few outlying observations</p></li>
+<li><p>What would be the effect of removing the outlier on the correlation?</p></li>
+<li><p>Correlation is not a complete summary of two-variable data.</p></li>
+</ul>
+</div>
+<p>The correlation <span class="math inline">\(r\)</span> only informs us how well the data can conform to a line (the strength of a linear relationship), and the direction of of the relationship. Otherwise, depending on <span class="math inline">\(r\)</span> is hard unless we look at a couple of other things, such as a <a href="#residual-plots">residual plot</a>.</p>
+<p>To interpret values of <span class="math inline">\(r\)</span>, follow this sentence frame:</p>
+<div class="highlight">
+<p>There is a [<em>strength</em>], [<em>direction</em>] relationship between the [<em>explanatory variable</em>] and the [<em>response variable</em>]</p>
+</div>
+</section>
+<section id="residuals" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="residuals"><span class="header-section-number">16.2.2</span> Residuals</h3>
+<p>In most cases, no line will pass through all of the points in a scatter plot. Because we use the line to predict <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>, the prediction errors we make are errors in <span class="math inline">\(y\)</span>, the vertical direction in the scatter plot. A regression line using our least squares method minimizes the squared residuals.</p>
+<div class="highlight">
+<p>A <strong>residual</strong> is the difference between an observed value of the response variable and the value predicted by the regression line. That is,<br>
+<span class="math display">\[r_i= \text{residual for the ith value}=\text{observed } i^{th} \text{ y value}-\text{predicted } i^{th} \text{ y value}=y_i-\hat y_i\]</span></p>
+<p>Interpreting RESIDUALS :The actual [<strong>response variable</strong>] for [<strong>specific value of the explanatory variable</strong>], is [<strong>greater than/less than</strong>] the predicted [response variable] by [<strong>residual value</strong>].</p>
+</div>
+<p>All the equations that we learn in this chapter are based off the fact that a least squares regression line minimizes the <em>squared</em> vertical deviations of the points from the line. In this course, you do not have to know the underlying proofs for the formulas.</p>
+<section id="residual-plots" class="level4" data-number="16.2.2.1">
+<h4 data-number="16.2.2.1" class="anchored" data-anchor-id="residual-plots"><span class="header-section-number">16.2.2.1</span> Residual Plots</h4>
+<p>We can plot the residuals versus the explanatory variable to obtain insight into the appropriateness of our regression model:</p>
+<div class="highlight">
+<p>Look for:</p>
+<dl>
+<dt>Curved pattern</dt>
+<dd>
+if there’s a curved pattern in our residuals, that means there’s a curved pattern in our observations that we didn’t notice before, probably because of the scale of our scatterplot. A curved pattern means that a linear model (like an LSR line) is probably not appropriate to describe our data. We should try to use a non-linear model (we’ll look at these in Chapter 4).
+</dd>
+<dt>Heteroskedasticity</dt>
+<dd>
+In other words, is there a pattern in our plot? If the residuals are getting larger at one or both ends of the data, that means our model is not predicting as well in those areas (remember that a big residual = a big error in prediction) and shouldn’t be used to make predictions for those values of our explanatory (x) variable.
+</dd>
+</dl>
+</div>
+</section>
+<section id="residual-sd" class="level4" data-number="16.2.2.2">
+<h4 data-number="16.2.2.2" class="anchored" data-anchor-id="residual-sd"><span class="header-section-number">16.2.2.2</span> Standard Deviation of Residuals</h4>
+<p>To assess how well the line fits all the data, we need to consider the residuals for each observation, not just one. Using these residuals, we can estimate the “typical” prediction error when using the least-squares regression line.</p>
+<div class="highlight">
+<p>If we use a least-squares regression line to predict the values of a response variable <span class="math inline">\(y\)</span> from an explanatory variable <span class="math inline">\(x\)</span>, the standard deviation of the residuals (<span class="math inline">\(s\)</span>) is given by</p>
+<p><span class="math display">\[s = \sqrt{\frac{\sum (residuals ^2)}{n-2}}=\sqrt{\frac{\sum (y_i - \hat y_i)^2)}{n - 2}}\]</span></p>
+<p>This value gives the approximate size of a “typical” prediction error (residual).</p>
+<p><strong>Sample Sentence Frame</strong></p>
+<p>When using the LSRL with [<em>explanatory variable</em>] to predict [<em>response variable</em>], we will typically be off by about [<em>the value of <span class="math inline">\(s\)</span> with units of the response variable (<span class="math inline">\(y\)</span>)</em>].</p>
+</div>
+</section>
+<section id="coefficient-of-determination" class="level4" data-number="16.2.2.3">
+<h4 data-number="16.2.2.3" class="anchored" data-anchor-id="coefficient-of-determination"><span class="header-section-number">16.2.2.3</span> Coefficient of Determination</h4>
+<p>When we do the least squares model, we minimize the squares of the residuals, but what can we compare this to? We compare it to another line (a “baseline” model), that always predicts the mean of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>. In other words, we compare it to <span class="math inline">\(\hat y = \bar y\)</span>. We do this since this baseline model practically means that are are saying that there is no relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. On the other hand, in the least squares model, we are trying to say that there is a relationship.</p>
+<p>The coefficient of determination, <span class="math inline">\(r^2\)</span> is defined by the % reduction in squared error that using a least squares model has in comparison to the baseline model.</p>
+<p><span class="math display">\[r^2 = \frac{\text{size of reduction}}{\text{original amount}} = \frac{SST - SSE}{SST} = 1 -\frac{SSE}{SST} = 1 - \frac{\sum (y_i-\hat y)^2}{\sum (y_i - \bar y)^2}\]</span></p>
+</section>
+</section>
+<section id="other-definitions" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="other-definitions"><span class="header-section-number">16.2.3</span> Other definitions</h3>
+<p>Sometimes you’re just given a summary of the data instead of every single point. In this case, you can still find a (the y-intercept) and b (the slope) of the LSR line, and write the equation. To do this you need to know the following:</p>
+<div class="highlight">
+<p>Remembering the basic notation from <a href="#LSRL-model">least squares regression model</a>,</p>
+<p><span class="math display">\[b=r\frac{s_y}{s_x}\]</span></p>
+<p>The LSR line always passes through the mean of both the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> variables, <span class="math display">\[(\bar x, \bar y)\]</span>. So when you apply slope-point formula and the using <span class="math inline">\(b\)</span> as calculated above, we can find that:</p>
+<p><span class="math display">\[a=\bar y-b\bar x\]</span></p>
+</div>
+</section>
+</section>
+<section id="doing-it-in-your-calculator" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="doing-it-in-your-calculator"><span class="header-section-number">16.3</span> Doing it in your calculator:</h2>
+<ol type="1">
+<li><p>Enter your <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> into two lists in your calculator (access it by <code>STAT &gt; EDIT</code>).</p></li>
+<li><p>Go to <code>STAT &gt; CALC &gt; LinReg(a+bx)</code>. The usage for this will be: <code>LinReg(a+bx) explanatory list, response list, desired equation destination</code></p>
+<ul>
+<li>An example would be: <code>LinReg(a+bx) L1, L2, Y1</code></li>
+<li>You assess the function variables by going to: <code>VARS &gt; Y-VARS &gt; Function</code> and you can choose any one that you want (normally <code>Y1</code>)</li>
+</ul></li>
+<li><p>Enter the command.</p>
+<ul>
+<li>You’ll see the value for <code>a</code>, <code>b</code>, <code>r2</code>, and <code>r</code></li>
+<li>You’ll also be able to observe a few other things
+<ul>
+<li>Since you entered a destination for your equation, your equation will be saved (go to <code>Y=</code> and look at your equations there)</li>
+<li>The residuals for each observation will also be calculated, which you can see in the <code>RESID</code> list (go to <code>2nd &gt; stat (list)</code> and scroll down to see it)</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>Plot the scatterplot (and regression line):</p>
+<ol type="1">
+<li><p>Go to <code>2nd &gt; Y= (stat plot)</code> and choose any of the plots.</p></li>
+<li><p>Choose <code>On</code> and the scatter plot (first option)</p></li>
+<li><p>Specify the list for the <code>Xlist</code> and <code>Ylist</code></p></li>
+<li><p>Go to <code>Y=</code> and make sure the <code>=</code> for the regression equation is on (highlighted)</p></li>
+<li><p>Do <code>zoom &gt; ZoomStat</code>. This ensures everything is in your graphing window and takes you to the graph.</p></li>
+</ol>
+<p>Plot the residual plot:</p>
+<p>Repeat the previous steps, except you don’t need to plot your regression equation, you can can un-highlight it (just go the <code>=</code> and hit <code>enter</code>). Change the <code>Ylist</code> to <code>RESID</code> in your <code>stat plot</code> plot so that you are plotting the residuals against the x-values.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/u1t8dtca7UU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="miscellaneous-things-to-remember" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="miscellaneous-things-to-remember"><span class="header-section-number">16.4</span> Miscellaneous Things to Remember</h2>
+<ol type="1">
+<li><p><em>The distinction between explanatory and response variables is important in regression</em>. Least-squares regression makes the distances of the data points from the line small only in the y direction. If we reverse the roles of the two variables, we get a different least-squares regression line. This isn’t true for correlation: switching x and y doesn’t affect the value of r.</p></li>
+<li><p><em>Correlation and regression lines describe only linear relationships</em>. You can calculate the correlation and least-squares line for any relationship between two quantitative variables, but the results are useful only if the scatterplot shows a linear pattern. ALWAYS PLOT YOUR DATA.</p>
+<ul>
+<li><a href="https://blog.revolutionanalytics.com/2017/05/the-datasaurus-dozen.html">Here’s an interesting thing to look at</a></li>
+</ul></li>
+<li><p><em>Correlation and least-squares regression lines are not resistant</em>.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="graphics/influ-obs.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A scatterplot of Gesell Adaptive Scores versus the age at the first word for 21 children.</figcaption>
+</figure>
+</div>
+<p>Remember, an outlier is an observation that lies outside the overall pattern of other observations. In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither.</p>
+<div class="highlight">
+<p>An influential observation in statistics is a point that has a large effect on a statistical calculation. In other words, an observation is considered influential if removing it would markedly change the regression line.</p>
+</div>
+<details>
+<summary>
+Which appears to have the greatest influence on the position of the regression line?
+</summary>
+<p>Child 18 is the most influential observation here. Notice how removing (and adding) child 18 caused the greatest change in the regression line. Child 19 is a close one, but Child 18 has the most influence.</p>
+We could say that Child 18 is an outlier in the x-direction and y-direction meanwhile child 19 is an outlier in the y-direction
+</details>
+<details>
+<summary>
+Will influential observations always have large residuals? Why/why not? Try to find some examples on your own first.
+</summary>
+<p>No, take the previous example for instance. Child 18 has an extremely small residual in the plot.</p>
+So, influential observations actually often have small residuals. This is because they have “influence” on the line; they “pull” the regression line towards them. So if the regression line is closer to them, then they have a small residual.
+</details>
+<ol start="4" type="1">
+<li><em>Correlation does not imply causation</em>. When we study the relationship between two variables, we often hope to show that changes in the explanatory variable cause changes in the response variable. <em>A strong association between two variables is not enough to draw conclusions about cause and effect.</em> <a href="#experimental-design">We’ve learned how to draw cause and effect relationships and the scope of inference.</a></li>
+</ol>
+<details>
+<summary>
+Consider the study that found people with two cars live longer than people who only own one car. Owning three cars is even better, and so on. There is a substantial positive association between the number of cars x and the length of life y. The basic meaning of causation is that by changing x, we can bring about a change in y. Could we lengthen our lives by buying more cars?
+</summary>
+No.&nbsp;This does not even make sense to happen. What does make sense is looking between the lines and determining that there are other factors at play. A common variable here that would confound this relationship (confounding variable) would be the wealth of individuals. By having more wealth, you have more cars and are likely to live longer. Since this factor is in play, it’s likely the real reason why we see this positive relationship between number of cars and length of life.
+</details>
+<p><a href="https://tylervigen.com/">See this website for more examples on weird correlations.</a></p>
+</section>
+<section id="basic-linreg-output" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="basic-linreg-output"><span class="header-section-number">16.5</span> Interpreting Computer Output</h2>
+<p>You are expected to know how to interpret computer out in MINITAB format (just what you normally see).</p>
+<p><a href="#more-linreg-output">See the next section for the rest of the interpretation</a></p>
+<section id="example" class="level3" data-number="16.5.1">
+<h3 data-number="16.5.1" class="anchored" data-anchor-id="example"><span class="header-section-number">16.5.1</span> Example</h3>
+<p>Below is the computer output from a basic regression analysis for the Ford-F-150 data relating the mileage and value of Ford F-150s.</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        38257       2446        15.64  0.000
+Miles Driven    -0.16292    0.03096     -5.26  0.000
+
+S = 5740.13   R-Sq = 66.4%   R-Sq(adj) = 64.0%</code></pre>
+<p>Let’s first identify a few basic facts, when we have a LSRL, the line is of form <span class="math display">\[\hat y = a + b x\]</span></p>
+<p>From our basic knowledge of algebra, <span class="math inline">\(b\)</span> is the coefficient of <span class="math inline">\(x\)</span> in the equation and the only things that we really need values (estimates) for are <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. So the two rows of interest for now are looking at the <code>Predictor</code> and the <code>Coef</code> of the <code>Predictor</code>.</p>
+<details>
+<summary>
+What is a predictor?
+</summary>
+What variable are we using to “predict”? Obviously, we are trying to predict <span class="math inline">\(y\)</span> based off <span class="math inline">\(x\)</span>, so <span class="math inline">\(x\)</span> is our “predictor” and the constant term <span class="math inline">\(a\)</span> in the equation is actually included here too, since it’s involved in our prediction.
+</details>
+<p>We can identify that our explanatory variable is mileage (<code>Miles Driven</code>) and our response variable is the value of the Ford F-150.</p>
+<p>So what we can figure out from these math facts here are that each value correspond to the following:</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        a           2446        15.64  0.000
+Miles Driven    b           0.03096     -5.26  0.000
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
+<div class="highlight">
+<p>To reiterate, we can figure out that for a LSRL with this data and knowing our explanatory variable is mileage (<code>Miles Driven</code>) and our response variable is the value of the Ford F-150,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;a = 38257\\
+&amp;b = -0.16292\\
+&amp;s = 5740.13\\
+&amp;r^2 = .664
+\end{aligned}
+\]</span></p>
+</div>
+<p>Thus our LSRL is <span class="math display">\[\hat{\text{value of F-150}} = 38257 - 0.16292 (\text{miles driven})\]</span></p>
+<p>With <span class="math inline">\(s = 5740.13\)</span> and <span class="math inline">\(r^2 = .664\)</span>.</p>
+<div class="highlight">
+<p>We can also infer from this output that since <span class="math inline">\(b\)</span> is negative (negative slope, so negative relationship), that <span class="math display">\[r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 \]</span></p>
+</div>
+<p>Other parts are irrelevant to this chapter.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./14-chi-square.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./15.5-slope-inference.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

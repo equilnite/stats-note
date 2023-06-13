@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="These are notes for AP Statistics.">
+
+<title>AP Statistics Notes - 17&nbsp; Inference for Linear Regression</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./16-formulas.html" rel="next">
+<link href="./15-linear-regression.html" rel="prev">
+<link href="./favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+<script src="https://unpkg.com/browse/mathjs@11.6.0/dist/math.min.js"></script>
+<script src="./scripts/jstat.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="style/console.css">
+<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15.5-slope-inference.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AP Statistics Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-basic-notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-cat-vis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-quant-vis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-experimental-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-density-curves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-random-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-sampling-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-confidence-intervals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-proportion-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-mean-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-chi-square.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-linear-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15.5-slope-inference.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-formulas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-applets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Calculator applet</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-statistic-to-pval.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-critical-vals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Critical Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Test</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#samp-dist-b" id="toc-samp-dist-b" class="nav-link active" data-scroll-target="#samp-dist-b"><span class="header-section-number">17.1</span> Sampling Distribution of <span class="math inline">\(b\)</span></a></li>
+  <li><a href="#slope-conds" id="toc-slope-conds" class="nav-link" data-scroll-target="#slope-conds"><span class="header-section-number">17.2</span> Conditions for Regression Inference</a></li>
+  <li><a href="#standard-error-of-b" id="toc-standard-error-of-b" class="nav-link" data-scroll-target="#standard-error-of-b"><span class="header-section-number">17.3</span> Standard Error of <span class="math inline">\(b\)</span></a></li>
+  <li><a href="#t-interval-for-beta" id="toc-t-interval-for-beta" class="nav-link" data-scroll-target="#t-interval-for-beta"><span class="header-section-number">17.4</span> <span class="math inline">\(t\)</span> interval for <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#significance-test-for-beta" id="toc-significance-test-for-beta" class="nav-link" data-scroll-target="#significance-test-for-beta"><span class="header-section-number">17.5</span> Significance Test for <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#more-linreg-output" id="toc-more-linreg-output" class="nav-link" data-scroll-target="#more-linreg-output"><span class="header-section-number">17.6</span> Interpreting Computer Output</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">17.6.1</span> Example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>As mentioned in our <a href="#LSRL-model">least squares regression model</a>, the goal of the model is to estimate <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. So after we’ve estimated them with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, what can we infer about the population parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>? For the most part, we’ll be only concerned about <span class="math inline">\(\beta\)</span>.</p>
+<section id="samp-dist-b" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="samp-dist-b"><span class="header-section-number">17.1</span> Sampling Distribution of <span class="math inline">\(b\)</span></h2>
+<div class="highlight">
+<p>Choose an SRS of <span class="math inline">\(n\)</span> observations <span class="math inline">\((x, y)\)</span> from a population of size <span class="math inline">\(N\)</span> with least-squares regression line <span class="math inline">\(\hat y=a+bx\)</span> with a population (true) relationship of <span class="math inline">\(y = \alpha + \beta x + \epsilon\)</span></p>
+<p>Let <span class="math inline">\(b\)</span> be the slope of the sample regression line. Then:</p>
+<ul>
+<li><p>The <strong>mean</strong> of the sampling distribution of <span class="math inline">\(b\)</span> is <span class="math display">\[\mu_b = \beta\]</span></p></li>
+<li><p>The <strong>standard deviation</strong> of the sampling distribution of <span class="math inline">\(b\)</span> is <span class="math display">\[\sigma_b = \frac{\sigma}{\sigma_x\sqrt n}\]</span> as long as the 10% Condition is satisfied.</p></li>
+<li><p>The sampling distribution of b will be <strong>approximately normal</strong> if the values of the response variable <span class="math inline">\(y\)</span> follow a Normal distribution for each value of the explanatory variable x (the <em>Normal condition</em>).</p></li>
+</ul>
+</div>
+<p>In this case, <span class="math inline">\(\sigma\)</span> represents the population standard deviation of plausible observations’ residuals from the population line.</p>
+</section>
+<section id="slope-conds" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="slope-conds"><span class="header-section-number">17.2</span> Conditions for Regression Inference</h2>
+<p>The regression model requires that for each possible value of the explanatory variable <span class="math inline">\(x\)</span>:</p>
+<ol type="1">
+<li><p>The mean value of the response variable <span class="math inline">\(\mu_y\)</span> falls on the population line. <span class="math display">\[\mu_y = \alpha + \beta x\]</span></p></li>
+<li><p>The values of the response variable <span class="math inline">\(y\)</span> follow a Normal distribution with common standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
+</ol>
+<p>Taking in account of the above information and the <a href="#samp-dist-b">sampling distribution of <span class="math inline">\(b\)</span></a>, we need to make sure that the following are met:</p>
+<div class="highlight">
+<dl>
+<dt>Linear</dt>
+<dd>
+The actual relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is linear.
+</dd>
+<dd>
+In other words, <em>For any fixed value of <span class="math inline">\(x\)</span>, the mean response <span class="math inline">\(\mu_y\)</span> falls on the population (true) regression line <span class="math inline">\(\mu_y= \alpha + \beta x\)</span></em>.
+</dd>
+<dt>Independent</dt>
+<dd>
+Individual observations are independent of each other. When sampling without replacement, check the 10% condition.
+</dd>
+<dt>Normal</dt>
+<dd>
+For any fixed value of <span class="math inline">\(x\)</span>, the response <span class="math inline">\(y\)</span> varies according to a Normal distribution.
+</dd>
+<dt>Equal SD</dt>
+<dd>
+The standard deviation of <span class="math inline">\(y\)</span> from the population regression line (call it <span class="math inline">\(\sigma\)</span>) is the same for all values of <span class="math inline">\(x\)</span>.
+</dd>
+<dt>Random</dt>
+<dd>
+The data come from a well-designed random sample or randomized experiment.
+</dd>
+</dl>
+</div>
+</section>
+<section id="standard-error-of-b" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="standard-error-of-b"><span class="header-section-number">17.3</span> Standard Error of <span class="math inline">\(b\)</span></h2>
+<p>Remember that we defined the <a href="#samp-dist-b">standard deviation of the sampling distribution of <span class="math inline">\(b\)</span></a>.</p>
+<div class="highlight">
+<p>An estimate of <span class="math inline">\(\sigma_b\)</span>, is the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span> which is defined as <span class="math display">\[SE_b = \frac{s}{s_x \sqrt{n-1}}\]</span> where <a href="#residual-sd"><span class="math inline">\(s\)</span> is the sample standard deviation of the residuals</a>,</p>
+</div>
+</section>
+<section id="t-interval-for-beta" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="t-interval-for-beta"><span class="header-section-number">17.4</span> <span class="math inline">\(t\)</span> interval for <span class="math inline">\(\beta\)</span></h2>
+<div class="highlight">
+<p>When <a href="#slope-conds">the conditions</a> are met, a level <span class="math inline">\(C\)</span> confidence interval for the slope <span class="math inline">\(\beta\)</span> is <span class="math display">\[b \pm t^* \cdot SE_b\]</span> and <span class="math inline">\(t^*\)</span> is the critical value for the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(df = n - 2\)</span> having area <span class="math inline">\(C\)</span> between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
+</div>
+</section>
+<section id="significance-test-for-beta" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="significance-test-for-beta"><span class="header-section-number">17.5</span> Significance Test for <span class="math inline">\(\beta\)</span></h2>
+<p>When <a href="#slope-conds">the conditions</a> are met, we can use the slope <span class="math inline">\(b\)</span> of the sample regression line to conduct a significance test about the slope parameter <span class="math inline">\(\beta\)</span>.</p>
+<div class="highlight">
+<p>The null hypothesis has the general form <span class="math inline">\(H_0: \beta = \beta_0\)</span> (hypothesized slope)</p>
+<p>We’ll mainly restrict ourselves to situations in which the hypothesized slope is 0. (i.e.&nbsp;there is no relationship between the two variables).</p>
+<p>The alternative hypothesis says what direction we expect: <span class="math display">\[H_a:\beta&gt;\beta_0~~\text{or}~~Ha:\beta&lt;\beta_0~~\text{or}~~Ha:\beta\not =\beta_0\]</span></p>
+<p>The test statistic <span class="math inline">\(t\)</span> is calculated as:</p>
+<p><span class="math display">\[t = \frac{b - \beta_0 }{SE_b}\]</span></p>
+<p>The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, <span class="math inline">\(H_a\)</span>. <span class="math inline">\(t_{n-2}\)</span> represents the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(df = n-2\)</span> degrees of freedom.</p>
+<p><span class="math display">\[
+\text{p-value}= \begin{cases}
+P(t_{n-2}&lt;t) &amp; \text{ if } H_a:\beta&lt;\beta_0 \\
+P(t_{n-2}&gt;t) &amp; \text{ if } H_a:\beta&gt;\beta_0 \\
+2\cdot P(t_{n-2}&lt;-|t|) &amp; \text{ if } H_a: \beta\not =\beta_0
+\end{cases}
+\]</span></p>
+</div>
+</section>
+<section id="more-linreg-output" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="more-linreg-output"><span class="header-section-number">17.6</span> Interpreting Computer Output</h2>
+<p><a href="#basic-linreg-output">As we mentioned in the previous section, this builds off the previous example.</a></p>
+<section id="example" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">17.6.1</span> Example</h3>
+<p>We left off on the fact that we could identify the following:</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        a           2446        15.64  0.000
+Miles Driven    b           0.03096     -5.26  0.000
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
+<p>Now apply what you know what we now know we should look for. We should be looking for the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span>; the <span class="math inline">\(t\)</span>-statistic; and the corresponding <span class="math inline">\(p\)</span>-value. So in other words, we want to look for everything related to the estimated slope <span class="math inline">\(b\)</span> for the <code>Miles Driven</code> predicted (our explanatory variable). Applying this, you should be able to identify that each of these are:</p>
+<pre><code>Predictor       Coef        SECoef      T      P
+Constant        a           2446        15.64  0.000
+Miles Driven    b           SE_b        t      p-value
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
+<div class="highlight">
+<p>To reiterate, we can figure out that for a significance test for <span class="math inline">\(\beta\)</span> with this data,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;SE_b = 0.03096\\
+&amp;t = -5.25\\
+&amp;p\text{-value} \approx 0
+\end{aligned}
+\]</span></p>
+</div>
+<div class="highlight">
+<p>One thing to keep in mind is that the <span class="math inline">\(p\)</span>-value given is always for a two-sided test where <span class="math inline">\(H_a: \beta \not = \beta_0\)</span>. So if you want the <span class="math inline">\(p\)</span>-value for a one-sided test (where <span class="math inline">\(H_a: \beta &gt; \beta_0\)</span> or <span class="math inline">\(H_a: \beta &lt; \beta_0\)</span>), you have to take half of the <span class="math inline">\(p\)</span>-value that you see in the computer output.</p>
+</div>
+<p>Other parts are irrelevant to this course.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="./15-linear-regression.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./16-formulas.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
