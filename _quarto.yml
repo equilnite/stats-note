@@ -47,8 +47,6 @@ format:
     df-print: paged
     css: ["style/console.css", "style/style.css"]
     page-layout: full
-  pdf:
-    documentclass: scrreprt
 
 execute:
   echo: false
