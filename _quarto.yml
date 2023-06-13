@@ -1,6 +1,5 @@
 project:
   type: book
-  output-dir: docs
   preview:
     port: 4200
     browser: false
@@ -30,6 +29,7 @@ book:
     - 14-chi-square.qmd
     - 15-linear-regression.qmd
     - 15.5-slope-inference.qmd
+    - Forecasting.qmd
   appendices:
     - 16-formulas.qmd
     - 17-applets.qmd

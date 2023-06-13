@@ -263,7 +263,7 @@ Repeat the previous steps, except you don't need to plot your regression equatio
 3. *Correlation and least-squares regression lines are not resistant*.
 
 ![A scatterplot of Gesell Adaptive Scores versus the age at the first word for 21 children. 
-](influ-obs.png)
+](graphics/influ-obs.png)
 
 Remember, an outlier is an observation that lies outside the overall pattern of other observations.  In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither. 
 

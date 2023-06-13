@@ -22,6 +22,6 @@ This is meant to be something similar to how your calculator works. The behavior
 <span class="prompt" id="prompt">»&nbsp;</span> <span contenteditable="true" id="command"></span>
 </div>
 
-<script src="./web.js"></script>
-<script src="./jstat.min.js"></script>
-<script src="./dist.js"></script>
+<script src="./scripts/web.js"></script>
+<script src="./scripts/jstat.min.js"></script>
+<script src="./scripts/dist.js"></script>
