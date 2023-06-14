@@ -311,7 +311,7 @@ Not all statistics are unbiased estimators and the data that we collect always h
 The variability of a statistic is described by the spread of its sampling distribution.
 </dd>
 <dd>
-This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="#ten-per-cond">10% Condition</a>).
+This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="08-random-variables.html#ten-per-cond">10% Condition</a>).
 </dd>
 </dl>
 <section id="sampling-distribution-of-hat-p" class="level2" data-number="10.1">
@@ -320,8 +320,8 @@ This spread is determined mainly by the size of the random sample. Larger sample
 <p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
 <ul>
 <li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="#ten-per-cond">10% condition</a> is satisfied.</p></li>
-<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="08-random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="08-random-variables.html#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
 </ul>
 <p><span class="math display">\[\begin{equation}
 np \geq 10 \text{ and }n(1-p) \geq 10
@@ -334,7 +334,7 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 <p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
 <ul>
 <li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="08-random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
 </ul>
 <p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
 </div>

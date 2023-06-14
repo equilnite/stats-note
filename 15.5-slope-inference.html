@@ -294,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>As mentioned in our <a href="#LSRL-model">least squares regression model</a>, the goal of the model is to estimate <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. So after we’ve estimated them with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, what can we infer about the population parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>? For the most part, we’ll be only concerned about <span class="math inline">\(\beta\)</span>.</p>
+<p>As mentioned in our <a href="15-linear-regression.html#LSRL-model">least squares regression model</a>, the goal of the model is to estimate <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. So after we’ve estimated them with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, what can we infer about the population parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>? For the most part, we’ll be only concerned about <span class="math inline">\(\beta\)</span>.</p>
 <section id="samp-dist-b" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="samp-dist-b"><span class="header-section-number">17.1</span> Sampling Distribution of <span class="math inline">\(b\)</span></h2>
 <div class="highlight">
@@ -348,7 +348,7 @@ The data come from a well-designed random sample or randomized experiment.
 <h2 data-number="17.3" class="anchored" data-anchor-id="standard-error-of-b"><span class="header-section-number">17.3</span> Standard Error of <span class="math inline">\(b\)</span></h2>
 <p>Remember that we defined the <a href="#samp-dist-b">standard deviation of the sampling distribution of <span class="math inline">\(b\)</span></a>.</p>
 <div class="highlight">
-<p>An estimate of <span class="math inline">\(\sigma_b\)</span>, is the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span> which is defined as <span class="math display">\[SE_b = \frac{s}{s_x \sqrt{n-1}}\]</span> where <a href="#residual-sd"><span class="math inline">\(s\)</span> is the sample standard deviation of the residuals</a>,</p>
+<p>An estimate of <span class="math inline">\(\sigma_b\)</span>, is the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span> which is defined as <span class="math display">\[SE_b = \frac{s}{s_x \sqrt{n-1}}\]</span> where <a href="15-linear-regression.html#residual-sd"><span class="math inline">\(s\)</span> is the sample standard deviation of the residuals</a>,</p>
 </div>
 </section>
 <section id="t-interval-for-beta" class="level2" data-number="17.4">
@@ -378,7 +378,7 @@ P(t_{n-2}&gt;t) &amp; \text{ if } H_a:\beta&gt;\beta_0 \\
 </section>
 <section id="more-linreg-output" class="level2" data-number="17.6">
 <h2 data-number="17.6" class="anchored" data-anchor-id="more-linreg-output"><span class="header-section-number">17.6</span> Interpreting Computer Output</h2>
-<p><a href="#basic-linreg-output">As we mentioned in the previous section, this builds off the previous example.</a></p>
+<p><a href="15-linear-regression.html#basic-linreg-output">As we mentioned in the previous section, this builds off the previous example.</a></p>
 <section id="example" class="level3" data-number="17.6.1">
 <h3 data-number="17.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">17.6.1</span> Example</h3>
 <p>We left off on the fact that we could identify the following:</p>
