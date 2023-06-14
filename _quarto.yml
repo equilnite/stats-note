@@ -48,4 +48,4 @@ format:
 execute:
   echo: false
   warning: false
-  cache: true
+  freeze: auto
