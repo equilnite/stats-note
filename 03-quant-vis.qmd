@@ -43,7 +43,6 @@ data.frame(x)
 A stem plot looks like this:
 
 ```{r stemplot-pic}
-#install.packages("aplpack")
 library(aplpack)
 stem.leaf(x, style = "bare", depths = FALSE)
 ```
@@ -107,8 +106,9 @@ summary(x, quantile.type = 1)[-4]
 As detailed above, our box plot then looks like:
 
 ```{r simple-boxplot}
-library(qboxplot)
-qboxplot(data.frame(x), qtype = 1, horizontal = TRUE)
+#| fig-height: 2
+ggplot(data.frame(x)) +
+    geom_boxplot(aes(x = x))
 ```
 
 The last detail is that we can calculate outliers using the 1.5 IQR rule
@@ -141,7 +141,9 @@ So our 12 is an outlier. which means we draw our right whisker to 6 and
 plot the 12 individually on the number line. Like so:
 
 ```{r Advanced Box Plot}
-qboxplot(data.frame(x), qtype = 1, horizontal = TRUE)
+#| fig-height: 2
+ggplot(data.frame(x)) +
+    geom_boxplot(aes(x = x))
 ```
 
 ## Histograms

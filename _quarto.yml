@@ -36,9 +36,6 @@ book:
     - 19-critical-vals.qmd
     - 20-test.qmd
 
-website:
-  google-analytics: "G-S4N3YXEH4V"
-
 format:
   html:
     include-in-header:
@@ -52,6 +49,3 @@ execute:
   echo: false
   warning: false
   cache: true
-
-
-
