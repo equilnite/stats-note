@@ -16,6 +16,12 @@ When we describe a simulation, we want to describe the following:
 
 3. Estimate the probability in question.
 
+::: {.callout-warning}
+Keep in mind that simulations *are* **simulations**. This means that if you're describing how to simulate something, you absolutely cannot say to do what you're asked to describe to simulate.
+
+i.e. If you're asked to describe a simulation of picking a Skittle out of a bag randomly, you cannot say that to simulate it, pick a Skittle out of a bag randomly.
+:::
+
 ## Probability Rules
 
 The sample space $\Omega$ of a chance process is the set of all possible outcomes. 
@@ -24,9 +30,7 @@ A probability model is a description of some chance process that consists of two
 
 An event is any collection of outcomes from some chance process. That is, an event is a subset of the sample space. Events are usually designated by capital letters, like $A$, $B$, $C$, and so on. 
 
-A valid probability model always has to satisfy the following rules:
-
-::: {.highlight}
+::: {.callout-note title="Probability Model"}
 
 - For any event A, $0 \leq P(A) \leq 1$
 
@@ -40,15 +44,15 @@ We also have the following rules to calculate other things:
 
 $P(A|B)$ : the probability of event $A$ occurring, given that event $B$ has already occurred. (conditional probability)
 
-::: {.highlight}
-**Independent Events**: Two events $A$ and $B$ are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).  
+::: {.callout-note title="Independent Events"}
+Two events $A$ and $B$ are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).  
 
 For independent events, 
 $$P(A)=P(A|B) \text{ and } P(B)=P(B|A)$$
 :::
 
-::: {.highlight}
-**Mutually Exclusive** (or Disjoint) Events: Events $A$ and $B$ are mutually exclusive if it’s impossible for both to occur.  In one flip of a coin, heads and tails are mutually exclusive events.  
+::: {.callout-note title="Mutually Exclusive (or Disjoint)"}
+Events $A$ and $B$ are mutually exclusive if it’s impossible for both to occur.  In one flip of a coin, heads and tails are mutually exclusive events.  
 
 For mutually exclusive events, 
 
@@ -59,7 +63,7 @@ $$P(A\cap B)=0$$
 
 The complement to event $A$ is the event that $A$ doesn’t happen.  This event is sometimes written $AC$.  In one flip of a coin, heads and tails are complementary events (assuming the coin won’t land on its side).  
 
-::: {.highlight}
+::: {.callout-note title="Complementary Rule"}
 For complementary events, 
 
 $$P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)$$
@@ -67,7 +71,7 @@ $$P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)$$
 
 ### The Addition Rule
 
-::: {.highlight}
+::: {.callout-note title="Addition Rule"}
 $$P(A \cup B)=P(A) + P(B)-P(A \cap B)$$
 
 For mutually exclusive events, we know that $P(A\cap B)=0$, so we can also have the following simplified rule:
@@ -77,7 +81,7 @@ $$P(A \cup B)=P(A) + P(B)$$
 
 ### The Multiplication Rule
 
-::: {.highlight}
+::: {.callout-note title="Multiplication Rule"}
 $$P(A\cap B)=P(A)\cdot P(B|A)$$
 
 For independent events $A$ and $B$, we know that $P(B|A) = P(B)$, so we can also have the simplified rule:

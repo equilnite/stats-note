@@ -1,6 +1,6 @@
 # Density Curves
 
-::: {.highlight}
+::: {.callout-note title="Density Curve"}
 A density curve is a curve that is always on or above the horizontal axis, and has area exactly 1 underneath it. 
 :::
 
@@ -12,21 +12,24 @@ Once we have a smooth curve (or straight line) that shows our distribution, we c
 
 We’ll focus on density curves that are either straight lines, symmetric, or skewed.  How can we look at a density curve and estimate the mean and median?
 
--Remember that with right skewed data, the $mean > median$
+::: {.callout-tip}
+-Remember that with right skewed data, the $\text{mean} > \text{median}$
 
--Remember that with left skewed data, the $mean < median$
+-Remember that with left skewed data, the $\text{mean} < \text{median}$
 
--Remember that with symmetric data, the $mean \cong median$
+-Remember that with symmetric data, the $\text{mean} \cong \text{median}$
+:::
 
 ## Percentiles
 
-::: {.highlight}
+::: {.callout-note title="Percentile"}
 The $p^{th}$ percentile is represented by a given value. $p$% of values are less than or equal to the given value. 
 :::
 
+
 ## Cumulative Relative Frequency Graphs
 
-::: {.highlight}
+::: {.callout-note title="Cumulative Relative Frequency Graphs"}
 Cumulative Relative Frequency graphs represent the cumulative relative frequency as the values increase (what percentage of values are less than or equal to each x-value). These always range from 0 to 1 on the y-axis (or 0% to 100%). 
 :::
 
@@ -48,6 +51,7 @@ $$P(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}$$
 Where $P(x)$ represents the height of the curve, $\mu$ is the mean (of all the $x$’s), and $\sigma$ is the standard deviation.  If the mean is 0 and the standard deviation is 1, the graph looks like this:
 
 ```{r Standard Normal Distribution}
+#| fig-height: 4
 ggplot(x = -4:4) +
     stat_function(fun = dnorm, xlim = c(-4,4), lwd = 1.5) +
     annotate("point", x = c(-1,1), y = dnorm(c(-1,1)), color = "red", size = 3) +
@@ -57,15 +61,17 @@ ggplot(x = -4:4) +
     theme_minimal()
 ```
 
+::: {.callout-tip title="Inflection Points"}
 Notice that the inflection points (where the curve changes its concavity, like in a cubic function) are at exactly one standard deviation from the mean, and by the time the graph gets to 3 standard deviationss in each direction, the height of the curve is basically zero.
+:::
 
-This is called the Standard Normal Distribution, or $N(0,1)$.  Remember that we use this to approximate real life, and we always need to check that this approximation is appropriate in a given situation.  
-
+::: {.callout-important title="Check Your Conditions"}
+This is called the Standard Normal Distribution, or $N(0,1)$.  Remember that we use this to approximate real life, and we always need to check that this approximation is appropriate in a given situation. 
+:::
+ 
 ### Characteristics of the Normal Distribution {#normal-characteristics}
 
-::: {.highlight}
-Normal distributions have the following characteristics:
-
+::: {.callout-note title="Normal Distribution Characteristics"}
 - They are always unimodal, bell-shaped, and symmetric about the mean
 
 - The x-axis represents different values of the variable, and the probability of any single value of x is zero (not true in real-life situations, but remember that this is an approximation).
@@ -79,17 +85,18 @@ Normal distributions have the following characteristics:
 
 ### Empirical Rule
 
-::: {.highlight}
-The Empirical Rule (68-95-99.7 Rule) tells us that:
+::: {.callout-note title="Empirical Rule (68-95-99.7 Rule)"}
 
 - about 68\% of the distribution is within 1 standard deviation of the mean
 
 - about 95\% of the distribution is within 2 standard deviation of the mean
 
 - about  99.7\% of the distribution is within 3 standard deviation of the mean
+
 :::
 
 ```{r Empirical Rule}
+#| fig-height: 4
 ggplot(x = -4:4) +
     stat_function(fun = dnorm, xlim = c(-4,4), lwd = 1.5) +
     annotate("segment", x = -1:-3, y = dnorm(-1:-3), xend = 1:3, yend = dnorm(1:3)) +
@@ -102,8 +109,7 @@ ggplot(x = -4:4) +
 
 When assessing normality, you have to think about what makes a normal distribution…. a normal distribution. Refer to the [characteristics of a normal distribution](#normal-characteristics) to remind yourself what you need to look for.
 
-Thus to check for normality:
-
+::: {.callout-note title="Checking Normality..."}
 - Graph your data using a dot plot, histogram, boxplot, or stem plot. Whichever one is most convenient and would show the distribution of data the best.
 
 - Compare the mean and median of the distribution. Normal curves are symmetric, so our data should also be symmetric. Are the mean and median almost the same?
@@ -111,18 +117,23 @@ Thus to check for normality:
 - Check to see if the data follows the empirical rule. Is there 68% of the data between -1 and 1 standard deviations? What about 95% and 99.7%?
 
 - Look at the normal probability plot if given. (Know how to interpret and read, not make). If the plot is fairly linear (does a straight line fit through the points), then we have further evidence that the distribution is approximately normal
+:::
 
 ### Standardized Score {#z-score}
 
-::: {.highlight}
+::: {.callout-note title="z-score"}
 If $x$ is an observation that has a known mean and standard deviation, the standardized score of $x$ is:
-$$z = \frac{value - mean}{standard~deviation}$$
+$$z = \frac{\text{value} - \text{mean}}{\text{standard deviation}}$$
 A standardized score, often called a z-score, of an observation is the number of standard deviations it is from the mean. 
 :::
 
 ### Calculating Probabilities and Percentiles
 
-Using calculus, we could calculate the area (and therefore the probability) under any section of any normal distribution. But we don’t want to have to use calculus every time we want to calculate a normal probability.  So, we use a table (inside the front cover of your book and also in [Table A](#table-a)) in which many Standard Normal probabilities have been calculated for us. So all we need to do is convert our problem to Standard Normal, and we can use this table.  We make this conversion using z-scores. Once we have a z-score, we can use the Standard Normal table.
+Using calculus, we could calculate the area (and therefore the probability) under any section of any normal distribution. But we don’t want to have to use calculus every time we want to calculate a normal probability.  So, we use a table (inside the front cover of your book and also in [Table A](#table-a)) in which many Standard Normal probabilities have been calculated for us. So all we need to do is convert our problem to Standard Normal, and we can use this table.  We make this conversion using z-scores. 
+
+::: {.callout-important}
+Once we have a z-score, we can use the [Standard Normal table](#table-a) to find a corresponding probability.
+:::
 
 ### Using your Calculator
 
