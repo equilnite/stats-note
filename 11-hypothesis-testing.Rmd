@@ -64,8 +64,8 @@ In a nutshell, our conclusion in a significance test comes down to
 
 $$
 \begin{aligned}
-\text{P-value} &<  \text{reject } H_0 \rightarrow \text{convincing evidence for } H_a \\
-\text{P-value} &\geq \text{fail to reject } H_0  \rightarrow \text{not convincing evidence for } H_a
+\text{P-value} &<  \alpha \rightarrow \text{reject } H_0 \rightarrow \text{convincing evidence for } H_a \\
+\text{P-value} &\geq \alpha \rightarrow\text{fail to reject } H_0  \rightarrow \text{not convincing evidence for } H_a
 \end{aligned}
 $$
 :::
