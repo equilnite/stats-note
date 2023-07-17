@@ -1,7 +1,14 @@
 .Rproj.user
+.quarto
 .Rhistory
 .RData
 .Ruserdata
 _bookdown_files/_main_cache
 *.log
 *.bib
+/*cache
+/*_files
+
+/.quarto/
+
+/_book/

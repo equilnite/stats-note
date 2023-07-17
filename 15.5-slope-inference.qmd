@@ -1,0 +1,141 @@
+# Inference for Linear Regression
+
+As mentioned in our [least squares regression model](#LSRL-model), the goal of the model is to estimate $\alpha$ and $\beta$. So after we've estimated them with $a$ and $b$, what can we infer about the population parameters $\alpha$ and $\beta$? For the most part, we'll be only concerned about $\beta$.
+
+## Sampling Distribution of $b$ {#samp-dist-b}
+
+::: {.highlight}
+Choose an SRS of $n$ observations $(x, y)$ from a population of size $N$ with least-squares regression line $\hat y=a+bx$ with a population (true) relationship of $y = \alpha + \beta x + \epsilon$
+
+Let $b$ be the slope of the sample regression line. Then: 
+
+- The **mean** of the sampling distribution of $b$ is $$\mu_b = \beta$$
+
+- The **standard deviation** of the sampling distribution of $b$ is $$\sigma_b = \frac{\sigma}{\sigma_x\sqrt n}$$
+as long as the 10\% Condition is satisfied.
+
+- The sampling distribution of b will be **approximately normal** if the values of the response variable $y$ follow a Normal distribution for each value of the explanatory variable x (the *Normal condition*). 
+:::
+
+In this case, $\sigma$ represents the population standard deviation of plausible observations' residuals from the population line.
+
+## Conditions for Regression Inference {#slope-conds}
+
+The regression model requires that for each possible value of the explanatory variable $x$:
+
+1. The mean value of the response variable $\mu_y$ falls on the population line. $$\mu_y = \alpha + \beta x$$
+
+2. The values of the response variable $y$ follow a Normal distribution with common standard deviation $\sigma$. 
+
+Taking in account of the above information and the [sampling distribution of $b$](#samp-dist-b), we need to make sure that the following are met:
+
+::: {.highlight}
+
+Linear
+: The actual relationship between $x$ and $y$ is linear.
+: In other words, *For any fixed value of $x$, the mean response $\mu_y$ falls on the population (true) regression line $\mu_y= \alpha + \beta x$*. 
+
+Independent
+: Individual observations are independent of each other. When sampling without replacement, check the 10% condition.
+
+Normal
+: For any fixed value of $x$, the response $y$ varies according to a Normal distribution.
+
+Equal SD
+: The standard deviation of $y$  from the population regression line (call it $\sigma$) is the same for all values of $x$. 
+
+Random
+: The data come from a well-designed random sample or randomized experiment.
+
+:::
+
+## Standard Error of $b$
+
+Remember that we defined the [standard deviation of the sampling distribution of $b$](#samp-dist-b).
+
+::: {.highlight}
+
+An estimate of $\sigma_b$, is the standard error of $b$, $SE_b$ which is defined as
+$$SE_b = \frac{s}{s_x \sqrt{n-1}}$$
+where [$s$ is the sample standard deviation of the residuals](#residual-sd),
+:::
+
+## $t$ interval for $\beta$
+
+::: {.highlight}
+
+When [the conditions](#slope-conds) are met, a level $C$ confidence interval for the slope $\beta$ is $$b \pm t^* \cdot SE_b$$
+and $t^*$ is the critical value for the $t$ distribution with $df = n - 2$ having area $C$ between $-t^*$ and $t^*$.
+:::
+
+## Significance Test for $\beta$
+
+When [the conditions](#slope-conds) are met, we can use the slope $b$ of the sample regression line to conduct a significance test about the slope parameter $\beta$.
+
+::: {.highlight}
+The null hypothesis has the general form  $H_0: \beta = \beta_0$ (hypothesized slope) 
+
+We’ll mainly restrict ourselves to situations in which the hypothesized slope is 0. (i.e. there is no relationship between the two variables).
+
+The alternative hypothesis says what direction we expect:
+$$H_a:\beta>\beta_0~~\text{or}~~Ha:\beta<\beta_0~~\text{or}~~Ha:\beta\not =\beta_0$$
+
+The test statistic $t$ is calculated as:
+
+$$t = \frac{b - \beta_0 }{SE_b}$$
+
+The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, $H_a$. $t_{n-2}$ represents the $t$ distribution with $df = n-2$ degrees of freedom.
+
+$$
+\text{p-value}= \begin{cases}
+P(t_{n-2}<t) & \text{ if } H_a:\beta<\beta_0 \\ 
+P(t_{n-2}>t) & \text{ if } H_a:\beta>\beta_0 \\ 
+2\cdot P(t_{n-2}<-|t|) & \text{ if } H_a: \beta\not =\beta_0 
+\end{cases}
+$$
+
+:::
+
+## Interpreting Computer Output {#more-linreg-output}
+
+[As we mentioned in the previous section, this builds off the previous example.](#basic-linreg-output)
+
+### Example
+
+We left off on the fact that we could identify the following:
+
+```
+Predictor     	Coef  	    SECoef      T      P
+Constant  		a		    2446  	    15.64  0.000
+Miles Driven    b           0.03096   	-5.26  0.000
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%
+```
+
+Now apply what you know what we now know we should look for. We should be looking for the standard error of $b$, $SE_b$; the $t$-statistic; and the corresponding $p$-value. So in other words, we want to look for everything related to the estimated slope $b$ for the `Miles Driven` predicted (our explanatory variable). Applying this, you should be able to identify that each of these are:
+
+```
+Predictor     	Coef  	    SECoef      T      P
+Constant  		a		    2446  	    15.64  0.000
+Miles Driven    b           SE_b      	t      p-value
+
+S = s          R-Sq = r^2     R-Sq(adj) = 64.0%
+```
+
+::: {.highlight}
+To reiterate, we can figure out that for a significance test for $\beta$ with this data,
+
+$$
+\begin{aligned}
+&SE_b = 0.03096\\
+&t = -5.25\\
+&p\text{-value} \approx 0
+\end{aligned}
+$$
+:::
+
+::: {.highlight}
+One thing to keep in mind is that the $p$-value given is always for a two-sided test where $H_a: \beta \not = \beta_0$. So if you want the $p$-value for a one-sided test (where $H_a: \beta > \beta_0$ or $H_a: \beta < \beta_0$), you have to take half of the $p$-value that you see in the computer output.
+:::
+
+Other parts are irrelevant to this course.

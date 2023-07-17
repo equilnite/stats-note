@@ -1,0 +1,33 @@
+# Calculator Commands
+
+## Distributions
+
+To access these, you go to `2nd > VARS (DISTR)`.
+
+As a reminder
+
+* you use the `cdf` commands when you want to calculate a probability involving multiple values; for example, $P(X < 3)$ or $P(-1 < X < -3)$
+
+* you use the `pdf` commands when you want to calculate a probability involving a singular, specifc value; for example, $P(X = 3)$ or $P(X = 0)$
+
+* you use the `inv` commands when you want to a value/number that corresponds to a specific probability; for example, if you have the probability $P(X < x)$ and you want to find $x$.
+
+### List of relevant commands
+
+- `normalcdf(lower bound, upper bound [, mean, standard deviation])`
+
+- `invNorm(area [, mean, standard deviation])`
+
+- `tcdf(lower bound, upper bound, df)`
+
+- `$\chi^2$cdf(lower bound, upper bound, df)`
+
+- `binompdf(n, p [, k])`
+
+- `binomcdf(n, p [, k])`
+
+- `geometpdf(p ,x)`
+
+- `geometcdf(p, x)`
+
+## 

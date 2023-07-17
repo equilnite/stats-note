@@ -1,0 +1,401 @@
+# Chi-Squared Tests {#chi-squared-tests}
+
+```{r}
+library(tidyverse)
+```
+
+$\chi^2$ [(pronounced "kai" (/ˈkaɪ, ˈxiː/) squared)](https://upload.wikimedia.org/wikipedia/commons/6/6d/En-us-chi.ogg) tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.
+
+## Sampling distribution of $\chi^2$
+
+The sampling distribution of $\chi^2$ is not a Normal distribution. It is a right-skewed distribution that allows only positive values because $\chi^2$ can never be negative. When the expected counts are all at least 5, the sampling distribution of the $\chi^2$ statistic is close to a $\chi^2$ distribution with a degrees of freedom based off the test that we do. The $\chi^2$ distributions are a family of distributions that take only positive values and are skewed to the right. A particular chi-square distribution is specified by giving its degrees of freedom.
+
+```{ojs Chisquare DF Demo}
+Plot.plot({
+  marks: [
+    Plot.line(d3.range(0, 10, 0.01),
+      {
+        x: (x) => x,
+        y: (x) => jStat.chisquare.pdf(x, df1),
+        strokeWidth: 3,
+        stroke: "steelblue"
+      }
+    ),
+    Plot.ruleX([0]),
+    Plot.ruleY([0]),
+  ],
+  x: {
+    domain: [0, 10],
+    label: "Chi-squared Statistic"
+  },
+  y: { 
+    domain: [0, .3], 
+    label: "Density"
+  },
+    caption: "The Chi-squared Sampling Distribution"
+})
+
+viewof df1 = Inputs.range(
+[1, 10],
+{value: 3, step: 1, label: "Degrees of Freedom (df):"}
+)
+```
+
+## Conditions {#ChiSqCond}
+
+::: highlight
+-   **Random:** The data comes from a well-designed random sample or from a randomized experiment.
+
+-   **10%:** When sampling without replacement, check that $n\leq(.10)N$
+
+-   **Large Counts:** All expected counts are greater than 5
+:::
+
+<details>
+
+<summary>Be careful and remember that:</summary>
+
+-   The chi-square test statistic compares observed and expected counts. Don't try to perform calculations with the observed and expected proportions in each category.
+
+-   When checking the Large Sample Size condition, be sure to examine the expected counts, not the observed counts.
+
+</details>
+
+## $\chi^2$ Goodness-of-Fit {#ChiSqGOF}
+
+::: highlight
+We do this test when we wonder, "Does this data fit with what they are saying?" So how "good" does the distribution of data that we see "fit" with the distribution that they claim?
+:::
+
+**Hypotheses:**
+
+$H_0$: The stated distribution of the categorical variable in the population of interest is correct. $$H_0:p_1=p_{0_1},p_2=p_{0_2}, \cdots ,p_c=p_{0_c} $$ where there are $c$ categories in the categorical variable
+
+$H_a$: The stated distribution of the categorical variable in the population of interest is not correct $$H_a:p_1 \not = p_{0_1},p_2 \not = p_{0_2}, \cdots ,p_c \not = p_{0_c}$$
+
+**Expected Counts:**
+
+The expected count for each category ($E_i$) is the sample size ($n$) times the stated probability of the category $p_{0_i}$. $$E_i=np_{0_i}$$
+
+**Degrees of freedom:**
+
+We calculate the degrees of freedom by taking the \# of categories - 1 $$df=c-1$$
+
+**Chi-Square Test Statistic:** $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum\frac{(x_i-E_i)^2}{E_i}$$
+
+### Example {#GOF-example}
+
+Carrie made a 6-sided die in her ceramics class and rolled it 90 times to test if each side was equally likely to show up. The table summarizes the outcomes of her 90 rolls.
+
+| Outcome of roll | 1   | 2   | 3   | 4   | 5   | 6   | Total |
+|-----------------|-----|-----|-----|-----|-----|-----|-------|
+| Frequency       | 12  | 28  | 12  | 13  | 10  | 15  | 90    |
+
+#### State
+
+> $H_0:$ The ceramic die's sides are equally like to occur  \
+> $H_a:$ The ceramic die's dies are not equally likely to occur  \
+> Alternatively, $$H_0: p_1 = p_2 = \cdots = p_6 = \frac{1}{6}$$ $$H_a: p_1 \not = \frac{1}{6}, p_2 \not = \frac{1}{6}, \cdots, p_6 \not = \frac{1}{6}$$
+
+#### Plan
+
+> $\chi^2$ Goodness of Fit
+>
+> | Outcome of Roll         | 1   | 2   | 3   | 4   | 5   | 6   |
+> |-------------------------|-----|-----|-----|-----|-----|-----|
+> | Theoretical Probability | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 |
+> | Expected Count          | 15  | 15  | 15  | 15  | 15  | 15  |
+>
+> **Random:** This is a completely random process.  \
+> **Large:** With $n = 90$, we should expect to see each of the six sides to occur 15 times if the dice was fair.  \
+> **Independent:** We can assume that each dice roll is independent of each other.  \
+
+#### Do
+
+> | Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
+> |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+> | Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
+> | Theoretical<br>Probability                   | 1/6    | 1/6     | 1/6    | 1/6    | 1/6    | 1/6    |
+> | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
+> | $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
+>
+> $$
+> \begin{aligned}
+> \chi^2&=\sum\frac{(x_i - E_i)^2}{E_i} \\
+> &= 0.6000 + 11.2667 + 0.6000 + 0.2667 + 1.6667 + 0.0000 \\
+> &= 14.4
+> \end{aligned}
+> $$ $$df = c - 1 = 6 - 1 = 5$$ Looking up the test statistic and degrees of freedom on [Table C](#table-c), notice that 14.4 is between 13.39 and 15.09, therefore, $0.01 < \text{p-value} < 0.02$.  \
+> Alternatively, do $\chi^2\mathtt{cdf}(14.4, 1000, 5) = 0.0132586$.
+
+#### Conclude
+
+> Since our $\text{p-value} = 0.01326 < 0.05 = \alpha$, we reject the null hypothesis that the ceramic die's sides are equally likely to show up. Therefore, there is convincing evidence that the ceramic die is not fair.
+
+### Doing it on a calculator {#GOF-calculator}
+
+For context, if you have two vectors $\vec x$ and $\vec y$, you can find the difference between them by doing $\vec x - \vec y$, which will take the element-wise difference between the two vectors (subtract the first from the first of the other, the second from the second of the other, ...). For example,
+
+$$
+\begin{aligned} 
+&\text {Let }
+\vec x = \begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} \text{ and }
+\vec y = \begin{bmatrix}
+7 \\
+6 \\
+5 
+\end{bmatrix}\\
+& \text{Then }\vec x - \vec y = \begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} -
+ \begin{bmatrix}
+7 \\
+6 \\
+5 
+\end{bmatrix} = \begin{bmatrix}
+-6 \\
+-4 \\
+-2 
+\end{bmatrix}
+\end{aligned}
+$$
+
+When we do things on the calculator with the following method, everything works doing everything element-wise, whatever we do to the list happens to each thing in the list.
+
+1.  Get ready to edit your lists by going to `stat > EDIT > edit`
+2.  You'll see all your available lists, `L1` ,`L2`, ...
+    -   To clear a given list, go up the header of the list (e.g. `L1` should be highlighted if you want to clear it), then hit `clear` and `enter`
+3.  Enter the list of your observed values for the problem.
+    -   Let's say this is `L1`
+4.  Enter your theoretical probabilities from the null hypothesis. Make sure they correspond to observed elements one-by-one; they should be in the same order as when you entered the observed values.
+    -   Let's say this is `L2`
+5.  Define your next list of the expected lists (go up the header of the list that you want to fill in and make sure it's highlighted) and do your sample size times the theoretical probabilities.
+    -   Let's say this is `L3`, so make sure that `L3` is highlighted and then enter `your sample size * L2`
+6.  Now that you have your observed values and expected values, we can calculate the components of the $\chi^2$ test statistic. In other words, calculate $$\frac{(Observed-Expected)^2}{Expected}$$ for each observed and expected pair.
+    -   Let's say you want this in `L4`, so make sure that `L4` is highlighted and then enter `(L1 - L3)^2/L3`
+7.  We now have all the components and the final task is to sum up the values.
+    -   Two options:
+        -   `stat > CALC > 1-Var Stats` and then you should see `1-Var Stats` on the command screen. Enter your desired list that you want to sum up (which in the example would look like `1-Var Stats L4`).
+        -   `2nd > stat (list) > MATH > sum(` and than just input your desired list to sum (which in the example would be `sum(L4)`).
+
+Here's a a video tutorial using the example from Page 3 in your packets.
+
+{{< video https://www.youtube.com/embed/ZZtsomC2-Fg >}}
+
+## $\chi^2$ Test of Homogeneity {#ChiSqHomogen}
+
+::: highlight
+We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another?
+:::
+
+**Hypotheses**:
+
+$H_0$: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments.
+
+$$
+\begin{aligned}
+H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&\cdots,\\
+&p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+$$
+
+where each there are $r$ rows (categories in the variable) and $c$ columns (populations/samples/groups/treatments) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column.
+
+$H_a$: There is an association between the group and the variable, or the distribution of the variable is not the same across all groups/treatments.
+
+(The symbolic notation would be too messy, so it's not included)
+
+**Expected Counts**:
+
+The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
+
+$$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$
+
+$$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$
+
+**Degrees of freedom**:
+
+We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
+
+**Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
+
+### Example {#chi-homogen-ex}
+
+*(Modified question, compare to the [Test of Independence](#chi-indepen-ex))*
+
+Is there a relationship between gender and relative finger length? We looked at a random sample of 212 female U.S. high school students and a random sample of 240 male U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger).
+
+|                  | **Female** | **Male** | **Total** |
+|------------------|:----------:|:--------:|:---------:|
+| **Index finger** |     78     |    45    |    123    |
+| **Ring finger**  |     82     |   152    |    234    |
+| **Same length**  |     52     |    43    |    95     |
+| **Total**        |    212     |   240    |    452    |
+
+Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?
+
+#### State
+
+> $H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $\alpha =0.05$
+
+#### Plan
+
+> $\chi^2$ Test of Homogeneity
+>
+> Expected counts:
+>
+> |                  | **Female** | **Male** | **Total** |
+> |------------------|:----------:|:--------:|:---------:|
+> | **Index finger** |   57.69    |  65.31   |    123    |
+> | **Ring finger**  |  109.752   | 124.248  |    234    |
+> | **Same length**  |   44.558   |  50.442  |    95     |
+> | **Total**        |    212     |   240    |    452    |
+>
+> **Random:** The male and female students are both random samples
+>
+> **Large:** all of the expected counts are greater than 5
+>
+> **Independence:** There are more than 2120 Female US high school students and more than 2400 Male US high school students.
+
+#### Do
+
+> ```{=tex}
+> \begin{aligned}
+> \chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\
+> &\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\
+>
+> df =&  (3-1)(2-1) = 2\\\\
+> \text{p-value } =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0
+> \end{aligned}
+> ```
+
+#### Conclude
+
+> Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+## $\chi^2$ Test of Independence {#ChiSqInd}
+
+::: highlight
+We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability) when we compared just the probability of a single event and a conditional probability
+:::
+
+**Hypotheses**:
+
+$H_0$: There is no association between the two variables or that the two events are independent.
+
+$$
+\begin{aligned}
+H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&\cdots,\\
+&p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+$$
+
+where each there are $r$ rows (categories in the first variable) and $c$ columns (categories in the second variable) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column.
+
+$H_a$: There is an association between the two variables or that the two events are not independent.
+
+(The symbolic notation would be too messy, so it's not included)
+
+**Expected Counts**:
+
+The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
+
+$$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$
+
+$$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$
+
+**Degrees of freedom**:
+
+We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
+
+**Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
+
+### Example {#chi-indepen-ex}
+
+*(Original question, compare to the [Test of Homogeneity](#chi-homogen-ex)*
+
+Is there a relationship between gender and relative finger length? We looked at a random sample of 452 U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger).
+
+|                  | **Female** | **Male** | **Total** |
+|------------------|:----------:|:--------:|:---------:|
+| **Index finger** |     78     |    45    |    123    |
+| **Ring finger**  |     82     |   152    |    234    |
+| **Same length**  |     52     |    43    |    95     |
+| **Total**        |    212     |   240    |    452    |
+
+Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey?
+
+#### State
+
+> $H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $H_a$: There is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+>
+> $\alpha =0.05$
+
+#### Plan
+
+> $\chi^2$ Test of Independence
+>
+> Expected counts:
+>
+> |                  | **Female** | **Male** | **Total** |
+> |------------------|:----------:|:--------:|:---------:|
+> | **Index finger** |   57.69    |  65.31   |    123    |
+> | **Ring finger**  |  109.752   | 124.248  |    234    |
+> | **Same length**  |   44.558   |  50.442  |    95     |
+> | **Total**        |    212     |   240    |    452    |
+>
+> **Random:** The high school students are a random sample.
+>
+> **Large:** all of the expected counts are greater than 5
+>
+> **Independence:** There are more than 4520 high school students
+
+#### Do
+
+> $$
+> \begin{aligned} \chi^2 = &\frac{(78-57.69)^2}{57.69} + \frac{(45-65.31)^2}{65.31} + \frac{(82-109.752)^2}{109.752} + \frac{(152-124.248)^2}{124.248} + \\ &\frac{(52-44.558)^2}{44.558} + \frac{(43-50.442)^2}{50.442} \approx 29.023 \\\\df =& (3-1)(2-1) = 2\\\\ \text{p-value} =& \chi^2\texttt{cdf(29.023, 1000, 2)} \approx 0 \end{aligned}
+> $$
+
+#### Conclude
+
+> Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey.
+
+## Follow-up (Component) Analysis
+
+Given our $\chi^2$ statistic, $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}$$
+
+Each individual term $\frac{(Observed-Expected)^2}{Expected}$ that is calculated to be added up is called a component of the $\chi^2$ statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value.
+
+When doing a follow-up analysis of the $\chi^2$ test, look at the components of the calculated $chi^2$ statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor.
+
+### Example
+
+(From the [$\chi^2$ GOF Example](#GOF-example))
+
+If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis.
+
+A reminder of our results:
+
+| Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
+| Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
+| $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
+
+> Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.
