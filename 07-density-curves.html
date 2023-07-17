@@ -299,28 +299,70 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Density Curve">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Density Curve
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A density curve is a curve that is always on or above the horizontal axis, and has area exactly 1 underneath it.</p>
+</div>
 </div>
 <p>A density curve describes the overall pattern of a distribution. The area under the curve and above any interval of values on the horizontal axis is the proportion of all observations that fall in that interval.</p>
 <p>When we have data that take on many, many different values, and show a very distinct shape, we can approximate the distribution with a smooth curve called a density curve. These curves aren’t always bell-shaped.</p>
 <p>Once we have a smooth curve (or straight line) that shows our distribution, we can use the area under the curve to estimate the proportion of the distribution that lies in any given interval (total area under the curve represents 100%).</p>
 <p>We’ll focus on density curves that are either straight lines, symmetric, or skewed. How can we look at a density curve and estimate the mean and median?</p>
-<p>-Remember that with right skewed data, the <span class="math inline">\(mean &gt; median\)</span></p>
-<p>-Remember that with left skewed data, the <span class="math inline">\(mean &lt; median\)</span></p>
-<p>-Remember that with symmetric data, the <span class="math inline">\(mean \cong median\)</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>-Remember that with right skewed data, the <span class="math inline">\(\text{mean} &gt; \text{median}\)</span></p>
+<p>-Remember that with left skewed data, the <span class="math inline">\(\text{mean} &lt; \text{median}\)</span></p>
+<p>-Remember that with symmetric data, the <span class="math inline">\(\text{mean} \cong \text{median}\)</span></p>
+</div>
+</div>
 <section id="percentiles" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">8.1</span> Percentiles</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Percentile">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Percentile
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The <span class="math inline">\(p^{th}\)</span> percentile is represented by a given value. <span class="math inline">\(p\)</span>% of values are less than or equal to the given value.</p>
+</div>
 </div>
 </section>
 <section id="cumulative-relative-frequency-graphs" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="cumulative-relative-frequency-graphs"><span class="header-section-number">8.2</span> Cumulative Relative Frequency Graphs</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Cumulative Relative Frequency Graphs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cumulative Relative Frequency Graphs
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Cumulative Relative Frequency graphs represent the cumulative relative frequency as the values increase (what percentage of values are less than or equal to each x-value). These always range from 0 to 1 on the y-axis (or 0% to 100%).</p>
 </div>
-<div class="cell" data-hash="07-density-curves_cache/html/Cumulative Relative Freq Graph_f51fe2fecf579588b281e16e89516ccd">
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <p><img src="07-density-curves_files/figure-html/Cumulative Relative Freq Graph-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -331,17 +373,49 @@ ul.task-list li input[type="checkbox"] {
 <p>In the early 19th Century, the mathematicians Gauss and Adrian both noticed that many, many natural processes (like dimensions and weights of plants and animals) and many human processes (manufacturing, scores on tests) follow (approximately, not exactly) a very nice bell-shaped curve that Abraham de Moivre, an 18th century statistician and consultant to gamblers, had developed. This bell-shaped curve is now called the normal curve, and has the equation</p>
 <p><span class="math display">\[P(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\]</span></p>
 <p>Where <span class="math inline">\(P(x)\)</span> represents the height of the curve, <span class="math inline">\(\mu\)</span> is the mean (of all the <span class="math inline">\(x\)</span>’s), and <span class="math inline">\(\sigma\)</span> is the standard deviation. If the mean is 0 and the standard deviation is 1, the graph looks like this:</p>
-<div class="cell" data-hash="07-density-curves_cache/html/Standard Normal Distribution_e2700ba0feb5cfa5c8bbab698e406463">
+<div class="cell">
 <div class="cell-output-display">
 <p><img src="07-density-curves_files/figure-html/Standard Normal Distribution-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Inflection Points">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Inflection Points
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Notice that the inflection points (where the curve changes its concavity, like in a cubic function) are at exactly one standard deviation from the mean, and by the time the graph gets to 3 standard deviationss in each direction, the height of the curve is basically zero.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Check Your Conditions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check Your Conditions
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>This is called the Standard Normal Distribution, or <span class="math inline">\(N(0,1)\)</span>. Remember that we use this to approximate real life, and we always need to check that this approximation is appropriate in a given situation.</p>
+</div>
+</div>
 <section id="normal-characteristics" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="normal-characteristics"><span class="header-section-number">8.3.1</span> Characteristics of the Normal Distribution</h3>
-<div class="highlight">
-<p>Normal distributions have the following characteristics:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Normal Distribution Characteristics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Normal Distribution Characteristics
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><p>They are always unimodal, bell-shaped, and symmetric about the mean</p></li>
 <li><p>The x-axis represents different values of the variable, and the probability of any single value of x is zero (not true in real-life situations, but remember that this is an approximation).</p></li>
@@ -350,18 +424,28 @@ ul.task-list li input[type="checkbox"] {
 <li><p>The graph can be narrow or broad, depending on the standard deviation, but never skewed.</p></li>
 </ul>
 </div>
+</div>
 </section>
 <section id="empirical-rule" class="level3" data-number="8.3.2">
 <h3 data-number="8.3.2" class="anchored" data-anchor-id="empirical-rule"><span class="header-section-number">8.3.2</span> Empirical Rule</h3>
-<div class="highlight">
-<p>The Empirical Rule (68-95-99.7 Rule) tells us that:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Empirical Rule (68-95-99.7 Rule)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Empirical Rule (68-95-99.7 Rule)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><p>about 68% of the distribution is within 1 standard deviation of the mean</p></li>
 <li><p>about 95% of the distribution is within 2 standard deviation of the mean</p></li>
 <li><p>about 99.7% of the distribution is within 3 standard deviation of the mean</p></li>
 </ul>
 </div>
-<div class="cell" data-hash="07-density-curves_cache/html/Empirical Rule_df521e590df629ae073e16d1f8a8f428">
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <p><img src="07-density-curves_files/figure-html/Empirical Rule-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -370,23 +454,57 @@ ul.task-list li input[type="checkbox"] {
 <section id="assessing-for-normality" class="level3" data-number="8.3.3">
 <h3 data-number="8.3.3" class="anchored" data-anchor-id="assessing-for-normality"><span class="header-section-number">8.3.3</span> Assessing for Normality</h3>
 <p>When assessing normality, you have to think about what makes a normal distribution…. a normal distribution. Refer to the <a href="#normal-characteristics">characteristics of a normal distribution</a> to remind yourself what you need to look for.</p>
-<p>Thus to check for normality:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Checking Normality...">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Checking Normality…
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><p>Graph your data using a dot plot, histogram, boxplot, or stem plot. Whichever one is most convenient and would show the distribution of data the best.</p></li>
 <li><p>Compare the mean and median of the distribution. Normal curves are symmetric, so our data should also be symmetric. Are the mean and median almost the same?</p></li>
 <li><p>Check to see if the data follows the empirical rule. Is there 68% of the data between -1 and 1 standard deviations? What about 95% and 99.7%?</p></li>
 <li><p>Look at the normal probability plot if given. (Know how to interpret and read, not make). If the plot is fairly linear (does a straight line fit through the points), then we have further evidence that the distribution is approximately normal</p></li>
 </ul>
+</div>
+</div>
 </section>
 <section id="z-score" class="level3" data-number="8.3.4">
 <h3 data-number="8.3.4" class="anchored" data-anchor-id="z-score"><span class="header-section-number">8.3.4</span> Standardized Score</h3>
-<div class="highlight">
-<p>If <span class="math inline">\(x\)</span> is an observation that has a known mean and standard deviation, the standardized score of <span class="math inline">\(x\)</span> is: <span class="math display">\[z = \frac{value - mean}{standard~deviation}\]</span> A standardized score, often called a z-score, of an observation is the number of standard deviations it is from the mean.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="z-score">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+z-score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(x\)</span> is an observation that has a known mean and standard deviation, the standardized score of <span class="math inline">\(x\)</span> is: <span class="math display">\[z = \frac{\text{value} - \text{mean}}{\text{standard deviation}}\]</span> A standardized score, often called a z-score, of an observation is the number of standard deviations it is from the mean.</p>
+</div>
 </div>
 </section>
 <section id="calculating-probabilities-and-percentiles" class="level3" data-number="8.3.5">
 <h3 data-number="8.3.5" class="anchored" data-anchor-id="calculating-probabilities-and-percentiles"><span class="header-section-number">8.3.5</span> Calculating Probabilities and Percentiles</h3>
-<p>Using calculus, we could calculate the area (and therefore the probability) under any section of any normal distribution. But we don’t want to have to use calculus every time we want to calculate a normal probability. So, we use a table (inside the front cover of your book and also in <a href="16-formulas.html#table-a">Table A</a>) in which many Standard Normal probabilities have been calculated for us. So all we need to do is convert our problem to Standard Normal, and we can use this table. We make this conversion using z-scores. Once we have a z-score, we can use the Standard Normal table.</p>
+<p>Using calculus, we could calculate the area (and therefore the probability) under any section of any normal distribution. But we don’t want to have to use calculus every time we want to calculate a normal probability. So, we use a table (inside the front cover of your book and also in <a href="16-formulas.html#table-a">Table A</a>) in which many Standard Normal probabilities have been calculated for us. So all we need to do is convert our problem to Standard Normal, and we can use this table. We make this conversion using z-scores.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once we have a z-score, we can use the <a href="16-formulas.html#table-a">Standard Normal table</a> to find a corresponding probability.</p>
+</div>
+</div>
 </section>
 <section id="using-your-calculator" class="level3" data-number="8.3.6">
 <h3 data-number="8.3.6" class="anchored" data-anchor-id="using-your-calculator"><span class="header-section-number">8.3.6</span> Using your Calculator</h3>
