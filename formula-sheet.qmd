@@ -64,7 +64,7 @@ $$\text{Chi-square statistic:}~~~~ \chi^2 = \sum \frac{(\text{observed} - \text{
 
 *Standard deviation is a measurement of variability from the theoretical population. Standard error is the estimate of the standard deviation. If the standard deviation of the statistic is assumed to be known, then the standard deviation should be used instead of the standard error.
 
-## Table A Standard normal probabilities {#table-a}
+## Table A: Standard normal probabilities {#table-a}
 
 ```{r Standard normal dist table calc, echo = FALSE, results='asis'}
 # library(stargazer)
@@ -1127,7 +1127,7 @@ Table entry for $z$ is the probability lying below $z$.
 
 </details>
 
-## Table B $t$ distribution critical values {#table-b}
+## Table B: $t$ distribution critical values {#table-b}
 
 ```{r t dist table, echo = FALSE}
 ggplot() +
@@ -1789,7 +1789,7 @@ Table entry for $p$ and $C$ is the point $t*$ with probability $p$ lying above i
 </details>
 
 
-## Table C $\chi^2$ critical values {#table-c}
+## Table C: $\chi^2$ critical values {#table-c}
 
 ```{r chisq dist table, echo = FALSE, warning = FALSE}
 chidf <- function(x) dchisq(x, df = 4)

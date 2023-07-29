@@ -10,7 +10,7 @@ library(knitr)
 
 # Introduction
 
-These are my notes based off what we learned in class.
+These are my notes based off what we learned in class. The numbers next to the sections are not related to the textbook / the chapter numbers. Please take a look at what we are learning to know which page to look at. 
 
 There are various functions on this website that make your notes accessible in the case that you need more support in reading the material. Take a look at the tool bar on the top and try right clicking on math equations to see options to enlarge math equations. Ask Mr. Chang if you want to explore more.
 

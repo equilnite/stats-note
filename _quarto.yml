@@ -13,28 +13,28 @@ book:
      These are notes for AP Statistics.
   chapters:
     - index.qmd
-    - 01-basic-notation.qmd
-    - 02-cat-vis.qmd
-    - 03-quant-vis.qmd
-    - 04-sampling.qmd
-    - 05-experimental-design.qmd
-    - 06-probability.qmd
-    - 07-density-curves.qmd
-    - 08-random-variables.qmd
-    - 09-sampling-distributions.qmd
-    - 10-confidence-intervals.qmd
-    - 11-hypothesis-testing.qmd
-    - 12-proportion-inference.qmd
-    - 13-mean-inference.qmd
-    - 14-chi-square.qmd
-    - 15-linear-regression.qmd
-    - 15.5-slope-inference.qmd
+    - notation.qmd
+    - categorical-displays.qmd
+    - quantitative-displays.qmd
+    # - sampling.qmd
+    # - experimental-design.qmd
+    # - probability.qmd
+    # - density-curves.qmd
+    # - random-variables.qmd
+    # - sampling-distributions.qmd
+    # - confidence-intervals.qmd
+    # - hypothesis-testing.qmd
+    # - inference-for-proportions.qmd
+    # - inference-for-means.qmd
+    # - inference-for-categories.qmd
+    # - linear-regression.qmd
+    # - inference-for-slope.qmd
   appendices:
-    - 16-formulas.qmd
-    - 17-applets.qmd
-    - 18-statistic-to-pval.qmd
-    - 19-critical-vals.qmd
-    - 20-test.qmd
+    - formula-sheet.qmd
+    # - applets.qmd
+    # - statistic-to-pvalue.qmd
+    # - critical-values.qmd
+    # - test-page.qmd
 
 format:
   html:

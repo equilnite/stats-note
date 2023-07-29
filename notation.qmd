@@ -1,4 +1,4 @@
-# Basic notation
+# Basic Notation
 
 ## Lists
 
@@ -62,15 +62,22 @@ $$1 + \cdots$$
 
 ## Other commonly used symbols
 
+-   $N$: population size
+
 -   $p$: proportion, probability, or p-value
-
--   $\bar x$: sample mean
-
--   $s_x$: sample standard deviation (of x), so $s_y$ is the sample
-    standard deviation of $y$
 
 -   $\mu$: population mean (true mean)
 
+-   $\bar x$: sample mean
+
 -   $\sigma$: population standard deviation (true standard deviation)
 
--   $N$: population size
+-   $s_x$: sample standard deviation (of x), so $s_y$ is the sample
+    standard deviation of $y$
+    
+-   $SE_{\bar x}$: Standard error of the sample mean (of x), the estimate of the standard deviation of the sample mean.
+
+
+
+
+
