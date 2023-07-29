@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 7&nbsp; Probability</title>
+<title>AP Statistics Notes - 3&nbsp; Categorical Data Visualizations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./07-density-curves.html" rel="next">
-<link href="./05-experimental-design.html" rel="prev">
+<link href="./quantitative-displays.html" rel="next">
+<link href="./notation.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,6 +68,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -84,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-probability.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./categorical-displays.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,98 +120,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-basic-notation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic notation</span></span></a>
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-cat-vis.html" class="sidebar-item-text sidebar-link">
+  <a href="./categorical-displays.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-quant-vis.html" class="sidebar-item-text sidebar-link">
+  <a href="./quantitative-displays.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04-sampling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05-experimental-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06-probability.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07-density-curves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./08-random-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./09-sampling-distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-confidence-intervals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./12-proportion-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./13-mean-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./14-chi-square.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chi-Squared Tests</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./15-linear-regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Linear Regression</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./15.5-slope-inference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Inference for Linear Regression</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -222,32 +147,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-formulas.html" class="sidebar-item-text sidebar-link">
+  <a href="./formula-sheet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./17-applets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Calculator applet</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./18-statistic-to-pval.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./19-critical-vals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Critical Values</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./20-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Test</span></span></a>
   </div>
 </li>
       </ul>
@@ -262,12 +163,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link active" data-scroll-target="#probability-rules"><span class="header-section-number">7.1</span> Probability Rules</a>
-  <ul class="collapse">
-  <li><a href="#complement-rule" id="toc-complement-rule" class="nav-link" data-scroll-target="#complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</a></li>
-  <li><a href="#the-addition-rule" id="toc-the-addition-rule" class="nav-link" data-scroll-target="#the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</a></li>
-  <li><a href="#the-multiplication-rule" id="toc-the-multiplication-rule" class="nav-link" data-scroll-target="#the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</a></li>
-  </ul></li>
+  <li><a href="#bar-plots" id="toc-bar-plots" class="nav-link active" data-scroll-target="#bar-plots"><span class="header-section-number">3.1</span> Bar plots</a></li>
+  <li><a href="#stacked-bar-plots-and-side-by-side-bar-graphs" id="toc-stacked-bar-plots-and-side-by-side-bar-graphs" class="nav-link" data-scroll-target="#stacked-bar-plots-and-side-by-side-bar-graphs"><span class="header-section-number">3.2</span> Stacked Bar Plots and Side-by-Side Bar Graphs</a></li>
+  <li><a href="#mosaic-plots" id="toc-mosaic-plots" class="nav-link" data-scroll-target="#mosaic-plots"><span class="header-section-number">3.3</span> Mosaic Plots</a></li>
   </ul>
 </nav>
     </div>
@@ -276,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="probability" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></h1>
 </div>
 
 
@@ -291,139 +189,210 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>You typically know probability as chance. But what does that chance represent?</p>
-<p><strong>Probability</strong> is a number between 0 and 1 that describes the proportion of times the outcome would occur in a very long series of repetitions. We observe this definition of probability through the <strong>law of large numbers</strong> says that if we observe more and more repetitions of any chance process, the proportion of times that a specific outcome occurs approaches a single value.</p>
-<p>Because of random processes, we know that that randomness is predictable in the long run. Our intuition tries to tell us random phenomena should also be predictable in the short run. However, probability does not allow us to make short-run predictions. Even with how we can tell things in the long run, probability does not tell us certainties about future outcomes. That is, past outcomes do not influence the likelihood of individual outcomes occurring in the future.</p>
-<p>If we know how a certain process is supposed to act out through our understanding of probability, we can simulate it. A simulation is an imitation of chance behavior, based on a model that accurately reflects the situation. This means that we will not be doing what is being described, but rather choose a way to represent the situation using a box of tickets, a coin flip, a random number generator, etc.</p>
-<p>When we describe a simulation, we want to describe the following:</p>
+<section id="bar-plots" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="bar-plots"><span class="header-section-number">3.1</span> Bar plots</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Bar Plots">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bar Plots
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Represent the number or proportion of each unique value. These numbers or proportions are represented with rectangular bars with heights proportional to the values that they represent.</p>
+<p>You can plot these vertically or horizontally (i.e.&nbsp;categories on the x-axis or categories on the y-axis)</p>
+</div>
+</div>
+<p>Following data from this table:</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]}],"data":[{"1":"setosa"},{"1":"setosa"},{"1":"virginica"},{"1":"setosa"},{"1":"virginica"},{"1":"virginica"},{"1":"versicolor"},{"1":"versicolor"},{"1":"virginica"},{"1":"versicolor"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
 <ol type="1">
-<li><p>Describe how you would do one simulation of the situation, using a physical medium and/or random number generator. e.g.&nbsp;flip a coin, choose <span class="math inline">\(n\)</span> unique random numbers from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, choose slips of paper out a box.</p></li>
-<li><p>Do your described procedure many many times.</p></li>
-<li><p>Estimate the probability in question.</p></li>
+<li>Count up the number of values per category (make a frequency table). Note: This table is missing the total</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"setosa","2":"3"},{"1":"versicolor","2":"3"},{"1":"virginica","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Plot the frequencies with them as the height of the bars</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="categorical-displays_files/figure-html/iris-bar-plot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>If needed (if you need proportions for the y-axis instead, calculate the relative frequency table for the frequency table first). Note: again, this one is missing the total</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"setosa","2":"0.3"},{"1":"versicolor","2":"0.3"},{"1":"virginica","2":"0.4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="categorical-displays_files/figure-html/iris-prop-bar-plot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="stacked-bar-plots-and-side-by-side-bar-graphs" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="stacked-bar-plots-and-side-by-side-bar-graphs"><span class="header-section-number">3.2</span> Stacked Bar Plots and Side-by-Side Bar Graphs</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Multivariate Bar Plots">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Multivariate Bar Plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Keep in mind that simulations <em>are</em> <strong>simulations</strong>. This means that if you’re describing how to simulate something, you absolutely cannot say to do what you’re asked to describe to simulate.</p>
-<p>i.e.&nbsp;If you’re asked to describe a simulation of picking a Skittle out of a bag randomly, you cannot say that to simulate it, pick a Skittle out of a bag randomly.</p>
+<p>Stacked bar plots show two categorical variables, one on the x-axis/y-axis, and the other as the legend (colours). We will call the variable on the x-axis as the “groups” and the variable on the legend as the “categories.”</p>
+<p>Side-by-Side bar graphs are similar in concept.</p>
 </div>
 </div>
-<section id="probability-rules" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="probability-rules"><span class="header-section-number">7.1</span> Probability Rules</h2>
-<p>The sample space <span class="math inline">\(\Omega\)</span> of a chance process is the set of all possible outcomes.</p>
-<p>A probability model is a description of some chance process that consists of two parts: a sample space <span class="math inline">\(\Omega\)</span> and a probability for each outcome.</p>
-<p>An event is any collection of outcomes from some chance process. That is, an event is a subset of the sample space. Events are usually designated by capital letters, like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, and so on.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Probability Model">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Probability Model
+<p>When constructing these bar plots, we first want to determine which variable goes where (your choice or given choice to you). Then you calculate relative frequencies <em>per group</em></p>
+<p>For example, here I have a two-way table detailing the hair and eye colour of some statistics students</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"68"},{"1":"Brown","2":"Brown","3":"119"},{"1":"Red","2":"Brown","3":"26"},{"1":"Blond","2":"Brown","3":"7"},{"1":"Black","2":"Blue","3":"20"},{"1":"Brown","2":"Blue","3":"84"},{"1":"Red","2":"Blue","3":"17"},{"1":"Blond","2":"Blue","3":"94"},{"1":"Black","2":"Hazel","3":"15"},{"1":"Brown","2":"Hazel","3":"54"},{"1":"Red","2":"Hazel","3":"14"},{"1":"Blond","2":"Hazel","3":"10"},{"1":"Black","2":"Green","3":"5"},{"1":"Brown","2":"Green","3":"29"},{"1":"Red","2":"Green","3":"14"},{"1":"Blond","2":"Green","3":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
-<div class="callout-body-container callout-body">
+</div>
+<p>So if I want eye colour to be my groups, I would calculate the relative frequencies by column (use the total of the column and divide the whole column by it), so each group/column will add up to 1.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"0.30909091"},{"1":"Brown","2":"Brown","3":"0.54090909"},{"1":"Red","2":"Brown","3":"0.11818182"},{"1":"Blond","2":"Brown","3":"0.03181818"},{"1":"Black","2":"Blue","3":"0.09302326"},{"1":"Brown","2":"Blue","3":"0.39069767"},{"1":"Red","2":"Blue","3":"0.07906977"},{"1":"Blond","2":"Blue","3":"0.43720930"},{"1":"Black","2":"Hazel","3":"0.16129032"},{"1":"Brown","2":"Hazel","3":"0.58064516"},{"1":"Red","2":"Hazel","3":"0.15053763"},{"1":"Blond","2":"Hazel","3":"0.10752688"},{"1":"Black","2":"Green","3":"0.07812500"},{"1":"Brown","2":"Green","3":"0.45312500"},{"1":"Red","2":"Green","3":"0.21875000"},{"1":"Blond","2":"Green","3":"0.25000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>These numbers will be my bar heights. So for the bar(s) representing brown eyes:</p>
 <ul>
-<li><p>For any event A, <span class="math inline">\(0 \leq P(A) \leq 1\)</span></p></li>
-<li><p>If <span class="math inline">\(\Omega\)</span> is the sample space in the probability model, <span class="math inline">\(P(\Omega)=1\)</span></p></li>
-<li><p>In the case of equally likely outcomes, <span class="math inline">\(P(A)=\frac{\text{number of outcomes corresponding to event A}}{\text{total number of outcomes in sample space}}\)</span></p></li>
+<li><p>black hair will be .3091</p></li>
+<li><p>brown hair will be .5409</p></li>
+<li><p>red hair will be 0.1182</p></li>
+<li><p>blond hair will be 0.0318</p></li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="categorical-displays_files/figure-html/hair-eye-seg-bar-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>We also have the following rules to calculate other things:</p>
-<p><span class="math inline">\(P(A|B)\)</span> : the probability of event <span class="math inline">\(A\)</span> occurring, given that event <span class="math inline">\(B\)</span> has already occurred. (conditional probability)</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Independent Events">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Independent Events
+<p>Here’s the corresponding side-by-side bar plot. Note that the heights of the bars are the same as the segmented bar graph.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="categorical-displays_files/figure-html/hair-eye-ss-bar-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).</p>
-<p>For independent events, <span class="math display">\[P(A)=P(A|B) \text{ and } P(B)=P(B|A)\]</span></p>
+<p>On the other hand, if I want my eye colour to be my groups, I would calculate the relative frequencies by row (use the total of the row and divide the whole row by it), so each group/row will add up to 1.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"0.62962963"},{"1":"Brown","2":"Brown","3":"0.41608392"},{"1":"Red","2":"Brown","3":"0.36619718"},{"1":"Blond","2":"Brown","3":"0.05511811"},{"1":"Black","2":"Blue","3":"0.18518519"},{"1":"Brown","2":"Blue","3":"0.29370629"},{"1":"Red","2":"Blue","3":"0.23943662"},{"1":"Blond","2":"Blue","3":"0.74015748"},{"1":"Black","2":"Hazel","3":"0.13888889"},{"1":"Brown","2":"Hazel","3":"0.18881119"},{"1":"Red","2":"Hazel","3":"0.19718310"},{"1":"Blond","2":"Hazel","3":"0.07874016"},{"1":"Black","2":"Green","3":"0.04629630"},{"1":"Brown","2":"Green","3":"0.10139860"},{"1":"Red","2":"Green","3":"0.19718310"},{"1":"Blond","2":"Green","3":"0.12598425"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mutually Exclusive (or Disjoint)">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Mutually Exclusive (or Disjoint)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive if it’s impossible for both to occur. In one flip of a coin, heads and tails are mutually exclusive events.</p>
-<p>For mutually exclusive events,</p>
-<p><span class="math display">\[P(A\cap B)=0\]</span></p>
+<p>These numbers will be my bar heights. So for the bar(s) representing black hair:</p>
+<ul>
+<li><p>brown eyes will be 0.6296296</p></li>
+<li><p>blue eyes will be 0.1851852</p></li>
+<li><p>hazel eyes will be 0.1388889</p></li>
+<li><p>green eyes will be 0.0462963</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="categorical-displays_files/figure-html/hair-eye-prop-seg-bar-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="complement-rule" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</h3>
-<p>The complement to event <span class="math inline">\(A\)</span> is the event that <span class="math inline">\(A\)</span> doesn’t happen. This event is sometimes written <span class="math inline">\(AC\)</span>. In one flip of a coin, heads and tails are complementary events (assuming the coin won’t land on its side).</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Complementary Rule">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Complementary Rule
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For complementary events,</p>
-<p><span class="math display">\[P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)\]</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="categorical-displays_files/figure-html/hair-eye-prop-ss-bar-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="the-addition-rule" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Addition Rule">
+<section id="mosaic-plots" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="mosaic-plots"><span class="header-section-number">3.3</span> Mosaic Plots</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Mosaic Plots">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Addition Rule
+Mosaic Plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[P(A \cup B)=P(A) + P(B)-P(A \cap B)\]</span></p>
-<p>For mutually exclusive events, we know that <span class="math inline">\(P(A\cap B)=0\)</span>, so we can also have the following simplified rule:</p>
-<p><span class="math display">\[P(A \cup B)=P(A) + P(B)\]</span></p>
+<p>Mosaic plots are the almost the same as stacked bar plots. The only difference is that the widths of the bars change according to the proportion of points in each group. In a mosaic plot, the x-axis will also measure the proportion of observations/data points within the groupings (i.e.&nbsp;the x-axis reflects the marginal distribution of the variable on the x-axis).</p>
 </div>
 </div>
-</section>
-<section id="the-multiplication-rule" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Multiplication Rule">
+<p>Following the <a href="#stacked-bar-plots-and-side-by-side-bar-plots">same steps</a> as the side-by-side and stacked bar charts to find the heights, we now add an additional step before plotting.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Multiplication Rule
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B|A)\]</span></p>
-<p>For independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we know that <span class="math inline">\(P(B|A) = P(B)\)</span>, so we can also have the simplified rule:</p>
-<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B)\]</span></p>
+<p>Find the widths of the bars by finding the marginal distribution of the variable on the x-axis (the groups)</p>
 </div>
 </div>
+<ol type="1">
+<li>For each group, find the probability of having that trait. So for our previous example, we had this table:</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"68"},{"1":"Brown","2":"Brown","3":"119"},{"1":"Red","2":"Brown","3":"26"},{"1":"Blond","2":"Brown","3":"7"},{"1":"Black","2":"Blue","3":"20"},{"1":"Brown","2":"Blue","3":"84"},{"1":"Red","2":"Blue","3":"17"},{"1":"Blond","2":"Blue","3":"94"},{"1":"Black","2":"Hazel","3":"15"},{"1":"Brown","2":"Hazel","3":"54"},{"1":"Red","2":"Hazel","3":"14"},{"1":"Blond","2":"Hazel","3":"10"},{"1":"Black","2":"Green","3":"5"},{"1":"Brown","2":"Green","3":"29"},{"1":"Red","2":"Green","3":"14"},{"1":"Blond","2":"Green","3":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Using our eye colours as the groups (vertical bars), we will find:</p>
+<ul>
+<li><p><span class="math inline">\(P(Brown) \approx .3716\)</span></p></li>
+<li><p><span class="math inline">\(P(Blue) \approx .3632\)</span></p></li>
+<li><p><span class="math inline">\(P(Hazel) \approx .1571\)</span></p></li>
+<li><p><span class="math inline">\(P(Green) \approx .1081\)</span></p></li>
+</ul>
+<p>When we plot our mosaic plot, we do the same thing, except now, we have our bars differ in widths according to the numbers that we just calculated.</p>
+<!-- ![Mosaic Plot of Hair Colour on Eye Colour](moplotex.png) -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -662,13 +631,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./05-experimental-design.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span>
+      <a href="./notation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07-density-curves.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quantitative-displays.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
