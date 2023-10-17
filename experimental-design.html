@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 2&nbsp; Basic Notation</title>
+<title>AP Statistics Notes - 6&nbsp; Experimental Design</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./categorical-displays.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./probability.html" rel="next">
+<link href="./sampling.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,8 +68,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -84,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./notation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./experimental-design.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span></a>
   </div>
 </li>
@@ -141,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./experimental-design.html" class="sidebar-item-text sidebar-link">
+  <a href="./experimental-design.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></a>
   </div>
 </li>
@@ -184,11 +182,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lists" id="toc-lists" class="nav-link active" data-scroll-target="#lists"><span class="header-section-number">2.1</span> Lists</a></li>
-  <li><a href="#n" id="toc-n" class="nav-link" data-scroll-target="#n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></a></li>
-  <li><a href="#summation-sigma" id="toc-summation-sigma" class="nav-link" data-scroll-target="#summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
-  <li><a href="#other-notation" id="toc-other-notation" class="nav-link" data-scroll-target="#other-notation"><span class="header-section-number">2.4</span> Other notation</a></li>
-  <li><a href="#other-commonly-used-symbols" id="toc-other-commonly-used-symbols" class="nav-link" data-scroll-target="#other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</a></li>
+  <li><a href="#experiment-principles" id="toc-experiment-principles" class="nav-link active" data-scroll-target="#experiment-principles"><span class="header-section-number">6.1</span> Experiment Principles</a></li>
+  <li><a href="#experiment-designs" id="toc-experiment-designs" class="nav-link" data-scroll-target="#experiment-designs"><span class="header-section-number">6.2</span> Experiment Designs</a>
+  <ul class="collapse">
+  <li><a href="#completely-randomized-design" id="toc-completely-randomized-design" class="nav-link" data-scroll-target="#completely-randomized-design"><span class="header-section-number">6.2.1</span> Completely Randomized Design</a></li>
+  <li><a href="#randomized-block-design" id="toc-randomized-block-design" class="nav-link" data-scroll-target="#randomized-block-design"><span class="header-section-number">6.2.2</span> Randomized Block Design</a></li>
+  <li><a href="#matched-pairs-design" id="toc-matched-pairs-design" class="nav-link" data-scroll-target="#matched-pairs-design"><span class="header-section-number">6.2.3</span> Matched Pairs Design</a></li>
+  </ul></li>
+  <li><a href="#statistical-significance" id="toc-statistical-significance" class="nav-link" data-scroll-target="#statistical-significance"><span class="header-section-number">6.3</span> Statistical Significance</a></li>
+  <li><a href="#scope-of-inference" id="toc-scope-of-inference" class="nav-link" data-scroll-target="#scope-of-inference"><span class="header-section-number">6.4</span> Scope of Inference</a></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></h1>
+<h1 class="title"><span id="experimental-design" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></h1>
 </div>
 
 
@@ -212,60 +214,114 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="lists" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="lists"><span class="header-section-number">2.1</span> Lists</h2>
-<p>Most of the time, you will see <span class="math inline">\(x\)</span> denote a list of values (i.e.&nbsp;a variable in a data table).</p>
-<p>For example, if <span class="math inline">\(x\)</span> was the list of numerical values <span class="math inline">\(a\)</span> to <span class="math inline">\(g\)</span>, we can write it as:</p>
-<p><span class="math inline">\(x = [a, b, c, d, e, f, g]\)</span></p>
-<p>Then, <span class="math inline">\(x_i\)</span> means the <span class="math inline">\(i^{th}\)</span> value in the list of <span class="math inline">\(x\)</span>, so</p>
-<p><span class="math inline">\(x_1 = a\)</span> and <span class="math inline">\(x_2 = b\)</span> and <span class="math inline">\(x_7 = g\)</span>.</p>
+<p>A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of <strong>observational study</strong>, which observes individuals and measures variables of interest but does not attempt to influence the responses. Unfortunately, this means that many variables are not controlled for so we cannot establish causation between the explanatory and response variables. A <strong>response variable</strong> measures an <em>outcome</em> of a study. An <strong>explanatory variable</strong> may help <em>explain</em> or predict changes in a response variable. Because of the lack of control, we cannot be certain that variables other than the explanatory variable are influencing the the response instead. These are referred to as <strong>confounding variables</strong>.</p>
+<p>An <em>experiment</em> deliberately <strong><em>imposes some treatment</em></strong> (the specific condition applied) on individuals (<strong>experimental units</strong> or subjects if the experimental units are human) to measure their responses. When our goal is to understand cause and effect, experiments are the only source of fully convincing data. For this reason, the distinction between observational study and experiment is one of the most important in statistics.</p>
+<section id="experiment-principles" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="experiment-principles"><span class="header-section-number">6.1</span> Experiment Principles</h2>
+<p>In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things: comparison, randomization, control, and replication. Stronger internal validity gives us a better cause-effect link in our experiment. Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!</p>
+<dl>
+<dt>Comparison</dt>
+<dd>
+Use a design that compares two or more treatments.
+</dd>
+<dt>Randomization</dt>
+<dd>
+Use chance to assign experimental units to treatments. Doing so helps create roughly equivalent groups of experimental units by balancing the effects of other variables among treatment groups.
+</dd>
+<dt>Control</dt>
+<dd>
+Keep other variables that might affect the response the same for all groups.
+</dd>
+<dt>Replication</dt>
+<dd>
+Use enough experimental units in each group so that difference in the effects of the treatments can be distinguished from chance differences between the groups.
+</dd>
+</dl>
+<p>The logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically.</p>
+<p>The response to a dummy treatment is called the <strong>placebo effect</strong>. Subjects are given a placebo treatment to control for the placebo effect.</p>
+<p>Whenever possible, experiments with human subjects should be <strong>double-blind</strong>, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received.</p>
 </section>
-<section id="n" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></h2>
-<p>In regards to a data table or list of values, <span class="math inline">\(n\)</span> stands for the number of rows or data points that are in the data table or list (we will learn this as the <em>sample size</em> later on)</p>
-<p>So, for list <span class="math inline">\(x\)</span>, <span class="math inline">\(n = 7\)</span>.</p>
-<p>Adding on, <span class="math inline">\(x_n\)</span> would mean the last value in the list <span class="math inline">\(x\)</span> (since there are only <span class="math inline">\(n\)</span> values in <span class="math inline">\(x\)</span>)</p>
+<section id="experiment-designs" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="experiment-designs"><span class="header-section-number">6.2</span> Experiment Designs</h2>
+<section id="completely-randomized-design" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="completely-randomized-design"><span class="header-section-number">6.2.1</span> Completely Randomized Design</h3>
+<p>In a completely randomized design, the experimental units are assigned to the treatments completely by chance. This is similar to (but NOT the same as) a simple random sample (SRS), because in both cases we ignore other variables. Here’s the difference: In an SRS, we’re picking some people (our sample) to study, and ignoring the rest. In a completely randomized experiment, however, we already have our sample (the people in our experiment), and we’re randomly deciding how we’re going to study each person (or, which treatment they’re going to get). So in complete randomization, the randomization is in the <strong>assignment</strong>, <em>not in the selection</em>, of people in our study.</p>
 </section>
-<section id="summation-sigma" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</h2>
-<p>You will also see the greek letter <span class="math inline">\(\Sigma\)</span> in formulas. Usage of this sign means that we are using <em>summation notation</em>.</p>
-<p>If we want the sum of all numbers from 1 to 7, we would write it as,</p>
-<p><span class="math display">\[\sum_{i=1}^7 i\]</span></p>
-<p>We interpret this as,</p>
-<ol type="1">
-<li><p>Start from <span class="math inline">\(i = 1\)</span>, evaluate the expression, which is <span class="math inline">\(i\)</span>.</p></li>
-<li><p>Keep our evaluated expression to the side and get ready to add the other values to it, so</p></li>
-</ol>
-<p><span class="math display">\[1 + \cdots\]</span></p>
-<ol start="3" type="1">
-<li><p>Now go the next numbers until we get to <span class="math inline">\(7\)</span> (the number on the top of the <span class="math inline">\(\Sigma\)</span>) So moving onto <span class="math inline">\(i = 2\)</span>, we end up with <span class="math display">\[1 + 2 + \cdots\]</span> And with <span class="math inline">\(i = 3\)</span>, we end up with <span class="math display">\[1 + 2 + 3 + \cdots\]</span> </p></li>
-<li><p>When we get to the end of it (when we reach <span class="math inline">\(i = 7\)</span>), we have the <em>expanded form</em> of the summation. <span class="math display">\[1 + 2 + 3+ 4 + 5 + 6 + 7\]</span></p></li>
-</ol>
+<section id="randomized-block-design" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="randomized-block-design"><span class="header-section-number">6.2.2</span> Randomized Block Design</h3>
+<p>In a randomized block design, the experimental units are first assigned to blocks according to the different types/status of the experimental units in the experiment. This is similar to <a href="sampling.html#stratified-random-sample">stratified random sampling</a>, however, we are <strong>not</strong> taking a sample. Any reference to stratified random sampling is wrong when describing an experiment design.</p>
+<p>After each experimental unit is assigned to their block, the experiment is carried out in each block, where a completely randomized design is carried out within the block.</p>
+<p>Afterwards, you compare and analyze results from each block and finally combine all results and analyze the differences between blocks.</p>
 </section>
-<section id="other-notation" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="other-notation"><span class="header-section-number">2.4</span> Other notation</h2>
-<ul>
-<li><span class="math inline">\(\bar x\)</span>: The “line” on top of <span class="math inline">\(x\)</span> means the <em>mean of</em> <span class="math inline">\(x\)</span>. If we had <span class="math inline">\(\bar a\)</span>, I would be asking for the mean of <span class="math inline">\(a\)</span>.
-<ul>
-<li>Pronounced “x bar”</li>
-</ul></li>
-<li><span class="math inline">\(\hat p\)</span>: The “hat” on top of <span class="math inline">\(p\)</span> means the <em>estimate of</em> <span class="math inline">\(p\)</span>. If we had <span class="math inline">\(\hat x\)</span>, I would be asking for the estimate of <span class="math inline">\(x\)</span>.
-<ul>
-<li>Pronounced “p hat”</li>
-</ul></li>
-</ul>
+<section id="matched-pairs-design" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="matched-pairs-design"><span class="header-section-number">6.2.3</span> Matched Pairs Design</h3>
+<p>A matched pairs design is a special case of a <a href="#randomized-block-design">randomized block design</a> that uses blocks of size 2. In this kind of design, you have to have “matched pairs.” In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).</p>
 </section>
-<section id="other-commonly-used-symbols" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</h2>
-<ul>
-<li><p><span class="math inline">\(N\)</span>: population size</p></li>
-<li><p><span class="math inline">\(p\)</span>: proportion, probability, or p-value</p></li>
-<li><p><span class="math inline">\(\mu\)</span>: population mean (true mean)</p></li>
-<li><p><span class="math inline">\(\bar x\)</span>: sample mean</p></li>
-<li><p><span class="math inline">\(\sigma\)</span>: population standard deviation (true standard deviation)</p></li>
-<li><p><span class="math inline">\(s_x\)</span>: sample standard deviation (of x), so <span class="math inline">\(s_y\)</span> is the sample standard deviation of <span class="math inline">\(y\)</span></p></li>
-<li><p><span class="math inline">\(SE_{\bar x}\)</span>: Standard error of the sample mean (of x), the estimate of the standard deviation of the sample mean.</p></li>
-</ul>
+</section>
+<section id="statistical-significance" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="statistical-significance"><span class="header-section-number">6.3</span> Statistical Significance</h2>
+<p>An observed effect so large that it would rarely occur by chance is said to be <strong>statistically significant</strong>.</p>
+</section>
+<section id="scope-of-inference" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="scope-of-inference"><span class="header-section-number">6.4</span> Scope of Inference</h2>
+<p>The <strong>scope of inference</strong> refers to the type of inferences (conclusions) that can be drawn from a study. The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+<tr>
+<th class="tg-0pky" colspan="2" rowspan="2">
+</th>
+<th class="tg-c3ow" colspan="2">
+<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly assigned to groups?</span>
+</th>
+</tr>
+<tr>
+<th class="tg-c3ow">
+<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span>
+</th>
+<th class="tg-c3ow">
+<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tg-c3ow" rowspan="2">
+<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly </span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">selected from a population?</span>
+</td>
+<td class="tg-c3ow">
+<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span>
+</td>
+<td class="tg-0pky">
+<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> (</span><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">Rare in the real world)</span>
+</td>
+<td class="tg-0pky">
+<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent"> (Some observational studies)</span>
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span>
+</td>
+<td class="tg-0pky">
+<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot </span><span style="font-weight:normal">make</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make Inferences about cause and effect: </span><br><span style="font-style:italic;color:#000;background-color:transparent">&nbsp;&nbsp;(Most experiments)</span>
+</td>
+<td class="tg-0pky">
+<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make Inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent"> (Some observational studies)</span>
+</td>
+</tr>
+</tbody>
+
+</table>
 
 
 </section>
@@ -506,13 +562,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./sampling.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./categorical-displays.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./probability.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

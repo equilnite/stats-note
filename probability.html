@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 2&nbsp; Basic Notation</title>
+<title>AP Statistics Notes - 7&nbsp; Probability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./categorical-displays.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./density-curves.html" rel="next">
+<link href="./experimental-design.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./notation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span></a>
   </div>
 </li>
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./probability.html" class="sidebar-item-text sidebar-link">
+  <a href="./probability.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
@@ -184,11 +184,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lists" id="toc-lists" class="nav-link active" data-scroll-target="#lists"><span class="header-section-number">2.1</span> Lists</a></li>
-  <li><a href="#n" id="toc-n" class="nav-link" data-scroll-target="#n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></a></li>
-  <li><a href="#summation-sigma" id="toc-summation-sigma" class="nav-link" data-scroll-target="#summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
-  <li><a href="#other-notation" id="toc-other-notation" class="nav-link" data-scroll-target="#other-notation"><span class="header-section-number">2.4</span> Other notation</a></li>
-  <li><a href="#other-commonly-used-symbols" id="toc-other-commonly-used-symbols" class="nav-link" data-scroll-target="#other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</a></li>
+  <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link active" data-scroll-target="#probability-rules"><span class="header-section-number">7.1</span> Probability Rules</a>
+  <ul class="collapse">
+  <li><a href="#complement-rule" id="toc-complement-rule" class="nav-link" data-scroll-target="#complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</a></li>
+  <li><a href="#the-addition-rule" id="toc-the-addition-rule" class="nav-link" data-scroll-target="#the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</a></li>
+  <li><a href="#the-multiplication-rule" id="toc-the-multiplication-rule" class="nav-link" data-scroll-target="#the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></h1>
+<h1 class="title"><span id="probability" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probability</span></span></h1>
 </div>
 
 
@@ -212,62 +213,139 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="lists" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="lists"><span class="header-section-number">2.1</span> Lists</h2>
-<p>Most of the time, you will see <span class="math inline">\(x\)</span> denote a list of values (i.e.&nbsp;a variable in a data table).</p>
-<p>For example, if <span class="math inline">\(x\)</span> was the list of numerical values <span class="math inline">\(a\)</span> to <span class="math inline">\(g\)</span>, we can write it as:</p>
-<p><span class="math inline">\(x = [a, b, c, d, e, f, g]\)</span></p>
-<p>Then, <span class="math inline">\(x_i\)</span> means the <span class="math inline">\(i^{th}\)</span> value in the list of <span class="math inline">\(x\)</span>, so</p>
-<p><span class="math inline">\(x_1 = a\)</span> and <span class="math inline">\(x_2 = b\)</span> and <span class="math inline">\(x_7 = g\)</span>.</p>
-</section>
-<section id="n" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></h2>
-<p>In regards to a data table or list of values, <span class="math inline">\(n\)</span> stands for the number of rows or data points that are in the data table or list (we will learn this as the <em>sample size</em> later on)</p>
-<p>So, for list <span class="math inline">\(x\)</span>, <span class="math inline">\(n = 7\)</span>.</p>
-<p>Adding on, <span class="math inline">\(x_n\)</span> would mean the last value in the list <span class="math inline">\(x\)</span> (since there are only <span class="math inline">\(n\)</span> values in <span class="math inline">\(x\)</span>)</p>
-</section>
-<section id="summation-sigma" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</h2>
-<p>You will also see the greek letter <span class="math inline">\(\Sigma\)</span> in formulas. Usage of this sign means that we are using <em>summation notation</em>.</p>
-<p>If we want the sum of all numbers from 1 to 7, we would write it as,</p>
-<p><span class="math display">\[\sum_{i=1}^7 i\]</span></p>
-<p>We interpret this as,</p>
+<p>You typically know probability as chance. But what does that chance represent?</p>
+<p><strong>Probability</strong> is a number between 0 and 1 that describes the proportion of times the outcome would occur in a very long series of repetitions. We observe this definition of probability through the <strong>law of large numbers</strong> says that if we observe more and more repetitions of any chance process, the proportion of times that a specific outcome occurs approaches a single value.</p>
+<p>Because of random processes, we know that that randomness is predictable in the long run. Our intuition tries to tell us random phenomena should also be predictable in the short run. However, probability does not allow us to make short-run predictions. Even with how we can tell things in the long run, probability does not tell us certainties about future outcomes. That is, past outcomes do not influence the likelihood of individual outcomes occurring in the future.</p>
+<p>If we know how a certain process is supposed to act out through our understanding of probability, we can simulate it. A simulation is an imitation of chance behavior, based on a model that accurately reflects the situation. This means that we will not be doing what is being described, but rather choose a way to represent the situation using a box of tickets, a coin flip, a random number generator, etc.</p>
+<p>When we describe a simulation, we want to describe the following:</p>
 <ol type="1">
-<li><p>Start from <span class="math inline">\(i = 1\)</span>, evaluate the expression, which is <span class="math inline">\(i\)</span>.</p></li>
-<li><p>Keep our evaluated expression to the side and get ready to add the other values to it, so</p></li>
+<li><p>Describe how you would do one simulation of the situation, using a physical medium and/or random number generator. e.g.&nbsp;flip a coin, choose <span class="math inline">\(n\)</span> unique random numbers from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, choose slips of paper out a box.</p></li>
+<li><p>Do your described procedure many many times.</p></li>
+<li><p>Estimate the probability in question.</p></li>
 </ol>
-<p><span class="math display">\[1 + \cdots\]</span></p>
-<ol start="3" type="1">
-<li><p>Now go the next numbers until we get to <span class="math inline">\(7\)</span> (the number on the top of the <span class="math inline">\(\Sigma\)</span>) So moving onto <span class="math inline">\(i = 2\)</span>, we end up with <span class="math display">\[1 + 2 + \cdots\]</span> And with <span class="math inline">\(i = 3\)</span>, we end up with <span class="math display">\[1 + 2 + 3 + \cdots\]</span> </p></li>
-<li><p>When we get to the end of it (when we reach <span class="math inline">\(i = 7\)</span>), we have the <em>expanded form</em> of the summation. <span class="math display">\[1 + 2 + 3+ 4 + 5 + 6 + 7\]</span></p></li>
-</ol>
-</section>
-<section id="other-notation" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="other-notation"><span class="header-section-number">2.4</span> Other notation</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep in mind that simulations <em>are</em> <strong>simulations</strong>. This means that if you’re describing how to simulate something, you absolutely cannot say to do what you’re asked to describe to simulate.</p>
+<p>i.e.&nbsp;If you’re asked to describe a simulation of picking a Skittle out of a bag randomly, you cannot say that to simulate it, pick a Skittle out of a bag randomly.</p>
+</div>
+</div>
+<section id="probability-rules" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="probability-rules"><span class="header-section-number">7.1</span> Probability Rules</h2>
+<p>The sample space <span class="math inline">\(\Omega\)</span> of a chance process is the set of all possible outcomes.</p>
+<p>A probability model is a description of some chance process that consists of two parts: a sample space <span class="math inline">\(\Omega\)</span> and a probability for each outcome.</p>
+<p>An event is any collection of outcomes from some chance process. That is, an event is a subset of the sample space. Events are usually designated by capital letters, like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, and so on.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Probability Model">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Probability Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><span class="math inline">\(\bar x\)</span>: The “line” on top of <span class="math inline">\(x\)</span> means the <em>mean of</em> <span class="math inline">\(x\)</span>. If we had <span class="math inline">\(\bar a\)</span>, I would be asking for the mean of <span class="math inline">\(a\)</span>.
-<ul>
-<li>Pronounced “x bar”</li>
-</ul></li>
-<li><span class="math inline">\(\hat p\)</span>: The “hat” on top of <span class="math inline">\(p\)</span> means the <em>estimate of</em> <span class="math inline">\(p\)</span>. If we had <span class="math inline">\(\hat x\)</span>, I would be asking for the estimate of <span class="math inline">\(x\)</span>.
-<ul>
-<li>Pronounced “p hat”</li>
-</ul></li>
+<li><p>For any event A, <span class="math inline">\(0 \leq P(A) \leq 1\)</span></p></li>
+<li><p>If <span class="math inline">\(\Omega\)</span> is the sample space in the probability model, <span class="math inline">\(P(\Omega)=1\)</span></p></li>
+<li><p>In the case of equally likely outcomes, <span class="math inline">\(P(A)=\frac{\text{number of outcomes corresponding to event A}}{\text{total number of outcomes in sample space}}\)</span></p></li>
 </ul>
+</div>
+</div>
+<p>We also have the following rules to calculate other things:</p>
+<p><span class="math inline">\(P(A|B)\)</span> : the probability of event <span class="math inline">\(A\)</span> occurring, given that event <span class="math inline">\(B\)</span> has already occurred. (conditional probability)</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Independent Events">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Independent Events
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if the occurrence of one has no effect on the likelihood of the other occurring (like successive coin flips).</p>
+<p>For independent events, <span class="math display">\[P(A)=P(A|B) \text{ and } P(B)=P(B|A)\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Mutually Exclusive (or Disjoint)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mutually Exclusive (or Disjoint)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive if it’s impossible for both to occur. In one flip of a coin, heads and tails are mutually exclusive events.</p>
+<p>For mutually exclusive events,</p>
+<p><span class="math display">\[P(A\cap B)=0\]</span></p>
+</div>
+</div>
+<section id="complement-rule" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</h3>
+<p>The complement to event <span class="math inline">\(A\)</span> is the event that <span class="math inline">\(A\)</span> doesn’t happen. This event is sometimes written <span class="math inline">\(AC\)</span>. In one flip of a coin, heads and tails are complementary events (assuming the coin won’t land on its side).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Complementary Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Complementary Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For complementary events,</p>
+<p><span class="math display">\[P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)\]</span></p>
+</div>
+</div>
 </section>
-<section id="other-commonly-used-symbols" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</h2>
-<ul>
-<li><p><span class="math inline">\(N\)</span>: population size</p></li>
-<li><p><span class="math inline">\(p\)</span>: proportion, probability, or p-value</p></li>
-<li><p><span class="math inline">\(\mu\)</span>: population mean (true mean)</p></li>
-<li><p><span class="math inline">\(\bar x\)</span>: sample mean</p></li>
-<li><p><span class="math inline">\(\sigma\)</span>: population standard deviation (true standard deviation)</p></li>
-<li><p><span class="math inline">\(s_x\)</span>: sample standard deviation (of x), so <span class="math inline">\(s_y\)</span> is the sample standard deviation of <span class="math inline">\(y\)</span></p></li>
-<li><p><span class="math inline">\(SE_{\bar x}\)</span>: Standard error of the sample mean (of x), the estimate of the standard deviation of the sample mean.</p></li>
-</ul>
+<section id="the-addition-rule" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Addition Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Addition Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[P(A \cup B)=P(A) + P(B)-P(A \cap B)\]</span></p>
+<p>For mutually exclusive events, we know that <span class="math inline">\(P(A\cap B)=0\)</span>, so we can also have the following simplified rule:</p>
+<p><span class="math display">\[P(A \cup B)=P(A) + P(B)\]</span></p>
+</div>
+</div>
+</section>
+<section id="the-multiplication-rule" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Multiplication Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Multiplication Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B|A)\]</span></p>
+<p>For independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we know that <span class="math inline">\(P(B|A) = P(B)\)</span>, so we can also have the simplified rule:</p>
+<p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B)\]</span></p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -506,13 +584,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./experimental-design.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./categorical-displays.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./density-curves.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

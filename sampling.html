@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 2&nbsp; Basic Notation</title>
+<title>AP Statistics Notes - 5&nbsp; Sampling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./categorical-displays.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./experimental-design.html" rel="next">
+<link href="./quantitative-displays.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,8 +68,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -84,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./notation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span></a>
   </div>
 </li>
@@ -135,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sampling.html" class="sidebar-item-text sidebar-link">
+  <a href="./sampling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></span></a>
   </div>
 </li>
@@ -184,11 +182,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lists" id="toc-lists" class="nav-link active" data-scroll-target="#lists"><span class="header-section-number">2.1</span> Lists</a></li>
-  <li><a href="#n" id="toc-n" class="nav-link" data-scroll-target="#n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></a></li>
-  <li><a href="#summation-sigma" id="toc-summation-sigma" class="nav-link" data-scroll-target="#summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
-  <li><a href="#other-notation" id="toc-other-notation" class="nav-link" data-scroll-target="#other-notation"><span class="header-section-number">2.4</span> Other notation</a></li>
-  <li><a href="#other-commonly-used-symbols" id="toc-other-commonly-used-symbols" class="nav-link" data-scroll-target="#other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</a></li>
+  <li><a href="#bias" id="toc-bias" class="nav-link active" data-scroll-target="#bias"><span class="header-section-number">5.1</span> Bias</a>
+  <ul class="collapse">
+  <li><a href="#response-bias" id="toc-response-bias" class="nav-link" data-scroll-target="#response-bias"><span class="header-section-number">5.1.1</span> Response Bias</a></li>
+  <li><a href="#non-response-bias" id="toc-non-response-bias" class="nav-link" data-scroll-target="#non-response-bias"><span class="header-section-number">5.1.2</span> Non-response Bias</a></li>
+  <li><a href="#undercoverage" id="toc-undercoverage" class="nav-link" data-scroll-target="#undercoverage"><span class="header-section-number">5.1.3</span> Undercoverage</a></li>
+  <li><a href="#voluntary-response-sample" id="toc-voluntary-response-sample" class="nav-link" data-scroll-target="#voluntary-response-sample"><span class="header-section-number">5.1.4</span> Voluntary Response Sample</a></li>
+  <li><a href="#convenience-sample" id="toc-convenience-sample" class="nav-link" data-scroll-target="#convenience-sample"><span class="header-section-number">5.1.5</span> Convenience Sample</a></li>
+  </ul></li>
+  <li><a href="#sampling-methods" id="toc-sampling-methods" class="nav-link" data-scroll-target="#sampling-methods"><span class="header-section-number">5.2</span> Sampling Methods</a>
+  <ul class="collapse">
+  <li><a href="#simple-random-sample-srs" id="toc-simple-random-sample-srs" class="nav-link" data-scroll-target="#simple-random-sample-srs"><span class="header-section-number">5.2.1</span> Simple Random Sample (SRS)</a></li>
+  <li><a href="#stratified-random-sample" id="toc-stratified-random-sample" class="nav-link" data-scroll-target="#stratified-random-sample"><span class="header-section-number">5.2.2</span> Stratified Random Sample</a></li>
+  <li><a href="#random-cluster-sample" id="toc-random-cluster-sample" class="nav-link" data-scroll-target="#random-cluster-sample"><span class="header-section-number">5.2.3</span> Random Cluster Sample</a></li>
+  <li><a href="#systematic-random-sample" id="toc-systematic-random-sample" class="nav-link" data-scroll-target="#systematic-random-sample"><span class="header-section-number">5.2.4</span> Systematic Random Sample</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></h1>
 </div>
 
 
@@ -212,62 +220,53 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="lists" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="lists"><span class="header-section-number">2.1</span> Lists</h2>
-<p>Most of the time, you will see <span class="math inline">\(x\)</span> denote a list of values (i.e.&nbsp;a variable in a data table).</p>
-<p>For example, if <span class="math inline">\(x\)</span> was the list of numerical values <span class="math inline">\(a\)</span> to <span class="math inline">\(g\)</span>, we can write it as:</p>
-<p><span class="math inline">\(x = [a, b, c, d, e, f, g]\)</span></p>
-<p>Then, <span class="math inline">\(x_i\)</span> means the <span class="math inline">\(i^{th}\)</span> value in the list of <span class="math inline">\(x\)</span>, so</p>
-<p><span class="math inline">\(x_1 = a\)</span> and <span class="math inline">\(x_2 = b\)</span> and <span class="math inline">\(x_7 = g\)</span>.</p>
+<p>When we have a question about a certain population&nbsp;(an entire group of individuals). Ideally we would ask them all (take a <strong>census</strong>). But contacting every member of a population often isn’t very practical: it would take too much time and cost too much money. Instead, we put the question to a <strong>sample</strong>, or subset of individuals of the population from which we actually collect data, chosen to represent the entire population.</p>
+<p>When you want to identify the population, ask yourself, what does the question want to know about? What group of people does the question/problem address?</p>
+<p>When identifying the sample, ask yourself, what group does the work done actually address?</p>
+<section id="bias" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="bias"><span class="header-section-number">5.1</span> Bias</h2>
+<p>When we collect data, there is the possibility of the data becoming systematically pushed towards a specific outcome. For example, if we want to learn about the GPA average in the school and take a sample of students only from a class, it’s quite possible that the sample is not representative of the school. We will probably result in a GPA average that is higher or lower than the actual GPA average in the school. There are several ways that this can happen. The main way that we learn are:</p>
+<section id="response-bias" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="response-bias"><span class="header-section-number">5.1.1</span> Response Bias</h3>
+<p>Response bias is created when something causes people’s responses to be systematically pushed in one direction.</p>
 </section>
-<section id="n" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></h2>
-<p>In regards to a data table or list of values, <span class="math inline">\(n\)</span> stands for the number of rows or data points that are in the data table or list (we will learn this as the <em>sample size</em> later on)</p>
-<p>So, for list <span class="math inline">\(x\)</span>, <span class="math inline">\(n = 7\)</span>.</p>
-<p>Adding on, <span class="math inline">\(x_n\)</span> would mean the last value in the list <span class="math inline">\(x\)</span> (since there are only <span class="math inline">\(n\)</span> values in <span class="math inline">\(x\)</span>)</p>
+<section id="non-response-bias" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="non-response-bias"><span class="header-section-number">5.1.2</span> Non-response Bias</h3>
+<p>Nonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate</p>
 </section>
-<section id="summation-sigma" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</h2>
-<p>You will also see the greek letter <span class="math inline">\(\Sigma\)</span> in formulas. Usage of this sign means that we are using <em>summation notation</em>.</p>
-<p>If we want the sum of all numbers from 1 to 7, we would write it as,</p>
-<p><span class="math display">\[\sum_{i=1}^7 i\]</span></p>
-<p>We interpret this as,</p>
-<ol type="1">
-<li><p>Start from <span class="math inline">\(i = 1\)</span>, evaluate the expression, which is <span class="math inline">\(i\)</span>.</p></li>
-<li><p>Keep our evaluated expression to the side and get ready to add the other values to it, so</p></li>
-</ol>
-<p><span class="math display">\[1 + \cdots\]</span></p>
-<ol start="3" type="1">
-<li><p>Now go the next numbers until we get to <span class="math inline">\(7\)</span> (the number on the top of the <span class="math inline">\(\Sigma\)</span>) So moving onto <span class="math inline">\(i = 2\)</span>, we end up with <span class="math display">\[1 + 2 + \cdots\]</span> And with <span class="math inline">\(i = 3\)</span>, we end up with <span class="math display">\[1 + 2 + 3 + \cdots\]</span> </p></li>
-<li><p>When we get to the end of it (when we reach <span class="math inline">\(i = 7\)</span>), we have the <em>expanded form</em> of the summation. <span class="math display">\[1 + 2 + 3+ 4 + 5 + 6 + 7\]</span></p></li>
-</ol>
+<section id="undercoverage" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="undercoverage"><span class="header-section-number">5.1.3</span> Undercoverage</h3>
+<p>Undercoverage occurs when some members of the population cannot be chosen in the sample.</p>
 </section>
-<section id="other-notation" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="other-notation"><span class="header-section-number">2.4</span> Other notation</h2>
-<ul>
-<li><span class="math inline">\(\bar x\)</span>: The “line” on top of <span class="math inline">\(x\)</span> means the <em>mean of</em> <span class="math inline">\(x\)</span>. If we had <span class="math inline">\(\bar a\)</span>, I would be asking for the mean of <span class="math inline">\(a\)</span>.
-<ul>
-<li>Pronounced “x bar”</li>
-</ul></li>
-<li><span class="math inline">\(\hat p\)</span>: The “hat” on top of <span class="math inline">\(p\)</span> means the <em>estimate of</em> <span class="math inline">\(p\)</span>. If we had <span class="math inline">\(\hat x\)</span>, I would be asking for the estimate of <span class="math inline">\(x\)</span>.
-<ul>
-<li>Pronounced “p hat”</li>
-</ul></li>
-</ul>
+<section id="voluntary-response-sample" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="voluntary-response-sample"><span class="header-section-number">5.1.4</span> Voluntary Response Sample</h3>
+<p>Voluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population</p>
 </section>
-<section id="other-commonly-used-symbols" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</h2>
-<ul>
-<li><p><span class="math inline">\(N\)</span>: population size</p></li>
-<li><p><span class="math inline">\(p\)</span>: proportion, probability, or p-value</p></li>
-<li><p><span class="math inline">\(\mu\)</span>: population mean (true mean)</p></li>
-<li><p><span class="math inline">\(\bar x\)</span>: sample mean</p></li>
-<li><p><span class="math inline">\(\sigma\)</span>: population standard deviation (true standard deviation)</p></li>
-<li><p><span class="math inline">\(s_x\)</span>: sample standard deviation (of x), so <span class="math inline">\(s_y\)</span> is the sample standard deviation of <span class="math inline">\(y\)</span></p></li>
-<li><p><span class="math inline">\(SE_{\bar x}\)</span>: Standard error of the sample mean (of x), the estimate of the standard deviation of the sample mean.</p></li>
-</ul>
+<section id="convenience-sample" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="convenience-sample"><span class="header-section-number">5.1.5</span> Convenience Sample</h3>
+<p>Choosing individuals from a population who are easy to reach results in a convenience sample.</p>
+</section>
+</section>
+<section id="sampling-methods" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sampling-methods"><span class="header-section-number">5.2</span> Sampling Methods</h2>
+<section id="simple-random-sample-srs" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="simple-random-sample-srs"><span class="header-section-number">5.2.1</span> Simple Random Sample (SRS)</h3>
+<p>In a SRS, each individual (the words) and each subgroup of individuals has the same chance of being chosen from the population of all words in the song.</p>
+</section>
+<section id="stratified-random-sample" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="stratified-random-sample"><span class="header-section-number">5.2.2</span> Stratified Random Sample</h3>
+<p>In a stratified random sample, we first determine <strong>strata</strong> within our population. You can think of strata as subgroups of people that we divide based on the type/status of the things that we are sampling. The goal of the random sample is then to take an SRS from each strata (normally, you want the same amount of people from each stratum).</p>
+</section>
+<section id="random-cluster-sample" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="random-cluster-sample"><span class="header-section-number">5.2.3</span> Random Cluster Sample</h3>
+<p>In a random cluster sample, we first determine <strong>clusters</strong> within our population. You can think of clusters as subgroups of people that we divide based on the location of the things that we are sampling (there should be no way to distinguish between the clusters besides where they are). The goal of the random sample is then to take select random clusters and then sample all people in the chosen clusters.</p>
+</section>
+<section id="systematic-random-sample" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="systematic-random-sample"><span class="header-section-number">5.2.4</span> Systematic Random Sample</h3>
+<p>In a systematic random sample, we randomly choose an interval (n) and/or a starting point at which to select individuals and then we select every nth individual.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -506,13 +505,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./quantitative-displays.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./categorical-displays.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./experimental-design.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
