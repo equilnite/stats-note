@@ -6,7 +6,9 @@ An *experiment* deliberately ***imposes some treatment*** (the specific conditio
 
 ## Experiment Principles
 
-In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things:  comparison, randomization, control, and replication.  Stronger internal validity gives us a better cause-effect link in our experiment.  Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!
+In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things:  comparison, randomization, control, and replication.  **Stronger internal validity gives us a better cause-effect link in our experiment.**  Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!
+
+::: {.callout-note title="Principles of Experimental Design"}
 
 Comparison
 : Use a design that compares two or more treatments. 
@@ -18,7 +20,9 @@ Control
 : Keep other variables that might affect the response the same for all groups. 
 
 Replication
-: Use enough experimental units in each group so that difference in the effects of the treatments can be distinguished from chance differences between the groups. 
+: Use enough experimental units in each group so that difference in the effects of the treatments can be distinguished from chance differences between the groups.
+
+:::
 
 The logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically. 
 

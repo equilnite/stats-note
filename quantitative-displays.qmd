@@ -176,13 +176,11 @@ points with very precise decimal measurements).
 
 
 1.  Decide on your intervals (e.g. by 5's, by 10's, by 100's)
-
 2.  Within your intervals, count up the number of observations that
     belong in that "bin". When you do so, count up observations so that
     you count the left end inclusive and the right end inclusive. So if
     you did intervals of 5, you would do something like counting up
     points $0 \leq x < 5$, $5 \leq x < 10$, and so on.
-
 3.  Plot your bars.
 
 Example:

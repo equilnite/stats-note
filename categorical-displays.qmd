@@ -90,11 +90,8 @@ These numbers will be my bar heights. So for the bar(s) representing
 brown eyes:
 
 -   black hair will be .3091
-
 -   brown hair will be .5409
-
 -   red hair will be 0.1182
-
 -   blond hair will be 0.0318
 
 ```{r hair-eye-seg-bar}
@@ -120,11 +117,8 @@ These numbers will be my bar heights. So for the bar(s) representing
 black hair:
 
 -   brown eyes will be 0.6296296
-
 -   blue eyes will be 0.1851852
-
 -   hazel eyes will be 0.1388889
-
 -   green eyes will be 0.0462963
 
 ```{r hair-eye-prop-seg-bar}
@@ -167,11 +161,8 @@ as.data.frame(hair)
 Using our eye colours as the groups (vertical bars), we will find:
 
 -   $P(Brown) \approx .3716$
-
 -   $P(Blue) \approx .3632$
-
 -   $P(Hazel) \approx .1571$
-
 -   $P(Green) \approx .1081$
 
 When we plot our mosaic plot, we do the same thing, except now, we have
