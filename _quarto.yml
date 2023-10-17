@@ -16,10 +16,10 @@ book:
     - notation.qmd
     - categorical-displays.qmd
     - quantitative-displays.qmd
-    # - sampling.qmd
-    # - experimental-design.qmd
-    # - probability.qmd
-    # - density-curves.qmd
+    - sampling.qmd
+    - experimental-design.qmd
+    - probability.qmd
+    - density-curves.qmd
     # - random-variables.qmd
     # - sampling-distributions.qmd
     # - confidence-intervals.qmd

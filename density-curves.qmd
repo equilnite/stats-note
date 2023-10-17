@@ -13,11 +13,11 @@ Once we have a smooth curve (or straight line) that shows our distribution, we c
 We’ll focus on density curves that are either straight lines, symmetric, or skewed.  How can we look at a density curve and estimate the mean and median?
 
 ::: {.callout-tip}
--Remember that with right skewed data, the $\text{mean} > \text{median}$
 
--Remember that with left skewed data, the $\text{mean} < \text{median}$
+- Remember that with right skewed data, the $\text{mean} > \text{median}$
+- Remember that with left skewed data, the $\text{mean} < \text{median}$
+- Remember that with symmetric data, the $\text{mean} \cong \text{median}$
 
--Remember that with symmetric data, the $\text{mean} \cong \text{median}$
 :::
 
 ## Percentiles
@@ -72,15 +72,13 @@ This is called the Standard Normal Distribution, or $N(0,1)$.  Remember that we 
 ### Characteristics of the Normal Distribution {#normal-characteristics}
 
 ::: {.callout-note title="Normal Distribution Characteristics"}
+
 - They are always unimodal, bell-shaped, and symmetric about the mean
-
 - The x-axis represents different values of the variable, and the probability of any single value of x is zero (not true in real-life situations, but remember that this is an approximation).
-
 - The probability of a range of x-values is shown on the graph by the area under the curve for that range.  The shaded area in the Standard Normal graph above represents the probability that $x$ will be at least 1.5 standard deviations below the mean (about 10%).
-
 - The total area under the curve is 1, or 100%
-
 - The graph can be narrow or broad, depending on the standard deviation, but never skewed.
+
 :::
 
 ### Empirical Rule
@@ -88,9 +86,7 @@ This is called the Standard Normal Distribution, or $N(0,1)$.  Remember that we 
 ::: {.callout-note title="Empirical Rule (68-95-99.7 Rule)"}
 
 - about 68\% of the distribution is within 1 standard deviation of the mean
-
 - about 95\% of the distribution is within 2 standard deviation of the mean
-
 - about  99.7\% of the distribution is within 3 standard deviation of the mean
 
 :::
@@ -110,13 +106,12 @@ ggplot(x = -4:4) +
 When assessing normality, you have to think about what makes a normal distribution…. a normal distribution. Refer to the [characteristics of a normal distribution](#normal-characteristics) to remind yourself what you need to look for.
 
 ::: {.callout-note title="Checking Normality..."}
+
 - Graph your data using a dot plot, histogram, boxplot, or stem plot. Whichever one is most convenient and would show the distribution of data the best.
-
 - Compare the mean and median of the distribution. Normal curves are symmetric, so our data should also be symmetric. Are the mean and median almost the same?
-
 - Check to see if the data follows the empirical rule. Is there 68% of the data between -1 and 1 standard deviations? What about 95% and 99.7%?
-
 - Look at the normal probability plot if given. (Know how to interpret and read, not make). If the plot is fairly linear (does a straight line fit through the points), then we have further evidence that the distribution is approximately normal
+
 :::
 
 ### Standardized Score {#z-score}
@@ -150,13 +145,9 @@ The two functions of interest for this chapter are:
 When using your calculator to calculate Normal probabilities you need to make sure you write at least the following information to ensure full credit:
 
 - The name of the distribution
-
 - The parameters of the distribution (for normal distributions, the mean and s.d.)
-
 - How to calculate the test statistic (for normal distributions, the z-score)
-
 - The probability you are finding
-
 - The answer in context of the problem
 
 #### Example

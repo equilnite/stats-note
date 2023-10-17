@@ -1,0 +1,44 @@
+# Exploring Data
+
+Statistics is the science and art of collecting, analyzing, and drawing conclusions from data. When practicing statistics, data is collected into data sets. Data sets are typically organized into data tables.
+
+## Datasets
+
+Consider this subset of data from American Community Survey (ACS) which the US Census collects from households from time-to-time through sampling surveys.
+
+|     Household Number    |     Region    |     Number of people    |     Time in dwelling   (years)    |     Response mode    |     Household income    |     Internet access?    |
+|---|---|---|---|---|---|---|
+|     425    |     Midwest    |     5    |     2-4    |     Internet    |     52,000    |     Yes    |
+|     936459     |     West     |     4     |     2–4     |     Mail     |     40,500     |     Yes    |
+|     50055     |     Northeast     |     2     |     10–19     |     Internet     |     481,000     |     Yes    |
+|     592934     |     West     |     4     |     2–4     |     Phone     |     230,800     |     No    |
+
+
+::: {.callout-note title="Data Tables"}
+Data tables will follow the convention of having each row describing an *individual* (people, animal, or things) and each column holding the value of a *variable* (an attribute that can take **different** values for **different** individuals)
+:::
+
+The **individuals** in this data set are the households that the ACS collected data from.
+
+The **variables** in this data set are the things recorded about each individual household, such as the region, number of people, time in dwelling, response mode, etc. Keep in mind that the household number **is not a variable**. The household number is just a unique identifier that doesn't hold any real meaning.
+
+### Variables
+
+There are two primary types of variables that we learn about in AP Statistics:
+
+::: {.callout-note title="Categorical and Quantitative Variables"}
+**Categorical variables** assign labels that place each individual into a particular group, called a category.
+
+**Quantitative variables** take number values that are quantities (measurable characteristics)
+- *Not all numbers are quantitative variables!* Make sure to differentiate between measurable characteristics and labels. A variable that has numbers as its value can only be quantitative if it was a measurement or count (i.e., you can obtain the same answer to some degree of precision)
+:::
+
+## Associations
+
+::: {.callout-note title="Association"}
+There is an association between two variables if knowing the value of one variable helps us predict the value of the other. If knowing the value of one variable does not help us predict the value of the other, then there is no association between the variables.
+:::
+
+## Two-Way Tables
+
+Two-way tables summarize two categorical variables.
