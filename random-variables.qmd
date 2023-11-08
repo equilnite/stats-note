@@ -1,29 +1,33 @@
 # Random Variables
 
-A **random variable** is a variable whose value is a numerical outcome
-of a random phenomenon.
+A **random variable** is a variable whose value is a numerical outcome of a random phenomenon.
 
-Random variables can be discrete or continuous. A **discrete random
-variable** $X$ has a countable, or smaller, number of possible outcomes,
-while a **continuous random variable** $X$ can take on an infinite
-number (theoretically) of different values.
-
-The **probability distribution** of a random variable $X$ gives us all
-possible values of $X$, and their corresponding probabilities.
+The **probability distribution** of a random variable $X$ gives us all possible values of $X$, and their corresponding probabilities.
 Probability distributions are typically given as tables, histograms
-(with probability on the y-axis, instead of frequency), or density
-curves (like the Normal curve).
+(with probability on the y-axis, instead of frequency), or density curves (like the Normal curve).
+
+::: {.callout-important title="pdfs and cdfs"}
+
+For any given named distribution (e.g., Binomial, Normal, Geometric, Uniform), we will always have a **probability density function (pdf)** and a **cumulative density function (cdf)**
+
+We use pdfs to find the probability of a singular point. 
+* e.g., if I want to find the probability of that a random variable $X$ is equal to $x$, then I'd plug in the value of $x$ into the pdf of $X$, $P(X = x)$.
+
+We use cdfs to find the probability of a falling within a certain interval.
+* e.g., if I want to find the probability of that a random variable $X$ is less than $x$, then I'd plug in the value of $x$ into the cdf of $X$, $P(X \leq x)$.
+
+:::
 
 ## Discrete Random Variables
 
-A discrete random variable describes a process that only has specific,
-predefined outcomes. For example, you can be finding the probability of
-people having blue, brown, and black eyes. Or you can be finding the
-probability of people earning salaries in the ranges of \<\$30,000,
-\$30,000 - \$50,000, \$50,000 - \$ 70,000, \$70,000 - \$ 100,000,
-\>\$100,000.
+::: {.callout-note title="Discrete Random Variable"}
 
-::: {.highlight}
+A **discrete random variable** describes a process that only has specific, predefined numerical outcomess. For example, we can use a discrete random variable to finding the probability of Michael Jordon scoring 50 points in a single game or the probability of rolling a 3 or lower on a six-sided die.
+
+:::
+
+::: {.callout-note title="Mean and SD of Discrete Random Variable"}
+
 When we have a discrete random variable $X$ whose probability
 distribution is
 
@@ -64,19 +68,14 @@ formulas are equivalent.
 
 </details>
 
-The variance of a random variable $X$ is:
-
-$$
-Var(X) = \sigma_X^2
-$$
-
 ### Binomial Random Variables
 
 Binomial random variables have parameters $n$ and $p$, and can be
 written $B(n, p)$. Remember, Normal random variables have parameters and
 and can be written $N(\mu,\sigma)$.
 
-::: {.highlight}
+::: {.callout-note title="pdf of a Binomial Random Variable"}
+
 The **pdf** of a Binomial Random Variable (i.e. the binomial formula) is: 
 
 $$
@@ -92,7 +91,8 @@ $\texttt{2nd -> vars (distr) -> binompdf}$
 Usage: $\texttt{binompdf(n, p[,x])}$
 :::
 
-::: {.highlight}
+::: {.callout-note title="cdf of a Binomial Random Variable"}
+
 The **cdf** of a Binomial Random Variable is: $$
 \begin{aligned}
     P(X\leq k) &= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
@@ -104,9 +104,9 @@ In graphing calculator: $\texttt{2nd -> vars (distr) -> binomcdf}$
 Usage: $\texttt{binomcdf(n, p[,x])}$
 :::
 
-::: {.highlight}
-The mean and standard deviation of a binomial random variable is given
-by:
+::: {.callout-note title="Mean and SD of Binomial Random Variable"}
+
+The mean and standard deviation of a binomial random variable is given by:
 
 $$
 \begin{aligned}
@@ -117,38 +117,33 @@ $$
 $$
 :::
 
-#### Binomial setting
+#### Identifying Binomial Situations
 
-We can identify a binomial setting when we know:
+::: {.callout-note title="The Binomial Setting"}
 
-1.  **B**inary? The possible outcomes of each trial can be classified as
-    "success" or "failure" (in our case rolling a 7 or not).
+We can identify a binomial setting when we successfully recognize these four things about a random phenonmenon:
 
-2.  **I**ndependent? Trials must be independent; that is, knowing the
-    result of one trial must not tells us anything about the result of
-    another trial.
+1.  **B**inary?\
+    The possible outcomes of each trial can be classified as "success" or "failure".
 
-3.  **N**umber? The number of trials n of the chance process must be
-    fixed in advance. (this was 5, then 100).
+2.  **I**ndependent?\
+    Trials must be independent; that is, knowing the result of one trial must not tells us anything about the result of another trial.
 
-4.  **S**ame? There is the same probability p of success on each trial
-    (1/6).
+3.  **N**umber?\
+    The number of trials n of the chance process must be fixed in advance.
 
-#### 10% Condition {#ten-per-cond}
+4.  **S**ame?\
+    There is the same probability p of success on each trial.
+    
+:::
 
-The second condition is often not perfectly met, as in the case of an
-SRS from some population. Imagine choosing 10 students from a class of
-15 females and 15 males---as we choose people, the remaining population
-changes, which changes the probability that the next person chosen will
-be male or female.
+##### 10% Condition {#sec-ten-per-cond}
 
-When we lack complete independence, we can see the consequence of this
-is negligible as long as our sample is small relative to the population
-from which we are sampling. If we were choosing our 10 people from a
-school of 3,300 students, the change in probability from person to
-person would be small enough to ignore.
+The second condition is often not perfectly met, as in the case of an SRS from some population. Imagine choosing 10 students from a class of 15 females and 15 males---as we choose people, the remaining population changes, which changes the probability that the next person chosen will be male or female.
 
-::: {.highlight}
+When we lack complete independence, we can see the consequence of this is negligible as long as our sample is small relative to the population from which we are sampling. If we were choosing our 10 people from a school of 3,300 students, the change in probability from person to person would be small enough to ignore.
+
+::: {.callout-note title="10% Condition"}
 The general rule is that the sample needs to be less than
 $\frac{1}{10}$, or 10%, of the population. We refer to this as the 10%
 condition.
@@ -158,36 +153,34 @@ $$n \leq (.10) N$$
 
 #### Normal Approximation to the Binomial Distribution
 
-Remember that as $n$ gets large, a binomial random variable $X$ can take
-on more and more different values, and it can become tedious to continue
-to treat X as a discrete random variable. As $n$ get larger, we can
-treat $X$ as a continuous random variable, more specifically:
+Remember that as $n$ gets large, a binomial random variable $X$ can take on more and more different values, and it can become tedious to continue to treat X as a discrete random variable. As $n$ get larger, we can treat $X$ as a continuous random variable, more specifically:
 
-As $n$ gets larger, the binomial distribution gets closer to a normal
-distribution. However, before we use a normal distribution to
+:::{.callout-important}
+As $n$ gets larger, the binomial distribution gets closer to a normal distribution. 
+:::
+
+However, before we use a normal distribution to
 approximate a binomial distribution, we have to check the following
 condition:
 
-##### Large Counts condition {#large-counts-cond}
+##### Large Counts condition {#sec-large-counts-cond}
 
-::: {.highlight}
-We can use a Normal distribution to model a binomial distribution. If we know:
-$$np \geq 10 \text{ and }n(1-p) \geq 10$$, 
+::: {.callout-note title="Large Counts Condition"}
+We can use a Normal distribution to model a binomial distribution if we know that a the **Large Counts Condition** is fulfilled:
+$$np \geq 10 \text{ and }n(1-p) \geq 10$$
 In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.
 :::
 
-##### Doing a normal approximation
+##### Doing a Normal Approximation to a Binomial Distribution
 
 First verify all the conditions for a Binomial setting and the Large
-Counts Condition. Since we know that we have a binomial setting, we then
-know the distribution that we want to use is $Normal(np, \sqrt{npq})$ proceed with the calculations according to this distribution.
+Counts Condition. Since we know that we have a binomial setting, we then know the distribution that we want to use is $Normal(np, \sqrt{npq})$ proceed with the calculations according to this distribution.
 
 ### Geometric Random Variables
 
-If $X \sim G(p)$, $X$ has a geometric distribution
-with parameter $p$
+If $X \sim G(p)$, $X$ has a geometric distribution with a parameter $p$ probability of "success".
 
-::: {.highlight}
+::: {.callout-note title="pdf of a Geometric Random Variable"}
 The **pdf** of a geometric random variable is:
 
 $$
@@ -202,7 +195,7 @@ In graphing calculator: $\texttt{2nd -> vars (distr) -> geometpdf}$
 Usage: $\texttt{geometpdf(p, x)}$
 :::
 
-::: {.highlight}
+::: {.callout-note title="cdf of a Geometric Variable"}
 The **cdf** of a Geometric Variable is:
 
 $$
@@ -216,7 +209,7 @@ In graphing calculator: $\texttt{2nd -> vars (distr) -> geometcdf}$
 Usage: $\texttt{geometcdf(p, x)}$
 :::
 
-::: {.highlight}
+::: {.callout-note title="Mean and SD of a Geometric Random Variable"}
 The mean and standard deviation of a geometric random variable is given
 by:
 
@@ -229,57 +222,87 @@ $$
 $$
 :::
 
-#### The Geometric Setting
+#### Identifying Geometric Settings
 
-A geometric setting is very similar to a binomial setting, except that
-\textbf{n, the number of trials is not fixed}.
+A geometric setting is very similar to a binomial setting, except that $n$ the number of trials is not fixed and that we are instead finding probabilities until the first "success" occurs.
 
-A geometric setting is defined as a series of observations where these 4
-conditions are met:
 
-1.  **B**inary? The Possible outcomes of each trial can be classified as
-    "success" or "failure"
+::: {.callout-note title="The Geometric Setting"}
+A geometric setting is defined as a series of observations where these 4 conditions are met:
 
-2.  **I**ndependent? Trials must be independent, that is, knowing the
-    result of one trial must not have any effect on the result of any
-    other trial.
+1. **B**inary?\
+    The possible outcomes of each trial can be classified as "success" or "failure"
 
-3.  **T**rials? The goal is to count the number of trials until the
-    first success occurs.
+2. **I**ndependent?\
+    Trials must be independent, that is, knowing the result of one trial must not have any effect on the result of any other trial.
 
-4.  **S**uccess? On each trial, the probability p of success must be the
-    same.
+3. **T**rials until?\
+    The goal is to count the number of trials until the first success occurs.
+
+4. **S**uccess?\
+    On each trial, the probability $p$ of success must be the same.
+:::
 
 ## Operations with Random Variables
 
-### Constants
+### Linear Transformations
 
-When we add a constant $a$ and/or multiply by a constant $b$ to a random
-variable $X$, we perform a linear transformation of the form
+When we add a constant $a$ and/or multiply by a constant $b$ to a random variable $X$, we perform a linear transformation of the form
 
 $$
 a + bX
 $$
 
-The mean of the transformed variable is:
+::: {.callout-note title="Mean and SD of Linearly Transformed Random Variables"}
+
+The mean of $a + bX$ is transformed in the same way that we change $X$
 
 $$
 \mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
 $$
 
-The standard deviation of the transformed variable is:
+The standard deviation of $a + bX$ is only affected by multiplication:
 
 $$
 \sigma_{a+bX}=\sigma_{bX}=b\sigma_X
 $$
 
-### Random Variables
+:::
 
-In general, we can describe the mean and standard deviation of the sum
-or difference of independent random variables with these formulas:
 
+### Sum and Difference between Random Variables
+
+In addition to linear transformation, we can also, to an extent, describe the result of adding or subtracting random variables
+
+If we have two random variables $X$ and $Y$, we can describe the mean and standard deviation of the sum or difference of these with the following.
+
+::: {.callout-note title="Mean and SD of the Sum and Difference between Random Variables"}
 $$\mu_{X \pm Y} = \mu_X \pm \mu_Y$$
 
 **If the random variables $X$ and $Y$ are independent**, then
 
 $$ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 $$
+
+And it follows that:
+
+$$ \sigma_{X \pm Y} = \sqrt{\sigma_X^2 + \sigma_Y^2} $$
+
+<details>
+<summary> What is $\sigma_X^2$? </summary>
+
+The variance of a random variable $X$ is:
+
+$$
+Var(X) = \sigma_X^2
+$$
+
+</details>
+
+:::
+
+::: callout-warning
+
+Keep in mind that the formula for the standard deviation here only applies if we know that $X$ and $Y$ are independent of each other.
+
+:::
+

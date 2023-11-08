@@ -156,67 +156,52 @@ Suppose that the time you need to spend on BART to get from Downtown Berkeley to
 
 Now find each probability ($X$ represents the amount of time required for a single randomly selected BART trip from Berkeley to SFO):
 
-::: {.highlight}
-a) $P(X<53)$
+a. $P(X<53)$
+    $$
+    \begin{aligned}
+    z &= \frac{53 - 54}{4.6} \approx -0.22 \\
+    P(X<53) &\approx P(z < -.22) \underset{\text{Table A}}{=} 0.4129
+    \end{aligned}
+    $$
+    Using calculator:
+    $$
+    \begin{aligned}
+    z &= \frac{53 - 54}{4.6} \approx -0.22 \\
+    P(X<53) &\approx P(z < -0.22) \\
+    &= \texttt{normalcdf(-1000, -0.22)} \approx 0.4129
+    \end{aligned}
+    $$
 
-$$
-\begin{aligned}
-z &= \frac{53 - 54}{4.6} \approx -0.22 \\
-P(X<53) &\approx P(z < -.22) \underset{\text{Table A}}{=} 0.4129
-\end{aligned}
-$$
-
-Using calculator:
-
-$$
-\begin{aligned}
-z &= \frac{53 - 54}{4.6} \approx -0.22 \\
-P(X<53) &\approx P(z < -0.22) \\
-&= \texttt{normalcdf(-1000, -0.22)} \approx 0.4129
-\end{aligned}
-$$
-:::
-
-::: {.highlight}
 b) $P(X>60)$
+    $$
+    \begin{aligned}
+    z &= \frac{60 - 54}{4.6} \approx 1.30 \\
+    P(X>60) &\approx P(z > 1.30) \\
+    &= 1 - P(z < 1.30) \underset{\text{Table A}}{=} 1 - 0.9032	= 0.0968
+    \end{aligned}
+    $$
+    Using calculator:
+    $$
+    \begin{aligned}
+    z &= \frac{60 - 54}{4.6} \approx 1.30 \\
+    P(X>60) &\approx P(z > 1.30) \\
+    &= \texttt{normalcdf(1.30, 1000)} \approx 0.0968
+    \end{aligned}
+    $$
 
-$$
-\begin{aligned}
-z &= \frac{60 - 54}{4.6} \approx 1.30 \\
-P(X>60) &\approx P(z > 1.30) \\
-&= 1 - P(z < 1.30) \underset{\text{Table A}}{=} 1 - 0.9032	= 0.0968
-\end{aligned}
-$$
-
-Using calculator:
-
-$$
-\begin{aligned}
-z &= \frac{60 - 54}{4.6} \approx 1.30 \\
-P(X>60) &\approx P(z > 1.30) \\
-&= \texttt{normalcdf(1.30, 1000)} \approx 0.0968
-\end{aligned}
-$$
-:::
-
-::: {.highlight}
 c) The lowest 5% of travel times are below how many minutes?
-
-$$
-\begin{aligned}
-0.05 & \underset{\text{Table A}}{\approx} P(z<-1.64) \\
-\rightarrow z = \frac{x - 54}{4.6} &= -1.64 \\
-x &= 46.45 \text{ minutes}
-\end{aligned}
-$$
-
-Using calculator:
-
-$$
-\begin{aligned}
-\texttt{invNorm(0.05)}& \approx P(z<-1.64) \\
-\rightarrow z = \frac{x - 54}{4.6} &= -1.64 \\
-x &= 46.45 \text{ minutes}
-\end{aligned}
-$$
-:::
+    $$
+    \begin{aligned}
+    0.05 & \underset{\text{Table A}}{\approx} P(z<-1.64) \\
+    \rightarrow z = \frac{x - 54}{4.6} &= -1.64 \\
+    x &= 46.45 \text{ minutes}
+    \end{aligned}
+    $$
+    Using calculator:
+    $$
+    \begin{aligned}
+    \texttt{invNorm(0.05)}& \approx P(z<-1.64) \\
+    \rightarrow z = \frac{x - 54}{4.6} &= -1.64 \\
+    x &= 46.45 \text{ minutes}
+    \end{aligned}
+    $$

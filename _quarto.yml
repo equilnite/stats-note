@@ -20,7 +20,7 @@ book:
     - experimental-design.qmd
     - probability.qmd
     - density-curves.qmd
-    # - random-variables.qmd
+    - random-variables.qmd
     # - sampling-distributions.qmd
     # - confidence-intervals.qmd
     # - hypothesis-testing.qmd
@@ -38,6 +38,7 @@ book:
 
 format:
   html:
+    number-depth: 3
     include-in-header:
       - header.html
     theme: cosmo

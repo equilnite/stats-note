@@ -1,14 +1,52 @@
 # Experimental Design {#experimental-design}
 
-A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of **observational study**, which observes individuals and measures variables of interest but does not attempt to influence the responses. Unfortunately, this means that many variables are not controlled for so we cannot establish causation between the explanatory and response variables. A **response variable** measures an *outcome* of a study. An **explanatory variable** may help *explain* or predict changes in a response variable. Because of the lack of control, we cannot be certain that variables other than the explanatory variable are influencing the the response instead. These are referred to as **confounding variables**. 
+A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of **observational study**. 
 
-An *experiment* deliberately ***imposes some treatment*** (the specific condition applied) on individuals (**experimental units** or subjects if the experimental units are human) to measure their responses. When our goal is to understand cause and effect, experiments are the only source of fully convincing data. For this reason, the distinction between observational study and experiment is one of the most important in statistics. 
+::: {.callout-note title="Observational Studies"}
+
+Observational studies only involve observing individuals and measuring variables of interest with no attempt to influence the responses
+
+:::
+
+Unfortunately, this means that many variables are not **controlled** for so we cannot establish causation between the **explanatory** and **response** variables. 
+
+::: {.callout-note title="Explanatory and Response Variables"}
+
+Response variables measure an outcome of a study. 
+
+Explanatory variables may help explain or predict changes in a response variable.
+
+:::
+
+Because of the lack of control, we cannot be certain that variables other than the explanatory variable confound the response instead.
+
+::: {.callout-note title="Confounding"}
+
+**Confounding** occurs when the effects of two variables on a response variable cannot be separated from each other.
+
+**Confounding variables** are variables other than the explanatory variable that may have an effect on the response variable.
+
+:::
+
+
+When our goal is to understand cause and effect, an **experiment** is the only source of fully convincing data since results in observational studies typically have some confounding variable in play. For this reason, the distinction between observational study and experiment is one of the most important in statistics. 
+
+::: {.callout-note title="Experiments"}
+
+An **experiment** deliberately imposes some **treatment** (the specific condition applied) on individuals (experimental units or subjects if the **experimental units** are human) to measure their responses. 
+
+:::
+
+
+
 
 ## Experiment Principles
 
 In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things:  comparison, randomization, control, and replication.  **Stronger internal validity gives us a better cause-effect link in our experiment.**  Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!
 
 ::: {.callout-note title="Principles of Experimental Design"}
+
+These four determine how much **internal validity** we have in our experiment.
 
 Comparison
 : Use a design that compares two or more treatments. 
@@ -26,9 +64,25 @@ Replication
 
 The logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically. 
 
+### Placebos
+
+::: {.callout-note title="Placebo Effect"}
+
 The response to a dummy treatment is called the **placebo effect**. Subjects are given a placebo treatment to control for the placebo effect. 
 
-Whenever possible, experiments with human subjects should be **double-blind**, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received. 
+> For example, If I tell someone that I am giving them an energy drink (when it in fact has doesn't actually provide "energy"), and they feel like they have energy after, they have fallen for the placebo effect.
+
+:::
+
+It's well known that someone's mental state can easily affect their physical state, so it's important to control for the placebo effect. Typically, this applies to medicine settings, where you might give a pill with the actual medicine and a placebo (a pill with everything but the actual medicine) and conduct it in a **blind**.
+
+::: {.callout-note title="Blinding"}
+
+Conducting an experiment in a **blind** means that you give treatments to patients without allowing them to know which treatment they are taking.
+
+However, Whenever possible, experiments with human subjects take it a bit further and conduct their experiment in a **double-blind**, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received.
+
+:::
 
 
 ## Experiment Designs
@@ -50,13 +104,23 @@ Afterwards, you compare and analyze results from each block and finally combine 
 
 A matched pairs design is a special case of a [randomized block design](#randomized-block-design) that uses blocks of size 2. In this kind of design, you have to have "matched pairs." In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).
 
-## Statistical Significance
+## Inference
 
-An observed effect so large that it would rarely occur by chance is said to be **statistically significant**.
+The main purpose of experiments is to be able to infer something about what we did. Does A actually affect B? Is it true for anyone else other than the people we experimented on?
 
-## Scope of Inference
+::: {.callout-note title="Statistical Significance"}
+
+An observed effect so large that it would rarely occur by chance is said to be **statistically significant**. If we test something according to a single assumption that we make and find out that the data that we collect doesn't really match up with that claim (if the chance of seeing data like the one we obtained is too low), then we'd say that it is statistically significant evidence.
+
+:::
+
+### Scope of Inference
+
+::: {.callout-note title="Scope of Inference"}
 
 The **scope of inference** refers to the type of inferences (conclusions) that can be drawn from a study.  The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.  
+
+:::
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}

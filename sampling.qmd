@@ -1,6 +1,6 @@
 # Sampling
 
-When we have a question about a certain population (an entire group of
+When we have a question about a certain **population** (an entire group of
 individuals). Ideally we would ask them all (take a **census**). But
 contacting every member of a population often isn't very practical: it
 would take too much time and cost too much money. Instead, we put the
@@ -22,43 +22,128 @@ systematically pushed towards a specific outcome. For example, if we
 want to learn about the GPA average in the school and take a sample of
 students only from a class, it's quite possible that the sample is not
 representative of the school. We will probably result in a GPA average
-that is higher or lower than the actual GPA average in the school. There
-are several ways that this can happen. The main way that we learn are:
+that is higher or lower than the actual GPA average in the school. 
 
-### Response Bias
+There
+are several ways that this can happen. Based off a scenario, you should be able to identify the bias that is occurring. The main ways that we learn when this occurs is when:
 
-Response bias is created when something causes people’s responses to be systematically pushed in one direction.  
+::: {.callout-note title="Response Bias"}
 
-### Non-response Bias
+Response bias is created when something causes people’s responses to be systematically pushed in one direction.
 
-Nonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate
+:::
 
-### Undercoverage
+::: {.callout-note title="Self-reported response bias"}
 
-Undercoverage occurs when some members of the population cannot be chosen in the sample. 
+When individuals inaccurately report their own traits, typically to avoid embarrassment or other situation where they feel more inclined to not tell the truth.
 
-### Voluntary Response Sample
+:::
 
-Voluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population
+::: {.callout-note title="Question wording bias "}
 
-### Convenience Sample
+When survey questions are confusing or leading to favor or disfavor certain answers from a respondent.
+
+:::
+
+::: {.callout-note title="Non-response Bias"}
+
+Nonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate.
+
+:::
+
+::: {.callout-note title="Undercoverage"}
+
+Undercoverage occurs when some members of the population cannot be chosen in the sample or specific individuals have a reduced chance of being chosen to be in the sample.
+
+:::
+
+::: {.callout-note title="Voluntary Response Sample"}
+
+Voluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population.
+
+:::
+
+::: {.callout-note title="Convenience Sample"}
 
 Choosing individuals from a population who are easy to reach results in a convenience sample.
 
-## Sampling Methods
+:::
 
-### Simple Random Sample (SRS)
+
+## Random Sampling Methods
+
+It's important to avoid bias in our data so that we have conclusive results. A big idea in avoiding bias is to have a proper sampling method. A good sampling method always keeps the population in mind. Your sample should be **representative of the population**, which means that each individual that is part of your population should have an equal chance of being selected for your sample.
+
+
+::: {.callout-note title="Simple Random Sample (SRS)"}
 
 In a SRS, each individual (the words) and each subgroup of individuals has the same chance of being chosen from the population of all words in the song. 
 
-### Stratified Random Sample {#stratified-random-sample}
+:::
+
+::: {.callout-note title="Stratified Random Sample"}
 
 In a stratified random sample, we first determine **strata** within our population. You can think of strata as subgroups of people that we divide based on the type/status of the things that we are sampling. The goal of the random sample is then to take an SRS from each strata (normally, you want the same amount of people from each stratum).
 
-### Random Cluster Sample
+:::
+
+::: {.callout-note title="Random Cluster Sample"}
 
 In a random cluster sample, we first determine **clusters** within our population. You can think of clusters as subgroups of people that we divide based on the location of the things that we are sampling (there should be no way to distinguish between the clusters besides  where they are). The goal of the random sample is then to take select random clusters and then sample all people in the chosen clusters.
 
-### Systematic Random Sample
+:::
+
+::: {.callout-note title="Systematic Random Sample"}
 
 In a systematic random sample, we randomly choose an interval (n) and/or a starting point at which to select individuals and then we select every nth individual.
+
+:::
+
+### Box analogy
+
+Although not as descriptive as the above definitions, here's how you can think about each sampling method:
+
+Imagine that you have a box of balls, all of different weights and different colors (red, white, blue). Balls of similar colors tend to be more similar in weight compared to balls of different colors. We want to study the weights of the balls by randomly selecting some balls.
+
+- We can take a **SRS** from this box of balls by randomly picking out some balls. Use these randomly picked out balls as your sample.
+- We can take a **Stratified Random Sample** by first separating the balls into 3 separate boxes. One box with just the red balls, another with just the white balls, and a last one with just the blue balls. Lastly, take an SRS from *each* of the boxes by randomly taking out some balls from each of the boxes. Use these randomly picked out balls as your sample.
+- We can take a **Cluster Sample** by separating the balls into several different boxes. We determine out boxes by just taking maybe picking out 10 balls from the box (just take balls out top to bottom) and placing 10 balls in each box. Or we could dump out the balls and just section off the balls into different boxes. Take an SRS of the boxes by randomly selecting some boxes. Take out all of the balls from the boxes that you selected to be part of your sample.
+- We can take a **Systematic Random Sample** by taking out all the balls in the box and lining them up. Randomly pick one of the balls. From that ball onwards, pick every 5th ball to be part of your sample.
+
+### Benefits of Methods
+
+An **SRS** is an overall good method, giving us a random selection of multiple trees, but we can't always trust it because it's just left up to chance. There's a chance that we select only individuals of a certain type, which is bad since we only have one chance to sample in real life.
+
+To guarantee a good spread of people from all over, we would normally prefer a **Systematic Random Sample**, because by counting people off, you'll be almost ensuring that you get a random spread of people from all of the population.
+
+If we know that there are specific types of people within our population, then a better idea is to take a **Stratified Random Sample**. By first splitting people off in strata (again, this people types of people), we then are more capable of getting a good spread of people from each type of person.
+
+Lastly, if all we want to do is save as much money and resources as possible, then we do a **Random Cluster Sample**, which does not take as much time and effort compared to the rest of the sampling methods.
+
+
+## Describing Sampling
+
+::: callout-tip
+
+Here's a general framework for how describing SRS's should look like:
+
+1. Assign each individual in the population a number $1$ to $N$ (the population size).
+2. Use a random number generator to obtain $n$ (sample size) unique numbers.
+3. Sample the individuals whose numbers were generated.
+
+:::
+
+Here's some examples of how this can work. 
+
+> Imagine we have a forest of 1000 trees and I want to find out how old they are on average (and we don't have the resources to visit each tree)
+>
+>   - To take an **SRS** of 50 trees, we can
+        1. Number each tree with a number 1 to 1000.
+        2. Generate 50 unique random integers from 1 to 1000.
+        3. Select the trees corresponding to the numbers and record their age.
+>   - To take a **random cluster sample** of 50 trees, we can
+        1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees.
+        2. Number each plot of land with a number 1 to 200.
+        3. Generate 10 unique random integers from 1 to 200.
+        4. Select the plots corresponding to the numbers and record all the ages from the trees in the plots.
+    
