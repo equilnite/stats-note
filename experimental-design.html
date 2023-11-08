@@ -155,6 +155,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./random-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -182,15 +188,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#experiment-principles" id="toc-experiment-principles" class="nav-link active" data-scroll-target="#experiment-principles"><span class="header-section-number">6.1</span> Experiment Principles</a></li>
+  <li><a href="#experiment-principles" id="toc-experiment-principles" class="nav-link active" data-scroll-target="#experiment-principles"><span class="header-section-number">6.1</span> Experiment Principles</a>
+  <ul class="collapse">
+  <li><a href="#placebos" id="toc-placebos" class="nav-link" data-scroll-target="#placebos"><span class="header-section-number">6.1.1</span> Placebos</a></li>
+  </ul></li>
   <li><a href="#experiment-designs" id="toc-experiment-designs" class="nav-link" data-scroll-target="#experiment-designs"><span class="header-section-number">6.2</span> Experiment Designs</a>
   <ul class="collapse">
   <li><a href="#completely-randomized-design" id="toc-completely-randomized-design" class="nav-link" data-scroll-target="#completely-randomized-design"><span class="header-section-number">6.2.1</span> Completely Randomized Design</a></li>
   <li><a href="#randomized-block-design" id="toc-randomized-block-design" class="nav-link" data-scroll-target="#randomized-block-design"><span class="header-section-number">6.2.2</span> Randomized Block Design</a></li>
   <li><a href="#matched-pairs-design" id="toc-matched-pairs-design" class="nav-link" data-scroll-target="#matched-pairs-design"><span class="header-section-number">6.2.3</span> Matched Pairs Design</a></li>
   </ul></li>
-  <li><a href="#statistical-significance" id="toc-statistical-significance" class="nav-link" data-scroll-target="#statistical-significance"><span class="header-section-number">6.3</span> Statistical Significance</a></li>
-  <li><a href="#scope-of-inference" id="toc-scope-of-inference" class="nav-link" data-scroll-target="#scope-of-inference"><span class="header-section-number">6.4</span> Scope of Inference</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference"><span class="header-section-number">6.3</span> Inference</a>
+  <ul class="collapse">
+  <li><a href="#scope-of-inference" id="toc-scope-of-inference" class="nav-link" data-scroll-target="#scope-of-inference"><span class="header-section-number">6.3.1</span> Scope of Inference</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -214,8 +225,64 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of <strong>observational study</strong>, which observes individuals and measures variables of interest but does not attempt to influence the responses. Unfortunately, this means that many variables are not controlled for so we cannot establish causation between the explanatory and response variables. A <strong>response variable</strong> measures an <em>outcome</em> of a study. An <strong>explanatory variable</strong> may help <em>explain</em> or predict changes in a response variable. Because of the lack of control, we cannot be certain that variables other than the explanatory variable are influencing the the response instead. These are referred to as <strong>confounding variables</strong>.</p>
-<p>An <em>experiment</em> deliberately <strong><em>imposes some treatment</em></strong> (the specific condition applied) on individuals (<strong>experimental units</strong> or subjects if the experimental units are human) to measure their responses. When our goal is to understand cause and effect, experiments are the only source of fully convincing data. For this reason, the distinction between observational study and experiment is one of the most important in statistics.</p>
+<p>A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of <strong>observational study</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Observational Studies">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observational Studies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Observational studies only involve observing individuals and measuring variables of interest with no attempt to influence the responses</p>
+</div>
+</div>
+<p>Unfortunately, this means that many variables are not <strong>controlled</strong> for so we cannot establish causation between the <strong>explanatory</strong> and <strong>response</strong> variables.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Explanatory and Response Variables">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Explanatory and Response Variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Response variables measure an outcome of a study.</p>
+<p>Explanatory variables may help explain or predict changes in a response variable.</p>
+</div>
+</div>
+<p>Because of the lack of control, we cannot be certain that variables other than the explanatory variable confound the response instead.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Confounding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Confounding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Confounding</strong> occurs when the effects of two variables on a response variable cannot be separated from each other.</p>
+<p><strong>Confounding variables</strong> are variables other than the explanatory variable that may have an effect on the response variable.</p>
+</div>
+</div>
+<p>When our goal is to understand cause and effect, an <strong>experiment</strong> is the only source of fully convincing data since results in observational studies typically have some confounding variable in play. For this reason, the distinction between observational study and experiment is one of the most important in statistics.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Experiments">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Experiments
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <strong>experiment</strong> deliberately imposes some <strong>treatment</strong> (the specific condition applied) on individuals (experimental units or subjects if the <strong>experimental units</strong> are human) to measure their responses.</p>
+</div>
+</div>
 <section id="experiment-principles" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="experiment-principles"><span class="header-section-number">6.1</span> Experiment Principles</h2>
 <p>In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things: comparison, randomization, control, and replication. <strong>Stronger internal validity gives us a better cause-effect link in our experiment.</strong> Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!</p>
@@ -229,6 +296,7 @@ Principles of Experimental Design
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>These four determine how much <strong>internal validity</strong> we have in our experiment.</p>
 <dl>
 <dt>Comparison</dt>
 <dd>
@@ -250,8 +318,40 @@ Use enough experimental units in each group so that difference in the effects of
 </div>
 </div>
 <p>The logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically.</p>
+<section id="placebos" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="placebos"><span class="header-section-number">6.1.1</span> Placebos</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Placebo Effect">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Placebo Effect
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The response to a dummy treatment is called the <strong>placebo effect</strong>. Subjects are given a placebo treatment to control for the placebo effect.</p>
-<p>Whenever possible, experiments with human subjects should be <strong>double-blind</strong>, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received.</p>
+<blockquote class="blockquote">
+<p>For example, If I tell someone that I am giving them an energy drink (when it in fact has doesn’t actually provide “energy”), and they feel like they have energy after, they have fallen for the placebo effect.</p>
+</blockquote>
+</div>
+</div>
+<p>It’s well known that someone’s mental state can easily affect their physical state, so it’s important to control for the placebo effect. Typically, this applies to medicine settings, where you might give a pill with the actual medicine and a placebo (a pill with everything but the actual medicine) and conduct it in a <strong>blind</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Blinding">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Blinding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Conducting an experiment in a <strong>blind</strong> means that you give treatments to patients without allowing them to know which treatment they are taking.</p>
+<p>However, Whenever possible, experiments with human subjects take it a bit further and conduct their experiment in a <strong>double-blind</strong>, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="experiment-designs" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="experiment-designs"><span class="header-section-number">6.2</span> Experiment Designs</h2>
@@ -261,7 +361,7 @@ Use enough experimental units in each group so that difference in the effects of
 </section>
 <section id="randomized-block-design" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="randomized-block-design"><span class="header-section-number">6.2.2</span> Randomized Block Design</h3>
-<p>In a randomized block design, the experimental units are first assigned to blocks according to the different types/status of the experimental units in the experiment. This is similar to <a href="sampling.html#stratified-random-sample">stratified random sampling</a>, however, we are <strong>not</strong> taking a sample. Any reference to stratified random sampling is wrong when describing an experiment design.</p>
+<p>In a randomized block design, the experimental units are first assigned to blocks according to the different types/status of the experimental units in the experiment. This is similar to <a href="#stratified-random-sample">stratified random sampling</a>, however, we are <strong>not</strong> taking a sample. Any reference to stratified random sampling is wrong when describing an experiment design.</p>
 <p>After each experimental unit is assigned to their block, the experiment is carried out in each block, where a completely randomized design is carried out within the block.</p>
 <p>Afterwards, you compare and analyze results from each block and finally combine all results and analyze the differences between blocks.</p>
 </section>
@@ -270,13 +370,37 @@ Use enough experimental units in each group so that difference in the effects of
 <p>A matched pairs design is a special case of a <a href="#randomized-block-design">randomized block design</a> that uses blocks of size 2. In this kind of design, you have to have “matched pairs.” In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).</p>
 </section>
 </section>
-<section id="statistical-significance" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="statistical-significance"><span class="header-section-number">6.3</span> Statistical Significance</h2>
-<p>An observed effect so large that it would rarely occur by chance is said to be <strong>statistically significant</strong>.</p>
-</section>
-<section id="scope-of-inference" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="scope-of-inference"><span class="header-section-number">6.4</span> Scope of Inference</h2>
+<section id="inference" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="inference"><span class="header-section-number">6.3</span> Inference</h2>
+<p>The main purpose of experiments is to be able to infer something about what we did. Does A actually affect B? Is it true for anyone else other than the people we experimented on?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Statistical Significance">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Statistical Significance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An observed effect so large that it would rarely occur by chance is said to be <strong>statistically significant</strong>. If we test something according to a single assumption that we make and find out that the data that we collect doesn’t really match up with that claim (if the chance of seeing data like the one we obtained is too low), then we’d say that it is statistically significant evidence.</p>
+</div>
+</div>
+<section id="scope-of-inference" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="scope-of-inference"><span class="header-section-number">6.3.1</span> Scope of Inference</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Scope of Inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Scope of Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The <strong>scope of inference</strong> refers to the type of inferences (conclusions) that can be drawn from a study. The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.</p>
+</div>
+</div>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -336,6 +460,7 @@ Use enough experimental units in each group so that difference in the effects of
 </table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

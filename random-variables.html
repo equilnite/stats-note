@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 5&nbsp; Sampling</title>
+<title>AP Statistics Notes - 9&nbsp; Random Variables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./experimental-design.html" rel="next">
-<link href="./quantitative-displays.html" rel="prev">
+<link href="./formula-sheet.html" rel="next">
+<link href="./density-curves.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./random-variables.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sampling.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sampling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></span></a>
   </div>
 </li>
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./random-variables.html" class="sidebar-item-text sidebar-link">
+  <a href="./random-variables.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
   </div>
 </li>
@@ -190,13 +190,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bias" id="toc-bias" class="nav-link active" data-scroll-target="#bias"><span class="header-section-number">5.1</span> Bias</a></li>
-  <li><a href="#random-sampling-methods" id="toc-random-sampling-methods" class="nav-link" data-scroll-target="#random-sampling-methods"><span class="header-section-number">5.2</span> Random Sampling Methods</a>
+  <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link active" data-scroll-target="#discrete-random-variables"><span class="header-section-number">9.1</span> Discrete Random Variables</a>
   <ul class="collapse">
-  <li><a href="#box-analogy" id="toc-box-analogy" class="nav-link" data-scroll-target="#box-analogy"><span class="header-section-number">5.2.1</span> Box analogy</a></li>
-  <li><a href="#benefits-of-methods" id="toc-benefits-of-methods" class="nav-link" data-scroll-target="#benefits-of-methods"><span class="header-section-number">5.2.2</span> Benefits of Methods</a></li>
+  <li><a href="#binomial-random-variables" id="toc-binomial-random-variables" class="nav-link" data-scroll-target="#binomial-random-variables"><span class="header-section-number">9.1.1</span> Binomial Random Variables</a></li>
+  <li><a href="#geometric-random-variables" id="toc-geometric-random-variables" class="nav-link" data-scroll-target="#geometric-random-variables"><span class="header-section-number">9.1.2</span> Geometric Random Variables</a></li>
   </ul></li>
-  <li><a href="#describing-sampling" id="toc-describing-sampling" class="nav-link" data-scroll-target="#describing-sampling"><span class="header-section-number">5.3</span> Describing Sampling</a></li>
+  <li><a href="#operations-with-random-variables" id="toc-operations-with-random-variables" class="nav-link" data-scroll-target="#operations-with-random-variables"><span class="header-section-number">9.2</span> Operations with Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link" data-scroll-target="#linear-transformations"><span class="header-section-number">9.2.1</span> Linear Transformations</a></li>
+  <li><a href="#sum-and-difference-between-random-variables" id="toc-sum-and-difference-between-random-variables" class="nav-link" data-scroll-target="#sum-and-difference-between-random-variables"><span class="header-section-number">9.2.2</span> Sum and Difference between Random Variables</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -205,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sampling</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></h1>
 </div>
 
 
@@ -220,222 +223,388 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>When we have a question about a certain <strong>population</strong> (an entire group of individuals). Ideally we would ask them all (take a <strong>census</strong>). But contacting every member of a population often isn’t very practical: it would take too much time and cost too much money. Instead, we put the question to a <strong>sample</strong>, or subset of individuals of the population from which we actually collect data, chosen to represent the entire population.</p>
-<p>When you want to identify the population, ask yourself, what does the question want to know about? What group of people does the question/problem address?</p>
-<p>When identifying the sample, ask yourself, what group does the work done actually address?</p>
-<section id="bias" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="bias"><span class="header-section-number">5.1</span> Bias</h2>
-<p>When we collect data, there is the possibility of the data becoming systematically pushed towards a specific outcome. For example, if we want to learn about the GPA average in the school and take a sample of students only from a class, it’s quite possible that the sample is not representative of the school. We will probably result in a GPA average that is higher or lower than the actual GPA average in the school.</p>
-<p>There are several ways that this can happen. Based off a scenario, you should be able to identify the bias that is occurring. The main ways that we learn when this occurs is when:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Response Bias">
+<p>A <strong>random variable</strong> is a variable whose value is a numerical outcome of a random phenomenon.</p>
+<p>The <strong>probability distribution</strong> of a random variable <span class="math inline">\(X\)</span> gives us all possible values of <span class="math inline">\(X\)</span>, and their corresponding probabilities. Probability distributions are typically given as tables, histograms (with probability on the y-axis, instead of frequency), or density curves (like the Normal curve).</p>
+<div class="callout callout-style-default callout-important callout-titled" title="pdfs and cdfs">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Response Bias
+pdfs and cdfs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Response bias is created when something causes people’s responses to be systematically pushed in one direction.</p>
+<p>For any given named distribution (e.g., Binomial, Normal, Geometric, Uniform), we will always have a <strong>probability density function (pdf)</strong> and a <strong>cumulative density function (cdf)</strong></p>
+<p>We use pdfs to find the probability of a singular point. * e.g., if I want to find the probability of that a random variable <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(x\)</span>, then I’d plug in the value of <span class="math inline">\(x\)</span> into the pdf of <span class="math inline">\(X\)</span>, <span class="math inline">\(P(X = x)\)</span>.</p>
+<p>We use cdfs to find the probability of a falling within a certain interval. * e.g., if I want to find the probability of that a random variable <span class="math inline">\(X\)</span> is less than <span class="math inline">\(x\)</span>, then I’d plug in the value of <span class="math inline">\(x\)</span> into the cdf of <span class="math inline">\(X\)</span>, <span class="math inline">\(P(X \leq x)\)</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Self-reported response bias">
+<section id="discrete-random-variables" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="discrete-random-variables"><span class="header-section-number">9.1</span> Discrete Random Variables</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Discrete Random Variable">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Self-reported response bias
+Discrete Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When individuals inaccurately report their own traits, typically to avoid embarrassment or other situation where they feel more inclined to not tell the truth.</p>
+<p>A <strong>discrete random variable</strong> describes a process that only has specific, predefined numerical outcomess. For example, we can use a discrete random variable to finding the probability of Michael Jordon scoring 50 points in a single game or the probability of rolling a 3 or lower on a six-sided die.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Question wording bias ">
+<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Discrete Random Variable">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question wording bias
+Mean and SD of Discrete Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When survey questions are confusing or leading to favor or disfavor certain answers from a respondent.</p>
+<p>When we have a discrete random variable <span class="math inline">\(X\)</span> whose probability distribution is</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \textbf{Value:}&amp; ~~~~ x_1 ~~~~ x_2 ~~~~ x_3 ~~~~ \cdots \\
+    \textbf{Probability:}&amp; ~~~~ p_1 ~~~~ p_2 ~~~~ p_3 ~~~~\cdots
+\end{aligned}
+\]</span></p>
+<p>we know the following about the mean and standard deviation of <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[\mu_X = E(X) = \sum x_i P(x_i)\]</span></p>
+<p><span class="math display">\[\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\]</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Non-response Bias">
+<details>
+<summary>
+Keep in mind that the standard deviation formula here (and else where) is equivalent to the formula of population standard deviation when we divide by <span class="math inline">\(n\)</span> instead of multiplying by <span class="math inline">\(P(x_i)\)</span>.
+</summary>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma_X &amp;= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} \\
+&amp;=\sqrt{E((X - \bar x)^2)} \\
+&amp;=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\\
+\end{aligned}
+\]</span></p>
+<p>In other words, remember that we define standard deviation as the root mean square of the squared differences from the mean. Since we are taking the mean of the squared differences from the mean in both formulas (I use the definition for mean from step 1 to 2 and the definition of mean for discrete variables from step 2 to 3), the two formulas are equivalent.</p>
+</details>
+<section id="binomial-random-variables" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="binomial-random-variables"><span class="header-section-number">9.1.1</span> Binomial Random Variables</h3>
+<p>Binomial random variables have parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, and can be written <span class="math inline">\(B(n, p)\)</span>. Remember, Normal random variables have parameters and and can be written <span class="math inline">\(N(\mu,\sigma)\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="pdf of a Binomial Random Variable">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Non-response Bias
+pdf of a Binomial Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Nonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate.</p>
+<p>The <strong>pdf</strong> of a Binomial Random Variable (i.e.&nbsp;the binomial formula) is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X=k) &amp;= {n \choose k} p^k (1-p)^{n-k}\\
+    \text{where } k &amp;= 0, 1, 2, 3, \cdots, n
+\end{aligned}
+\]</span></p>
+<p>To apply this formula in a graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binompdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{binompdf(n, p[,x])}\)</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Undercoverage">
+<div class="callout callout-style-default callout-note callout-titled" title="cdf of a Binomial Random Variable">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Undercoverage
+cdf of a Binomial Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Undercoverage occurs when some members of the population cannot be chosen in the sample or specific individuals have a reduced chance of being chosen to be in the sample.</p>
+<p>The <strong>cdf</strong> of a Binomial Random Variable is: <span class="math display">\[
+\begin{aligned}
+    P(X\leq k) &amp;= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binomcdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{binomcdf(n, p[,x])}\)</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Voluntary Response Sample">
+<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Binomial Random Variable">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Voluntary Response Sample
+Mean and SD of Binomial Random Variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Voluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population.</p>
+<p>The mean and standard deviation of a binomial random variable is given by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \mu_X &amp;= n p \\
+    \sigma_X &amp;= \sqrt{n p q} \\
+    &amp;\text{, where } q = 1-p.
+\end{aligned}
+\]</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Convenience Sample">
+<section id="identifying-binomial-situations" class="level4">
+<h4 class="anchored" data-anchor-id="identifying-binomial-situations">Identifying Binomial Situations</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="The Binomial Setting">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Convenience Sample
+The Binomial Setting
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Choosing individuals from a population who are easy to reach results in a convenience sample.</p>
-</div>
-</div>
-</section>
-<section id="random-sampling-methods" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="random-sampling-methods"><span class="header-section-number">5.2</span> Random Sampling Methods</h2>
-<p>It’s important to avoid bias in our data so that we have conclusive results. A big idea in avoiding bias is to have a proper sampling method. A good sampling method always keeps the population in mind. Your sample should be <strong>representative of the population</strong>, which means that each individual that is part of your population should have an equal chance of being selected for your sample.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Simple Random Sample (SRS)">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Simple Random Sample (SRS)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a SRS, each individual (the words) and each subgroup of individuals has the same chance of being chosen from the population of all words in the song.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Stratified Random Sample">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Stratified Random Sample
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a stratified random sample, we first determine <strong>strata</strong> within our population. You can think of strata as subgroups of people that we divide based on the type/status of the things that we are sampling. The goal of the random sample is then to take an SRS from each strata (normally, you want the same amount of people from each stratum).</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Random Cluster Sample">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Random Cluster Sample
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a random cluster sample, we first determine <strong>clusters</strong> within our population. You can think of clusters as subgroups of people that we divide based on the location of the things that we are sampling (there should be no way to distinguish between the clusters besides where they are). The goal of the random sample is then to take select random clusters and then sample all people in the chosen clusters.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Systematic Random Sample">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Systematic Random Sample
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a systematic random sample, we randomly choose an interval (n) and/or a starting point at which to select individuals and then we select every nth individual.</p>
-</div>
-</div>
-<section id="box-analogy" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="box-analogy"><span class="header-section-number">5.2.1</span> Box analogy</h3>
-<p>Although not as descriptive as the above definitions, here’s how you can think about each sampling method:</p>
-<p>Imagine that you have a box of balls, all of different weights and different colors (red, white, blue). Balls of similar colors tend to be more similar in weight compared to balls of different colors. We want to study the weights of the balls by randomly selecting some balls.</p>
-<ul>
-<li>We can take a <strong>SRS</strong> from this box of balls by randomly picking out some balls. Use these randomly picked out balls as your sample.</li>
-<li>We can take a <strong>Stratified Random Sample</strong> by first separating the balls into 3 separate boxes. One box with just the red balls, another with just the white balls, and a last one with just the blue balls. Lastly, take an SRS from <em>each</em> of the boxes by randomly taking out some balls from each of the boxes. Use these randomly picked out balls as your sample.</li>
-<li>We can take a <strong>Cluster Sample</strong> by separating the balls into several different boxes. We determine out boxes by just taking maybe picking out 10 balls from the box (just take balls out top to bottom) and placing 10 balls in each box. Or we could dump out the balls and just section off the balls into different boxes. Take an SRS of the boxes by randomly selecting some boxes. Take out all of the balls from the boxes that you selected to be part of your sample.</li>
-<li>We can take a <strong>Systematic Random Sample</strong> by taking out all the balls in the box and lining them up. Randomly pick one of the balls. From that ball onwards, pick every 5th ball to be part of your sample.</li>
-</ul>
-</section>
-<section id="benefits-of-methods" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="benefits-of-methods"><span class="header-section-number">5.2.2</span> Benefits of Methods</h3>
-<p>An <strong>SRS</strong> is an overall good method, giving us a random selection of multiple trees, but we can’t always trust it because it’s just left up to chance. There’s a chance that we select only individuals of a certain type, which is bad since we only have one chance to sample in real life.</p>
-<p>To guarantee a good spread of people from all over, we would normally prefer a <strong>Systematic Random Sample</strong>, because by counting people off, you’ll be almost ensuring that you get a random spread of people from all of the population.</p>
-<p>If we know that there are specific types of people within our population, then a better idea is to take a <strong>Stratified Random Sample</strong>. By first splitting people off in strata (again, this people types of people), we then are more capable of getting a good spread of people from each type of person.</p>
-<p>Lastly, if all we want to do is save as much money and resources as possible, then we do a <strong>Random Cluster Sample</strong>, which does not take as much time and effort compared to the rest of the sampling methods.</p>
-</section>
-</section>
-<section id="describing-sampling" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="describing-sampling"><span class="header-section-number">5.3</span> Describing Sampling</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Here’s a general framework for how describing SRS’s should look like:</p>
+<p>We can identify a binomial setting when we successfully recognize these four things about a random phenonmenon:</p>
 <ol type="1">
-<li>Assign each individual in the population a number <span class="math inline">\(1\)</span> to <span class="math inline">\(N\)</span> (the population size).</li>
-<li>Use a random number generator to obtain <span class="math inline">\(n\)</span> (sample size) unique numbers.</li>
-<li>Sample the individuals whose numbers were generated.</li>
+<li><p><strong>B</strong>inary?<br>
+The possible outcomes of each trial can be classified as “success” or “failure”.</p></li>
+<li><p><strong>I</strong>ndependent?<br>
+Trials must be independent; that is, knowing the result of one trial must not tells us anything about the result of another trial.</p></li>
+<li><p><strong>N</strong>umber?<br>
+The number of trials n of the chance process must be fixed in advance.</p></li>
+<li><p><strong>S</strong>ame?<br>
+There is the same probability p of success on each trial.</p></li>
 </ol>
 </div>
 </div>
-<p>Here’s some examples of how this can work.</p>
-<blockquote class="blockquote">
-<p>Imagine we have a forest of 1000 trees and I want to find out how old they are on average (and we don’t have the resources to visit each tree)</p>
-<ul>
-<li>To take an <strong>SRS</strong> of 50 trees, we can</li>
-</ul>
+<section id="sec-ten-per-cond" class="level5">
+<h5 class="anchored" data-anchor-id="sec-ten-per-cond">10% Condition</h5>
+<p>The second condition is often not perfectly met, as in the case of an SRS from some population. Imagine choosing 10 students from a class of 15 females and 15 males—as we choose people, the remaining population changes, which changes the probability that the next person chosen will be male or female.</p>
+<p>When we lack complete independence, we can see the consequence of this is negligible as long as our sample is small relative to the population from which we are sampling. If we were choosing our 10 people from a school of 3,300 students, the change in probability from person to person would be small enough to ignore.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="10% Condition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+10% Condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The general rule is that the sample needs to be less than <span class="math inline">\(\frac{1}{10}\)</span>, or 10%, of the population. We refer to this as the 10% condition.</p>
+<p><span class="math display">\[n \leq (.10) N\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="normal-approximation-to-the-binomial-distribution" class="level4">
+<h4 class="anchored" data-anchor-id="normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</h4>
+<p>Remember that as <span class="math inline">\(n\)</span> gets large, a binomial random variable <span class="math inline">\(X\)</span> can take on more and more different values, and it can become tedious to continue to treat X as a discrete random variable. As <span class="math inline">\(n\)</span> get larger, we can treat <span class="math inline">\(X\)</span> as a continuous random variable, more specifically:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As <span class="math inline">\(n\)</span> gets larger, the binomial distribution gets closer to a normal distribution.</p>
+</div>
+</div>
+<p>However, before we use a normal distribution to approximate a binomial distribution, we have to check the following condition:</p>
+<section id="sec-large-counts-cond" class="level5">
+<h5 class="anchored" data-anchor-id="sec-large-counts-cond">Large Counts condition</h5>
+<div class="callout callout-style-default callout-note callout-titled" title="Large Counts Condition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Large Counts Condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can use a Normal distribution to model a binomial distribution if we know that a the <strong>Large Counts Condition</strong> is fulfilled: <span class="math display">\[np \geq 10 \text{ and }n(1-p) \geq 10\]</span> In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.</p>
+</div>
+</div>
+</section>
+<section id="doing-a-normal-approximation-to-a-binomial-distribution" class="level5">
+<h5 class="anchored" data-anchor-id="doing-a-normal-approximation-to-a-binomial-distribution">Doing a Normal Approximation to a Binomial Distribution</h5>
+<p>First verify all the conditions for a Binomial setting and the Large Counts Condition. Since we know that we have a binomial setting, we then know the distribution that we want to use is <span class="math inline">\(Normal(np, \sqrt{npq})\)</span> proceed with the calculations according to this distribution.</p>
+</section>
+</section>
+</section>
+<section id="geometric-random-variables" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="geometric-random-variables"><span class="header-section-number">9.1.2</span> Geometric Random Variables</h3>
+<p>If <span class="math inline">\(X \sim G(p)\)</span>, <span class="math inline">\(X\)</span> has a geometric distribution with a parameter <span class="math inline">\(p\)</span> probability of “success”.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="pdf of a Geometric Random Variable">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+pdf of a Geometric Random Variable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>pdf</strong> of a geometric random variable is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X=x) &amp;= (1-p)^{x-1}p\\
+    \text{where } x &amp;= 1, 2, 3, \cdots
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometpdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{geometpdf(p, x)}\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="cdf of a Geometric Variable">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+cdf of a Geometric Variable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>cdf</strong> of a Geometric Variable is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(X\leq x) &amp;= \sum_{i=1}^x(1-p)^{i-1}p
+\end{aligned}
+\]</span></p>
+<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometcdf}\)</span></p>
+<p>Usage: <span class="math inline">\(\texttt{geometcdf(p, x)}\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of a Geometric Random Variable">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mean and SD of a Geometric Random Variable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The mean and standard deviation of a geometric random variable is given by:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \mu_X &amp;= \frac{1}{p} \\
+    \sigma_X &amp;= \frac{\sqrt{q}}{p} \\
+    &amp;\text{, where } q = 1-p.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<section id="identifying-geometric-settings" class="level4">
+<h4 class="anchored" data-anchor-id="identifying-geometric-settings">Identifying Geometric Settings</h4>
+<p>A geometric setting is very similar to a binomial setting, except that <span class="math inline">\(n\)</span> the number of trials is not fixed and that we are instead finding probabilities until the first “success” occurs.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The Geometric Setting">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Geometric Setting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A geometric setting is defined as a series of observations where these 4 conditions are met:</p>
 <ol type="1">
-<li>Number each tree with a number 1 to 1000.</li>
-<li>Generate 50 unique random integers from 1 to 1000.</li>
-<li>Select the trees corresponding to the numbers and record their age.</li>
+<li><p><strong>B</strong>inary?<br>
+The possible outcomes of each trial can be classified as “success” or “failure”</p></li>
+<li><p><strong>I</strong>ndependent?<br>
+Trials must be independent, that is, knowing the result of one trial must not have any effect on the result of any other trial.</p></li>
+<li><p><strong>T</strong>rials until?<br>
+The goal is to count the number of trials until the first success occurs.</p></li>
+<li><p><strong>S</strong>uccess?<br>
+On each trial, the probability <span class="math inline">\(p\)</span> of success must be the same.</p></li>
 </ol>
-<ul>
-<li>To take a <strong>random cluster sample</strong> of 50 trees, we can</li>
-</ul>
-<ol type="1">
-<li>Use a map to split up the trees by plots of land (assume that each plot has 5 trees.</li>
-<li>Number each plot of land with a number 1 to 200.</li>
-<li>Generate 10 unique random integers from 1 to 200.</li>
-<li>Select the plots corresponding to the numbers and record all the ages from the trees in the plots.</li>
-</ol>
-</blockquote>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="operations-with-random-variables" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="operations-with-random-variables"><span class="header-section-number">9.2</span> Operations with Random Variables</h2>
+<section id="linear-transformations" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="linear-transformations"><span class="header-section-number">9.2.1</span> Linear Transformations</h3>
+<p>When we add a constant <span class="math inline">\(a\)</span> and/or multiply by a constant <span class="math inline">\(b\)</span> to a random variable <span class="math inline">\(X\)</span>, we perform a linear transformation of the form</p>
+<p><span class="math display">\[
+a + bX
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Linearly Transformed Random Variables">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mean and SD of Linearly Transformed Random Variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The mean of <span class="math inline">\(a + bX\)</span> is transformed in the same way that we change <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[
+\mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
+\]</span></p>
+<p>The standard deviation of <span class="math inline">\(a + bX\)</span> is only affected by multiplication:</p>
+<p><span class="math display">\[
+\sigma_{a+bX}=\sigma_{bX}=b\sigma_X
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="sum-and-difference-between-random-variables" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="sum-and-difference-between-random-variables"><span class="header-section-number">9.2.2</span> Sum and Difference between Random Variables</h3>
+<p>In addition to linear transformation, we can also, to an extent, describe the result of adding or subtracting random variables</p>
+<p>If we have two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we can describe the mean and standard deviation of the sum or difference of these with the following.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of the Sum and Difference between Random Variables">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mean and SD of the Sum and Difference between Random Variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\mu_{X \pm Y} = \mu_X \pm \mu_Y\]</span></p>
+<p><strong>If the random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent</strong>, then</p>
+<p><span class="math display">\[ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \]</span></p>
+<p>And it follows that:</p>
+<p><span class="math display">\[ \sigma_{X \pm Y} = \sqrt{\sigma_X^2 + \sigma_Y^2} \]</span></p>
+<details>
+<summary>
+What is <span class="math inline">\(\sigma_X^2\)</span>?
+</summary>
+<p>The variance of a random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[
+Var(X) = \sigma_X^2
+\]</span></p>
+</details>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep in mind that the formula for the standard deviation here only applies if we know that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent of each other.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -674,13 +843,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./quantitative-displays.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span>
+      <a href="./density-curves.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./experimental-design.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Experimental Design</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./formula-sheet.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

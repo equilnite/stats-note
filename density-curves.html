@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./formula-sheet.html" rel="next">
+<link href="./random-variables.html" rel="next">
 <link href="./probability.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -158,6 +158,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./density-curves.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./random-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -446,69 +452,52 @@ invNorm(area to the left of value [, mu, sigma])</code></pre>
 <li>The probability you are finding</li>
 <li>The answer in context of the problem</li>
 </ul>
-<section id="example" class="level4" data-number="8.3.6.1">
-<h4 data-number="8.3.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">8.3.6.1</span> Example</h4>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example</h4>
 <p>Suppose that the time you need to spend on BART to get from Downtown Berkeley to the SF Airport is approximately normally distributed with <span class="math inline">\(\mu = 54\)</span> minutes, and <span class="math inline">\(\sigma = 4.6\)</span> minutes. In other words, BART times from Berkeley to SFO <span class="math inline">\(\sim N(54, 4.6)\)</span>.</p>
 <p>Now find each probability (<span class="math inline">\(X\)</span> represents the amount of time required for a single randomly selected BART trip from Berkeley to SFO):</p>
-<div class="highlight">
 <ol type="a">
-<li><span class="math inline">\(P(X&lt;53)\)</span></li>
-</ol>
-<p><span class="math display">\[
+<li><span class="math inline">\(P(X&lt;53)\)</span> <span class="math display">\[
 \begin{aligned}
 z &amp;= \frac{53 - 54}{4.6} \approx -0.22 \\
 P(X&lt;53) &amp;\approx P(z &lt; -.22) \underset{\text{Table A}}{=} 0.4129
 \end{aligned}
-\]</span></p>
-<p>Using calculator:</p>
-<p><span class="math display">\[
+\]</span> Using calculator: <span class="math display">\[
 \begin{aligned}
 z &amp;= \frac{53 - 54}{4.6} \approx -0.22 \\
 P(X&lt;53) &amp;\approx P(z &lt; -0.22) \\
 &amp;= \texttt{normalcdf(-1000, -0.22)} \approx 0.4129
 \end{aligned}
-\]</span></p>
-</div>
-<div class="highlight">
-<ol start="2" type="a">
-<li><span class="math inline">\(P(X&gt;60)\)</span></li>
+\]</span></li>
 </ol>
-<p><span class="math display">\[
+<ol start="2" type="a">
+<li><p><span class="math inline">\(P(X&gt;60)\)</span> <span class="math display">\[
 \begin{aligned}
 z &amp;= \frac{60 - 54}{4.6} \approx 1.30 \\
 P(X&gt;60) &amp;\approx P(z &gt; 1.30) \\
 &amp;= 1 - P(z &lt; 1.30) \underset{\text{Table A}}{=} 1 - 0.9032  = 0.0968
 \end{aligned}
-\]</span></p>
-<p>Using calculator:</p>
-<p><span class="math display">\[
+\]</span> Using calculator: <span class="math display">\[
 \begin{aligned}
 z &amp;= \frac{60 - 54}{4.6} \approx 1.30 \\
 P(X&gt;60) &amp;\approx P(z &gt; 1.30) \\
 &amp;= \texttt{normalcdf(1.30, 1000)} \approx 0.0968
 \end{aligned}
-\]</span></p>
-</div>
-<div class="highlight">
-<ol start="3" type="a">
-<li>The lowest 5% of travel times are below how many minutes?</li>
-</ol>
-<p><span class="math display">\[
+\]</span></p></li>
+<li><p>The lowest 5% of travel times are below how many minutes? <span class="math display">\[
 \begin{aligned}
 0.05 &amp; \underset{\text{Table A}}{\approx} P(z&lt;-1.64) \\
 \rightarrow z = \frac{x - 54}{4.6} &amp;= -1.64 \\
 x &amp;= 46.45 \text{ minutes}
 \end{aligned}
-\]</span></p>
-<p>Using calculator:</p>
-<p><span class="math display">\[
+\]</span> Using calculator: <span class="math display">\[
 \begin{aligned}
 \texttt{invNorm(0.05)}&amp; \approx P(z&lt;-1.64) \\
 \rightarrow z = \frac{x - 54}{4.6} &amp;= -1.64 \\
 x &amp;= 46.45 \text{ minutes}
 \end{aligned}
-\]</span></p>
-</div>
+\]</span></p></li>
+</ol>
 
 
 </section>
@@ -756,8 +745,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./formula-sheet.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./random-variables.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Variables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
