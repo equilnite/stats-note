@@ -51,20 +51,30 @@ $$\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}$$
 where) is equivalent to the formula of population standard deviation
 when we divide by $n$ instead of multiplying by $P(x_i)$.</summary>
 
+Just as a quick reminder, our formula for sample standard deviation is:
+
+$$s_X = \sqrt{\frac{\sum(x_i - \bar x)^2}{n - 1}}$$
+
+Our formula for population standard deviation (which we won't use in this class is)
+
+$$\sigma_X = \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}}$$
+
+Taking this formula, we can notice that:
+
 $$
 \begin{aligned}
-\sigma_X &= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} \\
-&=\sqrt{E((X - \bar x)^2)} \\
-&=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\\
+\sigma_X &= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} &(1)\\ 
+&=\sqrt{E((X - \mu_X)^2)} &(2)\\
+&=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)} &(3)\\
 \end{aligned}
 $$
 
 In other words, remember that we define standard deviation as the root
-mean square of the squared differences from the mean. Since we are
-taking the mean of the squared differences from the mean in both
-formulas (I use the definition for mean from step 1 to 2 and the
-definition of mean for discrete variables from step 2 to 3), the two
-formulas are equivalent.
+**mean** of the squared differences from the mean. 
+
+We get to step (2) by recognizing that by adding up all the squared differences from the mean and dividing by $n$, we are taking the mean of the squared differences. Therefore, $\frac{\sum(x_i - \mu_X)^2}{n} = E((X - \mu_X)^2)$
+
+And in the case of discrete random variables, we can find the mean of $X$ as $\mu_X = E(X) = \sum x_iP(x_i)$ which allows us to rewrite from step (2) to (3)
 
 </details>
 

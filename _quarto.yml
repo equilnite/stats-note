@@ -49,4 +49,3 @@ format:
 execute:
   echo: false
   warning: false
-  freeze: true
