@@ -2,19 +2,28 @@
 
 You typically know probability as chance. But what does that chance represent? 
 
+::: { .callout-note title="Probability" }
+
 **Probability** is a number between 0 and 1 that describes the proportion of times the outcome would occur in a very long series of repetitions. We observe this definition of probability through the **law of large numbers** says that if we observe more and more repetitions of any chance process, the proportion of times that a specific outcome occurs approaches a single value. 
+
+:::
 
 Because of random processes, we know that that randomness is predictable in the long run. Our intuition tries to tell us random phenomena should also be predictable in the short run. However, probability does not allow us to make short-run predictions. Even with how we can tell things in the long run, probability does not tell us certainties about future outcomes. That is, past outcomes do not influence the likelihood of individual outcomes occurring in the future. 
 
 If we know how a certain process is supposed to act out through our understanding of probability, we can simulate it. A simulation is an imitation of chance behavior, based on a model that accurately reflects the situation. This means that we will not be doing what is being described, but rather choose a way to represent the situation using a box of tickets, a coin flip, a random number generator, etc.
 
-When we describe a simulation, we want to describe the following:
+::: { .callout-note title="Simulations" }
+
+When we **describe a simulation**, we want to describe the following:
 
 1. Describe how you would do one simulation of the situation, using a physical medium and/or random number generator. e.g. flip a coin, choose $n$ unique random numbers from $a$ to $b$, choose slips of paper out a box.
 
 2. Do your described procedure many many times.
 
 3. Estimate the probability in question.
+
+:::
+
 
 ::: {.callout-warning}
 Keep in mind that simulations *are* **simulations**. This means that if you're describing how to simulate something, you absolutely cannot say to do what you're asked to describe to simulate.
@@ -69,9 +78,12 @@ For complementary events,
 $$P(A)+P(A^c)=1 \text{ or } P(A^c)=1-P(A)$$
 :::
 
-### The Addition Rule
+### Addition Rule
 
 ::: {.callout-note title="Addition Rule"}
+
+The general addition rule for any events $A$ and $B$ is:
+
 $$P(A \cup B)=P(A) + P(B)-P(A \cap B)$$
 
 For mutually exclusive events, we know that $P(A\cap B)=0$, so we can also have the following simplified rule:
@@ -79,9 +91,12 @@ For mutually exclusive events, we know that $P(A\cap B)=0$, so we can also have 
 $$P(A \cup B)=P(A) + P(B)$$
 :::
 
-### The Multiplication Rule
+### Multiplication Rule
 
 ::: {.callout-note title="Multiplication Rule"}
+
+The general multiplication rule for any events A and B is:
+
 $$P(A\cap B)=P(A)\cdot P(B|A)$$
 
 For independent events $A$ and $B$, we know that $P(B|A) = P(B)$, so we can also have the simplified rule:

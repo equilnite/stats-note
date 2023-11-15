@@ -316,3 +316,36 @@ Keep in mind that the formula for the standard deviation here only applies if we
 
 :::
 
+## Interpretations
+
+### Probabilities and Means
+
+Be aware that you are still expected to know how to interpret probabilities. Now that we are working with means / expected values, we are going to extend our long run probability interpretation to means too.
+
+Remember, if we are given a probability $p$, we interpret it in the form of:
+
+> If [do the situation] **many many times**, [this thing] will happen **about** [$p$] of the time.
+
+This extends to any mean $\mu$:
+
+> If [do the situation] **many many times**, we will have an average **about** [$\mu$].
+
+::: callout-important
+
+Remember that you should be describing the situation properly. 
+
+If we are looking at the average amount of heads in 50 coin flips, we'd say:
+
+> If we **flip a coin 50 times** many many times, we will see an average of about 25 heads.
+
+Or if we are looking at the probability that we get 25 heads in 50 coin flips (which is $\approx$ 0.1123)
+
+> If we **flip a coin 50 times** many many times, we will observe **getting 25 heads** about 0.1123 of the time.
+
+:::
+
+### Standard Deviation
+
+We previously interpreted standard deviation in Chapter 1, and now we can tone down the interpretation, we'd just say something along the lines of
+
+> [*The variable*] typically varies by [*standard deviation*] from the [*mean*].
