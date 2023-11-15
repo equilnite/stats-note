@@ -194,8 +194,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#probability-rules" id="toc-probability-rules" class="nav-link active" data-scroll-target="#probability-rules"><span class="header-section-number">7.1</span> Probability Rules</a>
   <ul class="collapse">
   <li><a href="#complement-rule" id="toc-complement-rule" class="nav-link" data-scroll-target="#complement-rule"><span class="header-section-number">7.1.1</span> Complement Rule</a></li>
-  <li><a href="#the-addition-rule" id="toc-the-addition-rule" class="nav-link" data-scroll-target="#the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</a></li>
-  <li><a href="#the-multiplication-rule" id="toc-the-multiplication-rule" class="nav-link" data-scroll-target="#the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</a></li>
+  <li><a href="#addition-rule" id="toc-addition-rule" class="nav-link" data-scroll-target="#addition-rule"><span class="header-section-number">7.1.2</span> Addition Rule</a></li>
+  <li><a href="#multiplication-rule" id="toc-multiplication-rule" class="nav-link" data-scroll-target="#multiplication-rule"><span class="header-section-number">7.1.3</span> Multiplication Rule</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -221,15 +221,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>You typically know probability as chance. But what does that chance represent?</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Probability">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Probability
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Probability</strong> is a number between 0 and 1 that describes the proportion of times the outcome would occur in a very long series of repetitions. We observe this definition of probability through the <strong>law of large numbers</strong> says that if we observe more and more repetitions of any chance process, the proportion of times that a specific outcome occurs approaches a single value.</p>
+</div>
+</div>
 <p>Because of random processes, we know that that randomness is predictable in the long run. Our intuition tries to tell us random phenomena should also be predictable in the short run. However, probability does not allow us to make short-run predictions. Even with how we can tell things in the long run, probability does not tell us certainties about future outcomes. That is, past outcomes do not influence the likelihood of individual outcomes occurring in the future.</p>
 <p>If we know how a certain process is supposed to act out through our understanding of probability, we can simulate it. A simulation is an imitation of chance behavior, based on a model that accurately reflects the situation. This means that we will not be doing what is being described, but rather choose a way to represent the situation using a box of tickets, a coin flip, a random number generator, etc.</p>
-<p>When we describe a simulation, we want to describe the following:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Simulations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Simulations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we <strong>describe a simulation</strong>, we want to describe the following:</p>
 <ol type="1">
 <li><p>Describe how you would do one simulation of the situation, using a physical medium and/or random number generator. e.g.&nbsp;flip a coin, choose <span class="math inline">\(n\)</span> unique random numbers from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, choose slips of paper out a box.</p></li>
 <li><p>Do your described procedure many many times.</p></li>
 <li><p>Estimate the probability in question.</p></li>
 </ol>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -315,8 +339,8 @@ Complementary Rule
 </div>
 </div>
 </section>
-<section id="the-addition-rule" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="the-addition-rule"><span class="header-section-number">7.1.2</span> The Addition Rule</h3>
+<section id="addition-rule" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="addition-rule"><span class="header-section-number">7.1.2</span> Addition Rule</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Addition Rule">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -327,14 +351,15 @@ Addition Rule
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The general addition rule for any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is:</p>
 <p><span class="math display">\[P(A \cup B)=P(A) + P(B)-P(A \cap B)\]</span></p>
 <p>For mutually exclusive events, we know that <span class="math inline">\(P(A\cap B)=0\)</span>, so we can also have the following simplified rule:</p>
 <p><span class="math display">\[P(A \cup B)=P(A) + P(B)\]</span></p>
 </div>
 </div>
 </section>
-<section id="the-multiplication-rule" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">7.1.3</span> The Multiplication Rule</h3>
+<section id="multiplication-rule" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="multiplication-rule"><span class="header-section-number">7.1.3</span> Multiplication Rule</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Multiplication Rule">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -345,6 +370,7 @@ Multiplication Rule
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The general multiplication rule for any events A and B is:</p>
 <p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B|A)\]</span></p>
 <p>For independent events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we know that <span class="math inline">\(P(B|A) = P(B)\)</span>, so we can also have the simplified rule:</p>
 <p><span class="math display">\[P(A\cap B)=P(A)\cdot P(B)\]</span></p>
