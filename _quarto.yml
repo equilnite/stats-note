@@ -21,7 +21,7 @@ book:
     - probability.qmd
     - density-curves.qmd
     - random-variables.qmd
-    # - sampling-distributions.qmd
+    - sampling-distributions.qmd
     # - confidence-intervals.qmd
     # - hypothesis-testing.qmd
     # - inference-for-proportions.qmd

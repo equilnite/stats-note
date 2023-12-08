@@ -64,44 +64,44 @@ If you have a population with mean $\mu$ and standard deviation $\sigma$ and tak
 | Slightly non-normal                       | Somewhere between 10-30, depending on how “slightly” non-normal                                    |
 | Very non-normal, skewed                   | About 30                                                                                           |
 
-## Sampling Distribution of $\hat p_1 - \hat p_2$ {#prop-diff-samp-dist}
+<!-- ## Sampling Distribution of $\hat p_1 - \hat p_2$ {#prop-diff-samp-dist} -->
 
-::: {.highlight}
-Choose an SRS of size $n_1$ from Population 1 with proportion of successes $p_1$ and an independent SRS of size $n_2$ from Population 2 with proportion of successes $p_2$.
+<!-- ::: {.highlight} -->
+<!-- Choose an SRS of size $n_1$ from Population 1 with proportion of successes $p_1$ and an independent SRS of size $n_2$ from Population 2 with proportion of successes $p_2$. -->
 
 
-**Shape:** 
+<!-- **Shape:**  -->
 
-When $n_1p_1$, $n_1(1-p_1)$, $n_2p_2$, and $n_2(1-p_2$) are all at least 10, the sampling distribution of $p_1-p_2$ is approximately Normal. 
+<!-- When $n_1p_1$, $n_1(1-p_1)$, $n_2p_2$, and $n_2(1-p_2$) are all at least 10, the sampling distribution of $p_1-p_2$ is approximately Normal.  -->
 
-**Center:** 
+<!-- **Center:**  -->
 
-The mean of the sampling distribution is $$\mu_{\hat p_1-\hat p_2} =p_1-p_2$$.
+<!-- The mean of the sampling distribution is $$\mu_{\hat p_1-\hat p_2} =p_1-p_2$$. -->
 
-**Spread:** 
+<!-- **Spread:**  -->
 
-The standard deviation of $\hat p_1-\hat p_2$ is $$s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}$$ as long as each sample is no more than 10% of its population (10% condition)
+<!-- The standard deviation of $\hat p_1-\hat p_2$ is $$s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}$$ as long as each sample is no more than 10% of its population (10% condition) -->
 
-:::
+<!-- ::: -->
 
-## Sampling Distribution of $\bar x_1 - \bar x_2$ {#mean-diff-samp-dist}
+<!-- ## Sampling Distribution of $\bar x_1 - \bar x_2$ {#mean-diff-samp-dist} -->
 
-::: {.highlight}
+<!-- ::: {.highlight} -->
 
-Choose an SRS of size $n_1$ from Population 1 with mean $\mu_1$ and standard deviation $\sigma_1$ and an independent SRS of size $n_2$ from Population 2 with mean $\mu_2$ and standard deviation $\sigma_2$.
+<!-- Choose an SRS of size $n_1$ from Population 1 with mean $\mu_1$ and standard deviation $\sigma_1$ and an independent SRS of size $n_2$ from Population 2 with mean $\mu_2$ and standard deviation $\sigma_2$. -->
 
-**Shape:**
+<!-- **Shape:** -->
 
-When the population distributions are Normal, the sampling distribution of $\bar x_1- \bar x_2$ is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough ($n_1 \geq 30$ and $n_2 \geq 30$)
+<!-- When the population distributions are Normal, the sampling distribution of $\bar x_1- \bar x_2$ is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough ($n_1 \geq 30$ and $n_2 \geq 30$) -->
 
-**Center:**
+<!-- **Center:** -->
 
-The mean of the sampling distribution is 
-$$\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2$$.
+<!-- The mean of the sampling distribution is  -->
+<!-- $$\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2$$. -->
 
-**Spread:**
+<!-- **Spread:** -->
 
-As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of $\bar x_1- \bar x_2$ is 
-$$\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$
+<!-- As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of $\bar x_1- \bar x_2$ is  -->
+<!-- $$\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$ -->
 
-:::
+<!-- ::: -->
