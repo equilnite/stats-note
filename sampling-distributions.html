@@ -185,6 +185,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./statistic-to-pvalue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./critical-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Critical Values</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -227,38 +239,59 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<dl>
-<dt>Sampling Distribution</dt>
-<dd>
-A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size <span class="math inline">\(n\)</span></em> from the same population.
-</dd>
-<dt>Unbiased Estimator</dt>
-<dd>
-A statistic used to estimate a parameter is an if the mean of its sampling distribution is equal to the true value of the parameter being estimated.
-</dd>
-<dd>
-Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.
-</dd>
-<dt>Variability of a Statistic</dt>
-<dd>
-The variability of a statistic is described by the spread of its sampling distribution.
-</dd>
-<dd>
-This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="#ten-per-cond">10% Condition</a>).
-</dd>
-</dl>
+<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sampling Distribution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size</em> <span class="math inline">\(n\)</span> from the same population.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Unbiased Estimator">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Unbiased Estimator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A statistic used to estimate a parameter is an <strong>unbiased estimator</strong>}** if the mean of its sampling distribution is equal to the true value of the parameter being estimated.</p>
+<p>Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Variability of a Statistic">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variability of a Statistic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The variability of a statistic is described by the spread of its sampling distribution.</p>
+<p>This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="random-variables.html#ten-per-cond">10% Condition</a>).</p>
+</div>
+</div>
 <section id="sampling-distribution-of-hat-p" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="sampling-distribution-of-hat-p"><span class="header-section-number">10.1</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></h2>
 <div class="highlight">
 <p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
 <ul>
 <li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="#ten-per-cond">10% condition</a> is satisfied.</p></li>
-<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="random-variables.html#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
 </ul>
-<p><span class="math display">\[\begin{equation}
+<span class="math display">\[\begin{equation}
 np \geq 10 \text{ and }n(1-p) \geq 10
-\end{equation}\]</span></p>
+\end{equation}\]</span>
 </div>
 </section>
 <section id="sampling-distribution-of-bar-x" class="level2" data-number="10.2">
@@ -267,7 +300,7 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 <p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
 <ul>
 <li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
 </ul>
 <p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
 </div>
@@ -289,8 +322,8 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 <h3 data-number="10.2.3" class="anchored" data-anchor-id="when-do-we-have-normality"><span class="header-section-number">10.2.3</span> When do we have normality?</h3>
 <table class="table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 69%">
+<col style="width: 31%">
+<col style="width: 68%">
 </colgroup>
 <thead>
 <tr class="header">
