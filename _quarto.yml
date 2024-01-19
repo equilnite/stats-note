@@ -32,8 +32,8 @@ book:
   appendices:
     - formula-sheet.qmd
     # - applets.qmd
-    # - statistic-to-pvalue.qmd
-    # - critical-values.qmd
+    - statistic-to-pvalue.qmd
+    - critical-values.qmd
     # - test-page.qmd
 
 format:

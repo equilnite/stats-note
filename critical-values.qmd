@@ -46,23 +46,23 @@ The sign of any critical value does not matter, so just take the absolute value 
     - Just take the positive value, $z^* = 2.57$.
     - **Alternatively,** do the calculator command `invNorm(0.005)` to get a value of around -2.5758. Take the positive value as your critical value, $z^* = 2.58$.
 
-## From Confidence Level and df to $t^*$
+<!-- ## From Confidence Level and df to $t^*$ -->
 
-The same principles for $z^*$ applies to $t^*$, except we have to use degrees of freedom too.
+<!-- The same principles for $z^*$ applies to $t^*$, except we have to use degrees of freedom too. -->
 
-[Table B](#table-b) conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that's given in the top margin of the table.
+<!-- [Table B](#table-b) conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that's given in the top margin of the table. -->
 
-The left margin is where you should look for the degrees of freedom, calculated by $df = n-1$. 
+<!-- The left margin is where you should look for the degrees of freedom, calculated by $df = n-1$.  -->
 
-Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down (as mentioned in the [previous section][t statistics/score]). The critical value is the number that you pinpoint in the middle of the table.
+<!-- Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down (as mentioned in the [previous section][t statistics/score]). The critical value is the number that you pinpoint in the middle of the table. -->
 
-### Examples
+<!-- ### Examples -->
 
-- 90% confidence and 24 degrees of freedom
-    - Look at the $df = 24$ row and the confidence level 90% column.
-    - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 1.711$
-    
-- 99% confidence and 96 degrees of freedom
-    - Round your df down to the next available value. $df = 96 \sim 80$.
-    - Look at the $df = 80$ row and the confidence level 99% column.
-    - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 2.639$
+<!-- - 90% confidence and 24 degrees of freedom -->
+<!--     - Look at the $df = 24$ row and the confidence level 90% column. -->
+<!--     - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 1.711$ -->
+
+<!-- - 99% confidence and 96 degrees of freedom -->
+<!--     - Round your df down to the next available value. $df = 96 \sim 80$. -->
+<!--     - Look at the $df = 80$ row and the confidence level 99% column. -->
+<!--     - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 2.639$ -->

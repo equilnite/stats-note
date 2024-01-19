@@ -103,7 +103,9 @@ Usage: $\texttt{binompdf(n, p[,x])}$
 
 ::: {.callout-note title="cdf of a Binomial Random Variable"}
 
-The **cdf** of a Binomial Random Variable is: $$
+The **cdf** of a Binomial Random Variable is: 
+
+$$
 \begin{aligned}
     P(X\leq k) &= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
 \end{aligned}
@@ -125,6 +127,7 @@ $$
     &\text{, where } q = 1-p.
 \end{aligned}
 $$
+
 :::
 
 #### Identifying Binomial Situations
@@ -147,7 +150,7 @@ We can identify a binomial setting when we successfully recognize these four thi
     
 :::
 
-##### 10% Condition {#sec-ten-per-cond}
+##### 10% Condition {#ten-per-cond}
 
 The second condition is often not perfectly met, as in the case of an SRS from some population. Imagine choosing 10 students from a class of 15 females and 15 males---as we choose people, the remaining population changes, which changes the probability that the next person chosen will be male or female.
 
@@ -157,8 +160,10 @@ When we lack complete independence, we can see the consequence of this is neglig
 The general rule is that the sample needs to be less than
 $\frac{1}{10}$, or 10%, of the population. We refer to this as the 10%
 condition.
+$$ 
+n \leq (.10) N 
+$$
 
-$$n \leq (.10) N$$
 :::
 
 #### Normal Approximation to the Binomial Distribution
@@ -173,13 +178,15 @@ However, before we use a normal distribution to
 approximate a binomial distribution, we have to check the following
 condition:
 
-##### Large Counts condition {#sec-large-counts-cond}
+##### Large Counts condition {#large-counts-cond}
 
 ::: {.callout-note title="Large Counts Condition"}
 We can use a Normal distribution to model a binomial distribution if we know that a the **Large Counts Condition** is fulfilled:
 $$np \geq 10 \text{ and }n(1-p) \geq 10$$
 In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.
 :::
+
+
 
 ##### Doing a Normal Approximation to a Binomial Distribution
 
