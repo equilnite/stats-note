@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - Appendix C — Critical Values</title>
+<title>AP Statistics Notes - 11&nbsp; Confidence Intervals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./statistic-to-pvalue.html" rel="prev">
+<link href="./inference-for-proportions.html" rel="next">
+<link href="./sampling-distributions.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,9 +69,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -87,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./critical-values.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Critical Values</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./confidence-intervals.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -174,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./confidence-intervals.html" class="sidebar-item-text sidebar-link">
+  <a href="./confidence-intervals.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span></a>
   </div>
 </li>
@@ -213,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./critical-values.html" class="sidebar-item-text sidebar-link active">
+  <a href="./critical-values.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Critical Values</span></span></a>
   </div>
 </li>
@@ -229,10 +227,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-confidence-level-to-z" id="toc-from-confidence-level-to-z" class="nav-link active" data-scroll-target="#from-confidence-level-to-z"><span class="header-section-number">C.1</span> From Confidence Level to <span class="math inline">\(z^*\)</span></a>
-  <ul class="collapse">
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">C.1.1</span> Examples</a></li>
-  </ul></li>
+  <li><a href="#interpreting-confidence-intervals" id="toc-interpreting-confidence-intervals" class="nav-link active" data-scroll-target="#interpreting-confidence-intervals"><span class="header-section-number">11.1</span> Interpreting Confidence Intervals</a></li>
+  <li><a href="#interpreting-confidence-level" id="toc-interpreting-confidence-level" class="nav-link" data-scroll-target="#interpreting-confidence-level"><span class="header-section-number">11.2</span> Interpreting Confidence Level</a></li>
+  <li><a href="#changing-confidence-levels" id="toc-changing-confidence-levels" class="nav-link" data-scroll-target="#changing-confidence-levels"><span class="header-section-number">11.3</span> Changing Confidence Levels</a></li>
+  <li><a href="#conditions-for-confidence-intervals" id="toc-conditions-for-confidence-intervals" class="nav-link" data-scroll-target="#conditions-for-confidence-intervals"><span class="header-section-number">11.4</span> Conditions for Confidence Intervals</a></li>
+  <li><a href="#the-four-step-process" id="toc-the-four-step-process" class="nav-link" data-scroll-target="#the-four-step-process"><span class="header-section-number">11.5</span> The Four-Step Process</a></li>
   </ul>
 </nav>
     </div>
@@ -241,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appendix C — Critical Values</h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></h1>
 </div>
 
 
@@ -256,57 +255,95 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="from-confidence-level-to-z" class="level2" data-number="C.1">
-<h2 data-number="C.1" class="anchored" data-anchor-id="from-confidence-level-to-z"><span class="header-section-number">C.1</span> From Confidence Level to <span class="math inline">\(z^*\)</span></h2>
-<p>When constructing confidence intervals, we need the value <span class="math inline">\(z^*\)</span> such that <span class="math inline">\(C\)</span>% of the estimated sampling distribution is between <span class="math inline">\(-|z^*|\)</span> and <span class="math inline">\(|z^*|\)</span>. In other words, imagine:</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="critical-values_files/figure-html/Conf level on normal dist-1.png" class="img-fluid" width="672"></p>
+<p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter.</p>
+<div class="highlight">
+<p>The interval is calculated from the data and has the form <span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
 </div>
+<div class="highlight">
+<p>Margin of errors are calculated from the confidence level (<span class="math inline">\(C\)</span>) and the data and has the form</p>
+<p><span class="math display">\[ME = m = \text{critical value} \cdot \text{standard error of the statistic}\]</span></p>
 </div>
-<p>So if we want to <span class="math inline">\(z\)</span> that corresponds to the confidence level, we have to determine the area of the left/right tail that corresponds to the confidence level. We know that if there’s <span class="math inline">\(C\)</span>% in the middle, then there’s <span class="math inline">\(100\% - C\)</span> left in the two tails. For one tail, that’ll be <span class="math inline">\(\frac{100\% - C}{2}\)</span>.</p>
-<p>Look up that proportion in <a href="formula-sheet.html#table-a">Table A</a> in the middle of the table, take the larger value if it’s not on there specifically, and back track to the margins to get your desired value of <span class="math inline">\(z^*\)</span>.</p>
-<p>The sign of any critical value does not matter, so just take the absolute value as your critical value.</p>
-<section id="examples" class="level3" data-number="C.1.1">
-<h3 data-number="C.1.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">C.1.1</span> Examples</h3>
-<ul>
-<li>90% confidence
-<ul>
-<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 90%}{2} = 5\% = 0.05\)</span></li>
-<li>Try to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.</li>
-<li>Take the larger value, 0.0505 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -1.64.</li>
-<li>Just take the positive value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
-<li><strong>Alternatively,</strong> do the calculator command <code>invNorm(0.05)</code> to get a value of around -1.64. Take the positive value as your critical value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
-</ul></li>
-<li>99% confidence
-<ul>
-<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 99%}{2} = 0.5\% = 0.005\)</span></li>
-<li>Try to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.</li>
-<li>Take the larger value, 0.0051 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -2.57.</li>
-<li>Just take the positive value, <span class="math inline">\(z^* = 2.57\)</span>.</li>
-<li><strong>Alternatively,</strong> do the calculator command <code>invNorm(0.005)</code> to get a value of around -2.5758. Take the positive value as your critical value, <span class="math inline">\(z^* = 2.58\)</span>.</li>
-</ul></li>
-</ul>
-<!-- ## From Confidence Level and df to $t^*$ -->
-<!-- The same principles for $z^*$ applies to $t^*$, except we have to use degrees of freedom too. -->
-
-<!-- [Table B](#table-b) conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that's given in the top margin of the table. -->
-<!-- The left margin is where you should look for the degrees of freedom, calculated by $df = n-1$.  -->
-
-<!-- Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down (as mentioned in the [previous section][t statistics/score]). The critical value is the number that you pinpoint in the middle of the table. -->
-<!-- ### Examples -->
-<!-- - 90% confidence and 24 degrees of freedom -->
-<!--     - Look at the $df = 24$ row and the confidence level 90% column. -->
-
-<!--     - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 1.711$ -->
-<!-- - 99% confidence and 96 degrees of freedom -->
-<!--     - Round your df down to the next available value. $df = 96 \sim 80$. -->
-<!--     - Look at the $df = 80$ row and the confidence level 99% column. -->
-
-<!--     - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 2.639$ -->
-
-
+<p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in <span class="math inline">\(C\)</span>% of samples.</p>
+<section id="interpreting-confidence-intervals" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="interpreting-confidence-intervals"><span class="header-section-number">11.1</span> Interpreting Confidence Intervals</h2>
+<p>You can say something of the form:</p>
+<div class="highlight">
+<p>I am [<span class="math inline">\(C\)</span>]% confident the interval from <em>[lower bound]</em> to <em>[upper bound]</em> captures the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
+<p>You CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1</p>
 </section>
+<section id="interpreting-confidence-level" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="interpreting-confidence-level"><span class="header-section-number">11.2</span> Interpreting Confidence Level</h2>
+<div class="highlight">
+<p>If we take many, many samples and create many, many intervals using the same method, about [<span class="math inline">\(C\)</span>]% of them will capture the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
+<p>In other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”</p>
+</section>
+<section id="changing-confidence-levels" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="changing-confidence-levels"><span class="header-section-number">11.3</span> Changing Confidence Levels</h2>
+<p>When we increase confidence level, we are saying that more intervals in this manner should capture the true parameter. This means that to increase confidence level means that the confidence intervals need to increase in width.</p>
+<p>When we increase the size of a sample, the precision of our statistic increases because of the reduction in sampling variability (standard deviation of the statistic decreases as n increases). This means that we can now guess/estimate a smaller range compared to if we had a smaller sample size. So, when we increase the size of our samples, our confidence intervals will have smaller widths compared to those with a smaller sample size.</p>
+</section>
+<section id="conditions-for-confidence-intervals" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="conditions-for-confidence-intervals"><span class="header-section-number">11.4</span> Conditions for Confidence Intervals</h2>
+<section id="random" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="random">1. Random</h3>
+<p>The data must come from a random sample, or random assignment in an experiment.</p>
+<p>In order to infer about a larger population, we must have a random, unbiased sample from that population. If the sample is not random, we need to think about whether it’s at least unbiased and/or representative. If so, we may be able to treat it as a random sample, but we must state that we’re doing this. If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.</p>
+<p>In the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population. In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments). If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population. This depends on whether our subjects are a random sample from, or at least representative of, some larger population.</p>
+</section>
+<section id="large" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="large">2. Large</h3>
+<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
+<section id="proportions" class="level4 unlisted unnumbered">
+<h4 class="unlisted unnumbered anchored" data-anchor-id="proportions">Proportions</h4>
+<p>For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the <a href="random-variables.html#large-counts-cond"><strong><em>Large Counts Condition</em></strong></a>.</p>
+<p>This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.</p>
+</section>
+<section id="sample-means" class="level4 unlisted unnumbered">
+<h4 class="unlisted unnumbered anchored" data-anchor-id="sample-means">Sample means</h4>
+<p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
+<ul>
+<li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
+<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
+</ul>
+</section>
+</section>
+<section id="sampling-independence" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="sampling-independence">3. Sampling Independence</h3>
+<p>Observations in our sample must be independent of each other.</p>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
+<p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; “I’m going to have to assume I can treat these observations as independent.”</p>
+</section>
+</section>
+<section id="the-four-step-process" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="the-four-step-process"><span class="header-section-number">11.5</span> The Four-Step Process</h2>
+<ol type="1">
+<li><strong>STATE</strong> exactly what you’re doing</li>
+</ol>
+<blockquote class="blockquote">
+<p>Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest. If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here. For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95% confidence”</p>
+</blockquote>
+<ol start="2" type="1">
+<li><strong>PLAN</strong> which method you will use and that the necessary conditions are met.</li>
+</ol>
+<blockquote class="blockquote">
+<p>If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.</p>
+</blockquote>
+<ol start="3" type="1">
+<li><strong>DO</strong> the calculations</li>
+</ol>
+<blockquote class="blockquote">
+<p>Perform the calculations necessary for the method you chose to use. Show all work!</p>
+</blockquote>
+<ol start="4" type="1">
+<li><strong>CONCLUDE</strong> in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).</li>
+</ol>
+<blockquote class="blockquote">
+<p>“I am 95% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42% and 51%. 95% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”</p>
+</blockquote>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -545,11 +582,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./statistic-to-pvalue.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span>
+      <a href="./sampling-distributions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./inference-for-proportions.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
