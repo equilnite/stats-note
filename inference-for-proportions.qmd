@@ -20,22 +20,36 @@ Observations in our sample must be independent of each other.
 
 In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
 
-## One-Sample z-procedures
+## One-Sample $z$-procedures
 
-### One-Sample z-interval
+### One-Sample $z$-interval
 
-::: {.highlight}
+::: {.callout-note title="One-Sample $z$-interval"}
 A $C$\% confidence interval for the unknown population proportion $p$ when all conditions are met is calculated with the following: 
 
-$$\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
+$$\hat p \pm z^\ast \sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
+
+where $z^\ast$ is the critical value for the standard Normal curve with $C$\% of its area between $-z^\ast$ and $z^\ast$. 
+
+[See Appendix C for examples on how to calculate $z^\ast$ for a given confidence level $C$\%](critical-values.qmd)
+
+<details>
+<summary> Why? </summary>
+
+All confidence intervals are calculated by: $\text{point estimate } \pm \text{ margin of error}$
+
+The point estimate for the true population proportion is $\hat p$
+
+The margin of error is always calculated as $(\text{critical value})(\text{standard error})$
+
+We use $z^\ast$ critical values for $z$-intervals (which is why they are called $z$-intervals).
+
+The standard error is calculated as $\sqrt{\frac{\hat p (1 - \hat p)}{n}}$
+
+</details>
 :::
 
-where $z^*$ is the critical value for the standard Normal curve with $C$\% of its area between $-z^*$ and $z^*$.
 
-::: {.highlight}
-The standard error of the sample proportion is:
-$$SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
-:::
 
 <!-- ### One-Sample z-test -->
 
@@ -80,9 +94,9 @@ $$SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
 <!-- ::: {.highlight} -->
 <!-- When the conditions are met, an approximate $C$% confidence interval for $p_1-p_2$ is:  -->
 
-<!-- $$(\hat p_1-\hat p_2)\pm z^*\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$ -->
+<!-- $$(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$ -->
 
-<!-- Where $z^*$ is the critical value for the standard Normal curve with $C$% of its area between $-z^*$ and $z^*$ -->
+<!-- Where $z^\ast$ is the critical value for the standard Normal curve with $C$% of its area between $-z^\ast$ and $z^\ast$ -->
 <!-- ::: -->
 
 <!-- ### Two-Sample z-test (#two-sample-z-test) -->

@@ -1,16 +1,18 @@
 # Confidence Intervals
 
+::: {.callout-note title="Confidence Interval"}
+
 A **Confidence Interval** is an interval of plausible values for the population parameter and is used to estimate the parameter. 
 
-::: {.highlight}
 The interval is calculated from the data and has the form 
 $$\text{point estimate} ± \text{margin of error}$$
 :::
 
-::: {.highlight}
+::: {.callout-note title="Margin of Error"}
 Margin of errors are calculated from the confidence level ($C$) and the data and has the form
 
 $$ME = m = \text{critical value} \cdot \text{standard error of the statistic}$$
+
 :::
 
 The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in $C$% of samples. 
@@ -19,15 +21,17 @@ The difference between the point estimate, the value of the statistics from a sa
 
 You can say something of the form:
 
-::: {.highlight}
+::: {.callout-note title="Confidence Interval Interpretation"}
 I am [$C$]% confident the interval from *[lower bound]* to *[upper bound]* captures the *[true parameter in the context of the problem]*.
 :::
 
+::: {.callout-warning}
 You CANNOT say that "There is a 95% chance that this interval contains the population (proportion or mean)" because your single interval either did or did not capture the real value, and either has a probability of 0 or 1
+:::
 
 ## Interpreting Confidence Level
 
-::: {.highlight}
+::: {.callout-note title="Confidence Level Interpretation"}
 If we take many, many samples and create many, many intervals using the same method, about [$C$]% of them will capture the *[true parameter in the context of the problem]*.
 :::
 
@@ -78,18 +82,64 @@ In experiments, or other situations where we’re not sampling from a population
 
 ## The Four-Step Process
 
-1.  **STATE** exactly what you’re doing
+1.  **STATE** exactly what you’re doing.
 
-> Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing.  You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.  If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here.  For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95\% confidence”
+::: {.callout-note title="State"}
 
-2. **PLAN** which method you will use and that the necessary conditions are met. 
+Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing.  You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.
 
-> If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.
+:::
+
+> I will estimate $p =$ the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.
+
+2. **PLAN** which method you will use and the conditions required to use the method.
+
+::: {.callout-note title="Plan"}
+
+State the name of the procedure that you'll attempt.
+
+Check the conditions, and if the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.
+
+:::
+
+> If the conditions are met, I will use a one-sample z-interval for the population parameter $p$.
+>
+> Random Sample: Yes, it’s stated that the sample is random.
+>
+> Large Sample: $n\hat{p}=75\left(\frac{43}{75}\right)=43$  and  $n\left(1-\hat{p}\right)=75\left(1-\frac{43}{75}\right)=32$
+>
+> Both amounts are over 10, so the sample is large enough for the sampling distribution of \hat{p} to be approximately normal.
+>
+> Independence: We have independence as long as the population of non-solar Berkeley homeowners is at least 750. This is definitely true.
+
 
 3. **DO** the calculations
 
-> Perform the calculations necessary for the method you chose to use.  Show all work!
+::: {.callout-note title="Do"}
 
-4. **CONCLUDE** in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).
+Perform the calculations necessary for the method you chose to use.  Show all work!
 
-> “I am 95\% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42\% and 51\%.  95\% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”
+:::
+
+> 
+    $$
+    \begin{aligned}
+    z^\ast &= \mathtt{invNorm((1 - 0.92) / 2 + 0.92)} \approx 1.75 \\ \\
+    CI_{92}&=\hat{p}\pm z^\ast\cdot SE_{\hat{p}} \\
+    &=\hat{p}\pm1.75\cdot\sqrt{\frac{\hat{p}\left(1-\hat{p}\right)}{n}} \text{, and we know that } n=75 \text{ and } \hat{p}=\frac{43}{75}=0.5733 \\
+    &=0.5733\pm1.75\sqrt{\frac{0.5733\left(1-0.5733\right)}{75}} \\
+    &=\left[0.4734,\ 0.6732\right]
+    \end{aligned}
+    $$
+    
+
+
+4. **CONCLUDE** in the context of the situation.
+
+::: {.callout-note title="Conclude"}
+
+Interpret the confidence interval in the context of the problem.
+
+:::
+
+> I am 92% confident that $p$ (as defined in State) is somewhere between 47.34% and 67.32%. 

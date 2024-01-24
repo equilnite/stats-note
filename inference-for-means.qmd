@@ -26,21 +26,35 @@ Observations in our sample must be independent of each other.
 
 In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
 
-## One-Sample t-procedures
+## One-Sample $t$-procedures
 
-### One-Sample t-interval
+### One-Sample $t$-interval
 
-::: {.highlight}
+::: {.callout-note title="One-Sample $t$-interval"}
+
 A $C$\% confidence interval for the unknown population mean $\mu$ when all conditions are met is calculated with the following: 
 
-$$\bar x \pm t^* \frac{s_x}{\sqrt{n}}$$
-:::
+$$\bar x \pm t^\ast \frac{s_x}{\sqrt{n}}$$
 
-where $t^*$ is the critical value for the Student's $t$ distribution corresponding with degrees of freedom $df = n - 1$ with $C$\% of its area between $-t^*$ and $t^*$.
+where $t^\ast$ is the critical value for the Student's $t$ distribution corresponding with degrees of freedom $df = n - 1$ with $C$\% of its area between $-t^\ast$ and $t^\ast$.
 
-::: {.highlight}
-The standard error of the sample mean is:
-$$SE_{\bar x}=\frac{s_x}{\sqrt{n}}$$
+[See Appendix C for examples on how to calculate $t^\ast$ for a given confidence level $C$\% and degrees of freedom $df$](critical-values.qmd)
+
+<details>
+<summary> Why? </summary>
+
+All confidence intervals are calculated by: $\text{point estimate } \pm \text{ margin of error}$
+
+The point estimate for the true population mean is $\bar x$
+
+The margin of error is always calculated as $(\text{critical value})(\text{standard error})$
+
+We use $t^\ast$ critical values for $t$-intervals (which is why they are called $t$-intervals).
+
+The standard error is calculated as $\frac{s_x}{\sqrt{n}}$
+
+</details>
+
 :::
 
 <!-- ### One-Sample t-test {#one-sample-t-test} -->
@@ -145,9 +159,9 @@ $$SE_{\bar x}=\frac{s_x}{\sqrt{n}}$$
 <!-- ::: {.highlight} -->
 <!-- When the conditions are met, an approximate $C$% confidence interval for $\bar x_1 - \bar x_2$ is:  -->
 
-<!-- $$(\bar x_1 - \bar x_2)\pm t^*\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$ -->
+<!-- $$(\bar x_1 - \bar x_2)\pm t^\ast\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$ -->
 
-<!-- Where $t^*$ is the critical value for the $t$ distribution with $n-1$ degrees of freedom with $C$% of its area between $-t^*$ and $t^*$ -->
+<!-- Where $t^\ast$ is the critical value for the $t$ distribution with $n-1$ degrees of freedom with $C$% of its area between $-t^\ast$ and $t^\ast$ -->
 <!-- ::: -->
 
 <!-- ### Two-Sample t-test -->
@@ -179,13 +193,13 @@ $$SE_{\bar x}=\frac{s_x}{\sqrt{n}}$$
 
 ## The Student's $t$ distribution
 
-::: {.highlight}
-Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic 
-$$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$
-has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough. 
+<!-- ::: {.highlight} -->
+<!-- Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic  -->
+<!-- $$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$ -->
+<!-- has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough.  -->
 
-As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough.
-:::
+<!-- As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough. -->
+<!-- ::: -->
 
 ### Why a $t$-distribution? {#t-justification}
 
