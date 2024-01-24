@@ -228,9 +228,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">12.1</span> Conditions for Inference</a></li>
-  <li><a href="#one-sample-z-procedures" id="toc-one-sample-z-procedures" class="nav-link" data-scroll-target="#one-sample-z-procedures"><span class="header-section-number">12.2</span> One-Sample z-procedures</a>
+  <li><a href="#one-sample-z-procedures" id="toc-one-sample-z-procedures" class="nav-link" data-scroll-target="#one-sample-z-procedures"><span class="header-section-number">12.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</a>
   <ul class="collapse">
-  <li><a href="#one-sample-z-interval" id="toc-one-sample-z-interval" class="nav-link" data-scroll-target="#one-sample-z-interval"><span class="header-section-number">12.2.1</span> One-Sample z-interval</a></li>
+  <li><a href="#one-sample-z-interval" id="toc-one-sample-z-interval" class="nav-link" data-scroll-target="#one-sample-z-interval"><span class="header-section-number">12.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -274,16 +274,34 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="one-sample-z-procedures" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="one-sample-z-procedures"><span class="header-section-number">12.2</span> One-Sample z-procedures</h2>
+<h2 data-number="12.2" class="anchored" data-anchor-id="one-sample-z-procedures"><span class="header-section-number">12.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</h2>
 <section id="one-sample-z-interval" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="one-sample-z-interval"><span class="header-section-number">12.2.1</span> One-Sample z-interval</h3>
-<div class="highlight">
-<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population proportion <span class="math inline">\(p\)</span> when all conditions are met is calculated with the following:</p>
-<p><span class="math display">\[\hat p \pm z^* \sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="one-sample-z-interval"><span class="header-section-number">12.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="One-Sample $z$-interval">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>where <span class="math inline">\(z^*\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^*\)</span> and <span class="math inline">\(z^*\)</span>.</p>
-<div class="highlight">
-<p>The standard error of the sample proportion is: <span class="math display">\[SE_{\hat p}=\sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
+<div class="callout-title-container flex-fill">
+One-Sample <span class="math inline">\(z\)</span>-interval
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population proportion <span class="math inline">\(p\)</span> when all conditions are met is calculated with the following:</p>
+<p><span class="math display">\[\hat p \pm z^\ast \sqrt{\frac{\hat p (1 - \hat p)}{n}}\]</span></p>
+<p>where <span class="math inline">\(z^\ast\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^\ast\)</span> and <span class="math inline">\(z^\ast\)</span>.</p>
+<p><a href="./critical-values.html">See Appendix C for examples on how to calculate <span class="math inline">\(z^\ast\)</span> for a given confidence level <span class="math inline">\(C\)</span>%</a></p>
+<details>
+<summary>
+Why?
+</summary>
+<p>All confidence intervals are calculated by: <span class="math inline">\(\text{point estimate } \pm \text{ margin of error}\)</span></p>
+<p>The point estimate for the true population proportion is <span class="math inline">\(\hat p\)</span></p>
+<p>The margin of error is always calculated as <span class="math inline">\((\text{critical value})(\text{standard error})\)</span></p>
+<p>We use <span class="math inline">\(z^\ast\)</span> critical values for <span class="math inline">\(z\)</span>-intervals (which is why they are called <span class="math inline">\(z\)</span>-intervals).</p>
+<p>The standard error is calculated as <span class="math inline">\(\sqrt{\frac{\hat p (1 - \hat p)}{n}}\)</span></p>
+</details>
+</div>
 </div>
 <!-- ### One-Sample z-test -->
 <!-- ::: {.highlight} -->
@@ -312,8 +330,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- ### Two-Sample z-interval -->
 <!-- ::: {.highlight} -->
 <!-- When the conditions are met, an approximate $C$% confidence interval for $p_1-p_2$ is:  -->
-<!-- $$(\hat p_1-\hat p_2)\pm z^*\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$ -->
-<!-- Where $z^*$ is the critical value for the standard Normal curve with $C$% of its area between $-z^*$ and $z^*$ -->
+<!-- $$(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$ -->
+<!-- Where $z^\ast$ is the critical value for the standard Normal curve with $C$% of its area between $-z^\ast$ and $z^\ast$ -->
 <!-- ::: -->
 <!-- ### Two-Sample z-test (#two-sample-z-test) -->
 <!-- ::: {.highlight} -->

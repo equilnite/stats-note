@@ -229,9 +229,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-confidence-level-to-z" id="toc-from-confidence-level-to-z" class="nav-link active" data-scroll-target="#from-confidence-level-to-z"><span class="header-section-number">C.1</span> From Confidence Level to <span class="math inline">\(z^*\)</span></a>
+  <li><a href="#zast" id="toc-zast" class="nav-link active" data-scroll-target="#zast"><span class="header-section-number">C.1</span> <span class="math inline">\(z^\ast\)</span></a>
   <ul class="collapse">
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">C.1.1</span> Examples</a></li>
+  </ul></li>
+  <li><a href="#tast" id="toc-tast" class="nav-link" data-scroll-target="#tast"><span class="header-section-number">C.2</span> <span class="math inline">\(t^\ast\)</span></a>
+  <ul class="collapse">
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">C.2.1</span> Examples</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -256,54 +260,72 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="from-confidence-level-to-z" class="level2" data-number="C.1">
-<h2 data-number="C.1" class="anchored" data-anchor-id="from-confidence-level-to-z"><span class="header-section-number">C.1</span> From Confidence Level to <span class="math inline">\(z^*\)</span></h2>
-<p>When constructing confidence intervals, we need the value <span class="math inline">\(z^*\)</span> such that <span class="math inline">\(C\)</span>% of the estimated sampling distribution is between <span class="math inline">\(-|z^*|\)</span> and <span class="math inline">\(|z^*|\)</span>. In other words, imagine:</p>
+<section id="zast" class="level2" data-number="C.1">
+<h2 data-number="C.1" class="anchored" data-anchor-id="zast"><span class="header-section-number">C.1</span> <span class="math inline">\(z^\ast\)</span></h2>
+<p>When constructing confidence intervals, we need the value <span class="math inline">\(z^\ast\)</span> such that <span class="math inline">\(C\)</span>% of the estimated sampling distribution is between <span class="math inline">\(-|z^\ast|\)</span> and <span class="math inline">\(|z^\ast|\)</span>. In other words, imagine:</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="critical-values_files/figure-html/Conf level on normal dist-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>So if we want to <span class="math inline">\(z\)</span> that corresponds to the confidence level, we have to determine the area of the left/right tail that corresponds to the confidence level. We know that if there’s <span class="math inline">\(C\)</span>% in the middle, then there’s <span class="math inline">\(100\% - C\)</span> left in the two tails. For one tail, that’ll be <span class="math inline">\(\frac{100\% - C}{2}\)</span>.</p>
-<p>Look up that proportion in <a href="formula-sheet.html#table-a">Table A</a> in the middle of the table, take the larger value if it’s not on there specifically, and back track to the margins to get your desired value of <span class="math inline">\(z^*\)</span>.</p>
+<p>Look up that proportion in <a href="formula-sheet.html#table-a">Table A</a> in the middle of the table, take the larger value if it’s not on there specifically, and back track to the margins to get your desired value of <span class="math inline">\(z^\ast\)</span>.</p>
 <p>The sign of any critical value does not matter, so just take the absolute value as your critical value.</p>
 <section id="examples" class="level3" data-number="C.1.1">
 <h3 data-number="C.1.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">C.1.1</span> Examples</h3>
 <ul>
-<li>90% confidence
-<ul>
-<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 90%}{2} = 5\% = 0.05\)</span></li>
-<li>Try to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.</li>
-<li>Take the larger value, 0.0505 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -1.64.</li>
-<li>Just take the positive value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
-<li><strong>Alternatively,</strong> do the calculator command <code>invNorm(0.05)</code> to get a value of around -1.64. Take the positive value as your critical value, <span class="math inline">\(z^* = 1.64\)</span>.</li>
-</ul></li>
-<li>99% confidence
-<ul>
-<li>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 99%}{2} = 0.5\% = 0.005\)</span></li>
-<li>Try to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.</li>
-<li>Take the larger value, 0.0051 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -2.57.</li>
-<li>Just take the positive value, <span class="math inline">\(z^* = 2.57\)</span>.</li>
-<li><strong>Alternatively,</strong> do the calculator command <code>invNorm(0.005)</code> to get a value of around -2.5758. Take the positive value as your critical value, <span class="math inline">\(z^* = 2.58\)</span>.</li>
-</ul></li>
+<li>90% confidence</li>
 </ul>
-<!-- ## From Confidence Level and df to $t^*$ -->
-<!-- The same principles for $z^*$ applies to $t^*$, except we have to use degrees of freedom too. -->
-
-<!-- [Table B](#table-b) conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that's given in the top margin of the table. -->
-<!-- The left margin is where you should look for the degrees of freedom, calculated by $df = n-1$.  -->
-
-<!-- Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down (as mentioned in the [previous section][t statistics/score]). The critical value is the number that you pinpoint in the middle of the table. -->
-<!-- ### Examples -->
-<!-- - 90% confidence and 24 degrees of freedom -->
-<!--     - Look at the $df = 24$ row and the confidence level 90% column. -->
-
-<!--     - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 1.711$ -->
-<!-- - 99% confidence and 96 degrees of freedom -->
-<!--     - Round your df down to the next available value. $df = 96 \sim 80$. -->
-<!--     - Look at the $df = 80$ row and the confidence level 99% column. -->
-
-<!--     - Take the value in the middle of the table that you pinpoint from that row and column, $t^* = 2.639$ -->
+<blockquote class="blockquote">
+<p>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 90%}{2} = 5\% = 0.05\)</span></p>
+<p>Try to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.</p>
+<p>Take the larger value, 0.0505 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -1.64.</p>
+<p>Just take the positive value, <span class="math inline">\(z^\ast = 1.64\)</span>.</p>
+</blockquote>
+<p>Alternatively, do the calculator command <code>invNorm(0.05)</code> to get a value of around -1.64. Take the positive value as your critical value, <span class="math inline">\(z^\ast = 1.64\)</span>.</p>
+<ul>
+<li>99% confidence</li>
+</ul>
+<blockquote class="blockquote">
+<p>Find that the area that we want is: <span class="math inline">\(\frac{100\% - 99%}{2} = 0.5\% = 0.005\)</span></p>
+<p>Try to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.</p>
+<p>Take the larger value, 0.0051 and look at the margins for the <span class="math inline">\(z\)</span> that corresponds to it, -2.57.</p>
+<p>Just take the positive value, <span class="math inline">\(z^\ast = 2.57\)</span>.</p>
+</blockquote>
+<p>Alternatively, do the calculator command <code>invNorm(0.005)</code> to get a value of around -2.5758. Take the positive value as your critical value, <span class="math inline">\(z^\ast = 2.58\)</span>.</p>
+</section>
+</section>
+<section id="tast" class="level2" data-number="C.2">
+<h2 data-number="C.2" class="anchored" data-anchor-id="tast"><span class="header-section-number">C.2</span> <span class="math inline">\(t^\ast\)</span></h2>
+<p>The same principles for <span class="math inline">\(z^\ast\)</span> applies to <span class="math inline">\(t^\ast\)</span>, except we have to use degrees of freedom too.</p>
+<p><a href="formula-sheet.html#table-b">Table B</a> conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that’s given in the top margin of the table.</p>
+<p>The left margin is where you should look for the degrees of freedom, calculated by <span class="math inline">\(df = n-1\)</span>.</p>
+<p>Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down. The critical value is the number that you pinpoint in the middle of the table.</p>
+<details>
+<summary>
+Why round down?
+</summary>
+<p>By rounding the degrees of freedom down, you use a more conservative estimate.</p>
+<p><a href="inference-for-means.html#t-justification">The main reason that we are even using the <span class="math inline">\(t\)</span>-distribution is because it is more conservative than the Normal distribution</a>.</p>
+<p>By rounding the degrees of freedom down, you use a more conservative <span class="math inline">\(t\)</span>-distribution (more area in the tails), so you ensure that you do not overestimate your answer, rather, you purposely underestimate your answer.</p>
+</details>
+<section id="examples-1" class="level3" data-number="C.2.1">
+<h3 data-number="C.2.1" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">C.2.1</span> Examples</h3>
+<ul>
+<li>90% confidence and 24 degrees of freedom</li>
+</ul>
+<blockquote class="blockquote">
+<p>Look at the <span class="math inline">\(df = 24\)</span> row and the confidence level 90% column.</p>
+<p>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^\ast = 1.711\)</span></p>
+</blockquote>
+<ul>
+<li>99% confidence and 96 degrees of freedom</li>
+</ul>
+<blockquote class="blockquote">
+<p>Round your df down to the next available value. <span class="math inline">\(df = 96 \sim 80\)</span>.</p>
+<p>Look at the <span class="math inline">\(df = 80\)</span> row and the confidence level 99% column.</p>
+<p>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^\ast = 2.639\)</span></p>
+</blockquote>
 
 
 </section>

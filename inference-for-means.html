@@ -267,9 +267,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">13.1</span> Conditions for Inference</a></li>
-  <li><a href="#one-sample-t-procedures" id="toc-one-sample-t-procedures" class="nav-link" data-scroll-target="#one-sample-t-procedures"><span class="header-section-number">13.2</span> One-Sample t-procedures</a>
+  <li><a href="#one-sample-t-procedures" id="toc-one-sample-t-procedures" class="nav-link" data-scroll-target="#one-sample-t-procedures"><span class="header-section-number">13.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</a>
   <ul class="collapse">
-  <li><a href="#one-sample-t-interval" id="toc-one-sample-t-interval" class="nav-link" data-scroll-target="#one-sample-t-interval"><span class="header-section-number">13.2.1</span> One-Sample t-interval</a></li>
+  <li><a href="#one-sample-t-interval" id="toc-one-sample-t-interval" class="nav-link" data-scroll-target="#one-sample-t-interval"><span class="header-section-number">13.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</a></li>
   </ul></li>
   <li><a href="#the-students-t-distribution" id="toc-the-students-t-distribution" class="nav-link" data-scroll-target="#the-students-t-distribution"><span class="header-section-number">13.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</a>
   <ul class="collapse">
@@ -320,16 +320,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="one-sample-t-procedures" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="one-sample-t-procedures"><span class="header-section-number">13.2</span> One-Sample t-procedures</h2>
+<h2 data-number="13.2" class="anchored" data-anchor-id="one-sample-t-procedures"><span class="header-section-number">13.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</h2>
 <section id="one-sample-t-interval" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="one-sample-t-interval"><span class="header-section-number">13.2.1</span> One-Sample t-interval</h3>
-<div class="highlight">
-<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
-<p><span class="math display">\[\bar x \pm t^* \frac{s_x}{\sqrt{n}}\]</span></p>
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="one-sample-t-interval"><span class="header-section-number">13.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="One-Sample $t$-interval">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>where <span class="math inline">\(t^*\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
-<div class="highlight">
-<p>The standard error of the sample mean is: <span class="math display">\[SE_{\bar x}=\frac{s_x}{\sqrt{n}}\]</span></p>
+<div class="callout-title-container flex-fill">
+One-Sample <span class="math inline">\(t\)</span>-interval
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
+<p><span class="math display">\[\bar x \pm t^\ast \frac{s_x}{\sqrt{n}}\]</span></p>
+<p>where <span class="math inline">\(t^\ast\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^\ast\)</span> and <span class="math inline">\(t^\ast\)</span>.</p>
+<p><a href="./critical-values.html">See Appendix C for examples on how to calculate <span class="math inline">\(t^\ast\)</span> for a given confidence level <span class="math inline">\(C\)</span>% and degrees of freedom <span class="math inline">\(df\)</span></a></p>
+<details>
+<summary>
+Why?
+</summary>
+<p>All confidence intervals are calculated by: <span class="math inline">\(\text{point estimate } \pm \text{ margin of error}\)</span></p>
+<p>The point estimate for the true population mean is <span class="math inline">\(\bar x\)</span></p>
+<p>The margin of error is always calculated as <span class="math inline">\((\text{critical value})(\text{standard error})\)</span></p>
+<p>We use <span class="math inline">\(t^\ast\)</span> critical values for <span class="math inline">\(t\)</span>-intervals (which is why they are called <span class="math inline">\(t\)</span>-intervals).</p>
+<p>The standard error is calculated as <span class="math inline">\(\frac{s_x}{\sqrt{n}}\)</span></p>
+</details>
+</div>
 </div>
 <!-- ### One-Sample t-test {#one-sample-t-test} -->
 <!-- ::: {.highlight} -->
@@ -392,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- ### Two-Sample t-interval -->
 <!-- ::: {.highlight} -->
 <!-- When the conditions are met, an approximate $C$% confidence interval for $\bar x_1 - \bar x_2$ is:  -->
-<!-- $$(\bar x_1 - \bar x_2)\pm t^*\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$ -->
-<!-- Where $t^*$ is the critical value for the $t$ distribution with $n-1$ degrees of freedom with $C$% of its area between $-t^*$ and $t^*$ -->
+<!-- $$(\bar x_1 - \bar x_2)\pm t^\ast\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$ -->
+<!-- Where $t^\ast$ is the critical value for the $t$ distribution with $n-1$ degrees of freedom with $C$% of its area between $-t^\ast$ and $t^\ast$ -->
 <!-- ::: -->
 <!-- ### Two-Sample t-test -->
 <!-- ::: {.highlight} -->
@@ -420,46 +438,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-students-t-distribution" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="the-students-t-distribution"><span class="header-section-number">13.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</h2>
-<div class="highlight">
-<p>Draw an SRS of size <span class="math inline">\(n\)</span> from a large population that has a Normal distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. The statistic <span class="math display">\[t=\frac{\bar x - \mu}{s_x / \sqrt{n}}\]</span> has a <span class="math inline">\(t\)</span>-distribution with degrees of freedom <span class="math inline">\(df = n – 1\)</span>, denoted as <span class="math inline">\(t_{n-1}\)</span>. When the population distribution isn’t Normal, this statistic will be approximately <span class="math inline">\(t_{n-1}\)</span> if the sample size is large enough.</p>
-<p>As the <span class="math inline">\(df\)</span> increases, the <span class="math inline">\(t\)</span>-distribution approaches <span class="math inline">\(N(0,1)\)</span> (standard normal) (See Figure @ref(fig:t-dist-to-norm)). This happens because <span class="math inline">\(s_x\)</span> estimates <span class="math inline">\(\sigma\)</span> more accurately as <span class="math inline">\(n\)</span> increases. So using <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(\sigma\)</span> causes little extra variation when the sample is large enough.</p>
-</div>
+<!-- ::: {.highlight} -->
+<!-- Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic  -->
+<!-- $$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$ -->
+<!-- has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough.  -->
+<!-- As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough. -->
+<!-- ::: -->
 <section id="t-justification" class="level3" data-number="13.3.1">
 <h3 data-number="13.3.1" class="anchored" data-anchor-id="t-justification"><span class="header-section-number">13.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</h3>
 <p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
 <p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="197" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 196;"><span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">tDemo</span>(df) {</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="fl">4.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"Standard Normal"</span>})<span class="op">;</span></span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution"</span>})<span class="op">;</span></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(<span class="fu">tDemo</span>(df2)<span class="op">,</span></span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"lab"</span><span class="op">,</span></span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="op">-</span><span class="dv">4</span>])</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"t statistic"</span> }<span class="op">,</span></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">41</span>]<span class="op">,</span></span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span>}<span class="op">,</span></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>        <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"Student's t Distribution"</span></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="211" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 210;"><span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">tDemo</span>(df) {</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="fl">4.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>    x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"Standard Normal"</span>})<span class="op">;</span></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution"</span>})<span class="op">;</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(<span class="fu">tDemo</span>(df2)<span class="op">,</span></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"lab"</span><span class="op">,</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="op">-</span><span class="dv">4</span>])</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"t statistic"</span> }<span class="op">,</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">41</span>]<span class="op">,</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span>}<span class="op">,</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"Student's t Distribution"</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -474,10 +494,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="229" data-source-offset="-688"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 228;"><span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>viewof df2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span></span>
-<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
-<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="243" data-source-offset="-688"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 242;"><span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a>viewof df2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span></span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-3" data-nodetype="declaration">

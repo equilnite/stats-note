@@ -255,27 +255,79 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="callout callout-style-default callout-note callout-titled" title="Confidence Interval">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Confidence Interval
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter.</p>
-<div class="highlight">
 <p>The interval is calculated from the data and has the form <span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
 </div>
-<div class="highlight">
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Margin of Error">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Margin of Error
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Margin of errors are calculated from the confidence level (<span class="math inline">\(C\)</span>) and the data and has the form</p>
 <p><span class="math display">\[ME = m = \text{critical value} \cdot \text{standard error of the statistic}\]</span></p>
+</div>
 </div>
 <p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in <span class="math inline">\(C\)</span>% of samples.</p>
 <section id="interpreting-confidence-intervals" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="interpreting-confidence-intervals"><span class="header-section-number">11.1</span> Interpreting Confidence Intervals</h2>
 <p>You can say something of the form:</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Confidence Interval Interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Confidence Interval Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>I am [<span class="math inline">\(C\)</span>]% confident the interval from <em>[lower bound]</em> to <em>[upper bound]</em> captures the <em>[true parameter in the context of the problem]</em>.</p>
 </div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>You CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1</p>
+</div>
+</div>
 </section>
 <section id="interpreting-confidence-level" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="interpreting-confidence-level"><span class="header-section-number">11.2</span> Interpreting Confidence Level</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Confidence Level Interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Confidence Level Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If we take many, many samples and create many, many intervals using the same method, about [<span class="math inline">\(C\)</span>]% of them will capture the <em>[true parameter in the context of the problem]</em>.</p>
+</div>
 </div>
 <p>In other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”</p>
 </section>
@@ -319,28 +371,93 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-four-step-process" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="the-four-step-process"><span class="header-section-number">11.5</span> The Four-Step Process</h2>
 <ol type="1">
-<li><strong>STATE</strong> exactly what you’re doing</li>
+<li><strong>STATE</strong> exactly what you’re doing.</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="State">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+State
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.</p>
+</div>
+</div>
 <blockquote class="blockquote">
-<p>Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest. If you’re conducting a statistical test (which we’ll cover next), you also need to write hypotheses here. For example: “I want to estimate the true proportion of all CA voters that support a repeal of Prop 8 with 95% confidence”</p>
+<p>I will estimate <span class="math inline">\(p =\)</span> the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.</p>
 </blockquote>
 <ol start="2" type="1">
-<li><strong>PLAN</strong> which method you will use and that the necessary conditions are met.</li>
+<li><strong>PLAN</strong> which method you will use and the conditions required to use the method.</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Plan">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Plan
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>State the name of the procedure that you’ll attempt.</p>
+<p>Check the conditions, and if the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.</p>
+</div>
+</div>
 <blockquote class="blockquote">
-<p>If the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.</p>
+<p>If the conditions are met, I will use a one-sample z-interval for the population parameter <span class="math inline">\(p\)</span>.</p>
+<p>Random Sample: Yes, it’s stated that the sample is random.</p>
+<p>Large Sample: <span class="math inline">\(n\hat{p}=75\left(\frac{43}{75}\right)=43\)</span> and <span class="math inline">\(n\left(1-\hat{p}\right)=75\left(1-\frac{43}{75}\right)=32\)</span></p>
+<p>Both amounts are over 10, so the sample is large enough for the sampling distribution of to be approximately normal.</p>
+<p>Independence: We have independence as long as the population of non-solar Berkeley homeowners is at least 750. This is definitely true.</p>
 </blockquote>
 <ol start="3" type="1">
 <li><strong>DO</strong> the calculations</li>
 </ol>
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-note callout-titled" title="Do">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Perform the calculations necessary for the method you chose to use. Show all work!</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><span class="math display">\[
+\begin{aligned}
+z^\ast &amp;= \mathtt{invNorm((1 - 0.92) / 2 + 0.92)} \approx 1.75 \\ \\
+CI_{92}&amp;=\hat{p}\pm z^\ast\cdot SE_{\hat{p}} \\
+&amp;=\hat{p}\pm1.75\cdot\sqrt{\frac{\hat{p}\left(1-\hat{p}\right)}{n}} \text{, and we know that } n=75 \text{ and } \hat{p}=\frac{43}{75}=0.5733 \\
+&amp;=0.5733\pm1.75\sqrt{\frac{0.5733\left(1-0.5733\right)}{75}} \\
+&amp;=\left[0.4734,\ 0.6732\right]
+\end{aligned}
+\]</span></p>
 </blockquote>
 <ol start="4" type="1">
-<li><strong>CONCLUDE</strong> in the context of the situation by giving a complete explanation of the value(s) you calculated in (c).</li>
+<li><strong>CONCLUDE</strong> in the context of the situation.</li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Conclude">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conclude
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Interpret the confidence interval in the context of the problem.</p>
+</div>
+</div>
 <blockquote class="blockquote">
-<p>“I am 95% confident that the true proportion of all CA voters that support a repeal of Prop 8 is between 42% and 51%. 95% of intervals created like this one will capture the true population proportion of CA voters that support a repeal of Prop 8.”</p>
+<p>I am 92% confident that <span class="math inline">\(p\)</span> (as defined in State) is somewhere between 47.34% and 67.32%.</p>
 </blockquote>
 
 
