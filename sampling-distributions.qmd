@@ -4,11 +4,19 @@
 A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in *all possible samples of a given size* $n$ from the same population.
 :::
 
+## Bias and Variability
+
 ::: {.callout-note title="Unbiased Estimator"}
-A statistic used to estimate a parameter is an **unbiased estimator**}\*\* if the mean of its sampling distribution is equal to the true value of the parameter being estimated.
+A statistic used to estimate a parameter is an **unbiased estimator** if the mean of its sampling distribution is equal to the true value of the parameter being estimated.
 
 Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.
 :::
+
+For this course, typical statistics that we'll use in problems include $\hat p$, $\bar x$, and $s_x$. These statistics are only unbiased if we have a random sample or random assignment.
+
+$$\mu_{\bar x} = \mu_X$$
+$$\mu_{\hat p} = p$$
+$$\mu_{s_x} = \sigma_X$$
 
 ::: {.callout-note title="Variability of a Statistic"}
 The variability of a statistic is described by the spread of its sampling distribution.
@@ -16,9 +24,23 @@ The variability of a statistic is described by the spread of its sampling distri
 This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample ([10% Condition](#ten-per-cond)).
 :::
 
+Intuitively, if we have more data, we will have more precise results. Precision means that, on average, we will be able to get answers that are more closely grouped together. This means that our statistics, between many different possible samples, will vary less from each other.
+
+::: {.callout-important}
+
+In the most ideal conditions, we want our sampling distribution to be accurate and precise, so that we know that we are getting the best possible answer. 
+
+To be accurate, we want to expect our statistic to be the parameter (e.g. if we were to take the sample mean, we'd want to see that $\mu_{\bar x} = \mu_X$) and for that to be true, our statistic needs to be an unbiased estimator.
+
+And to ensure that we will get something close to desired parameter, we want precision. This means a larger sample size so that our sampling distribution has low spread, reducing the variability of our statistic.
+
+**In ideal circumstances, we aim for low bias, low variability.** This is achieved by mainly ensuring that we have a random process for obtaining our data and collecting a large amount of data.
+
+:::
+
 ## Sampling Distribution of $\hat p$
 
-::: highlight
+::: {.callout-note title="Sampling Distribution of $\hat p$"}
 Choose an SRS of size $n$ from a population of size $N$ with proportion $p$ of successes. Let $\hat p$ be the sample proportion of success. Then:
 
 -   The mean of the sampling distribution of $\hat p$ is $$\mu_{\hat p} = p$$
@@ -36,7 +58,8 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 
 ## Sampling Distribution of $\bar x$
 
-::: highlight
+::: {.callout-note title="Sampling Distribution of $\bar x$"}
+
 Suppose that $\bar x$ is the mean of an SRS of size $n$ drawn from a large population with mean $\mu_X$ and standard deviation $\sigma_X$. Then:
 
 -   The mean of the sampling distribution of $\bar x$ is $$\mu_{\bar x} = \mu_X$$
@@ -44,23 +67,28 @@ Suppose that $\bar x$ is the mean of an SRS of size $n$ drawn from a large popul
 -   The standard deviation of the sampling distribution of $\bar x$ is $$\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}$$ as long as the [10% condition](#ten-per-cond) is satisfied.
 
 \* These facts about the mean and standard deviation of $\bar x$ are *true no matter what shape the population distribution has.*
+
 :::
 
 ### Normal/Large Condition for $\bar x$ {#large-cond}
 
-::: highlight
+::: {.callout-note title="Normal/Large Condition for $\bar x$"}
+
 If the population distribution is Normal, then so is the sampling distribution of $\bar x$. This is true no matter what the sample size $n$ is.
 
 If the population distribution is not Normal, the sampling distribution of $\bar x$ will be approximately Normal in most cases if $n \geq 30$. This fact is justified by the [Central Limit Theorem](#clt).
+
 :::
 
 ### Central Limit Theorem (CLT) {#clt}
 
-::: highlight
+::: {.callout-note title="Central Limit Theorem"}
 If you have a population with mean $\mu$ and standard deviation $\sigma$ and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.
 
 \* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal
 :::
+
+The CLT justifies why we have the check the Large Condition above and the section below. Only statistics where our sample size is sufficient will have approximately normally distributed sampling distributions.
 
 ### When do we have normality?
 
