@@ -227,12 +227,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sampling-distribution-of-hat-p" id="toc-sampling-distribution-of-hat-p" class="nav-link active" data-scroll-target="#sampling-distribution-of-hat-p"><span class="header-section-number">10.1</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></a></li>
-  <li><a href="#sampling-distribution-of-bar-x" id="toc-sampling-distribution-of-bar-x" class="nav-link" data-scroll-target="#sampling-distribution-of-bar-x"><span class="header-section-number">10.2</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></a>
+  <li><a href="#bias-and-variability" id="toc-bias-and-variability" class="nav-link active" data-scroll-target="#bias-and-variability"><span class="header-section-number">10.1</span> Bias and Variability</a></li>
+  <li><a href="#sampling-distribution-of-hat-p" id="toc-sampling-distribution-of-hat-p" class="nav-link" data-scroll-target="#sampling-distribution-of-hat-p"><span class="header-section-number">10.2</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></a></li>
+  <li><a href="#sampling-distribution-of-bar-x" id="toc-sampling-distribution-of-bar-x" class="nav-link" data-scroll-target="#sampling-distribution-of-bar-x"><span class="header-section-number">10.3</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></a>
   <ul class="collapse">
-  <li><a href="#large-cond" id="toc-large-cond" class="nav-link" data-scroll-target="#large-cond"><span class="header-section-number">10.2.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></a></li>
-  <li><a href="#clt" id="toc-clt" class="nav-link" data-scroll-target="#clt"><span class="header-section-number">10.2.2</span> Central Limit Theorem (CLT)</a></li>
-  <li><a href="#when-do-we-have-normality" id="toc-when-do-we-have-normality" class="nav-link" data-scroll-target="#when-do-we-have-normality"><span class="header-section-number">10.2.3</span> When do we have normality?</a></li>
+  <li><a href="#large-cond" id="toc-large-cond" class="nav-link" data-scroll-target="#large-cond"><span class="header-section-number">10.3.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></a></li>
+  <li><a href="#clt" id="toc-clt" class="nav-link" data-scroll-target="#clt"><span class="header-section-number">10.3.2</span> Central Limit Theorem (CLT)</a></li>
+  <li><a href="#when-do-we-have-normality" id="toc-when-do-we-have-normality" class="nav-link" data-scroll-target="#when-do-we-have-normality"><span class="header-section-number">10.3.3</span> When do we have normality?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -270,6 +271,8 @@ Sampling Distribution
 <p>A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size</em> <span class="math inline">\(n\)</span> from the same population.</p>
 </div>
 </div>
+<section id="bias-and-variability" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="bias-and-variability"><span class="header-section-number">10.1</span> Bias and Variability</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Unbiased Estimator">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -280,10 +283,12 @@ Unbiased Estimator
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A statistic used to estimate a parameter is an <strong>unbiased estimator</strong>}** if the mean of its sampling distribution is equal to the true value of the parameter being estimated.</p>
+<p>A statistic used to estimate a parameter is an <strong>unbiased estimator</strong> if the mean of its sampling distribution is equal to the true value of the parameter being estimated.</p>
 <p>Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.</p>
 </div>
 </div>
+<p>For this course, typical statistics that we’ll use in problems include <span class="math inline">\(\hat p\)</span>, <span class="math inline">\(\bar x\)</span>, and <span class="math inline">\(s_x\)</span>. These statistics are only unbiased if we have a random sample or random assignment.</p>
+<p><span class="math display">\[\mu_{\bar x} = \mu_X\]</span> <span class="math display">\[\mu_{\hat p} = p\]</span> <span class="math display">\[\mu_{s_x} = \sigma_X\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Variability of a Statistic">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -298,9 +303,36 @@ Variability of a Statistic
 <p>This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="random-variables.html#ten-per-cond">10% Condition</a>).</p>
 </div>
 </div>
-<section id="sampling-distribution-of-hat-p" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="sampling-distribution-of-hat-p"><span class="header-section-number">10.1</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></h2>
-<div class="highlight">
+<p>Intuitively, if we have more data, we will have more precise results. Precision means that, on average, we will be able to get answers that are more closely grouped together. This means that our statistics, between many different possible samples, will vary less from each other.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the most ideal conditions, we want our sampling distribution to be accurate and precise, so that we know that we are getting the best possible answer.</p>
+<p>To be accurate, we want to expect our statistic to be the parameter (e.g.&nbsp;if we were to take the sample mean, we’d want to see that <span class="math inline">\(\mu_{\bar x} = \mu_X\)</span>) and for that to be true, our statistic needs to be an unbiased estimator.</p>
+<p>And to ensure that we will get something close to desired parameter, we want precision. This means a larger sample size so that our sampling distribution has low spread, reducing the variability of our statistic.</p>
+<p><strong>In ideal circumstances, we aim for low bias, low variability.</strong> This is achieved by mainly ensuring that we have a random process for obtaining our data and collecting a large amount of data.</p>
+</div>
+</div>
+</section>
+<section id="sampling-distribution-of-hat-p" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="sampling-distribution-of-hat-p"><span class="header-section-number">10.2</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $\hat p$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sampling Distribution of <span class="math inline">\(\hat p\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
 <ul>
 <li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
@@ -311,10 +343,20 @@ Variability of a Statistic
 np \geq 10 \text{ and }n(1-p) \geq 10
 \end{equation}\]</span>
 </div>
+</div>
 </section>
-<section id="sampling-distribution-of-bar-x" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="sampling-distribution-of-bar-x"><span class="header-section-number">10.2</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></h2>
-<div class="highlight">
+<section id="sampling-distribution-of-bar-x" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="sampling-distribution-of-bar-x"><span class="header-section-number">10.3</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $\bar x$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sampling Distribution of <span class="math inline">\(\bar x\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
 <ul>
 <li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
@@ -322,22 +364,44 @@ np \geq 10 \text{ and }n(1-p) \geq 10
 </ul>
 <p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
 </div>
-<section id="large-cond" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="large-cond"><span class="header-section-number">10.2.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></h3>
-<div class="highlight">
+</div>
+<section id="large-cond" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="large-cond"><span class="header-section-number">10.3.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Normal/Large Condition for $\bar x$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Normal/Large Condition for <span class="math inline">\(\bar x\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If the population distribution is Normal, then so is the sampling distribution of <span class="math inline">\(\bar x\)</span>. This is true no matter what the sample size <span class="math inline">\(n\)</span> is.</p>
 <p>If the population distribution is not Normal, the sampling distribution of <span class="math inline">\(\bar x\)</span> will be approximately Normal in most cases if <span class="math inline">\(n \geq 30\)</span>. This fact is justified by the <a href="#clt">Central Limit Theorem</a>.</p>
 </div>
+</div>
 </section>
-<section id="clt" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="clt"><span class="header-section-number">10.2.2</span> Central Limit Theorem (CLT)</h3>
-<div class="highlight">
+<section id="clt" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="clt"><span class="header-section-number">10.3.2</span> Central Limit Theorem (CLT)</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Central Limit Theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Central Limit Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If you have a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.</p>
 <p>* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal</p>
 </div>
+</div>
+<p>The CLT justifies why we have the check the Large Condition above and the section below. Only statistics where our sample size is sufficient will have approximately normally distributed sampling distributions.</p>
 </section>
-<section id="when-do-we-have-normality" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="when-do-we-have-normality"><span class="header-section-number">10.2.3</span> When do we have normality?</h3>
+<section id="when-do-we-have-normality" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="when-do-we-have-normality"><span class="header-section-number">10.3.3</span> When do we have normality?</h3>
 <table class="table">
 <colgroup>
 <col style="width: 31%">
