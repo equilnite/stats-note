@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 11&nbsp; Sampling Distributions</title>
+<title>AP Statistics Notes - 3&nbsp; Basic Statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./confidence-intervals.html" rel="next">
-<link href="./random-variables.html" rel="prev">
+<link href="./categorical-displays.html" rel="next">
+<link href="./notation.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic-statistics.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Statistics</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basic-statistics.html" class="sidebar-item-text sidebar-link">
+  <a href="./basic-statistics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Statistics</span></span></a>
   </div>
 </li>
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sampling-distributions.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sampling-distributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
   </div>
 </li>
@@ -233,14 +233,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bias-and-variability" id="toc-bias-and-variability" class="nav-link active" data-scroll-target="#bias-and-variability"><span class="header-section-number">11.1</span> Bias and Variability</a></li>
-  <li><a href="#sampling-distribution-of-hat-p" id="toc-sampling-distribution-of-hat-p" class="nav-link" data-scroll-target="#sampling-distribution-of-hat-p"><span class="header-section-number">11.2</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></a></li>
-  <li><a href="#sampling-distribution-of-bar-x" id="toc-sampling-distribution-of-bar-x" class="nav-link" data-scroll-target="#sampling-distribution-of-bar-x"><span class="header-section-number">11.3</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></a>
-  <ul class="collapse">
-  <li><a href="#large-cond" id="toc-large-cond" class="nav-link" data-scroll-target="#large-cond"><span class="header-section-number">11.3.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></a></li>
-  <li><a href="#clt" id="toc-clt" class="nav-link" data-scroll-target="#clt"><span class="header-section-number">11.3.2</span> Central Limit Theorem (CLT)</a></li>
-  <li><a href="#when-do-we-have-normality" id="toc-when-do-we-have-normality" class="nav-link" data-scroll-target="#when-do-we-have-normality"><span class="header-section-number">11.3.3</span> When do we have normality?</a></li>
-  </ul></li>
+  <li><a href="#sample-mean" id="toc-sample-mean" class="nav-link active" data-scroll-target="#sample-mean"><span class="header-section-number">3.1</span> Sample Mean</a></li>
+  <li><a href="#sample-standard-deviation" id="toc-sample-standard-deviation" class="nav-link" data-scroll-target="#sample-standard-deviation"><span class="header-section-number">3.2</span> Sample Standard Deviation</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Statistics</span></h1>
 </div>
 
 
@@ -264,201 +258,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sampling Distribution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size</em> <span class="math inline">\(n\)</span> from the same population.</p>
-</div>
-</div>
-<section id="bias-and-variability" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="bias-and-variability"><span class="header-section-number">11.1</span> Bias and Variability</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Unbiased Estimator">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Unbiased Estimator
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A statistic used to estimate a parameter is an <strong>unbiased estimator</strong> if the mean of its sampling distribution is equal to the true value of the parameter being estimated.</p>
-<p>Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.</p>
-</div>
-</div>
-<p>For this course, typical statistics that we’ll use in problems include <span class="math inline">\(\hat p\)</span>, <span class="math inline">\(\bar x\)</span>, and <span class="math inline">\(s_x\)</span>. These statistics are only unbiased if we have a random sample or random assignment.</p>
-<p><span class="math display">\[\mu_{\bar x} = \mu_X\]</span> <span class="math display">\[\mu_{\hat p} = p\]</span> <span class="math display">\[\mu_{s_x} = \sigma_X\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Variability of a Statistic">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Variability of a Statistic
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The variability of a statistic is described by the spread of its sampling distribution.</p>
-<p>This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="random-variables.html#ten-per-cond">10% Condition</a>).</p>
-</div>
-</div>
-<p>Intuitively, if we have more data, we will have more precise results. Precision means that, on average, we will be able to get answers that are more closely grouped together. This means that our statistics, between many different possible samples, will vary less from each other.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the most ideal conditions, we want our sampling distribution to be accurate and precise, so that we know that we are getting the best possible answer.</p>
-<p>To be accurate, we want to expect our statistic to be the parameter (e.g.&nbsp;if we were to take the sample mean, we’d want to see that <span class="math inline">\(\mu_{\bar x} = \mu_X\)</span>) and for that to be true, our statistic needs to be an unbiased estimator.</p>
-<p>And to ensure that we will get something close to desired parameter, we want precision. This means a larger sample size so that our sampling distribution has low spread, reducing the variability of our statistic.</p>
-<p><strong>In ideal circumstances, we aim for low bias, low variability.</strong> This is achieved by mainly ensuring that we have a random process for obtaining our data and collecting a large amount of data.</p>
-</div>
-</div>
+<section id="sample-mean" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sample-mean"><span class="header-section-number">3.1</span> Sample Mean</h2>
+<p><span class="math display">\[\bar x = \frac{1}{n}\sum x_i = \frac{\sum x_i}{n}\]</span></p>
 </section>
-<section id="sampling-distribution-of-hat-p" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="sampling-distribution-of-hat-p"><span class="header-section-number">11.2</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $\hat p$">
+<section id="sample-standard-deviation" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sample-standard-deviation"><span class="header-section-number">3.2</span> Sample Standard Deviation</h2>
+<p><span class="math display">\[s_x = \sqrt{\frac{1}{n-1}\sum (x_i - \bar x)^2} = \sqrt{\frac{\sum(x_i -\bar x)^2}{n - 1}}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Interpretation of Standard Deviation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Sampling Distribution of <span class="math inline">\(\hat p\)</span>
+Interpretation of Standard Deviation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
-<ul>
-<li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
-<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="random-variables.html#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
-</ul>
-<span class="math display">\[\begin{equation}
-np \geq 10 \text{ and }n(1-p) \geq 10
-\end{equation}\]</span>
+<p>The [<em>variable in the context of the problem</em>] typically varies by [<em>value of SD</em>] from the mean of [<em>value of the mean</em>]</p>
 </div>
 </div>
-</section>
-<section id="sampling-distribution-of-bar-x" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="sampling-distribution-of-bar-x"><span class="header-section-number">11.3</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $\bar x$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sampling Distribution of <span class="math inline">\(\bar x\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
-<ul>
-<li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
-</ul>
-<p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
-</div>
-</div>
-<section id="large-cond" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="large-cond"><span class="header-section-number">11.3.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Normal/Large Condition for $\bar x$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Normal/Large Condition for <span class="math inline">\(\bar x\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If the population distribution is Normal, then so is the sampling distribution of <span class="math inline">\(\bar x\)</span>. This is true no matter what the sample size <span class="math inline">\(n\)</span> is.</p>
-<p>If the population distribution is not Normal, the sampling distribution of <span class="math inline">\(\bar x\)</span> will be approximately Normal in most cases if <span class="math inline">\(n \geq 30\)</span>. This fact is justified by the <a href="#clt">Central Limit Theorem</a>.</p>
-</div>
-</div>
-</section>
-<section id="clt" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="clt"><span class="header-section-number">11.3.2</span> Central Limit Theorem (CLT)</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Central Limit Theorem">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Central Limit Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you have a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.</p>
-<p>* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal</p>
-</div>
-</div>
-<p>The CLT justifies why we have the check the Large Condition above and the section below. Only statistics where our sample size is sufficient will have approximately normally distributed sampling distributions.</p>
-</section>
-<section id="when-do-we-have-normality" class="level3" data-number="11.3.3">
-<h3 data-number="11.3.3" class="anchored" data-anchor-id="when-do-we-have-normality"><span class="header-section-number">11.3.3</span> When do we have normality?</h3>
-<table class="table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Shape of Population Distribution</th>
-<th>Minimum Sample Size (<span class="math inline">\(n\)</span>) needed to achieve an approximately normal <span class="math inline">\(\bar x\)</span> sampling distribution</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Approximately Normal</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Slightly non-normal</td>
-<td>Somewhere between 10-30, depending on how “slightly” non-normal</td>
-</tr>
-<tr class="odd">
-<td>Very non-normal, skewed</td>
-<td>About 30</td>
-</tr>
-</tbody>
-</table>
-<!-- ## Sampling Distribution of $\hat p_1 - \hat p_2$ {#prop-diff-samp-dist} -->
-<!-- ::: {.highlight} -->
-<!-- Choose an SRS of size $n_1$ from Population 1 with proportion of successes $p_1$ and an independent SRS of size $n_2$ from Population 2 with proportion of successes $p_2$. -->
-<!-- **Shape:**  -->
-<!-- When $n_1p_1$, $n_1(1-p_1)$, $n_2p_2$, and $n_2(1-p_2$) are all at least 10, the sampling distribution of $p_1-p_2$ is approximately Normal.  -->
-<!-- **Center:**  -->
-<!-- The mean of the sampling distribution is $$\mu_{\hat p_1-\hat p_2} =p_1-p_2$$. -->
-<!-- **Spread:**  -->
-<!-- The standard deviation of $\hat p_1-\hat p_2$ is $$s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}$$ as long as each sample is no more than 10% of its population (10% condition) -->
-<!-- ::: -->
-<!-- ## Sampling Distribution of $\bar x_1 - \bar x_2$ {#mean-diff-samp-dist} -->
-<!-- ::: {.highlight} -->
-<!-- Choose an SRS of size $n_1$ from Population 1 with mean $\mu_1$ and standard deviation $\sigma_1$ and an independent SRS of size $n_2$ from Population 2 with mean $\mu_2$ and standard deviation $\sigma_2$. -->
-<!-- **Shape:** -->
-<!-- When the population distributions are Normal, the sampling distribution of $\bar x_1- \bar x_2$ is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough ($n_1 \geq 30$ and $n_2 \geq 30$) -->
-<!-- **Center:** -->
-<!-- The mean of the sampling distribution is  -->
-<!-- $$\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2$$. -->
-<!-- **Spread:** -->
-<!-- As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of $\bar x_1- \bar x_2$ is  -->
-<!-- $$\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$ -->
-<!-- ::: -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -697,13 +518,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./random-variables.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></span>
+      <a href="./notation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./confidence-intervals.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./categorical-displays.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
