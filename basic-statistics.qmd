@@ -1,0 +1,15 @@
+# Basic Statistics
+
+## Sample Mean
+
+$$\bar x = \frac{1}{n}\sum x_i = \frac{\sum x_i}{n}$$
+
+## Sample Standard Deviation
+
+$$s_x = \sqrt{\frac{1}{n-1}\sum (x_i - \bar x)^2} = \sqrt{\frac{\sum(x_i -\bar x)^2}{n - 1}}$$
+
+::: {.callout-note title="Interpretation of Standard Deviation"}
+
+The [*variable in the context of the problem*] typically varies by [*value of SD*] from the mean of [*value of the mean*]
+
+:::
