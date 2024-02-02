@@ -73,7 +73,7 @@ By rounding the degrees of freedom down, you use a more conservative estimate.
 
 [The main reason that we are even using the $t$-distribution is because it is more conservative than the Normal distribution](#t-justification). 
 
-By rounding the degrees of freedom down, you use a more conservative $t$-distribution (more area in the tails), so you ensure that you do not overestimate your answer, rather, you purposely underestimate your answer.
+By rounding the degrees of freedom down, you use a more conservative $t$-distribution (more area in the tails), so you ensure that you do not underestimate your answer, rather, you purposely overestimate your answer.
 
 </details>
 
