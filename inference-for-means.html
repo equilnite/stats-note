@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 14&nbsp; Inference for Means</title>
+<title>AP Statistics Notes - 15&nbsp; Inference for Means</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference-for-means.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference-for-means.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -223,14 +223,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./inference-for-proportions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inference-for-means.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -272,14 +278,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">14.1</span> Conditions for Inference</a></li>
-  <li><a href="#one-sample-t-procedures" id="toc-one-sample-t-procedures" class="nav-link" data-scroll-target="#one-sample-t-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</a>
+  <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">15.1</span> Conditions for Inference</a></li>
+  <li><a href="#one-sample-t-procedures" id="toc-one-sample-t-procedures" class="nav-link" data-scroll-target="#one-sample-t-procedures"><span class="header-section-number">15.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</a>
   <ul class="collapse">
-  <li><a href="#one-sample-t-interval" id="toc-one-sample-t-interval" class="nav-link" data-scroll-target="#one-sample-t-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</a></li>
+  <li><a href="#one-sample-t-interval" id="toc-one-sample-t-interval" class="nav-link" data-scroll-target="#one-sample-t-interval"><span class="header-section-number">15.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</a></li>
   </ul></li>
-  <li><a href="#the-students-t-distribution" id="toc-the-students-t-distribution" class="nav-link" data-scroll-target="#the-students-t-distribution"><span class="header-section-number">14.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</a>
+  <li><a href="#the-students-t-distribution" id="toc-the-students-t-distribution" class="nav-link" data-scroll-target="#the-students-t-distribution"><span class="header-section-number">15.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</a>
   <ul class="collapse">
-  <li><a href="#t-justification" id="toc-t-justification" class="nav-link" data-scroll-target="#t-justification"><span class="header-section-number">14.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</a></li>
+  <li><a href="#t-justification" id="toc-t-justification" class="nav-link" data-scroll-target="#t-justification"><span class="header-section-number">15.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -289,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></h1>
 </div>
 
 
@@ -304,8 +310,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="conditions-for-inference" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="conditions-for-inference"><span class="header-section-number">14.1</span> Conditions for Inference</h2>
+<section id="conditions-for-inference" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="conditions-for-inference"><span class="header-section-number">15.1</span> Conditions for Inference</h2>
 <section id="random" class="level3 unlisted unnumbered">
 <h3 class="unlisted unnumbered anchored" data-anchor-id="random">1. Random</h3>
 <p>The data must come from a random sample, or random assignment in an experiment.</p>
@@ -325,10 +331,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
 </section>
 </section>
-<section id="one-sample-t-procedures" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="one-sample-t-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</h2>
-<section id="one-sample-t-interval" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="one-sample-t-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</h3>
+<section id="one-sample-t-procedures" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="one-sample-t-procedures"><span class="header-section-number">15.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</h2>
+<section id="one-sample-t-interval" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="one-sample-t-interval"><span class="header-section-number">15.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="One-Sample $t$-interval">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -442,16 +448,16 @@ Why?
 <!-- </details> -->
 </section>
 </section>
-<section id="the-students-t-distribution" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="the-students-t-distribution"><span class="header-section-number">14.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</h2>
+<section id="the-students-t-distribution" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="the-students-t-distribution"><span class="header-section-number">15.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</h2>
 <!-- ::: {.highlight} -->
 <!-- Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic  -->
 <!-- $$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$ -->
 <!-- has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough.  -->
 <!-- As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough. -->
 <!-- ::: -->
-<section id="t-justification" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="t-justification"><span class="header-section-number">14.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</h3>
+<section id="t-justification" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="t-justification"><span class="header-section-number">15.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</h3>
 <p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
 <p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
 <div class="cell">
@@ -765,7 +771,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./inference-for-proportions.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

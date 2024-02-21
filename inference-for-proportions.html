@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 13&nbsp; Inference for Proportions</title>
+<title>AP Statistics Notes - 14&nbsp; Inference for Proportions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./inference-for-means.html" rel="next">
-<link href="./confidence-intervals.html" rel="prev">
+<link href="./hypothesis-testing.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference-for-proportions.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference-for-proportions.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -184,14 +184,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./inference-for-proportions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inference-for-means.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -233,10 +239,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">13.1</span> Conditions for Inference</a></li>
-  <li><a href="#one-sample-z-procedures" id="toc-one-sample-z-procedures" class="nav-link" data-scroll-target="#one-sample-z-procedures"><span class="header-section-number">13.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</a>
+  <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">14.1</span> Conditions for Inference</a></li>
+  <li><a href="#one-sample-z-procedures" id="toc-one-sample-z-procedures" class="nav-link" data-scroll-target="#one-sample-z-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</a>
   <ul class="collapse">
-  <li><a href="#one-sample-z-interval" id="toc-one-sample-z-interval" class="nav-link" data-scroll-target="#one-sample-z-interval"><span class="header-section-number">13.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</a></li>
+  <li><a href="#one-sample-z-interval" id="toc-one-sample-z-interval" class="nav-link" data-scroll-target="#one-sample-z-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</a></li>
+  <li><a href="#one-sample-z-test" id="toc-one-sample-z-test" class="nav-link" data-scroll-target="#one-sample-z-test"><span class="header-section-number">14.2.2</span> One-Sample z-test</a></li>
+  </ul></li>
+  <li><a href="#two-sample-z-procedures" id="toc-two-sample-z-procedures" class="nav-link" data-scroll-target="#two-sample-z-procedures"><span class="header-section-number">14.3</span> Two-Sample z-procedures</a>
+  <ul class="collapse">
+  <li><a href="#two-sample-z-interval" id="toc-two-sample-z-interval" class="nav-link" data-scroll-target="#two-sample-z-interval"><span class="header-section-number">14.3.1</span> Two-Sample z-interval</a></li>
+  <li><a href="#two-sample-z-test-two-sample-z-test" id="toc-two-sample-z-test-two-sample-z-test" class="nav-link" data-scroll-target="#two-sample-z-test-two-sample-z-test"><span class="header-section-number">14.3.2</span> Two-Sample z-test (#two-sample-z-test)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -246,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></h1>
 </div>
 
 
@@ -261,8 +273,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="conditions-for-inference" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="conditions-for-inference"><span class="header-section-number">13.1</span> Conditions for Inference</h2>
+<section id="conditions-for-inference" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="conditions-for-inference"><span class="header-section-number">14.1</span> Conditions for Inference</h2>
 <section id="random" class="level3 unlisted unnumbered">
 <h3 class="unlisted unnumbered anchored" data-anchor-id="random">1. Random</h3>
 <p>The data must come from a random sample, or random assignment in an experiment.</p>
@@ -279,10 +291,10 @@ ul.task-list li input[type="checkbox"] {
 <p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
 </section>
 </section>
-<section id="one-sample-z-procedures" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="one-sample-z-procedures"><span class="header-section-number">13.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</h2>
-<section id="one-sample-z-interval" class="level3" data-number="13.2.1">
-<h3 data-number="13.2.1" class="anchored" data-anchor-id="one-sample-z-interval"><span class="header-section-number">13.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</h3>
+<section id="one-sample-z-procedures" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="one-sample-z-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</h2>
+<section id="one-sample-z-interval" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="one-sample-z-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="One-Sample $z$-interval">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -309,51 +321,54 @@ Why?
 </details>
 </div>
 </div>
-<!-- ### One-Sample z-test -->
-<!-- ::: {.highlight} -->
-<!-- Given the null hypothesis $H_0: p=p_0$, and an observed sample proportion $\hat p$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\hat p$, calculated assuming $H_0$ is true, has the following: -->
-<!-- $$\mu_{\hat p} = p_0$$ -->
-<!-- $$\sigma_{\hat p} = \frac{\sigma_{p_0}}{\sqrt n} = \sqrt{\frac{p_0(1- p_0)}{n}}$$ -->
-<!-- The **z-statistic** is the standardized score of $\hat p$ under the mean and standard deviation of the null distribution: -->
-<!-- $$z=\frac{\hat p - p_0}{\sqrt{\frac{p_0(1- p_0)}{n}}}$$ -->
-<!-- The p-value, calculated using the z-statistic, is based off the direction of the alternative hypothesis, $H_a$. $Z$ represents the standard normal distribution. -->
-<!-- $$ -->
-<!-- \text{p-value}= \begin{cases} -->
-<!-- P(Z<z) & \text{ if } H_a:p<p_0 \\  -->
-<!-- P(Z>z) & \text{ if } H_a:p>p_0 \\  -->
-<!-- 2\cdot P(Z<-|z|) & \text{ if } H_a:p\not =p_0  -->
-<!-- \end{cases} -->
-<!-- $$ -->
-<!-- ::: -->
-<!-- ## Two-Sample z-procedures -->
-<!-- Two-Sample z-procedures are justified by knowledge about the [sampling distribution of $\hat p_1 - \hat p_2$](#prop-diff-samp-dist). -->
-<!-- The conditions for two-sample z-procedures are the same for the two that we learn: -->
-<!-- ::: {.highlight} -->
-<!-- - Random: The data come from two independent random samples or from two groups in a randomized experiment. -->
-<!-- - Large Counts: The counts of “successes” and “failures” in each sample or group $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, and $n_2(1-\hat p_2)$ are all at least 10. -->
-<!-- - 10%: When sampling without replacement, check that $n_1\leq(.10)N_1$ and $n2\leq(.10)N_2$. -->
-<!-- ::: -->
-<!-- ### Two-Sample z-interval -->
-<!-- ::: {.highlight} -->
-<!-- When the conditions are met, an approximate $C$% confidence interval for $p_1-p_2$ is:  -->
-<!-- $$(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$ -->
-<!-- Where $z^\ast$ is the critical value for the standard Normal curve with $C$% of its area between $-z^\ast$ and $z^\ast$ -->
-<!-- ::: -->
-<!-- ### Two-Sample z-test (#two-sample-z-test) -->
-<!-- ::: {.highlight} -->
-<!-- The null hypothesis has the general form   -->
-<!-- $$ H_0:p_1-p_2=p_0 $$ -->
-<!-- where $p_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $p_0 =0$. Then the null hypothesis says that there is no difference between the two parameters:  -->
-<!-- $$H_0:p_1-p_2=0~~\text{or}~~H_0:p_1=p_2$$ -->
-<!-- The alternative hypothesis says what kind of difference we expect: -->
-<!-- $$H_a:p_1-p_2>0~~\text{or}~~Ha:p_1-p_2<0~~\text{or}~~Ha:p_1-p_2\not =0  $$ -->
-<!-- ::: -->
-<!-- ::: {.highlight} -->
-<!-- Suppose the conditions are met. To test the hypotheses $H_0: p_1 - p_2 = 0$, first find the pooled proportion $\hat p_c$ of successes in both samples combined.  -->
-<!-- $$\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}$$ -->
-<!-- Then compute the z statistic: -->
-<!-- $$ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}$$ -->
-<!-- ::: -->
+</section>
+<section id="one-sample-z-test" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="one-sample-z-test"><span class="header-section-number">14.2.2</span> One-Sample z-test</h3>
+<div class="highlight">
+<p>Given the null hypothesis <span class="math inline">\(H_0: p=p_0\)</span>, and an observed sample proportion <span class="math inline">\(\hat p\)</span> from a sample of size <span class="math inline">\(n\)</span> when all conditions are met. The null sampling distribution of <span class="math inline">\(\hat p\)</span>, calculated assuming <span class="math inline">\(H_0\)</span> is true, has the following:</p>
+<p><span class="math display">\[\mu_{\hat p} = p_0\]</span> <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_{p_0}}{\sqrt n} = \sqrt{\frac{p_0(1- p_0)}{n}}\]</span></p>
+<p>The <strong>z-statistic</strong> is the standardized score of <span class="math inline">\(\hat p\)</span> under the mean and standard deviation of the null distribution:</p>
+<p><span class="math display">\[z=\frac{\hat p - p_0}{\sqrt{\frac{p_0(1- p_0)}{n}}}\]</span></p>
+<p>The p-value, calculated using the z-statistic, is based off the direction of the alternative hypothesis, <span class="math inline">\(H_a\)</span>. <span class="math inline">\(Z\)</span> represents the standard normal distribution.</p>
+<p><span class="math display">\[
+\text{p-value}= \begin{cases}
+P(Z&lt;z) &amp; \text{ if } H_a:p&lt;p_0 \\
+P(Z&gt;z) &amp; \text{ if } H_a:p&gt;p_0 \\
+2\cdot P(Z&lt;-|z|) &amp; \text{ if } H_a:p\not =p_0
+\end{cases}
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="two-sample-z-procedures" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="two-sample-z-procedures"><span class="header-section-number">14.3</span> Two-Sample z-procedures</h2>
+<p>Two-Sample z-procedures are justified by knowledge about the <a href="#prop-diff-samp-dist">sampling distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></a>.</p>
+<p>The conditions for two-sample z-procedures are the same for the two that we learn:</p>
+<div class="highlight">
+<ul>
+<li><p>Random: The data come from two independent random samples or from two groups in a randomized experiment.</p></li>
+<li><p>Large Counts: The counts of “successes” and “failures” in each sample or group <span class="math inline">\(n_1\hat p_1\)</span>, <span class="math inline">\(n_1(1-\hat p_1)\)</span>, <span class="math inline">\(n_2\hat p_2\)</span>, and <span class="math inline">\(n_2(1-\hat p_2)\)</span> are all at least 10.</p></li>
+<li><p>10%: When sampling without replacement, check that <span class="math inline">\(n_1\leq(.10)N_1\)</span> and <span class="math inline">\(n2\leq(.10)N_2\)</span>.</p></li>
+</ul>
+</div>
+<section id="two-sample-z-interval" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="two-sample-z-interval"><span class="header-section-number">14.3.1</span> Two-Sample z-interval</h3>
+<div class="highlight">
+<p>When the conditions are met, an approximate <span class="math inline">\(C\)</span>% confidence interval for <span class="math inline">\(p_1-p_2\)</span> is:</p>
+<p><span class="math display">\[(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}\]</span></p>
+<p>Where <span class="math inline">\(z^\ast\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^\ast\)</span> and <span class="math inline">\(z^\ast\)</span></p>
+</div>
+</section>
+<section id="two-sample-z-test-two-sample-z-test" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="two-sample-z-test-two-sample-z-test"><span class="header-section-number">14.3.2</span> Two-Sample z-test (#two-sample-z-test)</h3>
+<div class="highlight">
+<p>The null hypothesis has the general form <span class="math display">\[ H_0:p_1-p_2=p_0 \]</span> where <span class="math inline">\(p_0\)</span> is our hypothesized difference. We’ll restrict ourselves to situations in which <span class="math inline">\(p_0 =0\)</span>. Then the null hypothesis says that there is no difference between the two parameters: <span class="math display">\[H_0:p_1-p_2=0~~\text{or}~~H_0:p_1=p_2\]</span> The alternative hypothesis says what kind of difference we expect: <span class="math display">\[H_a:p_1-p_2&gt;0~~\text{or}~~Ha:p_1-p_2&lt;0~~\text{or}~~Ha:p_1-p_2\not =0  \]</span></p>
+</div>
+<div class="highlight">
+<p>Suppose the conditions are met. To test the hypotheses <span class="math inline">\(H_0: p_1 - p_2 = 0\)</span>, first find the pooled proportion <span class="math inline">\(\hat p_c\)</span> of successes in both samples combined.</p>
+<p><span class="math display">\[\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}\]</span></p>
+<p>Then compute the z statistic: <span class="math display">\[ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}\]</span></p>
+</div>
 
 
 </section>
@@ -595,13 +610,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./confidence-intervals.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span>
+      <a href="./hypothesis-testing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./inference-for-means.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

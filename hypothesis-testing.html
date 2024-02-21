@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 4&nbsp; Categorical Data Visualizations</title>
+<title>AP Statistics Notes - 13&nbsp; Hypothesis Testing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quantitative-displays.html" rel="next">
-<link href="./basic-statistics.html" rel="prev">
+<link href="./inference-for-proportions.html" rel="next">
+<link href="./confidence-intervals.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./categorical-displays.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hypothesis-testing.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical-displays.html" class="sidebar-item-text sidebar-link active">
+  <a href="./categorical-displays.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span></a>
   </div>
 </li>
@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+  <a href="./hypothesis-testing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span></a>
   </div>
 </li>
@@ -242,9 +242,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bar-plots" id="toc-bar-plots" class="nav-link active" data-scroll-target="#bar-plots"><span class="header-section-number">4.1</span> Bar plots</a></li>
-  <li><a href="#stacked-bar-plots-and-side-by-side-bar-graphs" id="toc-stacked-bar-plots-and-side-by-side-bar-graphs" class="nav-link" data-scroll-target="#stacked-bar-plots-and-side-by-side-bar-graphs"><span class="header-section-number">4.2</span> Stacked Bar Plots and Side-by-Side Bar Graphs</a></li>
-  <li><a href="#mosaic-plots" id="toc-mosaic-plots" class="nav-link" data-scroll-target="#mosaic-plots"><span class="header-section-number">4.3</span> Mosaic Plots</a></li>
+  <li><a href="#significance-tests" id="toc-significance-tests" class="nav-link active" data-scroll-target="#significance-tests"><span class="header-section-number">13.1</span> Significance Tests</a>
+  <ul class="collapse">
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses"><span class="header-section-number">13.1.1</span> Hypotheses</a></li>
+  <li><a href="#interpreting-p-values" id="toc-interpreting-p-values" class="nav-link" data-scroll-target="#interpreting-p-values"><span class="header-section-number">13.1.2</span> Interpreting <em>P</em>-values</a></li>
+  <li><a href="#drawing-a-conclusion" id="toc-drawing-a-conclusion" class="nav-link" data-scroll-target="#drawing-a-conclusion"><span class="header-section-number">13.1.3</span> Drawing a Conclusion</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">13.1.4</span> Example</a></li>
+  </ul></li>
+  <li><a href="#type-i-and-ii-error" id="toc-type-i-and-ii-error" class="nav-link" data-scroll-target="#type-i-and-ii-error"><span class="header-section-number">13.2</span> Type I and II Error</a>
+  <ul class="collapse">
+  <li><a href="#type-i-error" id="toc-type-i-error" class="nav-link" data-scroll-target="#type-i-error"><span class="header-section-number">13.2.1</span> Type I Error</a></li>
+  <li><a href="#type-ii-errors-and-power" id="toc-type-ii-errors-and-power" class="nav-link" data-scroll-target="#type-ii-errors-and-power"><span class="header-section-number">13.2.2</span> Type II Errors and Power</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -253,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></h1>
 </div>
 
 
@@ -268,210 +277,198 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="bar-plots" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="bar-plots"><span class="header-section-number">4.1</span> Bar plots</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Bar Plots">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="significance-tests" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="significance-tests"><span class="header-section-number">13.1</span> Significance Tests</h2>
+<p>Confidence intervals are one of the two most common types of statistical inference. Use a confidence interval when your goal is to estimate a population parameter. The second common type of inference, called significance tests, has a different goal: to assess the evidence provided by data about some claim concerning a population.</p>
+<p>A <strong>significance test</strong> is a formal procedure for comparing observed data with a claim (also called a hypothesis) whose truth we want to assess. The claim is a statement about a parameter, like the population proportion <span class="math inline">\(p\)</span> or the population mean <span class="math inline">\(\mu\)</span>. We express the results of a significance test in terms of a probability that measures how well the data and the claim agree.</p>
+<section id="hypotheses" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">13.1.1</span> Hypotheses</h3>
+<p>A significance test starts with a careful statement of the claims we want to compare.</p>
+<div class="highlight">
+<ul>
+<li><span class="math inline">\(H_0\)</span>: The claim we weigh evidence against in a statistical test is called the null hypothesis. Often the null hypothesis is a statement of “no difference.”
+<ul>
+<li>In any significance test, the null hypothesis has the form:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[H_0 : \text{parameter} = \text{null value} \]</span></p>
+<ul>
+<li><span class="math inline">\(H_a\)</span>: The claim about the population that we are trying to find evidence for is the alternative hypothesis.
+<ul>
+<li>The alternative hypothesis has one of the forms:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+H_0 &amp;: \text{parameter} &gt; \text{null value}\\
+H_0 &amp;: \text{parameter} &lt; \text{null value}\\
+H_0 &amp;: \text{parameter} \not = \text{null value}
+\end{aligned}
+\]</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-Bar Plots
+<p><em>To determine the correct form of <span class="math inline">\(H_a\)</span>, read the problem carefully.</em></p>
+<div class="highlight">
+<p>The alternative hypothesis is one-sided if it states that a parameter is <em>larger than</em> the null hypothesis value or if it states that the parameter is <em>smaller than</em> the null value.</p>
+<p>It is two-sided if it states that the parameter is <em>different from</em> the null hypothesis value (it could be either larger or smaller).</p>
 </div>
+<ul>
+<li>The hypotheses should express the hopes or suspicions we have <strong>before</strong> we see the data. It is cheating to look at the data first and then frame hypotheses to fit what the data show (i.e.&nbsp;“<em>p</em>-hacking”).</li>
+<li>Hypotheses always refer to a <em>population</em>, not to a sample. Be sure to state <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span> in terms of <em>population parameters</em>.</li>
+<li>It is never correct to write a hypothesis about a sample statistic, such as <span class="math inline">\(\hat p=0.64\)</span> or <span class="math inline">\(\bar x=85\)</span>.</li>
+</ul>
+</section>
+<section id="interpreting-p-values" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="interpreting-p-values"><span class="header-section-number">13.1.2</span> Interpreting <em>P</em>-values</h3>
+<p>The null hypothesis <span class="math inline">\(H_0\)</span> states the claim that we are seeking evidence against. The probability that measures the strength of the evidence against a null hypothesis is called a <em>P</em>-value. The probability, computed assuming <span class="math inline">\(H_0\)</span> is true, that the statistic would take a value as extreme or more extreme than the one actually observed is called the <em>P</em>-value of the test. Small <em>P</em>-values are evidence against <span class="math inline">\(H_0\)</span> because they say that the observed result is unlikely to occur when <span class="math inline">\(H_0\)</span> is true. Large <em>P</em>-values fail to give convincing evidence against <span class="math inline">\(H_0\)</span> because they say that the observed result is likely to occur by chance when <span class="math inline">\(H_0\)</span> is true.</p>
+</section>
+<section id="drawing-a-conclusion" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="drawing-a-conclusion"><span class="header-section-number">13.1.3</span> Drawing a Conclusion</h3>
+<p>The final step in performing a significance test is to draw a conclusion about the competing claims you were testing. We make one of two decisions based on the strength of the evidence against the null hypothesis (and in favor of the alternative hypothesis):</p>
+<p><span class="math display">\[\text{reject } H_0 \text{ or fail to reject } H_0\]</span></p>
+<p><em>Note: A fail-to-reject <span class="math inline">\(H_0\)</span> decision in a significance test doesn’t mean that <span class="math inline">\(H_0\)</span> is true. For that reason, you should never “accept <span class="math inline">\(H_0\)</span>” or use language implying that you believe <span class="math inline">\(H_0\)</span> is true.</em></p>
+<p>There is no rule for how small a <em>P</em>-value we should require in order to reject <span class="math inline">\(H_0\)</span>. But we can compare the <em>P</em>-value with a fixed value that we regard as decisive, called the significance level. We write it as <span class="math inline">\(\alpha\)</span>, the Greek letter alpha.</p>
+<div class="highlight">
+<p>If the <em>P</em>-value is smaller than alpha, we say that the data are [statistically significant][Statistical Significance] at the level . In that case, we reject the null hypothesis <span class="math inline">\(H_0\)</span> and conclude that there is convincing evidence in favor of the alternative hypothesis <span class="math inline">\(H_a\)</span>.</p>
+<p>In a nutshell, our conclusion in a significance test comes down to</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{P-value} &amp;&lt;  \alpha \rightarrow \text{reject } H_0 \rightarrow \text{convincing evidence for } H_a \\
+\text{P-value} &amp;\geq \alpha \rightarrow\text{fail to reject } H_0  \rightarrow \text{not convincing evidence for } H_a
+\end{aligned}
+\]</span></p>
 </div>
-<div class="callout-body-container callout-body">
-<p>Represent the number or proportion of each unique value. These numbers or proportions are represented with rectangular bars with heights proportional to the values that they represent.</p>
-<p>You can plot these vertically or horizontally (i.e.&nbsp;categories on the x-axis or categories on the y-axis)</p>
-</div>
-</div>
-<p>Following data from this table:</p>
-<div class="cell">
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]}],"data":[{"1":"setosa"},{"1":"setosa"},{"1":"virginica"},{"1":"setosa"},{"1":"virginica"},{"1":"virginica"},{"1":"versicolor"},{"1":"versicolor"},{"1":"virginica"},{"1":"versicolor"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
+</section>
+<section id="example" class="level3" data-number="13.1.4">
+<h3 data-number="13.1.4" class="anchored" data-anchor-id="example"><span class="header-section-number">13.1.4</span> Example</h3>
+<p><em>(From “Is this gender discrimination” CYU)</em>\ Factinate.com claims that 84% of teenagers think highly of their mother. To investigate this claim, a school psychologist selects a random sample of 150 teenagers and finds that 135 think highly of their mother. Do these data provide convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84?</p>
 <ol type="1">
-<li>Count up the number of values per category (make a frequency table). Note: This table is missing the total</li>
+<li>State appropriate hypotheses for performing a significance test. Be sure to define the parameter of interest.</li>
 </ol>
-<div class="cell">
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"setosa","2":"3"},{"1":"versicolor","2":"3"},{"1":"virginica","2":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(p =\)</span> the proportion of teenagers who think highly of their mother. &nbsp;<br>
+<span class="math inline">\(H_0: p = 0.85\)</span> (This is because we are assuming there is “no difference” from Factinate.com’s claim) &nbsp;<br>
+<span class="math inline">\(H_0: p &gt; 0.85\)</span> (The evidence that we got is <span class="math inline">\(\frac{135}{150}\)</span>, which is greater than 0.85; also the problem asks, “Do these data provide convincing evidence that the true proportion of teens who think highly of their mother is <strong>greater than 0.84</strong>?”)</p>
+</blockquote>
 <ol start="2" type="1">
-<li>Plot the frequencies with them as the height of the bars</li>
+<li>The school psychologist performed the significance test and obtained a <em>P</em>-value of 0.0225. Interpret the P-value.</li>
 </ol>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="categorical-displays_files/figure-html/iris-bar-plot-1.png" class="img-fluid" width="672"></p>
+<blockquote class="blockquote">
+<p>Assuming that that <span class="math inline">\(H_0\)</span> is true (i.e.&nbsp;<span class="math inline">\(p = 0.84\)</span>), there is a 0.0225 probability of getting a sample proportion of <span class="math inline">\(\frac{135}{150}\)</span> or greater purely by chance. &nbsp;<br>
+* You can also include the context as we have before, but the context in this answer already infers knowledge that we are interpreting in the context of long-term frequency. This is really all you need for this interpretation.</p>
+</blockquote>
+<ol start="3" type="1">
+<li>What conclusion would you make at the <span class="math inline">\(\alpha = 0.05\)</span> level?</li>
+</ol>
+<blockquote class="blockquote">
+<p>Since <span class="math inline">\(\text{p-value } = 0.0225&lt;0.05=\alpha\)</span>, we reject the null hypothesis that the proportion of teenagers who think highly of their mother is 0.85. There is convincing evidence that the true proportion of teens who think highly of their mother is greater than 0.84.</p>
+</blockquote>
+</section>
+</section>
+<section id="type-i-and-ii-error" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="type-i-and-ii-error"><span class="header-section-number">13.2</span> Type I and II Error</h2>
+<p>When we draw a conclusion from a significance test, we hope our conclusion will be correct. But sometimes it will be wrong. There are two types of mistakes we can make.</p>
+<div class="highlight">
+<ul>
+<li><p>If we reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_a\)</span> is true, we have committed a Type I error.</p></li>
+<li><p>If we fail to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_a\)</span> is true, we have committed a Type II error.</p></li>
+</ul>
 </div>
-</div>
-<p>If needed (if you need proportions for the y-axis instead, calculate the relative frequency table for the frequency table first). Note: again, this one is missing the total</p>
-<div class="cell">
-<div class="cell-output-display">
+<p>We can sum this up with this up with this table:</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;display: block;margin-left: auto;margin-right: auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7od5{background-color:#9aff99;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-73oq{border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-90e1{background-color:#ffccc9;border-color:inherit;text-align:left;vertical-align:top}
+</style>
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"setosa","2":"0.3"},{"1":"versicolor","2":"0.3"},{"1":"virginica","2":"0.4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="categorical-displays_files/figure-html/iris-prop-bar-plot-1.png" class="img-fluid" width="672"></p>
-</div>
+<table class="tg">
+<thead>
+<tr>
+<th class="tg-73oq" colspan="2" rowspan="2">
+</th>
+<th class="tg-73oq" colspan="2">
+Truth about the population
+</th>
+</tr>
+<tr>
+<th class="tg-73oq">
+<span class="math inline">\(H_0\)</span> is true
+</th>
+<th class="tg-73oq">
+<span class="math inline">\(H_0\)</span> is false
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tg-73oq" rowspan="2">
+Conclusion based<br>on the sample
+</td>
+<td class="tg-73oq">
+Reject <span class="math inline">\(H_0\)</span>
+</td>
+<td class="tg-90e1">
+Type I Error
+</td>
+<td class="tg-7od5">
+</td>
+</tr>
+<tr>
+<td class="tg-73oq">
+Fail to reject <span class="math inline">\(H_0\)</span>
+</td>
+<td class="tg-7od5">
+</td>
+<td class="tg-90e1">
+Type II Error
+</td>
+</tr>
+</tbody>
+
+</table>
+<p>When considering the consequences of the results of an inference task, we want to consider Type I and II errors. In some cases, we’d prefer to have Type I errors over Type II. In other instances, it’s the opposite.</p>
+<section id="type-i-error" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="type-i-error"><span class="header-section-number">13.2.1</span> Type I Error</h3>
+<div class="highlight">
+<p>The probability of a Type I Error is <span class="math inline">\(\alpha\)</span> <span class="math display">\[P(\text{Type I Error})=\alpha\]</span></p>
 </div>
 </section>
-<section id="stacked-bar-plots-and-side-by-side-bar-graphs" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="stacked-bar-plots-and-side-by-side-bar-graphs"><span class="header-section-number">4.2</span> Stacked Bar Plots and Side-by-Side Bar Graphs</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Multivariate Bar Plots">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="type-ii-errors-and-power" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="type-ii-errors-and-power"><span class="header-section-number">13.2.2</span> Type II Errors and Power</h3>
+<p>A significance test makes a Type II error when it fails to reject a null hypothesis <span class="math inline">\(H_0\)</span> that really is false. There are many values of the parameter that make the alternative hypothesis <span class="math inline">\(H_a\)</span> true, so we concentrate on one value. The probability of making a Type II error depends on several factors, including the actual value of the parameter. A high probability of Type II error for a specific alternative parameter value means that the test is not sensitive enough to usually detect that alternative.</p>
+<p>The power of a test against a specific alternative is the probability that the test will reject <span class="math inline">\(H_0\)</span> at a chosen significance level when the specified alternative value of the parameter is true.</p>
+<p>The significance level of a test is the probability of reaching the wrong conclusion when the null hypothesis is true.</p>
+<p>The power of a test to detect a specific alternative is the probability of reaching the right conclusion when that alternative is true.</p>
+<div class="highlight">
+<p>The power of a test against any alternative is 1 minus the probability of a Type II error for that alternative; that is, <span class="math inline">\(power = 1-\beta\)</span>, where is the probability of making a Type II error.</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(\text{Type II Error}) &amp;= \beta \\
+P(\text{Type II Error}) &amp;= 1 - \text{power} \\
+\text{power} &amp;= 1 - \beta
+\end{aligned}
+\]</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-Multivariate Bar Plots
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Stacked bar plots show two categorical variables, one on the x-axis/y-axis, and the other as the legend (colours). We will call the variable on the x-axis as the “groups” and the variable on the legend as the “categories.”</p>
-<p>Side-by-Side bar graphs are similar in concept.</p>
-</div>
-</div>
-<p>When constructing these bar plots, we first want to determine which variable goes where (your choice or given choice to you). Then you calculate relative frequencies <em>per group</em></p>
-<p>For example, here I have a two-way table detailing the hair and eye colour of some statistics students</p>
+<p>* <em>Keep in mind that you are not expected to know how to calculate power or <span class="math inline">\(\beta\)</span> without one of the other. i.e.&nbsp;you will always be given the power or <span class="math inline">\(\beta\)</span> in a problem.</em></p>
+<section id="how-power-looks-like" class="level4">
+<h4 class="anchored" data-anchor-id="how-power-looks-like">How power looks like</h4>
 <div class="cell">
 <div class="cell-output-display">
+<p><img src="hypothesis-testing_files/figure-html/power demonstration-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This diagram illustrates how we can visualize power in a one-sided test checking to see if a parameter is larger than the null parameter. The null parameter here is 0 and the alternative parameter is 3. Each of their respective distributions are centered at 0 and 3. To think about power, first we look at the <span class="math inline">\(\alpha\)</span> value, which gives us the rejection region (shaded in black) in which any statistic that we get there will reject the null hypothesis.</p>
+<p>Power is the probability that we reject the null hypothesis given that the alternative parameter is actually true. So, power is represented in the yellow area, which starts at the same x (our “cut-off” value for rejection based off alpha) that the rejection region starts.</p>
+<p><span class="math inline">\(\beta\)</span> is the probability of Type II error, where we do not reject the null hypothesis when it is actually wrong. So it is represented in the green area.</p>
+<p><a href="https://rpsychologist.com/d3/nhst/">See an interactive version of this here.</a></p>
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"68"},{"1":"Brown","2":"Brown","3":"119"},{"1":"Red","2":"Brown","3":"26"},{"1":"Blond","2":"Brown","3":"7"},{"1":"Black","2":"Blue","3":"20"},{"1":"Brown","2":"Blue","3":"84"},{"1":"Red","2":"Blue","3":"17"},{"1":"Blond","2":"Blue","3":"94"},{"1":"Black","2":"Hazel","3":"15"},{"1":"Brown","2":"Hazel","3":"54"},{"1":"Red","2":"Hazel","3":"14"},{"1":"Blond","2":"Hazel","3":"10"},{"1":"Black","2":"Green","3":"5"},{"1":"Brown","2":"Green","3":"29"},{"1":"Red","2":"Green","3":"14"},{"1":"Blond","2":"Green","3":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>So if I want eye colour to be my groups, I would calculate the relative frequencies by column (use the total of the column and divide the whole column by it), so each group/column will add up to 1.</p>
-<div class="cell">
-<div class="cell-output-display">
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"0.30909091"},{"1":"Brown","2":"Brown","3":"0.54090909"},{"1":"Red","2":"Brown","3":"0.11818182"},{"1":"Blond","2":"Brown","3":"0.03181818"},{"1":"Black","2":"Blue","3":"0.09302326"},{"1":"Brown","2":"Blue","3":"0.39069767"},{"1":"Red","2":"Blue","3":"0.07906977"},{"1":"Blond","2":"Blue","3":"0.43720930"},{"1":"Black","2":"Hazel","3":"0.16129032"},{"1":"Brown","2":"Hazel","3":"0.58064516"},{"1":"Red","2":"Hazel","3":"0.15053763"},{"1":"Blond","2":"Hazel","3":"0.10752688"},{"1":"Black","2":"Green","3":"0.07812500"},{"1":"Brown","2":"Green","3":"0.45312500"},{"1":"Red","2":"Green","3":"0.21875000"},{"1":"Blond","2":"Green","3":"0.25000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>These numbers will be my bar heights. So for the bar(s) representing brown eyes:</p>
-<ul>
-<li>black hair will be .3091</li>
-<li>brown hair will be .5409</li>
-<li>red hair will be 0.1182</li>
-<li>blond hair will be 0.0318</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="categorical-displays_files/figure-html/hair-eye-seg-bar-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>Here’s the corresponding side-by-side bar plot. Note that the heights of the bars are the same as the segmented bar graph.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="categorical-displays_files/figure-html/hair-eye-ss-bar-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>On the other hand, if I want my eye colour to be my groups, I would calculate the relative frequencies by row (use the total of the row and divide the whole row by it), so each group/row will add up to 1.</p>
-<div class="cell">
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"0.62962963"},{"1":"Brown","2":"Brown","3":"0.41608392"},{"1":"Red","2":"Brown","3":"0.36619718"},{"1":"Blond","2":"Brown","3":"0.05511811"},{"1":"Black","2":"Blue","3":"0.18518519"},{"1":"Brown","2":"Blue","3":"0.29370629"},{"1":"Red","2":"Blue","3":"0.23943662"},{"1":"Blond","2":"Blue","3":"0.74015748"},{"1":"Black","2":"Hazel","3":"0.13888889"},{"1":"Brown","2":"Hazel","3":"0.18881119"},{"1":"Red","2":"Hazel","3":"0.19718310"},{"1":"Blond","2":"Hazel","3":"0.07874016"},{"1":"Black","2":"Green","3":"0.04629630"},{"1":"Brown","2":"Green","3":"0.10139860"},{"1":"Red","2":"Green","3":"0.19718310"},{"1":"Blond","2":"Green","3":"0.12598425"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>These numbers will be my bar heights. So for the bar(s) representing black hair:</p>
-<ul>
-<li>brown eyes will be 0.6296296</li>
-<li>blue eyes will be 0.1851852</li>
-<li>hazel eyes will be 0.1388889</li>
-<li>green eyes will be 0.0462963</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="categorical-displays_files/figure-html/hair-eye-prop-seg-bar-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="categorical-displays_files/figure-html/hair-eye-prop-ss-bar-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 </section>
-<section id="mosaic-plots" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="mosaic-plots"><span class="header-section-number">4.3</span> Mosaic Plots</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Mosaic Plots">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mosaic Plots
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Mosaic plots are the almost the same as stacked bar plots. The only difference is that the widths of the bars change according to the proportion of points in each group. In a mosaic plot, the x-axis will also measure the proportion of observations/data points within the groupings (i.e.&nbsp;the x-axis reflects the marginal distribution of the variable on the x-axis).</p>
-</div>
-</div>
-<p>Following the <a href="#stacked-bar-plots-and-side-by-side-bar-plots">same steps</a> as the side-by-side and stacked bar charts to find the heights, we now add an additional step before plotting.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Find the widths of the bars by finding the marginal distribution of the variable on the x-axis (the groups)</p>
-</div>
-</div>
-<ol type="1">
-<li>For each group, find the probability of having that trait. So for our previous example, we had this table:</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Hair"],"name":[1],"type":["fct"],"align":["left"]},{"label":["Eye"],"name":[2],"type":["fct"],"align":["left"]},{"label":["Freq"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Black","2":"Brown","3":"68"},{"1":"Brown","2":"Brown","3":"119"},{"1":"Red","2":"Brown","3":"26"},{"1":"Blond","2":"Brown","3":"7"},{"1":"Black","2":"Blue","3":"20"},{"1":"Brown","2":"Blue","3":"84"},{"1":"Red","2":"Blue","3":"17"},{"1":"Blond","2":"Blue","3":"94"},{"1":"Black","2":"Hazel","3":"15"},{"1":"Brown","2":"Hazel","3":"54"},{"1":"Red","2":"Hazel","3":"14"},{"1":"Blond","2":"Hazel","3":"10"},{"1":"Black","2":"Green","3":"5"},{"1":"Brown","2":"Green","3":"29"},{"1":"Red","2":"Green","3":"14"},{"1":"Blond","2":"Green","3":"16"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>Using our eye colours as the groups (vertical bars), we will find:</p>
-<ul>
-<li><span class="math inline">\(P(Brown) \approx .3716\)</span></li>
-<li><span class="math inline">\(P(Blue) \approx .3632\)</span></li>
-<li><span class="math inline">\(P(Hazel) \approx .1571\)</span></li>
-<li><span class="math inline">\(P(Green) \approx .1081\)</span></li>
-</ul>
-<p>When we plot our mosaic plot, we do the same thing, except now, we have our bars differ in widths according to the numbers that we just calculated.</p>
-<!-- ![Mosaic Plot of Hair Colour on Eye Colour](moplotex.png) -->
-
-
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -710,13 +707,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./basic-statistics.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Statistics</span></span>
+      <a href="./confidence-intervals.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quantitative-displays.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./inference-for-proportions.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
