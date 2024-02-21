@@ -9,7 +9,7 @@ p1 = ggplot() + xlim(-4,4) +
     stat_function(fun = dnorm, size = 0.5, n = 1000) + theme_void() +
     annotate("segment", x = 1, xend = 1, y = -.01, yend = .01, size = .5) +
     annotate("segment", x = -4, xend = 4, y = 0, yend = 0, size = .5) +
-    annotate("text", x = 1, y = -.025, label = "z", size = 2.5) +
+    annotate("text", x = 1, y = -.025, label = "t", size = 2.5) +
     theme(
         panel.background = element_rect(fill='transparent'), #transparent panel bg
         plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
@@ -26,7 +26,7 @@ p2 = ggplot() + xlim(-4,4) +
     stat_function(fun = dnorm, size = 0.5, n = 1000) + theme_void() +
     annotate("segment", x = -1, xend = -1, y = -.01, yend = .01, size = 0.5) +
     annotate("segment", x = -4, xend = 4, y = 0, yend = 0, size = 0.5) +
-    annotate("text", x = -1, y = -.025, label = "z", size = 2.5)+
+    annotate("text", x = -1, y = -.025, label = "t", size = 2.5)+
     theme(
         panel.background = element_rect(fill='transparent'), #transparent panel bg
         plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg
@@ -47,8 +47,8 @@ p3 = ggplot() + xlim(-4,4) +
     annotate("segment", x = -1, xend = -1, y = -.01, yend = .01, size =  0.5) +
     annotate("segment", x = 1, xend = 1, y = -.01, yend = .01, size =  0.5) +
     annotate("segment", x = -4, xend = 4, y = 0, yend = 0, size =  0.5) +
-    annotate("text", x = -1, y = -.025, label = "-|z|", size = 2.5) +
-    annotate("text", x = 1, y = -.025, label = "|z|", size = 2.5)+
+    annotate("text", x = -1, y = -.025, label = "-|t|", size = 2.5) +
+    annotate("text", x = 1, y = -.025, label = "|t|", size = 2.5)+
     theme(
         panel.background = element_rect(fill='transparent'), #transparent panel bg
         plot.background = element_rect(fill='transparent', color=NA), #transparent plot bg

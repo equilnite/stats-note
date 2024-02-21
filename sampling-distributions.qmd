@@ -120,24 +120,24 @@ The CLT justifies why we have the check the Large Condition above and the sectio
 
 <!-- ## Sampling Distribution of $\bar x_1 - \bar x_2$ {#mean-diff-samp-dist} -->
 
-<!-- ::: {.highlight} -->
+::: {.highlight}
 
-<!-- Choose an SRS of size $n_1$ from Population 1 with mean $\mu_1$ and standard deviation $\sigma_1$ and an independent SRS of size $n_2$ from Population 2 with mean $\mu_2$ and standard deviation $\sigma_2$. -->
+Choose an SRS of size $n_1$ from Population 1 with mean $\mu_1$ and standard deviation $\sigma_1$ and an independent SRS of size $n_2$ from Population 2 with mean $\mu_2$ and standard deviation $\sigma_2$.
 
-<!-- **Shape:** -->
+**Shape:**
 
-<!-- When the population distributions are Normal, the sampling distribution of $\bar x_1- \bar x_2$ is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough ($n_1 \geq 30$ and $n_2 \geq 30$) -->
+When the population distributions are Normal, the sampling distribution of $\bar x_1- \bar x_2$ is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough ($n_1 \geq 30$ and $n_2 \geq 30$)
 
-<!-- **Center:** -->
+**Center:**
 
-<!-- The mean of the sampling distribution is  -->
+The mean of the sampling distribution is
 
-<!-- $$\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2$$. -->
+$$\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2$$.
 
-<!-- **Spread:** -->
+**Spread:**
 
-<!-- As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of $\bar x_1- \bar x_2$ is  -->
+As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of $\bar x_1- \bar x_2$ is
 
-<!-- $$\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$ -->
+$$\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$
 
 <!-- ::: -->

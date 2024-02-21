@@ -51,70 +51,70 @@ The standard error is calculated as $\sqrt{\frac{\hat p (1 - \hat p)}{n}}$
 
 
 
-<!-- ### One-Sample z-test -->
+### One-Sample z-test
 
-<!-- ::: {.highlight} -->
+::: {.highlight}
 
-<!-- Given the null hypothesis $H_0: p=p_0$, and an observed sample proportion $\hat p$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\hat p$, calculated assuming $H_0$ is true, has the following: -->
+Given the null hypothesis $H_0: p=p_0$, and an observed sample proportion $\hat p$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\hat p$, calculated assuming $H_0$ is true, has the following:
 
-<!-- $$\mu_{\hat p} = p_0$$ -->
-<!-- $$\sigma_{\hat p} = \frac{\sigma_{p_0}}{\sqrt n} = \sqrt{\frac{p_0(1- p_0)}{n}}$$ -->
+$$\mu_{\hat p} = p_0$$
+$$\sigma_{\hat p} = \frac{\sigma_{p_0}}{\sqrt n} = \sqrt{\frac{p_0(1- p_0)}{n}}$$
 
-<!-- The **z-statistic** is the standardized score of $\hat p$ under the mean and standard deviation of the null distribution: -->
+The **z-statistic** is the standardized score of $\hat p$ under the mean and standard deviation of the null distribution:
 
-<!-- $$z=\frac{\hat p - p_0}{\sqrt{\frac{p_0(1- p_0)}{n}}}$$ -->
+$$z=\frac{\hat p - p_0}{\sqrt{\frac{p_0(1- p_0)}{n}}}$$
 
-<!-- The p-value, calculated using the z-statistic, is based off the direction of the alternative hypothesis, $H_a$. $Z$ represents the standard normal distribution. -->
+The p-value, calculated using the z-statistic, is based off the direction of the alternative hypothesis, $H_a$. $Z$ represents the standard normal distribution.
 
-<!-- $$ -->
-<!-- \text{p-value}= \begin{cases} -->
-<!-- P(Z<z) & \text{ if } H_a:p<p_0 \\  -->
-<!-- P(Z>z) & \text{ if } H_a:p>p_0 \\  -->
-<!-- 2\cdot P(Z<-|z|) & \text{ if } H_a:p\not =p_0  -->
-<!-- \end{cases} -->
-<!-- $$ -->
-<!-- ::: -->
+$$
+\text{p-value}= \begin{cases}
+P(Z<z) & \text{ if } H_a:p<p_0 \\
+P(Z>z) & \text{ if } H_a:p>p_0 \\
+2\cdot P(Z<-|z|) & \text{ if } H_a:p\not =p_0
+\end{cases}
+$$
+:::
 
-<!-- ## Two-Sample z-procedures -->
+## Two-Sample z-procedures
 
-<!-- Two-Sample z-procedures are justified by knowledge about the [sampling distribution of $\hat p_1 - \hat p_2$](#prop-diff-samp-dist). -->
+Two-Sample z-procedures are justified by knowledge about the [sampling distribution of $\hat p_1 - \hat p_2$](#prop-diff-samp-dist).
 
-<!-- The conditions for two-sample z-procedures are the same for the two that we learn: -->
+The conditions for two-sample z-procedures are the same for the two that we learn:
 
-<!-- ::: {.highlight} -->
-<!-- - Random: The data come from two independent random samples or from two groups in a randomized experiment. -->
+::: {.highlight}
+- Random: The data come from two independent random samples or from two groups in a randomized experiment.
 
-<!-- - Large Counts: The counts of “successes” and “failures” in each sample or group $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, and $n_2(1-\hat p_2)$ are all at least 10. -->
+- Large Counts: The counts of “successes” and “failures” in each sample or group $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, and $n_2(1-\hat p_2)$ are all at least 10.
 
-<!-- - 10%: When sampling without replacement, check that $n_1\leq(.10)N_1$ and $n2\leq(.10)N_2$. -->
-<!-- ::: -->
+- 10%: When sampling without replacement, check that $n_1\leq(.10)N_1$ and $n2\leq(.10)N_2$.
+:::
 
-<!-- ### Two-Sample z-interval -->
+### Two-Sample z-interval
 
-<!-- ::: {.highlight} -->
-<!-- When the conditions are met, an approximate $C$% confidence interval for $p_1-p_2$ is:  -->
+::: {.highlight}
+When the conditions are met, an approximate $C$% confidence interval for $p_1-p_2$ is:
 
-<!-- $$(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$ -->
+$$(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}$$
 
-<!-- Where $z^\ast$ is the critical value for the standard Normal curve with $C$% of its area between $-z^\ast$ and $z^\ast$ -->
-<!-- ::: -->
+Where $z^\ast$ is the critical value for the standard Normal curve with $C$% of its area between $-z^\ast$ and $z^\ast$
+:::
 
-<!-- ### Two-Sample z-test (#two-sample-z-test) -->
+### Two-Sample z-test (#two-sample-z-test)
 
-<!-- ::: {.highlight} -->
-<!-- The null hypothesis has the general form   -->
-<!-- $$ H_0:p_1-p_2=p_0 $$ -->
-<!-- where $p_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $p_0 =0$. Then the null hypothesis says that there is no difference between the two parameters:  -->
-<!-- $$H_0:p_1-p_2=0~~\text{or}~~H_0:p_1=p_2$$ -->
-<!-- The alternative hypothesis says what kind of difference we expect: -->
-<!-- $$H_a:p_1-p_2>0~~\text{or}~~Ha:p_1-p_2<0~~\text{or}~~Ha:p_1-p_2\not =0  $$ -->
-<!-- ::: -->
+::: {.highlight}
+The null hypothesis has the general form
+$$ H_0:p_1-p_2=p_0 $$
+where $p_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $p_0 =0$. Then the null hypothesis says that there is no difference between the two parameters:
+$$H_0:p_1-p_2=0~~\text{or}~~H_0:p_1=p_2$$
+The alternative hypothesis says what kind of difference we expect:
+$$H_a:p_1-p_2>0~~\text{or}~~Ha:p_1-p_2<0~~\text{or}~~Ha:p_1-p_2\not =0  $$
+:::
 
-<!-- ::: {.highlight} -->
-<!-- Suppose the conditions are met. To test the hypotheses $H_0: p_1 - p_2 = 0$, first find the pooled proportion $\hat p_c$ of successes in both samples combined.  -->
+::: {.highlight}
+Suppose the conditions are met. To test the hypotheses $H_0: p_1 - p_2 = 0$, first find the pooled proportion $\hat p_c$ of successes in both samples combined.
 
-<!-- $$\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}$$ -->
+$$\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}$$
 
-<!-- Then compute the z statistic: -->
-<!-- $$ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}$$ -->
-<!-- ::: -->
+Then compute the z statistic:
+$$ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}$$
+:::

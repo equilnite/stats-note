@@ -24,7 +24,7 @@ book:
     - random-variables.qmd
     - sampling-distributions.qmd
     - confidence-intervals.qmd
-    # - hypothesis-testing.qmd
+    - hypothesis-testing.qmd
     - inference-for-proportions.qmd
     - inference-for-means.qmd
     # - inference-for-categories.qmd

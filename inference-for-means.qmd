@@ -57,149 +57,149 @@ The standard error is calculated as $\frac{s_x}{\sqrt{n}}$
 
 :::
 
-<!-- ### One-Sample t-test {#one-sample-t-test} -->
+### One-Sample t-test {#one-sample-t-test}
 
-<!-- ::: {.highlight} -->
+::: {.highlight}
 
-<!-- Given the null hypothesis $H_0: \mu=\mu_0$, and an observed sample mean $\bar x$ and sample standard deviation $s_x$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the following: -->
+Given the null hypothesis $H_0: \mu=\mu_0$, and an observed sample mean $\bar x$ and sample standard deviation $s_x$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the following:
 
-<!-- $$\mu_{\bar x} = \mu_0$$ -->
-<!-- $$\sigma_{\bar x} = \frac{\sigma_x}{\sqrt n} \approx \frac{s_x}{\sqrt n}$$ -->
+$$\mu_{\bar x} = \mu_0$$
+$$\sigma_{\bar x} = \frac{\sigma_x}{\sqrt n} \approx \frac{s_x}{\sqrt n}$$
 
-<!-- Where we use $s_x$ in place of $\sigma_x$ because the population standard deviation is usually unknown and we can use the sample standard deviation because it is an unbiased estimator of the population standard deviation. -->
+Where we use $s_x$ in place of $\sigma_x$ because the population standard deviation is usually unknown and we can use the sample standard deviation because it is an unbiased estimator of the population standard deviation.
 
-<!-- The **t-statistic** is the standardized score of $\bar x$ under the mean and standard deviation of the null distribution: -->
+The **t-statistic** is the standardized score of $\bar x$ under the mean and standard deviation of the null distribution:
 
-<!-- $$t=\frac{\bar x - \mu_0}{\frac{s_x}{\sqrt n}}$$ -->
+$$t=\frac{\bar x - \mu_0}{\frac{s_x}{\sqrt n}}$$
 
-<!-- The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, $H_a$. $t_{n-1}$ represents the $t$ distribution with $df = n-1$ degrees of freedom. -->
+The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, $H_a$. $t_{n-1}$ represents the $t$ distribution with $df = n-1$ degrees of freedom.
 
-<!-- $$ -->
-<!-- \text{p-value}= \begin{cases} -->
-<!-- P(t_{n-1}<t) & \text{ if } H_a:\mu<\mu_0 \\  -->
-<!-- P(t_{n-1}>t) & \text{ if } H_a:\mu>\mu_0 \\  -->
-<!-- 2\cdot P(t_{n-1}<-|t|) & \text{ if } H_a: \mu\not =\mu_0  -->
-<!-- \end{cases} -->
-<!-- $$ -->
-<!-- ::: -->
+$$
+\text{p-value}= \begin{cases}
+P(t_{n-1}<t) & \text{ if } H_a:\mu<\mu_0 \\
+P(t_{n-1}>t) & \text{ if } H_a:\mu>\mu_0 \\
+2\cdot P(t_{n-1}<-|t|) & \text{ if } H_a: \mu\not =\mu_0
+\end{cases}
+$$
+:::
 
-<!-- #### Paired t-test -->
+#### Paired t-test
 
-<!-- A paired t-test is used when the data being compared are related or matched in some way, whereas a 2-sample t-test is used when the data being compared are independent. Here are some scenarios where a paired t-test would be more appropriate than a 2-sample t-test: -->
+A paired t-test is used when the data being compared are related or matched in some way, whereas a 2-sample t-test is used when the data being compared are independent. Here are some scenarios where a paired t-test would be more appropriate than a 2-sample t-test:
 
-<!-- Matched pair design: -->
+Matched pair design:
 
-<!-- - Before-and-after studies: When the same group of individuals is measured twice, such as before and after receiving a treatment or intervention, a paired t-test is used to determine whether there is a significant difference in the measurements. -->
+- Before-and-after studies: When the same group of individuals is measured twice, such as before and after receiving a treatment or intervention, a paired t-test is used to determine whether there is a significant difference in the measurements.
 
-<!-- - Matched case-control studies: When cases and controls are matched based on certain criteria (such as age, sex, or race), a paired t-test can be used to compare the measurements of the two groups. -->
+- Matched case-control studies: When cases and controls are matched based on certain criteria (such as age, sex, or race), a paired t-test can be used to compare the measurements of the two groups.
 
-<!-- Repeated measures: When a group of individuals is measured at multiple time points, a paired t-test can be used to compare the measurements within each individual. -->
+Repeated measures: When a group of individuals is measured at multiple time points, a paired t-test can be used to compare the measurements within each individual.
 
-<!-- In these scenarios, a paired t-test can be more powerful than a 2-sample t-test because it takes into account the relationship or correlation between the data being compared. By contrast, a 2-sample t-test assumes that the data being compared are independent, which may not be the case in these situations. -->
+In these scenarios, a paired t-test can be more powerful than a 2-sample t-test because it takes into account the relationship or correlation between the data being compared. By contrast, a 2-sample t-test assumes that the data being compared are independent, which may not be the case in these situations.
 
-<!-- ::: {.highlight} -->
-<!-- Given the null hypothesis $H_0: \mu_d=\mu_0$ (where $\mu_d$ represents the true mean difference) and an observed sample mean $\bar x$ (of the differences) and sample standard deviation $s_x$ (of the differences) from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the same null distribution and t-statistic as a [one-sample t-test](#one-sample-t-test). -->
-<!-- ::: -->
+::: {.highlight}
+Given the null hypothesis $H_0: \mu_d=\mu_0$ (where $\mu_d$ represents the true mean difference) and an observed sample mean $\bar x$ (of the differences) and sample standard deviation $s_x$ (of the differences) from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the same null distribution and t-statistic as a [one-sample t-test](#one-sample-t-test).
+:::
 
-<!-- ##### Conditions -->
+##### Conditions
 
-<!-- ::: {.highlight} -->
-<!-- **1. Random** -->
+::: {.highlight}
+**1. Random**
 
-<!-- The data must come from a random sample, or **random assignment in an experiment**. The latter of which will likely apply to a paired test. -->
+The data must come from a random sample, or **random assignment in an experiment**. The latter of which will likely apply to a paired test.
 
-<!-- **2. Large** -->
+**2. Large**
 
-<!-- You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution. -->
+You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.
 
-<!-- In the case of paired data, you'll be only **checking the sampling distribution of the differences**. The sampling distribution is approximately normal if at least one of the following conditions are met.  -->
+In the case of paired data, you'll be only **checking the sampling distribution of the differences**. The sampling distribution is approximately normal if at least one of the following conditions are met.
 
-<!-- - [*Normal/Large Condition*](#large-cond) -->
+- [*Normal/Large Condition*](#large-cond)
 
-<!-- - When $n<30$, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,  -->
+- When $n<30$, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,
 
-<!-- **3. Sampling Independence** -->
+**3. Sampling Independence**
 
-<!-- Observations in our sample must be independent of each other. -->
+Observations in our sample must be independent of each other.
 
-<!-- In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated! -->
+In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
 
-<!-- However, **since we'll be likely working with experiments, independence will not apply,** so you will not have to state it. You can say something like *"since we have an experiment, we do not have to check independence"*. -->
-<!-- ::: -->
+However, **since we'll be likely working with experiments, independence will not apply,** so you will not have to state it. You can say something like *"since we have an experiment, we do not have to check independence"*.
+:::
 
-<!-- ## Two-Sample t-procedures -->
+## Two-Sample t-procedures
 
-<!-- Two-Sample t-procedures are justified by knowledge about the [sampling distribution of $\bar x_1 - \bar x_2$](#mean-diff-samp-dist). -->
+Two-Sample t-procedures are justified by knowledge about the [sampling distribution of $\bar x_1 - \bar x_2$](#mean-diff-samp-dist).
 
-<!-- The conditions for two-sample t-procedures are the same for the two that we learn: -->
+The conditions for two-sample t-procedures are the same for the two that we learn:
 
-<!-- ::: {.highlight} -->
-<!-- - Random: The data come from two independent random samples or from two groups in a randomized experiment. -->
+::: {.highlight}
+- Random: The data come from two independent random samples or from two groups in a randomized experiment.
 
-<!-- - Normal/Large Sample: Both population distributions (or the true distributions of responses to the two treatments) are Normal or both sample sizes are large ($n_1 \geq 30$ and $n_2 \geq 30$). If either population (treatment) distribution has unknown shape and the corresponding sample size is less than 30, use a graph of the sample data to assess the Normality of the population (treatment) distribution. Do not use two-sample t procedures if the graph shows strong skewness or outliers. -->
+- Normal/Large Sample: Both population distributions (or the true distributions of responses to the two treatments) are Normal or both sample sizes are large ($n_1 \geq 30$ and $n_2 \geq 30$). If either population (treatment) distribution has unknown shape and the corresponding sample size is less than 30, use a graph of the sample data to assess the Normality of the population (treatment) distribution. Do not use two-sample t procedures if the graph shows strong skewness or outliers.
 
-<!-- - 10%: When sampling without replacement, check that $n_1 \leq (.10)N_1$ and $n_2 \leq (.10)N_2$. -->
-<!-- ::: -->
+- 10%: When sampling without replacement, check that $n_1 \leq (.10)N_1$ and $n_2 \leq (.10)N_2$.
+:::
 
-<!-- ### Calculating degrees of freedom -->
+### Calculating degrees of freedom
 
-<!-- There are two options for calculating degrees of freedom: -->
+There are two options for calculating degrees of freedom:
 
-<!-- ::: {.highlight} -->
-<!-- Option 1 (Technology): Use the $t$ distribution with degrees of freedom calculated from the data by the formula below. Note that the $df$ given by this formula is not usually a whole number.  -->
-<!-- $$df = \frac{\left( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}\left( \frac{s_1^2}{n_1}\right)^2 + \frac{1}{n_2-1}\left( \frac{s_2^2}{n_2}\right)^2}$$ -->
-<!-- ::: -->
+::: {.highlight}
+Option 1 (Technology): Use the $t$ distribution with degrees of freedom calculated from the data by the formula below. Note that the $df$ given by this formula is not usually a whole number.
+$$df = \frac{\left( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}\left( \frac{s_1^2}{n_1}\right)^2 + \frac{1}{n_2-1}\left( \frac{s_2^2}{n_2}\right)^2}$$
+:::
 
-<!-- ::: {.highlight} -->
-<!-- Option 2 (Conservative): Use the $t$ distribution with degrees of freedom equal to the *smaller* of $n_1 – 1$ and $n_2 – 1$. With this option, the resulting confidence interval has a margin of error *as large or larger* than is needed for the desired confidence level. The significance test using this option gives a P-value *equal to or greater* than the true P-value. As the sample sizes increase, the confidence levels and P-values from Option 2 become more accurate. -->
-<!-- ::: -->
+::: {.highlight}
+Option 2 (Conservative): Use the $t$ distribution with degrees of freedom equal to the *smaller* of $n_1 – 1$ and $n_2 – 1$. With this option, the resulting confidence interval has a margin of error *as large or larger* than is needed for the desired confidence level. The significance test using this option gives a P-value *equal to or greater* than the true P-value. As the sample sizes increase, the confidence levels and P-values from Option 2 become more accurate.
+:::
 
-<!-- ### Two-Sample t-interval -->
+### Two-Sample t-interval
 
-<!-- ::: {.highlight} -->
-<!-- When the conditions are met, an approximate $C$% confidence interval for $\bar x_1 - \bar x_2$ is:  -->
+::: {.highlight}
+When the conditions are met, an approximate $C$% confidence interval for $\mu_1 - \mu_2$ is:
 
-<!-- $$(\bar x_1 - \bar x_2)\pm t^\ast\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$ -->
+$$(\bar x_1 - \bar x_2)\pm t^\ast\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$
 
-<!-- Where $t^\ast$ is the critical value for the $t$ distribution with $n-1$ degrees of freedom with $C$% of its area between $-t^\ast$ and $t^\ast$ -->
-<!-- ::: -->
+Where $t^\ast$ is the critical value for the $t$ distribution with degrees of freedom calculated with Option 1 or 2 with $C$% of its area between $-t^\ast$ and $t^\ast$
+:::
 
-<!-- ### Two-Sample t-test -->
+### Two-Sample t-test
 
-<!-- ::: {.highlight} -->
-<!-- The null hypothesis has the general form   -->
-<!-- $$ H_0:\mu_1-\mu_2=\mu_0 $$ -->
-<!-- where $\mu_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $\mu = 0$. Then the null hypothesis says that there is no difference between the two parameters:  -->
-<!-- $$H_0:\mu_1-\mu_2=0~~\text{or}~~H_0:\mu_1=\mu_2$$ -->
-<!-- The alternative hypothesis says what kind of difference we expect: -->
-<!-- $$H_a:\mu_1-\mu_2>0~~\text{or}~~Ha:\mu_1-\mu_2<0~~\text{or}~~Ha:\mu_1-\mu_2\not =0  $$ -->
-<!-- ::: -->
+::: {.highlight}
+The null hypothesis has the general form
+$$ H_0:\mu_1-\mu_2=\mu_0 $$
+where $\mu_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $\mu = 0$. Then the null hypothesis says that there is no difference between the two parameters:
+$$H_0:\mu_1-\mu_2=0~~\text{or}~~H_0:\mu_1=\mu_2$$
+The alternative hypothesis says what kind of difference we expect:
+$$H_a:\mu_1-\mu_2>0~~\text{or}~~Ha:\mu_1-\mu_2<0~~\text{or}~~Ha:\mu_1-\mu_2\not =0  $$
+:::
 
-<!-- ::: {.highlight} -->
-<!-- Compute the $t$ statistic as: -->
+::: {.highlight}
+Compute the $t$ statistic as:
 
-<!-- $$ -->
-<!-- t = \frac{(\bar x_1 - \bar x_2) - (\mu_1-\mu_2)_0}{\sqrt{\frac{s_{x_1}}{n_1} + \frac{s_{x_2}}{n_2}}} -->
-<!-- $$ -->
-<!-- ::: -->
+$$
+t = \frac{(\bar x_1 - \bar x_2) - (\mu_1-\mu_2)_0}{\sqrt{\frac{s_{x_1}}{n_1} + \frac{s_{x_2}}{n_2}}}
+$$
+:::
 
-<!-- <details> -->
-<!-- <summary> The standard error of the $t$ statistic, unlike the a [two-sample z-test](#two-sample-z-test), is not pooled.</summary> -->
+<details>
+<summary> The standard error of the $t$ statistic, unlike the a [two-sample z-test](#two-sample-z-test), is not pooled.</summary>
 
-<!-- ::: {.highlight} -->
-<!-- The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we're saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there's no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests. -->
-<!-- ::: -->
-<!-- </details> -->
+::: {.highlight}
+The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we're saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there's no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests.
+:::
+</details>
 
 ## The Student's $t$ distribution
 
-<!-- ::: {.highlight} -->
-<!-- Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic  -->
-<!-- $$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$ -->
-<!-- has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough.  -->
+::: {.highlight}
+Draw an SRS of size $n$ from a large population that has a Normal distribution with mean $\mu$ and standard deviation $\sigma$. The statistic
+$$t=\frac{\bar x - \mu}{s_x / \sqrt{n}}$$
+has a $t$-distribution with degrees of freedom $df =  n – 1$, denoted as $t_{n-1}$. When the population distribution isn’t Normal, this statistic will be approximately $t_{n-1}$ if the sample size is large enough.
 
-<!-- As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough. -->
-<!-- ::: -->
+As the $df$ increases, the $t$-distribution approaches $N(0,1)$ (standard normal) (See Figure \@ref(fig:t-dist-to-norm)). This happens because $s_x$ estimates $\sigma$ more accurately as $n$ increases. So using $s_x$ in place of $\sigma$ causes little extra variation when the sample is large enough.
+:::
 
 ### Why a $t$-distribution? {#t-justification}
 
