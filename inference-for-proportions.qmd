@@ -75,6 +75,14 @@ P(Z>z) & \text{ if } H_a:p>p_0 \\
 $$
 :::
 
+::: callout-warning
+
+When checking to see if the sample is large enough, make sure to adjust the large counts condition accordingly. We are assuming the null hypothesis is true, so check if
+
+$n p_0$ and $n(1- p_0)$ are both greater than or equal to 10.
+
+:::
+
 ## Two-Sample $z$-procedures
 
 Two-Sample z-procedures are justified by knowledge about the [sampling distribution of $\hat p_1 - \hat p_2$](#prop-diff-samp-dist).
@@ -85,6 +93,7 @@ The conditions for two-sample z-procedures are the same for the two that we lear
 - Random: The data come from two independent random samples or from two groups in a randomized experiment.
 
 - Large Counts: The counts of “successes” and “failures” in each sample or group $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, and $n_2(1-\hat p_2)$ are all at least 10.
+    * or if you are working with a $z$-test, make sure to instead check it according to the null value $p_0$. $n_1 p_0$, $n_1(1- p_0)$, $n_2 p_0$, and $n_2(1- p_0)$ are all at least 10.
 
 - 10%: When sampling without replacement, check that $n_1\leq(.10)N_1$ and $n2\leq(.10)N_2$.
 :::
