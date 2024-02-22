@@ -243,12 +243,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#one-sample-z-procedures" id="toc-one-sample-z-procedures" class="nav-link" data-scroll-target="#one-sample-z-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(z\)</span>-procedures</a>
   <ul class="collapse">
   <li><a href="#one-sample-z-interval" id="toc-one-sample-z-interval" class="nav-link" data-scroll-target="#one-sample-z-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(z\)</span>-interval</a></li>
-  <li><a href="#one-sample-z-test" id="toc-one-sample-z-test" class="nav-link" data-scroll-target="#one-sample-z-test"><span class="header-section-number">14.2.2</span> One-Sample z-test</a></li>
+  <li><a href="#one-sample-z-test" id="toc-one-sample-z-test" class="nav-link" data-scroll-target="#one-sample-z-test"><span class="header-section-number">14.2.2</span> One-Sample <span class="math inline">\(z\)</span>-test</a></li>
   </ul></li>
-  <li><a href="#two-sample-z-procedures" id="toc-two-sample-z-procedures" class="nav-link" data-scroll-target="#two-sample-z-procedures"><span class="header-section-number">14.3</span> Two-Sample z-procedures</a>
+  <li><a href="#two-sample-z-procedures" id="toc-two-sample-z-procedures" class="nav-link" data-scroll-target="#two-sample-z-procedures"><span class="header-section-number">14.3</span> Two-Sample <span class="math inline">\(z\)</span>-procedures</a>
   <ul class="collapse">
-  <li><a href="#two-sample-z-interval" id="toc-two-sample-z-interval" class="nav-link" data-scroll-target="#two-sample-z-interval"><span class="header-section-number">14.3.1</span> Two-Sample z-interval</a></li>
-  <li><a href="#two-sample-z-test-two-sample-z-test" id="toc-two-sample-z-test-two-sample-z-test" class="nav-link" data-scroll-target="#two-sample-z-test-two-sample-z-test"><span class="header-section-number">14.3.2</span> Two-Sample z-test (#two-sample-z-test)</a></li>
+  <li><a href="#two-sample-z-interval" id="toc-two-sample-z-interval" class="nav-link" data-scroll-target="#two-sample-z-interval"><span class="header-section-number">14.3.1</span> Two-Sample <span class="math inline">\(z\)</span>-interval</a></li>
+  <li><a href="#two-sample-z-test-two-sample-z-test" id="toc-two-sample-z-test-two-sample-z-test" class="nav-link" data-scroll-target="#two-sample-z-test-two-sample-z-test"><span class="header-section-number">14.3.2</span> Two-Sample <span class="math inline">\(z\)</span>-test (#two-sample-z-test)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -323,8 +323,17 @@ Why?
 </div>
 </section>
 <section id="one-sample-z-test" class="level3" data-number="14.2.2">
-<h3 data-number="14.2.2" class="anchored" data-anchor-id="one-sample-z-test"><span class="header-section-number">14.2.2</span> One-Sample z-test</h3>
-<div class="highlight">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="one-sample-z-test"><span class="header-section-number">14.2.2</span> One-Sample <span class="math inline">\(z\)</span>-test</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="One-Sample $z$-test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+One-Sample <span class="math inline">\(z\)</span>-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Given the null hypothesis <span class="math inline">\(H_0: p=p_0\)</span>, and an observed sample proportion <span class="math inline">\(\hat p\)</span> from a sample of size <span class="math inline">\(n\)</span> when all conditions are met. The null sampling distribution of <span class="math inline">\(\hat p\)</span>, calculated assuming <span class="math inline">\(H_0\)</span> is true, has the following:</p>
 <p><span class="math display">\[\mu_{\hat p} = p_0\]</span> <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_{p_0}}{\sqrt n} = \sqrt{\frac{p_0(1- p_0)}{n}}\]</span></p>
 <p>The <strong>z-statistic</strong> is the standardized score of <span class="math inline">\(\hat p\)</span> under the mean and standard deviation of the null distribution:</p>
@@ -338,36 +347,77 @@ P(Z&gt;z) &amp; \text{ if } H_a:p&gt;p_0 \\
 \end{cases}
 \]</span></p>
 </div>
+</div>
 </section>
 </section>
 <section id="two-sample-z-procedures" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="two-sample-z-procedures"><span class="header-section-number">14.3</span> Two-Sample z-procedures</h2>
+<h2 data-number="14.3" class="anchored" data-anchor-id="two-sample-z-procedures"><span class="header-section-number">14.3</span> Two-Sample <span class="math inline">\(z\)</span>-procedures</h2>
 <p>Two-Sample z-procedures are justified by knowledge about the <a href="#prop-diff-samp-dist">sampling distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></a>.</p>
 <p>The conditions for two-sample z-procedures are the same for the two that we learn:</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Conditions for Two-Sample $z$-procedures">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conditions for Two-Sample <span class="math inline">\(z\)</span>-procedures
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><p>Random: The data come from two independent random samples or from two groups in a randomized experiment.</p></li>
 <li><p>Large Counts: The counts of “successes” and “failures” in each sample or group <span class="math inline">\(n_1\hat p_1\)</span>, <span class="math inline">\(n_1(1-\hat p_1)\)</span>, <span class="math inline">\(n_2\hat p_2\)</span>, and <span class="math inline">\(n_2(1-\hat p_2)\)</span> are all at least 10.</p></li>
 <li><p>10%: When sampling without replacement, check that <span class="math inline">\(n_1\leq(.10)N_1\)</span> and <span class="math inline">\(n2\leq(.10)N_2\)</span>.</p></li>
 </ul>
 </div>
+</div>
 <section id="two-sample-z-interval" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="two-sample-z-interval"><span class="header-section-number">14.3.1</span> Two-Sample z-interval</h3>
-<div class="highlight">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="two-sample-z-interval"><span class="header-section-number">14.3.1</span> Two-Sample <span class="math inline">\(z\)</span>-interval</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Two-Sample $z$-interval">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two-Sample <span class="math inline">\(z\)</span>-interval
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>When the conditions are met, an approximate <span class="math inline">\(C\)</span>% confidence interval for <span class="math inline">\(p_1-p_2\)</span> is:</p>
 <p><span class="math display">\[(\hat p_1-\hat p_2)\pm z^\ast\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1}+\frac{\hat p_2(1-\hat p_2)}{n_2}}\]</span></p>
 <p>Where <span class="math inline">\(z^\ast\)</span> is the critical value for the standard Normal curve with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-z^\ast\)</span> and <span class="math inline">\(z^\ast\)</span></p>
 </div>
+</div>
 </section>
 <section id="two-sample-z-test-two-sample-z-test" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="two-sample-z-test-two-sample-z-test"><span class="header-section-number">14.3.2</span> Two-Sample z-test (#two-sample-z-test)</h3>
-<div class="highlight">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="two-sample-z-test-two-sample-z-test"><span class="header-section-number">14.3.2</span> Two-Sample <span class="math inline">\(z\)</span>-test (#two-sample-z-test)</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Two-Sample $z$-test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two-Sample <span class="math inline">\(z\)</span>-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The null hypothesis has the general form <span class="math display">\[ H_0:p_1-p_2=p_0 \]</span> where <span class="math inline">\(p_0\)</span> is our hypothesized difference. We’ll restrict ourselves to situations in which <span class="math inline">\(p_0 =0\)</span>. Then the null hypothesis says that there is no difference between the two parameters: <span class="math display">\[H_0:p_1-p_2=0~~\text{or}~~H_0:p_1=p_2\]</span> The alternative hypothesis says what kind of difference we expect: <span class="math display">\[H_a:p_1-p_2&gt;0~~\text{or}~~Ha:p_1-p_2&lt;0~~\text{or}~~Ha:p_1-p_2\not =0  \]</span></p>
 </div>
-<div class="highlight">
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Calculations for Two-Sample $z$-test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Calculations for Two-Sample <span class="math inline">\(z\)</span>-test
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Suppose the conditions are met. To test the hypotheses <span class="math inline">\(H_0: p_1 - p_2 = 0\)</span>, first find the pooled proportion <span class="math inline">\(\hat p_c\)</span> of successes in both samples combined.</p>
 <p><span class="math display">\[\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}\]</span></p>
 <p>Then compute the z statistic: <span class="math display">\[ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}\]</span></p>
+</div>
 </div>
 
 
