@@ -348,6 +348,20 @@ P(Z&gt;z) &amp; \text{ if } H_a:p&gt;p_0 \\
 \]</span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When checking to see if the sample is large enough, make sure to adjust the large counts condition accordingly. We are assuming the null hypothesis is true, so check if</p>
+<p><span class="math inline">\(n p_0\)</span> and <span class="math inline">\(n(1- p_0)\)</span> are both greater than or equal to 10.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="two-sample-z-procedures" class="level2" data-number="14.3">
@@ -366,7 +380,10 @@ Conditions for Two-Sample <span class="math inline">\(z\)</span>-procedures
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Random: The data come from two independent random samples or from two groups in a randomized experiment.</p></li>
-<li><p>Large Counts: The counts of “successes” and “failures” in each sample or group <span class="math inline">\(n_1\hat p_1\)</span>, <span class="math inline">\(n_1(1-\hat p_1)\)</span>, <span class="math inline">\(n_2\hat p_2\)</span>, and <span class="math inline">\(n_2(1-\hat p_2)\)</span> are all at least 10.</p></li>
+<li><p>Large Counts: The counts of “successes” and “failures” in each sample or group <span class="math inline">\(n_1\hat p_1\)</span>, <span class="math inline">\(n_1(1-\hat p_1)\)</span>, <span class="math inline">\(n_2\hat p_2\)</span>, and <span class="math inline">\(n_2(1-\hat p_2)\)</span> are all at least 10.</p>
+<ul>
+<li>or if you are working with a <span class="math inline">\(z\)</span>-test, make sure to instead check it according to the null value <span class="math inline">\(p_0\)</span>. <span class="math inline">\(n_1 p_0\)</span>, <span class="math inline">\(n_1(1- p_0)\)</span>, <span class="math inline">\(n_2 p_0\)</span>, and <span class="math inline">\(n_2(1- p_0)\)</span> are all at least 10.</li>
+</ul></li>
 <li><p>10%: When sampling without replacement, check that <span class="math inline">\(n_1\leq(.10)N_1\)</span> and <span class="math inline">\(n2\leq(.10)N_2\)</span>.</p></li>
 </ul>
 </div>
