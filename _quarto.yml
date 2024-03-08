@@ -27,7 +27,7 @@ book:
     - hypothesis-testing.qmd
     - inference-for-proportions.qmd
     - inference-for-means.qmd
-    # - inference-for-categories.qmd
+    - inference-for-categories.qmd
     # - linear-regression.qmd
     # - inference-for-slope.qmd
   appendices:
