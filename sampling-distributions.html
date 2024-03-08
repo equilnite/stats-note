@@ -200,6 +200,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inference-for-categories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\chi^2\)</span> Tests</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -247,6 +253,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#clt" id="toc-clt" class="nav-link" data-scroll-target="#clt"><span class="header-section-number">11.3.2</span> Central Limit Theorem (CLT)</a></li>
   <li><a href="#when-do-we-have-normality" id="toc-when-do-we-have-normality" class="nav-link" data-scroll-target="#when-do-we-have-normality"><span class="header-section-number">11.3.3</span> When do we have normality?</a></li>
   </ul></li>
+  <li><a href="#prop-diff-samp-dist" id="toc-prop-diff-samp-dist" class="nav-link" data-scroll-target="#prop-diff-samp-dist"><span class="header-section-number">11.4</span> Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></a></li>
+  <li><a href="#mean-diff-samp-dist" id="toc-mean-diff-samp-dist" class="nav-link" data-scroll-target="#mean-diff-samp-dist"><span class="header-section-number">11.5</span> Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -440,18 +448,23 @@ Central Limit Theorem
 </tr>
 </tbody>
 </table>
-<!-- ## Sampling Distribution of $\hat p_1 - \hat p_2$ {#prop-diff-samp-dist} -->
-<!-- ::: {.highlight} -->
-<!-- Choose an SRS of size $n_1$ from Population 1 with proportion of successes $p_1$ and an independent SRS of size $n_2$ from Population 2 with proportion of successes $p_2$. -->
-<!-- **Shape:**  -->
-<!-- When $n_1p_1$, $n_1(1-p_1)$, $n_2p_2$, and $n_2(1-p_2$) are all at least 10, the sampling distribution of $p_1-p_2$ is approximately Normal.  -->
-<!-- **Center:**  -->
-<!-- The mean of the sampling distribution is $$\mu_{\hat p_1-\hat p_2} =p_1-p_2$$. -->
-<!-- **Spread:**  -->
-<!-- The standard deviation of $\hat p_1-\hat p_2$ is $$s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}$$ as long as each sample is no more than 10% of its population (10% condition) -->
-<!-- ::: -->
-<!-- ## Sampling Distribution of $\bar x_1 - \bar x_2$ {#mean-diff-samp-dist} -->
-<p>::: {.highlight}</p>
+</section>
+</section>
+<section id="prop-diff-samp-dist" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="prop-diff-samp-dist"><span class="header-section-number">11.4</span> Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></h2>
+<div class="highlight">
+<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with proportion of successes <span class="math inline">\(p_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with proportion of successes <span class="math inline">\(p_2\)</span>.</p>
+<p><strong>Shape:</strong></p>
+<p>When <span class="math inline">\(n_1p_1\)</span>, <span class="math inline">\(n_1(1-p_1)\)</span>, <span class="math inline">\(n_2p_2\)</span>, and <span class="math inline">\(n_2(1-p_2\)</span>) are all at least 10, the sampling distribution of <span class="math inline">\(p_1-p_2\)</span> is approximately Normal.</p>
+<p><strong>Center:</strong></p>
+<p>The mean of the sampling distribution is <span class="math display">\[\mu_{\hat p_1-\hat p_2} =p_1-p_2\]</span>.</p>
+<p><strong>Spread:</strong></p>
+<p>The standard deviation of <span class="math inline">\(\hat p_1-\hat p_2\)</span> is <span class="math display">\[s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\]</span> as long as each sample is no more than 10% of its population (10% condition)</p>
+</div>
+</section>
+<section id="mean-diff-samp-dist" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="mean-diff-samp-dist"><span class="header-section-number">11.5</span> Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></h2>
+<div class="highlight">
 <p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with mean <span class="math inline">\(\mu_1\)</span> and standard deviation <span class="math inline">\(\sigma_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with mean <span class="math inline">\(\mu_2\)</span> and standard deviation <span class="math inline">\(\sigma_2\)</span>.</p>
 <p><strong>Shape:</strong></p>
 <p>When the population distributions are Normal, the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough (<span class="math inline">\(n_1 \geq 30\)</span> and <span class="math inline">\(n_2 \geq 30\)</span>)</p>
@@ -461,10 +474,9 @@ Central Limit Theorem
 <p><strong>Spread:</strong></p>
 <p>As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is</p>
 <p><span class="math display">\[\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span></p>
-<!-- ::: -->
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
