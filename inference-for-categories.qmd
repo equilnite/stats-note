@@ -121,7 +121,7 @@ Carrie made a 6-sided die in her ceramics class and rolled it 90 times to test i
 > | Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
 > |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 > | Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
-> | Theoretical<br>Probability                   | 1/6    | 1/6     | 1/6    | 1/6    | 1/6    | 1/6    |
+> | Theoretical Probability                   | 1/6    | 1/6     | 1/6    | 1/6    | 1/6    | 1/6    |
 > | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
 > | $\frac{(Observed - Expected) ^ 2}{Expected}$ | $\frac{(12 - 15) ^ 2}{15}$ | $\frac{(28 - 15) ^ 2}{15}$ | $\frac{(12 - 15) ^ 2}{15}$ | $\frac{(13 - 15) ^ 2}{15}$ | $\frac{(10 - 15) ^ 2}{15}$ | $\frac{(15 - 15) ^ 2}{15}$ |
 >
@@ -197,46 +197,121 @@ Here's a a video tutorial using the example from Page 3 in your packets.
 
 {{< video https://youtu.be/ZZtsomC2-Fg >}}
 
-<!-- ## $\chi^2$ Test of Homogeneity {#ChiSqHomogen} -->
+## $\chi^2$ Test of Homogeneity {#ChiSqHomogen}
 
-<!-- ::: highlight -->
-<!-- We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another? -->
-<!-- ::: -->
+::: highlight
+We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another?
+:::
 
-<!-- **Hypotheses**: -->
+**Hypotheses**:
 
-<!-- $H_0$: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments. -->
+$H_0$: The distribution of the variable is the same across all groups/treatments.
 
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\ -->
-<!-- &p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\ -->
-<!-- &\cdots,\\ -->
-<!-- &p_{r, 1} = p_{r,2} = \cdots =p_{r, c} -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+$$
+\begin{aligned}
+H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&\cdots,\\
+&p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+$$
 
-<!-- where each there are $r$ rows (categories in the variable) and $c$ columns (populations/samples/groups/treatments) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column. -->
+where each there are $r$ rows (categories in the variable) and $c$ columns (populations/samples/groups/treatments) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column.
 
-<!-- $H_a$: There is an association between the group and the variable, or the distribution of the variable is not the same across all groups/treatments. -->
+$H_a$: The distribution of the variable is not the same across all groups/treatments.
 
-<!-- (The symbolic notation would be too messy, so it's not included) -->
+(The symbolic notation would be too messy, so it's not included)
 
-<!-- **Expected Counts**: -->
+**Expected Counts**:
 
-<!-- The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$). -->
+The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
 
-<!-- $$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$ -->
+$$\text{Expected} = \frac{(\text{row total}) \cdot (\text{column total})}{\text{total}}$$
 
-<!-- $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$ -->
+$$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$
 
-<!-- **Degrees of freedom**: -->
+**Degrees of freedom**:
 
-<!-- We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$ -->
+We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
 
-<!-- **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$ -->
+**$\chi^2$ Test Statistic**: 
 
-<!-- ### Example {#chi-homogen-ex} -->
+Calculate the $\chi^2$ test statistic the same as always (don't mind the complicated looking formula here).
+
+$$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
+
+### Example {#chi-homogen-ex}
+
+*(Modified question, compare to the [Test of Independence](#chi-indepen-ex))*
+
+The General Social Survey (GSS) asked random samples of 234 Associate Holders, 321 Bachelor Holders, and 132 Master holders of their opinion about whether astrology is very scientific, sort of scientific, or not at all scientific. Here is a two-way table of counts for people in the sample who had three levels of higher education:
+
+```{=html}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 618px">
+<colgroup>
+<col style="width: 164.333333px">
+<col style="width: 171.333333px">
+<col style="width: 83.333333px">
+<col style="width: 81.333333px">
+<col style="width: 68.333333px">
+<col style="width: 49.333333px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-cly1"></th>
+    <th class="tg-cly1"></th>
+    <th class="tg-cly1" colspan="3">Degree held</th>
+    <th class="tg-cly1">       </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-cly1"> </td>
+    <td class="tg-cly1"> </td>
+    <td class="tg-cly1">Associate’s</td>
+    <td class="tg-cly1">Bachelor’s </td>
+    <td class="tg-cly1"> Master’s</td>
+    <td class="tg-cly1">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1" rowspan="2">Opinion about astrology</td>
+    <td class="tg-cly1"> Not at all scientific</td>
+    <td class="tg-cly1">169</td>
+    <td class="tg-cly1">   256   </td>
+    <td class="tg-cly1">114</td>
+    <td class="tg-cly1">   539   </td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Very or sort of scientific</td>
+    <td class="tg-cly1">65</td>
+    <td class="tg-cly1">65</td>
+    <td class="tg-cly1">18</td>
+    <td class="tg-cly1">148</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1"> </td>
+    <td class="tg-cly1"> Total</td>
+    <td class="tg-cly1">234</td>
+    <td class="tg-cly1">321</td>
+    <td class="tg-cly1">132</td>
+    <td class="tg-cly1">687</td>
+  </tr>
+</tbody>
+</table>
+```
+
+
+Do the data provide convincing evidence of an difference in distribution of astrology opinion between degree holders?
+
+
 
 <!-- *(Modified question, compare to the [Test of Independence](#chi-indepen-ex))* -->
 
@@ -250,6 +325,88 @@ Here's a a video tutorial using the example from Page 3 in your packets.
 <!-- | **Total**        |    212     |   240    |    452    | -->
 
 <!-- Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey? -->
+
+#### State
+
+> $H_0$: The distribution of astrology opinion is the same between degree holders.
+>
+> $H_a$: The distribution of astrology opinion is different between degree holders.
+
+#### Plan
+
+> If the conditions are met, I will use a $\chi^2$ Test of Homogeneity
+>
+> ```{=html}
+> <style type="text/css">
+> .tg  {border-collapse:collapse;border-spacing:0;}
+> .tg td{border-color:black;border-style:solid;border-width:1px;
+> overflow:hidden;padding:10px 5px;word-break:normal;}
+> .tg th{border-color:black;border-style:solid;border-width:1px;
+> font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+> .tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+> </style>
+> <table class="tg" style="undefined;table-layout: fixed; width: 569px">
+> <colgroup>
+> <col style="width: 164.333333px">
+> <col style="width: 171.333333px">
+> <col style="width: 83.333333px">
+> <col style="width: 81.333333px">
+> <col style="width: 68.333333px">
+> </colgroup>
+> <thead>
+> <tr>
+> <th class="tg-lboi"><span style="font-weight:bold">Expected Counts</span></th>
+> <th class="tg-lboi"> </th>
+> <th class="tg-lboi" colspan="3">Degree held</th>
+> </tr>
+> </thead>
+> <tbody>
+> <tr>
+> <td class="tg-lboi"> </td>
+> <td class="tg-lboi"> </td>
+> <td class="tg-lboi">Associate’s</td>
+> <td class="tg-lboi">Bachelor’s </td>
+> <td class="tg-lboi"> Master’s</td>
+> </tr>
+> <tr>
+> <td class="tg-lboi" rowspan="2">Opinion about astrology</td>
+> <td class="tg-lboi"> Not at all scientific</td>
+> <td class="tg-lboi">183.59</td>
+> <td class="tg-lboi">   251.847</td>
+> <td class="tg-lboi">   103.563</td>
+> </tr>
+> <tr>
+> <td class="tg-lboi">Very or sort of scientific</td>
+> <td class="tg-lboi"> 50.41</td>
+> <td class="tg-lboi">69.153</td>
+> <td class="tg-lboi">28.437</td>
+> </tr>
+> </tbody>
+> </table>
+> ```
+>
+> **Random:** Each sample of degree holders are randomly selected.
+>
+> **Large:** All the expected counts are at least 5
+>
+> **Independence:** There are at least $10n_1=2340$ Associate Holders, $10n_2=3210$ Bachelor Holders, and $10n_3=1320$  Master holders
+
+
+#### Do
+
+> ```{=tex}
+> \begin{aligned}
+> \chi^2 = &\frac{(169-183.59)^2}{183.59} + \frac{(256-251.847)^2}{251.847} + \frac{(114-103.563)^2}{103.563} +\\
+&\frac{(65-50.41)^2}{50.41} + \frac{(65-69.153)^2}{69.153} + \frac{(18-28.437)^2}{28.437}\\\\
+> 
+> df =&  (2-1)(3-1) = 2\\\\
+> \text{p-value } =& \chi^2\texttt{cdf(10.582, 1000, 2)} \approx 0.005
+> \end{aligned}
+> ```
+
+#### Conclude
+
+> Since $\text{p-value} \approx 0.005 < 0.05 = \alpha$, we reject the null hypothesis. There is convincing evidence that the distribution of astrology opinion is different between degree holders.
 
 <!-- #### State -->
 
@@ -294,48 +451,197 @@ Here's a a video tutorial using the example from Page 3 in your packets.
 
 <!-- > Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. -->
 
-<!-- ## $\chi^2$ Test of Independence {#ChiSqInd} -->
+## $\chi^2$ Test of Independence {#ChiSqInd}
 
-<!-- ::: highlight -->
-<!-- We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability) when we compared just the probability of a single event and a conditional probability -->
-<!-- ::: -->
+::: highlight
+We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability) when we compared just the probability of a single event and a conditional probability
+:::
 
-<!-- **Hypotheses**: -->
+**Hypotheses**:
 
-<!-- $H_0$: There is no association between the two variables or that the two events are independent. -->
+$H_0$: There is no association between the two variables or that the two events are independent.
 
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\ -->
-<!-- &p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\ -->
-<!-- &\cdots,\\ -->
-<!-- &p_{r, 1} = p_{r,2} = \cdots =p_{r, c} -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+$$
+\begin{aligned}
+H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&\cdots,\\
+&p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+$$
 
-<!-- where each there are $r$ rows (categories in the first variable) and $c$ columns (categories in the second variable) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column. -->
+where each there are $r$ rows (categories in the first variable) and $c$ columns (categories in the second variable) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column.
 
-<!-- $H_a$: There is an association between the two variables or that the two events are not independent. -->
+$H_a$: There is an association between the two variables or that the two events are not independent.
 
-<!-- (The symbolic notation would be too messy, so it's not included) -->
+(The symbolic notation would be too messy, so it's not included)
 
-<!-- **Expected Counts**: -->
+**Expected Counts**:
 
-<!-- The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$). -->
+The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$).
 
-<!-- $$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$ -->
+$$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$
 
-<!-- $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$ -->
+$$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$
 
-<!-- **Degrees of freedom**: -->
+**Degrees of freedom**:
 
-<!-- We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$ -->
+We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$
 
-<!-- **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$ -->
+**Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$
 
-<!-- ### Example {#chi-indepen-ex} -->
+### Example {#chi-indepen-ex}
 
-<!-- *(Original question, compare to the [Test of Homogeneity](#chi-homogen-ex)* -->
+*(Original question, compare to the [Test of Homogeneity](#chi-homogen-ex)*
+
+The General Social Survey (GSS) asked a random sample of their opinion about whether astrology is very scientific, sort of scientific, or not at all scientific. Here is a two-way table of counts for people in the sample who had three levels of higher education:
+
+```{=html}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 618px">
+<colgroup>
+<col style="width: 164.333333px">
+<col style="width: 171.333333px">
+<col style="width: 83.333333px">
+<col style="width: 81.333333px">
+<col style="width: 68.333333px">
+<col style="width: 49.333333px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-cly1"></th>
+    <th class="tg-cly1"></th>
+    <th class="tg-cly1" colspan="3">Degree held</th>
+    <th class="tg-cly1">       </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-cly1"> </td>
+    <td class="tg-cly1"> </td>
+    <td class="tg-cly1">Associate’s</td>
+    <td class="tg-cly1">Bachelor’s </td>
+    <td class="tg-cly1"> Master’s</td>
+    <td class="tg-cly1">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1" rowspan="2">Opinion about astrology</td>
+    <td class="tg-cly1"> Not at all scientific</td>
+    <td class="tg-cly1">169</td>
+    <td class="tg-cly1">   256   </td>
+    <td class="tg-cly1">114</td>
+    <td class="tg-cly1">   539   </td>
+  </tr>
+  <tr>
+    <td class="tg-cly1">Very or sort of scientific</td>
+    <td class="tg-cly1">65</td>
+    <td class="tg-cly1">65</td>
+    <td class="tg-cly1">18</td>
+    <td class="tg-cly1">148</td>
+  </tr>
+  <tr>
+    <td class="tg-cly1"> </td>
+    <td class="tg-cly1"> Total</td>
+    <td class="tg-cly1">234</td>
+    <td class="tg-cly1">321</td>
+    <td class="tg-cly1">132</td>
+    <td class="tg-cly1">687</td>
+  </tr>
+</tbody>
+</table>
+```
+
+
+Do the data provide convincing evidence of an association between astrology opinion and degree held by an adult?
+
+#### State
+
+> $H_0$: There is no association between astrology opinion and degree held by an adult.
+>
+> $H_a$: There is an association between astrology opinion and degree held by an adult.
+
+#### Plan
+
+> If the conditions are met, I will use a $\chi^2$ Test of Independence.
+>
+> ```{=html}
+> <style type="text/css">
+> .tg  {border-collapse:collapse;border-spacing:0;}
+> .tg td{border-color:black;border-style:solid;border-width:1px;
+> overflow:hidden;padding:10px 5px;word-break:normal;}
+> .tg th{border-color:black;border-style:solid;border-width:1px;
+> font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+> .tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+> </style>
+> <table class="tg" style="undefined;table-layout: fixed; width: 569px">
+> <colgroup>
+> <col style="width: 164.333333px">
+> <col style="width: 171.333333px">
+> <col style="width: 83.333333px">
+> <col style="width: 81.333333px">
+> <col style="width: 68.333333px">
+> </colgroup>
+> <thead>
+> <tr>
+> <th class="tg-lboi"><span style="font-weight:bold">Expected Counts</span></th>
+> <th class="tg-lboi"> </th>
+> <th class="tg-lboi" colspan="3">Degree held</th>
+> </tr>
+> </thead>
+> <tbody>
+> <tr>
+> <td class="tg-lboi"> </td>
+> <td class="tg-lboi"> </td>
+> <td class="tg-lboi">Associate’s</td>
+> <td class="tg-lboi">Bachelor’s </td>
+> <td class="tg-lboi"> Master’s</td>
+> </tr>
+> <tr>
+> <td class="tg-lboi" rowspan="2">Opinion about astrology</td>
+> <td class="tg-lboi"> Not at all scientific</td>
+> <td class="tg-lboi">183.59</td>
+> <td class="tg-lboi">   251.847</td>
+> <td class="tg-lboi">   103.563</td>
+> </tr>
+> <tr>
+> <td class="tg-lboi">Very or sort of scientific</td>
+> <td class="tg-lboi"> 50.41</td>
+> <td class="tg-lboi">69.153</td>
+> <td class="tg-lboi">28.437</td>
+> </tr>
+> </tbody>
+> </table>
+> ```
+>
+> **Random:** The sample of adults is randomly selected.
+>
+> **Large:** All the expected counts are at least 5
+>
+> **Independence:** There are at least $10n = 6870$ adults.
+
+
+#### Do
+
+> ```{=tex}
+> \begin{aligned}
+> \chi^2 = &\frac{(169-183.59)^2}{183.59} + \frac{(256-251.847)^2}{251.847} + \frac{(114-103.563)^2}{103.563} +\\
+&\frac{(65-50.41)^2}{50.41} + \frac{(65-69.153)^2}{69.153} + \frac{(18-28.437)^2}{28.437}\\\\
+> 
+> df =&  (2-1)(3-1) = 2\\\\
+> \text{p-value } =& \chi^2\texttt{cdf(10.582, 1000, 2)} \approx 0.005
+> \end{aligned}
+> ```
+
+#### Conclude
+
+> Since $\text{p-value} \approx 0.005 < 0.05 = \alpha$, we reject the null hypothesis. There is convincing evidence there is an association between an adult's opinion about astrology and the degree that they hold.
 
 <!-- Is there a relationship between gender and relative finger length? We looked at a random sample of 452 U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger). -->
 
@@ -385,26 +691,43 @@ Here's a a video tutorial using the example from Page 3 in your packets.
 
 <!-- > Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. -->
 
-<!-- ## Follow-up (Component) Analysis -->
+## Calculator for Homogeneity/Independence
 
-<!-- Given our $\chi^2$ statistic, $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}$$ -->
+There's no difference in how $\chi^2$, $df$, and the p-value is calculated between the $\chi^2$ test for Homogeneity and the $\chi^2$ test for Independence.
 
-<!-- Each individual term $\frac{(Observed-Expected)^2}{Expected}$ that is calculated to be added up is called a component of the $\chi^2$ statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value. -->
+1. Enter the observed data seen in the two-way table in matrix `[A]`
+    - Access this by `2nd` > $\texttt{x}^{\texttt{-1}}$ (`matrix`) > `EDIT`
+    - Make sure to edit the dimensions of the matrix by matching up the number of rows `x` the number of columns
+2. Do a $\chi^2\texttt{-Test}$
+    - Access this by `stat` > `TESTS`
+    - Leave observed as `[A]` and expected as `[B]`
+    - Just hit calculate
+    - You will see the $\chi^2$ test statistic value, p-value, and df
+3. Matrix `[B]` is now populated with the expected counts.
+    - View matrix `[B]` the same way that you edited matrix `[A]`
 
-<!-- When doing a follow-up analysis of the $\chi^2$ test, look at the components of the calculated $chi^2$ statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor. -->
+{{< video https://youtu.be/NPUqG3fp4EI >}}
 
-<!-- ### Example -->
+## Follow-up (Component) Analysis
 
-<!-- (From the [$\chi^2$ GOF Example](#GOF-example)) -->
+Given our $\chi^2$ statistic, $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}$$
 
-<!-- If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis. -->
+Each individual term $\frac{(Observed-Expected)^2}{Expected}$ that is calculated to be added up is called a component of the $\chi^2$ statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value.
 
-<!-- A reminder of our results: -->
+When doing a follow-up analysis of the $\chi^2$ test, look at the components of the calculated $chi^2$ statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor.
 
-<!-- | Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      | -->
-<!-- |-----------|-----------|-----------|-----------|-----------|-----------|-----------| -->
-<!-- | Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     | -->
-<!-- | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     | -->
-<!-- | $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 | -->
+### Example
 
-<!-- > Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair. -->
+(From the [$\chi^2$ GOF Example](#GOF-example))
+
+If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis.
+
+A reminder of our results:
+
+| Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     |
+| Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     |
+| $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 |
+
+> Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.
