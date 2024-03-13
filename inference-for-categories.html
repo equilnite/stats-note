@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -104,12 +111,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style/console.css">
 <link rel="stylesheet" href="style/style.css">
@@ -121,12 +154,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference-for-categories.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">$\chi^2$ Tests</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference-for-categories.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\chi^2\)</span> Tests</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -136,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">AP Statistics Notes</a> 
@@ -277,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -290,6 +323,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#GOF-example" id="toc-GOF-example" class="nav-link" data-scroll-target="#GOF-example"><span class="header-section-number">16.3.1</span> Example</a></li>
   <li><a href="#GOF-calculator" id="toc-GOF-calculator" class="nav-link" data-scroll-target="#GOF-calculator"><span class="header-section-number">16.3.2</span> Doing it on a calculator</a></li>
+  </ul></li>
+  <li><a href="#ChiSqHomogen" id="toc-ChiSqHomogen" class="nav-link" data-scroll-target="#ChiSqHomogen"><span class="header-section-number">16.4</span> <span class="math inline">\(\chi^2\)</span> Test of Homogeneity</a>
+  <ul class="collapse">
+  <li><a href="#chi-homogen-ex" id="toc-chi-homogen-ex" class="nav-link" data-scroll-target="#chi-homogen-ex"><span class="header-section-number">16.4.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#ChiSqInd" id="toc-ChiSqInd" class="nav-link" data-scroll-target="#ChiSqInd"><span class="header-section-number">16.5</span> <span class="math inline">\(\chi^2\)</span> Test of Independence</a>
+  <ul class="collapse">
+  <li><a href="#chi-indepen-ex" id="toc-chi-indepen-ex" class="nav-link" data-scroll-target="#chi-indepen-ex"><span class="header-section-number">16.5.1</span> Example</a></li>
+  </ul></li>
+  <li><a href="#calculator-for-homogeneityindependence" id="toc-calculator-for-homogeneityindependence" class="nav-link" data-scroll-target="#calculator-for-homogeneityindependence"><span class="header-section-number">16.6</span> Calculator for Homogeneity/Independence</a></li>
+  <li><a href="#follow-up-component-analysis" id="toc-follow-up-component-analysis" class="nav-link" data-scroll-target="#follow-up-component-analysis"><span class="header-section-number">16.7</span> Follow-up (Component) Analysis</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">16.7.1</span> Example</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -304,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -312,7 +358,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p><span class="math inline">\(\chi^2\)</span> <a href="https://upload.wikimedia.org/wikipedia/commons/6/6d/En-us-chi.ogg">(pronounced “kai” (/ˈkaɪ, ˈxiː/) squared)</a> tests are used in situations where we have 2 or more proportions, and we want to see whether the distribution of those proportions is something that could occur naturally. There are three types that we cover.</p>
 <section id="sampling-distribution-of-chi2" class="level2" data-number="16.1">
@@ -508,7 +556,7 @@ Be careful and remember that:
 <td>15</td>
 </tr>
 <tr class="even">
-<td>Theoretical<br>Probability</td>
+<td>Theoretical Probability</td>
 <td>1/6</td>
 <td>1/6</td>
 <td>1/6</td>
@@ -621,34 +669,95 @@ Be careful and remember that:
 </ol>
 <p>Here’s a a video tutorial using the example from Page 3 in your packets.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ZZtsomC2-Fg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<!-- ## $\chi^2$ Test of Homogeneity {#ChiSqHomogen} -->
-<!-- ::: highlight -->
-<!-- We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another? -->
-<!-- ::: -->
-<!-- **Hypotheses**: -->
-<!-- $H_0$: There is no association between the group and the variable, or the distribution of the variable is the same across all groups/treatments. -->
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\ -->
-<!-- &p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\ -->
-<!-- &\cdots,\\ -->
-<!-- &p_{r, 1} = p_{r,2} = \cdots =p_{r, c} -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+</section>
+</section>
+<section id="ChiSqHomogen" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="ChiSqHomogen"><span class="header-section-number">16.4</span> <span class="math inline">\(\chi^2\)</span> Test of Homogeneity</h2>
+<div class="highlight">
+<p>We do this test when we wonder, “Is the distribution of this group’s data the same as this other group’s distribution of data?” So how similar (“homogenous”) is one group/treatment compared to another?</p>
+</div>
+<p><strong>Hypotheses</strong>:</p>
+<p><span class="math inline">\(H_0\)</span>: The distribution of the variable is the same across all groups/treatments.</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&amp;p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&amp;\cdots,\\
+&amp;p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+\]</span></p>
+<p>where each there are <span class="math inline">\(r\)</span> rows (categories in the variable) and <span class="math inline">\(c\)</span> columns (populations/samples/groups/treatments) in the two-way table. Each <span class="math inline">\(p_{i, j}\)</span> correlates to the <span class="math inline">\(i^{th}\)</span> row and the <span class="math inline">\(j^{th}\)</span> column.</p>
+<p><span class="math inline">\(H_a\)</span>: The distribution of the variable is not the same across all groups/treatments.</p>
+<p>(The symbolic notation would be too messy, so it’s not included)</p>
+<p><strong>Expected Counts</strong>:</p>
+<p>The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
+<p><span class="math display">\[\text{Expected} = \frac{(\text{row total}) \cdot (\text{column total})}{\text{total}}\]</span></p>
+<p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
+<p><strong>Degrees of freedom</strong>:</p>
+<p>We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
+<p><strong><span class="math inline">\(\chi^2\)</span> Test Statistic</strong>:</p>
+<p>Calculate the <span class="math inline">\(\chi^2\)</span> test statistic the same as always (don’t mind the complicated looking formula here).</p>
+<p><span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
+<section id="chi-homogen-ex" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="chi-homogen-ex"><span class="header-section-number">16.4.1</span> Example</h3>
+<p><em>(Modified question, compare to the <a href="#chi-indepen-ex">Test of Independence</a>)</em></p>
+<p>The General Social Survey (GSS) asked random samples of 234 Associate Holders, 321 Bachelor Holders, and 132 Master holders of their opinion about whether astrology is very scientific, sort of scientific, or not at all scientific. Here is a two-way table of counts for people in the sample who had three levels of higher education:</p>
+<div>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+</style>
 
-<!-- where each there are $r$ rows (categories in the variable) and $c$ columns (populations/samples/groups/treatments) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column. -->
-<!-- $H_a$: There is an association between the group and the variable, or the distribution of the variable is not the same across all groups/treatments. -->
-<!-- (The symbolic notation would be too messy, so it's not included) -->
-<!-- **Expected Counts**: -->
-<!-- The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$). -->
-<!-- $$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$ -->
-<!-- $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$ -->
-<!-- **Degrees of freedom**: -->
-<!-- We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$ -->
-<!-- **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$ -->
-<!-- ### Example {#chi-homogen-ex} -->
+<table class="tg table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="tg-cly1" data-quarto-table-cell-role="th"></th>
+<th class="tg-cly1" data-quarto-table-cell-role="th"></th>
+<th colspan="3" class="tg-cly1" data-quarto-table-cell-role="th">Degree held</th>
+<th class="tg-cly1" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-cly1"></td>
+<td class="tg-cly1"></td>
+<td class="tg-cly1">Associate’s</td>
+<td class="tg-cly1">Bachelor’s</td>
+<td class="tg-cly1">Master’s</td>
+<td class="tg-cly1">Total</td>
+</tr>
+<tr class="even">
+<td rowspan="2" class="tg-cly1">Opinion about astrology</td>
+<td class="tg-cly1">Not at all scientific</td>
+<td class="tg-cly1">169</td>
+<td class="tg-cly1">256</td>
+<td class="tg-cly1">114</td>
+<td class="tg-cly1">539</td>
+</tr>
+<tr class="odd">
+<td class="tg-cly1">Very or sort of scientific</td>
+<td class="tg-cly1">65</td>
+<td class="tg-cly1">65</td>
+<td class="tg-cly1">18</td>
+<td class="tg-cly1">148</td>
+</tr>
+<tr class="even">
+<td class="tg-cly1"></td>
+<td class="tg-cly1">Total</td>
+<td class="tg-cly1">234</td>
+<td class="tg-cly1">321</td>
+<td class="tg-cly1">132</td>
+<td class="tg-cly1">687</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Do the data provide convincing evidence of an difference in distribution of astrology opinion between degree holders?</p>
 <!-- *(Modified question, compare to the [Test of Independence](#chi-indepen-ex))* -->
-
 <!-- Is there a relationship between gender and relative finger length? We looked at a random sample of 212 female U.S. high school students and a random sample of 240 male U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger). -->
 <!-- |                  | **Female** | **Male** | **Total** | -->
 <!-- |------------------|:----------:|:--------:|:---------:| -->
@@ -657,6 +766,81 @@ Be careful and remember that:
 <!-- | **Same length**  |     52     |    43    |    95     | -->
 <!-- | **Total**        |    212     |   240    |    452    | -->
 <!-- Does the data provide convincing evidence of an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey? -->
+<section id="state-1" class="level4">
+<h4 class="anchored" data-anchor-id="state-1">State</h4>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_0\)</span>: The distribution of astrology opinion is the same between degree holders.</p>
+<p><span class="math inline">\(H_a\)</span>: The distribution of astrology opinion is different between degree holders.</p>
+</blockquote>
+</section>
+<section id="plan-1" class="level4">
+<h4 class="anchored" data-anchor-id="plan-1">Plan</h4>
+<blockquote class="blockquote">
+<p>If the conditions are met, I will use a <span class="math inline">\(\chi^2\)</span> Test of Homogeneity</p>
+<div>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+</style>
+
+<table class="tg table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="tg-lboi" data-quarto-table-cell-role="th"><span style="font-weight:bold">Expected Counts</span></th>
+<th class="tg-lboi" data-quarto-table-cell-role="th"></th>
+<th colspan="3" class="tg-lboi" data-quarto-table-cell-role="th">Degree held</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-lboi"></td>
+<td class="tg-lboi"></td>
+<td class="tg-lboi">Associate’s</td>
+<td class="tg-lboi">Bachelor’s</td>
+<td class="tg-lboi">Master’s</td>
+</tr>
+<tr class="even">
+<td rowspan="2" class="tg-lboi">Opinion about astrology</td>
+<td class="tg-lboi">Not at all scientific</td>
+<td class="tg-lboi">183.59</td>
+<td class="tg-lboi">251.847</td>
+<td class="tg-lboi">103.563</td>
+</tr>
+<tr class="odd">
+<td class="tg-lboi">Very or sort of scientific</td>
+<td class="tg-lboi">50.41</td>
+<td class="tg-lboi">69.153</td>
+<td class="tg-lboi">28.437</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Random:</strong> Each sample of degree holders are randomly selected.</p>
+<p><strong>Large:</strong> All the expected counts are at least 5</p>
+<p><strong>Independence:</strong> There are at least <span class="math inline">\(10n_1=2340\)</span> Associate Holders, <span class="math inline">\(10n_2=3210\)</span> Bachelor Holders, and <span class="math inline">\(10n_3=1320\)</span> Master holders</p>
+</blockquote>
+</section>
+<section id="do-1" class="level4">
+<h4 class="anchored" data-anchor-id="do-1">Do</h4>
+<blockquote class="blockquote">
+<span class="math display">\[\begin{aligned}
+\chi^2 = &amp;\frac{(169-183.59)^2}{183.59} + \frac{(256-251.847)^2}{251.847} + \frac{(114-103.563)^2}{103.563} +\\
+&amp;\frac{(65-50.41)^2}{50.41} + \frac{(65-69.153)^2}{69.153} + \frac{(18-28.437)^2}{28.437}\\\\
+
+df =&amp;  (2-1)(3-1) = 2\\\\
+\text{p-value } =&amp; \chi^2\texttt{cdf(10.582, 1000, 2)} \approx 0.005
+\end{aligned}\]</span>
+</blockquote>
+</section>
+<section id="conclude-1" class="level4">
+<h4 class="anchored" data-anchor-id="conclude-1">Conclude</h4>
+<blockquote class="blockquote">
+<p>Since <span class="math inline">\(\text{p-value} \approx 0.005 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis. There is convincing evidence that the distribution of astrology opinion is different between degree holders.</p>
+</blockquote>
 <!-- #### State -->
 <!-- > $H_0$: There is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. -->
 <!-- > -->
@@ -692,34 +876,168 @@ Be careful and remember that:
 <!-- > ``` -->
 <!-- #### Conclude -->
 <!-- > Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. -->
-<!-- ## $\chi^2$ Test of Independence {#ChiSqInd} -->
-<!-- ::: highlight -->
-<!-- We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability) when we compared just the probability of a single event and a conditional probability -->
-<!-- ::: -->
-<!-- **Hypotheses**: -->
-<!-- $H_0$: There is no association between the two variables or that the two events are independent. -->
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- H_0: &p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\ -->
-<!-- &p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\ -->
-<!-- &\cdots,\\ -->
-<!-- &p_{r, 1} = p_{r,2} = \cdots =p_{r, c} -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+</section>
+</section>
+</section>
+<section id="ChiSqInd" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="ChiSqInd"><span class="header-section-number">16.5</span> <span class="math inline">\(\chi^2\)</span> Test of Independence</h2>
+<div class="highlight">
+<p>We do this test when we wonder, “Are these two variables in this set of data independent or not?” In other words, this is a more deterministic way of doing what we did in <a href="probability.html">Chapter 6</a> when we compared just the probability of a single event and a conditional probability</p>
+</div>
+<p><strong>Hypotheses</strong>:</p>
+<p><span class="math inline">\(H_0\)</span>: There is no association between the two variables or that the two events are independent.</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0: &amp;p_{1, 1} = p_{1,2} = \cdots =p_{1, c}, \\
+&amp;p_{2, 1} = p_{2,2} = \cdots =p_{2, c},\\
+&amp;\cdots,\\
+&amp;p_{r, 1} = p_{r,2} = \cdots =p_{r, c}
+\end{aligned}
+\]</span></p>
+<p>where each there are <span class="math inline">\(r\)</span> rows (categories in the first variable) and <span class="math inline">\(c\)</span> columns (categories in the second variable) in the two-way table. Each <span class="math inline">\(p_{i, j}\)</span> correlates to the <span class="math inline">\(i^{th}\)</span> row and the <span class="math inline">\(j^{th}\)</span> column.</p>
+<p><span class="math inline">\(H_a\)</span>: There is an association between the two variables or that the two events are not independent.</p>
+<p>(The symbolic notation would be too messy, so it’s not included)</p>
+<p><strong>Expected Counts</strong>:</p>
+<p>The expected count for each cell (<span class="math inline">\(E_{i,j}\)</span>) is the total count for the corresponding row (<span class="math inline">\(\sum_{j = 1}^c x_{i,j}\)</span>) times the total count for the corresponding column (<span class="math inline">\(\sum_{i = 1}^r x_{i,j}\)</span>) divided by the total count (<span class="math inline">\(\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}\)</span>).</p>
+<p><span class="math display">\[Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}\]</span></p>
+<p><span class="math display">\[E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}\]</span></p>
+<p><strong>Degrees of freedom</strong>:</p>
+<p>We calculate the degrees of freedom by taking the # of rows - 1 times the # of columns - 1. <span class="math display">\[df=(r - 1) \cdot (c-1)\]</span></p>
+<p><strong>Chi-Square Test Statistic</strong>: <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}\]</span></p>
+<section id="chi-indepen-ex" class="level3" data-number="16.5.1">
+<h3 data-number="16.5.1" class="anchored" data-anchor-id="chi-indepen-ex"><span class="header-section-number">16.5.1</span> Example</h3>
+<p><em>(Original question, compare to the <a href="#chi-homogen-ex">Test of Homogeneity</a></em></p>
+<p>The General Social Survey (GSS) asked a random sample of their opinion about whether astrology is very scientific, sort of scientific, or not at all scientific. Here is a two-way table of counts for people in the sample who had three levels of higher education:</p>
+<div>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+</style>
 
-<!-- where each there are $r$ rows (categories in the first variable) and $c$ columns (categories in the second variable) in the two-way table. Each $p_{i, j}$ correlates to the $i^{th}$ row and the $j^{th}$ column. -->
-<!-- $H_a$: There is an association between the two variables or that the two events are not independent. -->
-<!-- (The symbolic notation would be too messy, so it's not included) -->
-<!-- **Expected Counts**: -->
-<!-- The expected count for each cell ($E_{i,j}$) is the total count for the corresponding row ($\sum_{j = 1}^c x_{i,j}$) times the total count for the corresponding column ($\sum_{i = 1}^r x_{i,j}$) divided by the total count ($\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}$). -->
-<!-- $$Expected = \frac{(row ~ total) \cdot (column ~ total)}{total}$$ -->
-<!-- $$E_{i,j} = \frac{(\sum_{j = 1}^c x_{i,j}) \cdot (\sum_{i = 1}^r x_{i,j})} {\sum_{j = 1}^c \sum_{i = 1}^r x_{i,j}}$$ -->
-<!-- **Degrees of freedom**: -->
-<!-- We calculate the degrees of freedom by taking the \# of rows - 1 times the \# of columns - 1. $$df=(r - 1) \cdot (c-1)$$ -->
-<!-- **Chi-Square Test Statistic**: $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected} = \sum_{j = 1}^c \sum_{i = 1}^r\frac{(x_{i,j}-E_{i,j})^2}{E_{i,j}}$$ -->
-<!-- ### Example {#chi-indepen-ex} -->
-<!-- *(Original question, compare to the [Test of Homogeneity](#chi-homogen-ex)* -->
+<table class="tg table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="tg-cly1" data-quarto-table-cell-role="th"></th>
+<th class="tg-cly1" data-quarto-table-cell-role="th"></th>
+<th colspan="3" class="tg-cly1" data-quarto-table-cell-role="th">Degree held</th>
+<th class="tg-cly1" data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-cly1"></td>
+<td class="tg-cly1"></td>
+<td class="tg-cly1">Associate’s</td>
+<td class="tg-cly1">Bachelor’s</td>
+<td class="tg-cly1">Master’s</td>
+<td class="tg-cly1">Total</td>
+</tr>
+<tr class="even">
+<td rowspan="2" class="tg-cly1">Opinion about astrology</td>
+<td class="tg-cly1">Not at all scientific</td>
+<td class="tg-cly1">169</td>
+<td class="tg-cly1">256</td>
+<td class="tg-cly1">114</td>
+<td class="tg-cly1">539</td>
+</tr>
+<tr class="odd">
+<td class="tg-cly1">Very or sort of scientific</td>
+<td class="tg-cly1">65</td>
+<td class="tg-cly1">65</td>
+<td class="tg-cly1">18</td>
+<td class="tg-cly1">148</td>
+</tr>
+<tr class="even">
+<td class="tg-cly1"></td>
+<td class="tg-cly1">Total</td>
+<td class="tg-cly1">234</td>
+<td class="tg-cly1">321</td>
+<td class="tg-cly1">132</td>
+<td class="tg-cly1">687</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Do the data provide convincing evidence of an association between astrology opinion and degree held by an adult?</p>
+<section id="state-2" class="level4">
+<h4 class="anchored" data-anchor-id="state-2">State</h4>
+<blockquote class="blockquote">
+<p><span class="math inline">\(H_0\)</span>: There is no association between astrology opinion and degree held by an adult.</p>
+<p><span class="math inline">\(H_a\)</span>: There is an association between astrology opinion and degree held by an adult.</p>
+</blockquote>
+</section>
+<section id="plan-2" class="level4">
+<h4 class="anchored" data-anchor-id="plan-2">Plan</h4>
+<blockquote class="blockquote">
+<p>If the conditions are met, I will use a <span class="math inline">\(\chi^2\)</span> Test of Independence.</p>
+<div>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+</style>
 
+<table class="tg table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="tg-lboi" data-quarto-table-cell-role="th"><span style="font-weight:bold">Expected Counts</span></th>
+<th class="tg-lboi" data-quarto-table-cell-role="th"></th>
+<th colspan="3" class="tg-lboi" data-quarto-table-cell-role="th">Degree held</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tg-lboi"></td>
+<td class="tg-lboi"></td>
+<td class="tg-lboi">Associate’s</td>
+<td class="tg-lboi">Bachelor’s</td>
+<td class="tg-lboi">Master’s</td>
+</tr>
+<tr class="even">
+<td rowspan="2" class="tg-lboi">Opinion about astrology</td>
+<td class="tg-lboi">Not at all scientific</td>
+<td class="tg-lboi">183.59</td>
+<td class="tg-lboi">251.847</td>
+<td class="tg-lboi">103.563</td>
+</tr>
+<tr class="odd">
+<td class="tg-lboi">Very or sort of scientific</td>
+<td class="tg-lboi">50.41</td>
+<td class="tg-lboi">69.153</td>
+<td class="tg-lboi">28.437</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Random:</strong> The sample of adults is randomly selected.</p>
+<p><strong>Large:</strong> All the expected counts are at least 5</p>
+<p><strong>Independence:</strong> There are at least <span class="math inline">\(10n = 6870\)</span> adults.</p>
+</blockquote>
+</section>
+<section id="do-2" class="level4">
+<h4 class="anchored" data-anchor-id="do-2">Do</h4>
+<blockquote class="blockquote">
+<span class="math display">\[\begin{aligned}
+\chi^2 = &amp;\frac{(169-183.59)^2}{183.59} + \frac{(256-251.847)^2}{251.847} + \frac{(114-103.563)^2}{103.563} +\\
+&amp;\frac{(65-50.41)^2}{50.41} + \frac{(65-69.153)^2}{69.153} + \frac{(18-28.437)^2}{28.437}\\\\
+
+df =&amp;  (2-1)(3-1) = 2\\\\
+\text{p-value } =&amp; \chi^2\texttt{cdf(10.582, 1000, 2)} \approx 0.005
+\end{aligned}\]</span>
+</blockquote>
+</section>
+<section id="conclude-2" class="level4">
+<h4 class="anchored" data-anchor-id="conclude-2">Conclude</h4>
+<blockquote class="blockquote">
+<p>Since <span class="math inline">\(\text{p-value} \approx 0.005 &lt; 0.05 = \alpha\)</span>, we reject the null hypothesis. There is convincing evidence there is an association between an adult’s opinion about astrology and the degree that they hold.</p>
+</blockquote>
 <!-- Is there a relationship between gender and relative finger length? We looked at a random sample of 452 U.S. high school students who completed a survey. The two-way table shows the gender of each student and which finger was longer on their left hand (index finger or ring finger). -->
 <!-- |                  | **Female** | **Male** | **Total** | -->
 <!-- |------------------|:----------:|:--------:|:---------:| -->
@@ -757,20 +1075,96 @@ Be careful and remember that:
 <!-- > $$ -->
 <!-- #### Conclude -->
 <!-- > Since our $p-value \approx 0 < 0.05 = \alpha$, we reject the null hypothesis that there is no association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. Therefore, there is evidence that there is an association between gender and relative finger length for U.S. high school students who filled out the CensusAtSchool survey. -->
-<!-- ## Follow-up (Component) Analysis -->
-<!-- Given our $\chi^2$ statistic, $$\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}$$ -->
-<!-- Each individual term $\frac{(Observed-Expected)^2}{Expected}$ that is calculated to be added up is called a component of the $\chi^2$ statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value. -->
-<!-- When doing a follow-up analysis of the $\chi^2$ test, look at the components of the calculated $chi^2$ statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor. -->
-<!-- ### Example -->
-<!-- (From the [$\chi^2$ GOF Example](#GOF-example)) -->
-<!-- If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis. -->
-<!-- A reminder of our results: -->
-<!-- | Outcome of roll                              | 1      | 2       | 3      | 4      | 5      | 6      | -->
-<!-- |-----------|-----------|-----------|-----------|-----------|-----------|-----------| -->
-<!-- | Observed                                     | 12     | 28      | 12     | 13     | 10     | 15     | -->
-<!-- | Expected                                     | 15     | 15      | 15     | 15     | 15     | 15     | -->
-<!-- | $\frac{(Observed - Expected) ^ 2}{Expected}$ | 0.6000 | 11.2667 | 0.6000 | 0.2667 | 1.6667 | 0.0000 | -->
-<!-- > Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair. -->
+</section>
+</section>
+</section>
+<section id="calculator-for-homogeneityindependence" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="calculator-for-homogeneityindependence"><span class="header-section-number">16.6</span> Calculator for Homogeneity/Independence</h2>
+<p>There’s no difference in how <span class="math inline">\(\chi^2\)</span>, <span class="math inline">\(df\)</span>, and the p-value is calculated between the <span class="math inline">\(\chi^2\)</span> test for Homogeneity and the <span class="math inline">\(\chi^2\)</span> test for Independence.</p>
+<ol type="1">
+<li>Enter the observed data seen in the two-way table in matrix <code>[A]</code>
+<ul>
+<li>Access this by <code>2nd</code> &gt; <span class="math inline">\(\texttt{x}^{\texttt{-1}}\)</span> (<code>matrix</code>) &gt; <code>EDIT</code></li>
+<li>Make sure to edit the dimensions of the matrix by matching up the number of rows <code>x</code> the number of columns</li>
+</ul></li>
+<li>Do a <span class="math inline">\(\chi^2\texttt{-Test}\)</span>
+<ul>
+<li>Access this by <code>stat</code> &gt; <code>TESTS</code></li>
+<li>Leave observed as <code>[A]</code> and expected as <code>[B]</code></li>
+<li>Just hit calculate</li>
+<li>You will see the <span class="math inline">\(\chi^2\)</span> test statistic value, p-value, and df</li>
+</ul></li>
+<li>Matrix <code>[B]</code> is now populated with the expected counts.
+<ul>
+<li>View matrix <code>[B]</code> the same way that you edited matrix <code>[A]</code></li>
+</ul></li>
+</ol>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NPUqG3fp4EI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="follow-up-component-analysis" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="follow-up-component-analysis"><span class="header-section-number">16.7</span> Follow-up (Component) Analysis</h2>
+<p>Given our <span class="math inline">\(\chi^2\)</span> statistic, <span class="math display">\[\chi^2=\sum\frac{(Observed-Expected)^2}{Expected}\]</span></p>
+<p>Each individual term <span class="math inline">\(\frac{(Observed-Expected)^2}{Expected}\)</span> that is calculated to be added up is called a component of the <span class="math inline">\(\chi^2\)</span> statistic. The magnitude of these components provide a measurement as to how far off a certain observed value is from its expected value.</p>
+<p>When doing a follow-up analysis of the <span class="math inline">\(\chi^2\)</span> test, look at the components of the calculated <span class="math inline">\(chi^2\)</span> statistic. The category(ies) which have the larger components are the categories that contribute the most to the test statistic. Then explain what direction these categories are pulling the actual distribution to favor.</p>
+<section id="example" class="level3" data-number="16.7.1">
+<h3 data-number="16.7.1" class="anchored" data-anchor-id="example"><span class="header-section-number">16.7.1</span> Example</h3>
+<p>(From the <a href="#GOF-example"><span class="math inline">\(\chi^2\)</span> GOF Example</a>)</p>
+<p>If there is convincing evidence of a difference in the distribution dice sides, perform a follow-up analysis.</p>
+<p>A reminder of our results:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Outcome of roll</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observed</td>
+<td>12</td>
+<td>28</td>
+<td>12</td>
+<td>13</td>
+<td>10</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Expected</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\frac{(Observed - Expected) ^ 2}{Expected}\)</span></td>
+<td>0.6000</td>
+<td>11.2667</td>
+<td>0.6000</td>
+<td>0.2667</td>
+<td>1.6667</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Based off our components, the 2 side of the die is contributing most towards our statistic (11.2667). The 2 side is showing up much more than we expected if the dice was actually fair.</p>
+</blockquote>
 
 
 </section>
@@ -778,7 +1172,7 @@ Be careful and remember that:
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.line(d3.range(0, 10, 0.01),\n      {\n        x: (x) => x,\n        y: (x) => jStat.chisquare.pdf(x, df1),\n        strokeWidth: 3,\n        stroke: \"steelblue\"\n      }\n    ),\n    Plot.ruleX([0]),\n    Plot.ruleY([0]),\n  ],\n  x: {\n    domain: [0, 10],\n    label: \"Chi-squared Statistic\"\n  },\n  y: { \n    domain: [0, .3], \n    label: \"Density\"\n  },\n    caption: \"The Chi-squared Sampling Distribution\"\n})\n\nviewof df1 = Inputs.range(\n[1, 10],\n{value: 3, step: 1, label: \"Degrees of Freedom (df):\"}\n)\n"},{"methodName":"interpretQuiet","source":"shinyInput('df1')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5saW5lKGQzLnJhbmdlKDAsIDEwLCAwLjAxKSxcbiAgICAgIHtcbiAgICAgICAgeDogKHgpID0+IHgsXG4gICAgICAgIHk6ICh4KSA9PiBqU3RhdC5jaGlzcXVhcmUucGRmKHgsIGRmMSksXG4gICAgICAgIHN0cm9rZVdpZHRoOiAzLFxuICAgICAgICBzdHJva2U6IFwic3RlZWxibHVlXCJcbiAgICAgIH1cbiAgICApLFxuICAgIFBsb3QucnVsZVgoWzBdKSxcbiAgICBQbG90LnJ1bGVZKFswXSksXG4gIF0sXG4gIHg6IHtcbiAgICBkb21haW46IFswLCAxMF0sXG4gICAgbGFiZWw6IFwiQ2hpLXNxdWFyZWQgU3RhdGlzdGljXCJcbiAgfSxcbiAgeTogeyBcbiAgICBkb21haW46IFswLCAuM10sIFxuICAgIGxhYmVsOiBcIkRlbnNpdHlcIlxuICB9LFxuICAgIGNhcHRpb246IFwiVGhlIENoaS1zcXVhcmVkIFNhbXBsaW5nIERpc3RyaWJ1dGlvblwiXG59KVxuXG52aWV3b2YgZGYxID0gSW5wdXRzLnJhbmdlKFxuWzEsIDEwXSxcbnt2YWx1ZTogMywgc3RlcDogMSwgbGFiZWw6IFwiRGVncmVlcyBvZiBGcmVlZG9tIChkZik6XCJ9XG4pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2RmMScpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -867,10 +1261,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -880,8 +1291,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -893,7 +1313,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -937,6 +1480,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -962,6 +1506,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1023,17 +1593,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./inference-for-means.html" class="pagination-link">
+      <a href="./inference-for-means.html" class="pagination-link" aria-label="Inference for Means">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for Means</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./formula-sheet.html" class="pagination-link">
+      <a href="./formula-sheet.html" class="pagination-link" aria-label="AP Exam Formula Sheet">
         <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
