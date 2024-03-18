@@ -35,6 +35,7 @@ book:
     # - applets.qmd
     - statistic-to-pvalue.qmd
     - critical-values.qmd
+    # - calc-guide.qmd
     # - test-page.qmd
 
 format:

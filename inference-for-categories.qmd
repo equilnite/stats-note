@@ -195,7 +195,7 @@ When we do things on the calculator with the following method, everything works 
 
 Here's a a video tutorial using the example from Page 3 in your packets.
 
-{{< video https://youtu.be/ZZtsomC2-Fg >}}
+{{< video https://youtu.be/GmveE6-33Cg >}}
 
 ## $\chi^2$ Test of Homogeneity {#ChiSqHomogen}
 

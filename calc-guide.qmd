@@ -1,0 +1,85 @@
+# Guidelines for FRQ Calculator Usage
+
+Your graphing calculator is your friend in the FRQ section. 
+
+All calculator methods are described in your textbook
+
+OR
+
+This manual could help you with it: [https://education.ti.com/en/guidebook/details/en/ABF6D3DD944745A7A76609E97F84B1F7/83p](https://education.ti.com/en/guidebook/details/en/ABF6D3DD944745A7A76609E97F84B1F7/83p)
+
+## On the FRQ...
+
+On the FRQ, you will not be a master of self-scoring, but here's a general piece of advice on the section:
+
+- You do not have to write down any formulas!!
+
+  - In lieu of formulas, you can write down what you did in your calculator.
+  
+    - One caveat is that you should write down the steps that you took to calculate something:
+      - e.g "Input the data into `L1`", "Use `TInterval` with `L1` and confidence level `.95`", or if you have two lists, "Use `2-SampTInt` with `XList` = `L1` and `YList` = `L2` and confidence level `.95`" 
+      
+    - And you should write down the relevant output that you see such as the test statistic, p-value, confidence interval, df, etc.
+    
+    - This isn't exactly what scoring is looking for, **but instead of memorizing the scoring, just do this to guarantee a *full score***
+    
+    - You actually don't have to show as much work as I've been asking you to in class. e.g. if you use a calculator command for a $\chi^2$
+test, you don't have to show the work for the manual calculation of the statistic (you still have to write the expected counts for the conditions) and you can just write $\chi^2 = 5$ and p-value = $0.005$ with out the extra work.
+
+  - If you're using something like `normalcdf`, or `tcdf`, make sure to LABEL the inputs.
+  
+    - e.g. `normalcdf(lowerbound = 0, upperbound = 1, mean = 15, sd = 20)`
+    
+    - **If you don't label it, you will not get credit on it**.
+    
+  - But obviously if something needs a formula, like solving for minimum sample size or some algebraic problem, you should show all work on it, including the formulas.
+
+## Remember how to...
+
+Know how to do each of the following to make your life easier:
+
+- How to take `1-Var Stats` and `2-Var Stats`
+
+  - Calculates the sum, mean, sample standard deviation, minimum, 1st quartile, median, 3rd quartile, maximum, etc.
+
+- Calculate a proportion / probability corresponding to a certain distribution and value
+
+  - `normalcdf`, `tcdf`, `x^2cdf`, `binompdf`, `binomcdf`, `geometpdf`, `geometcdf`
+    - Remember that the `cdf`s all correspond to when you want to find a probability / proportion such as $P(X<x)$, $P(X>X)$, and $P(x_1<X<x_2)$ 
+    - All the `pdfs` correspond to when you want a probability / proportion at a single, discrete value such as $P(X = x)$
+
+- Calculate a value corresponding to a certain distribution and proportion / probability
+
+  - `invNorm` and `invT` (if you have it)
+
+- Finding the equation of a least squares regression line by using `LinReg(a+bx)`
+
+  - Make sure your output provides $r$ and $r^2$. DON'T GO INTO THE TEST WITHOUT THAT!!!
+  - It'll be helpful to know how to store your equation by finding `Y1`, `Y2`,... by accessing `VARS > Y-VARS > Function`.
+
+- Creating plots of data in `stat plot`
+
+  - and possibly also graphing your regression lines by including where to store the equation when you do `LinReg(a+bx)`
+  - Use `zoom > zoomStat` to put your adjust your plotting window to your visualization
+  - If there's some random error, chances are, there's something that doesn't belong in the equations (`y=`)
+
+- All the statistical tests that you can do
+
+  - The ones that you will be interested in are the ones that are a combination of the following:
+    - `1-Samp`, `2-Samp`, `1-Prop`, `2-Prop`
+      - Remember that our "1-Sample" and "2-Sample" z-procedures are coded as `1-Prop` and `2-Prop` in the calculator
+    - `ZInt`, `ZTest`, `TInt`, `TTest`
+  - In addition, $\chi^2$ tests using `X^2-Test` and (if you have it) `X^2GOF-Test`
+    - Make sure you can enter tabulated data into your calculator for Homogeneity and Independence tests through `X-1 > MATRIX > EDIT`
+  - Something that might help (and we haven't learned), would be the `LinRegTTest` and `LinRegTInt`, which do inference for the slope $\beta$ as we learned in Chapter 12
+    - These require you to have the raw data, so you won't use these if you have the computer output given to you
+
+- Remember certain details about working with lists
+
+  - edit them by going to `STAT > EDIT`
+    - If you have pre-existing data, you can clear all of that data in a list by moving your cursor to the name of the list in the header and hitting `CLEAR` and `ENTER` 
+    - You can work with lists elementwise, so in the header of a particular list, you can define the new list using data from a previously entered list.
+      - If you have data from list, say `L1`, and you want to multiply all values by 3, you can do the `L2` and enter `L1 * 3`
+      - You can add and subtract lists element wise by doing something like `L1 - L2`
+  - Access the names of all lists by going to `2nd > STAT (LIST)`
+    - This is useful for residuals (stored in `RESID` after doing a `LinReg(a+bx)`)
