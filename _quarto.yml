@@ -11,24 +11,33 @@ book:
   url: https://stats.echa.ng
   description: |
      These are notes for AP Statistics.
+
   chapters:
     - index.qmd
     - notation.qmd
-    - basic-statistics.qmd
-    - categorical-displays.qmd
-    - quantitative-displays.qmd
-    - sampling.qmd
-    - experimental-design.qmd
-    - probability.qmd
-    - density-curves.qmd
-    - random-variables.qmd
-    - sampling-distributions.qmd
-    - confidence-intervals.qmd
-    - hypothesis-testing.qmd
-    - inference-for-proportions.qmd
-    - inference-for-means.qmd
-    - inference-for-categories.qmd
-    # - linear-regression.qmd
+    - part: "Descriptive Statistics"
+      chapters:
+      - basic-statistics.qmd
+      - categorical-displays.qmd
+      - quantitative-displays.qmd
+    - part: "Designing Studies"
+      chapters:
+      - sampling.qmd
+      - experimental-design.qmd
+    - part: "Probability"
+      chapters:
+      - probability.qmd
+      - density-curves.qmd
+      - random-variables.qmd
+      - sampling-distributions.qmd
+    - part: "Inference"
+      chapters:
+      - confidence-intervals.qmd
+      - hypothesis-testing.qmd
+      - inference-for-proportions.qmd
+      - inference-for-means.qmd
+      - inference-for-categories.qmd
+    - linear-regression.qmd
     # - inference-for-slope.qmd
   appendices:
     - formula-sheet.qmd
@@ -37,6 +46,8 @@ book:
     - critical-values.qmd
     # - calc-guide.qmd
     # - test-page.qmd
+    - linear-regression-project.qmd
+
 
 format:
   html:

@@ -1,0 +1,56 @@
+---
+website:
+    page-navigation: false
+---
+
+# Multiple Linear Regression Project
+
+::: callout-warning
+THIS IS A LIVE DOCUMENT, anything that is changed from its original wording will be highlighted and part that is released will be appended to the bottom of this document.
+:::
+
+| ***Part*** | ***Release Date***  | ***Due Date***      |
+|------------|---------------------|---------------------|
+| **Part 1** | Monday, April 22    | Wednesday, April 24 |
+| **Part 2** | Wednesday, April 24 | Friday, April 26    |
+| **Part 3** | Monday, April 29    | Wednesday, May 1    |
+| **Part 4** | Wednesday, May 1    | Friday, May 3       |
+| **Part 5** | Monday, May 6       | Wednesday, May 8    |
+
+In this project, you will investigate multiple quantitative variables and construct a LSRL from the multiple variables. You will apply all Chapter 3 and 12 knowledge that you have learned and use Google Sheets to analyze your data by creating scatter plots and other visualizations to check the assumptions of linear regression inference.
+
+## Part 1: Choosing your data 
+
+In this project , you will each choose data to analyze from the [CORGIS Datasets Project](https://think.cs.vt.edu/corgis/csv/index.html)
+
+Look at the descriptions of the dataset and look at what variables you can analyze. Before making a final decision, **make sure that your data set has at least 4 quantitative variables that you can work with.**
+
+When you are done with that, please write your choice on the attached spreadsheet in Google Classroom. **Only 1 person per data set**
+
+Visit <https://stapplet.com/quant2v.html> and explore some relationships between the quantitative variables that you have. You will have to download the data set. Please create a new Google Doc, paste screenshots of the <mark>3 - 4</mark> scatter plots that you create, and write down your thoughts about them.
+
+## Part 2: Regression Lines
+
+Now that you’ve explored multiple relationships between variables, now you can create some LSRLs for your selected variables.
+
+::: callout-tip
+Considering what you found out in Part 1 about some of the relationships, decide whether you want to keep exploring those relationships or not. You want to keep some or look at a new relationship(s).
+:::
+
+For this part, you will explore **3 of these relationships** and calculate and interpret several things about them.
+
+For each of these 3 relationships, you will use the [same stapplet app](https://stapplet.com/quant2v.html) to
+
+1.  calculate the LSRL,
+2.  provide a screenshot of what the scatter plot looks like with the LSRL now,
+3.  write the LSRL in context of the problem,
+4.  interpret the intercept $a$
+5.  interpret the intercept $b$
+6.  use the value of $s$ and $r^2$ to talk about how well the line predicts the values
+7.  use the residual plot to talk about how well the line fits the data.
+
+::: callout-important
+You’re expected to write each of these correctly as you have in chapter 3.
+
+Use the template Google Doc already created for you on this part’s Google Classroom Assignment
+:::
