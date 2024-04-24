@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 12&nbsp; Confidence Intervals</title>
+<title>AP Statistics Notes - Appendix D — Multiple Linear Regression Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./hypothesis-testing.html" rel="next">
-<link href="./sampling-distributions.html" rel="prev">
+<link href="./critical-values.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -119,7 +118,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./confidence-intervals.html">Inference</a></li><li class="breadcrumb-item"><a href="./confidence-intervals.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -254,7 +253,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./confidence-intervals.html" class="sidebar-item-text sidebar-link active">
+  <a href="./confidence-intervals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span></a>
   </div>
 </li>
@@ -319,7 +318,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linear-regression-project.html" class="sidebar-item-text sidebar-link">
+  <a href="./linear-regression-project.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></span></a>
   </div>
 </li>
@@ -335,20 +334,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#interpreting-confidence-intervals" id="toc-interpreting-confidence-intervals" class="nav-link active" data-scroll-target="#interpreting-confidence-intervals"><span class="header-section-number">12.1</span> Interpreting Confidence Intervals</a></li>
-  <li><a href="#interpreting-confidence-level" id="toc-interpreting-confidence-level" class="nav-link" data-scroll-target="#interpreting-confidence-level"><span class="header-section-number">12.2</span> Interpreting Confidence Level</a></li>
-  <li><a href="#changing-confidence-levels" id="toc-changing-confidence-levels" class="nav-link" data-scroll-target="#changing-confidence-levels"><span class="header-section-number">12.3</span> Changing Confidence Levels</a></li>
-  <li><a href="#conditions-for-confidence-intervals" id="toc-conditions-for-confidence-intervals" class="nav-link" data-scroll-target="#conditions-for-confidence-intervals"><span class="header-section-number">12.4</span> Conditions for Confidence Intervals</a></li>
-  <li><a href="#the-four-step-process" id="toc-the-four-step-process" class="nav-link" data-scroll-target="#the-four-step-process"><span class="header-section-number">12.5</span> The Four-Step Process</a></li>
+  <li><a href="#part-1-choosing-your-data" id="toc-part-1-choosing-your-data" class="nav-link active" data-scroll-target="#part-1-choosing-your-data"><span class="header-section-number">D.1</span> Part 1: Choosing your data</a></li>
+  <li><a href="#part-2-regression-lines" id="toc-part-2-regression-lines" class="nav-link" data-scroll-target="#part-2-regression-lines"><span class="header-section-number">D.2</span> Part 2: Regression Lines</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./confidence-intervals.html">Inference</a></li><li class="breadcrumb-item"><a href="./confidence-intervals.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></h1>
+<h1 class="title">Appendix D — Multiple Linear Regression Project</h1>
 </div>
 
 
@@ -365,51 +361,6 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Confidence Interval">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Confidence Interval
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <strong>Confidence Interval</strong> is an interval of plausible values for the population parameter and is used to estimate the parameter.</p>
-<p>The interval is calculated from the data and has the form <span class="math display">\[\text{point estimate} ± \text{margin of error}\]</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Margin of Error">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Margin of Error
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Margin of errors are calculated from the confidence level (<span class="math inline">\(C\)</span>) and the data and has the form</p>
-<p><span class="math display">\[ME = m = \text{critical value} \cdot \text{standard error of the statistic}\]</span></p>
-</div>
-</div>
-<p>The difference between the point estimate, the value of the statistics from a sample that provides an estimate of the population parameter, and the true parameter value will be less than the margin of error in <span class="math inline">\(C\)</span>% of samples.</p>
-<section id="interpreting-confidence-intervals" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="interpreting-confidence-intervals"><span class="header-section-number">12.1</span> Interpreting Confidence Intervals</h2>
-<p>You can say something of the form:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Confidence Interval Interpretation">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Confidence Interval Interpretation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I am [<span class="math inline">\(C\)</span>]% confident the interval from <em>[lower bound]</em> to <em>[upper bound]</em> captures the <em>[true parameter in the context of the problem]</em>.</p>
-</div>
-</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -420,155 +371,94 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1</p>
+<p>THIS IS A LIVE DOCUMENT, anything that is changed from its original wording will be highlighted and part that is released will be appended to the bottom of this document.</p>
 </div>
 </div>
+<table class="table">
+<thead>
+<tr class="header">
+<th><strong><em>Part</em></strong></th>
+<th><strong><em>Release Date</em></strong></th>
+<th><strong><em>Due Date</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Part 1</strong></td>
+<td>Monday, April 22</td>
+<td>Wednesday, April 24</td>
+</tr>
+<tr class="even">
+<td><strong>Part 2</strong></td>
+<td>Wednesday, April 24</td>
+<td>Friday, April 26</td>
+</tr>
+<tr class="odd">
+<td><strong>Part 3</strong></td>
+<td>Monday, April 29</td>
+<td>Wednesday, May 1</td>
+</tr>
+<tr class="even">
+<td><strong>Part 4</strong></td>
+<td>Wednesday, May 1</td>
+<td>Friday, May 3</td>
+</tr>
+<tr class="odd">
+<td><strong>Part 5</strong></td>
+<td>Monday, May 6</td>
+<td>Wednesday, May 8</td>
+</tr>
+</tbody>
+</table>
+<p>In this project, you will investigate multiple quantitative variables and construct a LSRL from the multiple variables. You will apply all Chapter 3 and 12 knowledge that you have learned and use Google Sheets to analyze your data by creating scatter plots and other visualizations to check the assumptions of linear regression inference.</p>
+<section id="part-1-choosing-your-data" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="part-1-choosing-your-data"><span class="header-section-number">D.1</span> Part 1: Choosing your data</h2>
+<p>In this project , you will each choose data to analyze from the <a href="https://think.cs.vt.edu/corgis/csv/index.html">CORGIS Datasets Project</a></p>
+<p>Look at the descriptions of the dataset and look at what variables you can analyze. Before making a final decision, <strong>make sure that your data set has at least 4 quantitative variables that you can work with.</strong></p>
+<p>When you are done with that, please write your choice on the attached spreadsheet in Google Classroom. <strong>Only 1 person per data set</strong></p>
+<p>Visit <a href="https://stapplet.com/quant2v.html" class="uri">https://stapplet.com/quant2v.html</a> and explore some relationships between the quantitative variables that you have. You will have to download the data set. Please create a new Google Doc, paste screenshots of the <mark>3 - 4</mark> scatter plots that you create, and write down your thoughts about them.</p>
 </section>
-<section id="interpreting-confidence-level" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="interpreting-confidence-level"><span class="header-section-number">12.2</span> Interpreting Confidence Level</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Confidence Level Interpretation">
+<section id="part-2-regression-lines" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="part-2-regression-lines"><span class="header-section-number">D.2</span> Part 2: Regression Lines</h2>
+<p>Now that you’ve explored multiple relationships between variables, now you can create some LSRLs for your selected variables.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Confidence Level Interpretation
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If we take many, many samples and create many, many intervals using the same method, about [<span class="math inline">\(C\)</span>]% of them will capture the <em>[true parameter in the context of the problem]</em>.</p>
+<p>Considering what you found out in Part 1 about some of the relationships, decide whether you want to keep exploring those relationships or not. You want to keep some or look at a new relationship(s).</p>
 </div>
 </div>
-<p>In other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”</p>
-</section>
-<section id="changing-confidence-levels" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="changing-confidence-levels"><span class="header-section-number">12.3</span> Changing Confidence Levels</h2>
-<p>When we increase confidence level, we are saying that more intervals in this manner should capture the true parameter. This means that to increase confidence level means that the confidence intervals need to increase in width.</p>
-<p>When we increase the size of a sample, the precision of our statistic increases because of the reduction in sampling variability (standard deviation of the statistic decreases as n increases). This means that we can now guess/estimate a smaller range compared to if we had a smaller sample size. So, when we increase the size of our samples, our confidence intervals will have smaller widths compared to those with a smaller sample size.</p>
-</section>
-<section id="conditions-for-confidence-intervals" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="conditions-for-confidence-intervals"><span class="header-section-number">12.4</span> Conditions for Confidence Intervals</h2>
-<section id="random" class="level3 unlisted unnumbered">
-<h3 class="unlisted unnumbered anchored" data-anchor-id="random">1. Random</h3>
-<p>The data must come from a random sample, or random assignment in an experiment.</p>
-<p>In order to infer about a larger population, we must have a random, unbiased sample from that population. If the sample is not random, we need to think about whether it’s at least unbiased and/or representative. If so, we may be able to treat it as a random sample, but we must state that we’re doing this. If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.</p>
-<p>In the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population. In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments). If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population. This depends on whether our subjects are a random sample from, or at least representative of, some larger population.</p>
-</section>
-<section id="large" class="level3 unlisted unnumbered">
-<h3 class="unlisted unnumbered anchored" data-anchor-id="large">2. Large</h3>
-<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
-<section id="proportions" class="level4 unlisted unnumbered">
-<h4 class="unlisted unnumbered anchored" data-anchor-id="proportions">Proportions</h4>
-<p>For proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the <a href="random-variables.html#large-counts-cond"><strong><em>Large Counts Condition</em></strong></a>.</p>
-<p>This ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.</p>
-</section>
-<section id="sample-means" class="level4 unlisted unnumbered">
-<h4 class="unlisted unnumbered anchored" data-anchor-id="sample-means">Sample means</h4>
-<p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
-<ul>
-<li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
-<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
-</ul>
-</section>
-</section>
-<section id="sampling-independence" class="level3 unlisted unnumbered">
-<h3 class="unlisted unnumbered anchored" data-anchor-id="sampling-independence">3. Sampling Independence</h3>
-<p>Observations in our sample must be independent of each other.</p>
-<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
-<p>In experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; “I’m going to have to assume I can treat these observations as independent.”</p>
-</section>
-</section>
-<section id="the-four-step-process" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="the-four-step-process"><span class="header-section-number">12.5</span> The Four-Step Process</h2>
+<p>For this part, you will explore <strong>3 of these relationships</strong> and calculate and interpret several things about them.</p>
+<p>For each of these 3 relationships, you will use the <a href="https://stapplet.com/quant2v.html">same stapplet app</a> to</p>
 <ol type="1">
-<li><strong>STATE</strong> exactly what you’re doing.</li>
+<li>calculate the LSRL,</li>
+<li>provide a screenshot of what the scatter plot looks like with the LSRL now,</li>
+<li>write the LSRL in context of the problem,</li>
+<li>interpret the intercept <span class="math inline">\(a\)</span></li>
+<li>interpret the intercept <span class="math inline">\(b\)</span></li>
+<li>use the value of <span class="math inline">\(s\)</span> and <span class="math inline">\(r^2\)</span> to talk about how well the line predicts the values</li>
+<li>use the residual plot to talk about how well the line fits the data.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="State">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-State
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Be sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.</p>
+<p>You’re expected to write each of these correctly as you have in chapter 3.</p>
+<p>Use the template Google Doc already created for you on this part’s Google Classroom Assignment</p>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>I will estimate <span class="math inline">\(p =\)</span> the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.</p>
-</blockquote>
-<ol start="2" type="1">
-<li><strong>PLAN</strong> which method you will use and the conditions required to use the method.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Plan">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Plan
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>State the name of the procedure that you’ll attempt.</p>
-<p>Check the conditions, and if the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>If the conditions are met, I will use a one-sample z-interval for the population parameter <span class="math inline">\(p\)</span>.</p>
-<p>Random Sample: Yes, it’s stated that the sample is random.</p>
-<p>Large Sample: <span class="math inline">\(n\hat{p}=75\left(\frac{43}{75}\right)=43\)</span> and <span class="math inline">\(n\left(1-\hat{p}\right)=75\left(1-\frac{43}{75}\right)=32\)</span></p>
-<p>Both amounts are over 10, so the sample is large enough for the sampling distribution of to be approximately normal.</p>
-<p>Independence: We have independence as long as the population of non-solar Berkeley homeowners is at least 750. This is definitely true.</p>
-</blockquote>
-<ol start="3" type="1">
-<li><strong>DO</strong> the calculations</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Do">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Do
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Perform the calculations necessary for the method you chose to use. Show all work!</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><span class="math display">\[
-\begin{aligned}
-z^\ast &amp;= \mathtt{invNorm((1 - 0.92) / 2 + 0.92)} \approx 1.75 \\ \\
-CI_{92}&amp;=\hat{p}\pm z^\ast\cdot SE_{\hat{p}} \\
-&amp;=\hat{p}\pm1.75\cdot\sqrt{\frac{\hat{p}\left(1-\hat{p}\right)}{n}} \text{, and we know that } n=75 \text{ and } \hat{p}=\frac{43}{75}=0.5733 \\
-&amp;=0.5733\pm1.75\sqrt{\frac{0.5733\left(1-0.5733\right)}{75}} \\
-&amp;=\left[0.4734,\ 0.6732\right]
-\end{aligned}
-\]</span></p>
-</blockquote>
-<ol start="4" type="1">
-<li><strong>CONCLUDE</strong> in the context of the situation.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Conclude">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Conclude
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Interpret the confidence interval in the context of the problem.</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>I am 92% confident that <span class="math inline">\(p\)</span> (as defined in State) is somewhere between 47.34% and 67.32%.</p>
-</blockquote>
 
 
 </section>
@@ -985,14 +875,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./sampling-distributions.html" class="pagination-link" aria-label="Sampling Distributions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span>
+      <a href="./critical-values.html" class="pagination-link" aria-label="Critical Values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Critical Values</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./hypothesis-testing.html" class="pagination-link" aria-label="Hypothesis Testing">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hypothesis Testing</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
