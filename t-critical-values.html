@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 11&nbsp; Sampling Distributions</title>
+<title>AP Statistics Notes - Appendix D — \(t^\ast\) Critical Values</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./confidence-intervals.html" rel="next">
-<link href="./random-variables.html" rel="prev">
+<link href="./linear-regression-project.html" rel="next">
+<link href="./z-critical-values.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,6 +109,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="./scripts/jstat.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -119,7 +155,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./t-critical-values.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -237,7 +273,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sampling-distributions.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sampling-distributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span></a>
   </div>
 </li>
@@ -319,7 +355,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./t-critical-values.html" class="sidebar-item-text sidebar-link">
+  <a href="./t-critical-values.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></span></a>
   </div>
 </li>
@@ -341,25 +377,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bias-and-variability" id="toc-bias-and-variability" class="nav-link active" data-scroll-target="#bias-and-variability"><span class="header-section-number">11.1</span> Bias and Variability</a></li>
-  <li><a href="#sampling-distribution-of-hat-p" id="toc-sampling-distribution-of-hat-p" class="nav-link" data-scroll-target="#sampling-distribution-of-hat-p"><span class="header-section-number">11.2</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></a></li>
-  <li><a href="#sampling-distribution-of-bar-x" id="toc-sampling-distribution-of-bar-x" class="nav-link" data-scroll-target="#sampling-distribution-of-bar-x"><span class="header-section-number">11.3</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></a>
-  <ul class="collapse">
-  <li><a href="#large-cond" id="toc-large-cond" class="nav-link" data-scroll-target="#large-cond"><span class="header-section-number">11.3.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></a></li>
-  <li><a href="#clt" id="toc-clt" class="nav-link" data-scroll-target="#clt"><span class="header-section-number">11.3.2</span> Central Limit Theorem (CLT)</a></li>
-  <li><a href="#when-do-we-have-normality" id="toc-when-do-we-have-normality" class="nav-link" data-scroll-target="#when-do-we-have-normality"><span class="header-section-number">11.3.3</span> When do we have normality?</a></li>
-  </ul></li>
-  <li><a href="#prop-diff-samp-dist" id="toc-prop-diff-samp-dist" class="nav-link" data-scroll-target="#prop-diff-samp-dist"><span class="header-section-number">11.4</span> Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></a></li>
-  <li><a href="#mean-diff-samp-dist" id="toc-mean-diff-samp-dist" class="nav-link" data-scroll-target="#mean-diff-samp-dist"><span class="header-section-number">11.5</span> Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples"><span class="header-section-number">D.1</span> Examples</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./sampling-distributions.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./t-critical-values.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></h1>
+<h1 class="title">Appendix D — <span class="math inline">\(t^\ast\)</span> Critical Values</h1>
 </div>
 
 
@@ -376,208 +403,158 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sampling Distribution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A sampling distribution is the distribution of values taken by a sample statistic (a sample mean or sample proportion) in <em>all possible samples of a given size</em> <span class="math inline">\(n\)</span> from the same population.</p>
-</div>
-</div>
-<section id="bias-and-variability" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="bias-and-variability"><span class="header-section-number">11.1</span> Bias and Variability</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Unbiased Estimator">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Unbiased Estimator
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A statistic used to estimate a parameter is an <strong>unbiased estimator</strong> if the mean of its sampling distribution is equal to the true value of the parameter being estimated.</p>
-<p>Not all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.</p>
-</div>
-</div>
-<p>For this course, typical statistics that we’ll use in problems include <span class="math inline">\(\hat p\)</span>, <span class="math inline">\(\bar x\)</span>, and <span class="math inline">\(s_x\)</span>. These statistics are only unbiased if we have a random sample or random assignment.</p>
-<p><span class="math display">\[\mu_{\bar x} = \mu_X\]</span> <span class="math display">\[\mu_{\hat p} = p\]</span> <span class="math display">\[\mu_{s_x} = \sigma_X\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Variability of a Statistic">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Variability of a Statistic
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The variability of a statistic is described by the spread of its sampling distribution.</p>
-<p>This spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (<a href="random-variables.html#ten-per-cond">10% Condition</a>).</p>
-</div>
-</div>
-<p>Intuitively, if we have more data, we will have more precise results. Precision means that, on average, we will be able to get answers that are more closely grouped together. This means that our statistics, between many different possible samples, will vary less from each other.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the most ideal conditions, we want our sampling distribution to be accurate and precise, so that we know that we are getting the best possible answer.</p>
-<p>To be accurate, we want to expect our statistic to be the parameter (e.g.&nbsp;if we were to take the sample mean, we’d want to see that <span class="math inline">\(\mu_{\bar x} = \mu_X\)</span>) and for that to be true, our statistic needs to be an unbiased estimator.</p>
-<p>And to ensure that we will get something close to desired parameter, we want precision. This means a larger sample size so that our sampling distribution has low spread, reducing the variability of our statistic.</p>
-<p><strong>In ideal circumstances, we aim for low bias, low variability.</strong> This is achieved by mainly ensuring that we have a random process for obtaining our data and collecting a large amount of data.</p>
-</div>
-</div>
-</section>
-<section id="sampling-distribution-of-hat-p" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="sampling-distribution-of-hat-p"><span class="header-section-number">11.2</span> Sampling Distribution of <span class="math inline">\(\hat p\)</span></h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $\hat p$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sampling Distribution of <span class="math inline">\(\hat p\)</span>
+<p>The same principles for <span class="math inline">\(z^\ast\)</span> applies to <span class="math inline">\(t^\ast\)</span>, except we have to use degrees of freedom too.</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="7" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 6;"><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">t_df</span>(<span class="im">from</span><span class="op">,</span> to<span class="op">,</span> df) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="im">from</span><span class="op">,</span> to <span class="op">+</span> <span class="fl">0.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution with df = "</span> <span class="op">+</span> df <span class="op">+</span> <span class="st">" degrees of freedom"</span>})<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">t_critical_val</span>(C<span class="op">,</span> df) {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> val <span class="op">=</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">inv</span>((<span class="dv">100</span> <span class="op">-</span> C) <span class="op">/</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">100</span><span class="op">,</span> df)<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [val<span class="op">,</span> <span class="op">-</span><span class="dv">1</span> <span class="op">*</span> val]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">t_conf_region</span>(C<span class="op">,</span> df) {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> cutoffs <span class="op">=</span> <span class="fu">t_critical_val</span>(C<span class="op">,</span> df)<span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(cutoffs[<span class="dv">0</span>]<span class="op">,</span> cutoffs[<span class="dv">1</span>] <span class="op">+</span> <span class="fl">0.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution with df = "</span> <span class="op">+</span> df <span class="op">+</span> <span class="st">" degrees of freedom"</span>})<span class="op">;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">areaY</span>(<span class="fu">t_conf_region</span>(C2<span class="op">,</span> df)<span class="op">,</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.3</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(<span class="fu">t_df</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> df)<span class="op">,</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"lab"</span><span class="op">,</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">0</span>]])<span class="op">,</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">1</span>]])<span class="op">,</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="st">"x"</span><span class="op">:</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">0</span>] <span class="op">+</span> <span class="fl">0.4</span><span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> <span class="fl">0.35</span>}<span class="op">,</span> {<span class="st">"x"</span><span class="op">:</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">1</span>] <span class="op">-</span> <span class="fl">0.4</span><span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> <span class="fl">0.35</span>}]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> [<span class="st">"-|t*| = "</span> <span class="op">+</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">0</span>]<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">,</span> <span class="st">"|t*| = "</span> <span class="op">+</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">1</span>]<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)]})</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"t"</span> }<span class="op">,</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">41</span>]<span class="op">,</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span>}<span class="op">,</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"t distribution with df = "</span> <span class="op">+</span> df <span class="op">+</span> <span class="st">" degrees of freedom"</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Choose an SRS of size <span class="math inline">\(n\)</span> from a population of size <span class="math inline">\(N\)</span> with proportion <span class="math inline">\(p\)</span> of successes. Let <span class="math inline">\(\hat p\)</span> be the sample proportion of success. Then:</p>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="62" data-source-offset="-1563"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>viewof df <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>viewof C2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="fl">99.99</span>]<span class="op">,</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">95</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Confidence Level:"</span>}</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<p><a href="formula-sheet.html#table-b">Table B</a> conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that’s given in the top margin of the table.</p>
+<p>The left margin is where you should look for the degrees of freedom, calculated by <span class="math inline">\(df = n-1\)</span>.</p>
+<p>Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down. The critical value is the number that you pinpoint in the middle of the table.</p>
+<details>
+<summary>
+Why round down?
+</summary>
+<p>By rounding the degrees of freedom down, you use a more conservative estimate.</p>
+<p><a href="inference-for-means.html#t-justification">The main reason that we are even using the <span class="math inline">\(t\)</span>-distribution is because it is more conservative than the Normal distribution</a>.</p>
+<p>By rounding the degrees of freedom down, you use a more conservative <span class="math inline">\(t\)</span>-distribution (more area in the tails), so you ensure that you do not underestimate your answer, rather, you purposely overestimate your answer.</p>
+</details>
+<section id="examples" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">D.1</span> Examples</h2>
 <ul>
-<li><p>The mean of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\mu_{\hat p} = p\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\hat p\)</span> is <span class="math display">\[\sigma_{\hat p} = \frac{\sigma_p}{\sqrt{n}} = \sqrt{\frac{p(1-p)}{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
-<li><p>As <span class="math inline">\(n\)</span> increases, the sampling distribution of <span class="math inline">\(\hat p\)</span> becomes approximately Normal. Before you perform calculations, check that the <a href="random-variables.html#large-counts-cond">Large Counts condition</a> is satisfied:</p></li>
+<li>90% confidence and 24 degrees of freedom</li>
 </ul>
-<span class="math display">\[\begin{equation}
-np \geq 10 \text{ and }n(1-p) \geq 10
-\end{equation}\]</span>
-</div>
-</div>
-</section>
-<section id="sampling-distribution-of-bar-x" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="sampling-distribution-of-bar-x"><span class="header-section-number">11.3</span> Sampling Distribution of <span class="math inline">\(\bar x\)</span></h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $\bar x$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sampling Distribution of <span class="math inline">\(\bar x\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">\(\bar x\)</span> is the mean of an SRS of size <span class="math inline">\(n\)</span> drawn from a large population with mean <span class="math inline">\(\mu_X\)</span> and standard deviation <span class="math inline">\(\sigma_X\)</span>. Then:</p>
+<blockquote class="blockquote">
+<p>Look at the <span class="math inline">\(df = 24\)</span> row and the confidence level 90% column.</p>
+<p>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^\ast = 1.711\)</span></p>
+</blockquote>
 <ul>
-<li><p>The mean of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\mu_{\bar x} = \mu_X\]</span></p></li>
-<li><p>The standard deviation of the sampling distribution of <span class="math inline">\(\bar x\)</span> is <span class="math display">\[\sigma_{\bar x} = \frac{\sigma_X}{\sqrt{n}}\]</span> as long as the <a href="random-variables.html#ten-per-cond">10% condition</a> is satisfied.</p></li>
+<li>99% confidence and 96 degrees of freedom</li>
 </ul>
-<p>* These facts about the mean and standard deviation of <span class="math inline">\(\bar x\)</span> are <em>true no matter what shape the population distribution has.</em></p>
-</div>
-</div>
-<section id="large-cond" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="large-cond"><span class="header-section-number">11.3.1</span> Normal/Large Condition for <span class="math inline">\(\bar x\)</span></h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Normal/Large Condition for $\bar x$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Normal/Large Condition for <span class="math inline">\(\bar x\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If the population distribution is Normal, then so is the sampling distribution of <span class="math inline">\(\bar x\)</span>. This is true no matter what the sample size <span class="math inline">\(n\)</span> is.</p>
-<p>If the population distribution is not Normal, the sampling distribution of <span class="math inline">\(\bar x\)</span> will be approximately Normal in most cases if <span class="math inline">\(n \geq 30\)</span>. This fact is justified by the <a href="#clt">Central Limit Theorem</a>.</p>
-</div>
-</div>
-</section>
-<section id="clt" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="clt"><span class="header-section-number">11.3.2</span> Central Limit Theorem (CLT)</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Central Limit Theorem">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Central Limit Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you have a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.</p>
-<p>* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal</p>
-</div>
-</div>
-<p>The CLT justifies why we have the check the Large Condition above and the section below. Only statistics where our sample size is sufficient will have approximately normally distributed sampling distributions.</p>
-</section>
-<section id="when-do-we-have-normality" class="level3" data-number="11.3.3">
-<h3 data-number="11.3.3" class="anchored" data-anchor-id="when-do-we-have-normality"><span class="header-section-number">11.3.3</span> When do we have normality?</h3>
-<table class="table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Shape of Population Distribution</th>
-<th>Minimum Sample Size (<span class="math inline">\(n\)</span>) needed to achieve an approximately normal <span class="math inline">\(\bar x\)</span> sampling distribution</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Approximately Normal</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Slightly non-normal</td>
-<td>Somewhere between 10-30, depending on how “slightly” non-normal</td>
-</tr>
-<tr class="odd">
-<td>Very non-normal, skewed</td>
-<td>About 30</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="prop-diff-samp-dist" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="prop-diff-samp-dist"><span class="header-section-number">11.4</span> Sampling Distribution of <span class="math inline">\(\hat p_1 - \hat p_2\)</span></h2>
-<div class="highlight">
-<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with proportion of successes <span class="math inline">\(p_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with proportion of successes <span class="math inline">\(p_2\)</span>.</p>
-<p><strong>Shape:</strong></p>
-<p>When <span class="math inline">\(n_1p_1\)</span>, <span class="math inline">\(n_1(1-p_1)\)</span>, <span class="math inline">\(n_2p_2\)</span>, and <span class="math inline">\(n_2(1-p_2\)</span>) are all at least 10, the sampling distribution of <span class="math inline">\(p_1-p_2\)</span> is approximately Normal.</p>
-<p><strong>Center:</strong></p>
-<p>The mean of the sampling distribution is <span class="math display">\[\mu_{\hat p_1-\hat p_2} =p_1-p_2\]</span>.</p>
-<p><strong>Spread:</strong></p>
-<p>The standard deviation of <span class="math inline">\(\hat p_1-\hat p_2\)</span> is <span class="math display">\[s_{\hat p_1-\hat p_2}=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\]</span> as long as each sample is no more than 10% of its population (10% condition)</p>
-</div>
-</section>
-<section id="mean-diff-samp-dist" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="mean-diff-samp-dist"><span class="header-section-number">11.5</span> Sampling Distribution of <span class="math inline">\(\bar x_1 - \bar x_2\)</span></h2>
-<div class="highlight">
-<p>Choose an SRS of size <span class="math inline">\(n_1\)</span> from Population 1 with mean <span class="math inline">\(\mu_1\)</span> and standard deviation <span class="math inline">\(\sigma_1\)</span> and an independent SRS of size <span class="math inline">\(n_2\)</span> from Population 2 with mean <span class="math inline">\(\mu_2\)</span> and standard deviation <span class="math inline">\(\sigma_2\)</span>.</p>
-<p><strong>Shape:</strong></p>
-<p>When the population distributions are Normal, the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough (<span class="math inline">\(n_1 \geq 30\)</span> and <span class="math inline">\(n_2 \geq 30\)</span>)</p>
-<p><strong>Center:</strong></p>
-<p>The mean of the sampling distribution is</p>
-<p><span class="math display">\[\mu_{\bar x_1- \bar x_2} = \mu_1- \mu_2\]</span>.</p>
-<p><strong>Spread:</strong></p>
-<p>As long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of <span class="math inline">\(\bar x_1- \bar x_2\)</span> is</p>
-<p><span class="math display">\[\sigma_{\bar x_1- \bar x_2} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span></p>
-</div>
+<blockquote class="blockquote">
+<p>Round your df down to the next available value. <span class="math inline">\(df = 96 \sim 80\)</span>.</p>
+<p>Look at the <span class="math inline">\(df = 80\)</span> row and the confidence level 99% column.</p>
+<p>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^\ast = 2.639\)</span></p>
+</blockquote>
 
 
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuZnVuY3Rpb24gdF9kZihmcm9tLCB0bywgZGYpIHtcbiAgICB2YXIgeCA9IGQzLnJhbmdlKGZyb20sIHRvICsgMC4wMDUsIDAuMDEpO1xuICAgIHZhciByZXN1bHQgPSBbXTtcbiAgICB4LmZvckVhY2goKHZhbCwgaSkgPT4ge1xuICAgICAgICByZXN1bHQucHVzaCh7XCJ4XCI6IHZhbCwgXCJ5XCI6IGpTdGF0LnN0dWRlbnR0LnBkZih2YWwsIGRmKSwgXCJsYWJcIjogXCJ0IGRpc3RyaWJ1dGlvbiB3aXRoIGRmID0gXCIgKyBkZiArIFwiIGRlZ3JlZXMgb2YgZnJlZWRvbVwifSk7XG4gICAgfSlcbiAgICByZXR1cm4gcmVzdWx0O1xufVxuXG5mdW5jdGlvbiB0X2NyaXRpY2FsX3ZhbChDLCBkZikge1xuICAgIHZhciB2YWwgPSBqU3RhdC5zdHVkZW50dC5pbnYoKDEwMCAtIEMpIC8gMiAvIDEwMCwgZGYpO1xuICAgIHJldHVybiBbdmFsLCAtMSAqIHZhbF1cbn1cblxuZnVuY3Rpb24gdF9jb25mX3JlZ2lvbihDLCBkZikge1xuICAgIHZhciBjdXRvZmZzID0gdF9jcml0aWNhbF92YWwoQywgZGYpO1xuICAgIHZhciB4ID0gZDMucmFuZ2UoY3V0b2Zmc1swXSwgY3V0b2Zmc1sxXSArIDAuMDA1LCAwLjAxKTtcbiAgICB2YXIgcmVzdWx0ID0gW107XG4gICAgICAgIHguZm9yRWFjaCgodmFsLCBpKSA9PiB7XG4gICAgICAgIHJlc3VsdC5wdXNoKHtcInhcIjogdmFsLCBcInlcIjogalN0YXQuc3R1ZGVudHQucGRmKHZhbCwgZGYpLCBcImxhYlwiOiBcInQgZGlzdHJpYnV0aW9uIHdpdGggZGYgPSBcIiArIGRmICsgXCIgZGVncmVlcyBvZiBmcmVlZG9tXCJ9KTtcbiAgICB9KTtcbiAgICByZXR1cm4gcmVzdWx0O1xufVxuXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuYXJlYVkodF9jb25mX3JlZ2lvbihDMiwgZGYpLFxuICAgICAge1xuICAgICAgICB4OiBcInhcIiwgXG4gICAgICAgIHk6IFwieVwiLFxuICAgICAgICBmaWxsT3BhY2l0eTogMC4zXG4gICAgICB9XG4gICAgKSxcbiAgICBQbG90LmxpbmUodF9kZigtNCwgNCwgZGYpLFxuICAgICAge1xuICAgICAgICB4OiBcInhcIiwgXG4gICAgICAgIHk6IFwieVwiLFxuICAgICAgICBzdHJva2U6IFwibGFiXCIsXG4gICAgICAgIHN0cm9rZVdpZHRoOiAzXG4gICAgICB9XG4gICAgKSxcbiAgICBQbG90LnJ1bGVYKFt0X2NyaXRpY2FsX3ZhbChDMiwgZGYpWzBdXSksXG4gICAgUGxvdC5ydWxlWChbdF9jcml0aWNhbF92YWwoQzIsIGRmKVsxXV0pLFxuICAgIFBsb3QudGV4dChbe1wieFwiOiB0X2NyaXRpY2FsX3ZhbChDMiwgZGYpWzBdICsgMC40LCBcInlcIjogMC4zNX0sIHtcInhcIjogdF9jcml0aWNhbF92YWwoQzIsIGRmKVsxXSAtIDAuNCwgXCJ5XCI6IDAuMzV9XSwge3g6IFwieFwiLCB5OlwieVwiLCB0ZXh0OiBbXCItfHQqfCA9IFwiICsgdF9jcml0aWNhbF92YWwoQzIsIGRmKVswXS50b0ZpeGVkKDIpLCBcInx0KnwgPSBcIiArIHRfY3JpdGljYWxfdmFsKEMyLCBkZilbMV0udG9GaXhlZCgyKV19KVxuICBdLFxuICAgIFxuICAgIHg6IHsgbGFiZWw6IFwidFwiIH0sXG4gICAgeToge2RvbWFpbjogWzAsIC40MV0sXG4gICAgbGFiZWw6IFwiRGVuc2l0eVwifSxcbiAgICBjb2xvcjoge1xuICAgICAgICBsZWdlbmQ6IHRydWVcbiAgICB9LFxuICAgIGNhcHRpb246IFwidCBkaXN0cmlidXRpb24gd2l0aCBkZiA9IFwiICsgZGYgKyBcIiBkZWdyZWVzIG9mIGZyZWVkb21cIlxufSlcblxudmlld29mIGRmID0gSW5wdXRzLnJhbmdlKFxuWzEsIDEwMF0sXG57dmFsdWU6IDMsIHN0ZXA6IDEsIGxhYmVsOiBcIkRlZ3JlZXMgb2YgRnJlZWRvbSAoZGYpOlwifVxuKVxuXG52aWV3b2YgQzIgPSBJbnB1dHMucmFuZ2UoXG5bMSwgOTkuOTldLFxue3ZhbHVlOiA5NSwgc3RlcDogMC4wMSwgbGFiZWw6IFwiQ29uZmlkZW5jZSBMZXZlbDpcIn1cbilcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdkZicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdDMicpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -989,13 +966,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./random-variables.html" class="pagination-link" aria-label="Random Variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></span>
+      <a href="./z-critical-values.html" class="pagination-link" aria-label="$z^\ast$ Critical Values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title"><span class="math inline">\(z^\ast\)</span> Critical Values</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./confidence-intervals.html" class="pagination-link" aria-label="Confidence Intervals">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Confidence Intervals</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./linear-regression-project.html" class="pagination-link" aria-label="Multiple Linear Regression Project">
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

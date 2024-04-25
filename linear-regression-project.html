@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - Appendix D — Multiple Linear Regression Project</title>
+<title>AP Statistics Notes - Appendix E — Multiple Linear Regression Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./critical-values.html" rel="prev">
+<link href="./t-critical-values.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +118,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -312,14 +312,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./critical-values.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Critical Values</span></span></a>
+  <a href="./z-critical-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title"><span class="math inline">\(z^\ast\)</span> Critical Values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./t-critical-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./linear-regression-project.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></span></a>
   </div>
 </li>
       </ul>
@@ -334,17 +340,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#part-1-choosing-your-data" id="toc-part-1-choosing-your-data" class="nav-link active" data-scroll-target="#part-1-choosing-your-data"><span class="header-section-number">D.1</span> Part 1: Choosing your data</a></li>
-  <li><a href="#part-2-regression-lines" id="toc-part-2-regression-lines" class="nav-link" data-scroll-target="#part-2-regression-lines"><span class="header-section-number">D.2</span> Part 2: Regression Lines</a></li>
+  <li><a href="#part-1-choosing-your-data" id="toc-part-1-choosing-your-data" class="nav-link active" data-scroll-target="#part-1-choosing-your-data"><span class="header-section-number">E.1</span> Part 1: Choosing your data</a></li>
+  <li><a href="#part-2-regression-lines" id="toc-part-2-regression-lines" class="nav-link" data-scroll-target="#part-2-regression-lines"><span class="header-section-number">E.2</span> Part 2: Regression Lines</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix D — Multiple Linear Regression Project</h1>
+<h1 class="title">Appendix E — Multiple Linear Regression Project</h1>
 </div>
 
 
@@ -411,15 +417,15 @@ Warning
 </tbody>
 </table>
 <p>In this project, you will investigate multiple quantitative variables and construct a LSRL from the multiple variables. You will apply all Chapter 3 and 12 knowledge that you have learned and use Google Sheets to analyze your data by creating scatter plots and other visualizations to check the assumptions of linear regression inference.</p>
-<section id="part-1-choosing-your-data" class="level2" data-number="D.1">
-<h2 data-number="D.1" class="anchored" data-anchor-id="part-1-choosing-your-data"><span class="header-section-number">D.1</span> Part 1: Choosing your data</h2>
+<section id="part-1-choosing-your-data" class="level2" data-number="E.1">
+<h2 data-number="E.1" class="anchored" data-anchor-id="part-1-choosing-your-data"><span class="header-section-number">E.1</span> Part 1: Choosing your data</h2>
 <p>In this project , you will each choose data to analyze from the <a href="https://think.cs.vt.edu/corgis/csv/index.html">CORGIS Datasets Project</a></p>
 <p>Look at the descriptions of the dataset and look at what variables you can analyze. Before making a final decision, <strong>make sure that your data set has at least 4 quantitative variables that you can work with.</strong></p>
 <p>When you are done with that, please write your choice on the attached spreadsheet in Google Classroom. <strong>Only 1 person per data set</strong></p>
 <p>Visit <a href="https://stapplet.com/quant2v.html" class="uri">https://stapplet.com/quant2v.html</a> and explore some relationships between the quantitative variables that you have. You will have to download the data set. Please create a new Google Doc, paste screenshots of the <mark>3 - 4</mark> scatter plots that you create, and write down your thoughts about them.</p>
 </section>
-<section id="part-2-regression-lines" class="level2" data-number="D.2">
-<h2 data-number="D.2" class="anchored" data-anchor-id="part-2-regression-lines"><span class="header-section-number">D.2</span> Part 2: Regression Lines</h2>
+<section id="part-2-regression-lines" class="level2" data-number="E.2">
+<h2 data-number="E.2" class="anchored" data-anchor-id="part-2-regression-lines"><span class="header-section-number">E.2</span> Part 2: Regression Lines</h2>
 <p>Now that you’ve explored multiple relationships between variables, now you can create some LSRLs for your selected variables.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -875,8 +881,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./critical-values.html" class="pagination-link" aria-label="Critical Values">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Critical Values</span></span>
+      <a href="./t-critical-values.html" class="pagination-link" aria-label="$t^\ast$ Critical Values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

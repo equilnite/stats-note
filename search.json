@@ -879,58 +879,69 @@
     ]
   },
   {
-    "objectID": "critical-values.html",
-    "href": "critical-values.html",
-    "title": "Appendix C — Critical Values",
+    "objectID": "z-critical-values.html",
+    "href": "z-critical-values.html",
+    "title": "Appendix C — \\(z^\\ast\\) Critical Values",
     "section": "",
-    "text": "C.1 \\(z^\\ast\\)\nWhen constructing confidence intervals, we need the value \\(z^\\ast\\) such that \\(C\\)% of the estimated sampling distribution is between \\(-|z^\\ast|\\) and \\(|z^\\ast|\\). In other words, imagine:\nSo if we want to \\(z\\) that corresponds to the confidence level, we have to determine the area of the left/right tail that corresponds to the confidence level. We know that if there’s \\(C\\)% in the middle, then there’s \\(100\\% - C\\) left in the two tails. For one tail, that’ll be \\(\\frac{100\\% - C}{2}\\).\nLook up that proportion in Table A in the middle of the table, take the larger value if it’s not on there specifically, and back track to the margins to get your desired value of \\(z^\\ast\\).\nThe sign of any critical value does not matter, so just take the absolute value as your critical value.",
+    "text": "C.1 Examples\nAlternatively, do the calculator command invNorm(0.05) to get a value of around -1.64. Take the positive value as your critical value, \\(z^\\ast = 1.64\\).\nAlternatively, do the calculator command invNorm(0.005) to get a value of around -2.5758. Take the positive value as your critical value, \\(z^\\ast = 2.58\\).",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Critical Values</span>"
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>$z^\\ast$ Critical Values</span>"
     ]
   },
   {
-    "objectID": "critical-values.html#zast",
-    "href": "critical-values.html#zast",
-    "title": "Appendix C — Critical Values",
+    "objectID": "z-critical-values.html#examples",
+    "href": "z-critical-values.html#examples",
+    "title": "Appendix C — \\(z^\\ast\\) Critical Values",
     "section": "",
-    "text": "C.1.1 Examples\n\n90% confidence\n\n\nFind that the area that we want is: \\(\\frac{100\\% - 90%}{2} = 5\\% = 0.05\\)\nTry to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.\nTake the larger value, 0.0505 and look at the margins for the \\(z\\) that corresponds to it, -1.64.\nJust take the positive value, \\(z^\\ast = 1.64\\).\n\nAlternatively, do the calculator command invNorm(0.05) to get a value of around -1.64. Take the positive value as your critical value, \\(z^\\ast = 1.64\\).\n\n99% confidence\n\n\nFind that the area that we want is: \\(\\frac{100\\% - 99%}{2} = 0.5\\% = 0.005\\)\nTry to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.\nTake the larger value, 0.0051 and look at the margins for the \\(z\\) that corresponds to it, -2.57.\nJust take the positive value, \\(z^\\ast = 2.57\\).\n\nAlternatively, do the calculator command invNorm(0.005) to get a value of around -2.5758. Take the positive value as your critical value, \\(z^\\ast = 2.58\\).\n\nfunction standard_z(from, to) {\n    var x = d3.range(from, to + 0.005, 0.01);\n    var normal = [];\n    x.forEach((val, i) =&gt; {\n        normal.push({\"x\": val, \"y\": jStat.normal.pdf(val, 0, 1), \"lab\": \"Standard Normal\"});\n    })\n    return normal;\n}\n\n\nfunction critical_val(C) {\n    var val = jStat.normal.inv((100 - C) / 2 / 100, 0, 1);\n    return [val, -1 * val]\n}\n\nfunction conf_region(C) {\n    var cutoffs = critical_val(C);\n    var x = d3.range(cutoffs[0], cutoffs[1] + 0.005, 0.01);\n    var result = [];\n        x.forEach((val, i) =&gt; {\n        result.push({\"x\": val, \"y\": jStat.normal.pdf(val, 0, 1), \"lab\": \"Standard Normal\"});\n    });\n    return result;\n}\n\nPlot.plot({\n  marks: [\n    Plot.areaY(conf_region(C),\n      {\n        x: \"x\", \n        y: \"y\",\n        fillOpacity: 0.3\n      }\n    ),\n    Plot.line(standard_z(-4, 4),\n      {\n        x: \"x\", \n        y: \"y\",\n        stroke: \"lab\",\n        strokeWidth: 3\n      }\n    ),\n    Plot.ruleX([critical_val(C)[0]]),\n    Plot.ruleX([critical_val(C)[1]])\n  ],\n    \n    x: { label: \"z\" },\n    y: {domain: [0, .41],\n    label: \"Density\"},\n    color: {\n        legend: true\n    },\n    caption: \"Standard Normal Distribution\"\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof C = Inputs.range(\n[1, 99.99],\n{value: 95, step: 0.01, label: \"Confidence Level:\"}\n)",
+    "text": "90% confidence\n\n\nFind that the area that we want is: \\(\\frac{100\\% - 90%}{2} = 5\\% = 0.05\\)\nTry to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.\nTake the larger value, 0.0505 and look at the margins for the \\(z\\) that corresponds to it, -1.64.\nJust take the positive value, \\(z^\\ast = 1.64\\).\n\n\n\n99% confidence\n\n\nFind that the area that we want is: \\(\\frac{100\\% - 99%}{2} = 0.5\\% = 0.005\\)\nTry to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.\nTake the larger value, 0.0051 and look at the margins for the \\(z\\) that corresponds to it, -2.57.\nJust take the positive value, \\(z^\\ast = 2.57\\).",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Critical Values</span>"
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>$z^\\ast$ Critical Values</span>"
     ]
   },
   {
-    "objectID": "critical-values.html#tast",
-    "href": "critical-values.html#tast",
-    "title": "Appendix C — Critical Values",
-    "section": "C.2 \\(t^\\ast\\)",
-    "text": "C.2 \\(t^\\ast\\)\nThe same principles for \\(z^\\ast\\) applies to \\(t^\\ast\\), except we have to use degrees of freedom too.\nTable B conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that’s given in the top margin of the table.\nThe left margin is where you should look for the degrees of freedom, calculated by \\(df = n-1\\).\nFind the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down. The critical value is the number that you pinpoint in the middle of the table.\n\n\nWhy round down?\n\nBy rounding the degrees of freedom down, you use a more conservative estimate.\nThe main reason that we are even using the \\(t\\)-distribution is because it is more conservative than the Normal distribution.\nBy rounding the degrees of freedom down, you use a more conservative \\(t\\)-distribution (more area in the tails), so you ensure that you do not underestimate your answer, rather, you purposely overestimate your answer.\n\n\nC.2.1 Examples\n\n90% confidence and 24 degrees of freedom\n\n\nLook at the \\(df = 24\\) row and the confidence level 90% column.\nTake the value in the middle of the table that you pinpoint from that row and column, \\(t^\\ast = 1.711\\)\n\n\n99% confidence and 96 degrees of freedom\n\n\nRound your df down to the next available value. \\(df = 96 \\sim 80\\).\nLook at the \\(df = 80\\) row and the confidence level 99% column.\nTake the value in the middle of the table that you pinpoint from that row and column, \\(t^\\ast = 2.639\\)",
+    "objectID": "t-critical-values.html",
+    "href": "t-critical-values.html",
+    "title": "Appendix D — \\(t^\\ast\\) Critical Values",
+    "section": "",
+    "text": "D.1 Examples",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Critical Values</span>"
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>$t^\\ast$ Critical Values</span>"
+    ]
+  },
+  {
+    "objectID": "t-critical-values.html#examples",
+    "href": "t-critical-values.html#examples",
+    "title": "Appendix D — \\(t^\\ast\\) Critical Values",
+    "section": "",
+    "text": "90% confidence and 24 degrees of freedom\n\n\nLook at the \\(df = 24\\) row and the confidence level 90% column.\nTake the value in the middle of the table that you pinpoint from that row and column, \\(t^\\ast = 1.711\\)\n\n\n99% confidence and 96 degrees of freedom\n\n\nRound your df down to the next available value. \\(df = 96 \\sim 80\\).\nLook at the \\(df = 80\\) row and the confidence level 99% column.\nTake the value in the middle of the table that you pinpoint from that row and column, \\(t^\\ast = 2.639\\)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>$t^\\ast$ Critical Values</span>"
     ]
   },
   {
     "objectID": "linear-regression-project.html",
     "href": "linear-regression-project.html",
-    "title": "Appendix D — Multiple Linear Regression Project",
+    "title": "Appendix E — Multiple Linear Regression Project",
     "section": "",
-    "text": "D.1 Part 1: Choosing your data\nIn this project , you will each choose data to analyze from the CORGIS Datasets Project\nLook at the descriptions of the dataset and look at what variables you can analyze. Before making a final decision, make sure that your data set has at least 4 quantitative variables that you can work with.\nWhen you are done with that, please write your choice on the attached spreadsheet in Google Classroom. Only 1 person per data set\nVisit https://stapplet.com/quant2v.html and explore some relationships between the quantitative variables that you have. You will have to download the data set. Please create a new Google Doc, paste screenshots of the 3 - 4 scatter plots that you create, and write down your thoughts about them.",
+    "text": "E.1 Part 1: Choosing your data\nIn this project , you will each choose data to analyze from the CORGIS Datasets Project\nLook at the descriptions of the dataset and look at what variables you can analyze. Before making a final decision, make sure that your data set has at least 4 quantitative variables that you can work with.\nWhen you are done with that, please write your choice on the attached spreadsheet in Google Classroom. Only 1 person per data set\nVisit https://stapplet.com/quant2v.html and explore some relationships between the quantitative variables that you have. You will have to download the data set. Please create a new Google Doc, paste screenshots of the 3 - 4 scatter plots that you create, and write down your thoughts about them.",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Multiple Linear Regression Project</span>"
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Multiple Linear Regression Project</span>"
     ]
   },
   {
     "objectID": "linear-regression-project.html#part-2-regression-lines",
     "href": "linear-regression-project.html#part-2-regression-lines",
-    "title": "Appendix D — Multiple Linear Regression Project",
-    "section": "D.2 Part 2: Regression Lines",
-    "text": "D.2 Part 2: Regression Lines\nNow that you’ve explored multiple relationships between variables, now you can create some LSRLs for your selected variables.\n\n\n\n\n\n\nTip\n\n\n\nConsidering what you found out in Part 1 about some of the relationships, decide whether you want to keep exploring those relationships or not. You want to keep some or look at a new relationship(s).\n\n\nFor this part, you will explore 3 of these relationships and calculate and interpret several things about them.\nFor each of these 3 relationships, you will use the same stapplet app to\n\ncalculate the LSRL,\nprovide a screenshot of what the scatter plot looks like with the LSRL now,\nwrite the LSRL in context of the problem,\ninterpret the intercept \\(a\\)\ninterpret the intercept \\(b\\)\nuse the value of \\(s\\) and \\(r^2\\) to talk about how well the line predicts the values\nuse the residual plot to talk about how well the line fits the data.\n\n\n\n\n\n\n\nImportant\n\n\n\nYou’re expected to write each of these correctly as you have in chapter 3.\nUse the template Google Doc already created for you on this part’s Google Classroom Assignment",
+    "title": "Appendix E — Multiple Linear Regression Project",
+    "section": "E.2 Part 2: Regression Lines",
+    "text": "E.2 Part 2: Regression Lines\nNow that you’ve explored multiple relationships between variables, now you can create some LSRLs for your selected variables.\n\n\n\n\n\n\nTip\n\n\n\nConsidering what you found out in Part 1 about some of the relationships, decide whether you want to keep exploring those relationships or not. You want to keep some or look at a new relationship(s).\n\n\nFor this part, you will explore 3 of these relationships and calculate and interpret several things about them.\nFor each of these 3 relationships, you will use the same stapplet app to\n\ncalculate the LSRL,\nprovide a screenshot of what the scatter plot looks like with the LSRL now,\nwrite the LSRL in context of the problem,\ninterpret the intercept \\(a\\)\ninterpret the intercept \\(b\\)\nuse the value of \\(s\\) and \\(r^2\\) to talk about how well the line predicts the values\nuse the residual plot to talk about how well the line fits the data.\n\n\n\n\n\n\n\nImportant\n\n\n\nYou’re expected to write each of these correctly as you have in chapter 3.\nUse the template Google Doc already created for you on this part’s Google Classroom Assignment",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Multiple Linear Regression Project</span>"
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Multiple Linear Regression Project</span>"
     ]
   }
 ]
