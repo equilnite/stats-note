@@ -6,15 +6,13 @@
 A **scatter plot** is a graph that shows the relationship between two quantitative variables measured on the same individuals.  The values of one variable appear on the horizontal axis, and the values of the other variable appear on the vertical axis. Each individual in the data is represented as a point on the graph. We want to know if there is any relationship between the two quantitative variables. In other words, as the x-value increases, does the y-value tend to increase, decrease, or stay the same? Or do the two variables appear to be related at all?  Are there any outliers?  A scatter plot allows us to answer these questions visually.  In a scatter plot, the y-axis is always the response variable (which measures an outcome of a study) the x-axis is always the e**X**planatory variable (which may help explain or influence changes in the response variable).
 
 ::: {.callout-note title="Describing Scatterplots"}
-We can describe the relationships between two quantitative variables through their scatter plot's:
+We can describe the relationships between two quantitative variables through their scatterplot's:
 
-a. Strength: The degree to which the points follow a pattern
+a. **Strength**: The degree to which the points follow a pattern
+b. **Form**: Linear or non-linear
+c. **Direction**: Positive or negative association
+d. **Outliers**: Individual observations that fall outside the overall pattern
 
-b. Form: Linear or non-linear
-
-c. Direction: Positive or negative association
-
-d. Outliers: Individual observations that fall outside the overall pattern
 :::
 
 <details>
@@ -51,8 +49,7 @@ iris %>% filter(Species == "setosa") %>%
 
 ```
 
-Based off this plot, I would say that there is a
-moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.
+> Based off this plot, I would say that there is a moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.
 
 ## Least Squares Regression Model {#LSRL-model}
 
@@ -80,9 +77,9 @@ Where
 
 - $\hat y$ is the predicted value of the response variable $y$ for a given value of the explanatory variable $x$
 
-- $a$ is a statistic that estimates $\alpha$, the y-intercept, and provides the value of $\hat y$ when $x=0$.
+- $a$ is a **statistic** that estimates $\alpha$, the y-intercept, and provides the value of $\hat y$ when $x = 0$.
 
-- $b$ is a statistic that estimates $\beta$, the slope.
+- $b$ is a **statistic** that estimates $\beta$, the slope.
 
 And in this class, we calculate each statistic by minimizing the squared error between each of the points and the line ("least squares").
 
@@ -90,20 +87,21 @@ And in this class, we calculate each statistic by minimizing the squared error b
 
 ::: {.callout-note title="Interpretation of a regression line"}
 
-We interpret $a$ and $b$ as:
-
-Sample sentence frame for a **Y-INTERCEPT**
-: When the [*explanatory variable*] is zero, our model predicts the [*response variable*] would be [*y-intercept*].
+We interpret $a$, the $y$-intercept, as:
+> When the [*explanatory variable*] is zero, our model predicts the [*response variable*] would be [*y-intercept*].
 
 
-Sample sentence frame for a **SLOPE**:
-: For every 1 [*unit*] increase in [*explanatory variable*], our model predicts an average change of [slope] in [*response variable*]
+We interpret $b$, the slope, as:
+> For every 1 [*unit*] increase in [*explanatory variable*], our model predicts an average change of [slope] in [*response variable*]
+
+As you interpret these, please remember that the wording of *predicted* is important.
 
 :::
 
 ### Correlation
 
 A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is.
+
 The correlation coefficient $r$ measures the direction and strength of the linear relationship between two quantitative variables.
 
 $$r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)$$
@@ -138,9 +136,6 @@ $$r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i 
 
 - Correlation is not resistant: $r$ is strongly affected by a few outlying observations
 
-- What would be the effect of removing the outlier
- on the correlation?
-
 - Correlation is not a complete summary of two-variable data.
 :::
 
@@ -148,159 +143,7 @@ The correlation $r$ only informs us how well the data can conform to a line (the
 
 ::: {.callout-note title="Interpretation of $r$"}
 
-There is a [*strength*], [*direction*] relationship between the [*explanatory variable*] and the [*response variable*]
-
-:::
-
-# Linear Regression
-
-## Scatter plots
-
-A **scatter plot** is a graph that shows the relationship between two quantitative variables measured on the same individuals.  The values of one variable appear on the horizontal axis, and the values of the other variable appear on the vertical axis. Each individual in the data is represented as a point on the graph. We want to know if there is any relationship between the two quantitative variables. In other words, as the x-value increases, does the y-value tend to increase, decrease, or stay the same? Or do the two variables appear to be related at all?  Are there any outliers?  A scatter plot allows us to answer these questions visually.  In a scatter plot, the y-axis is always the response variable (which measures an outcome of a study) the x-axis is always the e**X**planatory variable (which may help explain or influence changes in the response variable).
-
-::: {.callout-note title="Describing Scatterplots"}
-We can describe the relationships between two quantitative variables through their scatter plot's:
-
-a. Strength: The degree to which the points follow a pattern
-
-b. Form: Linear or non-linear
-
-c. Direction: Positive or negative association
-
-d. Outliers: Individual observations that fall outside the overall pattern
-:::
-
-<details>
-<summary>
-Make sure to remember these small details when describing your scatterplots.
-</summary>
-
-- You should remember to describe your strength and direction of the relationships through the form of the relationship.
-    * Likewise, describe your outliers through the form of the relationship.
-
-- Make sure to include the context of the problem when you are describing the relationship.
-
-</details>
-
-### An example of a scatter plot
-
-Here's an example of a scatter plot, with the iris data set of just the *setosa* species:
-
-```{r}
-library(dplyr)
-iris %>% filter(Species == "setosa")
-```
-
-Let's say that we are trying to see if sepal length and sepal width have a relationship, specifically, if sepal length can explain the differences in sepal width between irises. This makes our explanatory variable the sepal length and the response variable the sepal width.
-
-```{r iris scatter plot}
-library(ggplot2)
-iris %>% filter(Species == "setosa") %>%
-    ggplot(aes(x = Sepal.Length, y = Sepal.Width)) +
-    geom_point() +
-    labs(title = "Sepal Width vs Sepal Length",
-         x = "Sepal Length", y = "Sepal Width") +
-    theme_minimal()
-
-```
-
-Based off this plot, I would say that there is a
-moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.
-
-
-## Least Squares Regression Model {#LSRL-model}
-
-Suppose that we have a response variable $y$, and an explanatory variable $x$. If the relationship between the two variables is linear, then the relationship can be modeled by the following model:
-
-$$y = \alpha + \beta x + \epsilon$$
-
-Where
-
-- $y$ is the value of the response variable for a given value of the explanatory variable $x$ and some underlying "noise" $\epsilon$.
-
-- $\alpha$ is the y-intercept, the value of $y$ when $x=0$
-
-- $\beta$ is the slope, and
-
-- $\epsilon$ is the underlying "noise"/error that we can expect out of the relationship.
-
-::: {.callout-note title="The least suares regression model"}
-
-An estimate of this model would then have the following form:
-
-$$\hat y = a + bx$$
-
-Where
-
-- $\hat y$ is the predicted value of the response variable $y$ for a given value of the explanatory variable $x$
-
-- $a$ is a statistic that estimates $\alpha$, the y-intercept, and provides the value of $\hat y$ when $x=0$.
-
-- $b$ is a statistic that estimates $\beta$, the slope.
-
-:::
-
-::: {.callout-note title="Interpretation of a regression line"}
-
-We interpret $a$ and $b$ as:
-
-Sample sentence frame for a **Y-INTERCEPT**
-: When the [*explanatory variable*] is zero, our model predicts the [*response variable*] would be [*y-intercept*].
-
-
-Sample sentence frame for a **SLOPE**:
-: For every 1 [*unit*] increase in [*explanatory variable*], our model predicts an average change of [slope] in [*response variable*]
-
-:::
-
-### Correlation
-
-A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is.
-The correlation coefficient $r$ measures the direction and strength of the linear relationship between two quantitative variables.
-
-$$r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)$$
-
-::: {.callout-note title="Properties of the Correlation Coefficient $r$"}
-
-- $r$ is always a number between -1 and 1
-
-- $r > 0$ indicates a positive association.
-
-- $r < 0$ indicates a negative association.
-
-- Values of $r$ near 0 indicate a very weak linear relationship.
-
-- The strength of the linear relationship increases as $r$ moves away from 0 towards -1 or 1.
-
-- The extreme values $r = -1$ and $r = 1$ occur only in the case of a perfect linear relationship.
-
-- Correlation makes no distinction between explanatory and response variables.
-
-- $r$ does not change when we change the units of measurement of $x$, $y$ or both.
-
-- The correlation $r$ itself has no unit of measurement.
-
-- CORRELATION DOES NOT IMPLY CAUSATION!!!
-
-- Correlation requires that both variables be quantitative.
-
-- Correlation does not describe curved relationships between variables.
-
-- A value of $r$ close to -1 or 1 does not guarantee a linear relationship between them.
-
-- Correlation is not resistant: $r$ is strongly affected by a few outlying observations
-
-- What would be the effect of removing the outlier
- on the correlation?
-
-- Correlation is not a complete summary of two-variable data.
-:::
-
-The correlation $r$ only informs us how well the data can conform to a line (the strength of a linear relationship), and the direction of of the relationship. Otherwise, depending on $r$ is hard unless we look at a couple of other things, such as a [residual plot](#residual-plots).
-
-::: {.callout-note title="Interpretation of $r$"}
-
-There is a [*strength*], [*direction*] relationship between the [*explanatory variable*] and the [*response variable*]
+> There is a [*strength*], [*direction*] relationship between the [*explanatory variable*] and the [*response variable*]
 
 :::
 
@@ -313,8 +156,10 @@ In most cases, no line will pass through all of the points in a scatter plot. Be
 A **residual** is the difference between an observed value of the response variable and the value predicted by the regression line. That is,
 $$r_i= \text{residual for the ith value}=\text{observed } i^{th} \text{ y value}-\text{predicted } i^{th} \text{ y value}=y_i-\hat y_i$$
 
-Interpreting RESIDUALS
-:The actual [**response variable**] for [**specific value of the explanatory variable**], is [**greater than/less than**] the predicted [response variable] by [**residual value**].
+:::
+
+::: {.callout-note title="Residual Interpretation"}
+> The actual [**response variable**] for [**specific value of the explanatory variable**], is [**greater than/less than**] the predicted [response variable] by [**residual value**].
 :::
 
 All the equations that we learn in this chapter are based off the fact that a least squares regression line minimizes the *squared* vertical deviations of the points from the line. In this course, you do not have to know the underlying proofs for the formulas.
@@ -324,7 +169,7 @@ All the equations that we learn in this chapter are based off the fact that a le
 We can plot the residuals versus the explanatory variable to obtain insight into the appropriateness of our regression model:
 
 ::: {.callout-note title="Points of Caution for Residual Plots"}
-Look for:
+Curved patterns and heteroskedasticity are not good things to see in residuals plots.
 
 Curved pattern
 : if there’s a curved pattern in our residuals, that means there’s a curved pattern in our observations that we didn’t notice before, probably because of the scale of our scatterplot.  A curved pattern means that a linear model (like an LSR line) is probably not appropriate to describe our data.  We should try to use a non-linear model.
@@ -344,20 +189,31 @@ If we use a least-squares regression line to predict the values of a response va
 $$s = \sqrt{\frac{\sum (residuals ^2)}{n-2}}=\sqrt{\frac{\sum (y_i - \hat y_i)^2)}{n - 2}}$$
 
 This value gives the approximate size of a “typical” prediction error (residual).
+:::
 
+::: {.callout-note title="Interpretation of $s$"}
 
-**Sample Sentence Frame**
+> When using the LSRL with [*explanatory variable*] to predict [*response variable*], we will typically be off by about [*the value of $s$ with units of the response variable ($y$)*].
 
-When using the LSRL with [*explanatory variable*] to predict [*response variable*], we will typically be off by about [*the value of $s$ with units of the response variable ($y$)*].
+As such, $s$ is a measure of how well out linear model *predicts*. The relatively lower $s$ is, the better it predicts.
+
 :::
 
 #### Coefficient of Determination
 
 When we do the least squares model, we minimize the squares of the residuals, but what can we compare this to? We compare it to another line (a "baseline" model), that always predicts the mean of $y$ for any value of $x$. In other words, we compare it to $\hat y = \bar y$. We do this since this baseline model practically means that are are saying that there is no relationship between $x$ and $y$. On the other hand, in the least squares model, we are trying to say that there is a relationship.
 
-The coefficient of determination, $r^2$ is defined by the \% reduction in squared error that using a least squares model has in comparison to the baseline model.
+The coefficient of determination, $r^2$ is defined by the \% reduction in squared error in comparison to the baseline model.
 
 $$r^2 = \frac{\text{size of reduction}}{\text{original amount}} = \frac{SST - SSE}{SST} = 1 -\frac{SSE}{SST} = 1 - \frac{\sum (y_i-\hat y)^2}{\sum (y_i - \bar y)^2}$$
+
+::: {.callout-note title="Interpretation of $r^2$"}
+
+> [*$r^2*]% of the variation in [*response variable*] can be explained by the linear relationship with [*explanatory variable*].
+
+If $r^2$ is closer to 100% (or 1), then our model is more predictive.
+
+:::
 
 ### Other definitions
 
@@ -389,7 +245,12 @@ $$a=\bar y-b\bar x$$
 
 Remember, an outlier is an observation that lies outside the overall pattern of other observations.  In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither.
 
-
+<details>
+<summary>
+So what are Child 18 and Child 19?
+</summary>
+We could also say that Child 18 is an outlier in the x-direction and y-direction meanwhile Child 19 is an outlier in the y-direction
+</details>
 
 ::: {.highlight}
 An influential observation in statistics is a point that has a large effect on a statistical calculation. In other words, an observation is considered influential if removing it would markedly change the regression line.
@@ -397,12 +258,15 @@ An influential observation in statistics is a point that has a large effect on a
 
 <details>
 <summary>
-Which appears to have the greatest influence on the position of the regression line?
+Which appears to have the greatest influence on the regression line?
 </summary>
 
-Child 18 is the most influential observation here. Notice how removing (and adding) child 18 caused the greatest change in the regression line. Child 19 is a close one, but Child 18 has the most influence.
+Child 18 and 19 are both equally influential in their own sense here.
 
-We could say that Child 18 is an outlier in the x-direction and y-direction meanwhile child 19  is an outlier in the y-direction
+Child 18 is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line. 
+
+Child 19 is the most influential observation on the correlation coefficient, $r$. Notice how removing (and adding) child 19 caused the greatest change in $r$
+
 </details>
 
 
@@ -413,7 +277,8 @@ Will influential observations always have large residuals?  Why/why not?  Try to
 
 No, take the previous example for instance. Child 18 has an extremely small residual in the plot.
 
-So, influential observations actually often have small residuals. This is because they have "influence" on the line; they "pull" the regression line towards them. So if the regression line is closer to them, then they have a small residual.
+It actually makes sense for influential observations to be able to have small residuals; this is because they have "influence" on the line; they "pull" the regression line towards them. So if the regression line is closer to them, then they have a small residual.
+
 </details>
 
 4. *Correlation does not imply causation*. When we study the relationship between two variables, we often hope to show that changes in the explanatory variable cause changes in the response variable. *A strong association between two variables is not enough to draw conclusions about cause and effect.* [We've learned how to draw cause and effect relationships and the scope of inference.](#experimental-design)
@@ -426,13 +291,11 @@ Consider the study that found people with two cars live longer than people who o
 No. This does not even make sense to happen. What does make sense is looking between the lines and determining that there are other factors at play. A common variable here that would confound this relationship (confounding variable) would be the wealth of individuals. By having more wealth, you have more cars and are likely to live longer. Since this factor is in play, it's likely the real reason why we see this positive relationship between number of cars and length of life.
 </details>
 
-[See this website for more examples on weird correlations.](https://tylervigen.com/)
+[See this website for more examples on weird correlations.](https://tylervigen.com/spurious-correlations)
 
 ## Interpreting Computer Output {#basic-linreg-output}
 
 You are expected to know how to interpret computer out in MINITAB format (just what you normally see).
-
-[See the next section for the rest of the interpretation](#more-linreg-output)
 
 ### Example
 
@@ -489,12 +352,42 @@ With $s = 5740.13$ and $r^2 = .664$.
 We can also infer from this output that since $b$ is negative (negative slope, so negative relationship), that $$r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 $$
 :::
 
-Other parts are irrelevant to this chapter.
-
 ## Doing stuff in your calculator
 
-The video below covers everything that you would want to do for linear regression.
-
-There aren't any steps written here, but they will be written some time in the future.
+The video below covers everything that you would want to do for linear regression. Written steps are below.
 
 {{< video https://youtu.be/05o7rXUJzmQ >}}
+
+### Setting up
+
+Enter all your data into your lists (`stat > edit`). Remember which ones your entered them (I will refer to them as `XList` and `YList`)
+
+### Scatterplot
+
+1. Configure your plots by first going into `stat plots` (`2nd > y=`).
+    - Make sure all other plots are `OFF`
+    - Select the first plot
+
+2. In the first plot, 
+    - make sure you're chosen the correct plot type,
+    - entered the correct lists into `XList` and `YList`,
+
+3. Hit `graph`!
+    - But a better idea is to put the plotting window into a good scale, by first doing `zoom > zoomStat`.
+
+### Creating your LSRL
+
+`LinReg(a+bx)` (`stat > calc`)
+- Enter the correct `XList` and `YList`. Ignore `Freq`.
+- You should enter `Y1` into `RegEq`. You access it by `vars > y-vars > function`.
+
+If you entered `Y1`, you can return to your scatter plot to view the line `graph`.
+
+### Slope inference
+
+`LinRegTTest` or `LinRegTInt` (`stat > test`)
+- Enter the correct `XList` and `YList`. Ignore `Freq`.
+- Select the correct alternative hypothesis direction or confidence level.
+- You should enter `Y1` into `RegEq`. You access it by `vars > y-vars > function`.
+
+
