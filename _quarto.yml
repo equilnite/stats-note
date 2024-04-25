@@ -43,7 +43,8 @@ book:
     - formula-sheet.qmd
     # - applets.qmd
     - statistic-to-pvalue.qmd
-    - critical-values.qmd
+    - z-critical-values.qmd
+    - t-critical-values.qmd
     # - calc-guide.qmd
     # - test-page.qmd
     - linear-regression-project.qmd

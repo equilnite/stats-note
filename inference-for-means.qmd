@@ -38,7 +38,7 @@ $$\bar x \pm t^\ast \frac{s_x}{\sqrt{n}}$$
 
 where $t^\ast$ is the critical value for the Student's $t$ distribution corresponding with degrees of freedom $df = n - 1$ with $C$\% of its area between $-t^\ast$ and $t^\ast$.
 
-[See Appendix C for examples on how to calculate $t^\ast$ for a given confidence level $C$\% and degrees of freedom $df$](critical-values.qmd)
+[See Appendix D for examples on how to calculate $t^\ast$ for a given confidence level $C$\% and degrees of freedom $df$](t-critical-values.qmd)
 
 <details>
 <summary> Why? </summary>
