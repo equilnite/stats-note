@@ -344,25 +344,20 @@ window.Quarto = {
   <li><a href="#LSRL-model" id="toc-LSRL-model" class="nav-link" data-scroll-target="#LSRL-model"><span class="header-section-number">17.2</span> Least Squares Regression Model</a>
   <ul class="collapse">
   <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">17.2.1</span> Correlation</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">17.2.2</span> Residuals</a></li>
+  <li><a href="#other-definitions" id="toc-other-definitions" class="nav-link" data-scroll-target="#other-definitions"><span class="header-section-number">17.2.3</span> Other definitions</a></li>
   </ul></li>
-  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression"><span class="header-section-number">18</span> Linear Regression</a>
+  <li><a href="#miscellaneous-things-to-remember" id="toc-miscellaneous-things-to-remember" class="nav-link" data-scroll-target="#miscellaneous-things-to-remember"><span class="header-section-number">17.3</span> Miscellaneous Things to Remember</a></li>
+  <li><a href="#basic-linreg-output" id="toc-basic-linreg-output" class="nav-link" data-scroll-target="#basic-linreg-output"><span class="header-section-number">17.4</span> Interpreting Computer Output</a>
   <ul class="collapse">
-  <li><a href="#scatter-plots-1" id="toc-scatter-plots-1" class="nav-link" data-scroll-target="#scatter-plots-1"><span class="header-section-number">18.1</span> Scatter plots</a>
-  <ul class="collapse">
-  <li><a href="#an-example-of-a-scatter-plot-1" id="toc-an-example-of-a-scatter-plot-1" class="nav-link" data-scroll-target="#an-example-of-a-scatter-plot-1"><span class="header-section-number">18.1.1</span> An example of a scatter plot</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">17.4.1</span> Example</a></li>
   </ul></li>
-  <li><a href="#LSRL-model" id="toc-LSRL-model" class="nav-link" data-scroll-target="#LSRL-model"><span class="header-section-number">18.2</span> Least Squares Regression Model</a>
+  <li><a href="#doing-stuff-in-your-calculator" id="toc-doing-stuff-in-your-calculator" class="nav-link" data-scroll-target="#doing-stuff-in-your-calculator"><span class="header-section-number">17.5</span> Doing stuff in your calculator</a>
   <ul class="collapse">
-  <li><a href="#correlation-1" id="toc-correlation-1" class="nav-link" data-scroll-target="#correlation-1"><span class="header-section-number">18.2.1</span> Correlation</a></li>
-  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals"><span class="header-section-number">18.2.2</span> Residuals</a></li>
-  <li><a href="#other-definitions" id="toc-other-definitions" class="nav-link" data-scroll-target="#other-definitions"><span class="header-section-number">18.2.3</span> Other definitions</a></li>
-  </ul></li>
-  <li><a href="#miscellaneous-things-to-remember" id="toc-miscellaneous-things-to-remember" class="nav-link" data-scroll-target="#miscellaneous-things-to-remember"><span class="header-section-number">18.3</span> Miscellaneous Things to Remember</a></li>
-  <li><a href="#basic-linreg-output" id="toc-basic-linreg-output" class="nav-link" data-scroll-target="#basic-linreg-output"><span class="header-section-number">18.4</span> Interpreting Computer Output</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">18.4.1</span> Example</a></li>
-  </ul></li>
-  <li><a href="#doing-stuff-in-your-calculator" id="toc-doing-stuff-in-your-calculator" class="nav-link" data-scroll-target="#doing-stuff-in-your-calculator"><span class="header-section-number">18.5</span> Doing stuff in your calculator</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up"><span class="header-section-number">17.5.1</span> Setting up</a></li>
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot"><span class="header-section-number">17.5.2</span> Scatterplot</a></li>
+  <li><a href="#creating-your-lsrl" id="toc-creating-your-lsrl" class="nav-link" data-scroll-target="#creating-your-lsrl"><span class="header-section-number">17.5.3</span> Creating your LSRL</a></li>
+  <li><a href="#slope-inference" id="toc-slope-inference" class="nav-link" data-scroll-target="#slope-inference"><span class="header-section-number">17.5.4</span> Slope inference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -402,12 +397,12 @@ Describing Scatterplots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We can describe the relationships between two quantitative variables through their scatter plot’s:</p>
+<p>We can describe the relationships between two quantitative variables through their scatterplot’s:</p>
 <ol type="a">
-<li><p>Strength: The degree to which the points follow a pattern</p></li>
-<li><p>Form: Linear or non-linear</p></li>
-<li><p>Direction: Positive or negative association</p></li>
-<li><p>Outliers: Individual observations that fall outside the overall pattern</p></li>
+<li><strong>Strength</strong>: The degree to which the points follow a pattern</li>
+<li><strong>Form</strong>: Linear or non-linear</li>
+<li><strong>Direction</strong>: Positive or negative association</li>
+<li><strong>Outliers</strong>: Individual observations that fall outside the overall pattern</li>
 </ol>
 </div>
 </div>
@@ -445,7 +440,9 @@ Make sure to remember these small details when describing your scatterplots.
 </div>
 </div>
 </div>
+<blockquote class="blockquote">
 <p>Based off this plot, I would say that there is a moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.</p>
+</blockquote>
 </section>
 </section>
 <section id="LSRL-model" class="level2" data-number="17.2">
@@ -474,8 +471,8 @@ The least suares regression model
 <p>Where</p>
 <ul>
 <li><p><span class="math inline">\(\hat y\)</span> is the predicted value of the response variable <span class="math inline">\(y\)</span> for a given value of the explanatory variable <span class="math inline">\(x\)</span></p></li>
-<li><p><span class="math inline">\(a\)</span> is a statistic that estimates <span class="math inline">\(\alpha\)</span>, the y-intercept, and provides the value of <span class="math inline">\(\hat y\)</span> when <span class="math inline">\(x=0\)</span>.</p></li>
-<li><p><span class="math inline">\(b\)</span> is a statistic that estimates <span class="math inline">\(\beta\)</span>, the slope.</p></li>
+<li><p><span class="math inline">\(a\)</span> is a <strong>statistic</strong> that estimates <span class="math inline">\(\alpha\)</span>, the y-intercept, and provides the value of <span class="math inline">\(\hat y\)</span> when <span class="math inline">\(x = 0\)</span>.</p></li>
+<li><p><span class="math inline">\(b\)</span> is a <strong>statistic</strong> that estimates <span class="math inline">\(\beta\)</span>, the slope.</p></li>
 </ul>
 <p>And in this class, we calculate each statistic by minimizing the squared error between each of the points and the line (“least squares”).</p>
 </div>
@@ -490,22 +487,15 @@ Interpretation of a regression line
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We interpret <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> as:</p>
-<dl>
-<dt>Sample sentence frame for a <strong>Y-INTERCEPT</strong></dt>
-<dd>
-When the [<em>explanatory variable</em>] is zero, our model predicts the [<em>response variable</em>] would be [<em>y-intercept</em>].
-</dd>
-<dt>Sample sentence frame for a <strong>SLOPE</strong>:</dt>
-<dd>
-For every 1 [<em>unit</em>] increase in [<em>explanatory variable</em>], our model predicts an average change of [slope] in [<em>response variable</em>]
-</dd>
-</dl>
+<p>We interpret <span class="math inline">\(a\)</span>, the <span class="math inline">\(y\)</span>-intercept, as: &gt; When the [<em>explanatory variable</em>] is zero, our model predicts the [<em>response variable</em>] would be [<em>y-intercept</em>].</p>
+<p>We interpret <span class="math inline">\(b\)</span>, the slope, as: &gt; For every 1 [<em>unit</em>] increase in [<em>explanatory variable</em>], our model predicts an average change of [slope] in [<em>response variable</em>]</p>
+<p>As you interpret these, please remember that the wording of <em>predicted</em> is important.</p>
 </div>
 </div>
 <section id="correlation" class="level3" data-number="17.2.1">
 <h3 data-number="17.2.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">17.2.1</span> Correlation</h3>
-<p>A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is. The correlation coefficient <span class="math inline">\(r\)</span> measures the direction and strength of the linear relationship between two quantitative variables.</p>
+<p>A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is.</p>
+<p>The correlation coefficient <span class="math inline">\(r\)</span> measures the direction and strength of the linear relationship between two quantitative variables.</p>
 <p><span class="math display">\[r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled" title="Properties of the Correlation Coefficient $r$">
 <div class="callout-header d-flex align-content-center">
@@ -532,7 +522,6 @@ Properties of the Correlation Coefficient <span class="math inline">\(r\)</span>
 <li><p>Correlation does not describe curved relationships between variables.</p></li>
 <li><p>A value of <span class="math inline">\(r\)</span> close to -1 or 1 does not guarantee a linear relationship between them.</p></li>
 <li><p>Correlation is not resistant: <span class="math inline">\(r\)</span> is strongly affected by a few outlying observations</p></li>
-<li><p>What would be the effect of removing the outlier on the correlation?</p></li>
 <li><p>Correlation is not a complete summary of two-variable data.</p></li>
 </ul>
 </div>
@@ -548,177 +537,14 @@ Interpretation of <span class="math inline">\(r\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<blockquote class="blockquote">
 <p>There is a [<em>strength</em>], [<em>direction</em>] relationship between the [<em>explanatory variable</em>] and the [<em>response variable</em>]</p>
+</blockquote>
 </div>
 </div>
 </section>
-</section>
-<section id="linear-regression" class="level1" data-number="18">
-<h1 data-number="18"><span class="header-section-number">18</span> Linear Regression</h1>
-<section id="scatter-plots-1" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="scatter-plots-1"><span class="header-section-number">18.1</span> Scatter plots</h2>
-<p>A <strong>scatter plot</strong> is a graph that shows the relationship between two quantitative variables measured on the same individuals. The values of one variable appear on the horizontal axis, and the values of the other variable appear on the vertical axis. Each individual in the data is represented as a point on the graph. We want to know if there is any relationship between the two quantitative variables. In other words, as the x-value increases, does the y-value tend to increase, decrease, or stay the same? Or do the two variables appear to be related at all? Are there any outliers? A scatter plot allows us to answer these questions visually. In a scatter plot, the y-axis is always the response variable (which measures an outcome of a study) the x-axis is always the e<strong>X</strong>planatory variable (which may help explain or influence changes in the response variable).</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Describing Scatterplots">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Describing Scatterplots
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can describe the relationships between two quantitative variables through their scatter plot’s:</p>
-<ol type="a">
-<li><p>Strength: The degree to which the points follow a pattern</p></li>
-<li><p>Form: Linear or non-linear</p></li>
-<li><p>Direction: Positive or negative association</p></li>
-<li><p>Outliers: Individual observations that fall outside the overall pattern</p></li>
-</ol>
-</div>
-</div>
-<details>
-<summary>
-Make sure to remember these small details when describing your scatterplots.
-</summary>
-<ul>
-<li>You should remember to describe your strength and direction of the relationships through the form of the relationship.
-<ul>
-<li>Likewise, describe your outliers through the form of the relationship.</li>
-</ul></li>
-<li>Make sure to include the context of the problem when you are describing the relationship.</li>
-</ul>
-</details>
-<section id="an-example-of-a-scatter-plot-1" class="level3" data-number="18.1.1">
-<h3 data-number="18.1.1" class="anchored" data-anchor-id="an-example-of-a-scatter-plot-1"><span class="header-section-number">18.1.1</span> An example of a scatter plot</h3>
-<p>Here’s an example of a scatter plot, with the iris data set of just the <em>setosa</em> species:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Sepal.Length"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[5],"type":["fct"],"align":["left"]}],"data":[{"1":"5.1","2":"3.5","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.0","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.7","2":"3.2","3":"1.3","4":"0.2","5":"setosa"},{"1":"4.6","2":"3.1","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.6","3":"1.4","4":"0.2","5":"setosa"},{"1":"5.4","2":"3.9","3":"1.7","4":"0.4","5":"setosa"},{"1":"4.6","2":"3.4","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.0","2":"3.4","3":"1.5","4":"0.2","5":"setosa"},{"1":"4.4","2":"2.9","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.1","5":"setosa"},{"1":"5.4","2":"3.7","3":"1.5","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.4","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.1","5":"setosa"},{"1":"4.3","2":"3.0","3":"1.1","4":"0.1","5":"setosa"},{"1":"5.8","2":"4.0","3":"1.2","4":"0.2","5":"setosa"},{"1":"5.7","2":"4.4","3":"1.5","4":"0.4","5":"setosa"},{"1":"5.4","2":"3.9","3":"1.3","4":"0.4","5":"setosa"},{"1":"5.1","2":"3.5","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.7","2":"3.8","3":"1.7","4":"0.3","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.5","4":"0.3","5":"setosa"},{"1":"5.4","2":"3.4","3":"1.7","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.7","3":"1.5","4":"0.4","5":"setosa"},{"1":"4.6","2":"3.6","3":"1.0","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.3","3":"1.7","4":"0.5","5":"setosa"},{"1":"4.8","2":"3.4","3":"1.9","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.0","3":"1.6","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.4","3":"1.6","4":"0.4","5":"setosa"},{"1":"5.2","2":"3.5","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.2","2":"3.4","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.7","2":"3.2","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.1","3":"1.6","4":"0.2","5":"setosa"},{"1":"5.4","2":"3.4","3":"1.5","4":"0.4","5":"setosa"},{"1":"5.2","2":"4.1","3":"1.5","4":"0.1","5":"setosa"},{"1":"5.5","2":"4.2","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.2","3":"1.2","4":"0.2","5":"setosa"},{"1":"5.5","2":"3.5","3":"1.3","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.6","3":"1.4","4":"0.1","5":"setosa"},{"1":"4.4","2":"3.0","3":"1.3","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.4","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.5","3":"1.3","4":"0.3","5":"setosa"},{"1":"4.5","2":"2.3","3":"1.3","4":"0.3","5":"setosa"},{"1":"4.4","2":"3.2","3":"1.3","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.5","3":"1.6","4":"0.6","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.9","4":"0.4","5":"setosa"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.6","2":"3.2","3":"1.4","4":"0.2","5":"setosa"},{"1":"5.3","2":"3.7","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.3","3":"1.4","4":"0.2","5":"setosa"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>Let’s say that we are trying to see if sepal length and sepal width have a relationship, specifically, if sepal length can explain the differences in sepal width between irises. This makes our explanatory variable the sepal length and the response variable the sepal width.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="linear-regression_files/figure-html/iris scatter plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Based off this plot, I would say that there is a moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.</p>
-</section>
-</section>
-<section id="LSRL-model" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="LSRL-model"><span class="header-section-number">18.2</span> Least Squares Regression Model</h2>
-<p>Suppose that we have a response variable <span class="math inline">\(y\)</span>, and an explanatory variable <span class="math inline">\(x\)</span>. If the relationship between the two variables is linear, then the relationship can be modeled by the following model:</p>
-<p><span class="math display">\[y = \alpha + \beta x + \epsilon\]</span></p>
-<p>Where</p>
-<ul>
-<li><p><span class="math inline">\(y\)</span> is the value of the response variable for a given value of the explanatory variable <span class="math inline">\(x\)</span> and some underlying “noise” <span class="math inline">\(\epsilon\)</span>.</p></li>
-<li><p><span class="math inline">\(\alpha\)</span> is the y-intercept, the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span></p></li>
-<li><p><span class="math inline">\(\beta\)</span> is the slope, and</p></li>
-<li><p><span class="math inline">\(\epsilon\)</span> is the underlying “noise”/error that we can expect out of the relationship.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled" title="The least suares regression model">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The least suares regression model
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>An estimate of this model would then have the following form:</p>
-<p><span class="math display">\[\hat y = a + bx\]</span></p>
-<p>Where</p>
-<ul>
-<li><p><span class="math inline">\(\hat y\)</span> is the predicted value of the response variable <span class="math inline">\(y\)</span> for a given value of the explanatory variable <span class="math inline">\(x\)</span></p></li>
-<li><p><span class="math inline">\(a\)</span> is a statistic that estimates <span class="math inline">\(\alpha\)</span>, the y-intercept, and provides the value of <span class="math inline">\(\hat y\)</span> when <span class="math inline">\(x=0\)</span>.</p></li>
-<li><p><span class="math inline">\(b\)</span> is a statistic that estimates <span class="math inline">\(\beta\)</span>, the slope.</p></li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Interpretation of a regression line">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Interpretation of a regression line
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We interpret <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> as:</p>
-<dl>
-<dt>Sample sentence frame for a <strong>Y-INTERCEPT</strong></dt>
-<dd>
-When the [<em>explanatory variable</em>] is zero, our model predicts the [<em>response variable</em>] would be [<em>y-intercept</em>].
-</dd>
-<dt>Sample sentence frame for a <strong>SLOPE</strong>:</dt>
-<dd>
-For every 1 [<em>unit</em>] increase in [<em>explanatory variable</em>], our model predicts an average change of [slope] in [<em>response variable</em>]
-</dd>
-</dl>
-</div>
-</div>
-<section id="correlation-1" class="level3" data-number="18.2.1">
-<h3 data-number="18.2.1" class="anchored" data-anchor-id="correlation-1"><span class="header-section-number">18.2.1</span> Correlation</h3>
-<p>A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is. The correlation coefficient <span class="math inline">\(r\)</span> measures the direction and strength of the linear relationship between two quantitative variables.</p>
-<p><span class="math display">\[r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Properties of the Correlation Coefficient $r$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Properties of the Correlation Coefficient <span class="math inline">\(r\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><span class="math inline">\(r\)</span> is always a number between -1 and 1</p></li>
-<li><p><span class="math inline">\(r &gt; 0\)</span> indicates a positive association.</p></li>
-<li><p><span class="math inline">\(r &lt; 0\)</span> indicates a negative association.</p></li>
-<li><p>Values of <span class="math inline">\(r\)</span> near 0 indicate a very weak linear relationship.</p></li>
-<li><p>The strength of the linear relationship increases as <span class="math inline">\(r\)</span> moves away from 0 towards -1 or 1.</p></li>
-<li><p>The extreme values <span class="math inline">\(r = -1\)</span> and <span class="math inline">\(r = 1\)</span> occur only in the case of a perfect linear relationship.</p></li>
-<li><p>Correlation makes no distinction between explanatory and response variables.</p></li>
-<li><p><span class="math inline">\(r\)</span> does not change when we change the units of measurement of <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> or both.</p></li>
-<li><p>The correlation <span class="math inline">\(r\)</span> itself has no unit of measurement.</p></li>
-<li><p>CORRELATION DOES NOT IMPLY CAUSATION!!!</p></li>
-<li><p>Correlation requires that both variables be quantitative.</p></li>
-<li><p>Correlation does not describe curved relationships between variables.</p></li>
-<li><p>A value of <span class="math inline">\(r\)</span> close to -1 or 1 does not guarantee a linear relationship between them.</p></li>
-<li><p>Correlation is not resistant: <span class="math inline">\(r\)</span> is strongly affected by a few outlying observations</p></li>
-<li><p>What would be the effect of removing the outlier on the correlation?</p></li>
-<li><p>Correlation is not a complete summary of two-variable data.</p></li>
-</ul>
-</div>
-</div>
-<p>The correlation <span class="math inline">\(r\)</span> only informs us how well the data can conform to a line (the strength of a linear relationship), and the direction of of the relationship. Otherwise, depending on <span class="math inline">\(r\)</span> is hard unless we look at a couple of other things, such as a <a href="#residual-plots">residual plot</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Interpretation of $r$">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Interpretation of <span class="math inline">\(r\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There is a [<em>strength</em>], [<em>direction</em>] relationship between the [<em>explanatory variable</em>] and the [<em>response variable</em>]</p>
-</div>
-</div>
-</section>
-<section id="residuals" class="level3" data-number="18.2.2">
-<h3 data-number="18.2.2" class="anchored" data-anchor-id="residuals"><span class="header-section-number">18.2.2</span> Residuals</h3>
+<section id="residuals" class="level3" data-number="17.2.2">
+<h3 data-number="17.2.2" class="anchored" data-anchor-id="residuals"><span class="header-section-number">17.2.2</span> Residuals</h3>
 <p>In most cases, no line will pass through all of the points in a scatter plot. Because we use the line to predict <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>, the prediction errors we make are errors in <span class="math inline">\(y\)</span>, the vertical direction in the scatter plot. A regression line using our least squares method minimizes the squared residuals.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Residuals">
 <div class="callout-header d-flex align-content-center">
@@ -731,7 +557,21 @@ Residuals
 </div>
 <div class="callout-body-container callout-body">
 <p>A <strong>residual</strong> is the difference between an observed value of the response variable and the value predicted by the regression line. That is, <span class="math display">\[r_i= \text{residual for the ith value}=\text{observed } i^{th} \text{ y value}-\text{predicted } i^{th} \text{ y value}=y_i-\hat y_i\]</span></p>
-<p>Interpreting RESIDUALS :The actual [<strong>response variable</strong>] for [<strong>specific value of the explanatory variable</strong>], is [<strong>greater than/less than</strong>] the predicted [response variable] by [<strong>residual value</strong>].</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Residual Interpretation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Residual Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>The actual [<strong>response variable</strong>] for [<strong>specific value of the explanatory variable</strong>], is [<strong>greater than/less than</strong>] the predicted [response variable] by [<strong>residual value</strong>].</p>
+</blockquote>
 </div>
 </div>
 <p>All the equations that we learn in this chapter are based off the fact that a least squares regression line minimizes the <em>squared</em> vertical deviations of the points from the line. In this course, you do not have to know the underlying proofs for the formulas.</p>
@@ -748,7 +588,7 @@ Points of Caution for Residual Plots
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Look for:</p>
+<p>Curved patterns and heteroskedasticity are not good things to see in residuals plots.</p>
 <dl>
 <dt>Curved pattern</dt>
 <dd>
@@ -781,20 +621,50 @@ Standard deviation of the residuals, <span class="math inline">\(s\)</span>
 <p>If we use a least-squares regression line to predict the values of a response variable <span class="math inline">\(y\)</span> from an explanatory variable <span class="math inline">\(x\)</span>, the standard deviation of the residuals (<span class="math inline">\(s\)</span>) is given by</p>
 <p><span class="math display">\[s = \sqrt{\frac{\sum (residuals ^2)}{n-2}}=\sqrt{\frac{\sum (y_i - \hat y_i)^2)}{n - 2}}\]</span></p>
 <p>This value gives the approximate size of a “typical” prediction error (residual).</p>
-<p><strong>Sample Sentence Frame</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Interpretation of $s$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interpretation of <span class="math inline">\(s\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
 <p>When using the LSRL with [<em>explanatory variable</em>] to predict [<em>response variable</em>], we will typically be off by about [<em>the value of <span class="math inline">\(s\)</span> with units of the response variable (<span class="math inline">\(y\)</span>)</em>].</p>
+</blockquote>
+<p>As such, <span class="math inline">\(s\)</span> is a measure of how well out linear model <em>predicts</em>. The relatively lower <span class="math inline">\(s\)</span> is, the better it predicts.</p>
 </div>
 </div>
 </section>
 <section id="coefficient-of-determination" class="level4">
 <h4 class="anchored" data-anchor-id="coefficient-of-determination">Coefficient of Determination</h4>
 <p>When we do the least squares model, we minimize the squares of the residuals, but what can we compare this to? We compare it to another line (a “baseline” model), that always predicts the mean of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>. In other words, we compare it to <span class="math inline">\(\hat y = \bar y\)</span>. We do this since this baseline model practically means that are are saying that there is no relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. On the other hand, in the least squares model, we are trying to say that there is a relationship.</p>
-<p>The coefficient of determination, <span class="math inline">\(r^2\)</span> is defined by the % reduction in squared error that using a least squares model has in comparison to the baseline model.</p>
+<p>The coefficient of determination, <span class="math inline">\(r^2\)</span> is defined by the % reduction in squared error in comparison to the baseline model.</p>
 <p><span class="math display">\[r^2 = \frac{\text{size of reduction}}{\text{original amount}} = \frac{SST - SSE}{SST} = 1 -\frac{SSE}{SST} = 1 - \frac{\sum (y_i-\hat y)^2}{\sum (y_i - \bar y)^2}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Interpretation of $r^2$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interpretation of <span class="math inline">\(r^2\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>[<em>$r^2</em>]% of the variation in [<em>response variable</em>] can be explained by the linear relationship with [<em>explanatory variable</em>].</p>
+</blockquote>
+<p>If <span class="math inline">\(r^2\)</span> is closer to 100% (or 1), then our model is more predictive.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="other-definitions" class="level3" data-number="18.2.3">
-<h3 data-number="18.2.3" class="anchored" data-anchor-id="other-definitions"><span class="header-section-number">18.2.3</span> Other definitions</h3>
+<section id="other-definitions" class="level3" data-number="17.2.3">
+<h3 data-number="17.2.3" class="anchored" data-anchor-id="other-definitions"><span class="header-section-number">17.2.3</span> Other definitions</h3>
 <p>Sometimes you’re just given a summary of the data instead of every single point. In this case, you can still find a (the y-intercept) and b (the slope) of the LSR line, and write the equation. To do this you need to know the following:</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Formulas for Coefficients of LSR">
 <div class="callout-header d-flex align-content-center">
@@ -814,8 +684,8 @@ Formulas for Coefficients of LSR
 </div>
 </section>
 </section>
-<section id="miscellaneous-things-to-remember" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="miscellaneous-things-to-remember"><span class="header-section-number">18.3</span> Miscellaneous Things to Remember</h2>
+<section id="miscellaneous-things-to-remember" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="miscellaneous-things-to-remember"><span class="header-section-number">17.3</span> Miscellaneous Things to Remember</h2>
 <ol type="1">
 <li><p><em>The distinction between explanatory and response variables is important in regression</em>. Least-squares regression makes the distances of the data points from the line small only in the y direction. If we reverse the roles of the two variables, we get a different least-squares regression line. This isn’t true for correlation: switching x and y doesn’t affect the value of r.</p></li>
 <li><p><em>Correlation and regression lines describe only linear relationships</em>. You can calculate the correlation and least-squares line for any relationship between two quantitative variables, but the results are useful only if the scatterplot shows a linear pattern. ALWAYS PLOT YOUR DATA.</p>
@@ -831,22 +701,29 @@ Formulas for Coefficients of LSR
 </figure>
 </div>
 <p>Remember, an outlier is an observation that lies outside the overall pattern of other observations. In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither.</p>
+<details>
+<summary>
+So what are Child 18 and Child 19?
+</summary>
+We could also say that Child 18 is an outlier in the x-direction and y-direction meanwhile Child 19 is an outlier in the y-direction
+</details>
 <div class="highlight">
 <p>An influential observation in statistics is a point that has a large effect on a statistical calculation. In other words, an observation is considered influential if removing it would markedly change the regression line.</p>
 </div>
 <details>
 <summary>
-Which appears to have the greatest influence on the position of the regression line?
+Which appears to have the greatest influence on the regression line?
 </summary>
-<p>Child 18 is the most influential observation here. Notice how removing (and adding) child 18 caused the greatest change in the regression line. Child 19 is a close one, but Child 18 has the most influence.</p>
-We could say that Child 18 is an outlier in the x-direction and y-direction meanwhile child 19 is an outlier in the y-direction
+<p>Child 18 and 19 are both equally influential in their own sense here.</p>
+<p>Child 18 is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line.</p>
+<p>Child 19 is the most influential observation on the correlation coefficient, <span class="math inline">\(r\)</span>. Notice how removing (and adding) child 19 caused the greatest change in <span class="math inline">\(r\)</span></p>
 </details>
 <details>
 <summary>
 Will influential observations always have large residuals? Why/why not? Try to find some examples on your own first.
 </summary>
 <p>No, take the previous example for instance. Child 18 has an extremely small residual in the plot.</p>
-So, influential observations actually often have small residuals. This is because they have “influence” on the line; they “pull” the regression line towards them. So if the regression line is closer to them, then they have a small residual.
+<p>It actually makes sense for influential observations to be able to have small residuals; this is because they have “influence” on the line; they “pull” the regression line towards them. So if the regression line is closer to them, then they have a small residual.</p>
 </details>
 <ol start="4" type="1">
 <li><em>Correlation does not imply causation</em>. When we study the relationship between two variables, we often hope to show that changes in the explanatory variable cause changes in the response variable. <em>A strong association between two variables is not enough to draw conclusions about cause and effect.</em> <a href="experimental-design.html">We’ve learned how to draw cause and effect relationships and the scope of inference.</a></li>
@@ -857,14 +734,13 @@ Consider the study that found people with two cars live longer than people who o
 </summary>
 No.&nbsp;This does not even make sense to happen. What does make sense is looking between the lines and determining that there are other factors at play. A common variable here that would confound this relationship (confounding variable) would be the wealth of individuals. By having more wealth, you have more cars and are likely to live longer. Since this factor is in play, it’s likely the real reason why we see this positive relationship between number of cars and length of life.
 </details>
-<p><a href="https://tylervigen.com/">See this website for more examples on weird correlations.</a></p>
+<p><a href="https://tylervigen.com/spurious-correlations">See this website for more examples on weird correlations.</a></p>
 </section>
-<section id="basic-linreg-output" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="basic-linreg-output"><span class="header-section-number">18.4</span> Interpreting Computer Output</h2>
+<section id="basic-linreg-output" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="basic-linreg-output"><span class="header-section-number">17.4</span> Interpreting Computer Output</h2>
 <p>You are expected to know how to interpret computer out in MINITAB format (just what you normally see).</p>
-<p><a href="#more-linreg-output">See the next section for the rest of the interpretation</a></p>
-<section id="example" class="level3" data-number="18.4.1">
-<h3 data-number="18.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">18.4.1</span> Example</h3>
+<section id="example" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">17.4.1</span> Example</h3>
 <p>Below is the computer output from a basic regression analysis for the Ford-F-150 data relating the mileage and value of Ford F-150s.</p>
 <pre><code>Predictor       Coef        SECoef      T      P
 Constant        38257       2446        15.64  0.000
@@ -902,14 +778,43 @@ S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
 <div class="highlight">
 <p>We can also infer from this output that since <span class="math inline">\(b\)</span> is negative (negative slope, so negative relationship), that <span class="math display">\[r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 \]</span></p>
 </div>
-<p>Other parts are irrelevant to this chapter.</p>
 </section>
 </section>
-<section id="doing-stuff-in-your-calculator" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="doing-stuff-in-your-calculator"><span class="header-section-number">18.5</span> Doing stuff in your calculator</h2>
-<p>The video below covers everything that you would want to do for linear regression.</p>
-<p>There aren’t any steps written here, but they will be written some time in the future.</p>
+<section id="doing-stuff-in-your-calculator" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="doing-stuff-in-your-calculator"><span class="header-section-number">17.5</span> Doing stuff in your calculator</h2>
+<p>The video below covers everything that you would want to do for linear regression. Written steps are below.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/05o7rXUJzmQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="setting-up" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="setting-up"><span class="header-section-number">17.5.1</span> Setting up</h3>
+<p>Enter all your data into your lists (<code>stat &gt; edit</code>). Remember which ones your entered them (I will refer to them as <code>XList</code> and <code>YList</code>)</p>
+</section>
+<section id="scatterplot" class="level3" data-number="17.5.2">
+<h3 data-number="17.5.2" class="anchored" data-anchor-id="scatterplot"><span class="header-section-number">17.5.2</span> Scatterplot</h3>
+<ol type="1">
+<li>Configure your plots by first going into <code>stat plots</code> (<code>2nd &gt; y=</code>).
+<ul>
+<li>Make sure all other plots are <code>OFF</code></li>
+<li>Select the first plot</li>
+</ul></li>
+<li>In the first plot,
+<ul>
+<li>make sure you’re chosen the correct plot type,</li>
+<li>entered the correct lists into <code>XList</code> and <code>YList</code>,</li>
+</ul></li>
+<li>Hit <code>graph</code>!
+<ul>
+<li>But a better idea is to put the plotting window into a good scale, by first doing <code>zoom &gt; zoomStat</code>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="creating-your-lsrl" class="level3" data-number="17.5.3">
+<h3 data-number="17.5.3" class="anchored" data-anchor-id="creating-your-lsrl"><span class="header-section-number">17.5.3</span> Creating your LSRL</h3>
+<p><code>LinReg(a+bx)</code> (<code>stat &gt; calc</code>) - Enter the correct <code>XList</code> and <code>YList</code>. Ignore <code>Freq</code>. - You should enter <code>Y1</code> into <code>RegEq</code>. You access it by <code>vars &gt; y-vars &gt; function</code>.</p>
+<p>If you entered <code>Y1</code>, you can return to your scatter plot to view the line <code>graph</code>.</p>
+</section>
+<section id="slope-inference" class="level3" data-number="17.5.4">
+<h3 data-number="17.5.4" class="anchored" data-anchor-id="slope-inference"><span class="header-section-number">17.5.4</span> Slope inference</h3>
+<p><code>LinRegTTest</code> or <code>LinRegTInt</code> (<code>stat &gt; test</code>) - Enter the correct <code>XList</code> and <code>YList</code>. Ignore <code>Freq</code>. - Select the correct alternative hypothesis direction or confidence level. - You should enter <code>Y1</code> into <code>RegEq</code>. You access it by <code>vars &gt; y-vars &gt; function</code>.</p>
 
 
 </section>
