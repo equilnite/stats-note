@@ -342,6 +342,7 @@ window.Quarto = {
   <ul>
   <li><a href="#part-1-choosing-your-data" id="toc-part-1-choosing-your-data" class="nav-link active" data-scroll-target="#part-1-choosing-your-data"><span class="header-section-number">E.1</span> Part 1: Choosing your data</a></li>
   <li><a href="#part-2-regression-lines" id="toc-part-2-regression-lines" class="nav-link" data-scroll-target="#part-2-regression-lines"><span class="header-section-number">E.2</span> Part 2: Regression Lines</a></li>
+  <li><a href="#part-3-starting-multiple-regression" id="toc-part-3-starting-multiple-regression" class="nav-link" data-scroll-target="#part-3-starting-multiple-regression"><span class="header-section-number">E.3</span> Part 3: Starting Multiple Regression</a></li>
   </ul>
 </nav>
     </div>
@@ -462,6 +463,51 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>You’re expected to write each of these correctly as you have in chapter 3.</p>
+<p>Use the template Google Doc already created for you on this part’s Google Classroom Assignment</p>
+</div>
+</div>
+</section>
+<section id="part-3-starting-multiple-regression" class="level2" data-number="E.3">
+<h2 data-number="E.3" class="anchored" data-anchor-id="part-3-starting-multiple-regression"><span class="header-section-number">E.3</span> Part 3: Starting Multiple Regression</h2>
+<p>You’ve explored multiple relationships, explored multiple LSRLs for them, and now you’re going to put everything into one equation!</p>
+<p>Imagine our original goal: to just take two variables and find out about whether they have a true relationship in the form of <span class="math display">\[y= a + bx + \epsilon \]</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Multiple Regression Model">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Multiple Regression Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’re now going to take this a step further and take multiple variables to see if they have a linear relationship with <span class="math inline">\(y\)</span>: <span class="math display">\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p \]</span></p>
+<p>Where, for the simplicity of notation, we’re now going to write <span class="math inline">\(a\)</span> as <span class="math inline">\(\beta_0\)</span>, which is our intercept. And we now are able to use any number, <span class="math inline">\(p\)</span>, of explanatory variables (<span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(\cdots\)</span> , <span class="math inline">\(x_p\)</span>) and each one has their own “slope” (<span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(\beta_p\)</span>).</p>
+<p>And we are going to use our same method of Least Squares Regression to estimate each of the to achieve: <span class="math display">\[ \hat y = \hat \beta _0 + \hat \beta _1 x_1 + \hat \beta _2 x_2 + \cdots + \hat \beta _p x_p \]</span></p>
+</div>
+</div>
+<p>With all of your insights from the previous parts, <strong>decide on one response variable</strong>. Leave what you think is interesting as explanatory variables. If you’re not sure what explanatory variables might be interesting to keep, <em>continue reading</em>…</p>
+<p>Now use this applet <a href="https://stapplet.com/multreg.html" class="uri">https://stapplet.com/multreg.html</a> and calculate a multiple regression line. In this applet, you’re able to enter multiple data for explanatory variables. If you weren’t sure about which explanatory variables to have before, you enter your data first! And you decide not to go through with it, just uncheck the “Included in model” checkbox for that variable.</p>
+<p>Answer the following questions using the output for your model:</p>
+<ol type="1">
+<li>What is the equation for multiple regression line?</li>
+<li>Interpret each of the coefficients (<span class="math inline">\(\hat \beta _0\)</span>, <span class="math inline">\(\hat \beta _1\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(\hat \beta _p\)</span>) that the output has provided to you. In other words, interpret the intercept and each of the slopes.</li>
+<li>Compare your intercepts and coefficients to what you had before in the previous parts. Is there anything surprising?</li>
+<li>Use the values of <span class="math inline">\(s\)</span> and <span class="math inline">\(r^2\)</span> to evaluate how well your model predicts your response variable</li>
+<li>What do you notice about your value for <span class="math inline">\(r^2\)</span> in comparison to what you did in Part 2 when you had a LSRL with the same response variable?</li>
+<li>Use the residual plot to evaluate how well your model fits linearly.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’re expected to complete these interpretations as clearly and correctly as you have previously. There’s nothing different!!!</p>
 <p>Use the template Google Doc already created for you on this part’s Google Classroom Assignment</p>
 </div>
 </div>
