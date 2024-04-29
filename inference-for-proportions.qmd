@@ -31,7 +31,7 @@ $$\hat p \pm z^\ast \sqrt{\frac{\hat p (1 - \hat p)}{n}}$$
 
 where $z^\ast$ is the critical value for the standard Normal curve with $C$\% of its area between $-z^\ast$ and $z^\ast$. 
 
-[See Appendix C for examples on how to calculate $z^\ast$ for a given confidence level $C$\%](critical-values.qmd)
+[See Appendix C for examples on how to calculate $z^\ast$ for a given confidence level $C$\%](z-critical-values.qmd)
 
 <details>
 <summary> Why? </summary>

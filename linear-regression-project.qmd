@@ -54,3 +54,44 @@ You’re expected to write each of these correctly as you have in chapter 3.
 
 Use the template Google Doc already created for you on this part’s Google Classroom Assignment
 :::
+
+## Part 3: Starting Multiple Regression
+
+You’ve explored multiple relationships, explored multiple LSRLs for them, and now you’re going to put everything into one equation!
+
+Imagine our original goal: to just take two variables and find out about whether they have a true relationship in the form of 
+$$y= a + bx + \epsilon $$. 
+
+::: {.callout-note title="Multiple Regression Model"}
+
+We’re now going to take this a step further and take multiple variables to see if they have a linear relationship with $y$:
+$$ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p $$
+
+Where, for the simplicity of notation, we’re now going to write $a$ as $\beta_0$, which is our intercept. And we now are able to use any number, $p$, of explanatory variables ($x_1$, $x_2$, $\cdots$ , $x_p$) and each one has their own “slope” ($\beta_1$, $\beta_2$, $\cdots$, $\beta_p$).
+
+And we are going to use our same method of Least Squares Regression to estimate each of the  to achieve:
+$$ \hat y = \hat \beta _0 + \hat \beta _1 x_1 + \hat \beta _2 x_2 + \cdots + \hat \beta _p x_p $$
+
+:::
+
+With all of your insights from the previous parts, **decide on one response variable**. Leave what you think is interesting as explanatory variables. If you’re not sure what explanatory variables might be interesting to keep, *continue reading*…
+
+Now use this applet <https://stapplet.com/multreg.html> and calculate a multiple regression line. In this applet, you’re able to enter multiple data for explanatory variables. If you weren’t sure about which explanatory variables to have before, you enter your data first! And you decide not to go through with it, just uncheck the “Included in model” checkbox for that variable.
+
+
+Answer the following questions using the output for your model:
+
+1. What is the equation for multiple regression line?
+2. Interpret each of the coefficients ($\hat \beta _0$, $\hat \beta _1$, $\cdots$, $\hat \beta _p$) that the output has provided to you. In other words, interpret the intercept and each of the slopes.
+3. Compare your intercepts and coefficients to what you had before in the previous parts. Is there anything surprising?
+3. Use the values of $s$ and $r^2$ to evaluate how well your model predicts your response variable
+4. What do you notice about your value for $r^2$ in comparison to what you did in Part 2 when you had a LSRL with the same response variable?
+5. Use the residual plot to evaluate how well your model fits linearly.
+
+::: callout-important
+
+You're expected to complete these interpretations as clearly and correctly as you have previously. There's nothing different!!!
+
+Use the template Google Doc already created for you on this part’s Google Classroom Assignment
+
+:::
