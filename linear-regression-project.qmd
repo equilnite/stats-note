@@ -138,9 +138,9 @@ Here's what the spreadsheet looks like: <https://docs.google.com/spreadsheets/d/
 
 :::
 
-Your task is to, at the very least, show that you know how to filter out the data using two conditions (there should be an `and`). **If obviously had bad data / outliers,** I expect to see you use the filtered data in your modeling in *Part 5*.
-
 ::: callout-important
+
+Your task is to, at the very least, show that you know how to filter out the data using two conditions (there should be an `and`). **If you obviously had bad data / outliers,** I expect to see you use the filtered data in your modeling in *Part 5*.
 
 Follow the steps above to filter your data and attach the final spreadsheet to your Google Classroom Assignment for this part.
 
@@ -149,6 +149,12 @@ Follow the steps above to filter your data and attach the final spreadsheet to y
 :::
 
 ### One-hot encoding
+
+::: callout-important
+
+<mark>If you didn't have any bad data / outliers (**if you didn't have to filter your data**), please do this section **without the work** that you just did to filter the data.</mark>
+
+:::
 
 So... how do we use categorical variables in a quantitative model? The idea is that we can add a certain value to the predicted value if we see a certain category for some observation. We are going to transform our data set by **one-hot encoding our categorical variables** so that we can accomplish this. **You are expected to include a categorical variable in your final model for Part 5.**
 
