@@ -183,12 +183,13 @@ Three things to submit to the Google Classroom assignment:
 3. The attached Google Doc that has some things for you to answer: 
 
     >
-    > 1. *Take a moment to open up your one-hot encoded data file.* Explain what one-hot encoding does (hint: your original column(s) has been split up into multiple columns now–compare the original to the new columns). Provide an example of the original data and what the one hot encoded values for that original data now looks like.
+    > 1. *Take a moment to open up your one-hot encoded data file.* Explain what one-hot encoding does.
+    >   **Hint:** your original column(s) has been split up into multiple columns–compare the original to the new columns.
+    >   Provide an example of the original data and what the one hot encoded values for that original data now looks like.
     >
     > 2. Open up your one-hot encoded data, and do a multiple regression with your one-hot encoded columns that correspond to just one of your categorical variable. You should use the same response variable as Part 3 and just do the regression with one categorical variable (which you will input as 2+ variables).
     >    a. What’s the regression line?
-    >    b. Interpret the first “slope,” 1. It’s now slightly different from what we have before (it’s no longer, “for every 1…”).
-
+    >    b. Interpret the first “slope,” $\hat \beta _1$. It’s now slightly different from what we have before (it’s no longer, “for every 1…”).
 
 *It'll be pretty obvious if you use AI to answer the question...* The question isn't at all hard to answer.
 
