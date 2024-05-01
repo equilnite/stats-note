@@ -45,7 +45,7 @@ For each of these 3 relationships, you will use the [same stapplet app](https://
 2.  provide a screenshot of what the scatter plot looks like with the LSRL now,
 3.  write the LSRL in context of the problem,
 4.  interpret the intercept $a$
-5.  interpret the intercept $b$
+5.  interpret the <mark>slope</mark> $b$
 6.  use the value of $s$ and $r^2$ to talk about how well the line predicts the values
 7.  use the residual plot to talk about how well the line fits the data.
 
