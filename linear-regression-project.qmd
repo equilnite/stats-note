@@ -202,3 +202,23 @@ Three things to submit to the Google Classroom assignment:
 Let me know if you think there are any bugs on <https://onehot.echa.ng>!!! ChatGPT basically wrote all the code for me.
 
 :::
+
+## Part 5: The Product
+
+Using the all of your previous insights into the relationships that you saw, filtered data (if neccessary), and one-hot encoding, construct a multiple regression model that predicts **1 response variable** using **at least 3** quantitative explanatory variables and **at least 1** categorical variable that has been one-hot encoded.
+
+
+::: callout-important
+
+**Complete the slide template provided on the Google Classroom assignment** for this part of the project. The template has you answer these questions about your multiple regression model:
+
+1. Describe your dataset. 
+1. What piqued your interest in picking this data? 
+1. What are some interesting characteristics about it?
+1. What is the equation for your multiple regression model?
+1. Use your values of $r^2$ and $s$ to assess how well your model predicts your response variable.
+1. Use your residual plot to assess how well this linear model fits the data.
+1. What's a useful skill that you might use this for?
+1. What were some challenges that came up with your model (from previous parts to this final part)?
+
+:::
