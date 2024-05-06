@@ -965,5 +965,16 @@
       "Appendices",
       "<span class='chapter-number'>E</span>  <span class='chapter-title'>Multiple Linear Regression Project</span>"
     ]
+  },
+  {
+    "objectID": "linear-regression-project.html#part-5-the-product",
+    "href": "linear-regression-project.html#part-5-the-product",
+    "title": "Appendix E — Multiple Linear Regression Project",
+    "section": "E.5 Part 5: The Product",
+    "text": "E.5 Part 5: The Product\nUsing the all of your previous insights into the relationships that you saw, filtered data (if neccessary), and one-hot encoding, construct a multiple regression model that predicts 1 response variable using at least 3 quantitative explanatory variables and at least 1 categorical variable that has been one-hot encoded.\n\n\n\n\n\n\nImportant\n\n\n\nComplete the slide template provided on the Google Classroom assignment for this part of the project. The template has you answer these questions about your multiple regression model:\n\nDescribe your dataset.\nWhat piqued your interest in picking this data?\nWhat are some interesting characteristics about it?\nWhat is the equation for your multiple regression model?\nUse your values of \\(r^2\\) and \\(s\\) to assess how well your model predicts your response variable.\nUse your residual plot to assess how well this linear model fits the data.\nWhat’s a useful skill that you might use this for?\nWhat were some challenges that came up with your model (from previous parts to this final part)?",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Multiple Linear Regression Project</span>"
+    ]
   }
 ]
