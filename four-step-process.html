@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - Appendix E — Multiple Linear Regression Project</title>
+<title>AP Statistics Notes - Appendix B — The Four-Step Process</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./t-critical-values.html" rel="prev">
+<link href="./z-critical-values.html" rel="next">
+<link href="./formula-sheet.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +119,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./four-step-process.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">The Four-Step Process</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -306,8 +307,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistic-to-pvalue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
+  <a href="./four-step-process.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">The Four-Step Process</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -324,8 +325,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linear-regression-project.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></span></a>
+  <a href="./statistic-to-pvalue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
   </div>
 </li>
       </ul>
@@ -340,24 +341,23 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#part-1-choosing-your-data" id="toc-part-1-choosing-your-data" class="nav-link active" data-scroll-target="#part-1-choosing-your-data"><span class="header-section-number">E.1</span> Part 1: Choosing your data</a></li>
-  <li><a href="#part-2-regression-lines" id="toc-part-2-regression-lines" class="nav-link" data-scroll-target="#part-2-regression-lines"><span class="header-section-number">E.2</span> Part 2: Regression Lines</a></li>
-  <li><a href="#part-3-starting-multiple-regression" id="toc-part-3-starting-multiple-regression" class="nav-link" data-scroll-target="#part-3-starting-multiple-regression"><span class="header-section-number">E.3</span> Part 3: Starting Multiple Regression</a></li>
-  <li><a href="#part-4-filtering-and-one-hot-encoding" id="toc-part-4-filtering-and-one-hot-encoding" class="nav-link" data-scroll-target="#part-4-filtering-and-one-hot-encoding"><span class="header-section-number">E.4</span> Part 4: Filtering and One-hot Encoding</a>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link active" data-scroll-target="#confidence-intervals"><span class="header-section-number">B.1</span> Confidence Intervals</a>
   <ul class="collapse">
-  <li><a href="#filtering-data" id="toc-filtering-data" class="nav-link" data-scroll-target="#filtering-data"><span class="header-section-number">E.4.1</span> Filtering data</a></li>
-  <li><a href="#one-hot-encoding" id="toc-one-hot-encoding" class="nav-link" data-scroll-target="#one-hot-encoding"><span class="header-section-number">E.4.2</span> One-hot encoding</a></li>
+  <li><a href="#state" id="toc-state" class="nav-link" data-scroll-target="#state"><span class="header-section-number">B.1.1</span> STATE</a></li>
+  <li><a href="#plan" id="toc-plan" class="nav-link" data-scroll-target="#plan"><span class="header-section-number">B.1.2</span> PLAN</a></li>
+  <li><a href="#do" id="toc-do" class="nav-link" data-scroll-target="#do"><span class="header-section-number">B.1.3</span> DO</a></li>
+  <li><a href="#conclude" id="toc-conclude" class="nav-link" data-scroll-target="#conclude"><span class="header-section-number">B.1.4</span> CONCLUDE</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">B.1.5</span> Example</a></li>
   </ul></li>
-  <li><a href="#part-5-the-product" id="toc-part-5-the-product" class="nav-link" data-scroll-target="#part-5-the-product"><span class="header-section-number">E.5</span> Part 5: The Product</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./linear-regression-project.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Project</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./four-step-process.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">The Four-Step Process</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix E — Multiple Linear Regression Project</h1>
+<h1 class="title">Appendix B — The Four-Step Process</h1>
 </div>
 
 
@@ -374,335 +374,80 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>THIS IS A LIVE DOCUMENT, anything that is changed from its original wording will be highlighted and part that is released will be appended to the bottom of this document.</p>
-</div>
-</div>
-<table class="table">
-<thead>
-<tr class="header">
-<th><strong><em>Part</em></strong></th>
-<th><strong><em>Release Date</em></strong></th>
-<th><strong><em>Due Date</em></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Part 1</strong></td>
-<td>Monday, April 22</td>
-<td>Wednesday, April 24</td>
-</tr>
-<tr class="even">
-<td><strong>Part 2</strong></td>
-<td>Wednesday, April 24</td>
-<td>Friday, April 26</td>
-</tr>
-<tr class="odd">
-<td><strong>Part 3</strong></td>
-<td>Monday, April 29</td>
-<td>Wednesday, May 1</td>
-</tr>
-<tr class="even">
-<td><strong>Part 4</strong></td>
-<td>Wednesday, May 1</td>
-<td>Friday, May 3</td>
-</tr>
-<tr class="odd">
-<td><strong>Part 5</strong></td>
-<td>Monday, May 6</td>
-<td>Wednesday, May 8</td>
-</tr>
-</tbody>
-</table>
-<p>In this project, you will investigate multiple quantitative variables and construct a LSRL from the multiple variables. You will apply all Chapter 3 and 12 knowledge that you have learned and use Google Sheets to analyze your data by creating scatter plots and other visualizations to check the assumptions of linear regression inference.</p>
-<section id="part-1-choosing-your-data" class="level2" data-number="E.1">
-<h2 data-number="E.1" class="anchored" data-anchor-id="part-1-choosing-your-data"><span class="header-section-number">E.1</span> Part 1: Choosing your data</h2>
-<p>In this project , you will each choose data to analyze from the <a href="https://think.cs.vt.edu/corgis/csv/index.html">CORGIS Datasets Project</a></p>
-<p>Look at the descriptions of the dataset and look at what variables you can analyze. Before making a final decision, <strong>make sure that your data set has at least 4 quantitative variables that you can work with.</strong></p>
-<p>When you are done with that, please write your choice on the attached spreadsheet in Google Classroom. <strong>Only 1 person per data set</strong></p>
-<p>Visit <a href="https://stapplet.com/quant2v.html" class="uri">https://stapplet.com/quant2v.html</a> and explore some relationships between the quantitative variables that you have. You will have to download the data set. Please create a new Google Doc, paste screenshots of the <mark>3 - 4</mark> scatter plots that you create, and write down your thoughts about them.</p>
+<p>Unless prompted otherwise, your inference problems will need to follow the STATE, PLAN, DO, CONCLUDE procedure. Make sure what you write is in context and accurate!!</p>
+<section id="confidence-intervals" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">B.1</span> Confidence Intervals</h2>
+<section id="state" class="level3" data-number="B.1.1">
+<h3 data-number="B.1.1" class="anchored" data-anchor-id="state"><span class="header-section-number">B.1.1</span> STATE</h3>
+<p>I will estimate <em>[parameter symbol]</em> = <em>[definition of parameter]</em> with <em>[C%]</em> confidence.</p>
 </section>
-<section id="part-2-regression-lines" class="level2" data-number="E.2">
-<h2 data-number="E.2" class="anchored" data-anchor-id="part-2-regression-lines"><span class="header-section-number">E.2</span> Part 2: Regression Lines</h2>
-<p>Now that you’ve explored multiple relationships between variables, now you can create some LSRLs for your selected variables.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Considering what you found out in Part 1 about some of the relationships, decide whether you want to keep exploring those relationships or not. You want to keep some or look at a new relationship(s).</p>
-</div>
-</div>
-<p>For this part, you will explore <strong>3 of these relationships</strong> and calculate and interpret several things about them.</p>
-<p>For each of these 3 relationships, you will use the <a href="https://stapplet.com/quant2v.html">same stapplet app</a> to</p>
-<ol type="1">
-<li>calculate the LSRL,</li>
-<li>provide a screenshot of what the scatter plot looks like with the LSRL now,</li>
-<li>write the LSRL in context of the problem,</li>
-<li>interpret the intercept <span class="math inline">\(a\)</span></li>
-<li>interpret the <mark>slope</mark> <span class="math inline">\(b\)</span></li>
-<li>use the value of <span class="math inline">\(s\)</span> and <span class="math inline">\(r^2\)</span> to talk about how well the line predicts the values</li>
-<li>use the residual plot to talk about how well the line fits the data.</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’re expected to write each of these correctly as you have in chapter 3.</p>
-<p>Use the template Google Doc already created for you on this part’s Google Classroom Assignment</p>
-</div>
-</div>
+<section id="plan" class="level3" data-number="B.1.2">
+<h3 data-number="B.1.2" class="anchored" data-anchor-id="plan"><span class="header-section-number">B.1.2</span> PLAN</h3>
+<p>If the conditions are met, I will construct a <em>[name of procedure]</em>.</p>
+<p>Random: <em>[How it’s met]</em></p>
+<p>Sampling independence: <em>[How it’s met]</em></p>
+<p>Normality: <em>[How it’s met]</em></p>
 </section>
-<section id="part-3-starting-multiple-regression" class="level2" data-number="E.3">
-<h2 data-number="E.3" class="anchored" data-anchor-id="part-3-starting-multiple-regression"><span class="header-section-number">E.3</span> Part 3: Starting Multiple Regression</h2>
-<p>You’ve explored multiple relationships, explored multiple LSRLs for them, and now you’re going to put everything into one equation!</p>
-<p>Imagine our original goal: to just take two variables and find out about whether they have a true relationship in the form of <span class="math display">\[y= a + bx + \epsilon \]</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Multiple Regression Model">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Multiple Regression Model
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We’re now going to take this a step further and take multiple variables to see if they have a linear relationship with <span class="math inline">\(y\)</span>: <span class="math display">\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p \]</span></p>
-<p>Where, for the simplicity of notation, we’re now going to write <span class="math inline">\(a\)</span> as <span class="math inline">\(\beta_0\)</span>, which is our intercept. And we now are able to use any number, <span class="math inline">\(p\)</span>, of explanatory variables (<span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(\cdots\)</span> , <span class="math inline">\(x_p\)</span>) and each one has their own “slope” (<span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(\beta_p\)</span>).</p>
-<p>And we are going to use our same method of Least Squares Regression to estimate each of the to achieve: <span class="math display">\[ \hat y = \hat \beta _0 + \hat \beta _1 x_1 + \hat \beta _2 x_2 + \cdots + \hat \beta _p x_p \]</span></p>
-</div>
-</div>
-<p>With all of your insights from the previous parts, <strong>decide on one response variable</strong>. Leave what you think is interesting as explanatory variables. If you’re not sure what explanatory variables might be interesting to keep, <em>continue reading</em>…</p>
-<p>Now use this applet <a href="https://stapplet.com/multreg.html" class="uri">https://stapplet.com/multreg.html</a> and calculate a multiple regression line. In this applet, you’re able to enter multiple data for explanatory variables. If you weren’t sure about which explanatory variables to have before, you enter your data first! And you decide not to go through with it, just uncheck the “Included in model” checkbox for that variable.</p>
-<p>Answer the following questions using the output for your model:</p>
-<ol type="1">
-<li>What is the equation for multiple regression line?</li>
-<li>Interpret each of the coefficients (<span class="math inline">\(\hat \beta _0\)</span>, <span class="math inline">\(\hat \beta _1\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(\hat \beta _p\)</span>) that the output has provided to you. In other words, interpret the intercept and each of the slopes.</li>
-<li>Compare your intercepts and coefficients to what you had before in the previous parts. Is there anything surprising?</li>
-<li>Use the values of <span class="math inline">\(s\)</span> and <span class="math inline">\(r^2\)</span> to evaluate how well your model predicts your response variable</li>
-<li>What do you notice about your value for <span class="math inline">\(r^2\)</span> in comparison to what you did in Part 2 when you had a LSRL with the same response variable?</li>
-<li>Use the residual plot to evaluate how well your model fits linearly.</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’re expected to complete these interpretations as clearly and correctly as you have previously. There’s nothing different!!!</p>
-<p>Use the template Google Doc already created for you on this part’s Google Classroom Assignment</p>
-</div>
-</div>
+<section id="do" class="level3" data-number="B.1.3">
+<h3 data-number="B.1.3" class="anchored" data-anchor-id="do"><span class="header-section-number">B.1.3</span> DO</h3>
+<section id="calculator-minimum-work" class="level4">
+<h4 class="anchored" data-anchor-id="calculator-minimum-work">Calculator minimum work:</h4>
+<p>If applicable, calculate the degrees of freedom.</p>
+<p>Calculate the critical value (<span class="math inline">\(z^\ast\)</span> or <span class="math inline">\(t^\ast\)</span>).</p>
+<p>Write what you inputted for the calculator command.</p>
+<p>Write the interval the calculator command gave you</p>
 </section>
-<section id="part-4-filtering-and-one-hot-encoding" class="level2" data-number="E.4">
-<h2 data-number="E.4" class="anchored" data-anchor-id="part-4-filtering-and-one-hot-encoding"><span class="header-section-number">E.4</span> Part 4: Filtering and One-hot Encoding</h2>
-<p>In this part of the project, we will explore how to filter out data in Google Sheets using the Google Visualization API Query Language. We will also explore adding a categorical variable to our multiple regression line, allowing us to finally take in account of non-quantitative data.</p>
-<section id="filtering-data" class="level3" data-number="E.4.1">
-<h3 data-number="E.4.1" class="anchored" data-anchor-id="filtering-data"><span class="header-section-number">E.4.1</span> Filtering data</h3>
-<p>First, convert your data file into a Google Spreadsheet (open up your file within Google Chrome, and click on open in Google Sheets). I’ll update this instruction during 4th period when I can see what a chromebook does.</p>
-<p>Create a new sheet in the spreadsheet (click on the plus that you see on the bottom toolbar of Google Sheets).</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the new sheet, you will <strong>only</strong> edit the <em>first cell</em> of the new sheet.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You are going to use the <code>QUERY</code> function. Here is the documentation that Google has created with multiple examples <a href="https://support.google.com/docs/answer/3093343?hl=en" class="uri">https://support.google.com/docs/answer/3093343?hl=en</a></p>
-</div>
-</div>
-<p>Here’s an example of what I did with the UFO sightings data set from CORGIS. 1. I have only data from the first, second, fourth, and fifth columns (<code>select A, B, D, E</code>). 2. And I filtered out the data such that I keep only the rows where the state is Alaska (<code>where B='AK'</code>), the UFO shape is “circle” (<code>where D='circle'</code>), and the year is between 2007 and 2012 (<code>where I &gt; 2007 and I &lt; 2012</code>).</p>
-<p>I wrote this all as one statement:</p>
-<p><code>=QUERY(ufo_sightings!1:60635,"select A, B, C, D where B='AK' and D='circle' and I &gt; 2007 and I &lt; 2012")</code></p>
-<p>Here’s what the spreadsheet looks like: <a href="https://docs.google.com/spreadsheets/d/1KxDIefR9i1YhRER5f6zdrxlrYDij5-w5i6GCx69hEas/edit?usp=sharing" class="uri">https://docs.google.com/spreadsheets/d/1KxDIefR9i1YhRER5f6zdrxlrYDij5-w5i6GCx69hEas/edit?usp=sharing</a></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Where did I get <code>ufo_sightings!1:60635</code>, and how do you do it?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Start off your new sheet by editing just the first cell, and type <code>=QUERY(</code></li>
-<li>At this point (<strong>don’t close the cell,</strong> don’t press enter yet), go into the sheet that contains your data and click on the top left cell that contains no data (the cell to the left of column “A” and above row “1”).</li>
-<li>Google Sheets automatically inputs the correct range of the data for you, and you can go back to the new sheet and continue typing.</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Your task is to, at the very least, show that you know how to filter out the data using two conditions (there should be an <code>and</code>). <strong>If you obviously had bad data / outliers,</strong> I expect to see you use the filtered data in your modeling in <em>Part 5</em>.</p>
-<p>Follow the steps above to filter your data and attach the final spreadsheet to your Google Classroom Assignment for this part.</p>
-<p><strong>You still have more to do below for this part!!!</strong></p>
-</div>
-</div>
-</section>
-<section id="one-hot-encoding" class="level3" data-number="E.4.2">
-<h3 data-number="E.4.2" class="anchored" data-anchor-id="one-hot-encoding"><span class="header-section-number">E.4.2</span> One-hot encoding</h3>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><mark>If you didn’t have any bad data / outliers (<strong>if you didn’t have to filter your data</strong>), please do this section <strong>without the work</strong> that you just did to filter the data.</mark></p>
-</div>
-</div>
-<p>So… how do we use categorical variables in a quantitative model? The idea is that we can add a certain value to the predicted value if we see a certain category for some observation. We are going to transform our data set by <strong>one-hot encoding our categorical variables</strong> so that we can accomplish this. <strong>You are expected to include a categorical variable in your final model for Part 5.</strong></p>
-<p>I’ve made it simple for you. Using your data set (if you needed to filter it, it should now be filtered), now make sure to include at least one categorical variable (please choose one that doesn’t have too many categories). Follow the previous section about filtering to help yourself with that again. <code>select</code> is a powerful tool and you can use it to get rid of everything that you don’t need.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If there are too many categories, feel free to filter out some of the categories to only incldue data that has the categories that you’re interested in.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="One-hot Encoding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-One-hot Encoding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>One-hot encoding is easy! All data scientists or anyone working with data analysis have to do normally is one step. And you’ve also been provided an easy one step.</p>
-<p>Visit <a href="https://onehot.echa.ng" class="uri">https://onehot.echa.ng</a>.</p>
-<ol type="1">
-<li>Download your final data from your spreadsheet (go to file &gt; download &gt; Comma Separated Values (.csv))</li>
-<li>“Choose” the file on the website</li>
-<li>Hit upload</li>
-<li><strong>Only checkmark the column names that correspond to your categorical variables</strong></li>
-<li>Hit Encode and download</li>
-</ol>
-<p>Once you’ve done this, you’ve successfully one-hot encoded and have a new file for you data set that has transformed your data!</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Three things to submit to the Google Classroom assignment:</p>
-<ol type="1">
-<li><p>The Google Spreadsheet that contains the work that you did to filter the data using the <code>QUERY</code> function</p></li>
-<li><p>The One-Hot encoded data.</p></li>
-<li><p>The attached Google Doc that has some things for you to answer:</p>
-<blockquote class="blockquote">
-<ol type="1">
-<li><p><em>Take a moment to open up your one-hot encoded data file.</em> <strong>Explain what one-hot encoding does.</strong> <strong>Hint:</strong> your original column(s) has been split up into multiple columns–compare the original to the new columns. Also, <strong>provide an example</strong> of the original data and what the one hot encoded values for that original data now looks like and <strong>describe what happened with each category</strong>.</p></li>
-<li><p>Open up your one-hot encoded data, and do a multiple regression with your one-hot encoded columns that correspond to just one of your categorical variable. You should use the same response variable as Part 3 and just do the regression with one categorical variable (which you will input as 2+ variables).</p>
-<ol type="a">
-<li>What’s the regression line?</li>
-<li>Interpret the first “slope,” <span class="math inline">\(\hat \beta _1\)</span>. It’s now slightly different from what we have before (it’s no longer, “for every 1…”).</li>
-</ol></li>
-</ol>
-</blockquote></li>
-</ol>
-<p><em>It’ll be pretty obvious if you use AI to answer the question…</em> The question isn’t at all hard to answer.</p>
-<p>Let me know if you think there are any bugs on <a href="https://onehot.echa.ng" class="uri">https://onehot.echa.ng</a>!!! ChatGPT basically wrote all the code for me.</p>
-</div>
-</div>
+<section id="manual-minimum-work" class="level4">
+<h4 class="anchored" data-anchor-id="manual-minimum-work">Manual minimum work:</h4>
+<p>Calculate the critical value (<span class="math inline">\(z^\ast\)</span> or <span class="math inline">\(t^\ast\)</span>).</p>
+<p>Show plug-in for the formulas.</p>
+<p>Write the final interval.</p>
 </section>
 </section>
-<section id="part-5-the-product" class="level2" data-number="E.5">
-<h2 data-number="E.5" class="anchored" data-anchor-id="part-5-the-product"><span class="header-section-number">E.5</span> Part 5: The Product</h2>
-<p>Using the all of your previous insights into the relationships that you saw, filtered data (if neccessary), and one-hot encoding, construct a multiple regression model that predicts <strong>1 response variable</strong> using <strong>at least 3</strong> quantitative explanatory variables and <strong>at least 1</strong> categorical variable that has been one-hot encoded.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Complete the slide template provided on the Google Classroom assignment</strong> for this part of the project. The template has you answer these questions about your multiple regression model:</p>
-<ol type="1">
-<li>Describe your dataset.</li>
-<li>What piqued your interest in picking this data?</li>
-<li>What are some interesting characteristics about it?</li>
-<li>What is the equation for your multiple regression model?</li>
-<li>Use your values of <span class="math inline">\(r^2\)</span> and <span class="math inline">\(s\)</span> to assess how well your model predicts your response variable.</li>
-<li>Use your residual plot to assess how well this linear model fits the data.</li>
-<li>What’s a useful skill that you might use this for?</li>
-<li>What were some challenges that came up with your model (from previous parts to this final part)?</li>
-</ol>
-</div>
-</div>
+<section id="conclude" class="level3" data-number="B.1.4">
+<h3 data-number="B.1.4" class="anchored" data-anchor-id="conclude"><span class="header-section-number">B.1.4</span> CONCLUDE</h3>
+<p>I am <em>[C%]</em> confident that the interval from <em>[lower bound]</em> to <em>[upper bound]</em> contains the <em>[true parameter in context]</em>.</p>
+</section>
+<section id="example" class="level3" data-number="B.1.5">
+<h3 data-number="B.1.5" class="anchored" data-anchor-id="example"><span class="header-section-number">B.1.5</span> Example</h3>
+<p>You’re doing market research for a company that installs solar panels. You randomly select 75 homeowners in Berkeley (who don’t have solar panels) and ask them whether they would install solar panels if they knew that they could recover the cost in 10 years (by saving money on gas &amp; electric bills). 43 of them answered “yes”. Construct and interpret a 92% confidence interval for this situation.</p>
+<p>State:</p>
+<p>I will estimate <span class="math inline">\(p=\)</span> the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.</p>
+<p>Plan:</p>
+<p>If the conditions are met, I will use a one-sample <span class="math inline">\(z\)</span>-interval for the population parameter <span class="math inline">\(p\)</span>.</p>
+<ul>
+<li><p>Random:</p>
+<p>Yes, it’s stated that the sample is random.</p></li>
+<li><p>Large Sample:</p>
+<p><span class="math inline">\(n \hat p = 75(\frac{43}{75}) = 43 \geq 10\)</span> and <span class="math inline">\(n ( 1- \hat p ) = 75(1- \frac{43}{75}) = 32 \geq 10\)</span></p></li>
+<li><p>Independence:</p>
+<p>There is at least <span class="math inline">\(10n=750\)</span> non-solar Berkeley homeowners</p></li>
+</ul>
+<p>Do:</p>
+<p><span class="math display">\[z ^\ast = \texttt{invNorm(0.96)} = 1.75\]</span></p>
+<pre><code>1-PropZInt
+x: 43
+n: 75
+C-level: 92</code></pre>
+<p>Results in a confidence interval of [0.4734, 0.6732].</p>
+<details>
+<summary>
+OR Manual Calculations
+</summary>
+<p><span class="math display">\[z ^\ast = \texttt{invNorm(0.96)} = 1.75\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+CI_92 &amp;= \hat p \pm z^\ast \cdot \sqrt{\frac{\hat p ( 1- \hat p)}{n}} \\
+&amp;= 0.5733 \pm 1.75 \sqrt{\frac{0.5733 ( 1- 0.5733)}{75}} \\
+&amp;= [0.4734, 0.6732]
+\end{align}
+\]</span></p>
+</details>
+<p>Conclude:</p>
+<p>I am 92% confident that the true proportion of all non-solar Berkeley homeowners who would install solar panels is somewhere between 47.34% and 67.32%.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1117,11 +862,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./t-critical-values.html" class="pagination-link" aria-label="$t^\ast$ Critical Values">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></span>
+      <a href="./formula-sheet.html" class="pagination-link" aria-label="AP Exam Formula Sheet">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./z-critical-values.html" class="pagination-link" aria-label="$z^\ast$ Critical Values">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title"><span class="math inline">\(z^\ast\)</span> Critical Values</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

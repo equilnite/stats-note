@@ -26,3 +26,7 @@ footer {
 .container-fluid {
   padding-bottom: 3rem !important;
 }
+
+svg text {
+  font-size: 1.35em;
+}
