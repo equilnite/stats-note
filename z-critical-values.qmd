@@ -2,7 +2,7 @@
 
 When constructing confidence intervals, we need the value $z^\ast$ such that $C$% of the estimated sampling distribution is between $-|z^\ast|$ and $|z^\ast|$. In other words, imagine:
 
-```{ojs z star critical values demo}
+```{ojs z star critical values demo ci in the middle}
 
 viewof C = Inputs.range(
 [1, 99.99],
@@ -73,7 +73,7 @@ Plot.plot({
     ),
     Plot.ruleX([critical_val(C)[0]]),
     Plot.ruleX([critical_val(C)[1]]),
-    Plot.text([{"x": critical_val(C)[0] + 0.4, "y": 0.35}, {"x": critical_val(C)[1] - 0.4, "y": 0.35}], {x: "x", y:"y", text: ["-|z| = " + critical_val(C)[0].toFixed(2), "|z*| = " + critical_val(C)[1].toFixed(2)]})
+    Plot.text([{"x": critical_val(C)[0] + 0.5, "y": 0.35}, {"x": critical_val(C)[1] - 0.5, "y": 0.35}], {x: "x", y:"y", text: ["-|z*| = " + critical_val(C)[0].toFixed(2), "|z*| = " + critical_val(C)[1].toFixed(2)]})
   ],
     
     x: { label: "z" },
@@ -84,7 +84,11 @@ Plot.plot({
     },
     caption: "Standard Normal Distribution"
 })
+```
 
+As we learned in Chapter 2, we can find this cut-off by using the symmetry of the Normal Distribution. One way of finding this is the find the negative cutoff. Find the area corresponding to the left of the middle region. Once you find it, you can plug this into `invNorm` with a mean of 0 and standard deviation of 1.
+
+```{ojs z star critical values demo negative approach}
 Plot.plot({
   marks: [
     Plot.areaY(neg_region(C),
@@ -103,7 +107,7 @@ Plot.plot({
       }
     ),
     Plot.ruleX([critical_val(C)[0]]),
-    Plot.text([{"x": critical_val(C)[0] + 0.4, "y": 0.35}, {"x": 2.5, "y":0.4}], {x: "x", y:"y", text: ["-|z*| = " + critical_val(C)[0].toFixed(2), "Area to the left = " + "(1 - " + C/100 + ") / 2 = " + ((1-C/100)/2).toFixed(4)]})
+    Plot.text([{"x": critical_val(C)[0] + 0.5, "y": 0.35}, {"x": 2.5, "y":0.4}, {"x": 2.5, "y":0.375}, {"x": 2.5, "y": 0.35}], {x: "x", y:"y", text: ["-|z*| = " + critical_val(C)[0].toFixed(2), "Area to the left", "= " + "(1 - " + C/100 + ") / 2 = " + ((1-C/100)/2).toFixed(4), "z* = -invNorm("+ ((1-C/100)/2).toFixed(4) +")"]})
   ],
     
     x: { label: "z" },
@@ -114,7 +118,11 @@ Plot.plot({
     },
     caption: "Standard Normal Distribution"
 })
+```
 
+Another way of finding this is the find the positive cutoff. Find the area corresponding to the left of the middle region plus the middle region itself. Once you find it, you can plug this into `invNorm` with a mean of 0 and standard deviation of 1.
+
+```{ojs z star critical values demo pos approach}
 Plot.plot({
   marks: [
     Plot.areaY(pos_region(C),
@@ -133,7 +141,7 @@ Plot.plot({
       }
     ),
     Plot.ruleX([critical_val(C)[1]]),
-    Plot.text([{"x": critical_val(C)[1] - 0.4, "y": 0.35}, {"x": -2.5, "y": 0.4}], {x: "x", y:"y", text: ["|z*| = " + critical_val(C)[1].toFixed(2), "Area to the left = " + C/100 + " + (1 - " + C/100 + ") / 2 = " + (C/100 + (1-C/100)/2).toFixed(4)]})
+    Plot.text([{"x": critical_val(C)[1] - 0.5, "y": 0.35}, {"x": -2.5, "y": 0.4}, {"x": -2.5, "y":0.375}, {"x": -2.5, "y": 0.35}], {x: "x", y:"y", text: ["|z*| = " + critical_val(C)[1].toFixed(2), "Area to the left", "= " + C/100 + " + (1 - " + C/100 + ") / 2 = " + (C/100 + (1-C/100)/2).toFixed(4), "z* = invNorm("+ (C/100 + (1-C/100)/2).toFixed(4) +")"]})
   ],
     
     x: { label: "z" },
@@ -173,7 +181,7 @@ The sign of any critical value does not matter, so just take the absolute value 
 
 - 90% confidence
 
-> Find that the area that we want is: $\frac{100\% - 90%}{2} = 5\% = 0.05$
+> Find that the left area that we want is: $\frac{100\% - 90%}{2} = 5\% = 0.05$
 >  
 > Try to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.
 > 
@@ -185,7 +193,7 @@ Alternatively, do the calculator command `invNorm(0.05)` to get a value of aroun
     
 - 99% confidence
 
-> Find that the area that we want is: $\frac{100\% - 99%}{2} = 0.5\% = 0.005$
+> Find that the left area that we want is: $\frac{100\% - 99%}{2} = 0.5\% = 0.005$
 > 
 > Try to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.
 > 

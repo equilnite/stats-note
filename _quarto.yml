@@ -42,12 +42,13 @@ book:
   appendices:
     - formula-sheet.qmd
     # - applets.qmd
-    - statistic-to-pvalue.qmd
+    - four-step-process.qmd
     - z-critical-values.qmd
     - t-critical-values.qmd
+    - statistic-to-pvalue.qmd
     # - calc-guide.qmd
     # - test-page.qmd
-    - linear-regression-project.qmd
+    # - linear-regression-project.qmd
 
 
 format:

@@ -1,0 +1,103 @@
+# The Four-Step Process
+
+Unless prompted otherwise, your inference problems will need to follow the STATE, PLAN, DO, CONCLUDE procedure. Make sure what you write is in context and accurate!!
+
+## Confidence Intervals
+
+### STATE
+
+I will estimate *[parameter symbol]* = *[definition of parameter]* with *[C%]* confidence.
+
+### PLAN
+
+If the conditions are met, I will construct a *[name of procedure]*.
+
+Random: *[How it's met]*
+
+Sampling independence: *[How it's met]*
+
+Normality: *[How it's met]*
+
+### DO
+
+#### Calculator minimum work:
+
+If applicable, calculate the degrees of freedom.
+
+Calculate the critical value ($z^\ast$ or $t^\ast$).
+
+Write what you inputted for the calculator command.
+
+Write the interval the calculator command gave you
+
+#### Manual minimum work:
+
+Calculate the critical value ($z^\ast$ or $t^\ast$).
+
+Show plug-in for the formulas.
+
+Write the final interval.
+
+### CONCLUDE
+
+I am *[C%]* confident that the interval from *[lower bound]* to *[upper bound]* contains the *[true parameter in context]*.
+
+### Example
+
+You’re doing market research for a company that installs solar panels. You randomly select 75 homeowners in Berkeley (who don’t have solar panels) and ask them whether they would install solar panels if they knew that they could recover the cost in 10 years (by saving money on gas & electric bills). 43 of them answered “yes”. Construct and interpret a 92% confidence interval for this situation.
+
+State: 
+
+I will estimate $p=$ the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence. 
+
+Plan:
+
+If the conditions are met, I will use a one-sample $z$-interval for the population parameter $p$.
+
+- Random: 
+
+    Yes, it’s stated that the sample is random.
+
+- Large Sample:
+
+    $n \hat p = 75(\frac{43}{75}) = 43 \geq 10$ and $n ( 1- \hat p ) = 75(1- \frac{43}{75}) = 32 \geq 10$
+
+- Independence:
+
+    There is at least $10n=750$ non-solar Berkeley homeowners
+
+Do:
+
+$$z ^\ast = \texttt{invNorm(0.96)} = 1.75$$
+
+```
+1-PropZInt
+x: 43
+n: 75
+C-level: 92
+```
+
+Results in a confidence interval of [0.4734, 0.6732].
+
+<details>
+<summary>
+OR Manual Calculations
+</summary>
+
+$$z ^\ast = \texttt{invNorm(0.96)} = 1.75$$
+
+$$
+\begin{align}
+CI_92 &= \hat p \pm z^\ast \cdot \sqrt{\frac{\hat p ( 1- \hat p)}{n}} \\
+&= 0.5733 \pm 1.75 \sqrt{\frac{0.5733 ( 1- 0.5733)}{75}} \\
+&= [0.4734, 0.6732]
+\end{align}
+$$
+
+</details>
+
+
+
+Conclude:
+
+I am 92% confident that the true proportion of all non-solar Berkeley homeowners who would install solar panels is somewhere between 47.34% and 67.32%.
