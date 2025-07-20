@@ -168,7 +168,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Characteristics of Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,7 +356,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html">Designing Studies</a></li><li class="breadcrumb-item"><a href="./sampling.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></h1>
+<h1 class="title"><span id="sampling" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></span></h1>
 </div>
 
 
@@ -376,6 +376,21 @@ window.Quarto = {
 <p>When we have a question about a certain <strong>population</strong> (an entire group of individuals). Ideally we would ask them all (take a <strong>census</strong>). But contacting every member of a population often isn’t very practical: it would take too much time and cost too much money. Instead, we put the question to a <strong>sample</strong>, or subset of individuals of the population from which we actually collect data, chosen to represent the entire population.</p>
 <p>When you want to identify the population, ask yourself, what does the question want to know about? What group of people does the question/problem address?</p>
 <p>When identifying the sample, ask yourself, what group does the work done actually address?</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Observational Studies">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observational Studies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of <strong>observational study</strong>.</p>
+<p>Observational studies only involve observing individuals and measuring variables of interest with no attempt to influence the responses</p>
+<p>Studies that don’t conduct an experiment with proper control are not able to come to a <em>cause and effect</em> conclusion between variables.</p>
+</div>
+</div>
 <section id="bias" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="bias"><span class="header-section-number">6.1</span> Bias</h2>
 <p>When we collect data, there is the possibility of the data becoming systematically pushed towards a specific outcome. For example, if we want to learn about the GPA average in the school and take a sample of students only from a class, it’s quite possible that the sample is not representative of the school. We will probably result in a GPA average that is higher or lower than the actual GPA average in the school.</p>
@@ -569,24 +584,16 @@ Tip
 <p>Here’s some examples of how this can work.</p>
 <blockquote class="blockquote">
 <p>Imagine we have a forest of 1000 trees and I want to find out how old they are on average (and we don’t have the resources to visit each tree)</p>
-<ul>
-<li>To take an <strong>SRS</strong> of 50 trees, we can</li>
-</ul>
-<ol type="1">
-<li>Number each tree with a number 1 to 1000.</li>
-<li>Generate 50 unique random integers from 1 to 1000.</li>
-<li>Select the trees corresponding to the numbers and record their age.</li>
-</ol>
-<ul>
-<li>To take a <strong>random cluster sample</strong> of 50 trees, we can</li>
-</ul>
-<ol type="1">
-<li>Use a map to split up the trees by plots of land (assume that each plot has 5 trees.</li>
-<li>Number each plot of land with a number 1 to 200.</li>
-<li>Generate 10 unique random integers from 1 to 200.</li>
-<li>Select the plots corresponding to the numbers and record all the ages from the trees in the plots.</li>
-</ol>
 </blockquote>
+<ul>
+<li><p>To take an <strong>SRS</strong> of 50 trees, we can 1. Number each tree with a number 1 to 1000. 2. Generate 50 unique random integers from 1 to 1000. 3. Select the trees corresponding to the numbers and record their age.</p></li>
+<li><p>To take a <strong>random cluster sample</strong> of 50 trees, we can 1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees. 2. Number each plot of land with a number 1 to 200. 3. Generate 10 unique random integers from 1 to 200. 4. <em>Select the plots</em> corresponding to the numbers and record <em>all the ages from the trees in the plots</em>.</p></li>
+</ul>
+<p>Another approach could be the “slips in the hat approach.” Be aware that regardless of approach, that you mention <strong>randomly</strong> assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being selected.</p>
+<ul>
+<li><p>To take an SRS of 50 trees, we can 1. Number each tree with a number 1 to 1000 and write each number on a slip of paper. Place all the slips of paper in a box. 2. Mixing well, <strong>randomly</strong> take 50 slips out of the box. 3. Select the trees corresponding to the numbers and record their age.</p></li>
+<li><p>To take a random cluster sample of 50 trees, we can 1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees. 2. Number each plot of land with a number 1 to 200 and write each number on a slip of paper. Place all the slips of paper in a box. 3. Mixing well, <strong>randomly</strong> take 10 slips out of the box. 4. <em>Select the plots</em> corresponding to the numbers and record <em>all the ages from the trees in the plots</em>.</p></li>
+</ul>
 
 
 </section>

@@ -168,7 +168,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic-statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Characteristics of Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -347,7 +347,8 @@ window.Quarto = {
   <li><a href="#plan" id="toc-plan" class="nav-link" data-scroll-target="#plan"><span class="header-section-number">B.1.2</span> PLAN</a></li>
   <li><a href="#do" id="toc-do" class="nav-link" data-scroll-target="#do"><span class="header-section-number">B.1.3</span> DO</a></li>
   <li><a href="#conclude" id="toc-conclude" class="nav-link" data-scroll-target="#conclude"><span class="header-section-number">B.1.4</span> CONCLUDE</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">B.1.5</span> Example</a></li>
+  <li><a href="#sample-z-interval-example" id="toc-sample-z-interval-example" class="nav-link" data-scroll-target="#sample-z-interval-example"><span class="header-section-number">B.1.5</span> 1-Sample z-Interval Example</a></li>
+  <li><a href="#sample-t-interval-example" id="toc-sample-t-interval-example" class="nav-link" data-scroll-target="#sample-t-interval-example"><span class="header-section-number">B.1.6</span> 1-Sample t-Interval Example</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -408,9 +409,46 @@ window.Quarto = {
 <h3 data-number="B.1.4" class="anchored" data-anchor-id="conclude"><span class="header-section-number">B.1.4</span> CONCLUDE</h3>
 <p>I am <em>[C%]</em> confident that the interval from <em>[lower bound]</em> to <em>[upper bound]</em> contains the <em>[true parameter in context]</em>.</p>
 </section>
-<section id="example" class="level3" data-number="B.1.5">
-<h3 data-number="B.1.5" class="anchored" data-anchor-id="example"><span class="header-section-number">B.1.5</span> Example</h3>
+<section id="sample-z-interval-example" class="level3" data-number="B.1.5">
+<h3 data-number="B.1.5" class="anchored" data-anchor-id="sample-z-interval-example"><span class="header-section-number">B.1.5</span> 1-Sample z-Interval Example</h3>
 <p>You’re doing market research for a company that installs solar panels. You randomly select 75 homeowners in Berkeley (who don’t have solar panels) and ask them whether they would install solar panels if they knew that they could recover the cost in 10 years (by saving money on gas &amp; electric bills). 43 of them answered “yes”. Construct and interpret a 92% confidence interval for this situation.</p>
+<p>State:</p>
+<p>I will estimate <span class="math inline">\(p=\)</span> the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.</p>
+<p>Plan:</p>
+<p>If the conditions are met, I will use a one-sample <span class="math inline">\(z\)</span>-interval for the population parameter <span class="math inline">\(p\)</span>.</p>
+<ul>
+<li><p>Random:</p>
+<p>Yes, it’s stated that the sample is random.</p></li>
+<li><p>Large Sample:</p>
+<p><span class="math inline">\(n \hat p = 75(\frac{43}{75}) = 43 \geq 10\)</span> and <span class="math inline">\(n ( 1- \hat p ) = 75(1- \frac{43}{75}) = 32 \geq 10\)</span></p></li>
+<li><p>Independence:</p>
+<p>There is at least <span class="math inline">\(10n=750\)</span> non-solar Berkeley homeowners</p></li>
+</ul>
+<p>Do:</p>
+<p><span class="math display">\[z ^\ast = \texttt{invNorm(0.96)} = 1.75\]</span></p>
+<pre><code>1-PropZInt
+x: 43
+n: 75
+C-level: 92</code></pre>
+<p>Results in a confidence interval of [0.4734, 0.6732].</p>
+<details>
+<summary>
+OR Manual Calculations
+</summary>
+<p><span class="math display">\[z ^\ast = \texttt{invNorm(0.96)} = 1.75\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+CI_92 &amp;= \hat p \pm z^\ast \cdot \sqrt{\frac{\hat p ( 1- \hat p)}{n}} \\
+&amp;= 0.5733 \pm 1.75 \sqrt{\frac{0.5733 ( 1- 0.5733)}{75}} \\
+&amp;= [0.4734, 0.6732]
+\end{align}
+\]</span></p>
+</details>
+<p>Conclude:</p>
+<p>I am 92% confident that the true proportion of all non-solar Berkeley homeowners who would install solar panels is somewhere between 47.34% and 67.32%.</p>
+</section>
+<section id="sample-t-interval-example" class="level3" data-number="B.1.6">
+<h3 data-number="B.1.6" class="anchored" data-anchor-id="sample-t-interval-example"><span class="header-section-number">B.1.6</span> 1-Sample t-Interval Example</h3>
 <p>State:</p>
 <p>I will estimate <span class="math inline">\(p=\)</span> the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.</p>
 <p>Plan:</p>
