@@ -1,5 +1,7 @@
 # Quantative Data Visualizations
 
+This page covers how to make the univariate quantiative graphs needed to understand in this course: dot plots, histograms, box plots, and stemplots.
+
 ```{r}
 library(tidyverse)
 ```
@@ -9,7 +11,7 @@ library(tidyverse)
 ::: {.callout-note title="Dot Plots"}
 Dots Plots represent one quantitative variable by marking a dot for each value observed. 
 They are mainly for discrete quantitative variables only and they are
-mainly useful in situations when you have a small range of number so that
+mainly useful in situations when you have a small range and variety of numbers so that
 you can actually see how the data distribution varies across values.
 :::
 
@@ -166,8 +168,7 @@ many bars and that you don't have too few bars.
 :::
 
 ::: {.callout-tip}
-Your goal with
-histograms, as with many other visualizations, is to be able to see the
+Your goal with histograms, as with many other visualizations, is to be able to see the
 shape and characteristics of the distribution in question. If you have
 too many bars or too few bars, you won't be able to see much important
 information (especially think of situations when you have many data

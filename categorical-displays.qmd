@@ -1,5 +1,9 @@
 # Categorical Data Visualizations
 
+This page covers how to make the categorical graphs needed to understand this course: simple bar plots, segmented bar / side-by-side bar graphs, and mosaic plots.
+
+You won't be required to know how to make a mosaic plot, but this will help you understand how to read one if given one on the AP exam.
+
 ```{r}
 library(tidyverse)
 ```

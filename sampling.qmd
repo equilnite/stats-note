@@ -1,4 +1,4 @@
-# Sampling
+# Sampling {#sampling}
 
 When we have a question about a certain **population** (an entire group of
 individuals). Ideally we would ask them all (take a **census**). But
@@ -14,6 +14,15 @@ question/problem address?
 
 When identifying the sample, ask yourself, what group does the work done
 actually address?
+
+::: {.callout-caution title="Observational Studies"}
+A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of **observational study**. 
+
+Observational studies only involve observing individuals and measuring variables of interest with no attempt to influence the responses
+
+
+Studies that don't conduct an experiment with proper control are not able to come to a *cause and effect* conclusion between variables.
+:::
 
 ## Bias
 
@@ -136,14 +145,28 @@ Here's a general framework for how describing SRS's should look like:
 Here's some examples of how this can work. 
 
 > Imagine we have a forest of 1000 trees and I want to find out how old they are on average (and we don't have the resources to visit each tree)
->
->   - To take an **SRS** of 50 trees, we can
+
+- To take an **SRS** of 50 trees, we can
         1. Number each tree with a number 1 to 1000.
         2. Generate 50 unique random integers from 1 to 1000.
         3. Select the trees corresponding to the numbers and record their age.
->   - To take a **random cluster sample** of 50 trees, we can
+
+- To take a **random cluster sample** of 50 trees, we can
         1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees.
         2. Number each plot of land with a number 1 to 200.
         3. Generate 10 unique random integers from 1 to 200.
-        4. Select the plots corresponding to the numbers and record all the ages from the trees in the plots.
-    
+        4. *Select the plots* corresponding to the numbers and record *all the ages from the trees in the plots*.
+
+Another approach could be the "slips in the hat approach." Be aware that regardless of approach, that you mention **randomly** assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being selected.
+
+- To take an SRS of 50 trees, we can
+        1. Number each tree with a number 1 to 1000 and write each number on a slip of paper. Place all the slips of paper in a box.
+        2. Mixing well, **randomly** take 50 slips out of the box.
+        3. Select the trees corresponding to the numbers and record their age.
+
+- To take a random cluster sample of 50 trees, we can
+        1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees.
+        2. Number each plot of land with a number 1 to 200 and write each number on a slip of paper. Place all the slips of paper in a box.
+        3. Mixing well, **randomly** take 10 slips out of the box.
+        4. *Select the plots* corresponding to the numbers and record *all the ages from the trees in the plots*.
+        

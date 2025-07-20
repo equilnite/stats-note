@@ -1,43 +1,28 @@
 # Experimental Design {#experimental-design}
 
-A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of **observational study**. 
-
-::: {.callout-note title="Observational Studies"}
-
-Observational studies only involve observing individuals and measuring variables of interest with no attempt to influence the responses
-
+::: {.callout-note title="Experiments"}
+An **experiment** deliberately imposes some **treatment** (the specific condition applied) on individuals (experimental units or subjects if the **experimental units** are human) to measure their responses. 
 :::
 
-Unfortunately, this means that many variables are not **controlled** for so we cannot establish causation between the **explanatory** and **response** variables. 
+If an experiment is conducted improperly, or an [observational study](#sampling) is held instead, it would mean that many variables are not **controlled** for so we cannot establish causation between the **explanatory** and **response** variables. 
 
 ::: {.callout-note title="Explanatory and Response Variables"}
-
 Response variables measure an outcome of a study. 
 
 Explanatory variables may help explain or predict changes in a response variable.
-
 :::
 
-Because of the lack of control, we cannot be certain that variables other than the explanatory variable confound the response instead.
+Because of the lack of control, we cannot be certain that variables other than the explanatory variable confound the response instead. There may be *confounding* occurring that makes us think that something is happening at first glance. 
+
+[This website highlights many different quirky correlations that we can see between non-related variables https://www.tylervigen.com/spurious-correlations.](https://www.tylervigen.com/spurious-correlations) As you should notice, there is obviously factors that are influencing the data to look like as one increases, the other increases.
 
 ::: {.callout-note title="Confounding"}
-
 **Confounding** occurs when the effects of two variables on a response variable cannot be separated from each other.
 
 **Confounding variables** are variables other than the explanatory variable that may have an effect on the response variable.
-
 :::
-
 
 When our goal is to understand cause and effect, an **experiment** is the only source of fully convincing data since results in observational studies typically have some confounding variable in play. For this reason, the distinction between observational study and experiment is one of the most important in statistics. 
-
-::: {.callout-note title="Experiments"}
-
-An **experiment** deliberately imposes some **treatment** (the specific condition applied) on individuals (experimental units or subjects if the **experimental units** are human) to measure their responses. 
-
-:::
-
-
 
 
 ## Experiment Principles
@@ -156,3 +141,39 @@ The **scope of inference** refers to the type of inferences (conclusions) that c
   </tr>
 </tbody>
 </table>
+
+## Free Response Tip
+
+::: callout-tip
+Free response questions will mainly challenge you to think about the 4 principles of experimental design. So make sure to have those to heart and mention as many as posible when asked how to improve an experiment or what is wrong with an experiment.
+
+Any other concept is still free game to ask you to elaborate on.
+:::
+
+Something could be on a FRQ that's concrete would be needing to describe how to randomly assign experimental units to treatments. Make sure that you incorporate the same elements as a sampling description would: assigning numbers, a specific mechanism for *randomly* selecting numbers, and assigning corresponding to the numbers.
+
+Here's an example taken from the [2007 Exam](https://secure-media.collegeboard.org/secure/ap/pdf/statistics/ap-2007-statistics-free-response-questions.pdf#page=7):
+
+> As dogs age, diminished joint and hip health may lead to joint pain and thus reduce a dog’s activity level. Such  
+> a reduction in activity can lead to other health concerns such as weight gain and lethargy due to lack of exercise. 
+> A study is to be conducted to see which of two dietary supplements, glucosamine or chondroitin, is more 
+> effective in promoting joint and hip health and reducing the onset of canine osteoarthritis. Researchers will 
+> randomly select a total of 300 dogs from ten different large veterinary practices around the country. All of the 
+> dogs are more than 6 years old, and their owners have given consent to participate in the study. Changes in joint 
+> and hip health will be evaluated after 6 months of treatment.
+>
+> Assuming a control group is added to the other two groups in the study, explain how you would assign the 
+> 300 dogs to these three groups for a completely randomized design. 
+
+1. Assign each of the dogs a number 1-300.
+2. Use a random number generator to get 200 unique random numbers 1-300.
+3. Use the first 100 numbers generated to assign the corresponding dogs to the control group.
+4. Use the last 100 numbers generated to assign the corresponding dogs to a group that recieves glucosamine.
+5. Assign the remaining dogs to a group that recieves chrondroitin.
+
+Another approach could be the "slips in the hat approach." Be aware that regardless of approach, that you mention **randomly** assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being assigned to some group.
+
+1. Assign each of the dogs a number 1-300 and write their numbers on slips of paper and place them in a box
+2. Mixing well, **randomly** take 100 slips out of the box and assign the corresponding dogs to the control group.
+3. Repeat step two and assign the corresponding dogs to the glucosamine group.
+5. Assign the remaining dogs to a group that recieves chrondroitin.
