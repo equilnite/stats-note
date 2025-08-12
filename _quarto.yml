@@ -6,7 +6,7 @@ project:
 
 book:
   title: "AP Statistics Notes"
-  author: "Ms. Chang"
+  author: "Chang"
   favicon: "favicon.png"
   url: https://stats.echa.ng
   description: |
@@ -20,32 +20,32 @@ book:
       - basic-statistics.qmd
       - categorical-displays.qmd
       - quantitative-displays.qmd
-    - part: "Designing Studies"
-      chapters:
-      - sampling.qmd
-      - experimental-design.qmd
-    - part: "Probability"
-      chapters:
-      - probability.qmd
-      - density-curves.qmd
-      - random-variables.qmd
-      - sampling-distributions.qmd
-    - part: "Inference"
-      chapters:
-      - confidence-intervals.qmd
-      - hypothesis-testing.qmd
-      - inference-for-proportions.qmd
-      - inference-for-means.qmd
-      - inference-for-categories.qmd
-    - linear-regression.qmd
+    # - part: "Designing Studies"
+    #   chapters:
+    #   - sampling.qmd
+    #   - experimental-design.qmd
+    # - part: "Probability"
+    #   chapters:
+    #   - probability.qmd
+    #   - density-curves.qmd
+    #   - random-variables.qmd
+    #   - sampling-distributions.qmd
+    # - part: "Inference"
+    #   chapters:
+    #   - confidence-intervals.qmd
+    #   - hypothesis-testing.qmd
+    #   - inference-for-proportions.qmd
+    #   - inference-for-means.qmd
+    #   - inference-for-categories.qmd
+    # - linear-regression.qmd
     # - inference-for-slope.qmd
   appendices:
     - formula-sheet.qmd
     # - applets.qmd
-    - four-step-process.qmd
-    - z-critical-values.qmd
-    - t-critical-values.qmd
-    - statistic-to-pvalue.qmd
+    # - four-step-process.qmd
+    # - z-critical-values.qmd
+    # - t-critical-values.qmd
+    # - statistic-to-pvalue.qmd
     # - calc-guide.qmd
     # - test-page.qmd
     # - linear-regression-project.qmd
