@@ -20,10 +20,10 @@ book:
       - basic-statistics.qmd
       - categorical-displays.qmd
       - quantitative-displays.qmd
-    # - part: "Designing Studies"
-    #   chapters:
-    #   - sampling.qmd
-    #   - experimental-design.qmd
+    - part: "Designing Studies"
+      chapters:
+      - sampling.qmd
+      - experimental-design.qmd
     # - part: "Probability"
     #   chapters:
     #   - probability.qmd
