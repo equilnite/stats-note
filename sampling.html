@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 2&nbsp; Basic Notation</title>
+<title>AP Statistics Notes - 6&nbsp; Sampling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./basic-statistics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./experimental-design.html" rel="next">
+<link href="./quantitative-displays.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -119,7 +119,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./notation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html">Designing Studies</a></li><li class="breadcrumb-item"><a href="./sampling.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -152,7 +152,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></span></a>
   </div>
 </li>
@@ -196,7 +196,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sampling.html" class="sidebar-item-text sidebar-link">
+  <a href="./sampling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></span></a>
   </div>
 </li>
@@ -235,20 +235,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lists" id="toc-lists" class="nav-link active" data-scroll-target="#lists"><span class="header-section-number">2.1</span> Lists</a></li>
-  <li><a href="#n" id="toc-n" class="nav-link" data-scroll-target="#n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></a></li>
-  <li><a href="#summation-sigma" id="toc-summation-sigma" class="nav-link" data-scroll-target="#summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</a></li>
-  <li><a href="#other-notation" id="toc-other-notation" class="nav-link" data-scroll-target="#other-notation"><span class="header-section-number">2.4</span> Other notation</a></li>
-  <li><a href="#other-commonly-used-symbols" id="toc-other-commonly-used-symbols" class="nav-link" data-scroll-target="#other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</a></li>
+  <li><a href="#bias" id="toc-bias" class="nav-link active" data-scroll-target="#bias"><span class="header-section-number">6.1</span> Bias</a></li>
+  <li><a href="#random-sampling-methods" id="toc-random-sampling-methods" class="nav-link" data-scroll-target="#random-sampling-methods"><span class="header-section-number">6.2</span> Random Sampling Methods</a>
+  <ul class="collapse">
+  <li><a href="#box-analogy" id="toc-box-analogy" class="nav-link" data-scroll-target="#box-analogy"><span class="header-section-number">6.2.1</span> Box analogy</a></li>
+  <li><a href="#benefits-of-methods" id="toc-benefits-of-methods" class="nav-link" data-scroll-target="#benefits-of-methods"><span class="header-section-number">6.2.2</span> Benefits of Methods</a></li>
+  </ul></li>
+  <li><a href="#describing-sampling" id="toc-describing-sampling" class="nav-link" data-scroll-target="#describing-sampling"><span class="header-section-number">6.3</span> Describing Sampling</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html">Designing Studies</a></li><li class="breadcrumb-item"><a href="./sampling.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Notation</span></h1>
+<h1 class="title"><span id="sampling" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></span></h1>
 </div>
 
 
@@ -265,59 +267,226 @@ window.Quarto = {
 </header>
 
 
-<section id="lists" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="lists"><span class="header-section-number">2.1</span> Lists</h2>
-<p>Most of the time, you will see <span class="math inline">\(x\)</span> denote a list of values (i.e.&nbsp;a variable in a data table).</p>
-<p>For example, if <span class="math inline">\(x\)</span> was the list of numerical values <span class="math inline">\(a\)</span> to <span class="math inline">\(g\)</span>, we can write it as:</p>
-<p><span class="math inline">\(x = [a, b, c, d, e, f, g]\)</span></p>
-<p>Then, <span class="math inline">\(x_i\)</span> means the <span class="math inline">\(i^{th}\)</span> value in the list of <span class="math inline">\(x\)</span>, so</p>
-<p><span class="math inline">\(x_1 = a\)</span> and <span class="math inline">\(x_2 = b\)</span> and <span class="math inline">\(x_7 = g\)</span>.</p>
+<p>When we have a question about a certain <strong>population</strong> (an entire group of individuals). Ideally we would ask them all (take a <strong>census</strong>). But contacting every member of a population often isn’t very practical: it would take too much time and cost too much money. Instead, we put the question to a <strong>sample</strong>, or subset of individuals of the population from which we actually collect data, chosen to represent the entire population.</p>
+<p>When you want to identify the population, ask yourself, what does the question want to know about? What group of people does the question/problem address?</p>
+<p>When identifying the sample, ask yourself, what group does the work done actually address?</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Observational Studies">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observational Studies
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sample survey aims to gather information about a population without disturbing the population in the process. Sample surveys are one kind of <strong>observational study</strong>.</p>
+<p>Observational studies only involve observing individuals and measuring variables of interest with no attempt to influence the responses</p>
+<p>Studies that don’t conduct an experiment with proper control are not able to come to a <em>cause and effect</em> conclusion between variables.</p>
+</div>
+</div>
+<section id="bias" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="bias"><span class="header-section-number">6.1</span> Bias</h2>
+<p>When we collect data, there is the possibility of the data becoming systematically pushed towards a specific outcome. For example, if we want to learn about the GPA average in the school and take a sample of students only from a class, it’s quite possible that the sample is not representative of the school. We will probably result in a GPA average that is higher or lower than the actual GPA average in the school.</p>
+<p>There are several ways that this can happen. Based off a scenario, you should be able to identify the bias that is occurring. The main ways that we learn when this occurs is when:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Response Bias">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Response Bias
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Response bias is created when something causes people’s responses to be systematically pushed in one direction.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Self-reported response bias">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Self-reported response bias
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When individuals inaccurately report their own traits, typically to avoid embarrassment or other situation where they feel more inclined to not tell the truth.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Question wording bias ">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question wording bias
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When survey questions are confusing or leading to favor or disfavor certain answers from a respondent.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Non-response Bias">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Non-response Bias
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Undercoverage">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Undercoverage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Undercoverage occurs when some members of the population cannot be chosen in the sample or specific individuals have a reduced chance of being chosen to be in the sample.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Voluntary Response Sample">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Voluntary Response Sample
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Voluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Convenience Sample">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Convenience Sample
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Choosing individuals from a population who are easy to reach results in a convenience sample.</p>
+</div>
+</div>
 </section>
-<section id="n" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="n"><span class="header-section-number">2.2</span> <span class="math inline">\(n\)</span></h2>
-<p>In regards to a data table or list of values, <span class="math inline">\(n\)</span> stands for the number of rows or data points that are in the data table or list (we will learn this as the <em>sample size</em> later on)</p>
-<p>So, for list <span class="math inline">\(x\)</span>, <span class="math inline">\(n = 7\)</span>.</p>
-<p>Adding on, <span class="math inline">\(x_n\)</span> would mean the last value in the list <span class="math inline">\(x\)</span> (since there are only <span class="math inline">\(n\)</span> values in <span class="math inline">\(x\)</span>)</p>
-</section>
-<section id="summation-sigma" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="summation-sigma"><span class="header-section-number">2.3</span> Summation (<span class="math inline">\(\Sigma\)</span>)</h2>
-<p>You will also see the greek letter <span class="math inline">\(\Sigma\)</span> in formulas. Usage of this sign means that we are using <em>summation notation</em>.</p>
-<p>If we want the sum of all numbers from 1 to 7, we would write it as,</p>
-<p><span class="math display">\[\sum_{i=1}^7 i\]</span></p>
-<p>We interpret this as,</p>
-<ol type="1">
-<li><p>Start from <span class="math inline">\(i = 1\)</span>, evaluate the expression, which is <span class="math inline">\(i\)</span>.</p></li>
-<li><p>Keep our evaluated expression to the side and get ready to add the other values to it, so</p></li>
-</ol>
-<p><span class="math display">\[1 + \cdots\]</span></p>
-<ol start="3" type="1">
-<li><p>Now go the next numbers until we get to <span class="math inline">\(7\)</span> (the number on the top of the <span class="math inline">\(\Sigma\)</span>) So moving onto <span class="math inline">\(i = 2\)</span>, we end up with <span class="math display">\[1 + 2 + \cdots\]</span> And with <span class="math inline">\(i = 3\)</span>, we end up with <span class="math display">\[1 + 2 + 3 + \cdots\]</span> </p></li>
-<li><p>When we get to the end of it (when we reach <span class="math inline">\(i = 7\)</span>), we have the <em>expanded form</em> of the summation. <span class="math display">\[1 + 2 + 3+ 4 + 5 + 6 + 7\]</span></p></li>
-</ol>
-</section>
-<section id="other-notation" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="other-notation"><span class="header-section-number">2.4</span> Other notation</h2>
+<section id="random-sampling-methods" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="random-sampling-methods"><span class="header-section-number">6.2</span> Random Sampling Methods</h2>
+<p>It’s important to avoid bias in our data so that we have conclusive results. A big idea in avoiding bias is to have a proper sampling method. A good sampling method always keeps the population in mind. Your sample should be <strong>representative of the population</strong>, which means that each individual that is part of your population should have an equal chance of being selected for your sample.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Simple Random Sample (SRS)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Simple Random Sample (SRS)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a SRS, each individual (the words) and each subgroup of individuals has the same chance of being chosen from the population of all words in the song.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Stratified Random Sample">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stratified Random Sample
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a stratified random sample, we first determine <strong>strata</strong> within our population. You can think of strata as subgroups of people that we divide based on the type/status of the things that we are sampling. The goal of the random sample is then to take an SRS from each strata (normally, you want the same amount of people from each stratum).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Random Cluster Sample">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Random Cluster Sample
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a random cluster sample, we first determine <strong>clusters</strong> within our population. You can think of clusters as subgroups of people that we divide based on the location of the things that we are sampling (there should be no way to distinguish between the clusters besides where they are). The goal of the random sample is then to take select random clusters and then sample all people in the chosen clusters.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Systematic Random Sample">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Systematic Random Sample
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a systematic random sample, we randomly choose an interval (n) and/or a starting point at which to select individuals and then we select every nth individual.</p>
+</div>
+</div>
+<section id="box-analogy" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="box-analogy"><span class="header-section-number">6.2.1</span> Box analogy</h3>
+<p>Although not as descriptive as the above definitions, here’s how you can think about each sampling method:</p>
+<p>Imagine that you have a box of balls, all of different weights and different colors (red, white, blue). Balls of similar colors tend to be more similar in weight compared to balls of different colors. We want to study the weights of the balls by randomly selecting some balls.</p>
 <ul>
-<li><span class="math inline">\(\bar x\)</span>: The “line” on top of <span class="math inline">\(x\)</span> means the <em>mean of</em> <span class="math inline">\(x\)</span>. If we had <span class="math inline">\(\bar a\)</span>, I would be asking for the mean of <span class="math inline">\(a\)</span>.
-<ul>
-<li>Pronounced “x bar”</li>
-</ul></li>
-<li><span class="math inline">\(\hat p\)</span>: The “hat” on top of <span class="math inline">\(p\)</span> means the <em>estimate of</em> <span class="math inline">\(p\)</span>. If we had <span class="math inline">\(\hat x\)</span>, I would be asking for the estimate of <span class="math inline">\(x\)</span>.
-<ul>
-<li>Pronounced “p hat”</li>
-</ul></li>
+<li>We can take a <strong>SRS</strong> from this box of balls by randomly picking out some balls. Use these randomly picked out balls as your sample.</li>
+<li>We can take a <strong>Stratified Random Sample</strong> by first separating the balls into 3 separate boxes. One box with just the red balls, another with just the white balls, and a last one with just the blue balls. Lastly, take an SRS from <em>each</em> of the boxes by randomly taking out some balls from each of the boxes. Use these randomly picked out balls as your sample.</li>
+<li>We can take a <strong>Cluster Sample</strong> by separating the balls into several different boxes. We determine out boxes by just taking maybe picking out 10 balls from the box (just take balls out top to bottom) and placing 10 balls in each box. Or we could dump out the balls and just section off the balls into different boxes. Take an SRS of the boxes by randomly selecting some boxes. Take out all of the balls from the boxes that you selected to be part of your sample.</li>
+<li>We can take a <strong>Systematic Random Sample</strong> by taking out all the balls in the box and lining them up. Randomly pick one of the balls. From that ball onwards, pick every 5th ball to be part of your sample.</li>
 </ul>
 </section>
-<section id="other-commonly-used-symbols" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="other-commonly-used-symbols"><span class="header-section-number">2.5</span> Other commonly used symbols</h2>
+<section id="benefits-of-methods" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="benefits-of-methods"><span class="header-section-number">6.2.2</span> Benefits of Methods</h3>
+<p>An <strong>SRS</strong> is an overall good method, giving us a random selection of multiple trees, but we can’t always trust it because it’s just left up to chance. There’s a chance that we select only individuals of a certain type, which is bad since we only have one chance to sample in real life.</p>
+<p>To guarantee a good spread of people from all over, we would normally prefer a <strong>Systematic Random Sample</strong>, because by counting people off, you’ll be almost ensuring that you get a random spread of people from all of the population.</p>
+<p>If we know that there are specific types of people within our population, then a better idea is to take a <strong>Stratified Random Sample</strong>. By first splitting people off in strata (again, this people types of people), we then are more capable of getting a good spread of people from each type of person.</p>
+<p>Lastly, if all we want to do is save as much money and resources as possible, then we do a <strong>Random Cluster Sample</strong>, which does not take as much time and effort compared to the rest of the sampling methods.</p>
+</section>
+</section>
+<section id="describing-sampling" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="describing-sampling"><span class="header-section-number">6.3</span> Describing Sampling</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here’s a general framework for how describing SRS’s should look like:</p>
+<ol type="1">
+<li>Assign each individual in the population a number <span class="math inline">\(1\)</span> to <span class="math inline">\(N\)</span> (the population size).</li>
+<li>Use a random number generator to obtain <span class="math inline">\(n\)</span> (sample size) unique numbers.</li>
+<li>Sample the individuals whose numbers were generated.</li>
+</ol>
+</div>
+</div>
+<p>Here’s some examples of how this can work.</p>
+<blockquote class="blockquote">
+<p>Imagine we have a forest of 1000 trees and I want to find out how old they are on average (and we don’t have the resources to visit each tree)</p>
+</blockquote>
 <ul>
-<li><span class="math inline">\(N\)</span>: population size</li>
-<li><span class="math inline">\(p\)</span>: proportion, probability, or p-value</li>
-<li><span class="math inline">\(\mu\)</span>: population mean (true mean)</li>
-<li><span class="math inline">\(\bar x\)</span>: sample mean</li>
-<li><span class="math inline">\(\sigma\)</span>: population standard deviation (true standard deviation)</li>
-<li><span class="math inline">\(s_x\)</span>: sample standard deviation (of x), so <span class="math inline">\(s_y\)</span> is the sample standard deviation of <span class="math inline">\(y\)</span></li>
-<li><span class="math inline">\(SE_{\bar x}\)</span>: Standard error of the sample mean (of x), the estimate of the standard deviation of the sample mean.</li>
+<li><p>To take an <strong>SRS</strong> of 50 trees, we can 1. Number each tree with a number 1 to 1000. 2. Generate 50 unique random integers from 1 to 1000. 3. Select the trees corresponding to the numbers and record their age.</p></li>
+<li><p>To take a <strong>random cluster sample</strong> of 50 trees, we can 1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees. 2. Number each plot of land with a number 1 to 200. 3. Generate 10 unique random integers from 1 to 200. 4. <em>Select the plots</em> corresponding to the numbers and record <em>all the ages from the trees in the plots</em>.</p></li>
+</ul>
+<p>Another approach could be the “slips in the hat approach.” Be aware that regardless of approach, that you mention <strong>randomly</strong> assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being selected.</p>
+<ul>
+<li><p>To take an SRS of 50 trees, we can 1. Number each tree with a number 1 to 1000 and write each number on a slip of paper. Place all the slips of paper in a box. 2. Mixing well, <strong>randomly</strong> take 50 slips out of the box. 3. Select the trees corresponding to the numbers and record their age.</p></li>
+<li><p>To take a random cluster sample of 50 trees, we can 1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees. 2. Number each plot of land with a number 1 to 200 and write each number on a slip of paper. Place all the slips of paper in a box. 3. Mixing well, <strong>randomly</strong> take 10 slips out of the box. 4. <em>Select the plots</em> corresponding to the numbers and record <em>all the ages from the trees in the plots</em>.</p></li>
 </ul>
 
 
@@ -735,13 +904,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./quantitative-displays.html" class="pagination-link" aria-label="Quantative Data Visualizations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basic-statistics.html" class="pagination-link" aria-label="Characteristics of Distributions">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Characteristics of Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./experimental-design.html" class="pagination-link" aria-label="Experimental Design">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

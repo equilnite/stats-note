@@ -214,6 +214,105 @@
     ]
   },
   {
+    "objectID": "sampling.html",
+    "href": "sampling.html",
+    "title": "6  Sampling",
+    "section": "",
+    "text": "6.1 Bias\nWhen we collect data, there is the possibility of the data becoming systematically pushed towards a specific outcome. For example, if we want to learn about the GPA average in the school and take a sample of students only from a class, it’s quite possible that the sample is not representative of the school. We will probably result in a GPA average that is higher or lower than the actual GPA average in the school.\nThere are several ways that this can happen. Based off a scenario, you should be able to identify the bias that is occurring. The main ways that we learn when this occurs is when:",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "sampling.html#bias",
+    "href": "sampling.html#bias",
+    "title": "6  Sampling",
+    "section": "",
+    "text": "Response Bias\n\n\n\nResponse bias is created when something causes people’s responses to be systematically pushed in one direction.\n\n\n\n\n\n\n\n\nSelf-reported response bias\n\n\n\nWhen individuals inaccurately report their own traits, typically to avoid embarrassment or other situation where they feel more inclined to not tell the truth.\n\n\n\n\n\n\n\n\nQuestion wording bias\n\n\n\nWhen survey questions are confusing or leading to favor or disfavor certain answers from a respondent.\n\n\n\n\n\n\n\n\nNon-response Bias\n\n\n\nNonresponse occurs when an individual chosen for the sample can’t be contacted or refuses to participate.\n\n\n\n\n\n\n\n\nUndercoverage\n\n\n\nUndercoverage occurs when some members of the population cannot be chosen in the sample or specific individuals have a reduced chance of being chosen to be in the sample.\n\n\n\n\n\n\n\n\nVoluntary Response Sample\n\n\n\nVoluntary response samples consists of people who choose themselves by responding to general invitation, causing the chosen sample to not be representative of the population.\n\n\n\n\n\n\n\n\nConvenience Sample\n\n\n\nChoosing individuals from a population who are easy to reach results in a convenience sample.",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "sampling.html#random-sampling-methods",
+    "href": "sampling.html#random-sampling-methods",
+    "title": "6  Sampling",
+    "section": "6.2 Random Sampling Methods",
+    "text": "6.2 Random Sampling Methods\nIt’s important to avoid bias in our data so that we have conclusive results. A big idea in avoiding bias is to have a proper sampling method. A good sampling method always keeps the population in mind. Your sample should be representative of the population, which means that each individual that is part of your population should have an equal chance of being selected for your sample.\n\n\n\n\n\n\nSimple Random Sample (SRS)\n\n\n\nIn a SRS, each individual (the words) and each subgroup of individuals has the same chance of being chosen from the population of all words in the song.\n\n\n\n\n\n\n\n\nStratified Random Sample\n\n\n\nIn a stratified random sample, we first determine strata within our population. You can think of strata as subgroups of people that we divide based on the type/status of the things that we are sampling. The goal of the random sample is then to take an SRS from each strata (normally, you want the same amount of people from each stratum).\n\n\n\n\n\n\n\n\nRandom Cluster Sample\n\n\n\nIn a random cluster sample, we first determine clusters within our population. You can think of clusters as subgroups of people that we divide based on the location of the things that we are sampling (there should be no way to distinguish between the clusters besides where they are). The goal of the random sample is then to take select random clusters and then sample all people in the chosen clusters.\n\n\n\n\n\n\n\n\nSystematic Random Sample\n\n\n\nIn a systematic random sample, we randomly choose an interval (n) and/or a starting point at which to select individuals and then we select every nth individual.\n\n\n\n6.2.1 Box analogy\nAlthough not as descriptive as the above definitions, here’s how you can think about each sampling method:\nImagine that you have a box of balls, all of different weights and different colors (red, white, blue). Balls of similar colors tend to be more similar in weight compared to balls of different colors. We want to study the weights of the balls by randomly selecting some balls.\n\nWe can take a SRS from this box of balls by randomly picking out some balls. Use these randomly picked out balls as your sample.\nWe can take a Stratified Random Sample by first separating the balls into 3 separate boxes. One box with just the red balls, another with just the white balls, and a last one with just the blue balls. Lastly, take an SRS from each of the boxes by randomly taking out some balls from each of the boxes. Use these randomly picked out balls as your sample.\nWe can take a Cluster Sample by separating the balls into several different boxes. We determine out boxes by just taking maybe picking out 10 balls from the box (just take balls out top to bottom) and placing 10 balls in each box. Or we could dump out the balls and just section off the balls into different boxes. Take an SRS of the boxes by randomly selecting some boxes. Take out all of the balls from the boxes that you selected to be part of your sample.\nWe can take a Systematic Random Sample by taking out all the balls in the box and lining them up. Randomly pick one of the balls. From that ball onwards, pick every 5th ball to be part of your sample.\n\n\n\n6.2.2 Benefits of Methods\nAn SRS is an overall good method, giving us a random selection of multiple trees, but we can’t always trust it because it’s just left up to chance. There’s a chance that we select only individuals of a certain type, which is bad since we only have one chance to sample in real life.\nTo guarantee a good spread of people from all over, we would normally prefer a Systematic Random Sample, because by counting people off, you’ll be almost ensuring that you get a random spread of people from all of the population.\nIf we know that there are specific types of people within our population, then a better idea is to take a Stratified Random Sample. By first splitting people off in strata (again, this people types of people), we then are more capable of getting a good spread of people from each type of person.\nLastly, if all we want to do is save as much money and resources as possible, then we do a Random Cluster Sample, which does not take as much time and effort compared to the rest of the sampling methods.",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "sampling.html#describing-sampling",
+    "href": "sampling.html#describing-sampling",
+    "title": "6  Sampling",
+    "section": "6.3 Describing Sampling",
+    "text": "6.3 Describing Sampling\n\n\n\n\n\n\nTip\n\n\n\nHere’s a general framework for how describing SRS’s should look like:\n\nAssign each individual in the population a number \\(1\\) to \\(N\\) (the population size).\nUse a random number generator to obtain \\(n\\) (sample size) unique numbers.\nSample the individuals whose numbers were generated.\n\n\n\nHere’s some examples of how this can work.\n\nImagine we have a forest of 1000 trees and I want to find out how old they are on average (and we don’t have the resources to visit each tree)\n\n\nTo take an SRS of 50 trees, we can 1. Number each tree with a number 1 to 1000. 2. Generate 50 unique random integers from 1 to 1000. 3. Select the trees corresponding to the numbers and record their age.\nTo take a random cluster sample of 50 trees, we can 1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees. 2. Number each plot of land with a number 1 to 200. 3. Generate 10 unique random integers from 1 to 200. 4. Select the plots corresponding to the numbers and record all the ages from the trees in the plots.\n\nAnother approach could be the “slips in the hat approach.” Be aware that regardless of approach, that you mention randomly assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being selected.\n\nTo take an SRS of 50 trees, we can 1. Number each tree with a number 1 to 1000 and write each number on a slip of paper. Place all the slips of paper in a box. 2. Mixing well, randomly take 50 slips out of the box. 3. Select the trees corresponding to the numbers and record their age.\nTo take a random cluster sample of 50 trees, we can 1. Use a map to split up the trees by plots of land (assume that each plot has 5 trees. 2. Number each plot of land with a number 1 to 200 and write each number on a slip of paper. Place all the slips of paper in a box. 3. Mixing well, randomly take 10 slips out of the box. 4. Select the plots corresponding to the numbers and record all the ages from the trees in the plots.",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "experimental-design.html",
+    "href": "experimental-design.html",
+    "title": "7  Experimental Design",
+    "section": "",
+    "text": "7.1 Experiment Principles\nIn general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things: comparison, randomization, control, and replication. Stronger internal validity gives us a better cause-effect link in our experiment. Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!\nThe logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically.",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimental Design</span>"
+    ]
+  },
+  {
+    "objectID": "experimental-design.html#experiment-principles",
+    "href": "experimental-design.html#experiment-principles",
+    "title": "7  Experimental Design",
+    "section": "",
+    "text": "Principles of Experimental Design\n\n\n\nThese four determine how much internal validity we have in our experiment.\n\nComparison\n\nUse a design that compares two or more treatments.\n\nRandomization\n\nUse chance to assign experimental units to treatments. Doing so helps create roughly equivalent groups of experimental units by balancing the effects of other variables among treatment groups.\n\nControl\n\nKeep other variables that might affect the response the same for all groups.\n\nReplication\n\nUse enough experimental units in each group so that difference in the effects of the treatments can be distinguished from chance differences between the groups.\n\n\n\n\n\n\n7.1.1 Placebos\n\n\n\n\n\n\nPlacebo Effect\n\n\n\nThe response to a dummy treatment is called the placebo effect. Subjects are given a placebo treatment to control for the placebo effect.\n\nFor example, If I tell someone that I am giving them an energy drink (when it in fact has doesn’t actually provide “energy”), and they feel like they have energy after, they have fallen for the placebo effect.\n\n\n\nIt’s well known that someone’s mental state can easily affect their physical state, so it’s important to control for the placebo effect. Typically, this applies to medicine settings, where you might give a pill with the actual medicine and a placebo (a pill with everything but the actual medicine) and conduct it in a blind.\n\n\n\n\n\n\nBlinding\n\n\n\nConducting an experiment in a blind means that you give treatments to patients without allowing them to know which treatment they are taking.\nHowever, Whenever possible, experiments with human subjects take it a bit further and conduct their experiment in a double-blind, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received.",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimental Design</span>"
+    ]
+  },
+  {
+    "objectID": "experimental-design.html#experiment-designs",
+    "href": "experimental-design.html#experiment-designs",
+    "title": "7  Experimental Design",
+    "section": "7.2 Experiment Designs",
+    "text": "7.2 Experiment Designs\n\n7.2.1 Completely Randomized Design\nIn a completely randomized design, the experimental units are assigned to the treatments completely by chance. This is similar to (but NOT the same as) a simple random sample (SRS), because in both cases we ignore other variables. Here’s the difference: In an SRS, we’re picking some people (our sample) to study, and ignoring the rest. In a completely randomized experiment, however, we already have our sample (the people in our experiment), and we’re randomly deciding how we’re going to study each person (or, which treatment they’re going to get). So in complete randomization, the randomization is in the assignment, not in the selection, of people in our study.\n\n\n7.2.2 Randomized Block Design\nIn a randomized block design, the experimental units are first assigned to blocks according to the different types/status of the experimental units in the experiment. This is similar to stratified random sampling, however, we are not taking a sample. Any reference to stratified random sampling is wrong when describing an experiment design.\nAfter each experimental unit is assigned to their block, the experiment is carried out in each block, where a completely randomized design is carried out within the block.\nAfterwards, you compare and analyze results from each block and finally combine all results and analyze the differences between blocks.\n\n\n7.2.3 Matched Pairs Design\nA matched pairs design is a special case of a randomized block design that uses blocks of size 2. In this kind of design, you have to have “matched pairs.” In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimental Design</span>"
+    ]
+  },
+  {
+    "objectID": "experimental-design.html#inference",
+    "href": "experimental-design.html#inference",
+    "title": "7  Experimental Design",
+    "section": "7.3 Inference",
+    "text": "7.3 Inference\nThe main purpose of experiments is to be able to infer something about what we did. Does A actually affect B? Is it true for anyone else other than the people we experimented on?\n\n\n\n\n\n\nStatistical Significance\n\n\n\nAn observed effect so large that it would rarely occur by chance is said to be statistically significant. If we test something according to a single assumption that we make and find out that the data that we collect doesn’t really match up with that claim (if the chance of seeing data like the one we obtained is too low), then we’d say that it is statistically significant evidence.\n\n\n\n7.3.1 Scope of Inference\n\n\n\n\n\n\nScope of Inference\n\n\n\nThe scope of inference refers to the type of inferences (conclusions) that can be drawn from a study. The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.\n\n\n\n\n\n\n\n\n\nWere individuals randomly assigned to groups?\n\n\n\n\nYes\n\n\nNo\n\n\n\n\n\n\nWere individuals randomly selected from a population?\n\n\nYes\n\n\nCan make inferences about the populationCan make inferences about cause and effect (Rare in the real world)\n\n\nCan make inferences about the populationCannot make inferences about cause and effect (Some observational studies)\n\n\n\n\nNo\n\n\nCannot make inferences about the populationCan make Inferences about cause and effect:   (Most experiments)\n\n\nCannot make inferences about the populationCannot make Inferences about cause and effect (Some observational studies)",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimental Design</span>"
+    ]
+  },
+  {
+    "objectID": "experimental-design.html#free-response-tip",
+    "href": "experimental-design.html#free-response-tip",
+    "title": "7  Experimental Design",
+    "section": "7.4 Free Response Tip",
+    "text": "7.4 Free Response Tip\n\n\n\n\n\n\nTip\n\n\n\nFree response questions will mainly challenge you to think about the 4 principles of experimental design. So make sure to have those to heart and mention as many as posible when asked how to improve an experiment or what is wrong with an experiment.\nAny other concept is still free game to ask you to elaborate on.\n\n\nSomething could be on a FRQ that’s concrete would be needing to describe how to randomly assign experimental units to treatments. Make sure that you incorporate the same elements as a sampling description would: assigning numbers, a specific mechanism for randomly selecting numbers, and assigning corresponding to the numbers.\nHere’s an example taken from the 2007 Exam:\n\nAs dogs age, diminished joint and hip health may lead to joint pain and thus reduce a dog’s activity level. Such\na reduction in activity can lead to other health concerns such as weight gain and lethargy due to lack of exercise. A study is to be conducted to see which of two dietary supplements, glucosamine or chondroitin, is more effective in promoting joint and hip health and reducing the onset of canine osteoarthritis. Researchers will randomly select a total of 300 dogs from ten different large veterinary practices around the country. All of the dogs are more than 6 years old, and their owners have given consent to participate in the study. Changes in joint and hip health will be evaluated after 6 months of treatment.\nAssuming a control group is added to the other two groups in the study, explain how you would assign the 300 dogs to these three groups for a completely randomized design.\n\n\nAssign each of the dogs a number 1-300.\nUse a random number generator to get 200 unique random numbers 1-300.\nUse the first 100 numbers generated to assign the corresponding dogs to the control group.\nUse the last 100 numbers generated to assign the corresponding dogs to a group that recieves glucosamine.\nAssign the remaining dogs to a group that recieves chrondroitin.\n\nAnother approach could be the “slips in the hat approach.” Be aware that regardless of approach, that you mention randomly assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being assigned to some group.\n\nAssign each of the dogs a number 1-300 and write their numbers on slips of paper and place them in a box\nMixing well, randomly take 100 slips out of the box and assign the corresponding dogs to the control group.\nRepeat step two and assign the corresponding dogs to the glucosamine group.\nAssign the remaining dogs to a group that recieves chrondroitin.",
+    "crumbs": [
+      "Designing Studies",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Experimental Design</span>"
+    ]
+  },
+  {
     "objectID": "formula-sheet.html",
     "href": "formula-sheet.html",
     "title": "Appendix A — AP Exam Formula Sheet",
