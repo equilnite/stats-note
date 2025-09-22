@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 5&nbsp; Quantative Data Visualizations</title>
+<title>AP Statistics Notes - 8&nbsp; Density Curves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sampling.html" rel="next">
-<link href="./categorical-displays.html" rel="prev">
+<link href="./formula-sheet.html" rel="next">
+<link href="./experimental-design.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -121,7 +121,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic-statistics.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./quantitative-displays.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./density-curves.html">Probability</a></li><li class="breadcrumb-item"><a href="./density-curves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -181,7 +181,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quantitative-displays.html" class="sidebar-item-text sidebar-link active">
+  <a href="./quantitative-displays.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></span></a>
   </div>
 </li>
@@ -221,7 +221,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./density-curves.html" class="sidebar-item-text sidebar-link">
+  <a href="./density-curves.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
   </div>
 </li>
@@ -254,19 +254,26 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#dot-plots" id="toc-dot-plots" class="nav-link active" data-scroll-target="#dot-plots"><span class="header-section-number">5.1</span> Dot Plots</a></li>
-  <li><a href="#stemplots" id="toc-stemplots" class="nav-link" data-scroll-target="#stemplots"><span class="header-section-number">5.2</span> Stemplots</a></li>
-  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">5.3</span> Boxplots</a></li>
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">5.4</span> Histograms</a></li>
+  <li><a href="#percentiles" id="toc-percentiles" class="nav-link active" data-scroll-target="#percentiles"><span class="header-section-number">8.1</span> Percentiles</a></li>
+  <li><a href="#cumulative-relative-frequency-graphs" id="toc-cumulative-relative-frequency-graphs" class="nav-link" data-scroll-target="#cumulative-relative-frequency-graphs"><span class="header-section-number">8.2</span> Cumulative Relative Frequency Graphs</a></li>
+  <li><a href="#normal-distributions" id="toc-normal-distributions" class="nav-link" data-scroll-target="#normal-distributions"><span class="header-section-number">8.3</span> Normal Distributions</a>
+  <ul class="collapse">
+  <li><a href="#normal-characteristics" id="toc-normal-characteristics" class="nav-link" data-scroll-target="#normal-characteristics"><span class="header-section-number">8.3.1</span> Characteristics of the Normal Distribution</a></li>
+  <li><a href="#empirical-rule" id="toc-empirical-rule" class="nav-link" data-scroll-target="#empirical-rule"><span class="header-section-number">8.3.2</span> Empirical Rule</a></li>
+  <li><a href="#assessing-for-normality" id="toc-assessing-for-normality" class="nav-link" data-scroll-target="#assessing-for-normality"><span class="header-section-number">8.3.3</span> Assessing for Normality</a></li>
+  <li><a href="#z-score" id="toc-z-score" class="nav-link" data-scroll-target="#z-score"><span class="header-section-number">8.3.4</span> Standardized Score</a></li>
+  <li><a href="#calculating-probabilities-and-percentiles" id="toc-calculating-probabilities-and-percentiles" class="nav-link" data-scroll-target="#calculating-probabilities-and-percentiles"><span class="header-section-number">8.3.5</span> Calculating Probabilities and Percentiles</a></li>
+  <li><a href="#using-your-calculator" id="toc-using-your-calculator" class="nav-link" data-scroll-target="#using-your-calculator"><span class="header-section-number">8.3.6</span> Using your Calculator</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic-statistics.html">Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="./quantitative-displays.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./density-curves.html">Probability</a></li><li class="breadcrumb-item"><a href="./density-curves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Quantative Data Visualizations</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></h1>
 </div>
 
 
@@ -283,246 +290,23 @@ window.Quarto = {
 </header>
 
 
-<section id="dot-plots" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="dot-plots"><span class="header-section-number">5.1</span> Dot Plots</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Dot Plots">
+<div class="callout callout-style-default callout-note callout-titled" title="Density Curve">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Dot Plots
+Density Curve
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Dots Plots represent one quantitative variable by marking a dot for each value observed. They are mainly for discrete quantitative variables only and they are mainly useful in situations when you have a small range of number so that you can actually see how the data distribution varies across values.</p>
+<p>A density curve is a curve that is always on or above the horizontal axis, and has area exactly 1 underneath it.</p>
 </div>
 </div>
-<p>Dot plots are simple, you draw a number line and then plot points above the number for each of the number that you see in the data.</p>
-<p>Take this data for example:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Number.of.Students.in.the.Hallway"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"4"},{"1":"5"},{"1":"8"},{"1":"5"},{"1":"5"},{"1":"8"},{"1":"6"},{"1":"2"},{"1":"4"},{"1":"4"},{"1":"7"},{"1":"6"},{"1":"6"},{"1":"5"},{"1":"4"},{"1":"9"},{"1":"6"},{"1":"1"},{"1":"6"},{"1":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>Now count up each value to figure out how many dots you need at each value on the number line then plot your graph</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Number.of.Students.in.the.Hallway"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"1"},{"1":"2","2":"1"},{"1":"4","2":"5"},{"1":"5","2":"4"},{"1":"6","2":"5"},{"1":"7","2":"1"},{"1":"8","2":"2"},{"1":"9","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="quantitative-displays_files/figure-html/student-dot-plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="stemplots" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="stemplots"><span class="header-section-number">5.2</span> Stemplots</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Stemplots">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Stemplots
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a stem plot, you need to determine a common “stem” of all the numbers that you’re plotting. So if you have integer numbers from 10 to 200, your stems will be everything from the tens and so on, so you’ll have stems from 1-20. Once you take the stems, you just write the “leaves” next to the stem that they belong.</p>
-<p>These are also known as stem-and-leaf plots.</p>
-</div>
-</div>
-<p>Using this data as an example,</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"36"},{"1":"44"},{"1":"89"},{"1":"52"},{"1":"53"},{"1":"93"},{"1":"62"},{"1":"18"},{"1":"33"},{"1":"39"},{"1":"81"},{"1":"59"},{"1":"60"},{"1":"53"},{"1":"36"},{"1":"95"},{"1":"62"},{"1":"1"},{"1":"68"},{"1":"38"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>A stem plot looks like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>1 | 2: represents 12
- leaf unit: 1
-            n: 20
-    0 | 1
-    1 | 8
-    2 | 
-    3 | 36689
-    4 | 4
-    5 | 2339
-    6 | 0228
-    7 | 
-    8 | 19
-    9 | 35</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that you also have to add a key to show what a stem + leaf means. The stem and leaves give no information on the decimals in the data, so as you see above, you need to give an example like (as shown in the example stemplot):</p>
-<pre><code>Key: 1\|2 = 12</code></pre>
-</div>
-</div>
-<p>Here’s another example (sorted for convenience)</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"3.9"},{"1":"4.8"},{"1":"4.0"},{"1":"4.3"},{"1":"4.4"},{"1":"3.3"},{"1":"5.8"},{"1":"5.2"},{"1":"3.9"},{"1":"6.3"},{"1":"5.4"},{"1":"4.7"},{"1":"5.9"},{"1":"5.9"},{"1":"5.8"},{"1":"5.7"},{"1":"5.6"},{"1":"4.9"},{"1":"4.7"},{"1":"4.6"},{"1":"4.3"},{"1":"4.8"},{"1":"3.7"},{"1":"7.2"},{"1":"6.2"},{"1":"3.9"},{"1":"4.6"},{"1":"4.5"},{"1":"5.8"},{"1":"4.9"},{"1":"5.3"},{"1":"5.0"},{"1":"5.0"},{"1":"6.4"},{"1":"4.8"},{"1":"6.5"},{"1":"3.5"},{"1":"5.6"},{"1":"5.1"},{"1":"5.2"},{"1":"5.4"},{"1":"4.5"},{"1":"4.7"},{"1":"4.0"},{"1":"3.9"},{"1":"5.3"},{"1":"5.4"},{"1":"5.1"},{"1":"5.9"},{"1":"7.1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1 | 2: represents 1.2
- leaf unit: 0.1
-            n: 50
-   3 | 3
-   3 | 579999
-   4 | 00334
-   4 | 556677788899
-   5 | 00112233444
-   5 | 667888999
-   6 | 234
-   6 | 5
-   7 | 12</code></pre>
-</div>
-</div>
-</section>
-<section id="boxplots" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">5.3</span> Boxplots</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Boxplots">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Boxplots
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Boxplots are primarily made of the <strong>five number summary</strong> of the data. The five number summary is made up of the:</p>
-<ol type="1">
-<li>Minimum (min)</li>
-<li>First Quartile (<span class="math inline">\(Q_1\)</span>)</li>
-<li>Median</li>
-<li>Third Quartile (<span class="math inline">\(Q_3\)</span>)</li>
-<li>Maximum (max)</li>
-</ol>
-<p>Also known as a box-and-whisker plot.</p>
-</div>
-</div>
-<p>To make a simple boxplot, you use the first quartile, median, and third quartile to make the “box” and then use the minimum and maximum to make the “whiskers.”</p>
-<p>For this simple list of numbers:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"1"},{"1":"2"},{"1":"3"},{"1":"4"},{"1":"5"},{"1":"6"},{"1":"7"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>Our five number summary is:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median 3rd Qu.    Max. 
-      1       2       4       6       7 </code></pre>
-</div>
-</div>
-<p>As detailed above, our box plot then looks like:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="quantitative-displays_files/figure-html/simple-boxplot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The last detail is that we can calculate outliers using the 1.5 IQR rule and show them on the boxplot. For either direction (left or right), if we see outliers in that direction, we only extend the whisker to the smallest and/or largest point that is not an outlier. Then we plot any outliers as individual points.</p>
-</div>
-</div>
-<p>Look at this example data:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"12"},{"1":"6"},{"1":"5"},{"1":"5"},{"1":"3"},{"1":"3"},{"1":"2"},{"1":"2"},{"1":"1"},{"1":"1"},{"1":"0"},{"1":"0"},{"1":"-1"},{"1":"-1"},{"1":"-2"},{"1":"-2"},{"1":"-2"},{"1":"-2"},{"1":"-2"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-3"},{"1":"-4"},{"1":"-4"},{"1":"-4"},{"1":"-4"},{"1":"-5"},{"1":"-5"},{"1":"-5"},{"1":"-5"},{"1":"-6"},{"1":"-6"},{"1":"-7"},{"1":"-7"},{"1":"-8"},{"1":"-11"},{"1":"-12"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>Five number summary:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median 3rd Qu.    Max. 
-    -12      -5      -3       0      12 </code></pre>
-</div>
-</div>
-<p>Our numbers calculated by the 1.5 IQR rule are:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -12.5   7.5</code></pre>
-</div>
-</div>
-<p>So our 12 is an outlier. which means we draw our right whisker to 6 and plot the 12 individually on the number line. Like so:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="quantitative-displays_files/figure-html/Advanced Box Plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="histograms" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="histograms"><span class="header-section-number">5.4</span> Histograms</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Histograms">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Histograms
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A histogram is similar to a <a href="categorical-displays.html#bar-plots">bar plot</a>, except that histograms are made for quantitative data and <em>bars are continuous</em> in the sense that there is no gap between bars. To make a histogram, select an appropriate equal intervals that make it so that you don’t have too many bars and that you don’t have too few bars.</p>
-</div>
-</div>
+<p>A density curve describes the overall pattern of a distribution. The area under the curve and above any interval of values on the horizontal axis is the proportion of all observations that fall in that interval.</p>
+<p>When we have data that take on many, many different values, and show a very distinct shape, we can approximate the distribution with a smooth curve called a density curve. These curves aren’t always bell-shaped.</p>
+<p>Once we have a smooth curve (or straight line) that shows our distribution, we can use the area under the curve to estimate the proportion of the distribution that lies in any given interval (total area under the curve represents 100%).</p>
+<p>We’ll focus on density curves that are either straight lines, symmetric, or skewed. How can we look at a density curve and estimate the mean and median?</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -533,77 +317,266 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your goal with histograms, as with many other visualizations, is to be able to see the shape and characteristics of the distribution in question. If you have too many bars or too few bars, you won’t be able to see much important information (especially think of situations when you have many data points with very precise decimal measurements).</p>
+<ul>
+<li>Remember that with right skewed data, the <span class="math inline">\(\text{mean} &gt; \text{median}\)</span></li>
+<li>Remember that with left skewed data, the <span class="math inline">\(\text{mean} &lt; \text{median}\)</span></li>
+<li>Remember that with symmetric data, the <span class="math inline">\(\text{mean} \cong \text{median}\)</span></li>
+</ul>
 </div>
 </div>
-<ol type="1">
-<li>Decide on your intervals (e.g.&nbsp;by 5’s, by 10’s, by 100’s)</li>
-<li>Within your intervals, count up the number of observations that belong in that “bin”. When you do so, count up observations so that you count the left end inclusive and the right end inclusive. So if you did intervals of 5, you would do something like counting up points <span class="math inline">\(0 \leq x &lt; 5\)</span>, <span class="math inline">\(5 \leq x &lt; 10\)</span>, and so on.</li>
-<li>Plot your bars.</li>
-</ol>
-<p>Example:</p>
-<p>Consider this example data set:</p>
-<p>Our data has this set of summary statistics:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>       x        
- Min.   :1.522  
- 1st Qu.:1.912  
- Median :2.022  
- Mean   :2.110  
- 3rd Qu.:2.224  
- Max.   :2.704  </code></pre>
-</div>
-</div>
-<p>With this knowledge, let’s make our 7 “bins”, so let’s do these by every 0.2, starting at 1.5 to 2.9. This will be something that you build by intuition.</p>
-<p>Now, count up our values:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1.5,1.7) [1.7,1.9) [1.9,2.1) [2.1,2.3) [2.3,2.5) [2.5,2.7) [2.7,2.9] 
-        1         4         6         5         1         2         1 </code></pre>
-</div>
-</div>
-<p>Now, we just put it together. For each bin, we have a bar and the bars’ heights correspond to the number of individuals in each bin.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="quantitative-displays_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Again, just like bar graphs, we can instead do the relative frequencies (this is what you’ll see most of the time!!!)</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1.5,1.7) [1.7,1.9) [1.9,2.1) [2.1,2.3) [2.3,2.5) [2.5,2.7) [2.7,2.9] 
-     0.05      0.20      0.30      0.25      0.05      0.10      0.05 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="quantitative-displays_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
+<section id="percentiles" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">8.1</span> Percentiles</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Percentile">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Percentile
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When you have a histogram like this, keep in mind that the bars always add up to 1 (or 100%).</p>
+<p>The <span class="math inline">\(p^{th}\)</span> percentile is represented by a given value. <span class="math inline">\(p\)</span>% of values are less than or equal to the given value.</p>
 </div>
 </div>
+</section>
+<section id="cumulative-relative-frequency-graphs" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="cumulative-relative-frequency-graphs"><span class="header-section-number">8.2</span> Cumulative Relative Frequency Graphs</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Cumulative Relative Frequency Graphs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cumulative Relative Frequency Graphs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cumulative Relative Frequency graphs represent the cumulative relative frequency as the values increase (what percentage of values are less than or equal to each x-value). These always range from 0 to 1 on the y-axis (or 0% to 100%).</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="density-curves_files/figure-html/Cumulative Relative Freq Graph-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="normal-distributions" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="normal-distributions"><span class="header-section-number">8.3</span> Normal Distributions</h2>
+<p>In the early 19th Century, the mathematicians Gauss and Adrian both noticed that many, many natural processes (like dimensions and weights of plants and animals) and many human processes (manufacturing, scores on tests) follow (approximately, not exactly) a very nice bell-shaped curve that Abraham de Moivre, an 18th century statistician and consultant to gamblers, had developed. This bell-shaped curve is now called the normal curve, and has the equation</p>
+<p><span class="math display">\[P(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\]</span></p>
+<p>Where <span class="math inline">\(P(x)\)</span> represents the height of the curve, <span class="math inline">\(\mu\)</span> is the mean (of all the <span class="math inline">\(x\)</span>’s), and <span class="math inline">\(\sigma\)</span> is the standard deviation. If the mean is 0 and the standard deviation is 1, the graph looks like this:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="density-curves_files/figure-html/Standard Normal Distribution-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Inflection Points">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Inflection Points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that the inflection points (where the curve changes its concavity, like in a cubic function) are at exactly one standard deviation from the mean, and by the time the graph gets to 3 standard deviationss in each direction, the height of the curve is basically zero.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Check Your Conditions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check Your Conditions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is called the Standard Normal Distribution, or <span class="math inline">\(N(0,1)\)</span>. Remember that we use this to approximate real life, and we always need to check that this approximation is appropriate in a given situation.</p>
+</div>
+</div>
+<section id="normal-characteristics" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="normal-characteristics"><span class="header-section-number">8.3.1</span> Characteristics of the Normal Distribution</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Normal Distribution Characteristics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Normal Distribution Characteristics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>They are always unimodal, bell-shaped, and symmetric about the mean</li>
+<li>The x-axis represents different values of the variable, and the probability of any single value of x is zero (not true in real-life situations, but remember that this is an approximation).</li>
+<li>The probability of a range of x-values is shown on the graph by the area under the curve for that range. The shaded area in the Standard Normal graph above represents the probability that <span class="math inline">\(x\)</span> will be at least 1.5 standard deviations below the mean (about 10%).</li>
+<li>The total area under the curve is 1, or 100%</li>
+<li>The graph can be narrow or broad, depending on the standard deviation, but never skewed.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="empirical-rule" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="empirical-rule"><span class="header-section-number">8.3.2</span> Empirical Rule</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Empirical Rule (68-95-99.7 Rule)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Empirical Rule (68-95-99.7 Rule)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>about 68% of the distribution is within 1 standard deviation of the mean</li>
+<li>about 95% of the distribution is within 2 standard deviation of the mean</li>
+<li>about 99.7% of the distribution is within 3 standard deviation of the mean</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="density-curves_files/figure-html/Empirical Rule-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="assessing-for-normality" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="assessing-for-normality"><span class="header-section-number">8.3.3</span> Assessing for Normality</h3>
+<p>When assessing normality, you have to think about what makes a normal distribution…. a normal distribution. Refer to the <a href="#normal-characteristics">characteristics of a normal distribution</a> to remind yourself what you need to look for.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Checking Normality...">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Checking Normality…
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Graph your data using a dot plot, histogram, boxplot, or stem plot. Whichever one is most convenient and would show the distribution of data the best.</li>
+<li>Compare the mean and median of the distribution. Normal curves are symmetric, so our data should also be symmetric. Are the mean and median almost the same?</li>
+<li>Check to see if the data follows the empirical rule. Is there 68% of the data between -1 and 1 standard deviations? What about 95% and 99.7%?</li>
+<li>Look at the normal probability plot if given. (Know how to interpret and read, not make). If the plot is fairly linear (does a straight line fit through the points), then we have further evidence that the distribution is approximately normal</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="z-score" class="level3" data-number="8.3.4">
+<h3 data-number="8.3.4" class="anchored" data-anchor-id="z-score"><span class="header-section-number">8.3.4</span> Standardized Score</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="z-score">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+z-score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(x\)</span> is an observation that has a known mean and standard deviation, the standardized score of <span class="math inline">\(x\)</span> is: <span class="math display">\[z = \frac{\text{value} - \text{mean}}{\text{standard deviation}}\]</span> A standardized score, often called a z-score, of an observation is the number of standard deviations it is from the mean.</p>
+</div>
+</div>
+</section>
+<section id="calculating-probabilities-and-percentiles" class="level3" data-number="8.3.5">
+<h3 data-number="8.3.5" class="anchored" data-anchor-id="calculating-probabilities-and-percentiles"><span class="header-section-number">8.3.5</span> Calculating Probabilities and Percentiles</h3>
+<p>Using calculus, we could calculate the area (and therefore the probability) under any section of any normal distribution. But we don’t want to have to use calculus every time we want to calculate a normal probability. So, we use a table (inside the front cover of your book and also in <a href="formula-sheet.html#table-a">Table A</a>) in which many Standard Normal probabilities have been calculated for us. So all we need to do is convert our problem to Standard Normal, and we can use this table. We make this conversion using z-scores.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once we have a z-score, we can use the <a href="formula-sheet.html#table-a">Standard Normal table</a> to find a corresponding probability.</p>
+</div>
+</div>
+</section>
+<section id="using-your-calculator" class="level3" data-number="8.3.6">
+<h3 data-number="8.3.6" class="anchored" data-anchor-id="using-your-calculator"><span class="header-section-number">8.3.6</span> Using your Calculator</h3>
+<p>Remember that to access the calculator functions related to distributions on a TI-83/84 series, you go to:</p>
+<pre><code>2nd -&gt; vars (distr)</code></pre>
+<p>The two functions of interest for this chapter are:</p>
+<pre><code>normalcdf(lowerbound, upperbound [, mu, sigma])
+
+invNorm(area to the left of value [, mu, sigma])</code></pre>
+<p>When using your calculator to calculate Normal probabilities you need to make sure you write at least the following information to ensure full credit:</p>
+<ul>
+<li>The name of the distribution</li>
+<li>The parameters of the distribution (for normal distributions, the mean and s.d.)</li>
+<li>How to calculate the test statistic (for normal distributions, the z-score)</li>
+<li>The probability you are finding</li>
+<li>The answer in context of the problem</li>
+</ul>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example</h4>
+<p>Suppose that the time you need to spend on BART to get from Downtown Berkeley to the SF Airport is approximately normally distributed with <span class="math inline">\(\mu = 54\)</span> minutes, and <span class="math inline">\(\sigma = 4.6\)</span> minutes. In other words, BART times from Berkeley to SFO <span class="math inline">\(\sim N(54, 4.6)\)</span>.</p>
+<p>Now find each probability (<span class="math inline">\(X\)</span> represents the amount of time required for a single randomly selected BART trip from Berkeley to SFO):</p>
+<ol type="a">
+<li><span class="math inline">\(P(X&lt;53)\)</span> <span class="math display">\[
+\begin{aligned}
+z &amp;= \frac{53 - 54}{4.6} \approx -0.22 \\
+P(X&lt;53) &amp;\approx P(z &lt; -.22) \underset{\text{Table A}}{=} 0.4129
+\end{aligned}
+\]</span> Using calculator: <span class="math display">\[
+\begin{aligned}
+z &amp;= \frac{53 - 54}{4.6} \approx -0.22 \\
+P(X&lt;53) &amp;\approx P(z &lt; -0.22) \\
+&amp;= \texttt{normalcdf(-1000, -0.22)} \approx 0.4129
+\end{aligned}
+\]</span></li>
+</ol>
+<ol start="2" type="a">
+<li><p><span class="math inline">\(P(X&gt;60)\)</span> <span class="math display">\[
+\begin{aligned}
+z &amp;= \frac{60 - 54}{4.6} \approx 1.30 \\
+P(X&gt;60) &amp;\approx P(z &gt; 1.30) \\
+&amp;= 1 - P(z &lt; 1.30) \underset{\text{Table A}}{=} 1 - 0.9032  = 0.0968
+\end{aligned}
+\]</span> Using calculator: <span class="math display">\[
+\begin{aligned}
+z &amp;= \frac{60 - 54}{4.6} \approx 1.30 \\
+P(X&gt;60) &amp;\approx P(z &gt; 1.30) \\
+&amp;= \texttt{normalcdf(1.30, 1000)} \approx 0.0968
+\end{aligned}
+\]</span></p></li>
+<li><p>The lowest 5% of travel times are below how many minutes? <span class="math display">\[
+\begin{aligned}
+0.05 &amp; \underset{\text{Table A}}{\approx} P(z&lt;-1.64) \\
+\rightarrow z = \frac{x - 54}{4.6} &amp;= -1.64 \\
+x &amp;= 46.45 \text{ minutes}
+\end{aligned}
+\]</span> Using calculator: <span class="math display">\[
+\begin{aligned}
+\texttt{invNorm(0.05)}&amp; \approx P(z&lt;-1.64) \\
+\rightarrow z = \frac{x - 54}{4.6} &amp;= -1.64 \\
+x &amp;= 46.45 \text{ minutes}
+\end{aligned}
+\]</span></p></li>
+</ol>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1018,13 +991,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./categorical-displays.html" class="pagination-link" aria-label="Categorical Data Visualizations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Categorical Data Visualizations</span></span>
+      <a href="./experimental-design.html" class="pagination-link" aria-label="Experimental Design">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sampling.html" class="pagination-link" aria-label="Sampling">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./formula-sheet.html" class="pagination-link" aria-label="AP Exam Formula Sheet">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
