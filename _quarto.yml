@@ -24,10 +24,10 @@ book:
       chapters:
       - sampling.qmd
       - experimental-design.qmd
-    # - part: "Probability"
-    #   chapters:
+    - part: "Probability"
+      chapters:
     #   - probability.qmd
-    #   - density-curves.qmd
+      - density-curves.qmd
     #   - random-variables.qmd
     #   - sampling-distributions.qmd
     # - part: "Inference"
