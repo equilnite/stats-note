@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 8&nbsp; Density Curves</title>
+<title>AP Statistics Notes - 9&nbsp; Density Curves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./formula-sheet.html" rel="next">
-<link href="./experimental-design.html" rel="prev">
+<link href="./probability.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -121,7 +121,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./density-curves.html">Probability</a></li><li class="breadcrumb-item"><a href="./density-curves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./density-curves.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Density Curves</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -221,8 +221,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./density-curves.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Density Curves</span></span></a>
   </div>
 </li>
       </ul>
@@ -254,16 +260,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#percentiles" id="toc-percentiles" class="nav-link active" data-scroll-target="#percentiles"><span class="header-section-number">8.1</span> Percentiles</a></li>
-  <li><a href="#cumulative-relative-frequency-graphs" id="toc-cumulative-relative-frequency-graphs" class="nav-link" data-scroll-target="#cumulative-relative-frequency-graphs"><span class="header-section-number">8.2</span> Cumulative Relative Frequency Graphs</a></li>
-  <li><a href="#normal-distributions" id="toc-normal-distributions" class="nav-link" data-scroll-target="#normal-distributions"><span class="header-section-number">8.3</span> Normal Distributions</a>
+  <li><a href="#percentiles" id="toc-percentiles" class="nav-link active" data-scroll-target="#percentiles"><span class="header-section-number">9.1</span> Percentiles</a></li>
+  <li><a href="#cumulative-relative-frequency-graphs" id="toc-cumulative-relative-frequency-graphs" class="nav-link" data-scroll-target="#cumulative-relative-frequency-graphs"><span class="header-section-number">9.2</span> Cumulative Relative Frequency Graphs</a></li>
+  <li><a href="#normal-distributions" id="toc-normal-distributions" class="nav-link" data-scroll-target="#normal-distributions"><span class="header-section-number">9.3</span> Normal Distributions</a>
   <ul class="collapse">
-  <li><a href="#normal-characteristics" id="toc-normal-characteristics" class="nav-link" data-scroll-target="#normal-characteristics"><span class="header-section-number">8.3.1</span> Characteristics of the Normal Distribution</a></li>
-  <li><a href="#empirical-rule" id="toc-empirical-rule" class="nav-link" data-scroll-target="#empirical-rule"><span class="header-section-number">8.3.2</span> Empirical Rule</a></li>
-  <li><a href="#assessing-for-normality" id="toc-assessing-for-normality" class="nav-link" data-scroll-target="#assessing-for-normality"><span class="header-section-number">8.3.3</span> Assessing for Normality</a></li>
-  <li><a href="#z-score" id="toc-z-score" class="nav-link" data-scroll-target="#z-score"><span class="header-section-number">8.3.4</span> Standardized Score</a></li>
-  <li><a href="#calculating-probabilities-and-percentiles" id="toc-calculating-probabilities-and-percentiles" class="nav-link" data-scroll-target="#calculating-probabilities-and-percentiles"><span class="header-section-number">8.3.5</span> Calculating Probabilities and Percentiles</a></li>
-  <li><a href="#using-your-calculator" id="toc-using-your-calculator" class="nav-link" data-scroll-target="#using-your-calculator"><span class="header-section-number">8.3.6</span> Using your Calculator</a></li>
+  <li><a href="#normal-characteristics" id="toc-normal-characteristics" class="nav-link" data-scroll-target="#normal-characteristics"><span class="header-section-number">9.3.1</span> Characteristics of the Normal Distribution</a></li>
+  <li><a href="#empirical-rule" id="toc-empirical-rule" class="nav-link" data-scroll-target="#empirical-rule"><span class="header-section-number">9.3.2</span> Empirical Rule</a></li>
+  <li><a href="#assessing-for-normality" id="toc-assessing-for-normality" class="nav-link" data-scroll-target="#assessing-for-normality"><span class="header-section-number">9.3.3</span> Assessing for Normality</a></li>
+  <li><a href="#z-score" id="toc-z-score" class="nav-link" data-scroll-target="#z-score"><span class="header-section-number">9.3.4</span> Standardized Score</a></li>
+  <li><a href="#calculating-probabilities-and-percentiles" id="toc-calculating-probabilities-and-percentiles" class="nav-link" data-scroll-target="#calculating-probabilities-and-percentiles"><span class="header-section-number">9.3.5</span> Calculating Probabilities and Percentiles</a></li>
+  <li><a href="#using-your-calculator" id="toc-using-your-calculator" class="nav-link" data-scroll-target="#using-your-calculator"><span class="header-section-number">9.3.6</span> Using your Calculator</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -271,9 +277,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./density-curves.html">Probability</a></li><li class="breadcrumb-item"><a href="./density-curves.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./density-curves.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Density Curves</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Density Curves</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Density Curves</span></h1>
 </div>
 
 
@@ -324,8 +330,8 @@ Tip
 </ul>
 </div>
 </div>
-<section id="percentiles" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">8.1</span> Percentiles</h2>
+<section id="percentiles" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">9.1</span> Percentiles</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Percentile">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -340,8 +346,8 @@ Percentile
 </div>
 </div>
 </section>
-<section id="cumulative-relative-frequency-graphs" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="cumulative-relative-frequency-graphs"><span class="header-section-number">8.2</span> Cumulative Relative Frequency Graphs</h2>
+<section id="cumulative-relative-frequency-graphs" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="cumulative-relative-frequency-graphs"><span class="header-section-number">9.2</span> Cumulative Relative Frequency Graphs</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Cumulative Relative Frequency Graphs">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -365,8 +371,8 @@ Cumulative Relative Frequency Graphs
 </div>
 </div>
 </section>
-<section id="normal-distributions" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="normal-distributions"><span class="header-section-number">8.3</span> Normal Distributions</h2>
+<section id="normal-distributions" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="normal-distributions"><span class="header-section-number">9.3</span> Normal Distributions</h2>
 <p>In the early 19th Century, the mathematicians Gauss and Adrian both noticed that many, many natural processes (like dimensions and weights of plants and animals) and many human processes (manufacturing, scores on tests) follow (approximately, not exactly) a very nice bell-shaped curve that Abraham de Moivre, an 18th century statistician and consultant to gamblers, had developed. This bell-shaped curve is now called the normal curve, and has the equation</p>
 <p><span class="math display">\[P(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\]</span></p>
 <p>Where <span class="math inline">\(P(x)\)</span> represents the height of the curve, <span class="math inline">\(\mu\)</span> is the mean (of all the <span class="math inline">\(x\)</span>’s), and <span class="math inline">\(\sigma\)</span> is the standard deviation. If the mean is 0 and the standard deviation is 1, the graph looks like this:</p>
@@ -405,8 +411,8 @@ Check Your Conditions
 <p>This is called the Standard Normal Distribution, or <span class="math inline">\(N(0,1)\)</span>. Remember that we use this to approximate real life, and we always need to check that this approximation is appropriate in a given situation.</p>
 </div>
 </div>
-<section id="normal-characteristics" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="normal-characteristics"><span class="header-section-number">8.3.1</span> Characteristics of the Normal Distribution</h3>
+<section id="normal-characteristics" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="normal-characteristics"><span class="header-section-number">9.3.1</span> Characteristics of the Normal Distribution</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Normal Distribution Characteristics">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -427,8 +433,8 @@ Normal Distribution Characteristics
 </div>
 </div>
 </section>
-<section id="empirical-rule" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="empirical-rule"><span class="header-section-number">8.3.2</span> Empirical Rule</h3>
+<section id="empirical-rule" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="empirical-rule"><span class="header-section-number">9.3.2</span> Empirical Rule</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Empirical Rule (68-95-99.7 Rule)">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -456,8 +462,8 @@ Empirical Rule (68-95-99.7 Rule)
 </div>
 </div>
 </section>
-<section id="assessing-for-normality" class="level3" data-number="8.3.3">
-<h3 data-number="8.3.3" class="anchored" data-anchor-id="assessing-for-normality"><span class="header-section-number">8.3.3</span> Assessing for Normality</h3>
+<section id="assessing-for-normality" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="assessing-for-normality"><span class="header-section-number">9.3.3</span> Assessing for Normality</h3>
 <p>When assessing normality, you have to think about what makes a normal distribution…. a normal distribution. Refer to the <a href="#normal-characteristics">characteristics of a normal distribution</a> to remind yourself what you need to look for.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Checking Normality...">
 <div class="callout-header d-flex align-content-center">
@@ -478,8 +484,8 @@ Checking Normality…
 </div>
 </div>
 </section>
-<section id="z-score" class="level3" data-number="8.3.4">
-<h3 data-number="8.3.4" class="anchored" data-anchor-id="z-score"><span class="header-section-number">8.3.4</span> Standardized Score</h3>
+<section id="z-score" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="z-score"><span class="header-section-number">9.3.4</span> Standardized Score</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="z-score">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -494,8 +500,8 @@ z-score
 </div>
 </div>
 </section>
-<section id="calculating-probabilities-and-percentiles" class="level3" data-number="8.3.5">
-<h3 data-number="8.3.5" class="anchored" data-anchor-id="calculating-probabilities-and-percentiles"><span class="header-section-number">8.3.5</span> Calculating Probabilities and Percentiles</h3>
+<section id="calculating-probabilities-and-percentiles" class="level3" data-number="9.3.5">
+<h3 data-number="9.3.5" class="anchored" data-anchor-id="calculating-probabilities-and-percentiles"><span class="header-section-number">9.3.5</span> Calculating Probabilities and Percentiles</h3>
 <p>Using calculus, we could calculate the area (and therefore the probability) under any section of any normal distribution. But we don’t want to have to use calculus every time we want to calculate a normal probability. So, we use a table (inside the front cover of your book and also in <a href="formula-sheet.html#table-a">Table A</a>) in which many Standard Normal probabilities have been calculated for us. So all we need to do is convert our problem to Standard Normal, and we can use this table. We make this conversion using z-scores.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -511,8 +517,8 @@ Important
 </div>
 </div>
 </section>
-<section id="using-your-calculator" class="level3" data-number="8.3.6">
-<h3 data-number="8.3.6" class="anchored" data-anchor-id="using-your-calculator"><span class="header-section-number">8.3.6</span> Using your Calculator</h3>
+<section id="using-your-calculator" class="level3" data-number="9.3.6">
+<h3 data-number="9.3.6" class="anchored" data-anchor-id="using-your-calculator"><span class="header-section-number">9.3.6</span> Using your Calculator</h3>
 <p>Remember that to access the calculator functions related to distributions on a TI-83/84 series, you go to:</p>
 <pre><code>2nd -&gt; vars (distr)</code></pre>
 <p>The two functions of interest for this chapter are:</p>
@@ -991,8 +997,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./experimental-design.html" class="pagination-link" aria-label="Experimental Design">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></span>
+      <a href="./probability.html" class="pagination-link" aria-label="Probability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Probability</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
