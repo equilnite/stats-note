@@ -26,7 +26,7 @@ book:
       - experimental-design.qmd
     - part: "Probability"
       chapters:
-    #   - probability.qmd
+      - probability.qmd
       - density-curves.qmd
     #   - random-variables.qmd
     #   - sampling-distributions.qmd

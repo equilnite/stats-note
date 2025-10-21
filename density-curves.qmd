@@ -42,6 +42,22 @@ ggplot(iris, aes(Sepal.Length)) +
 
 ```
 
+### Standardized Score {#z-score}
+
+::: {.callout-note title="z-score"}
+If $x$ is an observation that has a known mean and standard deviation, the standardized score of $x$ is:
+$$z = \frac{\text{value} - \text{mean}}{\text{standard deviation}}$$
+A standardized score, often called a z-score, of an observation is the number of standard deviations it is from the mean. 
+:::
+
+By z-scores are also called standardized scores because they force a transformation of a data set to have a mean of 0 and standard deviation of 1. This allows values from different data sets to be comparable. This is similar what we need to do when comparing currencies between time periods. For example, thinking about whether \$1 in 2001 was more valuable than \$1 in 1992. In order to make that comparison, we would have to standardize the values so that they are comparable.
+
+If we take two different values from different data sets or different contexts, **z-scores allow us to compare those two values because they "standardize" the values for easy comparison**.
+
+::: {.callout-warning}
+z-scores are first and foremost **standardized scores**. When you see a z-score, do not automatically assume that you have to use the normal distribution. This applies to every situation in this class. Without information on how the data is distributed, you *cannot* use a normal distribution. In order to use a method, you have to be able to imply or explicitly read that a specific method can be applied/used.
+:::
+
 ## Normal Distributions
 
 In the early 19th Century, the mathematicians Gauss and Adrian both noticed that many, many natural processes (like dimensions and weights of plants and animals) and many human processes (manufacturing, scores on tests) follow (approximately, not exactly) a very nice bell-shaped curve that Abraham de Moivre, an 18th century statistician and consultant to gamblers, had developed.  This bell-shaped curve is now called the normal curve, and has the equation
@@ -114,13 +130,7 @@ When assessing normality, you have to think about what makes a normal distributi
 
 :::
 
-### Standardized Score {#z-score}
 
-::: {.callout-note title="z-score"}
-If $x$ is an observation that has a known mean and standard deviation, the standardized score of $x$ is:
-$$z = \frac{\text{value} - \text{mean}}{\text{standard deviation}}$$
-A standardized score, often called a z-score, of an observation is the number of standard deviations it is from the mean. 
-:::
 
 ### Calculating Probabilities and Percentiles
 
