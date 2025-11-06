@@ -28,7 +28,7 @@ book:
       chapters:
       - probability.qmd
       - density-curves.qmd
-    #   - random-variables.qmd
+      - random-variables.qmd
     #   - sampling-distributions.qmd
     # - part: "Inference"
     #   chapters:
