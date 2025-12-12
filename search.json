@@ -423,6 +423,72 @@
     ]
   },
   {
+    "objectID": "sampling-distributions.html",
+    "href": "sampling-distributions.html",
+    "title": "11  Sampling Distributions",
+    "section": "",
+    "text": "11.1 Bias and Variability\nFor this course, typical statistics that we’ll use in problems include \\(\\hat p\\), \\(\\bar x\\), and \\(s_x\\). These statistics are only unbiased if we have a random sample or random assignment.\n\\[\\mu_{\\bar x} = \\mu_X\\] \\[\\mu_{\\hat p} = p\\] \\[\\mu_{s_x} = \\sigma_X\\]\nIntuitively, if we have more data, we will have more precise results. Precision means that, on average, we will be able to get answers that are more closely grouped together. This means that our statistics, between many different possible samples, will vary less from each other.",
+    "crumbs": [
+      "Probability",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sampling Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "sampling-distributions.html#bias-and-variability",
+    "href": "sampling-distributions.html#bias-and-variability",
+    "title": "11  Sampling Distributions",
+    "section": "",
+    "text": "Unbiased Estimator\n\n\n\nA statistic used to estimate a parameter is an unbiased estimator if the mean of its sampling distribution is equal to the true value of the parameter being estimated.\nNot all statistics are unbiased estimators and the data that we collect always has to follow a random process that is representative of the population.\n\n\n\n\n\n\n\n\n\n\nVariability of a Statistic\n\n\n\nThe variability of a statistic is described by the spread of its sampling distribution.\nThis spread is determined mainly by the size of the random sample. Larger samples give smaller spreads. The spread of the sampling distribution does not depend much on the size of the population, as long as the population is at least 10 times larger than the sample (10% Condition).\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIn the most ideal conditions, we want our sampling distribution to be accurate and precise, so that we know that we are getting the best possible answer.\nTo be accurate, we want to expect our statistic to be the parameter (e.g. if we were to take the sample mean, we’d want to see that \\(\\mu_{\\bar x} = \\mu_X\\)) and for that to be true, our statistic needs to be an unbiased estimator.\nAnd to ensure that we will get something close to desired parameter, we want precision. This means a larger sample size so that our sampling distribution has low spread, reducing the variability of our statistic.\nIn ideal circumstances, we aim for low bias, low variability. This is achieved by mainly ensuring that we have a random process for obtaining our data and collecting a large amount of data.",
+    "crumbs": [
+      "Probability",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sampling Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "sampling-distributions.html#sampling-distribution-of-hat-p",
+    "href": "sampling-distributions.html#sampling-distribution-of-hat-p",
+    "title": "11  Sampling Distributions",
+    "section": "11.2 Sampling Distribution of \\(\\hat p\\)",
+    "text": "11.2 Sampling Distribution of \\(\\hat p\\)\n\n\n\n\n\n\nSampling Distribution of \\(\\hat p\\)\n\n\n\nChoose an SRS of size \\(n\\) from a population of size \\(N\\) with proportion \\(p\\) of successes. Let \\(\\hat p\\) be the sample proportion of success. Then:\n\nThe mean of the sampling distribution of \\(\\hat p\\) is \\[\\mu_{\\hat p} = p\\]\nThe standard deviation of the sampling distribution of \\(\\hat p\\) is \\[\\sigma_{\\hat p} = \\frac{\\sigma_p}{\\sqrt{n}} = \\sqrt{\\frac{p(1-p)}{n}}\\] as long as the 10% condition is satisfied.\nAs \\(n\\) increases, the sampling distribution of \\(\\hat p\\) becomes approximately Normal. Before you perform calculations, check that the Large Counts condition is satisfied:\n\n\\[\\begin{equation}\nnp \\geq 10 \\text{ and }n(1-p) \\geq 10\n\\end{equation}\\]",
+    "crumbs": [
+      "Probability",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sampling Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "sampling-distributions.html#sampling-distribution-of-bar-x",
+    "href": "sampling-distributions.html#sampling-distribution-of-bar-x",
+    "title": "11  Sampling Distributions",
+    "section": "11.3 Sampling Distribution of \\(\\bar x\\)",
+    "text": "11.3 Sampling Distribution of \\(\\bar x\\)\n\n\n\n\n\n\nSampling Distribution of \\(\\bar x\\)\n\n\n\nSuppose that \\(\\bar x\\) is the mean of an SRS of size \\(n\\) drawn from a large population with mean \\(\\mu_X\\) and standard deviation \\(\\sigma_X\\). Then:\n\nThe mean of the sampling distribution of \\(\\bar x\\) is \\[\\mu_{\\bar x} = \\mu_X\\]\nThe standard deviation of the sampling distribution of \\(\\bar x\\) is \\[\\sigma_{\\bar x} = \\frac{\\sigma_X}{\\sqrt{n}}\\] as long as the 10% condition is satisfied.\n\n* These facts about the mean and standard deviation of \\(\\bar x\\) are true no matter what shape the population distribution has.\n\n\n\n11.3.1 Normal/Large Condition for \\(\\bar x\\)\n\n\n\n\n\n\nNormal/Large Condition for \\(\\bar x\\)\n\n\n\nIf the population distribution is Normal, then so is the sampling distribution of \\(\\bar x\\). This is true no matter what the sample size \\(n\\) is.\nIf the population distribution is not Normal, the sampling distribution of \\(\\bar x\\) will be approximately Normal in most cases if \\(n \\geq 30\\). This fact is justified by the Central Limit Theorem.\n\n\n\n\n11.3.2 Central Limit Theorem (CLT)\n\n\n\n\n\n\nCentral Limit Theorem\n\n\n\nIf you have a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\) and take sufficiently large random samples from the population with replacement, then the distribution of the sample means will be approximately normal distributed.\n* This allows us to use Normal probability calculations to answer questions about sample means/proportions from many observations even when the population distribution is not Normal\n\n\nThe CLT justifies why we have the check the Large Condition above and the section below. Only statistics where our sample size is sufficient will have approximately normally distributed sampling distributions.\n\n\n11.3.3 When do we have normality?\n\n\n\n\n\n\n\nShape of Population Distribution\nMinimum Sample Size (\\(n\\)) needed to achieve an approximately normal \\(\\bar x\\) sampling distribution\n\n\n\n\nApproximately Normal\n1\n\n\nSlightly non-normal\nSomewhere between 10-30, depending on how “slightly” non-normal\n\n\nVery non-normal, skewed\nAbout 30",
+    "crumbs": [
+      "Probability",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sampling Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "sampling-distributions.html#prop-diff-samp-dist",
+    "href": "sampling-distributions.html#prop-diff-samp-dist",
+    "title": "11  Sampling Distributions",
+    "section": "11.4 Sampling Distribution of \\(\\hat p_1 - \\hat p_2\\)",
+    "text": "11.4 Sampling Distribution of \\(\\hat p_1 - \\hat p_2\\)\n\nChoose an SRS of size \\(n_1\\) from Population 1 with proportion of successes \\(p_1\\) and an independent SRS of size \\(n_2\\) from Population 2 with proportion of successes \\(p_2\\).\nShape:\nWhen \\(n_1p_1\\), \\(n_1(1-p_1)\\), \\(n_2p_2\\), and \\(n_2(1-p_2\\)) are all at least 10, the sampling distribution of \\(p_1-p_2\\) is approximately Normal.\nCenter:\nThe mean of the sampling distribution is \\[\\mu_{\\hat p_1-\\hat p_2} =p_1-p_2\\].\nSpread:\nThe standard deviation of \\(\\hat p_1-\\hat p_2\\) is \\[s_{\\hat p_1-\\hat p_2}=\\sqrt{\\frac{p_1(1-p_1)}{n_1}+\\frac{p_2(1-p_2)}{n_2}}\\] as long as each sample is no more than 10% of its population (10% condition)",
+    "crumbs": [
+      "Probability",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sampling Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "sampling-distributions.html#mean-diff-samp-dist",
+    "href": "sampling-distributions.html#mean-diff-samp-dist",
+    "title": "11  Sampling Distributions",
+    "section": "11.5 Sampling Distribution of \\(\\bar x_1 - \\bar x_2\\)",
+    "text": "11.5 Sampling Distribution of \\(\\bar x_1 - \\bar x_2\\)\n\nChoose an SRS of size \\(n_1\\) from Population 1 with mean \\(\\mu_1\\) and standard deviation \\(\\sigma_1\\) and an independent SRS of size \\(n_2\\) from Population 2 with mean \\(\\mu_2\\) and standard deviation \\(\\sigma_2\\).\nShape:\nWhen the population distributions are Normal, the sampling distribution of \\(\\bar x_1- \\bar x_2\\) is approximately Normal. In other cases, the sampling distribution will be approximately Normal if the sample sizes are large enough (\\(n_1 \\geq 30\\) and \\(n_2 \\geq 30\\))\nCenter:\nThe mean of the sampling distribution is\n\\[\\mu_{\\bar x_1- \\bar x_2} = \\mu_1- \\mu_2\\].\nSpread:\nAs long as each sample is no more than 10% of its population (10% condition), the standard deviation of the sampling distribution of \\(\\bar x_1- \\bar x_2\\) is\n\\[\\sigma_{\\bar x_1- \\bar x_2} = \\sqrt{\\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}\\]",
+    "crumbs": [
+      "Probability",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Sampling Distributions</span>"
+    ]
+  },
+  {
     "objectID": "formula-sheet.html",
     "href": "formula-sheet.html",
     "title": "Appendix A — AP Exam Formula Sheet",
