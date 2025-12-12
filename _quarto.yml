@@ -29,7 +29,7 @@ book:
       - probability.qmd
       - density-curves.qmd
       - random-variables.qmd
-    #   - sampling-distributions.qmd
+      - sampling-distributions.qmd
     # - part: "Inference"
     #   chapters:
     #   - confidence-intervals.qmd
