@@ -49,7 +49,7 @@ The standard error is calculated as $\sqrt{\frac{\hat p (1 - \hat p)}{n}}$
 </details>
 :::
 
-
+<!--
 
 ### One-Sample $z$-test
 
@@ -127,3 +127,5 @@ $$\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}$$
 Then compute the z statistic:
 $$ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}$$
 :::
+
+-->

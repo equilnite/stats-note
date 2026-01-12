@@ -30,11 +30,11 @@ book:
       - density-curves.qmd
       - random-variables.qmd
       - sampling-distributions.qmd
-    # - part: "Inference"
-    #   chapters:
-    #   - confidence-intervals.qmd
+     - part: "Inference"
+       chapters:
+       - confidence-intervals.qmd
     #   - hypothesis-testing.qmd
-    #   - inference-for-proportions.qmd
+      - inference-for-proportions.qmd
     #   - inference-for-means.qmd
     #   - inference-for-categories.qmd
     # - linear-regression.qmd
@@ -42,9 +42,9 @@ book:
   appendices:
     - formula-sheet.qmd
     # - applets.qmd
-    # - four-step-process.qmd
-    # - z-critical-values.qmd
-    # - t-critical-values.qmd
+    - four-step-process.qmd
+    - z-critical-values.qmd
+    - t-critical-values.qmd
     # - statistic-to-pvalue.qmd
     # - calc-guide.qmd
     # - test-page.qmd
