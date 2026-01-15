@@ -489,6 +489,105 @@
     ]
   },
   {
+    "objectID": "confidence-intervals.html",
+    "href": "confidence-intervals.html",
+    "title": "12  Confidence Intervals",
+    "section": "",
+    "text": "12.1 Interpreting Confidence Intervals\nYou can say something of the form:",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Confidence Intervals</span>"
+    ]
+  },
+  {
+    "objectID": "confidence-intervals.html#interpreting-confidence-intervals",
+    "href": "confidence-intervals.html#interpreting-confidence-intervals",
+    "title": "12  Confidence Intervals",
+    "section": "",
+    "text": "Confidence Interval Interpretation\n\n\n\nI am [\\(C\\)]% confident the interval from [lower bound] to [upper bound] captures the [true parameter in the context of the problem].\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYou CANNOT say that “There is a 95% chance that this interval contains the population (proportion or mean)” because your single interval either did or did not capture the real value, and either has a probability of 0 or 1",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Confidence Intervals</span>"
+    ]
+  },
+  {
+    "objectID": "confidence-intervals.html#interpreting-confidence-level",
+    "href": "confidence-intervals.html#interpreting-confidence-level",
+    "title": "12  Confidence Intervals",
+    "section": "12.2 Interpreting Confidence Level",
+    "text": "12.2 Interpreting Confidence Level\n\n\n\n\n\n\nConfidence Level Interpretation\n\n\n\nIf we take many, many samples and create many, many intervals using the same method, about [\\(C\\)]% of them will capture the [true parameter in the context of the problem].\n\n\nIn other words, you can say that: “95% of intervals created in this manner will capture the true population (proportion or mean)”",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Confidence Intervals</span>"
+    ]
+  },
+  {
+    "objectID": "confidence-intervals.html#changing-confidence-levels",
+    "href": "confidence-intervals.html#changing-confidence-levels",
+    "title": "12  Confidence Intervals",
+    "section": "12.3 Changing Confidence Levels",
+    "text": "12.3 Changing Confidence Levels\nWhen we increase confidence level, we are saying that more intervals in this manner should capture the true parameter. This means that to increase confidence level means that the confidence intervals need to increase in width.\nWhen we increase the size of a sample, the precision of our statistic increases because of the reduction in sampling variability (standard deviation of the statistic decreases as n increases). This means that we can now guess/estimate a smaller range compared to if we had a smaller sample size. So, when we increase the size of our samples, our confidence intervals will have smaller widths compared to those with a smaller sample size.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Confidence Intervals</span>"
+    ]
+  },
+  {
+    "objectID": "confidence-intervals.html#conditions-for-confidence-intervals",
+    "href": "confidence-intervals.html#conditions-for-confidence-intervals",
+    "title": "12  Confidence Intervals",
+    "section": "12.4 Conditions for Confidence Intervals",
+    "text": "12.4 Conditions for Confidence Intervals\n\n1. Random\nThe data must come from a random sample, or random assignment in an experiment.\nIn order to infer about a larger population, we must have a random, unbiased sample from that population. If the sample is not random, we need to think about whether it’s at least unbiased and/or representative. If so, we may be able to treat it as a random sample, but we must state that we’re doing this. If you’re not told that a sample is random, you can write something like “I’m going to have to assume I can treat this as a random sample”.\nIn the case of experiments, we can perform statistical tests on the data from our experimental groups, even if we don’t have a random sample from a larger population. In this case, we must make sure we have internal validity in our experiment (a well-conducted experiment with control, replication, and random assignment of treatments). If we do, our results are valid for our subjects, but we may or may not be able to generalize to a larger population. This depends on whether our subjects are a random sample from, or at least representative of, some larger population.\n\n\n2. Large\nYou must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.\n\nProportions\nFor proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the Large Counts Condition.\nThis ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.\n\n\nSample means\nIn the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.\n\nNormal/Large Condition\nWhen \\(n&lt;30\\), check if the graph of the sample data does not show any strong skew or outliers. Otherwise,\n\n\n\n\n3. Sampling Independence\nObservations in our sample must be independent of each other.\nIn random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is at least 10 times as large as our sample. This needs to be stated!\nIn experiments, or other situations where we’re not sampling from a population (rolls of dice for example), we just need to think about whether the outcome of one observation could be having any effect on the outcome of another observation. Often we don’t know this, so we need to state that we’re assuming it; “I’m going to have to assume I can treat these observations as independent.”",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Confidence Intervals</span>"
+    ]
+  },
+  {
+    "objectID": "confidence-intervals.html#the-four-step-process",
+    "href": "confidence-intervals.html#the-four-step-process",
+    "title": "12  Confidence Intervals",
+    "section": "12.5 The Four-Step Process",
+    "text": "12.5 The Four-Step Process\n\nSTATE exactly what you’re doing.\n\n\n\n\n\n\n\nState\n\n\n\nBe sure to be specific here, especially with regard to defining the actual numbers you will be analyzing. You need to demonstrate your understanding of the population about which you’re inferring, the procedure you’re using, and the parameter of interest.\n\n\n\nI will estimate \\(p =\\) the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.\n\n\nPLAN which method you will use and the conditions required to use the method.\n\n\n\n\n\n\n\nPlan\n\n\n\nState the name of the procedure that you’ll attempt.\nCheck the conditions, and if the conditions are not met, or if you can’t be sure they’re met, you need to explain what needs to be true in order for the conditions to be met.\n\n\n\nIf the conditions are met, I will use a one-sample z-interval for the population parameter \\(p\\).\nRandom Sample: Yes, it’s stated that the sample is random.\nLarge Sample: \\(n\\hat{p}=75\\left(\\frac{43}{75}\\right)=43\\) and \\(n\\left(1-\\hat{p}\\right)=75\\left(1-\\frac{43}{75}\\right)=32\\)\nBoth amounts are over 10, so the sample is large enough for the sampling distribution of to be approximately normal.\nIndependence: We have independence as long as the population of non-solar Berkeley homeowners is at least 750. This is definitely true.\n\n\nDO the calculations\n\n\n\n\n\n\n\nDo\n\n\n\nPerform the calculations necessary for the method you chose to use. Show all work!\n\n\n\n\\[\n\\begin{aligned}\nz^\\ast &= \\mathtt{invNorm((1 - 0.92) / 2 + 0.92)} \\approx 1.75 \\\\ \\\\\nCI_{92}&=\\hat{p}\\pm z^\\ast\\cdot SE_{\\hat{p}} \\\\\n&=\\hat{p}\\pm1.75\\cdot\\sqrt{\\frac{\\hat{p}\\left(1-\\hat{p}\\right)}{n}} \\text{, and we know that } n=75 \\text{ and } \\hat{p}=\\frac{43}{75}=0.5733 \\\\\n&=0.5733\\pm1.75\\sqrt{\\frac{0.5733\\left(1-0.5733\\right)}{75}} \\\\\n&=\\left[0.4734,\\ 0.6732\\right]\n\\end{aligned}\n\\]\n\n\nCONCLUDE in the context of the situation.\n\n\n\n\n\n\n\nConclude\n\n\n\nInterpret the confidence interval in the context of the problem.\n\n\n\nI am 92% confident that \\(p\\) (as defined in State) is somewhere between 47.34% and 67.32%.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Confidence Intervals</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-proportions.html",
+    "href": "inference-for-proportions.html",
+    "title": "13  Inference for Proportions",
+    "section": "",
+    "text": "13.1 Conditions for Inference",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Inference for Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-proportions.html#conditions-for-inference",
+    "href": "inference-for-proportions.html#conditions-for-inference",
+    "title": "13  Inference for Proportions",
+    "section": "",
+    "text": "1. Random\nThe data must come from a random sample, or random assignment in an experiment.\n\n\n2. Large\nYou must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.\nFor proportions, remember, the population is never anywhere near normal (it’s always two bars, yes and no). In this case we check the Large Counts Condition.\nThis ensures that our sample proportion can take on enough different values (and make enough bars in a histogram) to create an approximately normal sampling distribution.\n\n\n3. Sampling Independence\nObservations in our sample must be independent of each other.\nIn random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is at least 10 times as large as our sample. This needs to be stated!",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Inference for Proportions</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-proportions.html#one-sample-z-procedures",
+    "href": "inference-for-proportions.html#one-sample-z-procedures",
+    "title": "13  Inference for Proportions",
+    "section": "13.2 One-Sample \\(z\\)-procedures",
+    "text": "13.2 One-Sample \\(z\\)-procedures\n\n13.2.1 One-Sample \\(z\\)-interval\n\n\n\n\n\n\nOne-Sample \\(z\\)-interval\n\n\n\nA \\(C\\)% confidence interval for the unknown population proportion \\(p\\) when all conditions are met is calculated with the following:\n\\[\\hat p \\pm z^\\ast \\sqrt{\\frac{\\hat p (1 - \\hat p)}{n}}\\]\nwhere \\(z^\\ast\\) is the critical value for the standard Normal curve with \\(C\\)% of its area between \\(-z^\\ast\\) and \\(z^\\ast\\).\nSee Appendix C for examples on how to calculate \\(z^\\ast\\) for a given confidence level \\(C\\)%\n\n\nWhy?\n\nAll confidence intervals are calculated by: \\(\\text{point estimate } \\pm \\text{ margin of error}\\)\nThe point estimate for the true population proportion is \\(\\hat p\\)\nThe margin of error is always calculated as \\((\\text{critical value})(\\text{standard error})\\)\nWe use \\(z^\\ast\\) critical values for \\(z\\)-intervals (which is why they are called \\(z\\)-intervals).\nThe standard error is calculated as \\(\\sqrt{\\frac{\\hat p (1 - \\hat p)}{n}}\\)",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Inference for Proportions</span>"
+    ]
+  },
+  {
     "objectID": "formula-sheet.html",
     "href": "formula-sheet.html",
     "title": "Appendix A — AP Exam Formula Sheet",
@@ -552,6 +651,72 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>AP Exam Formula Sheet</span>"
+    ]
+  },
+  {
+    "objectID": "four-step-process.html",
+    "href": "four-step-process.html",
+    "title": "Appendix B — The Four-Step Process",
+    "section": "",
+    "text": "B.1 Confidence Intervals",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>The Four-Step Process</span>"
+    ]
+  },
+  {
+    "objectID": "four-step-process.html#confidence-intervals",
+    "href": "four-step-process.html#confidence-intervals",
+    "title": "Appendix B — The Four-Step Process",
+    "section": "",
+    "text": "B.1.1 STATE\nI will estimate [parameter symbol] = [definition of parameter] with [C%] confidence.\n\n\nB.1.2 PLAN\nIf the conditions are met, I will construct a [name of procedure].\nRandom: [How it’s met]\nSampling independence: [How it’s met]\nNormality: [How it’s met]\n\n\nB.1.3 DO\n\nCalculator minimum work:\nIf applicable, calculate the degrees of freedom.\nCalculate the critical value (\\(z^\\ast\\) or \\(t^\\ast\\)).\nWrite what you inputted for the calculator command.\nWrite the interval the calculator command gave you\n\n\nManual minimum work:\nCalculate the critical value (\\(z^\\ast\\) or \\(t^\\ast\\)).\nShow plug-in for the formulas.\nWrite the final interval.\n\n\n\nB.1.4 CONCLUDE\nI am [C%] confident that the interval from [lower bound] to [upper bound] contains the [true parameter in context].\n\n\nB.1.5 1-Sample z-Interval Example\nYou’re doing market research for a company that installs solar panels. You randomly select 75 homeowners in Berkeley (who don’t have solar panels) and ask them whether they would install solar panels if they knew that they could recover the cost in 10 years (by saving money on gas & electric bills). 43 of them answered “yes”. Construct and interpret a 92% confidence interval for this situation.\nState:\nI will estimate \\(p=\\) the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.\nPlan:\nIf the conditions are met, I will use a one-sample \\(z\\)-interval for the population parameter \\(p\\).\n\nRandom:\nYes, it’s stated that the sample is random.\nLarge Sample:\n\\(n \\hat p = 75(\\frac{43}{75}) = 43 \\geq 10\\) and \\(n ( 1- \\hat p ) = 75(1- \\frac{43}{75}) = 32 \\geq 10\\)\nIndependence:\nThere is at least \\(10n=750\\) non-solar Berkeley homeowners\n\nDo:\n\\[z ^\\ast = \\texttt{invNorm(0.96)} = 1.75\\]\n1-PropZInt\nx: 43\nn: 75\nC-level: 92\nResults in a confidence interval of [0.4734, 0.6732].\n\n\nOR Manual Calculations\n\n\\[z ^\\ast = \\texttt{invNorm(0.96)} = 1.75\\]\n\\[\n\\begin{align}\nCI_92 &= \\hat p \\pm z^\\ast \\cdot \\sqrt{\\frac{\\hat p ( 1- \\hat p)}{n}} \\\\\n&= 0.5733 \\pm 1.75 \\sqrt{\\frac{0.5733 ( 1- 0.5733)}{75}} \\\\\n&= [0.4734, 0.6732]\n\\end{align}\n\\]\n\nConclude:\nI am 92% confident that the true proportion of all non-solar Berkeley homeowners who would install solar panels is somewhere between 47.34% and 67.32%.\n\n\nB.1.6 1-Sample t-Interval Example\nState:\nI will estimate \\(p=\\) the proportion of all non-solar Berkeley homeowners who would install solar panels if they knew that they could recover the cost in 10 years with 92% confidence.\nPlan:\nIf the conditions are met, I will use a one-sample \\(z\\)-interval for the population parameter \\(p\\).\n\nRandom:\nYes, it’s stated that the sample is random.\nLarge Sample:\n\\(n \\hat p = 75(\\frac{43}{75}) = 43 \\geq 10\\) and \\(n ( 1- \\hat p ) = 75(1- \\frac{43}{75}) = 32 \\geq 10\\)\nIndependence:\nThere is at least \\(10n=750\\) non-solar Berkeley homeowners\n\nDo:\n\\[z ^\\ast = \\texttt{invNorm(0.96)} = 1.75\\]\n1-PropZInt\nx: 43\nn: 75\nC-level: 92\nResults in a confidence interval of [0.4734, 0.6732].\n\n\nOR Manual Calculations\n\n\\[z ^\\ast = \\texttt{invNorm(0.96)} = 1.75\\]\n\\[\n\\begin{align}\nCI_92 &= \\hat p \\pm z^\\ast \\cdot \\sqrt{\\frac{\\hat p ( 1- \\hat p)}{n}} \\\\\n&= 0.5733 \\pm 1.75 \\sqrt{\\frac{0.5733 ( 1- 0.5733)}{75}} \\\\\n&= [0.4734, 0.6732]\n\\end{align}\n\\]\n\nConclude:\nI am 92% confident that the true proportion of all non-solar Berkeley homeowners who would install solar panels is somewhere between 47.34% and 67.32%.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>The Four-Step Process</span>"
+    ]
+  },
+  {
+    "objectID": "z-critical-values.html",
+    "href": "z-critical-values.html",
+    "title": "Appendix C — \\(z^\\ast\\) Critical Values",
+    "section": "",
+    "text": "C.1 Examples\nAlternatively, do the calculator command invNorm(0.05) to get a value of around -1.64. Take the positive value as your critical value, \\(z^\\ast = 1.64\\).\nAlternatively, do the calculator command invNorm(0.005) to get a value of around -2.5758. Take the positive value as your critical value, \\(z^\\ast = 2.58\\).",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>$z^\\ast$ Critical Values</span>"
+    ]
+  },
+  {
+    "objectID": "z-critical-values.html#examples",
+    "href": "z-critical-values.html#examples",
+    "title": "Appendix C — \\(z^\\ast\\) Critical Values",
+    "section": "",
+    "text": "90% confidence\n\n\nFind that the left area that we want is: \\(\\frac{100\\% - 90%}{2} = 5\\% = 0.05\\)\nTry to find 0.05 in the middle of Table A and you notice that it is between 0.0505 and 0.0495.\nTake the larger value, 0.0505 and look at the margins for the \\(z\\) that corresponds to it, -1.64.\nJust take the positive value, \\(z^\\ast = 1.64\\).\n\n\n\n99% confidence\n\n\nFind that the left area that we want is: \\(\\frac{100\\% - 99%}{2} = 0.5\\% = 0.005\\)\nTry to find 0.005 in the middle of Table A and you notice that it is between 0.0051 and 0.0049.\nTake the larger value, 0.0051 and look at the margins for the \\(z\\) that corresponds to it, -2.57.\nJust take the positive value, \\(z^\\ast = 2.57\\).",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>$z^\\ast$ Critical Values</span>"
+    ]
+  },
+  {
+    "objectID": "t-critical-values.html",
+    "href": "t-critical-values.html",
+    "title": "Appendix D — \\(t^\\ast\\) Critical Values",
+    "section": "",
+    "text": "D.1 Examples",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>$t^\\ast$ Critical Values</span>"
+    ]
+  },
+  {
+    "objectID": "t-critical-values.html#examples",
+    "href": "t-critical-values.html#examples",
+    "title": "Appendix D — \\(t^\\ast\\) Critical Values",
+    "section": "",
+    "text": "90% confidence and 24 degrees of freedom\n\n\nLook at the \\(df = 24\\) row and the confidence level 90% column.\nTake the value in the middle of the table that you pinpoint from that row and column, \\(t^\\ast = 1.711\\)\n\n\n99% confidence and 96 degrees of freedom\n\n\nRound your df down to the next available value. \\(df = 96 \\sim 80\\).\nLook at the \\(df = 80\\) row and the confidence level 99% column.\nTake the value in the middle of the table that you pinpoint from that row and column, \\(t^\\ast = 2.639\\)",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>$t^\\ast$ Critical Values</span>"
     ]
   }
 ]

@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 10&nbsp; Random Variables</title>
+<title>AP Statistics Notes - Appendix D — \(t^\ast\) Critical Values</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sampling-distributions.html" rel="next">
-<link href="./density-curves.html" rel="prev">
+<link href="./z-critical-values.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,6 +108,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="./scripts/jstat.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -119,7 +154,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./random-variables.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./t-critical-values.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -231,7 +266,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./random-variables.html" class="sidebar-item-text sidebar-link active">
+  <a href="./random-variables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
   </div>
 </li>
@@ -295,7 +330,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./t-critical-values.html" class="sidebar-item-text sidebar-link">
+  <a href="./t-critical-values.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></span></a>
   </div>
 </li>
@@ -311,30 +346,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link active" data-scroll-target="#discrete-random-variables"><span class="header-section-number">10.1</span> Discrete Random Variables</a>
-  <ul class="collapse">
-  <li><a href="#binomial-random-variables" id="toc-binomial-random-variables" class="nav-link" data-scroll-target="#binomial-random-variables"><span class="header-section-number">10.1.1</span> Binomial Random Variables</a></li>
-  <li><a href="#geometric-random-variables" id="toc-geometric-random-variables" class="nav-link" data-scroll-target="#geometric-random-variables"><span class="header-section-number">10.1.2</span> Geometric Random Variables</a></li>
-  </ul></li>
-  <li><a href="#operations-with-random-variables" id="toc-operations-with-random-variables" class="nav-link" data-scroll-target="#operations-with-random-variables"><span class="header-section-number">10.2</span> Operations with Random Variables</a>
-  <ul class="collapse">
-  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link" data-scroll-target="#linear-transformations"><span class="header-section-number">10.2.1</span> Linear Transformations</a></li>
-  <li><a href="#sum-and-difference-between-random-variables" id="toc-sum-and-difference-between-random-variables" class="nav-link" data-scroll-target="#sum-and-difference-between-random-variables"><span class="header-section-number">10.2.2</span> Sum and Difference between Random Variables</a></li>
-  </ul></li>
-  <li><a href="#interpretations" id="toc-interpretations" class="nav-link" data-scroll-target="#interpretations"><span class="header-section-number">10.3</span> Interpretations</a>
-  <ul class="collapse">
-  <li><a href="#probabilities-and-means" id="toc-probabilities-and-means" class="nav-link" data-scroll-target="#probabilities-and-means"><span class="header-section-number">10.3.1</span> Probabilities and Means</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">10.3.2</span> Standard Deviation</a></li>
-  </ul></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples"><span class="header-section-number">D.1</span> Examples</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./random-variables.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./t-critical-values.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></h1>
+<h1 class="title">Appendix D — <span class="math inline">\(t^\ast\)</span> Critical Values</h1>
 </div>
 
 
@@ -351,443 +372,158 @@ window.Quarto = {
 </header>
 
 
-<p>A <strong>random variable</strong> is a variable whose value is a numerical outcome of a random phenomenon.</p>
-<p>The <strong>probability distribution</strong> of a random variable <span class="math inline">\(X\)</span> gives us all possible values of <span class="math inline">\(X\)</span>, and their corresponding probabilities. Probability distributions are typically given as tables, histograms (with probability on the y-axis, instead of frequency), or density curves (like the Normal curve).</p>
-<div class="callout callout-style-default callout-important callout-titled" title="pdfs and cdfs">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>The same principles for <span class="math inline">\(z^\ast\)</span> applies to <span class="math inline">\(t^\ast\)</span>, except we have to use degrees of freedom too.</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="7" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 6;"><span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">t_df</span>(<span class="im">from</span><span class="op">,</span> to<span class="op">,</span> df) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="im">from</span><span class="op">,</span> to <span class="op">+</span> <span class="fl">0.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution with df = "</span> <span class="op">+</span> df <span class="op">+</span> <span class="st">" degrees of freedom"</span>})<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">t_critical_val</span>(C<span class="op">,</span> df) {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> val <span class="op">=</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">inv</span>((<span class="dv">100</span> <span class="op">-</span> C) <span class="op">/</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">100</span><span class="op">,</span> df)<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [val<span class="op">,</span> <span class="op">-</span><span class="dv">1</span> <span class="op">*</span> val]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">t_conf_region</span>(C<span class="op">,</span> df) {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> cutoffs <span class="op">=</span> <span class="fu">t_critical_val</span>(C<span class="op">,</span> df)<span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(cutoffs[<span class="dv">0</span>]<span class="op">,</span> cutoffs[<span class="dv">1</span>] <span class="op">+</span> <span class="fl">0.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution with df = "</span> <span class="op">+</span> df <span class="op">+</span> <span class="st">" degrees of freedom"</span>})<span class="op">;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">areaY</span>(<span class="fu">t_conf_region</span>(C2<span class="op">,</span> df)<span class="op">,</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.3</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(<span class="fu">t_df</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> df)<span class="op">,</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"lab"</span><span class="op">,</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">0</span>]])<span class="op">,</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">1</span>]])<span class="op">,</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([{<span class="st">"x"</span><span class="op">:</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">0</span>] <span class="op">+</span> <span class="fl">0.4</span><span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> <span class="fl">0.35</span>}<span class="op">,</span> {<span class="st">"x"</span><span class="op">:</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">1</span>] <span class="op">-</span> <span class="fl">0.4</span><span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> <span class="fl">0.35</span>}]<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span><span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> [<span class="st">"-|t*| = "</span> <span class="op">+</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">0</span>]<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">,</span> <span class="st">"|t*| = "</span> <span class="op">+</span> <span class="fu">t_critical_val</span>(C2<span class="op">,</span> df)[<span class="dv">1</span>]<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)]})</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"t"</span> }<span class="op">,</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">41</span>]<span class="op">,</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span>}<span class="op">,</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"t distribution with df = "</span> <span class="op">+</span> df <span class="op">+</span> <span class="st">" degrees of freedom"</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
 </div>
-<div class="callout-title-container flex-fill">
-pdfs and cdfs
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>For any given named distribution (e.g., Binomial, Normal, Geometric, Uniform), we will always have a <strong>probability density function (pdf)</strong> and a <strong>cumulative density function (cdf)</strong></p>
-<p>We use pdfs to find the probability of a singular point. * e.g., if I want to find the probability of that a random variable <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(x\)</span>, then I’d plug in the value of <span class="math inline">\(x\)</span> into the pdf of <span class="math inline">\(X\)</span>, <span class="math inline">\(P(X = x)\)</span>.</p>
-<p>We use cdfs to find the probability of a falling within a certain interval. * e.g., if I want to find the probability of that a random variable <span class="math inline">\(X\)</span> is less than <span class="math inline">\(x\)</span>, then I’d plug in the value of <span class="math inline">\(x\)</span> into the cdf of <span class="math inline">\(X\)</span>, <span class="math inline">\(P(X \leq x)\)</span>.</p>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
 </div>
 </div>
-<section id="discrete-random-variables" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="discrete-random-variables"><span class="header-section-number">10.1</span> Discrete Random Variables</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Discrete Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Discrete Random Variable
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>A <strong>discrete random variable</strong> describes a process that only has specific, predefined numerical outcomess. For example, we can use a discrete random variable to finding the probability of Michael Jordon scoring 50 points in a single game or the probability of rolling a 3 or lower on a six-sided die.</p>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="expression">
+
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Discrete Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Mean and SD of Discrete Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When we have a discrete random variable <span class="math inline">\(X\)</span> whose probability distribution is</p>
-<p><span class="math display">\[
-\begin{aligned}
-    \textbf{Value:}&amp; ~~~~ x_1 ~~~~ x_2 ~~~~ x_3 ~~~~ \cdots \\
-    \textbf{Probability:}&amp; ~~~~ p_1 ~~~~ p_2 ~~~~ p_3 ~~~~\cdots
-\end{aligned}
-\]</span></p>
-<p>we know the following about the mean and standard deviation of <span class="math inline">\(X\)</span>:</p>
-<p><span class="math display">\[\mu_X = E(X) = \sum x_i P(x_i)\]</span></p>
-<p><span class="math display">\[\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\]</span></p>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="62" data-source-offset="-1563"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>viewof df <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>viewof C2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="fl">99.99</span>]<span class="op">,</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">95</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Confidence Level:"</span>}</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
 </div>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<p><a href="formula-sheet.html#table-b">Table B</a> conveniently has a confidence level margin at the bottom of the table, which corresponds to the tail probability that’s given in the top margin of the table.</p>
+<p>The left margin is where you should look for the degrees of freedom, calculated by <span class="math inline">\(df = n-1\)</span>.</p>
+<p>Find the critical value by: looking up the degrees of freedom and the confidence level in the left margin and bottom margin respectively. Round the degrees of freedom down. The critical value is the number that you pinpoint in the middle of the table.</p>
 <details>
 <summary>
-Keep in mind that the standard deviation formula here (and else where) is equivalent to the formula of population standard deviation when we divide by <span class="math inline">\(n\)</span> instead of multiplying by <span class="math inline">\(P(x_i)\)</span>.
+Why round down?
 </summary>
-<p>Just as a quick reminder, our formula for sample standard deviation is:</p>
-<p><span class="math display">\[s_X = \sqrt{\frac{\sum(x_i - \bar x)^2}{n - 1}}\]</span></p>
-<p>Our formula for population standard deviation (which we won’t use in this class is)</p>
-<p><span class="math display">\[\sigma_X = \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}}\]</span></p>
-<p>Taking this formula, we can notice that:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\sigma_X &amp;= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} &amp;(1)\\
-&amp;=\sqrt{E((X - \mu_X)^2)} &amp;(2)\\
-&amp;=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)} &amp;(3)\\
-\end{aligned}
-\]</span></p>
-<p>In other words, remember that we define standard deviation as the root <strong>mean</strong> of the squared differences from the mean.</p>
-<p>We get to step (2) by recognizing that by adding up all the squared differences from the mean and dividing by <span class="math inline">\(n\)</span>, we are taking the mean of the squared differences. Therefore, <span class="math inline">\(\frac{\sum(x_i - \mu_X)^2}{n} = E((X - \mu_X)^2)\)</span></p>
-<p>And in the case of discrete random variables, we can find the mean of <span class="math inline">\(X\)</span> as <span class="math inline">\(\mu_X = E(X) = \sum x_iP(x_i)\)</span> which allows us to rewrite from step (2) to (3)</p>
+<p>By rounding the degrees of freedom down, you use a more conservative estimate.</p>
+<p><a href="#t-justification">The main reason that we are even using the <span class="math inline">\(t\)</span>-distribution is because it is more conservative than the Normal distribution</a>.</p>
+<p>By rounding the degrees of freedom down, you use a more conservative <span class="math inline">\(t\)</span>-distribution (more area in the tails), so you ensure that you do not underestimate your answer, rather, you purposely overestimate your answer.</p>
 </details>
-<section id="binomial-random-variables" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="binomial-random-variables"><span class="header-section-number">10.1.1</span> Binomial Random Variables</h3>
-<p>Binomial random variables have parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, and can be written <span class="math inline">\(B(n, p)\)</span>. Remember, Normal random variables have parameters and and can be written <span class="math inline">\(N(\mu,\sigma)\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="pdf of a Binomial Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-pdf of a Binomial Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>pdf</strong> of a Binomial Random Variable (i.e.&nbsp;the binomial formula) is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X=k) &amp;= {n \choose k} p^k (1-p)^{n-k}\\
-    \text{where } k &amp;= 0, 1, 2, 3, \cdots, n
-\end{aligned}
-\]</span></p>
-<p>To apply this formula in a graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binompdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{binompdf(n, p[,x])}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="cdf of a Binomial Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-cdf of a Binomial Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>cdf</strong> of a Binomial Random Variable is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X\leq k) &amp;= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
-\end{aligned}
-\]</span></p>
-<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binomcdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{binomcdf(n, p[,x])}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Binomial Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of Binomial Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The mean and standard deviation of a binomial random variable is given by:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    \mu_X &amp;= n p \\
-    \sigma_X &amp;= \sqrt{n p q} \\
-    &amp;\text{, where } q = 1-p.
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<section id="identifying-binomial-situations" class="level4">
-<h4 class="anchored" data-anchor-id="identifying-binomial-situations">Identifying Binomial Situations</h4>
-<div class="callout callout-style-default callout-note callout-titled" title="The Binomial Setting">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Binomial Setting
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can identify a binomial setting when we successfully recognize these four things about a random phenonmenon:</p>
-<ol type="1">
-<li><p><strong>B</strong>inary?<br>
-The possible outcomes of each trial can be classified as “success” or “failure”.</p></li>
-<li><p><strong>I</strong>ndependent?<br>
-Trials must be independent; that is, knowing the result of one trial must not tells us anything about the result of another trial.</p></li>
-<li><p><strong>N</strong>umber?<br>
-The number of trials n of the chance process must be fixed in advance.</p></li>
-<li><p><strong>S</strong>ame?<br>
-There is the same probability p of success on each trial.</p></li>
-</ol>
-</div>
-</div>
-<section id="ten-per-cond" class="level5">
-<h5 class="anchored" data-anchor-id="ten-per-cond">10% Condition</h5>
-<p>The second condition is often not perfectly met, as in the case of an SRS from some population. Imagine choosing 10 students from a class of 15 females and 15 males—as we choose people, the remaining population changes, which changes the probability that the next person chosen will be male or female.</p>
-<p>When we lack complete independence, we can see the consequence of this is negligible as long as our sample is small relative to the population from which we are sampling. If we were choosing our 10 people from a school of 3,300 students, the change in probability from person to person would be small enough to ignore.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="10% Condition">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-10% Condition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The general rule is that the sample needs to be less than <span class="math inline">\(\frac{1}{10}\)</span>, or 10%, of the population. We refer to this as the 10% condition. <span class="math display">\[
-n \leq (.10) N
-\]</span></p>
-</div>
-</div>
-</section>
-</section>
-<section id="normal-approximation-to-the-binomial-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</h4>
-<p>Remember that as <span class="math inline">\(n\)</span> gets large, a binomial random variable <span class="math inline">\(X\)</span> can take on more and more different values, and it can become tedious to continue to treat X as a discrete random variable. As <span class="math inline">\(n\)</span> get larger, we can treat <span class="math inline">\(X\)</span> as a continuous random variable, more specifically:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As <span class="math inline">\(n\)</span> gets larger, the binomial distribution gets closer to a normal distribution.</p>
-</div>
-</div>
-<p>However, before we use a normal distribution to approximate a binomial distribution, we have to check the following condition:</p>
-<section id="large-counts-cond" class="level5">
-<h5 class="anchored" data-anchor-id="large-counts-cond">Large Counts condition</h5>
-<div class="callout callout-style-default callout-note callout-titled" title="Large Counts Condition">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Large Counts Condition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can use a Normal distribution to model a binomial distribution if we know that a the <strong>Large Counts Condition</strong> is fulfilled: <span class="math display">\[np \geq 10 \text{ and }n(1-p) \geq 10\]</span> In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.</p>
-</div>
-</div>
-</section>
-<section id="doing-a-normal-approximation-to-a-binomial-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="doing-a-normal-approximation-to-a-binomial-distribution">Doing a Normal Approximation to a Binomial Distribution</h5>
-<p>First verify all the conditions for a Binomial setting and the Large Counts Condition. Since we know that we have a binomial setting, we then know the distribution that we want to use is <span class="math inline">\(Normal(np, \sqrt{npq})\)</span> proceed with the calculations according to this distribution.</p>
-</section>
-</section>
-</section>
-<section id="geometric-random-variables" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="geometric-random-variables"><span class="header-section-number">10.1.2</span> Geometric Random Variables</h3>
-<p>If <span class="math inline">\(X \sim G(p)\)</span>, <span class="math inline">\(X\)</span> has a geometric distribution with a parameter <span class="math inline">\(p\)</span> probability of “success”.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="pdf of a Geometric Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-pdf of a Geometric Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>pdf</strong> of a geometric random variable is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X=x) &amp;= (1-p)^{x-1}p\\
-    \text{where } x &amp;= 1, 2, 3, \cdots
-\end{aligned}
-\]</span></p>
-<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometpdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{geometpdf(p, x)}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="cdf of a Geometric Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-cdf of a Geometric Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>cdf</strong> of a Geometric Variable is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X\leq x) &amp;= \sum_{i=1}^x(1-p)^{i-1}p
-\end{aligned}
-\]</span></p>
-<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometcdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{geometcdf(p, x)}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of a Geometric Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of a Geometric Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The mean and standard deviation of a geometric random variable is given by:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    \mu_X &amp;= \frac{1}{p} \\
-    \sigma_X &amp;= \frac{\sqrt{q}}{p} \\
-    &amp;\text{, where } q = 1-p.
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<section id="identifying-geometric-settings" class="level4">
-<h4 class="anchored" data-anchor-id="identifying-geometric-settings">Identifying Geometric Settings</h4>
-<p>A geometric setting is very similar to a binomial setting, except that <span class="math inline">\(n\)</span> the number of trials is not fixed and that we are instead finding probabilities until the first “success” occurs.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="The Geometric Setting">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Geometric Setting
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A geometric setting is defined as a series of observations where these 4 conditions are met:</p>
-<ol type="1">
-<li><p><strong>B</strong>inary?<br>
-The possible outcomes of each trial can be classified as “success” or “failure”</p></li>
-<li><p><strong>I</strong>ndependent?<br>
-Trials must be independent, that is, knowing the result of one trial must not have any effect on the result of any other trial.</p></li>
-<li><p><strong>T</strong>rials until?<br>
-The goal is to count the number of trials until the first success occurs.</p></li>
-<li><p><strong>S</strong>uccess?<br>
-On each trial, the probability <span class="math inline">\(p\)</span> of success must be the same.</p></li>
-</ol>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="operations-with-random-variables" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="operations-with-random-variables"><span class="header-section-number">10.2</span> Operations with Random Variables</h2>
-<section id="linear-transformations" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="linear-transformations"><span class="header-section-number">10.2.1</span> Linear Transformations</h3>
-<p>When we add a constant <span class="math inline">\(a\)</span> and/or multiply by a constant <span class="math inline">\(b\)</span> to a random variable <span class="math inline">\(X\)</span>, we perform a linear transformation of the form</p>
-<p><span class="math display">\[
-a + bX
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Linearly Transformed Random Variables">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of Linearly Transformed Random Variables
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The mean of <span class="math inline">\(a + bX\)</span> is transformed in the same way that we change <span class="math inline">\(X\)</span></p>
-<p><span class="math display">\[
-\mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
-\]</span></p>
-<p>The standard deviation of <span class="math inline">\(a + bX\)</span> is only affected by multiplication:</p>
-<p><span class="math display">\[
-\sigma_{a+bX}=\sigma_{bX}=b\sigma_X
-\]</span></p>
-</div>
-</div>
-</section>
-<section id="sum-and-difference-between-random-variables" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="sum-and-difference-between-random-variables"><span class="header-section-number">10.2.2</span> Sum and Difference between Random Variables</h3>
-<p>In addition to linear transformation, we can also, to an extent, describe the result of adding or subtracting random variables</p>
-<p>If we have two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we can describe the mean and standard deviation of the sum or difference of these with the following.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of the Sum and Difference between Random Variables">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of the Sum and Difference between Random Variables
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[\mu_{X \pm Y} = \mu_X \pm \mu_Y\]</span></p>
-<p><strong>If the random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent</strong>, then</p>
-<p><span class="math display">\[ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \]</span></p>
-<p>And it follows that:</p>
-<p><span class="math display">\[ \sigma_{X \pm Y} = \sqrt{\sigma_X^2 + \sigma_Y^2} \]</span></p>
-<details>
-<summary>
-What is <span class="math inline">\(\sigma_X^2\)</span>?
-</summary>
-<p>The variance of a random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[
-Var(X) = \sigma_X^2
-\]</span></p>
-</details>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Keep in mind that the formula for the standard deviation here only applies if we know that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent of each other.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="interpretations" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="interpretations"><span class="header-section-number">10.3</span> Interpretations</h2>
-<section id="probabilities-and-means" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="probabilities-and-means"><span class="header-section-number">10.3.1</span> Probabilities and Means</h3>
-<p>Be aware that you are still expected to know how to interpret probabilities. Now that we are working with means / expected values, we are going to extend our long run probability interpretation to means too.</p>
-<p>Remember, if we are given a probability <span class="math inline">\(p\)</span>, we interpret it in the form of:</p>
+<section id="examples" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">D.1</span> Examples</h2>
+<ul>
+<li>90% confidence and 24 degrees of freedom</li>
+</ul>
 <blockquote class="blockquote">
-<p>If [do the situation] <strong>many many times</strong>, [this thing] will happen <strong>about</strong> [<span class="math inline">\(p\)</span>] of the time.</p>
+<p>Look at the <span class="math inline">\(df = 24\)</span> row and the confidence level 90% column.</p>
+<p>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^\ast = 1.711\)</span></p>
 </blockquote>
-<p>This extends to any mean <span class="math inline">\(\mu\)</span>:</p>
+<ul>
+<li>99% confidence and 96 degrees of freedom</li>
+</ul>
 <blockquote class="blockquote">
-<p>If [do the situation] <strong>many many times</strong>, we will have an average <strong>about</strong> [<span class="math inline">\(\mu\)</span>].</p>
-</blockquote>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember that you should be describing the situation properly.</p>
-<p>If we are looking at the average amount of heads in 50 coin flips, we’d say:</p>
-<blockquote class="blockquote">
-<p>If we <strong>flip a coin 50 times</strong> many many times, we will see an average of about 25 heads.</p>
-</blockquote>
-<p>Or if we are looking at the probability that we get 25 heads in 50 coin flips (which is <span class="math inline">\(\approx\)</span> 0.1123)</p>
-<blockquote class="blockquote">
-<p>If we <strong>flip a coin 50 times</strong> many many times, we will observe <strong>getting 25 heads</strong> about 0.1123 of the time.</p>
-</blockquote>
-</div>
-</div>
-</section>
-<section id="standard-deviation" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">10.3.2</span> Standard Deviation</h3>
-<p>We previously interpreted standard deviation in Chapter 1, and now we can tone down the interpretation, we’d just say something along the lines of</p>
-<blockquote class="blockquote">
-<p>[<em>The variable</em>] typically varies by [<em>standard deviation</em>] from the [<em>mean</em>].</p>
+<p>Round your df down to the next available value. <span class="math inline">\(df = 96 \sim 80\)</span>.</p>
+<p>Look at the <span class="math inline">\(df = 80\)</span> row and the confidence level 99% column.</p>
+<p>Take the value in the middle of the table that you pinpoint from that row and column, <span class="math inline">\(t^\ast = 2.639\)</span></p>
 </blockquote>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuZnVuY3Rpb24gdF9kZihmcm9tLCB0bywgZGYpIHtcbiAgICB2YXIgeCA9IGQzLnJhbmdlKGZyb20sIHRvICsgMC4wMDUsIDAuMDEpO1xuICAgIHZhciByZXN1bHQgPSBbXTtcbiAgICB4LmZvckVhY2goKHZhbCwgaSkgPT4ge1xuICAgICAgICByZXN1bHQucHVzaCh7XCJ4XCI6IHZhbCwgXCJ5XCI6IGpTdGF0LnN0dWRlbnR0LnBkZih2YWwsIGRmKSwgXCJsYWJcIjogXCJ0IGRpc3RyaWJ1dGlvbiB3aXRoIGRmID0gXCIgKyBkZiArIFwiIGRlZ3JlZXMgb2YgZnJlZWRvbVwifSk7XG4gICAgfSlcbiAgICByZXR1cm4gcmVzdWx0O1xufVxuXG5mdW5jdGlvbiB0X2NyaXRpY2FsX3ZhbChDLCBkZikge1xuICAgIHZhciB2YWwgPSBqU3RhdC5zdHVkZW50dC5pbnYoKDEwMCAtIEMpIC8gMiAvIDEwMCwgZGYpO1xuICAgIHJldHVybiBbdmFsLCAtMSAqIHZhbF1cbn1cblxuZnVuY3Rpb24gdF9jb25mX3JlZ2lvbihDLCBkZikge1xuICAgIHZhciBjdXRvZmZzID0gdF9jcml0aWNhbF92YWwoQywgZGYpO1xuICAgIHZhciB4ID0gZDMucmFuZ2UoY3V0b2Zmc1swXSwgY3V0b2Zmc1sxXSArIDAuMDA1LCAwLjAxKTtcbiAgICB2YXIgcmVzdWx0ID0gW107XG4gICAgICAgIHguZm9yRWFjaCgodmFsLCBpKSA9PiB7XG4gICAgICAgIHJlc3VsdC5wdXNoKHtcInhcIjogdmFsLCBcInlcIjogalN0YXQuc3R1ZGVudHQucGRmKHZhbCwgZGYpLCBcImxhYlwiOiBcInQgZGlzdHJpYnV0aW9uIHdpdGggZGYgPSBcIiArIGRmICsgXCIgZGVncmVlcyBvZiBmcmVlZG9tXCJ9KTtcbiAgICB9KTtcbiAgICByZXR1cm4gcmVzdWx0O1xufVxuXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuYXJlYVkodF9jb25mX3JlZ2lvbihDMiwgZGYpLFxuICAgICAge1xuICAgICAgICB4OiBcInhcIiwgXG4gICAgICAgIHk6IFwieVwiLFxuICAgICAgICBmaWxsT3BhY2l0eTogMC4zXG4gICAgICB9XG4gICAgKSxcbiAgICBQbG90LmxpbmUodF9kZigtNCwgNCwgZGYpLFxuICAgICAge1xuICAgICAgICB4OiBcInhcIiwgXG4gICAgICAgIHk6IFwieVwiLFxuICAgICAgICBzdHJva2U6IFwibGFiXCIsXG4gICAgICAgIHN0cm9rZVdpZHRoOiAzXG4gICAgICB9XG4gICAgKSxcbiAgICBQbG90LnJ1bGVYKFt0X2NyaXRpY2FsX3ZhbChDMiwgZGYpWzBdXSksXG4gICAgUGxvdC5ydWxlWChbdF9jcml0aWNhbF92YWwoQzIsIGRmKVsxXV0pLFxuICAgIFBsb3QudGV4dChbe1wieFwiOiB0X2NyaXRpY2FsX3ZhbChDMiwgZGYpWzBdICsgMC40LCBcInlcIjogMC4zNX0sIHtcInhcIjogdF9jcml0aWNhbF92YWwoQzIsIGRmKVsxXSAtIDAuNCwgXCJ5XCI6IDAuMzV9XSwge3g6IFwieFwiLCB5OlwieVwiLCB0ZXh0OiBbXCItfHQqfCA9IFwiICsgdF9jcml0aWNhbF92YWwoQzIsIGRmKVswXS50b0ZpeGVkKDIpLCBcInx0KnwgPSBcIiArIHRfY3JpdGljYWxfdmFsKEMyLCBkZilbMV0udG9GaXhlZCgyKV19KVxuICBdLFxuICAgIFxuICAgIHg6IHsgbGFiZWw6IFwidFwiIH0sXG4gICAgeToge2RvbWFpbjogWzAsIC40MV0sXG4gICAgbGFiZWw6IFwiRGVuc2l0eVwifSxcbiAgICBjb2xvcjoge1xuICAgICAgICBsZWdlbmQ6IHRydWVcbiAgICB9LFxuICAgIGNhcHRpb246IFwidCBkaXN0cmlidXRpb24gd2l0aCBkZiA9IFwiICsgZGYgKyBcIiBkZWdyZWVzIG9mIGZyZWVkb21cIlxufSlcblxudmlld29mIGRmID0gSW5wdXRzLnJhbmdlKFxuWzEsIDEwMF0sXG57dmFsdWU6IDMsIHN0ZXA6IDEsIGxhYmVsOiBcIkRlZ3JlZXMgb2YgRnJlZWRvbSAoZGYpOlwifVxuKVxuXG52aWV3b2YgQzIgPSBJbnB1dHMucmFuZ2UoXG5bMSwgOTkuOTldLFxue3ZhbHVlOiA5NSwgc3RlcDogMC4wMSwgbGFiZWw6IFwiQ29uZmlkZW5jZSBMZXZlbDpcIn1cbilcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdkZicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdDMicpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1199,14 +935,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./density-curves.html" class="pagination-link" aria-label="Density Curves">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Density Curves</span></span>
+      <a href="./z-critical-values.html" class="pagination-link" aria-label="$z^\ast$ Critical Values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title"><span class="math inline">\(z^\ast\)</span> Critical Values</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sampling-distributions.html" class="pagination-link" aria-label="Sampling Distributions">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
