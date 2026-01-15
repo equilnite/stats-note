@@ -37,7 +37,7 @@ Plot.plot({
         fillOpacity: 0.3
       }
     ),
-    Plot.line(t_df(-4, 4, df),
+    Plot.line(t_df(-4.5, 4.5, df),
       {
         x: "x", 
         y: "y",
@@ -50,7 +50,8 @@ Plot.plot({
     Plot.text([{"x": t_critical_val(C2, df)[0] + 0.4, "y": 0.35}, {"x": t_critical_val(C2, df)[1] - 0.4, "y": 0.35}], {x: "x", y:"y", text: ["-|t*| = " + t_critical_val(C2, df)[0].toFixed(2), "|t*| = " + t_critical_val(C2, df)[1].toFixed(2)]})
   ],
     
-    x: { label: "t" },
+    x: {domain: [-4.5, 4.5],
+    label: "t" },
     y: {domain: [0, .41],
     label: "Density"},
     color: {
