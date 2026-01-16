@@ -35,7 +35,7 @@ book:
       - confidence-intervals.qmd
     #   - hypothesis-testing.qmd
       - inference-for-proportions.qmd
-    #   - inference-for-means.qmd
+      - inference-for-means.qmd
     #   - inference-for-categories.qmd
     # - linear-regression.qmd
     # - inference-for-slope.qmd

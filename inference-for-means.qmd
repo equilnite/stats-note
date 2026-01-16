@@ -57,6 +57,8 @@ The standard error is calculated as $\frac{s_x}{\sqrt{n}}$
 
 :::
 
+<!---
+
 ### One-Sample $t$-test {#one-sample-t-test}
 
 ::: {.callout-note title="One-Sample $t$-test"}
@@ -190,6 +192,8 @@ $$
 The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we're saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there's no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests.
 :::
 </details>
+
+--->
 
 ## The Student's $t$ distribution
 
