@@ -588,6 +588,50 @@
     ]
   },
   {
+    "objectID": "inference-for-means.html",
+    "href": "inference-for-means.html",
+    "title": "14  Inference for Means",
+    "section": "",
+    "text": "14.1 Conditions for Inference",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Inference for Means</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-means.html#conditions-for-inference",
+    "href": "inference-for-means.html#conditions-for-inference",
+    "title": "14  Inference for Means",
+    "section": "",
+    "text": "1. Random\nThe data must come from a random sample, or random assignment in an experiment.\n\n\n2. Large\nYou must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.\nIn the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.\n\nNormal/Large Condition\nWhen \\(n&lt;30\\), check if the graph of the sample data does not show any strong skew or outliers. Otherwise,\n\n\n\n3. Sampling Independence\nObservations in our sample must be independent of each other.\nIn random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is at least 10 times as large as our sample. This needs to be stated!",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Inference for Means</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-means.html#one-sample-t-procedures",
+    "href": "inference-for-means.html#one-sample-t-procedures",
+    "title": "14  Inference for Means",
+    "section": "14.2 One-Sample \\(t\\)-procedures",
+    "text": "14.2 One-Sample \\(t\\)-procedures\n\n14.2.1 One-Sample \\(t\\)-interval\n\n\n\n\n\n\nOne-Sample \\(t\\)-interval\n\n\n\nA \\(C\\)% confidence interval for the unknown population mean \\(\\mu\\) when all conditions are met is calculated with the following:\n\\[\\bar x \\pm t^\\ast \\frac{s_x}{\\sqrt{n}}\\]\nwhere \\(t^\\ast\\) is the critical value for the Student’s \\(t\\) distribution corresponding with degrees of freedom \\(df = n - 1\\) with \\(C\\)% of its area between \\(-t^\\ast\\) and \\(t^\\ast\\).\nSee Appendix D for examples on how to calculate \\(t^\\ast\\) for a given confidence level \\(C\\)% and degrees of freedom \\(df\\)\n\n\nWhy?\n\nAll confidence intervals are calculated by: \\(\\text{point estimate } \\pm \\text{ margin of error}\\)\nThe point estimate for the true population mean is \\(\\bar x\\)\nThe margin of error is always calculated as \\((\\text{critical value})(\\text{standard error})\\)\nWe use \\(t^\\ast\\) critical values for \\(t\\)-intervals (which is why they are called \\(t\\)-intervals).\nThe standard error is calculated as \\(\\frac{s_x}{\\sqrt{n}}\\)",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Inference for Means</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-means.html#the-students-t-distribution",
+    "href": "inference-for-means.html#the-students-t-distribution",
+    "title": "14  Inference for Means",
+    "section": "14.3 The Student’s \\(t\\) distribution",
+    "text": "14.3 The Student’s \\(t\\) distribution\n\n\n\n\n\n\nThe Student’s \\(t\\) distribution\n\n\n\nDraw an SRS of size \\(n\\) from a large population that has a Normal distribution with mean \\(\\mu\\) and standard deviation \\(\\sigma\\). The statistic \\[t=\\frac{\\bar x - \\mu}{s_x / \\sqrt{n}}\\] has a \\(t\\)-distribution with degrees of freedom \\(df =  n – 1\\), denoted as \\(t_{n-1}\\). When the population distribution isn’t Normal, this statistic will be approximately \\(t_{n-1}\\) if the sample size is large enough.\nAs the \\(df\\) increases, the \\(t\\)-distribution approaches \\(N(0,1)\\) (standard normal) (See Figure @ref(fig:t-dist-to-norm)). This happens because \\(s_x\\) estimates \\(\\sigma\\) more accurately as \\(n\\) increases. So using \\(s_x\\) in place of \\(\\sigma\\) causes little extra variation when the sample is large enough.\n\n\n\n14.3.1 Why a \\(t\\)-distribution?\nWhen we’re conducting inference for a population proportion, there’s only one parameter (\\(p\\)) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use \\(z\\)-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean \\(\\mu\\) and the population standard deviation \\(\\sigma\\). Since we now have, we get a different sampling distribution that is not quite normal, especially at small \\(n\\).\nAs a result, we use what’s called the Student’s \\(t\\) distribution (a Guinness Beer brewer developed this), which is a slightly more conservative version of a normal distribution. The \\(t\\) distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic \\(t\\) has the same interpretation as any standardized \\(z\\) statistic: it says many standard deviations \\(\\sigma\\) that \\(x\\) is from the distribution’s mean \\(\\mu\\).\n\nfunction tDemo(df) {\n    var x = d3.range(-4, 4.005, 0.01);\n    var result = [];\n    x.forEach((val, i) =&gt; {\n        result.push({\"x\": val, \"y\": jStat.normal.pdf(val, 0, 1), \"lab\": \"Standard Normal\"});\n        result.push({\"x\": val, \"y\": jStat.studentt.pdf(val, df), \"lab\": \"t distribution\"});\n    })\n    return result;\n}\n\nPlot.plot({\n  marks: [\n    Plot.line(tDemo(df2),\n      {\n        x: \"x\", \n        y: \"y\",\n        stroke: \"lab\",\n        strokeWidth: 3\n      }\n    ),\n    Plot.ruleY([0]),\n    Plot.ruleX([-4])\n  ],\n    x: { label: \"t statistic\" },\n    y: {domain: [0, .41],\n    label: \"Density\"},\n    color: {\n        legend: true\n    },\n    caption: \"Student's t Distribution\"\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof df2 = Inputs.range(\n[1, 100],\n{value: 3, step: 1, label: \"Degrees of Freedom (df):\"}\n)",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Inference for Means</span>"
+    ]
+  },
+  {
     "objectID": "formula-sheet.html",
     "href": "formula-sheet.html",
     "title": "Appendix A — AP Exam Formula Sheet",

@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 7&nbsp; Experimental Design</title>
+<title>AP Statistics Notes - 14&nbsp; Inference for Means</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./probability.html" rel="next">
-<link href="./sampling.html" rel="prev">
+<link href="./formula-sheet.html" rel="next">
+<link href="./inference-for-proportions.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,6 +109,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="./scripts/jstat.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -119,7 +157,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html">Designing Studies</a></li><li class="breadcrumb-item"><a href="./experimental-design.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./confidence-intervals.html">Inference</a></li><li class="breadcrumb-item"><a href="./inference-for-means.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -202,7 +240,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./experimental-design.html" class="sidebar-item-text sidebar-link active">
+  <a href="./experimental-design.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></a>
   </div>
 </li>
@@ -266,7 +304,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference-for-means.html" class="sidebar-item-text sidebar-link">
+  <a href="./inference-for-means.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></span></a>
   </div>
 </li>
@@ -317,30 +355,24 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#experiment-principles" id="toc-experiment-principles" class="nav-link active" data-scroll-target="#experiment-principles"><span class="header-section-number">7.1</span> Experiment Principles</a>
+  <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link active" data-scroll-target="#conditions-for-inference"><span class="header-section-number">14.1</span> Conditions for Inference</a></li>
+  <li><a href="#one-sample-t-procedures" id="toc-one-sample-t-procedures" class="nav-link" data-scroll-target="#one-sample-t-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</a>
   <ul class="collapse">
-  <li><a href="#placebos" id="toc-placebos" class="nav-link" data-scroll-target="#placebos"><span class="header-section-number">7.1.1</span> Placebos</a></li>
+  <li><a href="#one-sample-t-interval" id="toc-one-sample-t-interval" class="nav-link" data-scroll-target="#one-sample-t-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</a></li>
   </ul></li>
-  <li><a href="#experiment-designs" id="toc-experiment-designs" class="nav-link" data-scroll-target="#experiment-designs"><span class="header-section-number">7.2</span> Experiment Designs</a>
+  <li><a href="#the-students-t-distribution" id="toc-the-students-t-distribution" class="nav-link" data-scroll-target="#the-students-t-distribution"><span class="header-section-number">14.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</a>
   <ul class="collapse">
-  <li><a href="#completely-randomized-design" id="toc-completely-randomized-design" class="nav-link" data-scroll-target="#completely-randomized-design"><span class="header-section-number">7.2.1</span> Completely Randomized Design</a></li>
-  <li><a href="#randomized-block-design" id="toc-randomized-block-design" class="nav-link" data-scroll-target="#randomized-block-design"><span class="header-section-number">7.2.2</span> Randomized Block Design</a></li>
-  <li><a href="#matched-pairs-design" id="toc-matched-pairs-design" class="nav-link" data-scroll-target="#matched-pairs-design"><span class="header-section-number">7.2.3</span> Matched Pairs Design</a></li>
+  <li><a href="#t-justification" id="toc-t-justification" class="nav-link" data-scroll-target="#t-justification"><span class="header-section-number">14.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</a></li>
   </ul></li>
-  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference"><span class="header-section-number">7.3</span> Inference</a>
-  <ul class="collapse">
-  <li><a href="#scope-of-inference" id="toc-scope-of-inference" class="nav-link" data-scroll-target="#scope-of-inference"><span class="header-section-number">7.3.1</span> Scope of Inference</a></li>
-  </ul></li>
-  <li><a href="#free-response-tip" id="toc-free-response-tip" class="nav-link" data-scroll-target="#free-response-tip"><span class="header-section-number">7.4</span> Free Response Tip</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling.html">Designing Studies</a></li><li class="breadcrumb-item"><a href="./experimental-design.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./confidence-intervals.html">Inference</a></li><li class="breadcrumb-item"><a href="./inference-for-means.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="experimental-design" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Experimental Design</span></span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Inference for Means</span></h1>
 </div>
 
 
@@ -357,268 +389,291 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Experiments">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Experiments
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>An <strong>experiment</strong> deliberately imposes some <strong>treatment</strong> (the specific condition applied) on individuals (experimental units or subjects if the <strong>experimental units</strong> are human) to measure their responses.</p>
-</div>
-</div>
-<p>If an experiment is conducted improperly, or an <a href="sampling.html">observational study</a> is held instead, it would mean that many variables are not <strong>controlled</strong> for so we cannot establish causation between the <strong>explanatory</strong> and <strong>response</strong> variables.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Explanatory and Response Variables">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Explanatory and Response Variables
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Response variables measure an outcome of a study.</p>
-<p>Explanatory variables may help explain or predict changes in a response variable.</p>
-</div>
-</div>
-<p>Because of the lack of control, we cannot be certain that variables other than the explanatory variable confound the response instead. There may be <em>confounding</em> occurring that makes us think that something is happening at first glance.</p>
-<p><a href="https://www.tylervigen.com/spurious-correlations">This website highlights many different quirky correlations that we can see between non-related variables https://www.tylervigen.com/spurious-correlations.</a> As you should notice, there is obviously factors that are influencing the data to look like as one increases, the other increases.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Confounding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Confounding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Confounding</strong> occurs when the effects of two variables on a response variable cannot be separated from each other.</p>
-<p><strong>Confounding variables</strong> are variables other than the explanatory variable that may have an effect on the response variable.</p>
-</div>
-</div>
-<p>When our goal is to understand cause and effect, an <strong>experiment</strong> is the only source of fully convincing data since results in observational studies typically have some confounding variable in play. For this reason, the distinction between observational study and experiment is one of the most important in statistics.</p>
-<section id="experiment-principles" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="experiment-principles"><span class="header-section-number">7.1</span> Experiment Principles</h2>
-<p>In general, the quality of experiments (their internal validity) can be judged based on the degree to which they have four things: comparison, randomization, control, and replication. <strong>Stronger internal validity gives us a better cause-effect link in our experiment.</strong> Whenever you are describing or evaluating the design of an experiment, you need to be sure to discuss all four of these!</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Principles of Experimental Design">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Principles of Experimental Design
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These four determine how much <strong>internal validity</strong> we have in our experiment.</p>
-<dl>
-<dt>Comparison</dt>
-<dd>
-Use a design that compares two or more treatments.
-</dd>
-<dt>Randomization</dt>
-<dd>
-Use chance to assign experimental units to treatments. Doing so helps create roughly equivalent groups of experimental units by balancing the effects of other variables among treatment groups.
-</dd>
-<dt>Control</dt>
-<dd>
-Keep other variables that might affect the response the same for all groups.
-</dd>
-<dt>Replication</dt>
-<dd>
-Use enough experimental units in each group so that difference in the effects of the treatments can be distinguished from chance differences between the groups.
-</dd>
-</dl>
-</div>
-</div>
-<p>The logic of a randomized comparative experiment depends on our ability to treat all the subjects the same in every way except for the actual treatments being compared. Good experiments, therefore, require careful attention to details to ensure that all subjects really are treated identically.</p>
-<section id="placebos" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="placebos"><span class="header-section-number">7.1.1</span> Placebos</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Placebo Effect">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Placebo Effect
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The response to a dummy treatment is called the <strong>placebo effect</strong>. Subjects are given a placebo treatment to control for the placebo effect.</p>
-<blockquote class="blockquote">
-<p>For example, If I tell someone that I am giving them an energy drink (when it in fact has doesn’t actually provide “energy”), and they feel like they have energy after, they have fallen for the placebo effect.</p>
-</blockquote>
-</div>
-</div>
-<p>It’s well known that someone’s mental state can easily affect their physical state, so it’s important to control for the placebo effect. Typically, this applies to medicine settings, where you might give a pill with the actual medicine and a placebo (a pill with everything but the actual medicine) and conduct it in a <strong>blind</strong>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Blinding">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Blinding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Conducting an experiment in a <strong>blind</strong> means that you give treatments to patients without allowing them to know which treatment they are taking.</p>
-<p>However, Whenever possible, experiments with human subjects take it a bit further and conduct their experiment in a <strong>double-blind</strong>, where neither the subjects nor those who interact with them and measure the response variable know which treatment a subject received.</p>
-</div>
-</div>
+<section id="conditions-for-inference" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="conditions-for-inference"><span class="header-section-number">14.1</span> Conditions for Inference</h2>
+<section id="random" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="random">1. Random</h3>
+<p>The data must come from a random sample, or random assignment in an experiment.</p>
+</section>
+<section id="large" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="large">2. Large</h3>
+<p>You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.</p>
+<p>In the case of sample means, the sampling distribution is approximately normal if at least one of the following conditions are met.</p>
+<ul>
+<li><p><a href="sampling-distributions.html#large-cond"><em>Normal/Large Condition</em></a></p></li>
+<li><p>When <span class="math inline">\(n&lt;30\)</span>, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,</p></li>
+</ul>
+</section>
+<section id="sampling-independence" class="level3 unlisted unnumbered">
+<h3 class="unlisted unnumbered anchored" data-anchor-id="sampling-independence">3. Sampling Independence</h3>
+<p>Observations in our sample must be independent of each other.</p>
+<p>In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it. However, this effect is small enough to ignore as long as the population from which we’re sampling is <a href="random-variables.html#ten-per-cond">at least 10 times as large as our sample</a>. This needs to be stated!</p>
 </section>
 </section>
-<section id="experiment-designs" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="experiment-designs"><span class="header-section-number">7.2</span> Experiment Designs</h2>
-<section id="completely-randomized-design" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="completely-randomized-design"><span class="header-section-number">7.2.1</span> Completely Randomized Design</h3>
-<p>In a completely randomized design, the experimental units are assigned to the treatments completely by chance. This is similar to (but NOT the same as) a simple random sample (SRS), because in both cases we ignore other variables. Here’s the difference: In an SRS, we’re picking some people (our sample) to study, and ignoring the rest. In a completely randomized experiment, however, we already have our sample (the people in our experiment), and we’re randomly deciding how we’re going to study each person (or, which treatment they’re going to get). So in complete randomization, the randomization is in the <strong>assignment</strong>, <em>not in the selection</em>, of people in our study.</p>
-</section>
-<section id="randomized-block-design" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="randomized-block-design"><span class="header-section-number">7.2.2</span> Randomized Block Design</h3>
-<p>In a randomized block design, the experimental units are first assigned to blocks according to the different types/status of the experimental units in the experiment. This is similar to <a href="#stratified-random-sample">stratified random sampling</a>, however, we are <strong>not</strong> taking a sample. Any reference to stratified random sampling is wrong when describing an experiment design.</p>
-<p>After each experimental unit is assigned to their block, the experiment is carried out in each block, where a completely randomized design is carried out within the block.</p>
-<p>Afterwards, you compare and analyze results from each block and finally combine all results and analyze the differences between blocks.</p>
-</section>
-<section id="matched-pairs-design" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="matched-pairs-design"><span class="header-section-number">7.2.3</span> Matched Pairs Design</h3>
-<p>A matched pairs design is a special case of a <a href="#randomized-block-design">randomized block design</a> that uses blocks of size 2. In this kind of design, you have to have “matched pairs.” In other words, you need to have two extremely similar individuals that make up each block. In some cases, you have a single person for each block and that person recieves both treatments in randomized order (because who is more similar to a person than themselves?).</p>
-</section>
-</section>
-<section id="inference" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="inference"><span class="header-section-number">7.3</span> Inference</h2>
-<p>The main purpose of experiments is to be able to infer something about what we did. Does A actually affect B? Is it true for anyone else other than the people we experimented on?</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Statistical Significance">
+<section id="one-sample-t-procedures" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="one-sample-t-procedures"><span class="header-section-number">14.2</span> One-Sample <span class="math inline">\(t\)</span>-procedures</h2>
+<section id="one-sample-t-interval" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="one-sample-t-interval"><span class="header-section-number">14.2.1</span> One-Sample <span class="math inline">\(t\)</span>-interval</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="One-Sample $t$-interval">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Statistical Significance
+One-Sample <span class="math inline">\(t\)</span>-interval
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An observed effect so large that it would rarely occur by chance is said to be <strong>statistically significant</strong>. If we test something according to a single assumption that we make and find out that the data that we collect doesn’t really match up with that claim (if the chance of seeing data like the one we obtained is too low), then we’d say that it is statistically significant evidence.</p>
+<p>A <span class="math inline">\(C\)</span>% confidence interval for the unknown population mean <span class="math inline">\(\mu\)</span> when all conditions are met is calculated with the following:</p>
+<p><span class="math display">\[\bar x \pm t^\ast \frac{s_x}{\sqrt{n}}\]</span></p>
+<p>where <span class="math inline">\(t^\ast\)</span> is the critical value for the Student’s <span class="math inline">\(t\)</span> distribution corresponding with degrees of freedom <span class="math inline">\(df = n - 1\)</span> with <span class="math inline">\(C\)</span>% of its area between <span class="math inline">\(-t^\ast\)</span> and <span class="math inline">\(t^\ast\)</span>.</p>
+<p><a href="./t-critical-values.html">See Appendix D for examples on how to calculate <span class="math inline">\(t^\ast\)</span> for a given confidence level <span class="math inline">\(C\)</span>% and degrees of freedom <span class="math inline">\(df\)</span></a></p>
+<details>
+<summary>
+Why?
+</summary>
+<p>All confidence intervals are calculated by: <span class="math inline">\(\text{point estimate } \pm \text{ margin of error}\)</span></p>
+<p>The point estimate for the true population mean is <span class="math inline">\(\bar x\)</span></p>
+<p>The margin of error is always calculated as <span class="math inline">\((\text{critical value})(\text{standard error})\)</span></p>
+<p>We use <span class="math inline">\(t^\ast\)</span> critical values for <span class="math inline">\(t\)</span>-intervals (which is why they are called <span class="math inline">\(t\)</span>-intervals).</p>
+<p>The standard error is calculated as <span class="math inline">\(\frac{s_x}{\sqrt{n}}\)</span></p>
+</details>
 </div>
 </div>
-<section id="scope-of-inference" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="scope-of-inference"><span class="header-section-number">7.3.1</span> Scope of Inference</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Scope of Inference">
+<!---
+
+### One-Sample $t$-test {#one-sample-t-test}
+
+::: {.callout-note title="One-Sample $t$-test"}
+
+Given the null hypothesis $H_0: \mu=\mu_0$, and an observed sample mean $\bar x$ and sample standard deviation $s_x$ from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the following:
+
+$$\mu_{\bar x} = \mu_0$$
+$$\sigma_{\bar x} = \frac{\sigma_x}{\sqrt n} \approx \frac{s_x}{\sqrt n}$$
+
+Where we use $s_x$ in place of $\sigma_x$ because the population standard deviation is usually unknown and we can use the sample standard deviation because it is an unbiased estimator of the population standard deviation.
+
+The **t-statistic** is the standardized score of $\bar x$ under the mean and standard deviation of the null distribution:
+
+$$t=\frac{\bar x - \mu_0}{\frac{s_x}{\sqrt n}}$$
+
+The p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, $H_a$. $t_{n-1}$ represents the $t$ distribution with $df = n-1$ degrees of freedom.
+
+$$
+\text{p-value}= \begin{cases}
+P(t_{n-1}<t) & \text{ if } H_a:\mu<\mu_0 \\
+P(t_{n-1}>t) & \text{ if } H_a:\mu>\mu_0 \\
+2\cdot P(t_{n-1}<-|t|) & \text{ if } H_a: \mu\not =\mu_0
+\end{cases}
+$$
+:::
+
+#### Paired $t$-test
+
+A paired $t$-test is used when the data being compared are related or matched in some way, whereas a 2-sample $t$-test is used when the data being compared are independent. Here are some scenarios where a paired $t$-test would be more appropriate than a 2-sample $t$-test:
+
+Matched pair design:
+
+- Before-and-after studies: When the same group of individuals is measured twice, such as before and after receiving a treatment or intervention, a paired $t$-test is used to determine whether there is a significant difference in the measurements.
+
+- Matched case-control studies: When cases and controls are matched based on certain criteria (such as age, sex, or race), a paired $t$-test can be used to compare the measurements of the two groups.
+
+Repeated measures: When a group of individuals is measured at multiple time points, a paired $t$-test can be used to compare the measurements within each individual.
+
+In these scenarios, a paired $t$-test can be more powerful than a 2-sample $t$-test because it takes into account the relationship or correlation between the data being compared. By contrast, a 2-sample $t$-test assumes that the data being compared are independent, which may not be the case in these situations.
+
+::: {.callout-note title="Paired $t$-test"}
+Given the null hypothesis $H_0: \mu_d=\mu_0$ (where $\mu_d$ represents the true mean difference) and an observed sample mean $\bar x$ (of the differences) and sample standard deviation $s_x$ (of the differences) from a sample of size $n$ when all conditions are met. The null sampling distribution of $\bar x$, calculated assuming $H_0$ is true, has the same null distribution and $t$-statistic as a [one-sample t-test](#one-sample-t-test).
+:::
+
+##### Conditions
+
+::: {.callout-note title="Conditions for a paired $t$-procedure"}
+**1. Random**
+
+The data must come from a random sample, or **random assignment in an experiment**. The latter of which will likely apply to a paired test.
+
+**2. Large**
+
+You must check the following to know if the sample is large enough for us to know if we have an approximately normal distribution.
+
+In the case of paired data, you'll be only **checking the sampling distribution of the differences**. The sampling distribution is approximately normal if at least one of the following conditions are met.
+
+- [*Normal/Large Condition*](#large-cond)
+
+- When $n<30$, check if the graph of the sample data does not show any strong skew or outliers. Otherwise,
+
+**3. Sampling Independence**
+
+Observations in our sample must be independent of each other.
+
+In random samples from a population, observations are never independent because the population changes with every person we sample and remove from it.  However, this effect is small enough to ignore as long as the population from which we’re sampling is [at least 10 times as large as our sample](#ten-per-cond).  This needs to be stated!
+
+However, **since we'll be likely working with experiments, independence will not apply,** so you will not have to state it. You can say something like *"since we have an experiment, we do not have to check independence"*.
+:::
+
+## Two-Sample $t$-procedures
+
+Two-Sample $t$-procedures are justified by knowledge about the [sampling distribution of $\bar x_1 - \bar x_2$](#mean-diff-samp-dist).
+
+The conditions for two-sample $t$-procedures are the same for the two that we learn:
+
+::: {.callout-note title="Conditions for Two-Sample $t$-procedures"}
+- Random: The data come from two independent random samples or from two groups in a randomized experiment.
+
+- Normal/Large Sample: Both population distributions (or the true distributions of responses to the two treatments) are Normal or both sample sizes are large ($n_1 \geq 30$ and $n_2 \geq 30$). If either population (treatment) distribution has unknown shape and the corresponding sample size is less than 30, use a graph of the sample data to assess the Normality of the population (treatment) distribution. Do not use two-sample t procedures if the graph shows strong skewness or outliers.
+
+- 10%: When sampling without replacement, check that $n_1 \leq (.10)N_1$ and $n_2 \leq (.10)N_2$.
+:::
+
+### Calculating degrees of freedom
+
+There are two options for calculating degrees of freedom:
+
+::: {.callout-note title="$df$ for Two-Sample $t$-procedures"}
+
+Option 1 (Technology): Use the $t$ distribution with degrees of freedom calculated from the data by the formula below. Note that the $df$ given by this formula is not usually a whole number.
+$$df = \frac{\left( \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}\right)^2}{\frac{1}{n_1-1}\left( \frac{s_1^2}{n_1}\right)^2 + \frac{1}{n_2-1}\left( \frac{s_2^2}{n_2}\right)^2}$$
+
+Option 2 (Conservative): Use the $t$ distribution with degrees of freedom equal to the *smaller* of $n_1 – 1$ and $n_2 – 1$. With this option, the resulting confidence interval has a margin of error *as large or larger* than is needed for the desired confidence level. The significance test using this option gives a P-value *equal to or greater* than the true P-value. As the sample sizes increase, the confidence levels and P-values from Option 2 become more accurate.
+
+:::
+
+### Two-Sample t-interval
+
+::: {.callout-note title="Two-Sample $t$-interval"}
+When the conditions are met, an approximate $C$% confidence interval for $\mu_1 - \mu_2$ is:
+
+$$(\bar x_1 - \bar x_2)\pm t^\ast\sqrt{\frac{s_{x_1}}{n_1}+\frac{s_{x_2}}{n_2}}$$
+
+Where $t^\ast$ is the critical value for the $t$ distribution with degrees of freedom calculated with Option 1 or 2 with $C$% of its area between $-t^\ast$ and $t^\ast$
+:::
+
+### Two-Sample t-test
+
+::: {.callout-note title="Two-Sample $t$-test"}
+The null hypothesis has the general form
+$$ H_0:\mu_1-\mu_2=\mu_0 $$
+where $\mu_0$ is our hypothesized difference. We’ll restrict ourselves to situations in which $\mu = 0$. Then the null hypothesis says that there is no difference between the two parameters:
+$$H_0:\mu_1-\mu_2=0~~\text{or}~~H_0:\mu_1=\mu_2$$
+The alternative hypothesis says what kind of difference we expect:
+$$H_a:\mu_1-\mu_2>0~~\text{or}~~Ha:\mu_1-\mu_2<0~~\text{or}~~Ha:\mu_1-\mu_2\not =0  $$
+:::
+
+::: {.callout-note title="$t$-statistic for Two-Sample $t$-tests"}
+Compute the $t$ statistic as:
+
+$$
+t = \frac{(\bar x_1 - \bar x_2) - (\mu_1-\mu_2)_0}{\sqrt{\frac{s_{x_1}}{n_1} + \frac{s_{x_2}}{n_2}}}
+$$
+:::
+
+<details>
+<summary> The standard error of the $t$ statistic, unlike the a [two-sample z-test](#two-sample-z-test), is not pooled.</summary>
+
+::: {.highlight}
+The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we're saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there's no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests.
+:::
+</details>
+
+--->
+</section>
+</section>
+<section id="the-students-t-distribution" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="the-students-t-distribution"><span class="header-section-number">14.3</span> The Student’s <span class="math inline">\(t\)</span> distribution</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="The Student's $t$ distribution">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Scope of Inference
+The Student’s <span class="math inline">\(t\)</span> distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <strong>scope of inference</strong> refers to the type of inferences (conclusions) that can be drawn from a study. The types of inferences we can make (inferences about the population and inferences about cause-and-effect) are determined by two factors in the design of the study.</p>
+<p>Draw an SRS of size <span class="math inline">\(n\)</span> from a large population that has a Normal distribution with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. The statistic <span class="math display">\[t=\frac{\bar x - \mu}{s_x / \sqrt{n}}\]</span> has a <span class="math inline">\(t\)</span>-distribution with degrees of freedom <span class="math inline">\(df =  n – 1\)</span>, denoted as <span class="math inline">\(t_{n-1}\)</span>. When the population distribution isn’t Normal, this statistic will be approximately <span class="math inline">\(t_{n-1}\)</span> if the sample size is large enough.</p>
+<p>As the <span class="math inline">\(df\)</span> increases, the <span class="math inline">\(t\)</span>-distribution approaches <span class="math inline">\(N(0,1)\)</span> (standard normal) (See Figure @ref(fig:t-dist-to-norm)). This happens because <span class="math inline">\(s_x\)</span> estimates <span class="math inline">\(\sigma\)</span> more accurately as <span class="math inline">\(n\)</span> increases. So using <span class="math inline">\(s_x\)</span> in place of <span class="math inline">\(\sigma\)</span> causes little extra variation when the sample is large enough.</p>
 </div>
 </div>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
-<tr>
-<th class="tg-0pky" colspan="2" rowspan="2">
-</th>
-<th class="tg-c3ow" colspan="2">
-<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly assigned to groups?</span>
-</th>
-</tr>
-<tr>
-<th class="tg-c3ow">
-<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span>
-</th>
-<th class="tg-c3ow">
-<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tg-c3ow" rowspan="2">
-<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Were individuals randomly </span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">selected from a population?</span>
-</td>
-<td class="tg-c3ow">
-<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Yes</span>
-</td>
-<td class="tg-0pky">
-<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> (</span><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent">Rare in the real world)</span>
-</td>
-<td class="tg-0pky">
-<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent"> (Some observational studies)</span>
-</td>
-</tr>
-<tr>
-<td class="tg-c3ow">
-<span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">No</span>
-</td>
-<td class="tg-0pky">
-<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot </span><span style="font-weight:normal">make</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> inferences about the population</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Can</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make Inferences about cause and effect: </span><br><span style="font-style:italic;color:#000;background-color:transparent">&nbsp;&nbsp;(Most experiments)</span>
-</td>
-<td class="tg-0pky">
-<span style="font-weight:bold;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Cannot</span><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent"> make inferences about the population</span><br><span style="font-weight:bold;color:#000;background-color:transparent">Cannot</span><span style="color:#000;background-color:transparent"> make Inferences about cause and effect</span><br><span style="font-weight:400;font-style:italic;text-decoration:none;color:#000;background-color:transparent"> (Some observational studies)</span>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="free-response-tip" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="free-response-tip"><span class="header-section-number">7.4</span> Free Response Tip</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
+<section id="t-justification" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="t-justification"><span class="header-section-number">14.3.1</span> Why a <span class="math inline">\(t\)</span>-distribution?</h3>
+<p>When we’re conducting inference for a population proportion, there’s only one parameter (<span class="math inline">\(p\)</span>) that we don’t know. The sampling distributions in these cases follow a Normal curve very well (as long as conditions are met), allowing us to use <span class="math inline">\(z\)</span>-procedures. However, when we’re conducting inference for a population mean, there is additional uncertainty created by the fact that there are two parameters we don’t know: the population mean <span class="math inline">\(\mu\)</span> and the population standard deviation <span class="math inline">\(\sigma\)</span>. Since we now have, we get a different sampling distribution that is not quite normal, especially at small <span class="math inline">\(n\)</span>.</p>
+<p>As a result, we use what’s called the Student’s <span class="math inline">\(t\)</span> distribution (a Guinness Beer brewer developed this), which is a slightly more <strong>conservative</strong> version of a normal distribution. The <span class="math inline">\(t\)</span> distribution is still symmetric with a single peak at 0, but with much more area in the tails. The statistic <span class="math inline">\(t\)</span> has the same interpretation as any standardized <span class="math inline">\(z\)</span> statistic: it says many standard deviations <span class="math inline">\(\sigma\)</span> that <span class="math inline">\(x\)</span> is from the distribution’s mean <span class="math inline">\(\mu\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="215" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 214;"><span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">tDemo</span>(df) {</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> x <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="fl">4.005</span><span class="op">,</span> <span class="fl">0.01</span>)<span class="op">;</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>    x<span class="op">.</span><span class="fu">forEach</span>((val<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">normal</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"Standard Normal"</span>})<span class="op">;</span></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        result<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span> val<span class="op">,</span> <span class="st">"y"</span><span class="op">:</span> jStat<span class="op">.</span><span class="at">studentt</span><span class="op">.</span><span class="fu">pdf</span>(val<span class="op">,</span> df)<span class="op">,</span> <span class="st">"lab"</span><span class="op">:</span> <span class="st">"t distribution"</span>})<span class="op">;</span></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(<span class="fu">tDemo</span>(df2)<span class="op">,</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> </span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"lab"</span><span class="op">,</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>        <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="op">-</span><span class="dv">4</span>])</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"t statistic"</span> }<span class="op">,</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="op">.</span><span class="dv">41</span>]<span class="op">,</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Density"</span>}<span class="op">,</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>        <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    <span class="dt">caption</span><span class="op">:</span> <span class="st">"Student's t Distribution"</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Free response questions will mainly challenge you to think about the 4 principles of experimental design. So make sure to have those to heart and mention as many as posible when asked how to improve an experiment or what is wrong with an experiment.</p>
-<p>Any other concept is still free game to ask you to elaborate on.</p>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="expression">
+
 </div>
 </div>
-<p>Something could be on a FRQ that’s concrete would be needing to describe how to randomly assign experimental units to treatments. Make sure that you incorporate the same elements as a sampling description would: assigning numbers, a specific mechanism for <em>randomly</em> selecting numbers, and assigning corresponding to the numbers.</p>
-<p>Here’s an example taken from the <a href="https://secure-media.collegeboard.org/secure/ap/pdf/statistics/ap-2007-statistics-free-response-questions.pdf#page=7">2007 Exam</a>:</p>
-<blockquote class="blockquote">
-<p>As dogs age, diminished joint and hip health may lead to joint pain and thus reduce a dog’s activity level. Such<br>
-a reduction in activity can lead to other health concerns such as weight gain and lethargy due to lack of exercise. A study is to be conducted to see which of two dietary supplements, glucosamine or chondroitin, is more effective in promoting joint and hip health and reducing the onset of canine osteoarthritis. Researchers will randomly select a total of 300 dogs from ten different large veterinary practices around the country. All of the dogs are more than 6 years old, and their owners have given consent to participate in the study. Changes in joint and hip health will be evaluated after 6 months of treatment.</p>
-<p>Assuming a control group is added to the other two groups in the study, explain how you would assign the 300 dogs to these three groups for a completely randomized design.</p>
-</blockquote>
-<ol type="1">
-<li>Assign each of the dogs a number 1-300.</li>
-<li>Use a random number generator to get 200 unique random numbers 1-300.</li>
-<li>Use the first 100 numbers generated to assign the corresponding dogs to the control group.</li>
-<li>Use the last 100 numbers generated to assign the corresponding dogs to a group that recieves glucosamine.</li>
-<li>Assign the remaining dogs to a group that recieves chrondroitin.</li>
-</ol>
-<p>Another approach could be the “slips in the hat approach.” Be aware that regardless of approach, that you mention <strong>randomly</strong> assigned and that the method is descriptive enough to ensure that someone can reproduce it. Also make sure that you ensure that every individual has an equal chance of being assigned to some group.</p>
-<ol type="1">
-<li>Assign each of the dogs a number 1-300 and write their numbers on slips of paper and place them in a box</li>
-<li>Mixing well, <strong>randomly</strong> take 100 slips out of the box and assign the corresponding dogs to the control group.</li>
-<li>Repeat step two and assign the corresponding dogs to the glucosamine group.</li>
-<li>Assign the remaining dogs to a group that recieves chrondroitin.</li>
-</ol>
+</div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="247" data-source-offset="-688"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 246;"><span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>viewof df2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span></span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a>{<span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Degrees of Freedom (df):"</span>}</span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZ1bmN0aW9uIHREZW1vKGRmKSB7XG4gICAgdmFyIHggPSBkMy5yYW5nZSgtNCwgNC4wMDUsIDAuMDEpO1xuICAgIHZhciByZXN1bHQgPSBbXTtcbiAgICB4LmZvckVhY2goKHZhbCwgaSkgPT4ge1xuICAgICAgICByZXN1bHQucHVzaCh7XCJ4XCI6IHZhbCwgXCJ5XCI6IGpTdGF0Lm5vcm1hbC5wZGYodmFsLCAwLCAxKSwgXCJsYWJcIjogXCJTdGFuZGFyZCBOb3JtYWxcIn0pO1xuICAgICAgICByZXN1bHQucHVzaCh7XCJ4XCI6IHZhbCwgXCJ5XCI6IGpTdGF0LnN0dWRlbnR0LnBkZih2YWwsIGRmKSwgXCJsYWJcIjogXCJ0IGRpc3RyaWJ1dGlvblwifSk7XG4gICAgfSlcbiAgICByZXR1cm4gcmVzdWx0O1xufVxuXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QubGluZSh0RGVtbyhkZjIpLFxuICAgICAge1xuICAgICAgICB4OiBcInhcIiwgXG4gICAgICAgIHk6IFwieVwiLFxuICAgICAgICBzdHJva2U6IFwibGFiXCIsXG4gICAgICAgIHN0cm9rZVdpZHRoOiAzXG4gICAgICB9XG4gICAgKSxcbiAgICBQbG90LnJ1bGVZKFswXSksXG4gICAgUGxvdC5ydWxlWChbLTRdKVxuICBdLFxuICAgIHg6IHsgbGFiZWw6IFwidCBzdGF0aXN0aWNcIiB9LFxuICAgIHk6IHtkb21haW46IFswLCAuNDFdLFxuICAgIGxhYmVsOiBcIkRlbnNpdHlcIn0sXG4gICAgY29sb3I6IHtcbiAgICAgICAgbGVnZW5kOiB0cnVlXG4gICAgfSxcbiAgICBjYXB0aW9uOiBcIlN0dWRlbnQncyB0IERpc3RyaWJ1dGlvblwiXG59KVxuXG52aWV3b2YgZGYyID0gSW5wdXRzLnJhbmdlKFxuWzEsIDEwMF0sXG57dmFsdWU6IDMsIHN0ZXA6IDEsIGxhYmVsOiBcIkRlZ3JlZXMgb2YgRnJlZWRvbSAoZGYpOlwifVxuKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdkZjInKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1030,13 +1085,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./sampling.html" class="pagination-link" aria-label="Sampling">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Sampling</span></span>
+      <a href="./inference-for-proportions.html" class="pagination-link" aria-label="Inference for Proportions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for Proportions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./probability.html" class="pagination-link" aria-label="Probability">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Probability</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./formula-sheet.html" class="pagination-link" aria-label="AP Exam Formula Sheet">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AP Exam Formula Sheet</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
