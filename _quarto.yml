@@ -33,7 +33,7 @@ book:
     - part: "Inference"
       chapters:
       - confidence-intervals.qmd
-    #   - hypothesis-testing.qmd
+      - hypothesis-testing.qmd
       - inference-for-proportions.qmd
       - inference-for-means.qmd
     #   - inference-for-categories.qmd
@@ -45,7 +45,7 @@ book:
     - four-step-process.qmd
     - z-critical-values.qmd
     - t-critical-values.qmd
-    # - statistic-to-pvalue.qmd
+    - statistic-to-pvalue.qmd
     # - calc-guide.qmd
     # - test-page.qmd
     # - linear-regression-project.qmd

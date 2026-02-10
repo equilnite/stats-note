@@ -57,7 +57,6 @@ The standard error is calculated as $\frac{s_x}{\sqrt{n}}$
 
 :::
 
-<!---
 
 ### One-Sample $t$-test {#one-sample-t-test}
 
@@ -129,6 +128,7 @@ In random samples from a population, observations are never independent because 
 However, **since we'll be likely working with experiments, independence will not apply,** so you will not have to state it. You can say something like *"since we have an experiment, we do not have to check independence"*.
 :::
 
+<!---
 ## Two-Sample $t$-procedures
 
 Two-Sample $t$-procedures are justified by knowledge about the [sampling distribution of $\bar x_1 - \bar x_2$](#mean-diff-samp-dist).

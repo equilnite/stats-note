@@ -49,8 +49,6 @@ The standard error is calculated as $\sqrt{\frac{\hat p (1 - \hat p)}{n}}$
 </details>
 :::
 
-<!--
-
 ### One-Sample $z$-test
 
 ::: {.callout-note title="One-Sample $z$-test"}
@@ -82,6 +80,8 @@ When checking to see if the sample is large enough, make sure to adjust the larg
 $n p_0$ and $n(1- p_0)$ are both greater than or equal to 10.
 
 :::
+
+<!--
 
 ## Two-Sample $z$-procedures
 
