@@ -8,7 +8,7 @@
 
 <meta name="description" content="These are notes for AP Statistics.">
 
-<title>AP Statistics Notes - 10&nbsp; Random Variables</title>
+<title>AP Statistics Notes - Appendix E — From Value to Probability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sampling-distributions.html" rel="next">
-<link href="./density-curves.html" rel="prev">
+<link href="./t-critical-values.html" rel="prev">
 <link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,6 +74,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="./scripts/jstat.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -119,7 +120,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./random-variables.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./statistic-to-pvalue.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">From Value to Probability</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -231,7 +232,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./random-variables.html" class="sidebar-item-text sidebar-link active">
+  <a href="./random-variables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
   </div>
 </li>
@@ -313,7 +314,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./statistic-to-pvalue.html" class="sidebar-item-text sidebar-link">
+  <a href="./statistic-to-pvalue.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">From Value to Probability</span></span></a>
   </div>
 </li>
@@ -329,20 +330,15 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link active" data-scroll-target="#discrete-random-variables"><span class="header-section-number">10.1</span> Discrete Random Variables</a>
+  <li><a href="#z-statisticsscore" id="toc-z-statisticsscore" class="nav-link active" data-scroll-target="#z-statisticsscore"><span class="header-section-number">E.1</span> z statistics/score</a>
   <ul class="collapse">
-  <li><a href="#binomial-random-variables" id="toc-binomial-random-variables" class="nav-link" data-scroll-target="#binomial-random-variables"><span class="header-section-number">10.1.1</span> Binomial Random Variables</a></li>
-  <li><a href="#geometric-random-variables" id="toc-geometric-random-variables" class="nav-link" data-scroll-target="#geometric-random-variables"><span class="header-section-number">10.1.2</span> Geometric Random Variables</a></li>
+  <li><a href="#pz-z" id="toc-pz-z" class="nav-link" data-scroll-target="#pz-z"><span class="header-section-number">E.1.1</span> <span class="math inline">\(P(Z &lt; z)\)</span></a></li>
+  <li><a href="#pz-z-1" id="toc-pz-z-1" class="nav-link" data-scroll-target="#pz-z-1"><span class="header-section-number">E.1.2</span> <span class="math inline">\(P(Z &gt; z)\)</span></a></li>
+  <li><a href="#pz_1-z-z_2" id="toc-pz_1-z-z_2" class="nav-link" data-scroll-target="#pz_1-z-z_2"><span class="header-section-number">E.1.3</span> <span class="math inline">\(P(z_1 &lt; Z &lt; z_2)\)</span></a></li>
   </ul></li>
-  <li><a href="#operations-with-random-variables" id="toc-operations-with-random-variables" class="nav-link" data-scroll-target="#operations-with-random-variables"><span class="header-section-number">10.2</span> Operations with Random Variables</a>
+  <li><a href="#t-statisticsscore" id="toc-t-statisticsscore" class="nav-link" data-scroll-target="#t-statisticsscore"><span class="header-section-number">E.2</span> t statistics/score</a>
   <ul class="collapse">
-  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link" data-scroll-target="#linear-transformations"><span class="header-section-number">10.2.1</span> Linear Transformations</a></li>
-  <li><a href="#sum-and-difference-between-random-variables" id="toc-sum-and-difference-between-random-variables" class="nav-link" data-scroll-target="#sum-and-difference-between-random-variables"><span class="header-section-number">10.2.2</span> Sum and Difference between Random Variables</a></li>
-  </ul></li>
-  <li><a href="#interpretations" id="toc-interpretations" class="nav-link" data-scroll-target="#interpretations"><span class="header-section-number">10.3</span> Interpretations</a>
-  <ul class="collapse">
-  <li><a href="#probabilities-and-means" id="toc-probabilities-and-means" class="nav-link" data-scroll-target="#probabilities-and-means"><span class="header-section-number">10.3.1</span> Probabilities and Means</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">10.3.2</span> Standard Deviation</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">E.2.1</span> Examples</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -350,9 +346,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html">Probability</a></li><li class="breadcrumb-item"><a href="./random-variables.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formula-sheet.html">Appendices</a></li><li class="breadcrumb-item"><a href="./statistic-to-pvalue.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">From Value to Probability</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Random Variables</span></h1>
+<h1 class="title">Appendix E — From Value to Probability</h1>
 </div>
 
 
@@ -369,437 +365,60 @@ window.Quarto = {
 </header>
 
 
-<p>A <strong>random variable</strong> is a variable whose value is a numerical outcome of a random phenomenon.</p>
-<p>The <strong>probability distribution</strong> of a random variable <span class="math inline">\(X\)</span> gives us all possible values of <span class="math inline">\(X\)</span>, and their corresponding probabilities. Probability distributions are typically given as tables, histograms (with probability on the y-axis, instead of frequency), or density curves (like the Normal curve).</p>
-<div class="callout callout-style-default callout-important callout-titled" title="pdfs and cdfs">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-pdfs and cdfs
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For any given named distribution (e.g., Binomial, Normal, Geometric, Uniform), we will always have a <strong>probability density function (pdf)</strong> and a <strong>cumulative density function (cdf)</strong></p>
-<p>We use pdfs to find the probability of a singular point. * e.g., if I want to find the probability of that a random variable <span class="math inline">\(X\)</span> is equal to <span class="math inline">\(x\)</span>, then I’d plug in the value of <span class="math inline">\(x\)</span> into the pdf of <span class="math inline">\(X\)</span>, <span class="math inline">\(P(X = x)\)</span>.</p>
-<p>We use cdfs to find the probability of a falling within a certain interval. * e.g., if I want to find the probability of that a random variable <span class="math inline">\(X\)</span> is less than <span class="math inline">\(x\)</span>, then I’d plug in the value of <span class="math inline">\(x\)</span> into the cdf of <span class="math inline">\(X\)</span>, <span class="math inline">\(P(X \leq x)\)</span>.</p>
-</div>
-</div>
-<section id="discrete-random-variables" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="discrete-random-variables"><span class="header-section-number">10.1</span> Discrete Random Variables</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Discrete Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Discrete Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <strong>discrete random variable</strong> describes a process that only has specific, predefined numerical outcomess. For example, we can use a discrete random variable to finding the probability of Michael Jordon scoring 50 points in a single game or the probability of rolling a 3 or lower on a six-sided die.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Discrete Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of Discrete Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When we have a discrete random variable <span class="math inline">\(X\)</span> whose probability distribution is</p>
-<p><span class="math display">\[
-\begin{aligned}
-    \textbf{Value:}&amp; ~~~~ x_1 ~~~~ x_2 ~~~~ x_3 ~~~~ \cdots \\
-    \textbf{Probability:}&amp; ~~~~ p_1 ~~~~ p_2 ~~~~ p_3 ~~~~\cdots
-\end{aligned}
-\]</span></p>
-<p>we know the following about the mean and standard deviation of <span class="math inline">\(X\)</span>:</p>
-<p><span class="math display">\[\mu_X = E(X) = \sum x_i P(x_i)\]</span></p>
-<p><span class="math display">\[\sigma_X = \sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)}\]</span></p>
-</div>
-</div>
-<details>
-<summary>
-Keep in mind that the standard deviation formula here (and else where) is equivalent to the formula of population standard deviation when we divide by <span class="math inline">\(n\)</span> instead of multiplying by <span class="math inline">\(P(x_i)\)</span>.
-</summary>
-<p>Just as a quick reminder, our formula for sample standard deviation is:</p>
-<p><span class="math display">\[s_X = \sqrt{\frac{\sum(x_i - \bar x)^2}{n - 1}}\]</span></p>
-<p>Our formula for population standard deviation (which we won’t use in this class is)</p>
-<p><span class="math display">\[\sigma_X = \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}}\]</span></p>
-<p>Taking this formula, we can notice that:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\sigma_X &amp;= \sqrt{\frac{\sum(x_i - \mu_X)^2}{n}} &amp;(1)\\
-&amp;=\sqrt{E((X - \mu_X)^2)} &amp;(2)\\
-&amp;=\sqrt{\sum \left( x_i - \mu_X \right) ^2 P \left( x_i \right)} &amp;(3)\\
-\end{aligned}
-\]</span></p>
-<p>In other words, remember that we define standard deviation as the root <strong>mean</strong> of the squared differences from the mean.</p>
-<p>We get to step (2) by recognizing that by adding up all the squared differences from the mean and dividing by <span class="math inline">\(n\)</span>, we are taking the mean of the squared differences. Therefore, <span class="math inline">\(\frac{\sum(x_i - \mu_X)^2}{n} = E((X - \mu_X)^2)\)</span></p>
-<p>And in the case of discrete random variables, we can find the mean of <span class="math inline">\(X\)</span> as <span class="math inline">\(\mu_X = E(X) = \sum x_iP(x_i)\)</span> which allows us to rewrite from step (2) to (3)</p>
-</details>
-<section id="binomial-random-variables" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="binomial-random-variables"><span class="header-section-number">10.1.1</span> Binomial Random Variables</h3>
-<p>Binomial random variables have parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, and can be written <span class="math inline">\(B(n, p)\)</span>. Remember, Normal random variables have parameters and and can be written <span class="math inline">\(N(\mu,\sigma)\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="pdf of a Binomial Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-pdf of a Binomial Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>pdf</strong> of a Binomial Random Variable (i.e.&nbsp;the binomial formula) is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X=k) &amp;= {n \choose k} p^k (1-p)^{n-k}\\
-    \text{where } k &amp;= 0, 1, 2, 3, \cdots, n
-\end{aligned}
-\]</span></p>
-<p>To apply this formula in a graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binompdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{binompdf(n, p[,x])}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="cdf of a Binomial Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-cdf of a Binomial Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>cdf</strong> of a Binomial Random Variable is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X\leq k) &amp;= \sum_{i = 0}^n {n \choose i} p^i (1-p)^{n-i}
-\end{aligned}
-\]</span></p>
-<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; binomcdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{binomcdf(n, p[,x])}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Binomial Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of Binomial Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The mean and standard deviation of a binomial random variable is given by:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    \mu_X &amp;= n p \\
-    \sigma_X &amp;= \sqrt{n p q} \\
-    &amp;\text{, where } q = 1-p.
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<section id="identifying-binomial-situations" class="level4">
-<h4 class="anchored" data-anchor-id="identifying-binomial-situations">Identifying Binomial Situations</h4>
-<div class="callout callout-style-default callout-note callout-titled" title="The Binomial Setting">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Binomial Setting
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can identify a binomial setting when we successfully recognize these four things about a random phenonmenon:</p>
-<ol type="1">
-<li><p><strong>B</strong>inary?<br>
-The possible outcomes of each trial can be classified as “success” or “failure”.</p></li>
-<li><p><strong>I</strong>ndependent?<br>
-Trials must be independent; that is, knowing the result of one trial must not tells us anything about the result of another trial.</p></li>
-<li><p><strong>N</strong>umber?<br>
-The number of trials n of the chance process must be fixed in advance.</p></li>
-<li><p><strong>S</strong>ame?<br>
-There is the same probability p of success on each trial.</p></li>
-</ol>
-</div>
-</div>
-<section id="ten-per-cond" class="level5">
-<h5 class="anchored" data-anchor-id="ten-per-cond">10% Condition</h5>
-<p>The second condition is often not perfectly met, as in the case of an SRS from some population. Imagine choosing 10 students from a class of 15 females and 15 males—as we choose people, the remaining population changes, which changes the probability that the next person chosen will be male or female.</p>
-<p>When we lack complete independence, we can see the consequence of this is negligible as long as our sample is small relative to the population from which we are sampling. If we were choosing our 10 people from a school of 3,300 students, the change in probability from person to person would be small enough to ignore.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="10% Condition">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-10% Condition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The general rule is that the sample needs to be less than <span class="math inline">\(\frac{1}{10}\)</span>, or 10%, of the population. We refer to this as the 10% condition. <span class="math display">\[
-n \leq (.10) N
-\]</span></p>
-</div>
-</div>
+<section id="z-statisticsscore" class="level2" data-number="E.1">
+<h2 data-number="E.1" class="anchored" data-anchor-id="z-statisticsscore"><span class="header-section-number">E.1</span> z statistics/score</h2>
+<p>If you are given a z-score of <span class="math inline">\(z\)</span> and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you want the area to the left of <span class="math inline">\(z\)</span> (i.e.&nbsp;<span class="math inline">\(P(Z &lt; z)\)</span>) and the area to the right of <span class="math inline">\(z\)</span> (i.e.&nbsp;<span class="math inline">\(P(Z &gt; z)\)</span>).</p>
+<section id="pz-z" class="level3" data-number="E.1.1">
+<h3 data-number="E.1.1" class="anchored" data-anchor-id="pz-z"><span class="header-section-number">E.1.1</span> <span class="math inline">\(P(Z &lt; z)\)</span></h3>
+<p>If you want the area to the left of <span class="math inline">\(z\)</span>, you look up the z-score in <a href="formula-sheet.html#table-a">Table A</a> by finding the corresponding whole number and tenths place on the left margin and the corresponding hundreths place on the top margin of the table then right down the number that you find.</p>
+<p>For example, <span class="math inline">\(P(Z &lt; -1.01) = 0.1562\)</span></p>
+<p>You can also use the calculator and do <code>normalcdf(-1000, -1.01)</code>, where <code>-1000</code> represents <span class="math inline">\(- \infty\)</span> since you want the area from <span class="math inline">\(- \infty\)</span> to -1.01. The calculator needs the lower bound and upper bound of the area that you want to find.</p>
+</section>
+<section id="pz-z-1" class="level3" data-number="E.1.2">
+<h3 data-number="E.1.2" class="anchored" data-anchor-id="pz-z-1"><span class="header-section-number">E.1.2</span> <span class="math inline">\(P(Z &gt; z)\)</span></h3>
+<p>If you want the area to the right of <span class="math inline">\(z\)</span>, you <strong>first</strong> look up the z-score in <a href="formula-sheet.html#table-a">Table A</a> by finding the corresponding whole number and tenths place on the left margin and the corresponding hundreths place on the top margin of the table. Take note of the probability that you found, then take the complement of that probability by subtracting from 1.</p>
+<p>For example, <span class="math inline">\(P(Z &gt; 1.01) = 1 - P(Z &lt; 1.01) = 1 - 0.8438 = 0.1562\)</span></p>
+<p>This is an application of the [complement rule][Complement Rule], where <span class="math inline">\(P(Z &gt; z)^C = P(Z &lt; z)\)</span> and thus <span class="math inline">\(P(Z &gt; z) = 1 - P(Z &lt; z)\)</span>.</p>
+<p>You can also use the calculator and do <code>normalcdf(1.01, 1000)</code>, where <code>1000</code> represents <span class="math inline">\(\infty\)</span> since you want the area from 1.01 to <span class="math inline">\(\infty\)</span>.</p>
+</section>
+<section id="pz_1-z-z_2" class="level3" data-number="E.1.3">
+<h3 data-number="E.1.3" class="anchored" data-anchor-id="pz_1-z-z_2"><span class="header-section-number">E.1.3</span> <span class="math inline">\(P(z_1 &lt; Z &lt; z_2)\)</span></h3>
+<p>Say you want the area between two z-scores/statistics, <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span>, then you do the same thing by looking up the z-scores on the tables as described above and subtract the probability that you find for <span class="math inline">\(z_2\)</span> from the one that you find for <span class="math inline">\(z_1\)</span>.</p>
+<p>For example, <span class="math display">\[P(-1.01 &lt; Z &lt; 1.01) = P(Z &lt; 1.01) - P(Z &lt; -1.01) = 0.8438 - 0.1562 = 0.6876\]</span></p>
+<p>On the calculator, you can do <code>normalcdf(-1.01, 1.01)</code></p>
 </section>
 </section>
-<section id="normal-approximation-to-the-binomial-distribution" class="level4">
-<h4 class="anchored" data-anchor-id="normal-approximation-to-the-binomial-distribution">Normal Approximation to the Binomial Distribution</h4>
-<p>Remember that as <span class="math inline">\(n\)</span> gets large, a binomial random variable <span class="math inline">\(X\)</span> can take on more and more different values, and it can become tedious to continue to treat X as a discrete random variable. As <span class="math inline">\(n\)</span> get larger, we can treat <span class="math inline">\(X\)</span> as a continuous random variable, more specifically:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As <span class="math inline">\(n\)</span> gets larger, the binomial distribution gets closer to a normal distribution.</p>
-</div>
-</div>
-<p>However, before we use a normal distribution to approximate a binomial distribution, we have to check the following condition:</p>
-<section id="large-counts-cond" class="level5">
-<h5 class="anchored" data-anchor-id="large-counts-cond">Large Counts condition</h5>
-<div class="callout callout-style-default callout-note callout-titled" title="Large Counts Condition">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Large Counts Condition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We can use a Normal distribution to model a binomial distribution if we know that a the <strong>Large Counts Condition</strong> is fulfilled: <span class="math display">\[np \geq 10 \text{ and }n(1-p) \geq 10\]</span> In other words, if the expected number of successes and failures (respectively) is greater than or equal to 10.</p>
-</div>
-</div>
-</section>
-<section id="doing-a-normal-approximation-to-a-binomial-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="doing-a-normal-approximation-to-a-binomial-distribution">Doing a Normal Approximation to a Binomial Distribution</h5>
-<p>First verify all the conditions for a Binomial setting and the Large Counts Condition. Since we know that we have a binomial setting, we then know the distribution that we want to use is <span class="math inline">\(Normal(np, \sqrt{npq})\)</span> proceed with the calculations according to this distribution.</p>
-</section>
-</section>
-</section>
-<section id="geometric-random-variables" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="geometric-random-variables"><span class="header-section-number">10.1.2</span> Geometric Random Variables</h3>
-<p>If <span class="math inline">\(X \sim G(p)\)</span>, <span class="math inline">\(X\)</span> has a geometric distribution with a parameter <span class="math inline">\(p\)</span> probability of “success”.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="pdf of a Geometric Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-pdf of a Geometric Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>pdf</strong> of a geometric random variable is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X=x) &amp;= (1-p)^{x-1}p\\
-    \text{where } x &amp;= 1, 2, 3, \cdots
-\end{aligned}
-\]</span></p>
-<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometpdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{geometpdf(p, x)}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="cdf of a Geometric Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-cdf of a Geometric Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>cdf</strong> of a Geometric Variable is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    P(X\leq x) &amp;= \sum_{i=1}^x(1-p)^{i-1}p
-\end{aligned}
-\]</span></p>
-<p>In graphing calculator: <span class="math inline">\(\texttt{2nd -&gt; vars (distr) -&gt; geometcdf}\)</span></p>
-<p>Usage: <span class="math inline">\(\texttt{geometcdf(p, x)}\)</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of a Geometric Random Variable">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of a Geometric Random Variable
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The mean and standard deviation of a geometric random variable is given by:</p>
-<p><span class="math display">\[
-\begin{aligned}
-    \mu_X &amp;= \frac{1}{p} \\
-    \sigma_X &amp;= \frac{\sqrt{q}}{p} \\
-    &amp;\text{, where } q = 1-p.
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<section id="identifying-geometric-settings" class="level4">
-<h4 class="anchored" data-anchor-id="identifying-geometric-settings">Identifying Geometric Settings</h4>
-<p>A geometric setting is very similar to a binomial setting, except that <span class="math inline">\(n\)</span> the number of trials is not fixed and that we are instead finding probabilities until the first “success” occurs.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="The Geometric Setting">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Geometric Setting
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A geometric setting is defined as a series of observations where these 4 conditions are met:</p>
-<ol type="1">
-<li><p><strong>B</strong>inary?<br>
-The possible outcomes of each trial can be classified as “success” or “failure”</p></li>
-<li><p><strong>I</strong>ndependent?<br>
-Trials must be independent, that is, knowing the result of one trial must not have any effect on the result of any other trial.</p></li>
-<li><p><strong>T</strong>rials until?<br>
-The goal is to count the number of trials until the first success occurs.</p></li>
-<li><p><strong>S</strong>uccess?<br>
-On each trial, the probability <span class="math inline">\(p\)</span> of success must be the same.</p></li>
-</ol>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="operations-with-random-variables" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="operations-with-random-variables"><span class="header-section-number">10.2</span> Operations with Random Variables</h2>
-<section id="linear-transformations" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="linear-transformations"><span class="header-section-number">10.2.1</span> Linear Transformations</h3>
-<p>When we add a constant <span class="math inline">\(a\)</span> and/or multiply by a constant <span class="math inline">\(b\)</span> to a random variable <span class="math inline">\(X\)</span>, we perform a linear transformation of the form</p>
-<p><span class="math display">\[
-a + bX
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of Linearly Transformed Random Variables">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of Linearly Transformed Random Variables
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The mean of <span class="math inline">\(a + bX\)</span> is transformed in the same way that we change <span class="math inline">\(X\)</span></p>
-<p><span class="math display">\[
-\mu_{a+bX}=a+\mu_{bX}=a+b\mu_X
-\]</span></p>
-<p>The standard deviation of <span class="math inline">\(a + bX\)</span> is only affected by multiplication:</p>
-<p><span class="math display">\[
-\sigma_{a+bX}=\sigma_{bX}=b\sigma_X
-\]</span></p>
-</div>
-</div>
-</section>
-<section id="sum-and-difference-between-random-variables" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="sum-and-difference-between-random-variables"><span class="header-section-number">10.2.2</span> Sum and Difference between Random Variables</h3>
-<p>In addition to linear transformation, we can also, to an extent, describe the result of adding or subtracting random variables</p>
-<p>If we have two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we can describe the mean and standard deviation of the sum or difference of these with the following.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Mean and SD of the Sum and Difference between Random Variables">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Mean and SD of the Sum and Difference between Random Variables
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[\mu_{X \pm Y} = \mu_X \pm \mu_Y\]</span></p>
-<p><strong>If the random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent</strong>, then</p>
-<p><span class="math display">\[ \sigma_{X \pm Y}^2 = \sigma_X^2 + \sigma_Y^2 \]</span></p>
-<p>And it follows that:</p>
-<p><span class="math display">\[ \sigma_{X \pm Y} = \sqrt{\sigma_X^2 + \sigma_Y^2} \]</span></p>
-<details>
-<summary>
-What is <span class="math inline">\(\sigma_X^2\)</span>?
-</summary>
-<p>The variance of a random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[
-Var(X) = \sigma_X^2
-\]</span></p>
-</details>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Keep in mind that the formula for the standard deviation here only applies if we know that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent of each other.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="interpretations" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="interpretations"><span class="header-section-number">10.3</span> Interpretations</h2>
-<section id="probabilities-and-means" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="probabilities-and-means"><span class="header-section-number">10.3.1</span> Probabilities and Means</h3>
-<p>Be aware that you are still expected to know how to interpret probabilities. Now that we are working with means / expected values, we are going to extend our long run probability interpretation to means too.</p>
-<p>Remember, if we are given a probability <span class="math inline">\(p\)</span>, we interpret it in the form of:</p>
-<blockquote class="blockquote">
-<p>If [do the situation] <strong>many many times</strong>, [this thing] will happen <strong>about</strong> [<span class="math inline">\(p\)</span>] of the time.</p>
-</blockquote>
-<p>This extends to any mean <span class="math inline">\(\mu\)</span>:</p>
-<blockquote class="blockquote">
-<p>If [do the situation] <strong>many many times</strong>, we will have an average <strong>about</strong> [<span class="math inline">\(\mu\)</span>].</p>
-</blockquote>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember that you should be describing the situation properly.</p>
-<p>If we are looking at the average amount of heads in 50 coin flips, we’d say:</p>
-<blockquote class="blockquote">
-<p>If we <strong>flip a coin 50 times</strong> many many times, we will see an average of about 25 heads.</p>
-</blockquote>
-<p>Or if we are looking at the probability that we get 25 heads in 50 coin flips (which is <span class="math inline">\(\approx\)</span> 0.1123)</p>
-<blockquote class="blockquote">
-<p>If we <strong>flip a coin 50 times</strong> many many times, we will observe <strong>getting 25 heads</strong> about 0.1123 of the time.</p>
-</blockquote>
-</div>
-</div>
-</section>
-<section id="standard-deviation" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">10.3.2</span> Standard Deviation</h3>
-<p>We previously interpreted standard deviation in Chapter 1, and now we can tone down the interpretation, we’d just say something along the lines of</p>
-<blockquote class="blockquote">
-<p>[<em>The variable</em>] typically varies by [<em>standard deviation</em>] from the [<em>mean</em>].</p>
-</blockquote>
+<section id="t-statisticsscore" class="level2" data-number="E.2">
+<h2 data-number="E.2" class="anchored" data-anchor-id="t-statisticsscore"><span class="header-section-number">E.2</span> t statistics/score</h2>
+<p>If you are given a t-statistic of <span class="math inline">\(t\)</span> and the range that you want a corresponding area (probability) that you want to find, there are normally two situations, one where you want the area to the left of <span class="math inline">\(t\)</span> (<span class="math inline">\(P(t_{n-1} &lt; t)\)</span>) and the area to the right of <span class="math inline">\(t\)</span> (<span class="math inline">\(P(t_{n-1} &gt; t)\)</span>). Where <span class="math inline">\(t_{n-1}\)</span> represents the t-distribution with degrees of freedom <span class="math inline">\(df = n-1\)</span>. For all of these, calculate the degrees of freedom first.</p>
+<p>To do this, take a look at <a href="formula-sheet.html#table-b">Table B</a>.</p>
+<p>Table B only provides the right tail of corresponding to <span class="math inline">\(|t|\)</span>.</p>
+<p>Table B’s left margin describes the degrees of freedom that you have. Since we know that the <a href="inference-for-means.html#t-justification">t-distribution is conservative</a>, <strong>if your degrees of freedom is not on the margin, round your degrees of freedom down to the nearest one</strong>.</p>
+<p>The top margin describes the probability that corresponds to the right of <span class="math inline">\(|t|\)</span>.</p>
+<p>The table itself contains the various exact <span class="math inline">\(t\)</span> statistics for the corresponding probability and degrees of freedom.</p>
+<p>With this context, since we know that the t-distribution is symmetrical, all we need to do is look up our value of <span class="math inline">\(|t|\)</span> in the middle of Table B and write down the corresponding probability</p>
+<section id="examples" class="level3" data-number="E.2.1">
+<h3 data-number="E.2.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">E.2.1</span> Examples</h3>
+<ul>
+<li><span class="math inline">\(P(t_{29} &lt; -1.2)\)</span>
+<ul>
+<li>Look up the <span class="math inline">\(|t| = |-1.2| = 1.2\)</span> since <span class="math inline">\(P(t_{29} &lt; -1.2) = P(t_{29} &gt; 1.2)\)</span></li>
+<li>At the row with <span class="math inline">\(df = 29\)</span>, notice that <span class="math inline">\(1.055 &lt; 1.2 &lt; 1.311\)</span></li>
+<li>These values correspond to probability of <span class="math inline">\(0.15\)</span> and <span class="math inline">\(0.10\)</span> respectively.</li>
+<li>This means that <span class="math inline">\(0.10 &lt; P(t_{29} &lt; -1.2) &lt; 0.15\)</span></li>
+<li>This is the only answer that we know from the table, the probability is between 0.10 and 0.15.</li>
+<li><strong>Alternatively</strong>, use the calculator command <code>tcdf(-1000, -1.2, 29)</code>, where we put the lower bound, upper bound, and the degrees of freedom respectively.</li>
+</ul></li>
+<li><span class="math inline">\(P(t_{57} &gt; 1.2)\)</span>
+<ul>
+<li>Round your degrees of freedom down to 50, since it’s the next lowest one. <span class="math inline">\(df = 57 \sim 50\)</span>.</li>
+<li>At the row with <span class="math inline">\(df = 50\)</span>, notice that <span class="math inline">\(1.047 &lt; 1.2 &lt; 1.299\)</span></li>
+<li>These values correspond to probability of <span class="math inline">\(0.15\)</span> and <span class="math inline">\(0.10\)</span> respectively.</li>
+<li>This means that <span class="math inline">\(0.10 &lt; P(t_{57} &gt; 1.2) &lt; 0.15\)</span></li>
+<li>This is the only answer that we know from the table, the probability is between 0.10 and 0.15.</li>
+<li><strong>Alternatively</strong>, use the calculator command <code>tcdf(1.2, 1000, 57)</code>, where we put the lower bound, upper bound, and the degrees of freedom respectively.</li>
+</ul></li>
+</ul>
 
 
 </section>
@@ -1217,14 +836,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./density-curves.html" class="pagination-link" aria-label="Density Curves">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Density Curves</span></span>
+      <a href="./t-critical-values.html" class="pagination-link" aria-label="$t^\ast$ Critical Values">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title"><span class="math inline">\(t^\ast\)</span> Critical Values</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sampling-distributions.html" class="pagination-link" aria-label="Sampling Distributions">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sampling Distributions</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
