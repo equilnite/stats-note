@@ -621,6 +621,17 @@
     ]
   },
   {
+    "objectID": "inference-for-proportions.html#two-sample-z-procedures",
+    "href": "inference-for-proportions.html#two-sample-z-procedures",
+    "title": "14  Inference for Proportions",
+    "section": "14.3 Two-Sample \\(z\\)-procedures",
+    "text": "14.3 Two-Sample \\(z\\)-procedures\nTwo-Sample z-procedures are justified by knowledge about the sampling distribution of \\(\\hat p_1 - \\hat p_2\\).\nThe conditions for two-sample z-procedures are the same for the two that we learn:\n\n\n\n\n\n\nConditions for Two-Sample \\(z\\)-procedures\n\n\n\n\nRandom: The data come from two independent random samples or from two groups in a randomized experiment.\nLarge Counts: The counts of “successes” and “failures” in each sample or group \\(n_1\\hat p_1\\), \\(n_1(1-\\hat p_1)\\), \\(n_2\\hat p_2\\), and \\(n_2(1-\\hat p_2)\\) are all at least 10.\n\nor if you are working with a \\(z\\)-test, make sure to instead check it according to the null value \\(p_0\\). \\(n_1 p_0\\), \\(n_1(1- p_0)\\), \\(n_2 p_0\\), and \\(n_2(1- p_0)\\) are all at least 10.\n\n10%: When sampling without replacement, check that \\(n_1\\leq(.10)N_1\\) and \\(n2\\leq(.10)N_2\\).\n\n\n\n\n14.3.1 Two-Sample \\(z\\)-interval\n\n\n\n\n\n\nTwo-Sample \\(z\\)-interval\n\n\n\nWhen the conditions are met, an approximate \\(C\\)% confidence interval for \\(p_1-p_2\\) is:\n\\[(\\hat p_1-\\hat p_2)\\pm z^\\ast\\sqrt{\\frac{\\hat p_1(1-\\hat p_1)}{n_1}+\\frac{\\hat p_2(1-\\hat p_2)}{n_2}}\\]\nWhere \\(z^\\ast\\) is the critical value for the standard Normal curve with \\(C\\)% of its area between \\(-z^\\ast\\) and \\(z^\\ast\\)\n\n\n\n\n14.3.2 Two-Sample \\(z\\)-test (#two-sample-z-test)\n\n\n\n\n\n\nTwo-Sample \\(z\\)-test\n\n\n\nThe null hypothesis has the general form \\[ H_0:p_1-p_2=p_0 \\] where \\(p_0\\) is our hypothesized difference. We’ll restrict ourselves to situations in which \\(p_0 =0\\). Then the null hypothesis says that there is no difference between the two parameters: \\[H_0:p_1-p_2=0~~\\text{or}~~H_0:p_1=p_2\\] The alternative hypothesis says what kind of difference we expect: \\[H_a:p_1-p_2&gt;0~~\\text{or}~~Ha:p_1-p_2&lt;0~~\\text{or}~~Ha:p_1-p_2\\not =0  \\]\n\n\n\n\n\n\n\n\nCalculations for Two-Sample \\(z\\)-test\n\n\n\nSuppose the conditions are met. To test the hypotheses \\(H_0: p_1 - p_2 = 0\\), first find the pooled proportion \\(\\hat p_c\\) of successes in both samples combined.\n\\[\\hat p_c = \\frac{X_1 + X_2}{n_1 + n_2}\\]\nThen compute the z statistic: \\[ z = \\frac{(\\hat p_1 - \\hat p_2) - 0}{\\sqrt{\\frac{\\hat p_c(1-\\hat p_c)}{n_1} +\\frac{\\hat p_c(1-\\hat p_c)}{n_2}}}\\]",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Inference for Proportions</span>"
+    ]
+  },
+  {
     "objectID": "inference-for-means.html",
     "href": "inference-for-means.html",
     "title": "15  Inference for Means",
