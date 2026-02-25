@@ -81,8 +81,6 @@ $n p_0$ and $n(1- p_0)$ are both greater than or equal to 10.
 
 :::
 
-<!--
-
 ## Two-Sample $z$-procedures
 
 Two-Sample z-procedures are justified by knowledge about the [sampling distribution of $\hat p_1 - \hat p_2$](#prop-diff-samp-dist).
@@ -127,5 +125,3 @@ $$\hat p_c = \frac{X_1 + X_2}{n_1 + n_2}$$
 Then compute the z statistic:
 $$ z = \frac{(\hat p_1 - \hat p_2) - 0}{\sqrt{\frac{\hat p_c(1-\hat p_c)}{n_1} +\frac{\hat p_c(1-\hat p_c)}{n_2}}}$$
 :::
-
--->

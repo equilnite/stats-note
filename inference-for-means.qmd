@@ -128,7 +128,6 @@ In random samples from a population, observations are never independent because 
 However, **since we'll be likely working with experiments, independence will not apply,** so you will not have to state it. You can say something like *"since we have an experiment, we do not have to check independence"*.
 :::
 
-<!---
 ## Two-Sample $t$-procedures
 
 Two-Sample $t$-procedures are justified by knowledge about the [sampling distribution of $\bar x_1 - \bar x_2$](#mean-diff-samp-dist).
@@ -192,8 +191,6 @@ $$
 The reason for this is that the null hypothesis for a two sample z-test is a statement of no difference between the proportions, so we're saying that the populations are practically the same. The null hypothesis for a two sample t-test is a statement of no difference between the means. Since there's no assumption of the populations themselves, we will not pool the standard deviations for two-sample t-tests.
 :::
 </details>
-
---->
 
 ## The Student's $t$ distribution
 
