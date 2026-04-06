@@ -37,8 +37,8 @@ book:
       - inference-for-proportions.qmd
       - inference-for-means.qmd
       - inference-for-categories.qmd
-    # - linear-regression.qmd
-    # - inference-for-slope.qmd
+      - linear-regression.qmd
+      - inference-for-slope.qmd
   appendices:
     - formula-sheet.qmd
     # - applets.qmd
