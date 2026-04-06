@@ -753,6 +753,149 @@
     ]
   },
   {
+    "objectID": "linear-regression.html",
+    "href": "linear-regression.html",
+    "title": "17  Linear Regression",
+    "section": "",
+    "text": "17.1 Scatter plots\nA scatter plot is a graph that shows the relationship between two quantitative variables measured on the same individuals. The values of one variable appear on the horizontal axis, and the values of the other variable appear on the vertical axis. Each individual in the data is represented as a point on the graph. We want to know if there is any relationship between the two quantitative variables. In other words, as the x-value increases, does the y-value tend to increase, decrease, or stay the same? Or do the two variables appear to be related at all? Are there any outliers? A scatter plot allows us to answer these questions visually. In a scatter plot, the y-axis is always the response variable (which measures an outcome of a study) the x-axis is always the eXplanatory variable (which may help explain or influence changes in the response variable).",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#scatter-plots",
+    "href": "linear-regression.html#scatter-plots",
+    "title": "17  Linear Regression",
+    "section": "",
+    "text": "Describing Scatterplots\n\n\n\nWe can describe the relationships between two quantitative variables through their scatterplot’s:\n\nStrength: The degree to which the points follow a pattern\nForm: Linear or non-linear\nDirection: Positive or negative association\nOutliers: Individual observations that fall outside the overall pattern\n\n\n\n\n\nMake sure to remember these small details when describing your scatterplots.\n\n\nYou should remember to describe your strength and direction of the relationships through the form of the relationship.\n\nLikewise, describe your outliers through the form of the relationship.\n\nMake sure to include the context of the problem when you are describing the relationship.\n\n\n\n17.1.1 An example of a scatter plot\nHere’s an example of a scatter plot, with the iris data set of just the setosa species:\n\n\n\n  \n\n\n\nLet’s say that we are trying to see if sepal length and sepal width have a relationship, specifically, if sepal length can explain the differences in sepal width between irises. This makes our explanatory variable the sepal length and the response variable the sepal width.\n\n\n\n\n\n\n\n\n\n\nBased off this plot, I would say that there is a moderately, positive, linear relationship between sepal width and sepal length. The point (4.5, 2.3) might be an outlier.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#LSRL-model",
+    "href": "linear-regression.html#LSRL-model",
+    "title": "17  Linear Regression",
+    "section": "17.2 Least Squares Regression Model",
+    "text": "17.2 Least Squares Regression Model\nSuppose that we have a response variable \\(y\\), and an explanatory variable \\(x\\). If the relationship between the two variables is linear, then the relationship can be modeled by the following model:\n\\[y = \\alpha + \\beta x + \\epsilon\\]\nWhere\n\n\\(y\\) is the value of the response variable for a given value of the explanatory variable \\(x\\) and some underlying “noise” \\(\\epsilon\\).\n\\(\\alpha\\) is the y-intercept, the value of \\(y\\) when \\(x=0\\)\n\\(\\beta\\) is the slope, and\n\\(\\epsilon\\) is the underlying “noise”/error that we can expect out of the relationship.\n\n\n\n\n\n\n\nThe least suares regression model\n\n\n\nAn estimate of this model would then have the following form:\n\\[\\hat y = a + bx\\]\nWhere\n\n\\(\\hat y\\) is the predicted value of the response variable \\(y\\) for a given value of the explanatory variable \\(x\\)\n\\(a\\) is a statistic that estimates \\(\\alpha\\), the y-intercept, and provides the value of \\(\\hat y\\) when \\(x = 0\\).\n\\(b\\) is a statistic that estimates \\(\\beta\\), the slope.\n\nAnd in this class, we calculate each statistic by minimizing the squared error between each of the points and the line (“least squares”).\n\n\n\n\n\n\n\n\nInterpretation of a regression line\n\n\n\nWe interpret \\(a\\), the \\(y\\)-intercept, as: &gt; When the [explanatory variable] is zero, our model predicts the [response variable] would be [y-intercept].\nWe interpret \\(b\\), the slope, as: &gt; For every 1 [unit] increase in [explanatory variable], our model predicts an average change of [slope] in [response variable]\nAs you interpret these, please remember that the wording of predicted is important.\n\n\n\n17.2.1 Correlation\nA scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is.\nThe correlation coefficient \\(r\\) measures the direction and strength of the linear relationship between two quantitative variables.\n\\[r = \\frac{1}{n-1}\\sum \\left( \\frac{x_i - \\bar x}{s_x}\\right) \\left( \\frac{y_i -\\bar y}{s_y}\\right)\\]\n\n\n\n\n\n\nProperties of the Correlation Coefficient \\(r\\)\n\n\n\n\n\\(r\\) is always a number between -1 and 1\n\\(r &gt; 0\\) indicates a positive association.\n\\(r &lt; 0\\) indicates a negative association.\nValues of \\(r\\) near 0 indicate a very weak linear relationship.\nThe strength of the linear relationship increases as \\(r\\) moves away from 0 towards -1 or 1.\nThe extreme values \\(r = -1\\) and \\(r = 1\\) occur only in the case of a perfect linear relationship.\nCorrelation makes no distinction between explanatory and response variables.\n\\(r\\) does not change when we change the units of measurement of \\(x\\), \\(y\\) or both.\nThe correlation \\(r\\) itself has no unit of measurement.\nCORRELATION DOES NOT IMPLY CAUSATION!!!\nCorrelation requires that both variables be quantitative.\nCorrelation does not describe curved relationships between variables.\nA value of \\(r\\) close to -1 or 1 does not guarantee a linear relationship between them.\nCorrelation is not resistant: \\(r\\) is strongly affected by a few outlying observations\nCorrelation is not a complete summary of two-variable data.\n\n\n\nThe correlation \\(r\\) only informs us how well the data can conform to a line (the strength of a linear relationship), and the direction of of the relationship. Otherwise, depending on \\(r\\) is hard unless we look at a couple of other things, such as a residual plot.\n\n\n\n\n\n\nInterpretation of \\(r\\)\n\n\n\n\nThere is a [strength], [direction] relationship between the [explanatory variable] and the [response variable]\n\n\n\n\n\n17.2.2 Residuals\nIn most cases, no line will pass through all of the points in a scatter plot. Because we use the line to predict \\(y\\) from \\(x\\), the prediction errors we make are errors in \\(y\\), the vertical direction in the scatter plot. A regression line using our least squares method minimizes the squared residuals.\n\n\n\n\n\n\nResiduals\n\n\n\nA residual is the difference between an observed value of the response variable and the value predicted by the regression line. That is, \\[r_i= \\text{residual for the ith value}=\\text{observed } i^{th} \\text{ y value}-\\text{predicted } i^{th} \\text{ y value}=y_i-\\hat y_i\\]\n\n\n\n\n\n\n\n\nResidual Interpretation\n\n\n\n\nThe actual [response variable] for [specific value of the explanatory variable], is [greater than/less than] the predicted [response variable] by [residual value].\n\n\n\nAll the equations that we learn in this chapter are based off the fact that a least squares regression line minimizes the squared vertical deviations of the points from the line. In this course, you do not have to know the underlying proofs for the formulas.\n\nResidual Plots\nWe can plot the residuals versus the explanatory variable to obtain insight into the appropriateness of our regression model:\n\n\n\n\n\n\nPoints of Caution for Residual Plots\n\n\n\nCurved patterns and heteroskedasticity are not good things to see in residuals plots.\n\nCurved pattern\n\nif there’s a curved pattern in our residuals, that means there’s a curved pattern in our observations that we didn’t notice before, probably because of the scale of our scatterplot. A curved pattern means that a linear model (like an LSR line) is probably not appropriate to describe our data. We should try to use a non-linear model.\n\nHeteroskedasticity\n\nIn other words, do you see a coned pattern in the residuals? If the residuals are getting larger at one or both ends of the data, that means our model is not predicting as well in those areas (remember that a big residual = a big error in prediction) and shouldn’t be used to make predictions for those values of our explanatory (x) variable.\n\n\nThe best shape for the residual plot is to be “football” shaped, in which case would mean that we have homoskedasticity.\n\n\n\n\n\n\nStandard Deviation of Residuals\nTo assess how well the line fits all the data, we need to consider the residuals for each observation, not just one. Using these residuals, we can estimate the “typical” prediction error when using the least-squares regression line.\n\n\n\n\n\n\nStandard deviation of the residuals, \\(s\\)\n\n\n\nIf we use a least-squares regression line to predict the values of a response variable \\(y\\) from an explanatory variable \\(x\\), the standard deviation of the residuals (\\(s\\)) is given by\n\\[s = \\sqrt{\\frac{\\sum (residuals ^2)}{n-2}}=\\sqrt{\\frac{\\sum (y_i - \\hat y_i)^2)}{n - 2}}\\]\nThis value gives the approximate size of a “typical” prediction error (residual).\n\n\n\n\n\n\n\n\nInterpretation of \\(s\\)\n\n\n\n\nWhen using the LSRL with [explanatory variable] to predict [response variable], we will typically be off by about [the value of \\(s\\) with units of the response variable (\\(y\\))].\n\nAs such, \\(s\\) is a measure of how well out linear model predicts. The relatively lower \\(s\\) is, the better it predicts.\n\n\n\n\nCoefficient of Determination\nWhen we do the least squares model, we minimize the squares of the residuals, but what can we compare this to? We compare it to another line (a “baseline” model), that always predicts the mean of \\(y\\) for any value of \\(x\\). In other words, we compare it to \\(\\hat y = \\bar y\\). We do this since this baseline model practically means that are are saying that there is no relationship between \\(x\\) and \\(y\\). On the other hand, in the least squares model, we are trying to say that there is a relationship.\nThe coefficient of determination, \\(r^2\\) is defined by the % reduction in squared error in comparison to the baseline model.\n\\[r^2 = \\frac{\\text{size of reduction}}{\\text{original amount}} = \\frac{SST - SSE}{SST} = 1 -\\frac{SSE}{SST} = 1 - \\frac{\\sum (y_i-\\hat y)^2}{\\sum (y_i - \\bar y)^2}\\]\n\n\n\n\n\n\nInterpretation of \\(r^2\\)\n\n\n\n\n[$r^2]% of the variation in [response variable] can be explained by the linear relationship with [explanatory variable].\n\nIf \\(r^2\\) is closer to 100% (or 1), then our model is more predictive.\n\n\n\n\n\n17.2.3 Other definitions\nSometimes you’re just given a summary of the data instead of every single point. In this case, you can still find a (the y-intercept) and b (the slope) of the LSR line, and write the equation. To do this you need to know the following:\n\n\n\n\n\n\nFormulas for Coefficients of LSR\n\n\n\nRemembering the basic notation from least squares regression model,\n\\[b=r\\frac{s_y}{s_x}\\]\nThe LSR line always passes through the mean of both the \\(x\\) and \\(y\\) variables, \\[(\\bar x, \\bar y)\\]. So when you apply slope-point formula and the using \\(b\\) as calculated above, we can find that:\n\\[a=\\bar y-b\\bar x\\]",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#miscellaneous-things-to-remember",
+    "href": "linear-regression.html#miscellaneous-things-to-remember",
+    "title": "17  Linear Regression",
+    "section": "17.3 Miscellaneous Things to Remember",
+    "text": "17.3 Miscellaneous Things to Remember\n\nThe distinction between explanatory and response variables is important in regression. Least-squares regression makes the distances of the data points from the line small only in the y direction. If we reverse the roles of the two variables, we get a different least-squares regression line. This isn’t true for correlation: switching x and y doesn’t affect the value of r.\nCorrelation and regression lines describe only linear relationships. You can calculate the correlation and least-squares line for any relationship between two quantitative variables, but the results are useful only if the scatterplot shows a linear pattern. ALWAYS PLOT YOUR DATA.\n\nHere’s an interesting thing to look at\n\nCorrelation and least-squares regression lines are not resistant.\n\n\n\n\nA scatterplot of Gesell Adaptive Scores versus the age at the first word for 21 children.\n\n\nRemember, an outlier is an observation that lies outside the overall pattern of other observations. In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither.\n\n\nSo what are Child 18 and Child 19?\n\nWe could also say that Child 18 is an outlier in the x-direction and y-direction meanwhile Child 19 is an outlier in the y-direction\n\n\nAn influential observation in statistics is a point that has a large effect on a statistical calculation. In other words, an observation is considered influential if removing it would markedly change the regression line.\n\n\n\nWhich appears to have the greatest influence on the regression line?\n\nChild 18 and 19 are both equally influential in their own sense here.\nChild 18 is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line.\nChild 19 is the most influential observation on the correlation coefficient, \\(r\\). Notice how removing (and adding) child 19 caused the greatest change in \\(r\\)\n\n\n\nWill influential observations always have large residuals? Why/why not? Try to find some examples on your own first.\n\nNo, take the previous example for instance. Child 18 has an extremely small residual in the plot.\nIt actually makes sense for influential observations to be able to have small residuals; this is because they have “influence” on the line; they “pull” the regression line towards them. So if the regression line is closer to them, then they have a small residual.\n\n\nCorrelation does not imply causation. When we study the relationship between two variables, we often hope to show that changes in the explanatory variable cause changes in the response variable. A strong association between two variables is not enough to draw conclusions about cause and effect. We’ve learned how to draw cause and effect relationships and the scope of inference.\n\n\n\nConsider the study that found people with two cars live longer than people who only own one car. Owning three cars is even better, and so on. There is a substantial positive association between the number of cars x and the length of life y. The basic meaning of causation is that by changing x, we can bring about a change in y. Could we lengthen our lives by buying more cars?\n\nNo. This does not even make sense to happen. What does make sense is looking between the lines and determining that there are other factors at play. A common variable here that would confound this relationship (confounding variable) would be the wealth of individuals. By having more wealth, you have more cars and are likely to live longer. Since this factor is in play, it’s likely the real reason why we see this positive relationship between number of cars and length of life.\n\nSee this website for more examples on weird correlations.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#basic-linreg-output",
+    "href": "linear-regression.html#basic-linreg-output",
+    "title": "17  Linear Regression",
+    "section": "17.4 Interpreting Computer Output",
+    "text": "17.4 Interpreting Computer Output\nYou are expected to know how to interpret computer out in MINITAB format (just what you normally see).\n\n17.4.1 Example\nBelow is the computer output from a basic regression analysis for the Ford-F-150 data relating the mileage and value of Ford F-150s.\nPredictor       Coef        SECoef      T      P\nConstant        38257       2446        15.64  0.000\nMiles Driven    -0.16292    0.03096     -5.26  0.000\n\nS = 5740.13   R-Sq = 66.4%   R-Sq(adj) = 64.0%\nLet’s first identify a few basic facts, when we have a LSRL, the line is of form \\[\\hat y = a + b x\\]\nFrom our basic knowledge of algebra, \\(b\\) is the coefficient of \\(x\\) in the equation and the only things that we really need values (estimates) for are \\(a\\) and \\(b\\). So the two rows of interest for now are looking at the Predictor and the Coef of the Predictor.\n\n\nWhat is a predictor?\n\nWhat variable are we using to “predict”? Obviously, we are trying to predict \\(y\\) based off \\(x\\), so \\(x\\) is our “predictor” and the constant term \\(a\\) in the equation is actually included here too, since it’s involved in our prediction.\n\nWe can identify that our explanatory variable is mileage (Miles Driven) and our response variable is the value of the Ford F-150.\nSo what we can figure out from these math facts here are that each value correspond to the following:\nPredictor       Coef        SECoef      T      P\nConstant        a           2446        15.64  0.000\nMiles Driven    b           0.03096     -5.26  0.000\n\nS = s          R-Sq = r^2     R-Sq(adj) = 64.0%\n\nTo reiterate, we can figure out that for a LSRL with this data and knowing our explanatory variable is mileage (Miles Driven) and our response variable is the value of the Ford F-150,\n\\[\n\\begin{aligned}\n&a = 38257\\\\\n&b = -0.16292\\\\\n&s = 5740.13\\\\\n&r^2 = .664\n\\end{aligned}\n\\]\n\nThus our LSRL is \\[\\hat{\\text{value of F-150}} = 38257 - 0.16292 (\\text{miles driven})\\]\nWith \\(s = 5740.13\\) and \\(r^2 = .664\\).\n\nWe can also infer from this output that since \\(b\\) is negative (negative slope, so negative relationship), that \\[r = -\\sqrt{r^2} \\approx -\\sqrt{.664} \\approx -0.8149 \\]",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "linear-regression.html#doing-stuff-in-your-calculator",
+    "href": "linear-regression.html#doing-stuff-in-your-calculator",
+    "title": "17  Linear Regression",
+    "section": "17.5 Doing stuff in your calculator",
+    "text": "17.5 Doing stuff in your calculator\nThe video below covers everything that you would want to do for linear regression. Written steps are below.\n\n\n17.5.1 Setting up\nEnter all your data into your lists (stat &gt; edit). Remember which ones your entered them (I will refer to them as XList and YList)\n\n\n17.5.2 Scatterplot\n\nConfigure your plots by first going into stat plots (2nd &gt; y=).\n\nMake sure all other plots are OFF\nSelect the first plot\n\nIn the first plot,\n\nmake sure you’re chosen the correct plot type,\nentered the correct lists into XList and YList,\n\nHit graph!\n\nBut a better idea is to put the plotting window into a good scale, by first doing zoom &gt; zoomStat.\n\n\n\n\n17.5.3 Creating your LSRL\nLinReg(a+bx) (stat &gt; calc) - Enter the correct XList and YList. Ignore Freq. - You should enter Y1 into RegEq. You access it by vars &gt; y-vars &gt; function.\nIf you entered Y1, you can return to your scatter plot to view the line graph.\n\n\n17.5.4 Slope inference\nLinRegTTest or LinRegTInt (stat &gt; test) - Enter the correct XList and YList. Ignore Freq. - Select the correct alternative hypothesis direction or confidence level. - You should enter Y1 into RegEq. You access it by vars &gt; y-vars &gt; function.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html",
+    "href": "inference-for-slope.html",
+    "title": "18  Inference for Linear Regression",
+    "section": "",
+    "text": "18.1 Sampling Distribution of \\(b\\)\nIn this case, \\(\\sigma\\) represents the population standard deviation of plausible observations’ residuals from the population line.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html#samp-dist-b",
+    "href": "inference-for-slope.html#samp-dist-b",
+    "title": "18  Inference for Linear Regression",
+    "section": "",
+    "text": "Choose an SRS of \\(n\\) observations \\((x, y)\\) from a population of size \\(N\\) with least-squares regression line \\(\\hat y=a+bx\\) with a population (true) relationship of \\(y = \\alpha + \\beta x + \\epsilon\\)\nLet \\(b\\) be the slope of the sample regression line. Then:\n\nThe mean of the sampling distribution of \\(b\\) is \\[\\mu_b = \\beta\\]\nThe standard deviation of the sampling distribution of \\(b\\) is \\[\\sigma_b = \\frac{\\sigma}{\\sigma_x\\sqrt n}\\] as long as the 10% Condition is satisfied.\nThe sampling distribution of b will be approximately normal if the values of the response variable \\(y\\) follow a Normal distribution for each value of the explanatory variable x (the Normal condition).",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html#slope-conds",
+    "href": "inference-for-slope.html#slope-conds",
+    "title": "18  Inference for Linear Regression",
+    "section": "18.2 Conditions for Regression Inference",
+    "text": "18.2 Conditions for Regression Inference\nThe regression model requires that for each possible value of the explanatory variable \\(x\\):\n\nThe mean value of the response variable \\(\\mu_y\\) falls on the population line. \\[\\mu_y = \\alpha + \\beta x\\]\nThe values of the response variable \\(y\\) follow a Normal distribution with common standard deviation \\(\\sigma\\).\n\nTaking in account of the above information and the sampling distribution of \\(b\\), we need to make sure that the following are met:\n\n\nLinear\n\nThe actual relationship between \\(x\\) and \\(y\\) is linear.\n\n\nIn other words, For any fixed value of \\(x\\), the mean response \\(\\mu_y\\) falls on the population (true) regression line \\(\\mu_y= \\alpha + \\beta x\\).\n\nIndependent\n\nIndividual observations are independent of each other. When sampling without replacement, check the 10% condition.\n\nNormal\n\nFor any fixed value of \\(x\\), the response \\(y\\) varies according to a Normal distribution.\n\nEqual SD\n\nThe standard deviation of \\(y\\) from the population regression line (call it \\(\\sigma\\)) is the same for all values of \\(x\\).\n\nRandom\n\nThe data come from a well-designed random sample or randomized experiment.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html#standard-error-of-b",
+    "href": "inference-for-slope.html#standard-error-of-b",
+    "title": "18  Inference for Linear Regression",
+    "section": "18.3 Standard Error of \\(b\\)",
+    "text": "18.3 Standard Error of \\(b\\)\nRemember that we defined the standard deviation of the sampling distribution of \\(b\\).\n\nAn estimate of \\(\\sigma_b\\), is the standard error of \\(b\\), \\(SE_b\\) which is defined as \\[SE_b = \\frac{s}{s_x \\sqrt{n-1}}\\] where \\(s\\) is the sample standard deviation of the residuals,",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html#t-interval-for-beta",
+    "href": "inference-for-slope.html#t-interval-for-beta",
+    "title": "18  Inference for Linear Regression",
+    "section": "18.4 \\(t\\) interval for \\(\\beta\\)",
+    "text": "18.4 \\(t\\) interval for \\(\\beta\\)\n\nWhen the conditions are met, a level \\(C\\) confidence interval for the slope \\(\\beta\\) is \\[b \\pm t^* \\cdot SE_b\\] and \\(t^*\\) is the critical value for the \\(t\\) distribution with \\(df = n - 2\\) having area \\(C\\) between \\(-t^*\\) and \\(t^*\\).",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html#significance-test-for-beta",
+    "href": "inference-for-slope.html#significance-test-for-beta",
+    "title": "18  Inference for Linear Regression",
+    "section": "18.5 Significance Test for \\(\\beta\\)",
+    "text": "18.5 Significance Test for \\(\\beta\\)\nWhen the conditions are met, we can use the slope \\(b\\) of the sample regression line to conduct a significance test about the slope parameter \\(\\beta\\).\n\nThe null hypothesis has the general form \\(H_0: \\beta = \\beta_0\\) (hypothesized slope)\nWe’ll mainly restrict ourselves to situations in which the hypothesized slope is 0. (i.e. there is no relationship between the two variables).\nThe alternative hypothesis says what direction we expect: \\[H_a:\\beta&gt;\\beta_0~~\\text{or}~~Ha:\\beta&lt;\\beta_0~~\\text{or}~~Ha:\\beta\\not =\\beta_0\\]\nThe test statistic \\(t\\) is calculated as:\n\\[t = \\frac{b - \\beta_0 }{SE_b}\\]\nThe p-value, calculated using the t-statistic, is based off the direction of the alternative hypothesis, \\(H_a\\). \\(t_{n-2}\\) represents the \\(t\\) distribution with \\(df = n-2\\) degrees of freedom.\n\\[\n\\text{p-value}= \\begin{cases}\nP(t_{n-2}&lt;t) & \\text{ if } H_a:\\beta&lt;\\beta_0 \\\\\nP(t_{n-2}&gt;t) & \\text{ if } H_a:\\beta&gt;\\beta_0 \\\\\n2\\cdot P(t_{n-2}&lt;-|t|) & \\text{ if } H_a: \\beta\\not =\\beta_0\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
+    "objectID": "inference-for-slope.html#more-linreg-output",
+    "href": "inference-for-slope.html#more-linreg-output",
+    "title": "18  Inference for Linear Regression",
+    "section": "18.6 Interpreting Computer Output",
+    "text": "18.6 Interpreting Computer Output\nAs we mentioned in the previous section, this builds off the previous example.\n\n18.6.1 Example\nWe left off on the fact that we could identify the following:\nPredictor       Coef        SECoef      T      P\nConstant        a           2446        15.64  0.000\nMiles Driven    b           0.03096     -5.26  0.000\n\nS = s          R-Sq = r^2     R-Sq(adj) = 64.0%\nNow apply what you know what we now know we should look for. We should be looking for the standard error of \\(b\\), \\(SE_b\\); the \\(t\\)-statistic; and the corresponding \\(p\\)-value. So in other words, we want to look for everything related to the estimated slope \\(b\\) for the Miles Driven predicted (our explanatory variable). Applying this, you should be able to identify that each of these are:\nPredictor       Coef        SECoef      T      P\nConstant        a           2446        15.64  0.000\nMiles Driven    b           SE_b        t      p-value\n\nS = s          R-Sq = r^2     R-Sq(adj) = 64.0%\n\nTo reiterate, we can figure out that for a significance test for \\(\\beta\\) with this data,\n\\[\n\\begin{aligned}\n&SE_b = 0.03096\\\\\n&t = -5.25\\\\\n&p\\text{-value} \\approx 0\n\\end{aligned}\n\\]\n\n\nOne thing to keep in mind is that the \\(p\\)-value given is always for a two-sided test where \\(H_a: \\beta \\not = \\beta_0\\). So if you want the \\(p\\)-value for a one-sided test (where \\(H_a: \\beta &gt; \\beta_0\\) or \\(H_a: \\beta &lt; \\beta_0\\)), you have to take half of the \\(p\\)-value that you see in the computer output.\n\nOther parts are irrelevant to this course.",
+    "crumbs": [
+      "Inference",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Inference for Linear Regression</span>"
+    ]
+  },
+  {
     "objectID": "formula-sheet.html",
     "href": "formula-sheet.html",
     "title": "Appendix A — AP Exam Formula Sheet",
