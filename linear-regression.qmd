@@ -67,7 +67,7 @@ Where
 
 - $\epsilon$ is the underlying "noise"/error that we can expect out of the relationship.
 
-::: {.callout-note title="The least suares regression model"}
+::: {.callout-note title="The least squares regression model"}
 
 An estimate of this model would then have the following form:
 
@@ -85,7 +85,7 @@ And in this class, we calculate each statistic by minimizing the squared error b
 
 :::
 
-::: {.callout-note title="Interpretation of a regression line"}
+::: {.callout-important title="Interpretation of a regression line"}
 
 We interpret $a$, the $y$-intercept, as:
 > When the [*explanatory variable*] is zero, our model predicts the [*response variable*] would be [*y-intercept*].
@@ -106,7 +106,7 @@ The correlation coefficient $r$ measures the direction and strength of the linea
 
 $$r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)$$
 
-::: {.callout-note title="Properties of the Correlation Coefficient $r$"}
+::: {.callout-important title="Properties of the Correlation Coefficient $r$"}
 
 - $r$ is always a number between -1 and 1
 
@@ -168,7 +168,7 @@ All the equations that we learn in this chapter are based off the fact that a le
 
 We can plot the residuals versus the explanatory variable to obtain insight into the appropriateness of our regression model:
 
-::: {.callout-note title="Points of Caution for Residual Plots"}
+::: {.callout-important title="Points of Caution for Residual Plots"}
 Curved patterns and heteroskedasticity are not good things to see in residuals plots.
 
 Curved pattern
@@ -243,7 +243,7 @@ $$a=\bar y-b\bar x$$
 ![A scatterplot of Gesell Adaptive Scores versus the age at the first word for 21 children.
 ](graphics/influ-obs.png)
 
-Remember, an outlier is an observation that lies outside the overall pattern of other observations.  In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither.
+Remember, an outlier is an observation that lies outside the overall pattern of other observations.
 
 <details>
 <summary>
@@ -252,8 +252,17 @@ So what are Child 18 and Child 19?
 We could also say that Child 18 is an outlier in the x-direction and y-direction meanwhile Child 19 is an outlier in the y-direction
 </details>
 
-::: {.highlight}
+::: {.callout-important title="Influential Observations"}
 An influential observation in statistics is a point that has a large effect on a statistical calculation. In other words, an observation is considered influential if removing it would markedly change the regression line.
+
+We are able to classify influential observations into two kinds:
+
+1. High Leverage: "outliers" in the x-direction. These are points that are far from main cluster(s) of points in the horizontal direction. They tend to be points that influence almost all aspects of a regression line.
+
+2. Outliers: outliers in the y-direction. These are points that are far from main cluster(s) of points in the vertical direction. They tend to be points that influence mostly only $r$, the correlation coefficient.
+
+Make sure to call high leverage points "high leverage" and not "outliers"! If applicable, points may be both a high leverage point and an outlier.
+
 :::
 
 <details>
@@ -263,9 +272,9 @@ Which appears to have the greatest influence on the regression line?
 
 Child 18 and 19 are both equally influential in their own sense here.
 
-Child 18 is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line. 
+Child 18 is a high leverage point and is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line. 
 
-Child 19 is the most influential observation on the correlation coefficient, $r$. Notice how removing (and adding) child 19 caused the greatest change in $r$
+Child 19 is an outlier and is the most influential observation on the correlation coefficient, $r$. Notice how removing (and adding) child 19 caused the greatest change in $r$
 
 </details>
 
@@ -330,7 +339,7 @@ Miles Driven    b           0.03096   	-5.26  0.000
 S = s          R-Sq = r^2     R-Sq(adj) = 64.0%
 ```
 
-::: {.highlight}
+::: {.callout-important}
 To reiterate, we can figure out that for a LSRL with this data and knowing our explanatory variable is mileage (`Miles Driven`) and our response variable is the value of the Ford F-150,
 
 $$
@@ -348,7 +357,7 @@ Thus our LSRL is $$\hat{\text{value of F-150}} = 38257 - 0.16292 (\text{miles dr
 With $s = 5740.13$ and $r^2 = .664$.
 
 
-::: {.highlight}
+::: {.callout-tip}
 We can also infer from this output that since $b$ is negative (negative slope, so negative relationship), that $$r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 $$
 :::
 
@@ -378,7 +387,9 @@ Enter all your data into your lists (`stat > edit`). Remember which ones your en
 ### Creating your LSRL
 
 `LinReg(a+bx)` (`stat > calc`)
+
 - Enter the correct `XList` and `YList`. Ignore `Freq`.
+
 - You should enter `Y1` into `RegEq`. You access it by `vars > y-vars > function`.
 
 If you entered `Y1`, you can return to your scatter plot to view the line `graph`.
@@ -386,8 +397,11 @@ If you entered `Y1`, you can return to your scatter plot to view the line `graph
 ### Slope inference
 
 `LinRegTTest` or `LinRegTInt` (`stat > test`)
+
 - Enter the correct `XList` and `YList`. Ignore `Freq`.
+
 - Select the correct alternative hypothesis direction or confidence level.
+
 - You should enter `Y1` into `RegEq`. You access it by `vars > y-vars > function`.
 
 

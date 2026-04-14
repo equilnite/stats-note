@@ -4,7 +4,7 @@ As mentioned in our [least squares regression model](#LSRL-model), the goal of t
 
 ## Sampling Distribution of $b$ {#samp-dist-b}
 
-::: {.highlight}
+::: {.callout-note title="Sampling Distribution of $b$"}
 Choose an SRS of $n$ observations $(x, y)$ from a population of size $N$ with least-squares regression line $\hat y=a+bx$ with a population (true) relationship of $y = \alpha + \beta x + \epsilon$
 
 Let $b$ be the slope of the sample regression line. Then: 
@@ -29,7 +29,7 @@ The regression model requires that for each possible value of the explanatory va
 
 Taking in account of the above information and the [sampling distribution of $b$](#samp-dist-b), we need to make sure that the following are met:
 
-::: {.highlight}
+::: {.callout-important title="Five Conditions for Slope Inference"}
 
 Linear
 : The actual relationship between $x$ and $y$ is linear.
@@ -49,20 +49,14 @@ Random
 
 :::
 
-## Standard Error of $b$
-
-Remember that we defined the [standard deviation of the sampling distribution of $b$](#samp-dist-b).
-
-::: {.highlight}
+::: {.callout-note title="Standard Error of $b$"}
 
 An estimate of $\sigma_b$, is the standard error of $b$, $SE_b$ which is defined as
 $$SE_b = \frac{s}{s_x \sqrt{n-1}}$$
 where [$s$ is the sample standard deviation of the residuals](#residual-sd),
 :::
 
-## $t$ interval for $\beta$
-
-::: {.highlight}
+::: {.callout-note title="$t$-interval for $\beta$"}
 
 When [the conditions](#slope-conds) are met, a level $C$ confidence interval for the slope $\beta$ is $$b \pm t^* \cdot SE_b$$
 and $t^*$ is the critical value for the $t$ distribution with $df = n - 2$ having area $C$ between $-t^*$ and $t^*$.
@@ -72,7 +66,7 @@ and $t^*$ is the critical value for the $t$ distribution with $df = n - 2$ havin
 
 When [the conditions](#slope-conds) are met, we can use the slope $b$ of the sample regression line to conduct a significance test about the slope parameter $\beta$.
 
-::: {.highlight}
+::: {.callout-note title="$t$-test for  $\beta$"}
 The null hypothesis has the general form  $H_0: \beta = \beta_0$ (hypothesized slope) 
 
 We’ll mainly restrict ourselves to situations in which the hypothesized slope is 0. (i.e. there is no relationship between the two variables).
@@ -122,8 +116,8 @@ Miles Driven    b           SE_b      	t      p-value
 S = s          R-Sq = r^2     R-Sq(adj) = 64.0%
 ```
 
-::: {.highlight}
-To reiterate, we can figure out that for a significance test for $\beta$ with this data,
+::: {.callout-important}
+To reiterate, from this computer output, we can figure out that for a significance test for $\beta$ with this data,
 
 $$
 \begin{aligned}
@@ -134,8 +128,10 @@ $$
 $$
 :::
 
-::: {.highlight}
+::: {.callout-tip}
 One thing to keep in mind is that the $p$-value given is always for a two-sided test where $H_a: \beta \not = \beta_0$. So if you want the $p$-value for a one-sided test (where $H_a: \beta > \beta_0$ or $H_a: \beta < \beta_0$), you have to take half of the $p$-value that you see in the computer output.
+
+Other parts to the output are irrelevant to this course.
 :::
 
-Other parts are irrelevant to this course.
+

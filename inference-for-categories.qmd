@@ -45,7 +45,7 @@ viewof df1 = Inputs.range(
 
 ## Conditions {#ChiSqCond}
 
-::: highlight
+::: {.callout-important title="Conditions for $\chi^2$"}
 -   **Random:** The data comes from a well-designed random sample or from a randomized experiment.
 
 -   **10%:** When sampling without replacement, check that $n\leq(.10)N$
@@ -65,8 +65,10 @@ viewof df1 = Inputs.range(
 
 ## $\chi^2$ Goodness-of-Fit {#ChiSqGOF}
 
-::: highlight
+::: {.callout-tip}
 We do this test when we wonder, "Does this data fit with what they are saying?" So how "good" does the distribution of data that we see "fit" with the distribution that they claim?
+
+If you are checking to see if something matches up with something as a *one-way* comparison, then this is the right test to name.
 :::
 
 **Hypotheses:**
@@ -195,12 +197,14 @@ When we do things on the calculator with the following method, everything works 
 
 Here's a a video tutorial using the example from Page 3 in your packets.
 
-{{< video https://youtu.be/GmveE6-33Cg >}}
+{{< video https://www.youtube.com/watch?v=gYFhQZ5gqPs >}}
 
 ## $\chi^2$ Test of Homogeneity {#ChiSqHomogen}
 
-::: highlight
+::: {.callout-tip}
 We do this test when we wonder, "Is the distribution of this group's data the same as this other group's distribution of data?" So how similar ("homogenous") is one group/treatment compared to another?
+
+This test is appropriate if you are considering a multi-way comparison.
 :::
 
 **Hypotheses**:
@@ -453,7 +457,7 @@ Do the data provide convincing evidence of an difference in distribution of astr
 
 ## $\chi^2$ Test of Independence {#ChiSqInd}
 
-::: highlight
+::: {.callout-tip}
 We do this test when we wonder, "Are these two variables in this set of data independent or not?" In other words, this is a more deterministic way of doing what we did in [Chapter 6](#probability) when we compared just the probability of a single event and a conditional probability
 :::
 
@@ -706,7 +710,7 @@ There's no difference in how $\chi^2$, $df$, and the p-value is calculated betwe
 3. Matrix `[B]` is now populated with the expected counts.
     - View matrix `[B]` the same way that you edited matrix `[A]`
 
-{{< video https://youtu.be/NPUqG3fp4EI >}}
+{{< video https://www.youtube.com/watch?v=XIE4hLBv13Y >}}
 
 ## Follow-up (Component) Analysis
 
