@@ -393,7 +393,16 @@ window.Quarto = {
 <section id="hypotheses" class="level3" data-number="13.1.1">
 <h3 data-number="13.1.1" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">13.1.1</span> Hypotheses</h3>
 <p>A significance test starts with a careful statement of the claims we want to compare.</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-important callout-titled" title="The null and alternative hypotheses">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The null and alternative hypotheses
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(H_0\)</span>: The claim we weigh evidence against in a statistical test is called the null hypothesis. Often the null hypothesis is a statement of “no difference.”
 <ul>
@@ -415,10 +424,21 @@ H_0 &amp;: \text{parameter} \not = \text{null value}
 \end{aligned}
 \]</span></p>
 </div>
+</div>
 <p><em>To determine the correct form of <span class="math inline">\(H_a\)</span>, read the problem carefully.</em></p>
-<div class="highlight">
+<div class="callout callout-style-default callout-tip callout-titled" title="One-sided versus Two-sided">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+One-sided versus Two-sided
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The alternative hypothesis is one-sided if it states that a parameter is <em>larger than</em> the null hypothesis value or if it states that the parameter is <em>smaller than</em> the null value.</p>
 <p>It is two-sided if it states that the parameter is <em>different from</em> the null hypothesis value (it could be either larger or smaller).</p>
+</div>
 </div>
 <ul>
 <li>The hypotheses should express the hopes or suspicions we have <strong>before</strong> we see the data. It is cheating to look at the data first and then frame hypotheses to fit what the data show (i.e.&nbsp;“<em>p</em>-hacking”).</li>
@@ -436,15 +456,25 @@ H_0 &amp;: \text{parameter} \not = \text{null value}
 <p><span class="math display">\[\text{reject } H_0 \text{ or fail to reject } H_0\]</span></p>
 <p><em>Note: A fail-to-reject <span class="math inline">\(H_0\)</span> decision in a significance test doesn’t mean that <span class="math inline">\(H_0\)</span> is true. For that reason, you should never “accept <span class="math inline">\(H_0\)</span>” or use language implying that you believe <span class="math inline">\(H_0\)</span> is true.</em></p>
 <p>There is no rule for how small a <em>P</em>-value we should require in order to reject <span class="math inline">\(H_0\)</span>. But we can compare the <em>P</em>-value with a fixed value that we regard as decisive, called the significance level. We write it as <span class="math inline">\(\alpha\)</span>, the Greek letter alpha.</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Conclusion of a hypothesis test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conclusion of a hypothesis test
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If the <em>P</em>-value is smaller than alpha, we say that the data are [statistically significant][Statistical Significance] at the level . In that case, we reject the null hypothesis <span class="math inline">\(H_0\)</span> and conclude that there is convincing evidence in favor of the alternative hypothesis <span class="math inline">\(H_a\)</span>.</p>
 <p>In a nutshell, our conclusion in a significance test comes down to</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{P-value} &amp;&lt;  \alpha \rightarrow \text{reject } H_0 \rightarrow \text{convincing evidence for } H_a \\
-\text{P-value} &amp;\geq \alpha \rightarrow\text{fail to reject } H_0  \rightarrow \text{not convincing evidence for } H_a
+\text{p-value} &amp;&lt;  \alpha \rightarrow \text{reject } H_0 \rightarrow \text{convincing evidence for } H_a \\
+\text{p-value} &amp;\geq \alpha \rightarrow\text{fail to reject } H_0  \rightarrow \text{not convincing evidence for } H_a
 \end{aligned}
 \]</span></p>
+</div>
 </div>
 </section>
 <section id="example" class="level3" data-number="13.1.4">
@@ -476,11 +506,21 @@ H_0 &amp;: \text{parameter} \not = \text{null value}
 <section id="type-i-and-ii-error" class="level2" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="type-i-and-ii-error"><span class="header-section-number">13.2</span> Type I and II Error</h2>
 <p>When we draw a conclusion from a significance test, we hope our conclusion will be correct. But sometimes it will be wrong. There are two types of mistakes we can make.</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Errors">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Errors
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><p>If we reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_a\)</span> is true, we have committed a Type I error.</p></li>
 <li><p>If we fail to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_a\)</span> is true, we have committed a Type II error.</p></li>
 </ul>
+</div>
 </div>
 <p>We can sum this up with this up with this table:</p>
 <style type="text/css">
@@ -540,8 +580,18 @@ Type II Error
 <p>When considering the consequences of the results of an inference task, we want to consider Type I and II errors. In some cases, we’d prefer to have Type I errors over Type II. In other instances, it’s the opposite.</p>
 <section id="type-i-error" class="level3" data-number="13.2.1">
 <h3 data-number="13.2.1" class="anchored" data-anchor-id="type-i-error"><span class="header-section-number">13.2.1</span> Type I Error</h3>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Type I Error probability">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Type I Error probability
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The probability of a Type I Error is <span class="math inline">\(\alpha\)</span> <span class="math display">\[P(\text{Type I Error})=\alpha\]</span></p>
+</div>
 </div>
 </section>
 <section id="type-ii-errors-and-power" class="level3" data-number="13.2.2">
@@ -550,7 +600,16 @@ Type II Error
 <p>The power of a test against a specific alternative is the probability that the test will reject <span class="math inline">\(H_0\)</span> at a chosen significance level when the specified alternative value of the parameter is true.</p>
 <p>The significance level of a test is the probability of reaching the wrong conclusion when the null hypothesis is true.</p>
 <p>The power of a test to detect a specific alternative is the probability of reaching the right conclusion when that alternative is true.</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Power and Type II Error probability">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Power and Type II Error probability
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The power of a test against any alternative is 1 minus the probability of a Type II error for that alternative; that is, <span class="math inline">\(power = 1-\beta\)</span>, where is the probability of making a Type II error.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -559,6 +618,7 @@ P(\text{Type II Error}) &amp;= 1 - \text{power} \\
 \text{power} &amp;= 1 - \beta
 \end{aligned}
 \]</span></p>
+</div>
 </div>
 <p>* <em>Keep in mind that you are not expected to know how to calculate power or <span class="math inline">\(\beta\)</span> without one of the other. i.e.&nbsp;you will always be given the power or <span class="math inline">\(\beta\)</span> in a problem.</em></p>
 <section id="how-power-looks-like" class="level4">
