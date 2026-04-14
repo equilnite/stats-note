@@ -100,7 +100,7 @@ The CLT justifies why we have the check the Large Condition above and the sectio
 
 ## Sampling Distribution of $\hat p_1 - \hat p_2$ {#prop-diff-samp-dist}
 
-::: {.highlight}
+::: {.callout-note title="Sampling Distribution of $\hat p_1 - \hat p_2$"}
 
 Choose an SRS of size $n_1$ from Population 1 with proportion of successes $p_1$ and an independent SRS of size $n_2$ from Population 2 with proportion of successes $p_2$.
 
@@ -120,7 +120,7 @@ The standard deviation of $\hat p_1-\hat p_2$ is $$s_{\hat p_1-\hat p_2}=\sqrt{\
 
 ## Sampling Distribution of $\bar x_1 - \bar x_2$ {#mean-diff-samp-dist}
 
-::: {.highlight}
+::: {.callout-note title="Sampling Distribution of $\bar x_1 - \bar x_2$"}
 
 Choose an SRS of size $n_1$ from Population 1 with mean $\mu_1$ and standard deviation $\sigma_1$ and an independent SRS of size $n_2$ from Population 2 with mean $\mu_2$ and standard deviation $\sigma_2$.
 
