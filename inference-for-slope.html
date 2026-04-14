@@ -349,12 +349,10 @@ window.Quarto = {
   <ul>
   <li><a href="#samp-dist-b" id="toc-samp-dist-b" class="nav-link active" data-scroll-target="#samp-dist-b"><span class="header-section-number">18.1</span> Sampling Distribution of <span class="math inline">\(b\)</span></a></li>
   <li><a href="#slope-conds" id="toc-slope-conds" class="nav-link" data-scroll-target="#slope-conds"><span class="header-section-number">18.2</span> Conditions for Regression Inference</a></li>
-  <li><a href="#standard-error-of-b" id="toc-standard-error-of-b" class="nav-link" data-scroll-target="#standard-error-of-b"><span class="header-section-number">18.3</span> Standard Error of <span class="math inline">\(b\)</span></a></li>
-  <li><a href="#t-interval-for-beta" id="toc-t-interval-for-beta" class="nav-link" data-scroll-target="#t-interval-for-beta"><span class="header-section-number">18.4</span> <span class="math inline">\(t\)</span> interval for <span class="math inline">\(\beta\)</span></a></li>
-  <li><a href="#significance-test-for-beta" id="toc-significance-test-for-beta" class="nav-link" data-scroll-target="#significance-test-for-beta"><span class="header-section-number">18.5</span> Significance Test for <span class="math inline">\(\beta\)</span></a></li>
-  <li><a href="#more-linreg-output" id="toc-more-linreg-output" class="nav-link" data-scroll-target="#more-linreg-output"><span class="header-section-number">18.6</span> Interpreting Computer Output</a>
+  <li><a href="#significance-test-for-beta" id="toc-significance-test-for-beta" class="nav-link" data-scroll-target="#significance-test-for-beta"><span class="header-section-number">18.3</span> Significance Test for <span class="math inline">\(\beta\)</span></a></li>
+  <li><a href="#more-linreg-output" id="toc-more-linreg-output" class="nav-link" data-scroll-target="#more-linreg-output"><span class="header-section-number">18.4</span> Interpreting Computer Output</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">18.6.1</span> Example</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">18.4.1</span> Example</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -384,7 +382,16 @@ window.Quarto = {
 <p>As mentioned in our <a href="linear-regression.html#LSRL-model">least squares regression model</a>, the goal of the model is to estimate <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. So after we’ve estimated them with <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, what can we infer about the population parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>? For the most part, we’ll be only concerned about <span class="math inline">\(\beta\)</span>.</p>
 <section id="samp-dist-b" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="samp-dist-b"><span class="header-section-number">18.1</span> Sampling Distribution of <span class="math inline">\(b\)</span></h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="Sampling Distribution of $b$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sampling Distribution of <span class="math inline">\(b\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Choose an SRS of <span class="math inline">\(n\)</span> observations <span class="math inline">\((x, y)\)</span> from a population of size <span class="math inline">\(N\)</span> with least-squares regression line <span class="math inline">\(\hat y=a+bx\)</span> with a population (true) relationship of <span class="math inline">\(y = \alpha + \beta x + \epsilon\)</span></p>
 <p>Let <span class="math inline">\(b\)</span> be the slope of the sample regression line. Then:</p>
 <ul>
@@ -392,6 +399,7 @@ window.Quarto = {
 <li><p>The <strong>standard deviation</strong> of the sampling distribution of <span class="math inline">\(b\)</span> is <span class="math display">\[\sigma_b = \frac{\sigma}{\sigma_x\sqrt n}\]</span> as long as the 10% Condition is satisfied.</p></li>
 <li><p>The sampling distribution of b will be <strong>approximately normal</strong> if the values of the response variable <span class="math inline">\(y\)</span> follow a Normal distribution for each value of the explanatory variable x (the <em>Normal condition</em>).</p></li>
 </ul>
+</div>
 </div>
 <p>In this case, <span class="math inline">\(\sigma\)</span> represents the population standard deviation of plausible observations’ residuals from the population line.</p>
 </section>
@@ -403,7 +411,16 @@ window.Quarto = {
 <li><p>The values of the response variable <span class="math inline">\(y\)</span> follow a Normal distribution with common standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
 </ol>
 <p>Taking in account of the above information and the <a href="#samp-dist-b">sampling distribution of <span class="math inline">\(b\)</span></a>, we need to make sure that the following are met:</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-important callout-titled" title="Five Conditions for Slope Inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Five Conditions for Slope Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <dl>
 <dt>Linear</dt>
 <dd>
@@ -430,24 +447,47 @@ The data come from a well-designed random sample or randomized experiment.
 </dd>
 </dl>
 </div>
-</section>
-<section id="standard-error-of-b" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="standard-error-of-b"><span class="header-section-number">18.3</span> Standard Error of <span class="math inline">\(b\)</span></h2>
-<p>Remember that we defined the <a href="#samp-dist-b">standard deviation of the sampling distribution of <span class="math inline">\(b\)</span></a>.</p>
-<div class="highlight">
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Standard Error of $b$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Standard Error of <span class="math inline">\(b\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>An estimate of <span class="math inline">\(\sigma_b\)</span>, is the standard error of <span class="math inline">\(b\)</span>, <span class="math inline">\(SE_b\)</span> which is defined as <span class="math display">\[SE_b = \frac{s}{s_x \sqrt{n-1}}\]</span> where <a href="linear-regression.html#residual-sd"><span class="math inline">\(s\)</span> is the sample standard deviation of the residuals</a>,</p>
 </div>
-</section>
-<section id="t-interval-for-beta" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="t-interval-for-beta"><span class="header-section-number">18.4</span> <span class="math inline">\(t\)</span> interval for <span class="math inline">\(\beta\)</span></h2>
-<div class="highlight">
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="$t$-interval for $\beta$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(t\)</span>-interval for <span class="math inline">\(\beta\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>When <a href="#slope-conds">the conditions</a> are met, a level <span class="math inline">\(C\)</span> confidence interval for the slope <span class="math inline">\(\beta\)</span> is <span class="math display">\[b \pm t^* \cdot SE_b\]</span> and <span class="math inline">\(t^*\)</span> is the critical value for the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(df = n - 2\)</span> having area <span class="math inline">\(C\)</span> between <span class="math inline">\(-t^*\)</span> and <span class="math inline">\(t^*\)</span>.</p>
 </div>
+</div>
 </section>
-<section id="significance-test-for-beta" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="significance-test-for-beta"><span class="header-section-number">18.5</span> Significance Test for <span class="math inline">\(\beta\)</span></h2>
+<section id="significance-test-for-beta" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="significance-test-for-beta"><span class="header-section-number">18.3</span> Significance Test for <span class="math inline">\(\beta\)</span></h2>
 <p>When <a href="#slope-conds">the conditions</a> are met, we can use the slope <span class="math inline">\(b\)</span> of the sample regression line to conduct a significance test about the slope parameter <span class="math inline">\(\beta\)</span>.</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-note callout-titled" title="$t$-test for  $\beta$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(t\)</span>-test for <span class="math inline">\(\beta\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The null hypothesis has the general form <span class="math inline">\(H_0: \beta = \beta_0\)</span> (hypothesized slope)</p>
 <p>We’ll mainly restrict ourselves to situations in which the hypothesized slope is 0. (i.e.&nbsp;there is no relationship between the two variables).</p>
 <p>The alternative hypothesis says what direction we expect: <span class="math display">\[H_a:\beta&gt;\beta_0~~\text{or}~~Ha:\beta&lt;\beta_0~~\text{or}~~Ha:\beta\not =\beta_0\]</span></p>
@@ -462,12 +502,13 @@ P(t_{n-2}&gt;t) &amp; \text{ if } H_a:\beta&gt;\beta_0 \\
 \end{cases}
 \]</span></p>
 </div>
+</div>
 </section>
-<section id="more-linreg-output" class="level2" data-number="18.6">
-<h2 data-number="18.6" class="anchored" data-anchor-id="more-linreg-output"><span class="header-section-number">18.6</span> Interpreting Computer Output</h2>
+<section id="more-linreg-output" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="more-linreg-output"><span class="header-section-number">18.4</span> Interpreting Computer Output</h2>
 <p><a href="linear-regression.html#basic-linreg-output">As we mentioned in the previous section, this builds off the previous example.</a></p>
-<section id="example" class="level3" data-number="18.6.1">
-<h3 data-number="18.6.1" class="anchored" data-anchor-id="example"><span class="header-section-number">18.6.1</span> Example</h3>
+<section id="example" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="example"><span class="header-section-number">18.4.1</span> Example</h3>
 <p>We left off on the fact that we could identify the following:</p>
 <pre><code>Predictor       Coef        SECoef      T      P
 Constant        a           2446        15.64  0.000
@@ -480,8 +521,17 @@ Constant        a           2446        15.64  0.000
 Miles Driven    b           SE_b        t      p-value
 
 S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
-<div class="highlight">
-<p>To reiterate, we can figure out that for a significance test for <span class="math inline">\(\beta\)</span> with this data,</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To reiterate, from this computer output, we can figure out that for a significance test for <span class="math inline">\(\beta\)</span> with this data,</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;SE_b = 0.03096\\
@@ -490,10 +540,21 @@ S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
 \end{aligned}
 \]</span></p>
 </div>
-<div class="highlight">
-<p>One thing to keep in mind is that the <span class="math inline">\(p\)</span>-value given is always for a two-sided test where <span class="math inline">\(H_a: \beta \not = \beta_0\)</span>. So if you want the <span class="math inline">\(p\)</span>-value for a one-sided test (where <span class="math inline">\(H_a: \beta &gt; \beta_0\)</span> or <span class="math inline">\(H_a: \beta &lt; \beta_0\)</span>), you have to take half of the <span class="math inline">\(p\)</span>-value that you see in the computer output.</p>
 </div>
-<p>Other parts are irrelevant to this course.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One thing to keep in mind is that the <span class="math inline">\(p\)</span>-value given is always for a two-sided test where <span class="math inline">\(H_a: \beta \not = \beta_0\)</span>. So if you want the <span class="math inline">\(p\)</span>-value for a one-sided test (where <span class="math inline">\(H_a: \beta &gt; \beta_0\)</span> or <span class="math inline">\(H_a: \beta &lt; \beta_0\)</span>), you have to take half of the <span class="math inline">\(p\)</span>-value that you see in the computer output.</p>
+<p>Other parts to the output are irrelevant to this course.</p>
+</div>
+</div>
 
 
 </section>

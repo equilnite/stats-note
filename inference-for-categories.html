@@ -480,12 +480,22 @@ window.Quarto = {
 </section>
 <section id="ChiSqCond" class="level2" data-number="16.2">
 <h2 data-number="16.2" class="anchored" data-anchor-id="ChiSqCond"><span class="header-section-number">16.2</span> Conditions</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-important callout-titled" title="Conditions for $\chi^2$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conditions for <span class="math inline">\(\chi^2\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><p><strong>Random:</strong> The data comes from a well-designed random sample or from a randomized experiment.</p></li>
 <li><p><strong>10%:</strong> When sampling without replacement, check that <span class="math inline">\(n\leq(.10)N\)</span></p></li>
 <li><p><strong>Large Counts:</strong> All expected counts are greater than 5</p></li>
 </ul>
+</div>
 </div>
 <details>
 <summary>
@@ -499,8 +509,19 @@ Be careful and remember that:
 </section>
 <section id="ChiSqGOF" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="ChiSqGOF"><span class="header-section-number">16.3</span> <span class="math inline">\(\chi^2\)</span> Goodness-of-Fit</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We do this test when we wonder, “Does this data fit with what they are saying?” So how “good” does the distribution of data that we see “fit” with the distribution that they claim?</p>
+<p>If you are checking to see if something matches up with something as a <em>one-way</em> comparison, then this is the right test to name.</p>
+</div>
 </div>
 <p><strong>Hypotheses:</strong></p>
 <p><span class="math inline">\(H_0\)</span>: The stated distribution of the categorical variable in the population of interest is correct. <span class="math display">\[H_0:p_1=p_{0_1},p_2=p_{0_2}, \cdots ,p_c=p_{0_c} \]</span> where there are <span class="math inline">\(c\)</span> categories in the categorical variable</p>
@@ -736,13 +757,24 @@ Be careful and remember that:
 </ul></li>
 </ol>
 <p>Here’s a a video tutorial using the example from Page 3 in your packets.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/GmveE6-33Cg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gYFhQZ5gqPs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
 <section id="ChiSqHomogen" class="level2" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="ChiSqHomogen"><span class="header-section-number">16.4</span> <span class="math inline">\(\chi^2\)</span> Test of Homogeneity</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We do this test when we wonder, “Is the distribution of this group’s data the same as this other group’s distribution of data?” So how similar (“homogenous”) is one group/treatment compared to another?</p>
+<p>This test is appropriate if you are considering a multi-way comparison.</p>
+</div>
 </div>
 <p><strong>Hypotheses</strong>:</p>
 <p><span class="math inline">\(H_0\)</span>: The distribution of the variable is the same across all groups/treatments.</p>
@@ -949,8 +981,18 @@ df =&amp;  (2-1)(3-1) = 2\\\\
 </section>
 <section id="ChiSqInd" class="level2" data-number="16.5">
 <h2 data-number="16.5" class="anchored" data-anchor-id="ChiSqInd"><span class="header-section-number">16.5</span> <span class="math inline">\(\chi^2\)</span> Test of Independence</h2>
-<div class="highlight">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We do this test when we wonder, “Are these two variables in this set of data independent or not?” In other words, this is a more deterministic way of doing what we did in <a href="probability.html">Chapter 6</a> when we compared just the probability of a single event and a conditional probability</p>
+</div>
 </div>
 <p><strong>Hypotheses</strong>:</p>
 <p><span class="math inline">\(H_0\)</span>: There is no association between the two variables or that the two events are independent.</p>
@@ -1167,7 +1209,7 @@ df =&amp;  (2-1)(3-1) = 2\\\\
 <li>View matrix <code>[B]</code> the same way that you edited matrix <code>[A]</code></li>
 </ul></li>
 </ol>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/NPUqG3fp4EI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XIE4hLBv13Y" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="follow-up-component-analysis" class="level2" data-number="16.7">
 <h2 data-number="16.7" class="anchored" data-anchor-id="follow-up-component-analysis"><span class="header-section-number">16.7</span> Follow-up (Component) Analysis</h2>

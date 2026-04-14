@@ -468,13 +468,13 @@ Make sure to remember these small details when describing your scatterplots.
 <li><p><span class="math inline">\(\beta\)</span> is the slope, and</p></li>
 <li><p><span class="math inline">\(\epsilon\)</span> is the underlying “noise”/error that we can expect out of the relationship.</p></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" title="The least suares regression model">
+<div class="callout callout-style-default callout-note callout-titled" title="The least squares regression model">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The least suares regression model
+The least squares regression model
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -489,7 +489,7 @@ The least suares regression model
 <p>And in this class, we calculate each statistic by minimizing the squared error between each of the points and the line (“least squares”).</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Interpretation of a regression line">
+<div class="callout callout-style-default callout-important callout-titled" title="Interpretation of a regression line">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -509,7 +509,7 @@ Interpretation of a regression line
 <p>A scatterplot displays the strength, direction, and form of the relationship between two quantitative variables. Linear relationships are important because a straight line is a simple pattern that is quite common. Unfortunately, our eyes are not good judges of how strong a linear relationship is.</p>
 <p>The correlation coefficient <span class="math inline">\(r\)</span> measures the direction and strength of the linear relationship between two quantitative variables.</p>
 <p><span class="math display">\[r = \frac{1}{n-1}\sum \left( \frac{x_i - \bar x}{s_x}\right) \left( \frac{y_i -\bar y}{s_y}\right)\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Properties of the Correlation Coefficient $r$">
+<div class="callout callout-style-default callout-important callout-titled" title="Properties of the Correlation Coefficient $r$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -590,7 +590,7 @@ Residual Interpretation
 <section id="residual-plots" class="level4">
 <h4 class="anchored" data-anchor-id="residual-plots">Residual Plots</h4>
 <p>We can plot the residuals versus the explanatory variable to obtain insight into the appropriateness of our regression model:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Points of Caution for Residual Plots">
+<div class="callout callout-style-default callout-important callout-titled" title="Points of Caution for Residual Plots">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -712,23 +712,39 @@ Formulas for Coefficients of LSR
 <figcaption>A scatterplot of Gesell Adaptive Scores versus the age at the first word for 21 children.</figcaption>
 </figure>
 </div>
-<p>Remember, an outlier is an observation that lies outside the overall pattern of other observations. In bivariate (2-variable) data, an outlier can either be an outlier in the x-direction, the y-direction, both, or neither.</p>
+<p>Remember, an outlier is an observation that lies outside the overall pattern of other observations.</p>
 <details>
 <summary>
 So what are Child 18 and Child 19?
 </summary>
 We could also say that Child 18 is an outlier in the x-direction and y-direction meanwhile Child 19 is an outlier in the y-direction
 </details>
-<div class="highlight">
+<div class="callout callout-style-default callout-important callout-titled" title="Influential Observations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Influential Observations
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>An influential observation in statistics is a point that has a large effect on a statistical calculation. In other words, an observation is considered influential if removing it would markedly change the regression line.</p>
+<p>We are able to classify influential observations into two kinds:</p>
+<ol type="1">
+<li><p>High Leverage: “outliers” in the x-direction. These are points that are far from main cluster(s) of points in the horizontal direction. They tend to be points that influence almost all aspects of a regression line.</p></li>
+<li><p>Outliers: outliers in the y-direction. These are points that are far from main cluster(s) of points in the vertical direction. They tend to be points that influence mostly only <span class="math inline">\(r\)</span>, the correlation coefficient.</p></li>
+</ol>
+<p>Make sure to call high leverage points “high leverage” and not “outliers”! If applicable, points may be both a high leverage point and an outlier.</p>
+</div>
 </div>
 <details>
 <summary>
 Which appears to have the greatest influence on the regression line?
 </summary>
 <p>Child 18 and 19 are both equally influential in their own sense here.</p>
-<p>Child 18 is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line.</p>
-<p>Child 19 is the most influential observation on the correlation coefficient, <span class="math inline">\(r\)</span>. Notice how removing (and adding) child 19 caused the greatest change in <span class="math inline">\(r\)</span></p>
+<p>Child 18 is a high leverage point and is the most influential observation on the regression line itself. Notice how removing (and adding) child 18 caused the greatest change in the regression line.</p>
+<p>Child 19 is an outlier and is the most influential observation on the correlation coefficient, <span class="math inline">\(r\)</span>. Notice how removing (and adding) child 19 caused the greatest change in <span class="math inline">\(r\)</span></p>
 </details>
 <details>
 <summary>
@@ -774,7 +790,16 @@ Constant        a           2446        15.64  0.000
 Miles Driven    b           0.03096     -5.26  0.000
 
 S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
-<div class="highlight">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>To reiterate, we can figure out that for a LSRL with this data and knowing our explanatory variable is mileage (<code>Miles Driven</code>) and our response variable is the value of the Ford F-150,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -785,10 +810,21 @@ S = s          R-Sq = r^2     R-Sq(adj) = 64.0%</code></pre>
 \end{aligned}
 \]</span></p>
 </div>
+</div>
 <p>Thus our LSRL is <span class="math display">\[\hat{\text{value of F-150}} = 38257 - 0.16292 (\text{miles driven})\]</span></p>
 <p>With <span class="math inline">\(s = 5740.13\)</span> and <span class="math inline">\(r^2 = .664\)</span>.</p>
-<div class="highlight">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We can also infer from this output that since <span class="math inline">\(b\)</span> is negative (negative slope, so negative relationship), that <span class="math display">\[r = -\sqrt{r^2} \approx -\sqrt{.664} \approx -0.8149 \]</span></p>
+</div>
 </div>
 </section>
 </section>
